@@ -448,11 +448,23 @@ Retorna coordenadas para `fitBounds()` do Leaflet.
 
 | Código | Nome | Descrição |
 |--------|------|-----------|
-| `CADUNICO` | CadÚnico/Bolsa Família | Cadastro Único (via dados Bolsa Família) |
-| `BPC` | BPC/LOAS | Benefício de Prestação Continuada |
-| `FARMACIA_POPULAR` | Farmácia Popular | Medicamentos gratuitos/subsidiados |
-| `TSEE` | Tarifa Social | Desconto na conta de energia |
-| `DIGNIDADE_MENSTRUAL` | Dignidade Menstrual | Absorventes gratuitos |
+| `BOLSA_FAMILIA` | Bolsa Família | Transferência de renda para famílias em vulnerabilidade |
+| `CADUNICO` | CadÚnico | Cadastro Único para Programas Sociais (via Bolsa Família) |
+| `BPC` | BPC/LOAS | Benefício de Prestação Continuada (idosos 65+ e PcD) |
+| `FARMACIA_POPULAR` | Farmácia Popular | Medicamentos gratuitos ou subsidiados |
+| `TSEE` | Tarifa Social | Desconto na conta de energia elétrica |
+| `DIGNIDADE_MENSTRUAL` | Dignidade Menstrual | Absorventes gratuitos via Farmácia Popular |
+| `PIS_PASEP` | Cotas PIS/PASEP | Resgate de cotas do fundo PIS/PASEP (1971-1988) |
+
+### Campos Adicionais nas Respostas
+
+Além dos campos documentados, os endpoints de programa podem retornar:
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `municipalities_covered` | int | Número de municípios com dados |
+| `total_municipalities` | int | Total de municípios do Brasil (5.570) |
+| `coverage_percentage` | float | Percentual de cobertura municipal |
 
 ---
 
