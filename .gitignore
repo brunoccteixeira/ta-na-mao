@@ -35,3 +35,12 @@ Thumbs.db
 .gradle/
 *.iml
 local.properties
+
+# Claude Code (local)
+.claude/
+
+# Cursor IDE (local)
+.cursor/
+
+# Releases locais
+releases/
