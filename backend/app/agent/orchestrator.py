@@ -330,14 +330,32 @@ Se não souber algo específico, oriente a procurar o CRAS."""
         palavras_dinheiro_esquecido = [
             "dinheiro esquecido", "pis", "pasep", "valores a receber",
             "svr", "fgts", "saque-aniversário", "saque aniversario",
-            "conta antiga", "dinheiro parado", "repis"
+            "conta antiga", "dinheiro parado", "repis", "abono"
         ]
 
         if any(p in response_lower for p in palavras_dinheiro_esquecido):
-            # Mostrar opções de tipos de dinheiro esquecido
-            actions.append(Action.send_message("Ver PIS/PASEP", "como consultar meu PIS PASEP esquecido"))
-            actions.append(Action.send_message("Ver Valores a Receber", "como consultar valores a receber no banco central"))
-            actions.append(Action.send_message("Ver FGTS", "como consultar meu FGTS"))
+            # Detectar contexto específico
+            if "saque-aniversário" in response_lower or "saque aniversario" in response_lower:
+                actions.append(Action.send_message("Simular impacto", "quero simular se vale a pena o saque-aniversário"))
+                actions.append(Action.send_message("Quando posso sacar", "quando posso sacar meu saque-aniversário"))
+                actions.append(Action.send_message("Como cancelar", "como cancelo o saque-aniversário"))
+                return actions[:3]
+
+            if "abono" in response_lower or ("pis" in response_lower and "2026" in response_lower):
+                actions.append(Action.send_message("Verificar direito", "tenho direito ao abono PIS 2026"))
+                actions.append(Action.send_message("Quando recebo", "quando recebo meu PIS"))
+                actions.append(Action.send_message("Calcular valor", "quanto vou receber de PIS"))
+                return actions[:3]
+
+            if "1971" in response_lower or "1988" in response_lower or "antigo" in response_lower:
+                actions.append(Action.send_message("Ver passo a passo", "como consultar PIS PASEP antigo"))
+                actions.append(Action.send_message("Baixar app FGTS", "quero baixar o app FGTS"))
+                return actions[:2]
+
+            # Opções gerais de dinheiro esquecido
+            actions.append(Action.send_message("PIS/PASEP antigo", "como consultar PIS PASEP antigo de antes de 1988"))
+            actions.append(Action.send_message("Abono PIS 2026", "quando recebo meu abono PIS 2026"))
+            actions.append(Action.send_message("FGTS esquecido", "como ver meu FGTS de empregos antigos"))
             return actions[:3]
 
         # Detectar se está perguntando qual programa/ajuda verificar
@@ -353,11 +371,11 @@ Se não souber algo específico, oriente a procurar o CRAS."""
         ]
 
         if any(p in response_lower for p in perguntas_qual_programa):
-            # Mostrar opções de programas específicos
-            actions.append(Action.send_message("Dinheiro esquecido", "quero ver se tenho dinheiro esquecido"))
+            # Mostrar opções de programas específicos - DINHEIRO ESQUECIDO em primeiro!
+            actions.append(Action.send_message("Dinheiro esquecido", "quero ver se tenho dinheiro esquecido pra receber", primary=True))
+            actions.append(Action.send_message("Abono PIS 2026", "quando recebo meu abono PIS 2026"))
             actions.append(Action.send_message("Bolsa Família", "quero saber se tenho direito ao Bolsa Família"))
             actions.append(Action.send_message("Remédio de graça", "quero remédio de graça pelo Farmácia Popular"))
-            actions.append(Action.send_message("BPC/Idosos", "quero saber sobre BPC para idosos"))
             return actions[:4]  # Máximo 4 opções de programas
 
         # Prioridade: farmácia > CRAS (não misturar os dois)

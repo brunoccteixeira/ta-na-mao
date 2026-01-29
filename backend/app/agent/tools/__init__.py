@@ -32,6 +32,44 @@ from app.agent.tools.buscar_mutirao import (
     carregar_mutiroes,
 )
 
+# Tools de Dinheiro Esquecido
+from app.agent.tools.dinheiro_esquecido import (
+    consultar_dinheiro_esquecido,
+    guia_pis_pasep,
+    guia_svr,
+    guia_fgts,
+    verificar_dinheiro_por_perfil,
+    # Novas funcoes
+    iniciar_caca_ao_tesouro,
+    guia_passo_a_passo_pis_pasep_antigo,
+    guia_passo_a_passo_svr,
+    guia_passo_a_passo_fgts,
+    verificar_perfil_dinheiro_esquecido,
+    resumo_caca_ao_tesouro,
+)
+
+# Tools de PIS/PASEP Abono 2026
+from app.agent.tools.pis_pasep import (
+    verificar_elegibilidade_abono,
+    calcular_valor_abono,
+    consultar_calendario_pis,
+    mostrar_calendario_completo,
+    guia_como_sacar_pis,
+    consultar_abono_pis_pasep,
+)
+
+# Tools de FGTS
+from app.agent.tools.fgts import (
+    explicar_saque_aniversario,
+    simular_impacto_fgts,
+    consultar_calendario_saque_aniversario,
+    mostrar_tabela_saque_aniversario,
+    guia_aderir_saque_aniversario,
+    guia_cancelar_saque_aniversario,
+    consultar_fgts_geral,
+    ajudar_decidir_saque_aniversario,
+)
+
 __all__ = [
     # Tools existentes
     "validar_cpf",
@@ -68,4 +106,35 @@ __all__ = [
     "buscar_mutirao",
     "formatar_mutirao_texto",
     "carregar_mutiroes",
+
+    # Tools - Dinheiro Esquecido
+    "consultar_dinheiro_esquecido",
+    "guia_pis_pasep",
+    "guia_svr",
+    "guia_fgts",
+    "verificar_dinheiro_por_perfil",
+    "iniciar_caca_ao_tesouro",
+    "guia_passo_a_passo_pis_pasep_antigo",
+    "guia_passo_a_passo_svr",
+    "guia_passo_a_passo_fgts",
+    "verificar_perfil_dinheiro_esquecido",
+    "resumo_caca_ao_tesouro",
+
+    # Tools - PIS/PASEP Abono 2026
+    "verificar_elegibilidade_abono",
+    "calcular_valor_abono",
+    "consultar_calendario_pis",
+    "mostrar_calendario_completo",
+    "guia_como_sacar_pis",
+    "consultar_abono_pis_pasep",
+
+    # Tools - FGTS
+    "explicar_saque_aniversario",
+    "simular_impacto_fgts",
+    "consultar_calendario_saque_aniversario",
+    "mostrar_tabela_saque_aniversario",
+    "guia_aderir_saque_aniversario",
+    "guia_cancelar_saque_aniversario",
+    "consultar_fgts_geral",
+    "ajudar_decidir_saque_aniversario",
 ]
