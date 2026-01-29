@@ -1,0 +1,21 @@
+# This file should NOT be committed to version control.
+# Copy this file to local.properties and fill in your values.
+
+# SDK Location (Android Studio will set this automatically)
+# sdk.dir=/Users/YOUR_USER/Library/Android/sdk
+
+# API Configuration
+TANAMAO_API_URL=http://10.0.2.2:8000/api/v1/
+
+# Google Maps API Key (get from https://console.cloud.google.com)
+MAPS_API_KEY=YOUR_MAPS_API_KEY_HERE
+
+# OpenAI API Key (for AI assistant)
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY_HERE
+
+# Release Signing Configuration
+# Generate keystore: keytool -genkey -v -keystore tanamao-release.keystore -alias tanamao -keyalg RSA -keysize 2048 -validity 10000
+KEYSTORE_PATH=tanamao-release.keystore
+KEYSTORE_PASSWORD=YOUR_KEYSTORE_PASSWORD
+KEY_ALIAS=tanamao
+KEY_PASSWORD=YOUR_KEY_PASSWORD

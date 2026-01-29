@@ -16,6 +16,10 @@ API REST para consulta de dados de programas sociais brasileiros.
 | Aggregations | `/aggregations/` | Estatísticas agregadas |
 | Municipalities | `/municipalities/` | Dados municipais |
 | Geo | `/geo/` | GeoJSON para mapas |
+| Admin | `/admin/` | Painel administrativo (penetração, alertas, export) |
+| **Agent V2** | `/agent/v2/` | Chat conversacional com sub-agentes |
+| **Webhook** | `/webhook/whatsapp/` | Integração WhatsApp via Twilio |
+| **Nearby** | `/nearby/` | Farmácias e CRAS próximos (GPS/CEP) |
 
 ---
 
@@ -263,6 +267,314 @@ Retorna dados demográficos do CadÚnico.
 
 ---
 
+## Admin (Painel Administrativo)
+
+Endpoints para painel administrativo com visão detalhada de cobertura.
+
+### Taxa de Penetração
+
+```http
+GET /api/v1/admin/penetration
+```
+
+Retorna taxa de penetração por município com paginação e filtros avançados.
+
+**Parâmetros**:
+- `state_code` (opcional): Filtrar por estado (ex: SP, RJ)
+- `program` (opcional): Filtrar por programa
+- `min_population` (opcional): População mínima
+- `max_population` (opcional): População máxima
+- `min_coverage` (opcional): Cobertura mínima (0-100)
+- `max_coverage` (opcional): Cobertura máxima (0-100)
+- `order_by`: coverage | gap | population | value | name | beneficiaries (default: coverage)
+- `order_dir`: asc | desc (default: asc)
+- `limit`: 1-500 (default: 50)
+- `offset`: Paginação (default: 0)
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/admin/penetration?state_code=SP&order_by=gap&order_dir=desc&limit=25"
+```
+
+**Resposta**:
+```json
+{
+  "level": "penetration",
+  "total_count": 5570,
+  "page_size": 25,
+  "offset": 0,
+  "filters": {"state": "SP", "program": null},
+  "data": [
+    {
+      "ibge_code": "3550308",
+      "municipality": "São Paulo",
+      "state": "SP",
+      "region": "SE",
+      "population": 12300000,
+      "cadunico_families": 1500000,
+      "total_beneficiaries": 680000,
+      "total_families": 544000,
+      "total_value_brl": 8000000000.0,
+      "coverage_rate": 45.3,
+      "gap": 956000
+    }
+  ]
+}
+```
+
+### Alertas de Cobertura
+
+```http
+GET /api/v1/admin/alerts
+```
+
+Retorna municípios com baixa cobertura, categorizados por severidade.
+
+**Parâmetros**:
+- `threshold_critical`: Limite crítico em % (default: 20)
+- `threshold_warning`: Limite de alerta em % (default: 40)
+- `program` (opcional): Filtrar por programa
+- `state_code` (opcional): Filtrar por estado
+- `limit`: 1-200 (default: 50)
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/admin/alerts?threshold_critical=15&state_code=RJ"
+```
+
+**Resposta**:
+```json
+{
+  "summary": {
+    "critical_count": 127,
+    "warning_count": 340,
+    "thresholds": {"critical": 20, "warning": 40},
+    "biggest_gap": {"municipality": "São Paulo", "state": "SP", "gap": 956000}
+  },
+  "alerts": [
+    {
+      "type": "critical",
+      "ibge_code": "3550308",
+      "municipality": "São Paulo",
+      "state": "SP",
+      "population": 12300000,
+      "coverage_rate": 15.2,
+      "total_beneficiaries": 186960,
+      "message": "Cobertura de 15.2% - CRÍTICO"
+    }
+  ]
+}
+```
+
+### Exportar Dados
+
+```http
+GET /api/v1/admin/export
+```
+
+Exporta dados para download em CSV ou JSON.
+
+**Parâmetros**:
+- `format`: csv | json (default: csv)
+- `scope`: national | state (default: national)
+- `state_code` (opcional): Estado para scope=state
+- `program` (opcional): Filtrar por programa
+
+**Exemplo**:
+```bash
+# Exportar CSV de SP
+curl "http://localhost:8000/api/v1/admin/export?format=csv&scope=state&state_code=SP" -o export_sp.csv
+
+# Exportar JSON nacional
+curl "http://localhost:8000/api/v1/admin/export?format=json&scope=national"
+```
+
+**Resposta (JSON)**:
+```json
+{
+  "export_date": "2024-12-27T10:30:00",
+  "scope": "national",
+  "state": null,
+  "program": null,
+  "total_rows": 5570,
+  "data": [...]
+}
+```
+
+### Resumo Admin
+
+```http
+GET /api/v1/admin/summary
+```
+
+Retorna estatísticas rápidas para o dashboard administrativo.
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/admin/summary"
+```
+
+**Resposta**:
+```json
+{
+  "total_municipalities": 5570,
+  "total_states": 27,
+  "total_population": 212000000,
+  "total_beneficiaries": 85000000,
+  "total_value_brl": 42000000000.0,
+  "avg_coverage_rate": 67.5,
+  "critical_municipalities": 127,
+  "programs_tracked": 10
+}
+```
+
+---
+
+## Agente V2 (Chat Conversacional)
+
+O sistema de agente permite interação conversacional com cidadãos via chat ou WhatsApp.
+Utiliza arquitetura multi-agente com orquestrador e sub-agentes especializados.
+
+### Iniciar Sessão
+
+```http
+POST /api/v1/agent/v2/start
+```
+
+Inicia nova sessão de conversa e retorna mensagem de boas-vindas.
+
+**Request Body**:
+```json
+{
+  "session_id": "optional-custom-id"
+}
+```
+
+**Resposta**:
+```json
+{
+  "text": "Olá! Sou o Tá na Mão, seu assistente de benefícios sociais...",
+  "session_id": "abc123-def456",
+  "ui_components": [],
+  "suggested_actions": [
+    {"label": "Pedir remédios", "action_type": "send_message", "payload": "quero pedir remédios"},
+    {"label": "Ver benefícios", "action_type": "send_message", "payload": "quero ver meus benefícios"},
+    {"label": "Documentos necessários", "action_type": "send_message", "payload": "que documentos preciso"}
+  ],
+  "flow_state": null,
+  "tools_used": []
+}
+```
+
+### Enviar Mensagem
+
+```http
+POST /api/v1/agent/v2/chat
+```
+
+Processa mensagem do cidadão e retorna resposta estruturada (formato A2UI).
+
+**Request Body**:
+```json
+{
+  "message": "quero pedir remédios",
+  "session_id": "abc123-def456",
+  "image_base64": null,
+  "location": {
+    "latitude": -23.5505,
+    "longitude": -46.6333
+  }
+}
+```
+
+**Resposta**:
+```json
+{
+  "text": "Beleza! Para pedir remédios da Farmácia Popular, me manda uma FOTO da receita ou DIGITA o nome dos remédios.",
+  "session_id": "abc123-def456",
+  "ui_components": [
+    {
+      "type": "info_card",
+      "data": {
+        "title": "Farmácia Popular",
+        "description": "Medicamentos gratuitos ou com até 90% de desconto"
+      }
+    }
+  ],
+  "suggested_actions": [
+    {"label": "📷 Tirar foto da receita", "action_type": "camera", "payload": "prescription"},
+    {"label": "✍️ Digitar remédios", "action_type": "send_message", "payload": "digitar"}
+  ],
+  "flow_state": "pharmacy:receita",
+  "tools_used": []
+}
+```
+
+### Chat via WhatsApp (Webhook)
+
+```http
+POST /api/v1/webhook/whatsapp/chat
+```
+
+Recebe mensagens de cidadãos via Twilio WhatsApp e responde em formato TwiML.
+
+**Form Data** (enviado pelo Twilio):
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `From` | string | Número WhatsApp (ex: "whatsapp:+5511999998888") |
+| `Body` | string | Texto da mensagem |
+| `MediaUrl0` | string | URL de imagem anexada (se houver) |
+| `Latitude` | string | Latitude se enviou localização |
+| `Longitude` | string | Longitude se enviou localização |
+| `ProfileName` | string | Nome do perfil do usuário |
+
+**Resposta** (TwiML):
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Message>Olá! Para pedir remédios da Farmácia Popular, me manda uma FOTO da receita...</Message>
+</Response>
+```
+
+### Tipos de UI Components
+
+O campo `ui_components` pode conter:
+
+| Tipo | Descrição |
+|------|-----------|
+| `benefit_card` | Card de benefício com nome, status, valor estimado |
+| `checklist` | Lista de documentos necessários com checkboxes |
+| `pharmacy_card` | Card de farmácia com endereço, telefone, distância |
+| `medication_list` | Lista de medicamentos com preço e disponibilidade |
+| `order_status` | Status do pedido com etapas de progresso |
+| `map_location` | Localização no mapa (CRAS, farmácia) |
+| `info_card` | Card informativo genérico |
+
+### Tipos de Actions
+
+O campo `suggested_actions` contém botões sugeridos:
+
+| action_type | Descrição | payload |
+|-------------|-----------|---------|
+| `send_message` | Envia mensagem de texto | Texto a enviar |
+| `camera` | Abre câmera | Tipo de foto (ex: "prescription") |
+| `open_url` | Abre URL externa | URL completa |
+| `call_phone` | Liga para telefone | Número formatado |
+| `share` | Compartilha conteúdo | Dados a compartilhar |
+| `location` | Solicita localização | - |
+
+### Fluxos de Conversa
+
+O agente suporta três fluxos principais:
+
+| Fluxo | Sub-agente | Estados |
+|-------|------------|---------|
+| `pharmacy` | FarmaciaSubAgent | INICIO → RECEITA → MEDICAMENTOS → LOCALIZACAO → FARMACIA → CONFIRMACAO |
+| `benefit` | BeneficioSubAgent | INICIO → CONSULTA_CPF → RESULTADO → ORIENTACAO |
+| `docs` | DocumentacaoSubAgent | INICIO → PROGRAMA → CHECKLIST → LOCALIZACAO → CRAS |
+
+---
+
 ## Municípios
 
 ### Listar Municípios
@@ -455,6 +767,11 @@ Retorna coordenadas para `fitBounds()` do Leaflet.
 | `TSEE` | Tarifa Social | Desconto na conta de energia elétrica |
 | `DIGNIDADE_MENSTRUAL` | Dignidade Menstrual | Absorventes gratuitos via Farmácia Popular |
 | `PIS_PASEP` | Cotas PIS/PASEP | Resgate de cotas do fundo PIS/PASEP (1971-1988) |
+| `AUXILIO_GAS` | Auxílio Gás | Auxílio para compra de botijão de gás (bimestral) |
+| `SEGURO_DEFESO` | Seguro Defeso | Benefício para pescadores artesanais |
+| `AUXILIO_INCLUSAO` | Auxílio Inclusão | Meio salário mínimo para PcD que trabalha formalmente |
+| `GARANTIA_SAFRA` | Garantia-Safra | Benefício para agricultores do semiárido |
+| `PNAE` | PNAE | Programa Nacional de Alimentação Escolar |
 
 ### Campos Adicionais nas Respostas
 
@@ -477,6 +794,246 @@ Além dos campos documentados, os endpoints de programa podem retornar:
 | Centro-Oeste (CO) | DF, GO, MS, MT |
 | Sudeste (SE) | ES, MG, RJ, SP |
 | Sul (S) | PR, RS, SC |
+
+---
+
+## Serviços Próximos (Nearby)
+
+Endpoints para buscar farmácias e CRAS próximos ao cidadão usando GPS ou CEP.
+
+### Farmácias Próximas
+
+```http
+GET /api/v1/nearby/farmacias
+```
+
+Busca farmácias credenciadas no Farmácia Popular próximas ao cidadão.
+
+**Parâmetros**:
+- `latitude` (opcional): Latitude do usuário
+- `longitude` (opcional): Longitude do usuário
+- `cep` (opcional): CEP do usuário (alternativa às coordenadas)
+- `programa`: FARMACIA_POPULAR | DIGNIDADE_MENSTRUAL (default: FARMACIA_POPULAR)
+- `raio_metros`: Raio de busca em metros (default: 3000)
+- `limite`: Número máximo de farmácias (default: 5)
+
+**Exemplo**:
+```bash
+# Por GPS
+curl "http://localhost:8000/api/v1/nearby/farmacias?latitude=-23.5505&longitude=-46.6333&limite=5"
+
+# Por CEP
+curl "http://localhost:8000/api/v1/nearby/farmacias?cep=04010-100"
+```
+
+**Resposta**:
+```json
+{
+  "sucesso": true,
+  "encontrados": 3,
+  "locais": [
+    {
+      "nome": "Drogasil Vila Mariana",
+      "endereco": "Rua Domingos de Moraes, 1234",
+      "distancia": "850m",
+      "distancia_metros": 850,
+      "telefone": "(11) 3333-4444",
+      "horario": "07:00-22:00",
+      "aberto_agora": true,
+      "delivery": true,
+      "links": {
+        "maps": "https://maps.google.com/...",
+        "waze": "https://waze.com/...",
+        "whatsapp": "https://wa.me/..."
+      }
+    }
+  ],
+  "mensagem": null,
+  "redes_nacionais": ["Drogasil", "Droga Raia", "Pague Menos"]
+}
+```
+
+**IMPORTANTE**: Para Farmácia Popular, o cidadão vai **direto na farmácia** com receita e documentos. Não precisa ir ao CRAS.
+
+### CRAS Próximos
+
+```http
+GET /api/v1/nearby/cras
+```
+
+Busca CRAS (postos de assistência social) próximos ao cidadão.
+
+**Parâmetros**:
+- `latitude` (opcional): Latitude do usuário
+- `longitude` (opcional): Longitude do usuário
+- `cep` (opcional): CEP do usuário (alternativa às coordenadas)
+- `raio_metros`: Raio de busca em metros (default: 10000)
+- `limite`: Número máximo de CRAS (default: 3)
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/nearby/cras?latitude=-23.5505&longitude=-46.6333"
+```
+
+**O CRAS é o local para**:
+- Fazer ou atualizar CadÚnico
+- Solicitar Bolsa Família
+- Iniciar pedido de BPC/LOAS
+- Solicitar Tarifa Social de Energia
+
+---
+
+## Carta de Encaminhamento
+
+Endpoints para geração e validação de cartas de encaminhamento para CRAS.
+
+### Gerar Carta
+
+```http
+POST /api/v1/carta/gerar
+```
+
+Gera carta de encaminhamento com PDF e QR Code.
+
+**Request Body**:
+```json
+{
+  "cpf": "12345678900",
+  "nome": "Maria da Silva",
+  "data_nascimento": "1985-03-15",
+  "endereco": "Rua das Flores, 123",
+  "cep": "08471-000",
+  "telefone": "11999991234",
+  "composicao_familiar": [
+    {"nome": "Maria da Silva", "idade": 40, "parentesco": "Responsável"},
+    {"nome": "João da Silva", "idade": 42, "parentesco": "Cônjuge"},
+    {"nome": "Ana da Silva", "idade": 12, "parentesco": "Filha"}
+  ],
+  "renda_familiar": 800.00,
+  "beneficios_solicitados": ["BOLSA_FAMILIA", "TSEE"],
+  "documentos_conferidos": ["RG", "CPF", "COMPROVANTE_RESIDENCIA"],
+  "cras_destino": {
+    "nome": "CRAS Cidade Tiradentes I",
+    "endereco": "Rua Inácio Monteiro, 6.900",
+    "telefone": "(11) 2286-1234"
+  }
+}
+```
+
+**Resposta**:
+```json
+{
+  "sucesso": true,
+  "codigo_validacao": "TNM-2026-ABC123",
+  "validade": "2026-02-28",
+  "pdf_base64": "JVBERi0xLjQK...",
+  "pdf_url": "https://api.tanamao.app/carta/TNM-2026-ABC123/pdf",
+  "qr_code_base64": "iVBORw0KGgo...",
+  "link_validacao": "https://api.tanamao.app/carta/TNM-2026-ABC123"
+}
+```
+
+### Consultar Carta
+
+```http
+GET /api/v1/carta/{codigo}
+```
+
+Consulta dados de uma carta existente.
+
+**Parâmetros**:
+- `codigo`: Código de validação (ex: TNM-2026-ABC123)
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/carta/TNM-2026-ABC123"
+```
+
+**Resposta**:
+```json
+{
+  "codigo": "TNM-2026-ABC123",
+  "valida": true,
+  "criada_em": "2026-01-28T14:32:00",
+  "validade": "2026-02-28",
+  "cidadao": {
+    "nome": "Maria da Silva",
+    "cpf_masked": "***.456.789-**"
+  },
+  "beneficios_solicitados": ["BOLSA_FAMILIA", "TSEE"],
+  "cras_destino": "CRAS Cidade Tiradentes I"
+}
+```
+
+### Download PDF
+
+```http
+GET /api/v1/carta/{codigo}/pdf
+```
+
+Retorna o PDF da carta para download.
+
+**Parâmetros**:
+- `codigo`: Código de validação
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/carta/TNM-2026-ABC123/pdf" -o carta.pdf
+```
+
+**Resposta**: Arquivo PDF com `Content-Type: application/pdf`
+
+### Validar Carta (QR Code)
+
+```http
+POST /api/v1/carta/{codigo}/validar
+```
+
+Valida uma carta pelo QR Code (usado pelo atendente CRAS).
+
+**Parâmetros**:
+- `codigo`: Código de validação
+
+**Request Body** (opcional):
+```json
+{
+  "atendente_id": "12345",
+  "cras_codigo": "SP-CID-001"
+}
+```
+
+**Resposta**:
+```json
+{
+  "valida": true,
+  "status": "ATIVA",
+  "cidadao": {
+    "nome": "Maria da Silva",
+    "cpf_masked": "***.456.789-**",
+    "data_nascimento": "1985-03-15"
+  },
+  "composicao_familiar": [
+    {"nome": "Maria da Silva", "idade": 40, "parentesco": "Responsável"},
+    {"nome": "João da Silva", "idade": 42, "parentesco": "Cônjuge"}
+  ],
+  "renda_familiar": 800.00,
+  "renda_per_capita": 200.00,
+  "beneficios_solicitados": ["BOLSA_FAMILIA", "TSEE"],
+  "elegibilidade_estimada": {
+    "BOLSA_FAMILIA": {"elegivel": true, "motivo": "Renda per capita R$200 < R$218"},
+    "TSEE": {"elegivel": true, "motivo": "Inscrito no CadÚnico"}
+  },
+  "documentos_conferidos": ["RG", "CPF", "COMPROVANTE_RESIDENCIA"],
+  "documentos_faltantes": ["CERTIDAO_NASCIMENTO_FILHOS"],
+  "mensagem_atendente": "Carta válida. Verificar documentos faltantes antes de prosseguir."
+}
+```
+
+**Status possíveis**:
+- `ATIVA`: Carta válida e dentro do prazo
+- `EXPIRADA`: Carta fora do prazo de validade
+- `UTILIZADA`: Carta já foi utilizada em atendimento
+- `INVALIDA`: Código não encontrado
 
 ---
 

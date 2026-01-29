@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Encaminhamento - Ta na Mao</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 1.4;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #006B3F;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #006B3F;
+            font-size: 18pt;
+            margin-bottom: 5px;
+        }
+        .header .subtitle {
+            color: #666;
+            font-size: 10pt;
+        }
+        .codigo {
+            background: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 14pt;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .qr-container {
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .qr-container img {
+            border: 1px solid #ccc;
+        }
+        .qr-container small {
+            display: block;
+            margin-top: 5px;
+            font-size: 8pt;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 20px;
+            clear: both;
+        }
+        .section h2 {
+            color: #006B3F;
+            font-size: 12pt;
+            border-bottom: 1px solid #006B3F;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .field {
+            margin-bottom: 8px;
+        }
+        .field label {
+            font-weight: bold;
+            color: #333;
+        }
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .alert.priority {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .programs {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .programs ul {
+            margin-left: 20px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+            font-size: 9pt;
+            color: #666;
+            text-align: center;
+        }
+        .footer .validity {
+            font-weight: bold;
+            color: #333;
+        }
+        @media print {
+            body { padding: 10px; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CARTA DE ENCAMINHAMENTO</h1>
+        <div class="subtitle">Sistema Ta na Mao - Acesso a Beneficios Sociais</div>
+    </div>
+
+    <div class="codigo">
+        CODIGO: 167B5A10
+    </div>
+
+    <div class="qr-container">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TANAMAO:167B5A10%7CJoão%20da%20Silva%7CSão%20Paulo" alt="QR Code de Validacao" width="120" height="120">
+        <small>Validacao</small>
+    </div>
+
+    <div class="alert priority"><strong>PESSOA EM SITUACAO DE RUA - Atendimento prioritario</strong></div>
+
+    <div class="section">
+        <h2>DADOS DO CIDADAO</h2>
+        <div class="field"><label>Nome:</label> João da Silva</div>
+        <div class="field"><label>Idade:</label> 35 anos</div>
+        <div class="field"><label>Municipio/UF:</label> São Paulo/SP</div>
+        <div class="field"><label>Endereco/Referencia:</label> Praça da Sé, Centro</div>
+        <div class="field"><label>Situacao de Moradia:</label> Situacao de Rua</div>
+    </div>
+
+    <div class="section">
+        <h2>COMPOSICAO FAMILIAR</h2>
+        <div class="field"><label>Pessoas na familia:</label> 1</div>
+        <div class="field"><label>Renda familiar total:</label> R$ 200.00</div>
+        <div class="field"><label>Renda per capita:</label> R$ 200.00</div>
+        <div class="field"><label>Criancas:</label> Nao</div>
+        <div class="field"><label>Idosos (65+):</label> Nao</div>
+        <div class="field"><label>Pessoa com Deficiencia:</label> Nao</div>
+        <div class="field"><label>Gestante:</label> Nao</div>
+    </div>
+
+    <div class="section">
+        <h2>DOCUMENTOS QUE POSSUI</h2>
+        <ul>
+            <li>Certidão de Nascimento (na cidade natal)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>PROGRAMAS PARA VERIFICAR ELEGIBILIDADE</h2>
+        <div class="programs">
+            <ul>
+                <li>Bolsa Família (estimado R$ 600.00)</li><li>Tarifa Social de Energia</li><li>Farmácia Popular</li><li>Auxílio Gás (estimado R$ 104.00)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CRAS INDICADO</h2>
+        <div class="field"><label>Nome:</label> CRAS República</div>
+        <div class="field"><label>Endereco:</label> Rua do Arouche, 24 - República, São Paulo</div>
+    </div>
+
+    <div class="alert">
+        <strong>ORIENTACOES PARA O CIDADAO:</strong><br>
+        1. Leve esta carta impressa ou mostre no celular ao CRAS<br>
+        2. Leve os documentos que possui (mesmo que incompletos)<br>
+        3. O CRAS pode ajudar a tirar documentos faltantes<br>
+        4. Pergunte sobre os proximos mutiroes de documentacao (Registre-se!)
+    </div>
+
+    <div class="footer">
+        <p>Carta gerada em: 15/01/2026 as 23:47</p>
+        <p class="validity">Validade: 30 dias a partir da emissao</p>
+        <p>Sistema Ta na Mao - Facilitando o acesso a direitos sociais</p>
+        <p><small>Esta carta nao garante a concessao de beneficios. A elegibilidade sera verificada pelo CRAS.</small></p>
+    </div>
+</body>
+</html>

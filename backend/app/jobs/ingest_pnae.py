@@ -9,17 +9,14 @@ for school meals in public schools. Municipalities must spend at least
 """
 
 import asyncio
-import csv
-import os
 from datetime import date
 from decimal import Decimal
-from typing import Dict, Optional, List
+from typing import Dict, List
 import logging
 from collections import defaultdict
 
 import httpx
 from sqlalchemy.orm import Session
-from sqlalchemy import func
 
 from app.database import SessionLocal
 from app.models import Municipality, Program, BeneficiaryData, State

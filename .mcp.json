@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "mcpServers": {
+    "brasil-api": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@mauricio-cantu/brasil-api-mcp"],
+      "description": "APIs brasileiras: CEP, CPF, CNPJ, bancos, feriados, DDD"
+    },
+    "pdf-ocr": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-pdf"],
+      "description": "OCR de documentos e receitas médicas"
+    },
+    "google-maps": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-google-maps"],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "${GOOGLE_MAPS_API_KEY}"
+      },
+      "description": "Geocoding, Places, Directions para busca de farmácias e CRAS"
+    },
+    "twilio": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-twilio", "--services", "messaging,voice"],
+      "env": {
+        "TWILIO_ACCOUNT_SID": "${TWILIO_ACCOUNT_SID}",
+        "TWILIO_API_KEY": "${TWILIO_API_KEY}",
+        "TWILIO_API_SECRET": "${TWILIO_API_SECRET}"
+      },
+      "description": "SMS, WhatsApp e Voice via Twilio"
+    },
+    "redis": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@redis/mcp"],
+      "env": {
+        "REDIS_URL": "${REDIS_URL}"
+      },
+      "description": "Cache e gerenciamento de sessões"
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "description": "Automação de portais Gov.br quando API indisponível"
+    },
+    "chroma-rag": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-chroma"],
+      "env": {
+        "CHROMA_PERSIST_DIRECTORY": "./data/chroma"
+      },
+      "description": "Base de conhecimento vetorial para documentação de benefícios"
+    }
+  },
+  "mcpTools": {
+    "brasil-api": {
+      "enabled": true,
+      "tools": [
+        "cep-lookup",
+        "cnpj-lookup",
+        "ddd-lookup",
+        "get-banks",
+        "get-holidays"
+      ]
+    },
+    "google-maps": {
+      "enabled": true,
+      "tools": [
+        "search_nearby",
+        "get_place_details",
+        "maps_geocode",
+        "maps_reverse_geocode",
+        "maps_distance_matrix",
+        "maps_directions"
+      ]
+    },
+    "pdf-ocr": {
+      "enabled": true,
+      "tools": [
+        "extract_text",
+        "extract_images",
+        "ocr_image"
+      ]
+    },
+    "twilio": {
+      "enabled": true,
+      "tools": [
+        "send_sms",
+        "send_whatsapp",
+        "make_call",
+        "get_call_status"
+      ]
+    }
+  },
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(**/*credentials*)",
+      "Read(**/*password*)",
+      "Read(**/*token*)"
+    ]
+  },
+  "settings": {
+    "debug": false,
+    "logLevel": "info",
+    "timeout": 30000
+  }
+}

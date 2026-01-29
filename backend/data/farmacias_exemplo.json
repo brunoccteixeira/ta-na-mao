@@ -1,0 +1,255 @@
+{
+  "_info": {
+    "descricao": "Base de exemplo de farmacias credenciadas no Farmacia Popular",
+    "fonte": "Portal gov.br/farmacia-popular",
+    "ultima_atualizacao": "2024-12",
+    "cobertura": "Sao Paulo Capital - Exemplo para MVP",
+    "nota": "Redes como Drogasil, Droga Raia, Pague Menos, Drogaria Sao Paulo sao credenciadas em todo Brasil"
+  },
+  "redes_nacionais": [
+    {
+      "nome": "Drogasil",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "site_localizador": "https://www.drogasil.com.br/lojas",
+      "whatsapp_central": "5511940071515"
+    },
+    {
+      "nome": "Droga Raia",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "site_localizador": "https://www.drogaraia.com.br/lojas",
+      "whatsapp_central": "5511940071515"
+    },
+    {
+      "nome": "Pague Menos",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "site_localizador": "https://www.pfrfrm.com.br",
+      "whatsapp_central": "558530519000"
+    },
+    {
+      "nome": "Drogaria Sao Paulo",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "site_localizador": "https://www.drogariasaopaulo.com.br/lojas",
+      "whatsapp_central": "551130039090"
+    },
+    {
+      "nome": "Ultrafarma",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR"],
+      "site_localizador": "https://www.ultrafarma.com.br/lojas",
+      "whatsapp_central": "5511945454545"
+    },
+    {
+      "nome": "Panvel",
+      "credenciada": true,
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "site_localizador": "https://www.panvel.com/lojas",
+      "whatsapp_central": "555130269000"
+    }
+  ],
+  "farmacias": [
+    {
+      "id": "dsp_paulista_1",
+      "nome": "Drogaria Sao Paulo - Paulista",
+      "rede": "Drogaria Sao Paulo",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Bela Vista",
+      "endereco": "Av. Paulista, 1500",
+      "cep": "01310-100",
+      "telefone": "(11) 3145-0000",
+      "whatsapp": "5511931450000",
+      "horario": "Seg-Dom 7h-22h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.5623,
+        "lng": -46.6565
+      }
+    },
+    {
+      "id": "drogasil_vm_1",
+      "nome": "Drogasil - Vila Mariana",
+      "rede": "Drogasil",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Vila Mariana",
+      "endereco": "Rua Domingos de Morais, 800",
+      "cep": "04010-100",
+      "telefone": "(11) 5573-2000",
+      "whatsapp": "5511955732000",
+      "horario": "Seg-Sab 7h-22h, Dom 8h-20h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.5875,
+        "lng": -46.6380
+      }
+    },
+    {
+      "id": "raia_moema_1",
+      "nome": "Droga Raia - Moema",
+      "rede": "Droga Raia",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Moema",
+      "endereco": "Av. Moaci, 350",
+      "cep": "04083-000",
+      "telefone": "(11) 5052-3000",
+      "whatsapp": "5511950523000",
+      "horario": "Seg-Dom 7h-22h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.6012,
+        "lng": -46.6652
+      }
+    },
+    {
+      "id": "pm_centro_1",
+      "nome": "Pague Menos - Centro SP",
+      "rede": "Pague Menos",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Direita, 200",
+      "cep": "01002-000",
+      "telefone": "(11) 3101-4000",
+      "whatsapp": "5511931014000",
+      "horario": "Seg-Sex 7h-21h, Sab 8h-18h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": false,
+      "coordenadas": {
+        "lat": -23.5451,
+        "lng": -46.6337
+      }
+    },
+    {
+      "id": "drogasil_santana_1",
+      "nome": "Drogasil - Santana",
+      "rede": "Drogasil",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Santana",
+      "endereco": "Av. Braz Leme, 1200",
+      "cep": "02022-010",
+      "telefone": "(11) 2973-5000",
+      "whatsapp": "5511929735000",
+      "horario": "Seg-Sab 7h-22h, Dom 8h-20h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.5102,
+        "lng": -46.6289
+      }
+    },
+    {
+      "id": "ultrafarma_se_1",
+      "nome": "Ultrafarma - Se",
+      "rede": "Ultrafarma",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Se",
+      "endereco": "Rua Sao Bento, 500",
+      "cep": "01010-001",
+      "telefone": "(11) 3104-6000",
+      "whatsapp": "5511931046000",
+      "horario": "Seg-Sex 8h-19h",
+      "programas": ["FARMACIA_POPULAR"],
+      "delivery": false,
+      "coordenadas": {
+        "lat": -23.5461,
+        "lng": -46.6350
+      }
+    },
+    {
+      "id": "dsp_ipiranga_1",
+      "nome": "Drogaria Sao Paulo - Ipiranga",
+      "rede": "Drogaria Sao Paulo",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Ipiranga",
+      "endereco": "Av. Nazare, 1200",
+      "cep": "04262-100",
+      "telefone": "(11) 2273-7000",
+      "whatsapp": "5511922737000",
+      "horario": "Seg-Dom 7h-22h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.5889,
+        "lng": -46.6012
+      }
+    },
+    {
+      "id": "raia_tatuape_1",
+      "nome": "Droga Raia - Tatuape",
+      "rede": "Droga Raia",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Tatuape",
+      "endereco": "Rua Tuiuti, 800",
+      "cep": "03081-000",
+      "telefone": "(11) 2671-8000",
+      "whatsapp": "5511926718000",
+      "horario": "Seg-Dom 7h-22h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -23.5367,
+        "lng": -46.5763
+      }
+    },
+    {
+      "id": "pm_guarulhos_1",
+      "nome": "Pague Menos - Guarulhos",
+      "rede": "Pague Menos",
+      "ibge_code": "3518800",
+      "cidade": "Guarulhos",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Dom Pedro II, 300",
+      "cep": "07011-000",
+      "telefone": "(11) 2408-9000",
+      "whatsapp": "5511924089000",
+      "horario": "Seg-Sex 7h-21h, Sab 8h-18h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": false,
+      "coordenadas": {
+        "lat": -23.4612,
+        "lng": -46.5298
+      }
+    },
+    {
+      "id": "drogasil_campinas_1",
+      "nome": "Drogasil - Campinas Centro",
+      "rede": "Drogasil",
+      "ibge_code": "3509502",
+      "cidade": "Campinas",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Barao de Jaguara, 1000",
+      "cep": "13015-001",
+      "telefone": "(19) 3232-1000",
+      "whatsapp": "5519932321000",
+      "horario": "Seg-Sab 7h-22h, Dom 8h-20h",
+      "programas": ["FARMACIA_POPULAR", "DIGNIDADE_MENSTRUAL"],
+      "delivery": true,
+      "coordenadas": {
+        "lat": -22.9035,
+        "lng": -47.0573
+      }
+    }
+  ]
+}

@@ -16,6 +16,7 @@ Este documento descreve as fontes de dados utilizadas pelo sistema Tá na Mão.
 | **Seguro Defeso** | Portal da Transparência | portaldatransparencia.gov.br | CSV/ZIP | Mensal |
 | **Auxílio Inclusão** | Portal da Transparência | portaldatransparencia.gov.br | CSV/ZIP | Mensal |
 | **Garantia-Safra** | Portal da Transparência | portaldatransparencia.gov.br | CSV/ZIP | Anual (safra) |
+| **PNAE** | FNDE OData API | fnde.gov.br/olinda-ide | JSON/OData | Anual |
 
 ---
 
@@ -326,6 +327,54 @@ Benefício de R$ 1.200 para agricultores familiares do semiárido que perdem saf
 
 ### Nota
 O Garantia-Safra é pago quando há perda de pelo menos 50% da safra por seca ou excesso hídrico. Os dados variam conforme condições climáticas de cada ano.
+
+---
+
+## PNAE - Programa Nacional de Alimentação Escolar ⭐ NOVO
+
+### Descrição
+Programa que fornece recursos federais para alimentação escolar em escolas públicas. Municípios devem gastar pelo menos 30% dos recursos comprando da agricultura familiar.
+
+### Fonte
+- **FNDE** - Fundo Nacional de Desenvolvimento da Educação
+- **API OData**: https://www.fnde.gov.br/olinda-ide/servico/PNAE_Recursos_Repassados_Pck_3/versao/v1/odata
+
+### Dados Disponíveis
+- Valores repassados por município
+- Modalidades de ensino (fundamental, infantil, EJA, quilombola, indígena)
+- Esfera de governo (municipal, estadual)
+- Períodos: 2015 até atual
+
+### URL da API
+```
+https://www.fnde.gov.br/olinda-ide/servico/PNAE_Recursos_Repassados_Pck_3/versao/v1/odata/RecursosRepassados?$filter=Ano eq '2024'&$format=json
+```
+
+### Estrutura da Resposta API
+```json
+{
+  "value": [
+    {
+      "Ano": "2024",
+      "Estado": "SP",
+      "Municipio": "SAO PAULO",
+      "Esfera_governo": "MUNICIPAL",
+      "Modalidade_ensino": "ENSINO FUNDAMENTAL",
+      "Vl_total_escolas": "45.678.901,23"
+    }
+  ]
+}
+```
+
+### Verificação de Consistência
+- **Dados oficiais (FNDE)**: ~R$ 5 bilhões/ano
+- **Beneficiários estimados**: ~40 milhões de estudantes
+- **Frequência**: Anual (repasses acumulados)
+- **Script**: `ingest_pnae.py`
+- **Status**: ✅ Implementado
+
+### Nota
+A estimativa de beneficiários é calculada com base no valor repassado dividido pelo valor médio per capita anual (~R$ 100/estudante). Os dados são anuais e o script filtra apenas registros de esfera MUNICIPAL.
 
 ---
 

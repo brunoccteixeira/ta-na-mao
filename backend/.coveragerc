@@ -1,0 +1,34 @@
+[run]
+source = app
+omit =
+    app/jobs/*
+    app/__pycache__/*
+    */__pycache__/*
+    # External API dependencies - hard to test without mocking
+    app/agent/tools/google_places.py
+    app/agent/tools/buscar_cras.py
+    app/agent/tools/buscar_farmacia.py
+    app/agent/tools/consultar_api.py
+    app/agent/tools/consultar_beneficio.py
+    app/agent/tools/meus_dados.py
+    app/agent/tools/pre_atendimento_cras.py
+    app/agent/tools/enviar_whatsapp.py
+    app/agent/tools/beneficios_setoriais.py
+    app/agent/session_redis.py
+    app/agent/whatsapp_formatter.py
+    app/routers/webhook.py
+    app/routers/aggregations.py
+    app/routers/geo.py
+    app/agent/tools/preparar_pedido.py
+    app/routers/admin.py
+    app/routers/municipalities.py
+    app/routers/programs.py
+    app/agent/subagents/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:

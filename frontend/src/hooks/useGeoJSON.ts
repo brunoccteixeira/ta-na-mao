@@ -102,9 +102,10 @@ export function getMetricColor(
       return getCoverageColor(properties.coverage);
     case 'beneficiaries':
       return getBeneficiariesColor(properties.beneficiaries, maxValues?.beneficiaries);
-    case 'gap':
+    case 'gap': {
       const gap = (properties.cadunico_families || 0) - (properties.beneficiaries || 0);
       return getGapColor(gap, maxValues?.gap);
+    }
     case 'value':
       return getValueColor(properties.total_value_brl, maxValues?.value);
     default:

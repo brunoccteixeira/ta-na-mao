@@ -1,0 +1,180 @@
+{
+  "_info": {
+    "descricao": "Base de exemplo de CRAS - Centro de Referencia de Assistencia Social",
+    "fonte": "Cadastro SUAS/MDS",
+    "ultima_atualizacao": "2024-12",
+    "cobertura": "Sao Paulo Capital - Exemplo para MVP"
+  },
+  "cras": [
+    {
+      "id": "sp_vila_mariana",
+      "nome": "CRAS Vila Mariana",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Vila Mariana",
+      "endereco": "Rua Domingos de Morais, 1000",
+      "cep": "04010-100",
+      "telefone": "(11) 5573-1515",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "CRAS Volante"],
+      "coordenadas": {
+        "lat": -23.5889,
+        "lng": -46.6388
+      }
+    },
+    {
+      "id": "sp_jabaquara",
+      "nome": "CRAS Jabaquara",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Jabaquara",
+      "endereco": "Av. Engenheiro Armando de Arruda Pereira, 2314",
+      "cep": "04309-000",
+      "telefone": "(11) 5011-2233",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Acolhimento Familiar"],
+      "coordenadas": {
+        "lat": -23.6248,
+        "lng": -46.6421
+      }
+    },
+    {
+      "id": "sp_ipiranga",
+      "nome": "CRAS Ipiranga",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Ipiranga",
+      "endereco": "Rua Silva Bueno, 1542",
+      "cep": "04208-001",
+      "telefone": "(11) 2061-5544",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Servico de Convivencia"],
+      "coordenadas": {
+        "lat": -23.5901,
+        "lng": -46.6091
+      }
+    },
+    {
+      "id": "sp_mooca",
+      "nome": "CRAS Mooca",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Mooca",
+      "endereco": "Rua da Mooca, 1920",
+      "cep": "03104-002",
+      "telefone": "(11) 2605-7788",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
+      "coordenadas": {
+        "lat": -23.5567,
+        "lng": -46.5992
+      }
+    },
+    {
+      "id": "sp_santo_amaro",
+      "nome": "CRAS Santo Amaro",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Santo Amaro",
+      "endereco": "Av. Adolfo Pinheiro, 2200",
+      "cep": "04734-003",
+      "telefone": "(11) 5522-3344",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Tarifa Social"],
+      "coordenadas": {
+        "lat": -23.6543,
+        "lng": -46.7012
+      }
+    },
+    {
+      "id": "sp_pinheiros",
+      "nome": "CRAS Pinheiros",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Pinheiros",
+      "endereco": "Rua Cardeal Arcoverde, 1749",
+      "cep": "05407-002",
+      "telefone": "(11) 3085-6677",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
+      "coordenadas": {
+        "lat": -23.5619,
+        "lng": -46.6899
+      }
+    },
+    {
+      "id": "sp_lapa",
+      "nome": "CRAS Lapa",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Lapa",
+      "endereco": "Rua Guaicurus, 1000",
+      "cep": "05033-002",
+      "telefone": "(11) 3831-9900",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
+      "coordenadas": {
+        "lat": -23.5267,
+        "lng": -46.7012
+      }
+    },
+    {
+      "id": "sp_se",
+      "nome": "CRAS Se",
+      "ibge_code": "3550308",
+      "cidade": "Sao Paulo",
+      "uf": "SP",
+      "bairro": "Se",
+      "endereco": "Rua General Couto de Magalhaes, 215",
+      "cep": "01212-030",
+      "telefone": "(11) 3326-8811",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Populacao em Situacao de Rua"],
+      "coordenadas": {
+        "lat": -23.5379,
+        "lng": -46.6404
+      }
+    },
+    {
+      "id": "guarulhos_centro",
+      "nome": "CRAS Centro Guarulhos",
+      "ibge_code": "3518800",
+      "cidade": "Guarulhos",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Antonio Bardella, 200",
+      "cep": "07010-130",
+      "telefone": "(11) 2408-5500",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
+      "coordenadas": {
+        "lat": -23.4626,
+        "lng": -46.5322
+      }
+    },
+    {
+      "id": "campinas_centro",
+      "nome": "CRAS Centro Campinas",
+      "ibge_code": "3509502",
+      "cidade": "Campinas",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Ferreira Penteado, 1331",
+      "cep": "13010-041",
+      "telefone": "(19) 3236-7700",
+      "horario": "Seg-Sex 8h-17h",
+      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
+      "coordenadas": {
+        "lat": -22.9064,
+        "lng": -47.0616
+      }
+    }
+  ]
+}

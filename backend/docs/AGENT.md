@@ -462,16 +462,22 @@ Lista em `data/medicamentos_farmacia_popular.json`:
 app/agent/
 ├── agent.py              # Classe TaNaMaoAgent (13 tools)
 ├── prompts.py            # System prompt e exemplos
+├── mcp/                  # MCP Wrappers (Model Context Protocol)
+│   ├── __init__.py       # Exports: init_mcp, mcp_manager, wrappers
+│   ├── base.py           # MCPClient, MCPManager, init_mcp
+│   ├── brasil_api.py     # BrasilAPIMCP (CEP, CNPJ, DDD)
+│   ├── google_maps.py    # GoogleMapsMCP (Places, Geocoding)
+│   └── pdf_ocr.py        # PDFOcrMCP (OCR de receitas)
 └── tools/
     ├── validar_cpf.py
-    ├── buscar_cep.py
+    ├── buscar_cep.py         # MCP: BrasilAPIMCP + Fallback: ViaCEP
     ├── consultar_api.py
     ├── checklist.py
     ├── buscar_cras.py
-    ├── buscar_farmacia.py
-    ├── processar_receita.py   # Gemini Vision
-    ├── enviar_whatsapp.py     # Twilio
-    ├── preparar_pedido.py     # Orquestração
+    ├── buscar_farmacia.py    # MCP: GoogleMapsMCP + Fallback: Google Places
+    ├── processar_receita.py  # MCP: PDFOcrMCP + Fallback: Gemini Vision
+    ├── enviar_whatsapp.py    # Twilio
+    ├── preparar_pedido.py    # Orquestração
     └── consultar_beneficio.py # Consulta por CPF (Sprint 5)
 
 app/routers/
@@ -494,6 +500,54 @@ data/
 ├── cras_exemplo.json
 └── farmacias_exemplo.json
 ```
+
+---
+
+## Integração MCP (Model Context Protocol)
+
+O agente utiliza MCPs para integração padronizada com serviços externos.
+
+### Tools com MCP
+
+| Tool | MCP Primário | Fallback | Descrição |
+|------|--------------|----------|-----------|
+| `buscar_cep` | BrasilAPIMCP | ViaCEP HTTP | Busca endereço por CEP |
+| `buscar_farmacia` | GoogleMapsMCP | Google Places API | Busca farmácias próximas |
+| `processar_receita` | PDFOcrMCP | Gemini Vision | OCR de receitas médicas |
+
+### Como Funciona
+
+1. **Startup**: MCPs são inicializados em `main.py` via `init_mcp()`
+2. **Tool Call**: Cada tool tenta usar o MCP primeiro
+3. **Fallback**: Se MCP falhar, usa API direta (HTTP)
+
+### Configuração
+
+```bash
+# .env
+MCP_ENABLED=true          # Ativar/desativar MCPs
+MCP_CONFIG_PATH=.mcp.json # Arquivo de configuração
+MCP_TIMEOUT=30000         # Timeout em ms
+```
+
+### Exemplo de Uso em Tool
+
+```python
+from app.agent.mcp import mcp_manager, BrasilAPIMCP
+
+async def buscar_cep(cep: str) -> dict:
+    # Tenta MCP primeiro
+    wrapper = mcp_manager.get_wrapper("brasil-api")
+    if wrapper and isinstance(wrapper, BrasilAPIMCP):
+        resultado = await wrapper.buscar_cep(cep)
+        if resultado:
+            return resultado.to_dict()
+
+    # Fallback para API direta
+    return await _buscar_cep_viacep(cep)
+```
+
+Veja [MCP_SETUP.md](../../docs/MCP_SETUP.md) para documentação completa.
 
 ---
 
@@ -710,11 +764,810 @@ python -m app.jobs.indexar_beneficiarios all 2024 10
 
 ---
 
-## Próximos Passos (Sprint 7+)
+## Sprint 7: Arquitetura V2 - Orchestrator + Sub-agents
 
-- [ ] Integração Rappi Farmácia (delivery)
-- [ ] Integração iFood Farmácia
-- [ ] Tracking em tempo real
-- [ ] Notificações proativas
+### Nova Arquitetura
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    ORQUESTRADOR PRINCIPAL                    │
+│         (Classifica intenção, roteia para sub-agente)       │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────────┐
+│  SUB-AGENT    │    │  SUB-AGENT    │    │    SUB-AGENT      │
+│  Benefícios   │    │   Farmácia    │    │  Documentação     │
+│               │    │               │    │                   │
+│ - consultar   │    │ - processar   │    │ - gerar_checklist │
+│ - verificar   │    │   receita     │    │ - buscar_cras     │
+│ - elegibilid. │    │ - preparar    │    │ - orientar        │
+└───────────────┘    └───────────────┘    └───────────────────┘
+```
+
+### Formato A2UI (Agent-to-User Interface)
+
+Respostas estruturadas com componentes renderizáveis:
+
+```json
+{
+  "text": "Encontrei 3 farmácias perto de você!",
+  "ui_components": [
+    {
+      "type": "pharmacy_card",
+      "data": {
+        "name": "Drogasil Vila Mariana",
+        "address": "Rua X, 123",
+        "distance": "850m"
+      }
+    }
+  ],
+  "suggested_actions": [
+    {"label": "Enviar pedido", "action_type": "send_message", "payload": "enviar para farmácia 1"}
+  ]
+}
+```
+
+### Endpoints V2
+
+#### POST /api/v1/agent/v2/start
+
+Inicia conversa com resposta A2UI.
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/agent/v2/start"
+```
+
+#### POST /api/v1/agent/v2/chat
+
+Chat com resposta estruturada.
+
+```json
+{
+  "message": "quero remédios",
+  "session_id": "abc123",
+  "location": {
+    "latitude": -23.5505,
+    "longitude": -46.6333,
+    "accuracy": 10
+  }
+}
+```
+
+**Response**:
+```json
+{
+  "text": "Manda uma foto da receita ou digita o nome dos remédios",
+  "session_id": "abc123",
+  "ui_components": [],
+  "suggested_actions": [
+    {"label": "Tirar foto", "action_type": "camera", "payload": "prescription"},
+    {"label": "Digitar", "action_type": "send_message", "payload": "digitar nome"}
+  ],
+  "flow_state": "pharmacy:receita",
+  "tools_used": []
+}
+```
+
+### WhatsApp Chat (Novo!)
+
+#### POST /api/v1/webhook/whatsapp/chat
+
+Endpoint para cidadãos conversarem via WhatsApp com o agente.
+
+**Fluxo**:
+1. Cidadão envia mensagem no WhatsApp
+2. Twilio envia para nosso webhook
+3. Orchestrator processa
+4. Resposta A2UI é convertida para texto WhatsApp
+5. TwiML é retornado para Twilio
+
+**Request (Twilio)**:
+```
+POST /api/v1/webhook/whatsapp/chat
+Content-Type: application/x-www-form-urlencoded
+
+From=whatsapp:+5511999999999
+Body=quero pedir remédios
+ProfileName=Maria Silva
+Latitude=-23.5505
+Longitude=-46.6333
+```
+
+**Response (TwiML)**:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Message>Manda uma foto da receita ou digita o nome dos remédios...
+
+*O que você quer fazer?*
+1. Tirar foto
+2. Digitar nome
+
+_Digite o número ou o que você quer fazer_</Message>
+</Response>
+```
+
+### Session Management
+
+#### In-Memory (Desenvolvimento)
+```python
+from app.agent.context import session_manager
+
+# Obtém ou cria sessão
+context = session_manager.get_or_create("session-id")
+
+# Reseta sessão
+session_manager.reset("session-id")
+```
+
+#### Redis (Produção)
+
+Sessões são automaticamente persistidas no Redis quando `ENVIRONMENT=production`.
+
+```python
+# Configuração em .env
+ENVIRONMENT=production
+REDIS_URL=redis://localhost:6379/0
+```
+
+**Características**:
+- TTL de 24 horas
+- Serialização automática via Pydantic
+- Fallback para memória se Redis falhar
+
+### Estrutura de Arquivos V2
+
+```
+app/agent/
+├── orchestrator.py          # Orquestrador principal
+├── intent_classifier.py     # Classificação de intenção
+├── context.py               # Contexto e SessionManager
+├── session_redis.py         # Redis SessionManager
+├── response_types.py        # Types A2UI
+├── whatsapp_formatter.py    # Converte A2UI → TwiML
+└── subagents/
+    ├── __init__.py
+    ├── farmacia_agent.py    # Fluxo de medicamentos
+    ├── beneficio_agent.py   # Consulta de benefícios
+    └── documentacao_agent.py # Checklist + CRAS
+```
+
+### Geolocalização
+
+O sistema suporta geolocalização para:
+- Buscar farmácias próximas (Google Places API)
+- Buscar CRAS próximos
+- Calcular distâncias
+
+**Frontend**: Hook `useGeolocation` captura GPS do browser
+**Backend**: `CitizenProfile.update_from_geolocation()` armazena
+
+### Testes
+
+```bash
+# Rodar todos os testes
+pytest backend/tests/
+
+# Testes de sub-agents
+pytest backend/tests/test_subagents.py -v
+
+# Testes do orchestrator
+pytest backend/tests/test_orchestrator.py -v
+```
+
+---
+
+## Sprint 8: Acessibilidade e Linguagem Simples
+
+### Público-Alvo
+
+O app é para **cidadãos de baixa renda e baixa escolaridade**. Toda interface usa linguagem simples.
+
+### Glossário de Substituições
+
+| Termo Técnico | Linguagem Simples |
+|---------------|-------------------|
+| Verificar elegibilidade | Tenho direito? / Posso receber? |
+| CRAS | Posto de assistência social |
+| BPC/LOAS | Ajuda para idosos e pessoas com deficiência |
+| CadÚnico | Cadastro do governo para receber ajudas |
+| TSEE | Desconto na conta de luz |
+| Renda per capita | Dinheiro que cada pessoa da casa ganha |
+| PCD | Pessoa com deficiência |
+| Laudo médico | Papel do médico |
+| Farmácia credenciada | Farmácia que dá remédio de graça |
+
+### Botões Contextuais
+
+O orchestrator agora adapta os botões sugeridos baseado no contexto:
+
+**Após "Tenho direito?"**:
+- Bolsa Família
+- Remédio de graça (Farmácia Popular)
+- Ajuda para idosos (BPC)
+- Desconto na luz (Tarifa Social)
+
+**Durante fluxo Farmácia Popular**:
+- Encontrar Farmácia (nunca CRAS)
+- Enviar receita
+
+**Arquivo**: `orchestrator.py` linha 324-361
+
+### Endpoints Nearby
+
+Novos endpoints REST para o mapa do cidadão:
+
+```bash
+# Farmácias próximas
+GET /api/v1/nearby/farmacias?latitude=-23.55&longitude=-46.63
+
+# CRAS próximos
+GET /api/v1/nearby/cras?latitude=-23.55&longitude=-46.63
+```
+
+Veja documentação completa em `docs/API.md` seção "Serviços Próximos".
+
+---
+
+## Sprint 9: Entregador de Direitos - 3 Pilares
+
+Implementação da visão estratégica consolidada: transformar o Tá na Mão de "tutorial de cadastro" para "entregador de direitos".
+
+### Pilar 1: Dinheiro Esquecido (R$ 42 bilhões disponíveis)
+
+Novas tools para ajudar cidadãos a resgatar dinheiro esquecido:
+
+| Tool | Descrição |
+|------|-----------|
+| `consultar_dinheiro_esquecido` | Mostra todos os tipos de dinheiro esquecido |
+| `guia_pis_pasep` | Passo-a-passo para PIS/PASEP (R$ 26 bi) |
+| `guia_svr` | Passo-a-passo para Valores a Receber BC (R$ 8-10 bi) |
+| `guia_fgts` | Passo-a-passo para FGTS (R$ 7,8 bi) |
+| `verificar_dinheiro_por_perfil` | Triagem baseada no perfil do cidadão |
+
+**Exemplo de uso:**
+```
+Usuário: "Tenho dinheiro pra receber?"
+Agente: Usa consultar_dinheiro_esquecido → mostra PIS/PASEP, SVR e FGTS
+```
+
+### Pilar 2: Copiloto de Navegação
+
+Novas tools para consolidar dados e alertar proativamente:
+
+| Tool | Descrição |
+|------|-----------|
+| `meus_dados` | Visão consolidada: benefícios, valores, alertas |
+| `gerar_alertas_beneficios` | Alertas proativos: CadÚnico desatualizado, prazos |
+
+**Funcionalidades de meus_dados:**
+- Lista todos os benefícios ativos
+- Mostra valores recebidos mensalmente
+- Gera alertas automáticos (CadÚnico >2 anos, pagamento atrasado)
+- Sugere benefícios que o cidadão pode ter direito
+- Indica oportunidade de dinheiro esquecido
+
+**Exemplo de uso:**
+```
+Usuário: "O que eu recebo?"
+Agente: Usa meus_dados → mostra Bolsa Família R$600 + alerta CadÚnico desatualizado
+```
+
+### Pilar 3: Ponte CRAS ↔ Digital
+
+Novas tools para preparar atendimento presencial:
+
+| Tool | Descrição |
+|------|-----------|
+| `preparar_pre_atendimento_cras` | Checklist personalizada de documentos |
+| `gerar_formulario_pre_cras` | Formulário pré-preenchido para levar |
+
+**Funcionalidades:**
+- Gera checklist personalizada baseada na situação
+- Calcula tempo estimado de atendimento
+- Dicas para o atendimento (chegar cedo, prioridade, etc)
+- Verifica elegibilidade preliminar
+- Reduz tempo de atendimento de 2h para 30min
+
+**Exemplo de uso:**
+```
+Usuário: "Quero fazer Bolsa Família"
+Agente: Usa preparar_pre_atendimento_cras → gera checklist + dicas
+Usuário: [informa dados da família]
+Agente: Usa gerar_formulario_pre_cras → gera formulário pronto para levar
+```
+
+### Total de Tools
+
+- **Sprint 8**: 16 tools
+- **Sprint 9**: 25 tools (+9 novas)
+
+---
+
+## Sprint 10: Carteira de Direitos
+
+### Novas Tools de Triagem
+
+#### triagem_universal
+
+Triagem multi-benefício consolidada que avalia elegibilidade para todos os programas de uma vez.
+
+```python
+triagem_universal(
+    renda_familiar=800.00,
+    pessoas_domicilio=4,
+    tem_idoso_65=False,
+    tem_pcd=False,
+    tem_crianca=True,
+    tem_gestante=False,
+    inscrito_cadunico=True,
+    cpf="12345678900"  # opcional
+)
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "total_beneficios_elegiveis": 3,
+  "renda_per_capita": 200.00,
+  "beneficios": [
+    {
+      "programa": "BOLSA_FAMILIA",
+      "nome": "Bolsa Família",
+      "elegivel": true,
+      "motivo": "Renda per capita R$200 está abaixo do limite de R$218",
+      "valor_estimado": 600.00,
+      "proximos_passos": ["Comparecer ao CRAS", "Atualizar CadÚnico"]
+    },
+    {
+      "programa": "TSEE",
+      "nome": "Tarifa Social de Energia",
+      "elegivel": true,
+      "motivo": "Inscrito no CadÚnico com renda até meio salário mínimo",
+      "valor_estimado": 50.00,
+      "proximos_passos": ["Solicitar na distribuidora de energia"]
+    },
+    {
+      "programa": "AUXILIO_GAS",
+      "nome": "Auxílio Gás",
+      "elegivel": true,
+      "motivo": "Inscrito no CadÚnico",
+      "valor_estimado": 104.00,
+      "proximos_passos": ["Benefício automático via Bolsa Família"]
+    }
+  ],
+  "nao_elegiveis": [
+    {
+      "programa": "BPC",
+      "nome": "BPC/LOAS",
+      "elegivel": false,
+      "motivo": "Requer pessoa idosa (65+) ou com deficiência no domicílio"
+    }
+  ],
+  "texto_resumo": "Você pode ter direito a 3 benefícios! Valor estimado: R$ 754/mês"
+}
+```
+
+**Benefícios avaliados**:
+- Bolsa Família
+- BPC/LOAS (Idoso e PCD)
+- Tarifa Social de Energia (TSEE)
+- Auxílio Gás
+- Farmácia Popular
+- Garantia-Safra
+- Seguro Defeso
+- Minha Casa Minha Vida
+
+#### gerar_carta_encaminhamento
+
+Gera carta de encaminhamento em PDF com QR Code para validação no CRAS.
+
+```python
+gerar_carta_encaminhamento(
+    cpf="12345678900",
+    nome="Maria da Silva",
+    data_nascimento="1985-03-15",
+    endereco="Rua das Flores, 123",
+    cep="08471-000",
+    telefone="11999991234",
+    composicao_familiar=[
+        {"nome": "Maria da Silva", "idade": 40, "parentesco": "Responsável"},
+        {"nome": "João da Silva", "idade": 42, "parentesco": "Cônjuge"},
+        {"nome": "Ana da Silva", "idade": 12, "parentesco": "Filha"}
+    ],
+    renda_familiar=800.00,
+    beneficios_solicitados=["BOLSA_FAMILIA", "TSEE"],
+    documentos_conferidos=["RG", "CPF", "COMPROVANTE_RESIDENCIA"],
+    ibge_code="3550308"  # para buscar CRAS
+)
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "codigo_validacao": "TNM-2026-ABC123",
+  "validade": "2026-02-28",
+  "pdf_base64": "JVBERi0xLjQK...",
+  "qr_code_base64": "iVBORw0KGgo...",
+  "link_validacao": "https://api.tanamao.app/carta/TNM-2026-ABC123",
+  "cras_sugerido": {
+    "nome": "CRAS Cidade Tiradentes I",
+    "endereco": "Rua Inácio Monteiro, 6.900",
+    "telefone": "(11) 2286-1234",
+    "horario": "Seg-Sex 8h-17h"
+  },
+  "documentos_faltantes": ["CERTIDAO_NASCIMENTO_FILHOS"],
+  "tempo_atendimento_estimado": "30 minutos",
+  "texto_instrucoes": "Leve esta carta impressa ou no celular ao CRAS. O atendente pode escanear o QR Code para ver seus dados."
+}
+```
+
+**Conteúdo da Carta PDF**:
+1. Cabeçalho com logo e código de validação
+2. Dados do cidadão (nome, CPF mascarado, endereço)
+3. Composição familiar
+4. Renda declarada e per capita
+5. Benefícios solicitados com elegibilidade estimada
+6. Checklist de documentos (conferidos e faltantes)
+7. CRAS de destino
+8. QR Code para validação online
+9. Aviso para atendente
+
+### Regras de Elegibilidade
+
+Cada benefício tem seu módulo de regras em `app/agent/tools/regras_elegibilidade/`:
+
+| Arquivo | Benefício | Critérios Principais |
+|---------|-----------|---------------------|
+| `bolsa_familia.py` | Bolsa Família | Renda per capita ≤ R$218 + CadÚnico |
+| `bpc.py` | BPC/LOAS | Idoso 65+ ou PCD + renda ≤ 1/4 SM |
+| `tsee.py` | Tarifa Social | CadÚnico + renda ≤ 1/2 SM |
+| `auxilio_gas.py` | Auxílio Gás | CadÚnico + Bolsa Família ou renda ≤ 1/2 SM |
+| `farmacia_popular.py` | Farmácia Popular | Receita médica (CadÚnico = prioridade) |
+| `garantia_safra.py` | Garantia-Safra | Agricultor familiar semiárido |
+| `seguro_defeso.py` | Seguro Defeso | Pescador artesanal + período defeso |
+| `mcmv.py` | Minha Casa Minha Vida | Renda até R$8.600 (faixa 3) |
+
+### Fluxo EligibilityWizard
+
+```
+CIDADÃO                         WIZARD                          AGENTE
+   |                               |                               |
+   |--- Clica FAB "Descobrir" ---->|                               |
+   |                               |                               |
+   |<-- Etapa 1: Dados Básicos ----|                               |
+   |    (CPF opcional, cidade)     |                               |
+   |                               |                               |
+   |--- Preenche dados ----------->|                               |
+   |                               |                               |
+   |<-- Etapa 2: Família ----------|                               |
+   |    (quantas pessoas, idades)  |                               |
+   |                               |                               |
+   |--- Preenche família --------->|                               |
+   |                               |                               |
+   |<-- Etapa 3: Renda ------------|                               |
+   |    (slider de renda)          |                               |
+   |                               |                               |
+   |--- Seleciona renda ---------->|                               |
+   |                               |                               |
+   |<-- Etapa 4: Especial ---------|                               |
+   |    (idoso, PCD, gestante)     |                               |
+   |                               |                               |
+   |--- Marca condições ---------->|                               |
+   |                               |--- triagem_universal -------->|
+   |                               |                               |
+   |<-- RESULTADO: Carteira -------|<-- Benefícios elegíveis ------|
+   |    de Direitos                |                               |
+   |                               |                               |
+   |--- "Gerar Carta" ------------>|                               |
+   |                               |--- gerar_carta_encaminhamento>|
+   |                               |                               |
+   |<-- PDF + QR Code -------------|<-- Carta gerada --------------|
+```
+
+### Endpoints da Carta
+
+Veja documentação completa em `docs/API.md` seção "Carta de Encaminhamento".
+
+| Endpoint | Método | Descrição |
+|----------|--------|-----------|
+| `/api/v1/carta/gerar` | POST | Gera carta com PDF |
+| `/api/v1/carta/{codigo}` | GET | Consulta carta |
+| `/api/v1/carta/{codigo}/pdf` | GET | Download PDF |
+| `/api/v1/carta/{codigo}/validar` | POST | Valida QR Code |
+
+### Total de Tools Atualizado
+
+| Sprint | Tools | Total |
+|--------|-------|-------|
+| Sprint 8 | 16 | 16 |
+| Sprint 9 | +9 | 25 |
+| Sprint 10 | +2 | **27** |
+
+---
+
+## Sprint 11: Crédito Imobiliário (MCMV)
+
+### Módulo MCMV Reescrito
+
+O módulo `mcmv.py` foi completamente reescrito com 7 critérios de elegibilidade:
+
+1. **Renda Familiar** - Faixas atualizadas 2026
+2. **Situação de Moradia** - Aluguel, cedido, rua, área de risco
+3. **Propriedade Atual** - Não pode ter imóvel em nome
+4. **Grupos Prioritários** - Situação de rua, violência doméstica, área de risco
+5. **Cadastro Único** - Requerido para Faixa 1
+6. **Localização** - Para verificar programas locais
+7. **Beneficiários BPC/Bolsa Família** - Imóvel 100% gratuito na Faixa 1
+
+#### Faixas de Renda 2026
+
+| Faixa | Renda Familiar | Subsídio | Imóvel Máximo |
+|-------|----------------|----------|---------------|
+| Faixa 1 | Até R$ 2.850 | Até 95% | R$ 190.000 |
+| Faixa 2 | R$ 2.850 - R$ 4.700 | Até 80% | R$ 264.000 |
+| Faixa 3 | R$ 4.700 - R$ 8.600 | Até 50% | R$ 350.000 |
+| **Faixa 4** (Nova) | R$ 8.600 - R$ 12.000 | Até 30% | R$ 500.000 |
+
+**Benefício especial**: Beneficiários de BPC ou Bolsa Família na Faixa 1 podem receber imóvel **100% gratuito**.
+
+### Novas Tools
+
+#### 12. simulador_mcmv
+
+Simulador de financiamento habitacional MCMV.
+
+**Funções disponíveis:**
+
+| Função | Descrição |
+|--------|-----------|
+| `simular_financiamento_mcmv()` | Simulação completa com subsídio, parcela e economia |
+| `simular_reforma()` | Programa Reforma Casa Brasil |
+| `comparar_modalidades()` | Compara aquisição vs reforma vs locação |
+
+**Exemplo de uso:**
+```python
+simular_financiamento_mcmv(
+    renda_familiar=3000.00,
+    valor_imovel=180000.00,
+    entrada=10000.00,
+    prazo_meses=420,  # 35 anos
+    sistema="SAC",     # SAC ou PRICE
+    uf="SP"
+)
+```
+
+**Response:**
+```json
+{
+  "sucesso": true,
+  "faixa": 2,
+  "valor_imovel": 180000.00,
+  "entrada": 10000.00,
+  "valor_financiado": 170000.00,
+  "subsidio_estimado": 47500.00,
+  "valor_final_financiado": 122500.00,
+  "primeira_parcela": 850.00,
+  "ultima_parcela": 320.00,
+  "custo_total": 198000.00,
+  "economia_vs_aluguel": 180000.00,
+  "taxa_juros_anual": 7.66,
+  "sistema": "SAC",
+  "prazo_anos": 35
+}
+```
+
+**Comparar modalidades:**
+```python
+comparar_modalidades(
+    renda_familiar=3000.00,
+    valor_imovel=180000.00,
+    aluguel_atual=1200.00
+)
+```
+
+**Response:**
+```json
+{
+  "aquisicao": {
+    "parcela_media": 585.00,
+    "custo_total_35_anos": 245700.00,
+    "patrimonio_final": 180000.00
+  },
+  "reforma": {
+    "elegivel": true,
+    "valor_maximo": 50000.00,
+    "parcela_estimada": 300.00
+  },
+  "locacao": {
+    "custo_mensal": 1200.00,
+    "custo_total_35_anos": 504000.00,
+    "patrimonio_final": 0
+  },
+  "recomendacao": "Aquisição via MCMV - economia de R$258.300 vs locação"
+}
+```
+
+#### 13. carta_habitacao
+
+Gera carta de encaminhamento específica para habitação.
+
+**Função:**
+- `gerar_carta_habitacao()` - Carta com simulação, checklist e QR Code
+
+**Exemplo de uso:**
+```python
+gerar_carta_habitacao(
+    cpf="12345678900",
+    nome="Maria da Silva",
+    renda_familiar=3000.00,
+    composicao_familiar=[
+        {"nome": "Maria", "idade": 35, "parentesco": "Responsável"},
+        {"nome": "João", "idade": 38, "parentesco": "Cônjuge"}
+    ],
+    situacao_moradia="ALUGUEL",
+    valor_imovel_desejado=180000.00,
+    municipio="São Paulo",
+    uf="SP",
+    beneficiario_bpc=False,
+    beneficiario_bf=True
+)
+```
+
+**Response:**
+```json
+{
+  "sucesso": true,
+  "codigo_validacao": "TNM-HAB-2026-XYZ789",
+  "validade": "2026-02-28",
+  "faixa_mcmv": 2,
+  "encaminhamento": "CAIXA",
+  "simulacao_incluida": {
+    "valor_financiado": 170000.00,
+    "subsidio": 47500.00,
+    "parcela_estimada": 585.00
+  },
+  "checklist_documentos": [
+    "RG e CPF de todos os compradores",
+    "Comprovante de renda (3 últimos meses)",
+    "Comprovante de residência",
+    "Certidão de casamento ou nascimento",
+    "Extrato FGTS",
+    "Declaração de Imposto de Renda"
+  ],
+  "pdf_base64": "JVBERi0xLjQK...",
+  "qr_code_base64": "iVBORw0KGgo...",
+  "instrucoes": "Leve esta carta à agência CAIXA mais próxima para iniciar o processo."
+}
+```
+
+**Lógica de encaminhamento:**
+
+| Faixa | Situação | Encaminhamento |
+|-------|----------|----------------|
+| Faixa 1 (sem CadÚnico) | Não inscrito | CRAS (fazer CadÚnico primeiro) |
+| Faixa 1 (com CadÚnico) | Inscrito | Prefeitura (lista de espera) |
+| Faixa 2, 3, 4 | Qualquer | CAIXA (financiamento direto) |
+
+### CitizenProfile - Novos Campos
+
+O modelo `CitizenProfile` em `regras_elegibilidade/__init__.py` foi expandido com 12 novos campos para MCMV:
+
+```python
+# Campos de habitação
+situacao_moradia: str  # "PROPRIA", "ALUGUEL", "CEDIDA", "RUA", "AREA_RISCO"
+possui_imovel: bool
+valor_aluguel_atual: float
+tempo_municipio_anos: int
+grupo_prioritario: str  # "SITUACAO_RUA", "VIOLENCIA", "AREA_RISCO", None
+beneficiario_bpc: bool
+beneficiario_bf: bool
+municipio: str
+uf: str
+valor_imovel_desejado: float
+tem_fgts: bool
+saldo_fgts: float
+```
+
+### Programa Reforma Casa Brasil
+
+Nova modalidade adicionada para quem já tem casa própria mas precisa reformar:
+
+**Critérios:**
+- Possuir imóvel em situação irregular ou precária
+- Renda familiar até R$ 4.700 (Faixas 1 e 2)
+- Inscrito no CadÚnico
+
+**Benefício:**
+- Até R$ 50.000 para reforma
+- Subsídio de até 95% (Faixa 1) ou 50% (Faixa 2)
+- Parcelas a partir de R$ 80/mês
+
+### Atualização na Triagem Universal
+
+O campo `habitacao` em `triagem_universal.py` foi enriquecido:
+
+```json
+{
+  "habitacao": {
+    "programa": "MCMV",
+    "elegivel": true,
+    "faixa": 2,
+    "motivo": "Renda de R$3.000 elegível para Faixa 2",
+    "subsidio_estimado": "Até 80%",
+    "valor_maximo_imovel": 264000.00,
+    "beneficio_especial": null,
+    "alternativas": ["REFORMA_CASA_BRASIL"],
+    "proximos_passos": [
+      "Procurar agência CAIXA",
+      "Levar documentos de renda",
+      "Escolher imóvel dentro do limite"
+    ]
+  }
+}
+```
+
+### Documentos Atualizados
+
+`documentos_por_beneficio.json` agora inclui:
+
+```json
+{
+  "MCMV": {
+    "obrigatorios": [
+      "RG e CPF de todos os compradores",
+      "Comprovante de renda (3 últimos meses)",
+      "Comprovante de residência",
+      "Certidão de casamento/nascimento",
+      "Extrato FGTS",
+      "Declaração de IR (se declarante)"
+    ],
+    "faixa_1": [
+      "Cadastro no CadÚnico",
+      "Comprovante de inscrição no CadÚnico"
+    ],
+    "grupos_prioritarios": [
+      "Documento comprobatório da situação (BO, laudo, etc)"
+    ]
+  },
+  "MCMV_REFORMAS": {
+    "obrigatorios": [
+      "Documento do imóvel (matrícula/contrato)",
+      "Laudo de vistoria (será feito pela CAIXA)",
+      "RG e CPF do proprietário",
+      "Comprovante de renda"
+    ]
+  }
+}
+```
+
+### Total de Tools Atualizado
+
+| Sprint | Tools | Total |
+|--------|-------|-------|
+| Sprint 8 | 16 | 16 |
+| Sprint 9 | +9 | 25 |
+| Sprint 10 | +2 | 27 |
+| Sprint 11 | +2 | **29** |
+
+---
+
+## Próximos Passos (Sprint 12+)
+
+### Prioridade ALTA
+- [ ] Integração CAIXA API (pré-cadastro, agendamento, status)
+- [ ] Notificações proativas (push + WhatsApp)
+- [ ] Tracking de pedidos de medicamentos
+
+### Prioridade MÉDIA
 - [ ] Assistência por voz (STT/TTS)
-- [ ] Gerar PDF pré-preenchido
+- [ ] Analytics dashboard
+- [ ] Multi-idioma (Espanhol, Inglês)
+
+### Prioridade BAIXA
+- [ ] Integração Rappi/iFood Farmácia (delivery)
+- [ ] Widget white-label CAIXA

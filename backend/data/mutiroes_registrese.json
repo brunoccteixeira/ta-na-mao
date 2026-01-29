@@ -1,0 +1,193 @@
+{
+  "versao": "1.0",
+  "atualizado_em": "2025-01-15T00:00:00",
+  "fonte": "CNJ, Arpen, TJs Estaduais",
+  "notas": "Dados coletados manualmente. Em producao, automatizar via scraping.",
+  "mutiroes": [
+    {
+      "id": "registrese-2025-maio",
+      "nome": "Semana Nacional Registre-se! 2025",
+      "data_inicio": "2026-05-11",
+      "data_fim": "2026-05-15",
+      "nacional": true,
+      "estados": ["todos"],
+      "descricao": "Terceira edicao do mutirao nacional do CNJ para emissao gratuita de documentos. Expectativa de 230 mil atendimentos e 286 mil documentos emitidos.",
+      "servicos": [
+        "Certidao de Nascimento (1a e 2a via)",
+        "RG / Carteira de Identidade Nacional (CIN)",
+        "CPF",
+        "Carteira de Trabalho Digital",
+        "Cadastro e atualizacao do CadUnico"
+      ],
+      "publico_alvo": [
+        "Pessoas em situacao de rua",
+        "Povos indigenas",
+        "Comunidades quilombolas",
+        "Pessoas privadas de liberdade e egressos",
+        "Pessoas em situacao de vulnerabilidade social"
+      ],
+      "como_participar": "Procure o CRAS, Cartorio ou ponto de atendimento mais proximo durante a semana do evento. Nao precisa de agendamento.",
+      "fonte": "CNJ - Conselho Nacional de Justica",
+      "url_fonte": "https://www.cnj.jus.br/programas-e-acoes/registre-se/",
+      "contato": "Ligue 121 para informacoes sobre locais de atendimento",
+      "atualizado_em": "2025-01-15"
+    },
+    {
+      "id": "registrese-sp-2025-fev",
+      "nome": "Mutirao de Documentacao - Sao Paulo Capital",
+      "data_inicio": "2026-02-09",
+      "data_fim": "2026-02-13",
+      "nacional": false,
+      "estados": ["SP"],
+      "municipios": ["Sao Paulo"],
+      "locais": [
+        {
+          "nome": "Poupatempo Se",
+          "endereco": "Praca da Se, s/n - Centro, Sao Paulo",
+          "horario": "7h as 19h",
+          "como_chegar": "Metro Se (Linha Azul/Vermelha)"
+        },
+        {
+          "nome": "CRAS Republica",
+          "endereco": "Rua do Arouche, 24 - Republica, Sao Paulo",
+          "horario": "8h as 17h"
+        },
+        {
+          "nome": "Centro POP Luz",
+          "endereco": "Rua General Couto de Magalhaes, 457 - Luz",
+          "horario": "8h as 17h"
+        }
+      ],
+      "descricao": "Mutirao especial voltado para populacao em situacao de rua na regiao central de Sao Paulo.",
+      "servicos": [
+        "Certidao de Nascimento",
+        "RG / CIN",
+        "CPF",
+        "Cadastro no CadUnico"
+      ],
+      "publico_alvo": [
+        "Pessoas em situacao de rua",
+        "Populacao vulneravel do centro"
+      ],
+      "como_participar": "Comparecer a um dos locais. Nao precisa de nenhum documento - a equipe ajuda a localizar registros anteriores.",
+      "fonte": "TJSP / Secretaria de Assistencia Social",
+      "url_fonte": "https://www.tjsp.jus.br/",
+      "atualizado_em": "2025-01-10"
+    },
+    {
+      "id": "registrese-rj-2025-mar",
+      "nome": "Mutirao Cidadania - Rio de Janeiro",
+      "data_inicio": "2026-03-02",
+      "data_fim": "2026-03-06",
+      "nacional": false,
+      "estados": ["RJ"],
+      "municipios": ["Rio de Janeiro", "Niteroi", "Duque de Caxias", "Nova Iguacu"],
+      "locais": [
+        {
+          "nome": "Central do Brasil - Acao Social",
+          "endereco": "Praca Cristiano Ottoni, s/n - Centro, Rio de Janeiro",
+          "horario": "8h as 17h",
+          "como_chegar": "Trem ou Metro Central"
+        },
+        {
+          "nome": "CRAS Maracana",
+          "endereco": "Rua Professor Eurico Rabelo, 81 - Maracana",
+          "horario": "9h as 16h"
+        }
+      ],
+      "descricao": "Emissao de documentos para populacao vulneravel da regiao metropolitana do Rio.",
+      "servicos": [
+        "Certidao de Nascimento",
+        "RG / CIN",
+        "CPF",
+        "Titulo de Eleitor"
+      ],
+      "publico_alvo": [
+        "Populacao em vulnerabilidade social",
+        "Moradores de comunidades"
+      ],
+      "como_participar": "Levar foto 3x4 e qualquer documento que possuir. Se nao tiver nenhum, comparecer assim mesmo.",
+      "fonte": "TJRJ",
+      "url_fonte": "https://www.tjrj.jus.br/",
+      "atualizado_em": "2025-01-08"
+    },
+    {
+      "id": "registrese-ba-indigenas-2025",
+      "nome": "Mutirao Registre-se! - Povos Indigenas da Bahia",
+      "data_inicio": "2026-04-19",
+      "data_fim": "2026-04-19",
+      "nacional": false,
+      "estados": ["BA"],
+      "municipios": ["Porto Seguro", "Santa Cruz Cabralia", "Pau Brasil"],
+      "locais": [
+        {
+          "nome": "Aldeia Pataxo Coroa Vermelha",
+          "endereco": "Santa Cruz Cabralia - BA",
+          "horario": "8h as 16h"
+        }
+      ],
+      "descricao": "Mutirao especial para povos indigenas em comemoracao ao Dia dos Povos Indigenas (19 de abril). Emissao de certidoes com nome indigena preservado.",
+      "servicos": [
+        "Certidao de Nascimento com nome indigena",
+        "RG com identificacao etnica",
+        "CPF"
+      ],
+      "publico_alvo": [
+        "Povos indigenas Pataxo",
+        "Comunidades indigenas do sul da Bahia"
+      ],
+      "como_participar": "Procurar a FUNAI local ou lideranca da aldeia. Levar declaracao da comunidade se nao tiver documentos.",
+      "fonte": "TJBA / FUNAI",
+      "url_fonte": "https://www.tjba.jus.br/",
+      "atualizado_em": "2025-01-05"
+    },
+    {
+      "id": "registrese-am-ribeirinhos-2025",
+      "nome": "Mutirao Agencia Barco - Comunidades Ribeirinhas",
+      "data_inicio": "2026-06-01",
+      "data_fim": "2026-06-30",
+      "nacional": false,
+      "estados": ["AM"],
+      "municipios": ["Manaus", "Parintins", "Itacoatiara", "Manacapuru"],
+      "descricao": "Mutirao itinerante da CAIXA com Agencia Barco para comunidades ribeirinhas do Amazonas. Emissao de documentos e cadastro em programas sociais.",
+      "servicos": [
+        "Certidao de Nascimento",
+        "CPF",
+        "Cadastro no CadUnico",
+        "Abertura de conta CAIXA"
+      ],
+      "publico_alvo": [
+        "Comunidades ribeirinhas",
+        "Populacao rural isolada"
+      ],
+      "como_participar": "A Agencia Barco percorre as comunidades. Acompanhe a programacao pela radio local ou prefeitura.",
+      "fonte": "CAIXA / MDS",
+      "url_fonte": "https://www.caixa.gov.br/",
+      "atualizado_em": "2025-01-05"
+    },
+    {
+      "id": "registrese-rs-quilombolas-2025",
+      "nome": "Mutirao Registre-se! - Comunidades Quilombolas RS",
+      "data_inicio": "2026-05-13",
+      "data_fim": "2026-05-13",
+      "nacional": false,
+      "estados": ["RS"],
+      "municipios": ["Porto Alegre", "Pelotas", "Rio Grande"],
+      "descricao": "Mutirao especial para comunidades quilombolas em celebracao a data da Abolicao da Escravatura (13 de maio).",
+      "servicos": [
+        "Certidao de Nascimento",
+        "RG com autodeclaracao quilombola",
+        "CPF",
+        "Cadastro no CadUnico"
+      ],
+      "publico_alvo": [
+        "Comunidades quilombolas",
+        "Populacao negra em vulnerabilidade"
+      ],
+      "como_participar": "Procurar o CRAS do seu municipio ou a associacao quilombola local.",
+      "fonte": "TJRS / Fundacao Cultural Palmares",
+      "url_fonte": "https://www.tjrs.jus.br/",
+      "atualizado_em": "2025-01-05"
+    }
+  ]
+}

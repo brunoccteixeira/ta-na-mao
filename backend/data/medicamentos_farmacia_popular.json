@@ -1,0 +1,142 @@
+{
+  "_info": {
+    "descricao": "Lista de medicamentos disponiveis no Farmacia Popular",
+    "fonte": "Portal gov.br/farmacia-popular",
+    "ultima_atualizacao": "2024-12",
+    "nota": "Lista simplificada para MVP - lista completa tem 100+ medicamentos"
+  },
+  "categorias": {
+    "hipertensao": {
+      "nome": "Hipertensao (Pressao Alta)",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Losartana", "dosagens": ["25mg", "50mg", "100mg"]},
+        {"nome": "Atenolol", "dosagens": ["25mg", "50mg", "100mg"]},
+        {"nome": "Propranolol", "dosagens": ["10mg", "40mg", "80mg"]},
+        {"nome": "Captopril", "dosagens": ["25mg", "50mg"]},
+        {"nome": "Enalapril", "dosagens": ["5mg", "10mg", "20mg"]},
+        {"nome": "Hidroclorotiazida", "dosagens": ["25mg", "50mg"]},
+        {"nome": "Anlodipino", "dosagens": ["5mg", "10mg"]}
+      ]
+    },
+    "diabetes": {
+      "nome": "Diabetes",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Metformina", "dosagens": ["500mg", "850mg"]},
+        {"nome": "Glibenclamida", "dosagens": ["5mg"]},
+        {"nome": "Insulina Humana NPH", "dosagens": ["100UI/ml"]},
+        {"nome": "Insulina Humana Regular", "dosagens": ["100UI/ml"]}
+      ]
+    },
+    "asma": {
+      "nome": "Asma",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Beclometasona", "dosagens": ["50mcg", "200mcg", "250mcg"]},
+        {"nome": "Salbutamol", "dosagens": ["100mcg"]},
+        {"nome": "Budesonida", "dosagens": ["32mcg", "50mcg", "200mcg"]},
+        {"nome": "Formoterol", "dosagens": ["12mcg"]},
+        {"nome": "Formoterol + Budesonida", "dosagens": ["6mcg/200mcg", "12mcg/400mcg"]}
+      ]
+    },
+    "rinite": {
+      "nome": "Rinite",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Budesonida nasal", "dosagens": ["32mcg", "50mcg"]}
+      ]
+    },
+    "parkinson": {
+      "nome": "Parkinson",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Levodopa + Benserazida", "dosagens": ["100mg/25mg", "200mg/50mg"]},
+        {"nome": "Levodopa + Carbidopa", "dosagens": ["250mg/25mg"]}
+      ]
+    },
+    "osteoporose": {
+      "nome": "Osteoporose",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Alendronato", "dosagens": ["70mg"]}
+      ]
+    },
+    "glaucoma": {
+      "nome": "Glaucoma",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Maleato de Timolol", "dosagens": ["0.25%", "0.5%"]}
+      ]
+    },
+    "anticoncepcional": {
+      "nome": "Anticoncepcional",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Etinilestradiol + Levonorgestrel", "dosagens": ["0.03mg/0.15mg"]},
+        {"nome": "Noretisterona + Estradiol", "dosagens": ["0.5mg/1mg"]},
+        {"nome": "Medroxiprogesterona", "dosagens": ["150mg/ml"]}
+      ]
+    },
+    "dislipidemia": {
+      "nome": "Colesterol Alto",
+      "gratuito": true,
+      "medicamentos": [
+        {"nome": "Sinvastatina", "dosagens": ["10mg", "20mg", "40mg"]}
+      ]
+    },
+    "incontinencia": {
+      "nome": "Incontinencia Urinaria",
+      "gratuito": false,
+      "desconto": "90%",
+      "medicamentos": [
+        {"nome": "Oxibutinina", "dosagens": ["5mg"]}
+      ]
+    },
+    "fralda": {
+      "nome": "Fraldas Geriatricas",
+      "gratuito": false,
+      "desconto": "40%",
+      "medicamentos": [
+        {"nome": "Fralda Geriatrica", "dosagens": ["P", "M", "G", "GG"]}
+      ]
+    }
+  },
+  "medicamentos_lista_simples": [
+    "Losartana",
+    "Atenolol",
+    "Propranolol",
+    "Captopril",
+    "Enalapril",
+    "Hidroclorotiazida",
+    "Anlodipino",
+    "Metformina",
+    "Glibenclamida",
+    "Insulina Humana NPH",
+    "Insulina Humana Regular",
+    "Beclometasona",
+    "Salbutamol",
+    "Budesonida",
+    "Formoterol",
+    "Sinvastatina",
+    "Alendronato",
+    "Maleato de Timolol",
+    "Levodopa",
+    "Etinilestradiol",
+    "Levonorgestrel",
+    "Noretisterona",
+    "Medroxiprogesterona",
+    "Oxibutinina"
+  ],
+  "dignidade_menstrual": {
+    "descricao": "Absorventes gratuitos para mulheres de baixa renda",
+    "requisitos": [
+      "Estar inscrita no CadUnico",
+      "Renda familiar ate meio salario minimo per capita",
+      "Idade entre 10 e 49 anos"
+    ],
+    "itens": [
+      {"nome": "Absorvente Externo", "quantidade_mensal": "Ate 2 pacotes"}
+    ]
+  }
+}

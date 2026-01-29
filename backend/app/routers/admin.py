@@ -6,15 +6,15 @@ Provides endpoints for:
 - Data export (CSV, JSON)
 """
 
-from typing import Optional, List
+from typing import Optional
 from datetime import datetime
 import csv
 import io
 
-from fastapi import APIRouter, Depends, Query, Response
+from fastapi import APIRouter, Depends, Query
 from fastapi.responses import StreamingResponse
-from sqlalchemy.orm import Session
-from sqlalchemy import func, desc, asc, case
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import func, desc, asc, select
 
 from app.database import get_db
 from app.models import State, Municipality, Program, BeneficiaryData, CadUnicoData
@@ -34,7 +34,7 @@ async def get_penetration_rates(
     order_dir: str = Query("asc", description="Order direction: asc, desc"),
     limit: int = Query(50, ge=1, le=500, description="Number of results per page"),
     offset: int = Query(0, ge=0, description="Number of results to skip"),
-    db: Session = Depends(get_db),
+    db: AsyncSession = Depends(get_db),
 ):
     """
     Get penetration rates by municipality with advanced filtering and pagination.
@@ -42,8 +42,8 @@ async def get_penetration_rates(
     Returns detailed coverage data for all municipalities, ideal for admin tables.
     """
     # Base query with municipality data
-    query = (
-        db.query(
+    stmt = (
+        select(
             Municipality.ibge_code,
             Municipality.name.label("municipality_name"),
             State.abbreviation.label("state"),
@@ -60,22 +60,24 @@ async def get_penetration_rates(
 
     # Program filter
     if program:
-        prog = db.query(Program).filter(Program.code == program.upper()).first()
+        prog_stmt = select(Program).where(Program.code == program.upper())
+        prog_result = await db.execute(prog_stmt)
+        prog = prog_result.scalar_one_or_none()
         if prog:
-            query = query.filter(BeneficiaryData.program_id == prog.id)
+            stmt = stmt.where(BeneficiaryData.program_id == prog.id)
 
     # State filter
     if state_code:
-        query = query.filter(State.abbreviation == state_code.upper())
+        stmt = stmt.where(State.abbreviation == state_code.upper())
 
     # Population filters
     if min_population:
-        query = query.filter(Municipality.population >= min_population)
+        stmt = stmt.where(Municipality.population >= min_population)
     if max_population:
-        query = query.filter(Municipality.population <= max_population)
+        stmt = stmt.where(Municipality.population <= max_population)
 
     # Group by municipality
-    query = query.group_by(
+    stmt = stmt.group_by(
         Municipality.ibge_code,
         Municipality.name,
         State.abbreviation,
@@ -85,12 +87,9 @@ async def get_penetration_rates(
 
     # Coverage filters (applied after grouping via HAVING)
     if min_coverage is not None:
-        query = query.having(func.avg(BeneficiaryData.coverage_rate) >= min_coverage / 100)
+        stmt = stmt.having(func.avg(BeneficiaryData.coverage_rate) >= min_coverage / 100)
     if max_coverage is not None:
-        query = query.having(func.avg(BeneficiaryData.coverage_rate) <= max_coverage / 100)
-
-    # Get total count before pagination
-    count_query = query.with_entities(func.count()).scalar_subquery()
+        stmt = stmt.having(func.avg(BeneficiaryData.coverage_rate) <= max_coverage / 100)
 
     # Ordering
     order_map = {
@@ -104,25 +103,32 @@ async def get_penetration_rates(
 
     order_col = order_map.get(order_by, order_map["coverage"])
     if order_dir == "desc":
-        query = query.order_by(desc(order_col))
+        stmt = stmt.order_by(desc(order_col))
     else:
-        query = query.order_by(asc(order_col))
+        stmt = stmt.order_by(asc(order_col))
+
+    # Get total count before pagination (simplified)
+    total_count_stmt = select(func.count(Municipality.id))
+    total_count_result = await db.execute(total_count_stmt)
+    total_count = total_count_result.scalar() or 0
 
     # Pagination
-    total_count = db.query(Municipality).count()  # Simplified count
-    results = query.offset(offset).limit(limit).all()
+    stmt = stmt.offset(offset).limit(limit)
+    result = await db.execute(stmt)
+    results = result.all()
 
     # Get CadÚnico data for gap calculation
     cadunico_map = {}
-    cadunico_query = (
-        db.query(
+    cadunico_stmt = (
+        select(
             Municipality.ibge_code,
             func.sum(CadUnicoData.total_families).label("cadunico_families")
         )
         .join(CadUnicoData, Municipality.id == CadUnicoData.municipality_id)
         .group_by(Municipality.ibge_code)
     )
-    for row in cadunico_query.all():
+    cadunico_result = await db.execute(cadunico_stmt)
+    for row in cadunico_result.all():
         cadunico_map[row.ibge_code] = row.cadunico_families or 0
 
     return {
@@ -164,7 +170,7 @@ async def get_coverage_alerts(
     program: Optional[str] = Query(None, description="Filter by program code"),
     state_code: Optional[str] = Query(None, description="Filter by state code"),
     limit: int = Query(50, ge=1, le=200, description="Max alerts to return"),
-    db: Session = Depends(get_db),
+    db: AsyncSession = Depends(get_db),
 ):
     """
     Get coverage alerts for municipalities with low coverage.
@@ -172,8 +178,8 @@ async def get_coverage_alerts(
     Returns municipalities with coverage below thresholds, categorized by severity.
     """
     # Query municipalities with coverage data
-    query = (
-        db.query(
+    stmt = (
+        select(
             Municipality.ibge_code,
             Municipality.name.label("municipality_name"),
             State.abbreviation.label("state"),
@@ -187,16 +193,18 @@ async def get_coverage_alerts(
 
     # Filters
     if program:
-        prog = db.query(Program).filter(Program.code == program.upper()).first()
+        prog_stmt = select(Program).where(Program.code == program.upper())
+        prog_result = await db.execute(prog_stmt)
+        prog = prog_result.scalar_one_or_none()
         if prog:
-            query = query.filter(BeneficiaryData.program_id == prog.id)
+            stmt = stmt.where(BeneficiaryData.program_id == prog.id)
 
     if state_code:
-        query = query.filter(State.abbreviation == state_code.upper())
+        stmt = stmt.where(State.abbreviation == state_code.upper())
 
     # Group and filter by coverage
-    query = (
-        query.group_by(
+    stmt = (
+        stmt.group_by(
             Municipality.ibge_code,
             Municipality.name,
             State.abbreviation,
@@ -207,11 +215,12 @@ async def get_coverage_alerts(
         .limit(limit)
     )
 
-    results = query.all()
+    result = await db.execute(stmt)
+    results = result.all()
 
     # Categorize alerts
     critical_threshold = threshold_critical / 100
-    warning_threshold = threshold_warning / 100
+    threshold_warning / 100
 
     alerts = []
     critical_count = 0
@@ -238,8 +247,8 @@ async def get_coverage_alerts(
         })
 
     # Get biggest gap municipality
-    gap_query = (
-        db.query(
+    gap_stmt = (
+        select(
             Municipality.name.label("municipality_name"),
             State.abbreviation.label("state"),
             Municipality.population,
@@ -251,8 +260,10 @@ async def get_coverage_alerts(
         .outerjoin(BeneficiaryData, Municipality.id == BeneficiaryData.municipality_id)
         .group_by(Municipality.name, State.abbreviation, Municipality.population)
         .order_by(desc(func.sum(CadUnicoData.total_families) - func.sum(BeneficiaryData.total_families)))
-        .first()
+        .limit(1)
     )
+    gap_result = await db.execute(gap_stmt)
+    gap_query = gap_result.first()
 
     biggest_gap = None
     if gap_query:
@@ -284,7 +295,7 @@ async def export_data(
     scope: str = Query("national", description="Scope: national, state"),
     state_code: Optional[str] = Query(None, description="State code for state scope"),
     program: Optional[str] = Query(None, description="Filter by program code"),
-    db: Session = Depends(get_db),
+    db: AsyncSession = Depends(get_db),
 ):
     """
     Export beneficiary data in CSV or JSON format.
@@ -292,8 +303,8 @@ async def export_data(
     Ideal for downloading data for external analysis.
     """
     # Query all municipalities with data
-    query = (
-        db.query(
+    stmt = (
+        select(
             Municipality.ibge_code,
             Municipality.name.label("municipality_name"),
             State.name.label("state_name"),
@@ -311,15 +322,17 @@ async def export_data(
 
     # Apply filters
     if program:
-        prog = db.query(Program).filter(Program.code == program.upper()).first()
+        prog_stmt = select(Program).where(Program.code == program.upper())
+        prog_result = await db.execute(prog_stmt)
+        prog = prog_result.scalar_one_or_none()
         if prog:
-            query = query.filter(BeneficiaryData.program_id == prog.id)
+            stmt = stmt.where(BeneficiaryData.program_id == prog.id)
 
     if scope == "state" and state_code:
-        query = query.filter(State.abbreviation == state_code.upper())
+        stmt = stmt.where(State.abbreviation == state_code.upper())
 
     # Group by municipality
-    query = query.group_by(
+    stmt = stmt.group_by(
         Municipality.ibge_code,
         Municipality.name,
         State.name,
@@ -328,19 +341,21 @@ async def export_data(
         Municipality.population,
     ).order_by(State.abbreviation, Municipality.name)
 
-    results = query.all()
+    result = await db.execute(stmt)
+    results = result.all()
 
     # Get CadÚnico data
     cadunico_map = {}
-    cadunico_query = (
-        db.query(
+    cadunico_stmt = (
+        select(
             Municipality.ibge_code,
             func.sum(CadUnicoData.total_families).label("cadunico_families")
         )
         .join(CadUnicoData, Municipality.id == CadUnicoData.municipality_id)
         .group_by(Municipality.ibge_code)
     )
-    for row in cadunico_query.all():
+    cadunico_result = await db.execute(cadunico_stmt)
+    for row in cadunico_result.all():
         cadunico_map[row.ibge_code] = row.cadunico_families or 0
 
     # Prepare data
@@ -398,7 +413,7 @@ async def export_data(
 
 @router.get("/summary")
 async def get_admin_summary(
-    db: Session = Depends(get_db),
+    db: AsyncSession = Depends(get_db),
 ):
     """
     Get quick summary statistics for admin dashboard.
@@ -406,34 +421,50 @@ async def get_admin_summary(
     Returns key metrics and counts for the overview panel.
     """
     # Total municipalities
-    total_municipalities = db.query(Municipality).count()
+    total_mun_stmt = select(func.count(Municipality.id))
+    total_mun_result = await db.execute(total_mun_stmt)
+    total_municipalities = total_mun_result.scalar() or 0
 
     # Total states
-    total_states = db.query(State).count()
+    total_states_stmt = select(func.count(State.id))
+    total_states_result = await db.execute(total_states_stmt)
+    total_states = total_states_result.scalar() or 0
 
     # Total population
-    total_population = db.query(func.sum(Municipality.population)).scalar() or 0
+    total_pop_stmt = select(func.sum(Municipality.population))
+    total_pop_result = await db.execute(total_pop_stmt)
+    total_population = total_pop_result.scalar() or 0
 
     # Total beneficiaries across all programs
-    total_beneficiaries = db.query(func.sum(BeneficiaryData.total_beneficiaries)).scalar() or 0
+    total_ben_stmt = select(func.sum(BeneficiaryData.total_beneficiaries))
+    total_ben_result = await db.execute(total_ben_stmt)
+    total_beneficiaries = total_ben_result.scalar() or 0
 
     # Total value
-    total_value = db.query(func.sum(BeneficiaryData.total_value_brl)).scalar() or 0
+    total_val_stmt = select(func.sum(BeneficiaryData.total_value_brl))
+    total_val_result = await db.execute(total_val_stmt)
+    total_value = total_val_result.scalar() or 0
 
     # Average coverage
-    avg_coverage = db.query(func.avg(BeneficiaryData.coverage_rate)).scalar() or 0
+    avg_cov_stmt = select(func.avg(BeneficiaryData.coverage_rate))
+    avg_cov_result = await db.execute(avg_cov_stmt)
+    avg_coverage = avg_cov_result.scalar() or 0
 
-    # Critical municipalities (coverage < 20%)
-    critical_count = (
-        db.query(func.count(func.distinct(Municipality.id)))
+    # Critical municipalities (coverage < 20%) - simplified count
+    critical_stmt = (
+        select(func.count(func.distinct(Municipality.id)))
         .join(BeneficiaryData, Municipality.id == BeneficiaryData.municipality_id)
         .group_by(Municipality.id)
         .having(func.avg(BeneficiaryData.coverage_rate) < 0.2)
-        .count()
     )
+    # Note: This is a simplified count - for exact count, would need subquery
+    critical_result = await db.execute(select(func.count()).select_from(critical_stmt.subquery()))
+    critical_count = critical_result.scalar() or 0
 
     # Programs count
-    programs_count = db.query(Program).count()
+    programs_stmt = select(func.count(Program.id))
+    programs_result = await db.execute(programs_stmt)
+    programs_count = programs_result.scalar() or 0
 
     return {
         "total_municipalities": total_municipalities,

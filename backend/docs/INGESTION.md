@@ -78,7 +78,10 @@ python -m app.jobs.ingest_auxilio_inclusao 2024 10
 # 12. Garantia-Safra - Portal da Transparência (agricultores semiárido)
 python -m app.jobs.ingest_garantia_safra 2024 3
 
-# 13. Dados históricos (10 anos de Farmácia Popular)
+# 13. PNAE - FNDE OData API (alimentação escolar)
+python -m app.jobs.ingest_pnae 2023
+
+# 14. Dados históricos (10 anos de Farmácia Popular)
 python -m app.jobs.ingest_historical
 ```
 
@@ -397,7 +400,51 @@ Total value: R$ 672,000,000.00
 
 ---
 
-### 10. ingest_historical.py
+### 10. ingest_pnae.py ⭐ NOVO
+
+**Fonte**: FNDE OData API (Fundo Nacional de Desenvolvimento da Educação)
+
+**URL**: https://www.fnde.gov.br/olinda-ide/servico/PNAE_Recursos_Repassados_Pck_3/versao/v1/odata
+
+**Uso**:
+```bash
+# Ingerir ano específico
+python -m app.jobs.ingest_pnae 2023
+
+# Ano anterior (padrão)
+python -m app.jobs.ingest_pnae
+
+# Ajuda
+python -m app.jobs.ingest_pnae --help
+```
+
+**O que faz**:
+- Baixa dados via OData API do FNDE (paginado, 10.000 registros por página)
+- Filtra apenas registros municipais (esfera MUNICIPAL)
+- Agrega valores por município
+- Mapeia nomes de municípios para códigos IBGE (normalização de acentos)
+- Estima número de estudantes baseado no valor (~R$ 100/estudante/ano)
+- Salva na tabela `beneficiary_data` como programa PNAE
+
+**Resultado esperado**:
+```
+INGESTING PNAE DATA - 2023
+Downloading PNAE data for 2023...
+Fetching records 0 to 10000...
+Got 8500 records. Total: 8500
+Aggregated data for 5200 municipalities
+Building municipality name mapping...
+Built name mapping with 11140 entries
+Created 5200, updated 0 records
+Not found: 15 municipalities
+Total value: R$ 4,850,000,000.00
+```
+
+**Nota**: Os dados são anuais. Use o ano anterior para dados completos, pois o ano atual pode estar incompleto.
+
+---
+
+### 11. ingest_historical.py
 
 **Fonte**: OpenDataSUS
 
@@ -523,6 +570,7 @@ curl http://localhost:8000/api/v1/programs/
 | Seguro Defeso | Portal da Transparência | ~400-600 mil pescadores |
 | Auxílio Inclusão | Portal da Transparência | ~45 mil beneficiários |
 | Garantia-Safra | Portal da Transparência | ~560 mil agricultores |
+| PNAE | FNDE | ~40 milhões estudantes |
 
 ---
 

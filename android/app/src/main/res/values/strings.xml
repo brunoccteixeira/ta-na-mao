@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tá na Mão</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Início</string>
+    <string name="nav_map">Mapa</string>
+    <string name="nav_search">Buscar</string>
+    <string name="nav_chat">Assistente</string>
+    <string name="nav_back">Voltar</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Tá na Mão</string>
+    <string name="home_subtitle">Monitoramento de Programas Sociais</string>
+    <string name="home_kpis_title">Indicadores Nacionais</string>
+    <string name="home_programs_title">Programas</string>
+    <string name="home_quick_actions">Ações Rápidas</string>
+
+    <!-- KPIs -->
+    <string name="kpi_beneficiaries">Beneficiários</string>
+    <string name="kpi_total_value">Valor Total</string>
+    <string name="kpi_municipalities">Municípios</string>
+    <string name="kpi_coverage">Cobertura</string>
+
+    <!-- Programs -->
+    <string name="program_bolsa_familia">Bolsa Família</string>
+    <string name="program_bpc">BPC/LOAS</string>
+    <string name="program_farmacia_popular">Farmácia Popular</string>
+    <string name="program_tsee">Tarifa Social</string>
+    <string name="program_dignidade_menstrual">Dignidade Menstrual</string>
+
+    <!-- Search -->
+    <string name="search_title">Buscar Município</string>
+    <string name="search_placeholder">Digite o nome do município…</string>
+    <string name="search_min_chars">Digite pelo menos 2 caracteres para buscar</string>
+    <string name="search_no_results">Nenhum município encontrado</string>
+
+    <!-- Municipality Details -->
+    <string name="municipality_info">Informações</string>
+    <string name="municipality_population">População</string>
+    <string name="municipality_region">Região</string>
+    <string name="municipality_cadunico">CadÚnico</string>
+    <string name="municipality_area">Área</string>
+    <string name="municipality_programs_title">Programas Sociais</string>
+    <string name="municipality_no_programs">Nenhum programa disponível</string>
+
+    <!-- Program Details -->
+    <string name="program_beneficiaries">beneficiários</string>
+    <string name="program_total_value">valor total</string>
+    <string name="program_coverage">Cobertura</string>
+    <string name="program_updated">Atualizado:</string>
+
+    <!-- Chat / AI Assistant -->
+    <string name="chat_title">Assistente Tá na Mão</string>
+    <string name="chat_placeholder">Digite sua pergunta…</string>
+    <string name="chat_send">Enviar</string>
+    <string name="chat_in_development">Assistente em Desenvolvimento</string>
+    <string name="chat_coming_soon">O assistente de IA para verificação de elegibilidade será implementado aqui.</string>
+    <string name="chat_features_title">Funcionalidades planejadas:</string>
+    <string name="chat_feature_eligibility">Verificação de elegibilidade</string>
+    <string name="chat_feature_docs">Orientação sobre documentos</string>
+    <string name="chat_feature_locations">Localização de pontos de atendimento</string>
+    <string name="chat_feature_questions">Dúvidas sobre programas</string>
+
+    <!-- Map -->
+    <string name="map_title">Mapa do Brasil</string>
+    <string name="map_loading">Carregando mapa…</string>
+    <string name="map_in_development">Mapa em Desenvolvimento</string>
+    <string name="map_coming_soon">O mapa interativo com dados de cobertura será implementado aqui.</string>
+
+    <!-- Regions -->
+    <string name="region_north">Norte</string>
+    <string name="region_northeast">Nordeste</string>
+    <string name="region_southeast">Sudeste</string>
+    <string name="region_south">Sul</string>
+    <string name="region_midwest">Centro-Oeste</string>
+
+    <!-- Errors -->
+    <string name="error_network">Erro de conexão. Verifique sua internet.</string>
+    <string name="error_server">Erro no servidor. Tente novamente.</string>
+    <string name="error_not_found">Dados não encontrados.</string>
+    <string name="error_unknown">Ocorreu um erro inesperado.</string>
+    <string name="error_retry">Tentar Novamente</string>
+
+    <!-- General -->
+    <string name="loading">Carregando…</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="close">Fechar</string>
+</resources>

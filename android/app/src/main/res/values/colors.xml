@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Brazilian Green -->
+    <color name="primary">#009C3B</color>
+    <color name="primary_variant">#006B29</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#B8F5C8</color>
+    <color name="on_primary_container">#00210A</color>
+
+    <!-- Secondary Colors - Brazilian Yellow -->
+    <color name="secondary">#FFDF00</color>
+    <color name="secondary_variant">#C7AD00</color>
+    <color name="on_secondary">#1A1A00</color>
+    <color name="secondary_container">#FFF5CC</color>
+    <color name="on_secondary_container">#1F1B00</color>
+
+    <!-- Tertiary Colors - Brazilian Blue -->
+    <color name="tertiary">#002776</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#D8E2FF</color>
+    <color name="on_tertiary_container">#001A41</color>
+
+    <!-- Background and Surface -->
+    <color name="background">#FDFDF5</color>
+    <color name="on_background">#1A1C19</color>
+    <color name="surface">#FDFDF5</color>
+    <color name="on_surface">#1A1C19</color>
+    <color name="surface_variant">#DEE5D9</color>
+    <color name="on_surface_variant">#424940</color>
+
+    <!-- Error -->
+    <color name="error">#BA1A1A</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="on_error_container">#410002</color>
+
+    <!-- Outline -->
+    <color name="outline">#72796F</color>
+    <color name="outline_variant">#C2C9BD</color>
+
+    <!-- Dark Theme Colors -->
+    <color name="primary_dark">#9CD8A8</color>
+    <color name="on_primary_dark">#003916</color>
+    <color name="primary_container_dark">#005322</color>
+    <color name="on_primary_container_dark">#B8F5C8</color>
+
+    <color name="secondary_dark">#E5C400</color>
+    <color name="on_secondary_dark">#363100</color>
+    <color name="secondary_container_dark">#4F4700</color>
+    <color name="on_secondary_container_dark">#F5E14D</color>
+
+    <color name="tertiary_dark">#AEC6FF</color>
+    <color name="on_tertiary_dark">#002E69</color>
+    <color name="tertiary_container_dark">#00429A</color>
+    <color name="on_tertiary_container_dark">#D8E2FF</color>
+
+    <color name="background_dark">#1A1C19</color>
+    <color name="on_background_dark">#E2E3DC</color>
+    <color name="surface_dark">#1A1C19</color>
+    <color name="on_surface_dark">#E2E3DC</color>
+    <color name="surface_variant_dark">#424940</color>
+    <color name="on_surface_variant_dark">#C2C9BD</color>
+
+    <color name="error_dark">#FFB4AB</color>
+    <color name="on_error_dark">#690005</color>
+    <color name="error_container_dark">#93000A</color>
+    <color name="on_error_container_dark">#FFDAD6</color>
+
+    <color name="outline_dark">#8C9388</color>
+    <color name="outline_variant_dark">#424940</color>
+
+    <!-- Coverage Colors -->
+    <color name="coverage_high">#22C55E</color>
+    <color name="coverage_medium_high">#84CC16</color>
+    <color name="coverage_medium">#EAB308</color>
+    <color name="coverage_medium_low">#F97316</color>
+    <color name="coverage_low">#EF4444</color>
+
+    <!-- Program Colors -->
+    <color name="bolsa_familia">#3B82F6</color>
+    <color name="bpc">#8B5CF6</color>
+    <color name="farmacia_popular">#10B981</color>
+    <color name="tarifa_social">#F59E0B</color>
+    <color name="dignidade_menstrual">#EC4899</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_1">#2563EB</color>
+    <color name="chart_2">#16A34A</color>
+    <color name="chart_3">#DC2626</color>
+    <color name="chart_4">#9333EA</color>
+    <color name="chart_5">#EA580C</color>
+</resources>

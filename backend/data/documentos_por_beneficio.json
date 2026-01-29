@@ -1,0 +1,451 @@
+{
+  "CADASTRO_UNICO": {
+    "nome": "Cadastro Único (CadÚnico)",
+    "descricao": "Cadastro base para acessar programas sociais",
+    "documentos": {
+      "responsavel_familiar": [
+        {
+          "nome": "CPF",
+          "obrigatorio": true,
+          "dica": "Número com 11 dígitos",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Documento de identificação com foto",
+          "obrigatorio": true,
+          "dica": "RG, CNH ou Carteira de Trabalho",
+          "alternativas": ["RG", "CNH", "CTPS", "Passaporte"],
+          "aceita_digital": false
+        },
+        {
+          "nome": "Título de Eleitor",
+          "obrigatorio": false,
+          "dica": "Se tiver, leve junto",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Comprovante de residência",
+          "obrigatorio": true,
+          "dica": "Conta de luz, água ou gás dos últimos 3 meses",
+          "alternativas": ["Conta de luz", "Conta de água", "Conta de gás", "Contrato de aluguel"],
+          "aceita_digital": true
+        }
+      ],
+      "demais_membros": [
+        {
+          "nome": "CPF",
+          "obrigatorio": true,
+          "dica": "De cada pessoa que mora na casa",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Certidão de nascimento ou RG",
+          "obrigatorio": true,
+          "dica": "Para crianças, pode ser só a certidão",
+          "aceita_digital": false
+        }
+      ],
+      "comprovacao_renda": [
+        {
+          "nome": "Carteira de Trabalho",
+          "obrigatorio": false,
+          "dica": "Página da foto e do último contrato",
+          "condicao": "Se trabalha com carteira assinada",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Contracheque ou recibo",
+          "obrigatorio": false,
+          "dica": "Últimos 3 meses",
+          "condicao": "Se tem renda formal",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Declaração de autônomo",
+          "obrigatorio": false,
+          "dica": "Pode ser escrita à mão, com valor e assinatura",
+          "condicao": "Se trabalha por conta própria",
+          "aceita_digital": false
+        }
+      ]
+    },
+    "onde_fazer": "CRAS (Centro de Referência de Assistência Social)",
+    "prazo_atualizacao": "A cada 2 anos ou quando mudar de endereço/renda"
+  },
+
+  "BOLSA_FAMILIA": {
+    "nome": "Bolsa Família",
+    "descricao": "Transferência de renda para famílias em situação de pobreza",
+    "requisito_principal": "Estar inscrito no CadÚnico com renda por pessoa de até R$ 218/mês",
+    "documentos": {
+      "inscricao": [
+        {
+          "nome": "Cadastro no CadÚnico atualizado",
+          "obrigatorio": true,
+          "dica": "Primeiro faça o CadÚnico, depois o Bolsa Família vem automaticamente se você tiver direito",
+          "aceita_digital": false
+        }
+      ],
+      "comprovacao_escolar": [
+        {
+          "nome": "Declaração de matrícula escolar",
+          "obrigatorio": true,
+          "dica": "Para filhos de 4 a 17 anos",
+          "condicao": "Se tem filhos em idade escolar",
+          "aceita_digital": true
+        }
+      ],
+      "comprovacao_saude": [
+        {
+          "nome": "Cartão de vacinação",
+          "obrigatorio": true,
+          "dica": "Das crianças até 7 anos",
+          "condicao": "Se tem crianças pequenas",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Comprovante de pré-natal",
+          "obrigatorio": true,
+          "dica": "Se estiver grávida",
+          "condicao": "Se gestante",
+          "aceita_digital": true
+        }
+      ]
+    },
+    "onde_fazer": "Automático após CadÚnico - acompanhe pelo app Caixa Tem",
+    "valor_medio": "R$ 600 por família (pode variar)"
+  },
+
+  "BPC_LOAS": {
+    "nome": "BPC/LOAS (Benefício de Prestação Continuada)",
+    "descricao": "1 salário mínimo mensal para idosos 65+ ou pessoas com deficiência",
+    "requisito_principal": "Renda familiar por pessoa de até 1/4 do salário mínimo",
+    "documentos": {
+      "todos": [
+        {
+          "nome": "CPF",
+          "obrigatorio": true,
+          "dica": "Do solicitante",
+          "aceita_digital": true
+        },
+        {
+          "nome": "RG ou certidão de nascimento",
+          "obrigatorio": true,
+          "dica": "Documento com foto preferencial",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Comprovante de residência",
+          "obrigatorio": true,
+          "dica": "Conta de luz ou água recente",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Cadastro no CadÚnico atualizado",
+          "obrigatorio": true,
+          "dica": "NIS (Número de Identificação Social)",
+          "aceita_digital": false
+        }
+      ],
+      "idoso": [
+        {
+          "nome": "Documento que comprove idade",
+          "obrigatorio": true,
+          "dica": "RG ou certidão de nascimento mostrando 65 anos ou mais",
+          "aceita_digital": false
+        }
+      ],
+      "pessoa_com_deficiencia": [
+        {
+          "nome": "Laudo médico",
+          "obrigatorio": true,
+          "dica": "Descrevendo a deficiência e limitações",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Agendamento de perícia no INSS",
+          "obrigatorio": true,
+          "dica": "Agende pelo 135 ou app Meu INSS",
+          "aceita_digital": true
+        }
+      ]
+    },
+    "onde_fazer": "INSS (pelo app Meu INSS, telefone 135, ou agência)",
+    "valor": "1 salário mínimo (R$ 1.412 em 2024)"
+  },
+
+  "TARIFA_SOCIAL_ENERGIA": {
+    "nome": "Tarifa Social de Energia Elétrica (TSEE)",
+    "descricao": "Desconto de 10% a 65% na conta de luz",
+    "requisito_principal": "Estar inscrito no CadÚnico com renda até meio salário mínimo por pessoa",
+    "documentos": {
+      "inscricao": [
+        {
+          "nome": "Cadastro no CadÚnico atualizado",
+          "obrigatorio": true,
+          "dica": "Com NIS ativo",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Conta de luz recente",
+          "obrigatorio": true,
+          "dica": "Com nome do titular e endereço",
+          "aceita_digital": true
+        },
+        {
+          "nome": "CPF do titular da conta",
+          "obrigatorio": true,
+          "dica": "A conta deve estar no nome de alguém da família",
+          "aceita_digital": true
+        }
+      ]
+    },
+    "onde_fazer": "Pela distribuidora de energia (Enel, CPFL, Light, etc.) ou app/site",
+    "desconto": "10% a 65% dependendo do consumo"
+  },
+
+  "FARMACIA_POPULAR": {
+    "nome": "Farmácia Popular",
+    "descricao": "Medicamentos gratuitos ou com até 90% de desconto",
+    "requisito_principal": "Ter CPF e receita médica válida",
+    "documentos": {
+      "retirada": [
+        {
+          "nome": "CPF",
+          "obrigatorio": true,
+          "dica": "Seu CPF cadastrado no SUS",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Receita médica",
+          "obrigatorio": true,
+          "dica": "Do SUS ou particular, válida por 120 dias",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Documento com foto",
+          "obrigatorio": true,
+          "dica": "RG ou CNH",
+          "aceita_digital": false
+        }
+      ]
+    },
+    "onde_fazer": "Farmácias credenciadas (busque no app ou site gov.br)",
+    "medicamentos_gratuitos": ["Hipertensão", "Diabetes", "Asma", "Anticoncepcionais"]
+  },
+
+  "DIGNIDADE_MENSTRUAL": {
+    "nome": "Dignidade Menstrual (Absorventes Grátis)",
+    "descricao": "Absorventes gratuitos pelo Farmácia Popular",
+    "requisito_principal": "Mulheres de 10 a 49 anos inscritas no CadÚnico",
+    "documentos": {
+      "retirada": [
+        {
+          "nome": "CPF",
+          "obrigatorio": true,
+          "dica": "Cadastrado no CadÚnico",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Documento com foto",
+          "obrigatorio": true,
+          "dica": "RG, CNH ou carteira escolar",
+          "aceita_digital": false
+        }
+      ]
+    },
+    "onde_fazer": "Farmácias credenciadas no Farmácia Popular",
+    "quantidade": "Até 2 pacotes por mês"
+  },
+
+  "MCMV": {
+    "nome": "Minha Casa Minha Vida",
+    "descricao": "Financiamento habitacional com subsídio do governo",
+    "requisito_principal": "Renda familiar até R$ 12.000/mês, não possuir imóvel",
+    "faixas": {
+      "faixa_1": {
+        "renda_maxima": 2850,
+        "subsidio_maximo": 65000,
+        "juros": "4% a 4,25% ao ano",
+        "beneficio_extra": "Beneficiários BPC/Bolsa Família podem ter imóvel 100% gratuito"
+      },
+      "faixa_2": {
+        "renda_maxima": 4700,
+        "subsidio_maximo": 55000,
+        "juros": "4,25% a 7% ao ano"
+      },
+      "faixa_3": {
+        "renda_maxima": 8600,
+        "subsidio_maximo": 0,
+        "juros": "7% a 8,16% ao ano",
+        "permite_usado": true
+      },
+      "faixa_4": {
+        "renda_maxima": 12000,
+        "subsidio_maximo": 0,
+        "juros": "10% ao ano",
+        "valor_imovel_maximo": 500000,
+        "permite_usado": true
+      }
+    },
+    "documentos": {
+      "faixa_1": [
+        {
+          "nome": "CadÚnico atualizado (NIS)",
+          "obrigatorio": true,
+          "dica": "Faça o CadÚnico no CRAS antes de se inscrever",
+          "aceita_digital": false
+        },
+        {
+          "nome": "CPF e RG de todos da família",
+          "obrigatorio": true,
+          "dica": "Original e cópia",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Certidão de nascimento ou casamento",
+          "obrigatorio": true,
+          "dica": "De todos os membros da família",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Comprovante de residência",
+          "obrigatorio": true,
+          "dica": "Conta de luz ou água dos últimos 3 meses",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Comprovante de renda ou declaração",
+          "obrigatorio": true,
+          "dica": "Pode ser declaração de próprio punho se não tiver renda formal",
+          "aceita_digital": false
+        }
+      ],
+      "faixa_2_3_4": [
+        {
+          "nome": "CPF e RG de todos da família",
+          "obrigatorio": true,
+          "dica": "Original e cópia",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Certidão de nascimento ou casamento",
+          "obrigatorio": true,
+          "dica": "Atualizada (menos de 90 dias)",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Comprovante de residência",
+          "obrigatorio": true,
+          "dica": "Conta de luz ou água dos últimos 3 meses",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Comprovante de renda (3 últimos meses)",
+          "obrigatorio": true,
+          "dica": "Holerite, contracheque ou extrato bancário",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Carteira de Trabalho",
+          "obrigatorio": true,
+          "dica": "Páginas da foto, qualificação e contratos",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Declaração de Imposto de Renda",
+          "obrigatorio": false,
+          "dica": "Se declarou no último ano",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Extrato de FGTS",
+          "obrigatorio": true,
+          "dica": "Pode usar o app FGTS ou site da CAIXA",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Certidões negativas",
+          "obrigatorio": true,
+          "dica": "SPC/Serasa - exigido para Faixas 2, 3 e 4",
+          "aceita_digital": true
+        }
+      ]
+    },
+    "onde_fazer": {
+      "faixa_1_sem_cadunico": "CRAS (fazer CadÚnico primeiro)",
+      "faixa_1_com_cadunico": "Prefeitura - Secretaria de Habitação",
+      "faixas_2_3_4": "CAIXA Econômica Federal ou correspondentes bancários"
+    },
+    "prazo_financiamento": "Até 35 anos",
+    "observacoes": [
+      "Não pode ter imóvel registrado em seu nome",
+      "Não pode ter recebido benefício habitacional federal",
+      "Não pode ter financiamento ativo",
+      "Idade + prazo não pode ultrapassar 80 anos e 6 meses"
+    ]
+  },
+
+  "MCMV_REFORMAS": {
+    "nome": "Reforma Casa Brasil",
+    "descricao": "Crédito para reforma e melhoria de imóvel próprio",
+    "requisito_principal": "Renda familiar até R$ 9.600/mês e possuir imóvel próprio",
+    "faixas": {
+      "faixa_1": {
+        "renda_maxima": 3200,
+        "juros": "1,17% ao mês",
+        "credito_minimo": 5000,
+        "credito_maximo": 30000,
+        "prazo_meses": "24 a 60"
+      },
+      "faixa_2": {
+        "renda_maxima": 9600,
+        "juros": "1,95% ao mês",
+        "credito_minimo": 5000,
+        "credito_maximo": 30000,
+        "prazo_meses": "24 a 60"
+      }
+    },
+    "documentos": {
+      "todos": [
+        {
+          "nome": "CPF e RG",
+          "obrigatorio": true,
+          "dica": "Do solicitante",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Comprovante de residência",
+          "obrigatorio": true,
+          "dica": "Conta de luz ou água recente",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Comprovante de renda (3 últimos meses)",
+          "obrigatorio": true,
+          "dica": "Holerite, contracheque ou extrato bancário",
+          "aceita_digital": true
+        },
+        {
+          "nome": "Documento do imóvel",
+          "obrigatorio": true,
+          "dica": "Escritura, matrícula atualizada ou contrato de compra",
+          "aceita_digital": false
+        },
+        {
+          "nome": "Orçamento detalhado das reformas",
+          "obrigatorio": true,
+          "dica": "Peça para um profissional ou loja de materiais",
+          "aceita_digital": true
+        }
+      ]
+    },
+    "onde_fazer": "CAIXA Econômica Federal",
+    "liberacao": "90% do valor liberado na aprovação, 10% após comprovação da reforma",
+    "observacoes": [
+      "O imóvel deve estar no seu nome ou em nome de familiar direto",
+      "Não pode ter restrições de crédito graves",
+      "A reforma deve melhorar as condições de habitabilidade"
+    ]
+  }
+}

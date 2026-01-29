@@ -1,7 +1,8 @@
 /**
- * Main App component - Tá na Mão Dashboard
+ * Main App component - Tá na Mão Dashboard & Chat
  */
 
+import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import BrazilMap from './components/Map/BrazilMap';
 import ProgramSelector from './components/Dashboard/ProgramSelector';
@@ -19,7 +20,11 @@ import ProgramComparison from './components/Charts/ProgramComparison';
 import AlertsPanel from './components/Admin/AlertsPanel';
 import PenetrationTable from './components/Admin/PenetrationTable';
 import ExportButton from './components/Admin/ExportButton';
+import ChatPage from './components/Chat/ChatPage';
+import EligibilityWizard from './components/EligibilityWizard';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { useDashboardStore } from './stores/dashboardStore';
+import type { CitizenProfile, TriagemResult } from './components/EligibilityWizard/types';
 
 // Create React Query client
 const queryClient = new QueryClient({
@@ -31,7 +36,7 @@ const queryClient = new QueryClient({
   },
 });
 
-function Dashboard() {
+function Dashboard({ onOpenChat, onOpenWizard }: { onOpenChat: () => void; onOpenWizard: () => void }) {
   const { selectedState, selectedMunicipality, selectedRegion, viewLevel } = useDashboardStore();
 
   const REGION_NAMES: Record<string, string> = {
@@ -136,14 +141,97 @@ function Dashboard() {
           Atualizado automaticamente via API
         </p>
       </footer>
+
+      {/* FAB Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-40">
+        {/* Wizard FAB */}
+        <button
+          onClick={onOpenWizard}
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 shadow-lg shadow-emerald-500/30 flex items-center justify-center text-2xl hover:scale-110 transition-transform"
+          title="Descobrir meus direitos"
+        >
+          🎯
+        </button>
+        {/* Chat FAB */}
+        <button
+          onClick={onOpenChat}
+          className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 shadow-lg shadow-teal-500/30 flex items-center justify-center text-2xl hover:scale-110 transition-transform"
+          title="Abrir Assistente Tá na Mão"
+        >
+          🤖
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function WizardPage({ onBack }: { onBack: () => void }) {
+  const handleComplete = (result: TriagemResult) => {
+    console.log('Triagem completa:', result);
+  };
+
+  const handleGenerateCarta = (profile: CitizenProfile, result: TriagemResult) => {
+    // TODO: Integrar com API de carta de encaminhamento
+    console.log('Gerar carta para:', profile, result);
+    alert('Funcionalidade de carta será integrada em breve!');
+  };
+
+  const handleFindCras = (profile: CitizenProfile) => {
+    // TODO: Integrar com busca de CRAS
+    console.log('Buscar CRAS para:', profile);
+    const query = encodeURIComponent(`CRAS ${profile.municipio || ''} ${profile.uf || ''}`);
+    window.open(`https://www.google.com/maps/search/${query}`, '_blank');
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 bg-slate-950 overflow-auto">
+      {/* Header */}
+      <header className="sticky top-0 z-10 bg-slate-950/95 backdrop-blur border-b border-slate-800 p-4">
+        <div className="max-w-md mx-auto flex items-center gap-3">
+          <button
+            onClick={onBack}
+            className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div className="flex-1">
+            <h1 className="font-bold text-slate-100">Descobrir Meus Direitos</h1>
+            <p className="text-xs text-slate-400">Triagem de elegibilidade</p>
+          </div>
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-xl">
+            🎯
+          </div>
+        </div>
+      </header>
+
+      {/* Wizard Content */}
+      <main className="p-4 pb-8">
+        <EligibilityWizard
+          onComplete={handleComplete}
+          onGenerateCarta={handleGenerateCarta}
+          onFindCras={handleFindCras}
+        />
+      </main>
     </div>
   );
 }
 
 export default function App() {
+  const [showChat, setShowChat] = useState(false);
+  const [showWizard, setShowWizard] = useState(false);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Dashboard />
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <Dashboard
+          onOpenChat={() => setShowChat(true)}
+          onOpenWizard={() => setShowWizard(true)}
+        />
+        {showChat && <ChatPage onBack={() => setShowChat(false)} />}
+        {showWizard && <WizardPage onBack={() => setShowWizard(false)} />}
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }

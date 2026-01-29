@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#009C3B"
+        android:pathData="M54,54m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0" />
+
+    <!-- Hand icon (palm open - representing "Tá na Mão") -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30
+                         C54,28 56,26 58,26
+                         C60,26 62,28 62,30
+                         L62,45
+                         C62,47 60,49 58,49
+                         C56,49 54,47 54,45
+                         Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,32
+                         C46,30 48,28 50,28
+                         C52,28 54,30 54,32
+                         L54,48
+                         C54,50 52,52 50,52
+                         C48,52 46,50 46,48
+                         Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M62,34
+                         C62,32 64,30 66,30
+                         C68,30 70,32 70,34
+                         L70,46
+                         C70,48 68,50 66,50
+                         C64,50 62,48 62,46
+                         Z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,38
+                         C38,36 40,34 42,34
+                         C44,34 46,36 46,38
+                         L46,50
+                         C46,52 44,54 42,54
+                         C40,54 38,52 38,50
+                         Z" />
+
+    <!-- Thumb -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,50
+                         C36,48 34,48 34,50
+                         L34,56
+                         C34,62 38,66 44,68
+                         L62,68
+                         C68,68 72,64 72,58
+                         L72,52
+                         C72,50 70,48 68,50
+                         C68,52 68,56 64,58
+                         L48,58
+                         C44,58 42,56 42,54
+                         L42,52
+                         C42,50 40,50 38,50
+                         Z" />
+
+    <!-- Palm base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,68
+                         L44,76
+                         C44,78 46,80 50,80
+                         L58,80
+                         C62,80 64,78 64,76
+                         L64,68
+                         Z" />
+
+</vector>
