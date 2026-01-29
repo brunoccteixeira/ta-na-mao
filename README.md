@@ -2,9 +2,11 @@
 
 Plataforma de acesso a benefícios sociais brasileiros com app mobile, dashboard analítico e agente IA.
 
+> **Novo aqui?** Leia primeiro o [MANIFESTO.md](MANIFESTO.md) para entender a visão estratégica do projeto.
+
 ## Visão Geral
 
-O **Tá na Mão** conecta cidadãos brasileiros aos benefícios sociais a que têm direito, reduzindo o gap de R$ 42 bilhões em benefícios não acessados.
+O **Tá na Mão** conecta cidadãos brasileiros aos benefícios sociais a que têm direito. Este documento foca nos aspectos técnicos — para a visão estratégica completa, consulte o [MANIFESTO.md](MANIFESTO.md).
 
 ### Componentes
 
@@ -167,7 +169,9 @@ Ta na Mao/
 │       └── api/          # API client
 │
 ├── docs/                 # Documentação geral
-│   ├── presentations/    # PPTs e PDFs de pitch
+│   ├── estrategia/       # Docs estratégicos (conceito, visão)
+│   ├── tecnico/          # Docs técnicos (arquitetura, deploy)
+│   ├── apresentacoes/    # PPTs e PDFs de pitch
 │   ├── specs/            # Especificações técnicas
 │   └── data/             # Planilhas de referência
 │
@@ -182,9 +186,9 @@ Ta na Mao/
 | [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação completo |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Guia de contribuição |
 | [CHANGELOG.md](CHANGELOG.md) | Histórico de mudanças e melhorias |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Arquitetura do sistema |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Guia de deployment |
-| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Troubleshooting comum |
+| [docs/tecnico/ARCHITECTURE.md](docs/tecnico/ARCHITECTURE.md) | Arquitetura do sistema |
+| [docs/tecnico/DEPLOYMENT.md](docs/tecnico/DEPLOYMENT.md) | Guia de deployment |
+| [docs/tecnico/TROUBLESHOOTING.md](docs/tecnico/TROUBLESHOOTING.md) | Troubleshooting comum |
 
 ### Backend
 | Documento | Descrição |
