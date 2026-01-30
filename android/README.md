@@ -522,27 +522,17 @@ Verified using v2 scheme (APK Signature Scheme v2): true
 - [ ] Instant App
 - [ ] Wear OS support
 
-## Documentação Adicional
+## Documentação
 
-### Setup e Configuração
-- **[SETUP_JAVA.md](SETUP_JAVA.md)** - ⭐ Guia completo de instalação e configuração do Java 17
-- **[COMO_TESTAR.md](COMO_TESTAR.md)** - ⭐ Guia simples para testar o app (Android Studio, dispositivo físico, APK)
+### Guias Principais
+- **[TESTING.md](TESTING.md)** - Guia completo de testes, build e checklist
+- **[SETUP_JAVA.md](SETUP_JAVA.md)** - Instalação do Java 17
 
-### Testes e Build
-- **[TESTING_GUIDE.md](TESTING_GUIDE.md)** - Guia completo de testes, build e checklist funcional
-- **[QUICK_START.md](QUICK_START.md)** - Início rápido do desenvolvimento
-
-### Melhorias e Refatorações
-- **[IMPROVEMENTS_SUMMARY.md](IMPROVEMENTS_SUMMARY.md)** - Resumo detalhado de todas as melhorias implementadas
-- **[CODE_IMPROVEMENTS.md](CODE_IMPROVEMENTS.md)** - Melhorias de código e refatorações
-
-### Arquitetura e Design
-- [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) - Componentes e paleta completa
+### Arquitetura e Design (docs/)
 - [ARCHITECTURE.md](docs/ARCHITECTURE.md) - Arquitetura detalhada
+- [DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) - Componentes e paleta
 - [API_INTEGRATION.md](docs/API_INTEGRATION.md) - Integração com backend
-
-### Índice Completo
-- **[DOCUMENTATION.md](../DOCUMENTATION.md)** - Índice completo de toda a documentação do projeto
+- [FEATURES.md](docs/FEATURES.md) - Features implementadas
 
 ## Contribuição
 
@@ -553,25 +543,6 @@ Verified using v2 scheme (APK Signature Scheme v2): true
 5. Abra um Pull Request
 
 ## Licença
-
-## 📚 Documentação Adicional
-
-### Setup e Configuração
-- **[SETUP_JAVA.md](SETUP_JAVA.md)** - ⭐ Guia completo de instalação e configuração do Java 17
-- **[COMO_TESTAR.md](COMO_TESTAR.md)** - ⭐ Guia simples para testar o app (Android Studio, dispositivo físico, APK)
-
-### Testes e Build
-- **[TESTING_GUIDE.md](TESTING_GUIDE.md)** - Guia completo de testes, build e checklist funcional
-- **[QUICK_START.md](QUICK_START.md)** - Início rápido do desenvolvimento
-
-### Melhorias e Refatorações
-- **[IMPROVEMENTS_SUMMARY.md](IMPROVEMENTS_SUMMARY.md)** - Resumo detalhado de todas as melhorias implementadas
-- **[CODE_IMPROVEMENTS.md](CODE_IMPROVEMENTS.md)** - Melhorias de código e refatorações
-
-### Documentação Completa
-- **[DOCUMENTATION.md](../DOCUMENTATION.md)** - Índice completo de toda a documentação do projeto
-
----
 
 MIT License - Dados públicos do Governo Federal do Brasil.
 

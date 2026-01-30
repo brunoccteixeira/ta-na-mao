@@ -12,6 +12,7 @@ from app.routers import (
     sms,
     voice,
     carta,
+    benefits_v2,
 )
 
 __all__ = [
@@ -26,4 +27,5 @@ __all__ = [
     "sms",
     "voice",
     "carta",
+    "benefits_v2",
 ]

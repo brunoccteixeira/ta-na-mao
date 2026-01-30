@@ -3,6 +3,8 @@
 Plataforma de acesso a benefícios sociais brasileiros com app mobile, dashboard analítico e agente IA.
 
 > **Novo aqui?** Leia primeiro o [MANIFESTO.md](MANIFESTO.md) para entender a visão estratégica do projeto.
+>
+> **Roadmap**: Veja [ROADMAP.md](ROADMAP.md) para o plano de desenvolvimento e próximos passos.
 
 ## Visão Geral
 
@@ -12,10 +14,12 @@ O **Tá na Mão** conecta cidadãos brasileiros aos benefícios sociais a que t�
 
 | Componente | Descrição | Stack |
 |------------|-----------|-------|
-| **Android App** | App de acesso a benefícios com chat IA | Kotlin, Jetpack Compose, Hilt |
-| **Backend API** | API REST + Agente IA com 13 ferramentas | Python, FastAPI, Gemini 2.0 |
+| **Backend API** | API REST v1/v2 + Agente IA + Catálogo unificado | Python, FastAPI, PostgreSQL |
 | **Website MVP** | Catálogo de benefícios + Wizard de elegibilidade | React, TypeScript, Tailwind |
+| **Android App** | App de acesso a benefícios com chat IA | Kotlin, Jetpack Compose, Hilt |
 | **Dashboard** | Visualização de cobertura por município | React, Leaflet, TypeScript |
+
+> **Nota**: O Backend é a **fonte única de verdade** para o catálogo de 229 benefícios. A API v2 (`/api/v2/benefits/`) fornece endpoints unificados para todas as plataformas.
 
 ## Catálogo de Benefícios
 
@@ -58,7 +62,7 @@ export JAVA_HOME=/usr/local/opt/openjdk@17  # macOS com Homebrew
 # APK em: app/build/outputs/apk/debug/app-debug.apk
 ```
 
-**Testar o app**: Veja [android/COMO_TESTAR.md](android/COMO_TESTAR.md) para opções simples de teste.
+**Testar o app**: Veja [android/TESTING.md](android/TESTING.md) para opções de teste.
 
 ### 3. Website MVP (Catálogo + Elegibilidade)
 
@@ -213,12 +217,12 @@ Ta na Mao/
 ### Documentação Geral
 | Documento | Descrição |
 |-----------|-----------|
+| [ROADMAP.md](ROADMAP.md) | Plano de desenvolvimento e próximos passos |
 | [GETTING_STARTED.md](GETTING_STARTED.md) | Guia de instalação completo |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Guia de contribuição |
 | [CHANGELOG.md](CHANGELOG.md) | Histórico de mudanças e melhorias |
 | [docs/tecnico/ARCHITECTURE.md](docs/tecnico/ARCHITECTURE.md) | Arquitetura do sistema |
 | [docs/tecnico/DEPLOYMENT.md](docs/tecnico/DEPLOYMENT.md) | Guia de deployment |
-| [docs/tecnico/TROUBLESHOOTING.md](docs/tecnico/TROUBLESHOOTING.md) | Troubleshooting comum |
 
 ### Backend
 | Documento | Descrição |
@@ -232,16 +236,24 @@ Ta na Mao/
 | Documento | Descrição |
 |-----------|-----------|
 | [android/README.md](android/README.md) | Visão geral do app Android |
-| [android/docs/README.md](android/docs/README.md) | Documentação detalhada |
+| [android/TESTING.md](android/TESTING.md) | Guia de testes e build |
+| [android/docs/](android/docs/) | Documentação detalhada (arquitetura, design system) |
 
 ## API Endpoints Principais
 
-### Agente IA
+### API v2 - Catálogo Unificado (Novo!)
+- `GET /api/v2/benefits/` - Listar benefícios (filtros: scope, state, search)
+- `GET /api/v2/benefits/{id}` - Detalhes de um benefício
+- `GET /api/v2/benefits/by-location/{uf}` - Benefícios por localização
+- `POST /api/v2/benefits/eligibility/check` - Avaliação de elegibilidade
+- `GET /api/v2/benefits/stats` - Estatísticas do catálogo
+
+### API v1 - Agente IA
 - `POST /api/v1/agent/start` - Iniciar sessão
 - `POST /api/v1/agent/chat` - Enviar mensagem
 - `GET /api/v1/agent/status` - Status do agente
 
-### Dados
+### API v1 - Dados
 - `GET /api/v1/municipalities/search?q=` - Buscar município
 - `GET /api/v1/geo/states` - GeoJSON dos estados
 - `GET /api/v1/aggregations/national` - Totais nacionais

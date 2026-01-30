@@ -1101,3 +1101,370 @@ curl "http://localhost:8000/api/v1/aggregations/time-series?program=FARMACIA_POP
 # Dados por região
 curl "http://localhost:8000/api/v1/aggregations/regions?program=TSEE"
 ```
+
+---
+
+## API v2 - Catálogo Unificado de Benefícios
+
+A API v2 fornece acesso ao catálogo unificado de 229+ benefícios sociais brasileiros (federais, estaduais, municipais e setoriais), com motor de elegibilidade integrado.
+
+**Base URL**: `http://localhost:8000/api/v2/benefits`
+
+### Visão Geral
+
+| Endpoint | Método | Descrição |
+|----------|--------|-----------|
+| `/` | GET | Listar benefícios com filtros |
+| `/stats` | GET | Estatísticas do catálogo |
+| `/by-location/{state}` | GET | Benefícios por localização |
+| `/{id}` | GET | Detalhes de um benefício |
+| `/eligibility/check` | POST | Avaliação completa de elegibilidade |
+| `/eligibility/quick` | POST | Avaliação rápida |
+
+### Listar Benefícios
+
+```http
+GET /api/v2/benefits/
+```
+
+**Parâmetros**:
+- `scope` (opcional): federal | state | municipal | sectoral
+- `state` (opcional): Código UF (SP, RJ, etc.)
+- `municipality_ibge` (opcional): Código IBGE do município
+- `sector` (opcional): pescador | agricultor | entregador | catador | mei
+- `category` (opcional): Filtrar por categoria
+- `search` (opcional): Busca por nome/descrição
+- `status` (opcional): active | suspended | ended (default: active)
+- `page`: Página (default: 1)
+- `limit`: Itens por página (default: 50, max: 200)
+
+**Exemplos**:
+```bash
+# Todos os benefícios federais
+curl "http://localhost:8000/api/v2/benefits/?scope=federal"
+
+# Benefícios estaduais de SP
+curl "http://localhost:8000/api/v2/benefits/?scope=state&state=SP"
+
+# Buscar por nome
+curl "http://localhost:8000/api/v2/benefits/?search=bolsa"
+
+# Benefícios para pescadores
+curl "http://localhost:8000/api/v2/benefits/?sector=pescador"
+```
+
+**Resposta**:
+```json
+{
+  "items": [
+    {
+      "id": "federal-bolsa-familia",
+      "name": "Bolsa Família",
+      "shortDescription": "Ajuda mensal para famílias com pouca renda",
+      "scope": "federal",
+      "state": null,
+      "municipalityIbge": null,
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 142,
+        "max": 900,
+        "description": "Valor varia conforme composição familiar"
+      },
+      "status": "active",
+      "icon": "🏠",
+      "category": "Transferência de Renda"
+    }
+  ],
+  "total": 229,
+  "page": 1,
+  "limit": 50,
+  "pages": 5
+}
+```
+
+### Estatísticas do Catálogo
+
+```http
+GET /api/v2/benefits/stats
+```
+
+**Resposta**:
+```json
+{
+  "totalBenefits": 229,
+  "byScope": {
+    "federal": 16,
+    "state": 106,
+    "municipal": 97,
+    "sectoral": 10
+  },
+  "byCategory": {
+    "Transferência de Renda": 45,
+    "Habitação": 32,
+    "Saúde": 28,
+    "Transporte": 24
+  },
+  "statesCovered": 27,
+  "municipalitiesCovered": 40
+}
+```
+
+### Benefícios por Localização
+
+```http
+GET /api/v2/benefits/by-location/{state_code}
+```
+
+Retorna todos os benefícios aplicáveis para uma localização (federal + estadual + municipal).
+
+**Parâmetros**:
+- `state_code`: Código UF (obrigatório)
+- `municipality_ibge` (opcional): Código IBGE para incluir benefícios municipais
+
+**Exemplos**:
+```bash
+# Benefícios de SP (federal + estadual)
+curl "http://localhost:8000/api/v2/benefits/by-location/SP"
+
+# Benefícios de São Paulo capital (federal + estadual + municipal)
+curl "http://localhost:8000/api/v2/benefits/by-location/SP?municipality_ibge=3550308"
+```
+
+**Resposta**:
+```json
+{
+  "state": "SP",
+  "municipality_ibge": "3550308",
+  "total": 28,
+  "federal": [...],
+  "state": [...],
+  "municipal": [...],
+  "sectoral": [...]
+}
+```
+
+### Detalhes de Benefício
+
+```http
+GET /api/v2/benefits/{id}
+```
+
+**Exemplos**:
+```bash
+curl "http://localhost:8000/api/v2/benefits/federal-bolsa-familia"
+curl "http://localhost:8000/api/v2/benefits/sp-bolsa-povo"
+curl "http://localhost:8000/api/v2/benefits/sp-saopaulo-bolsa-trabalho"
+```
+
+**Resposta**:
+```json
+{
+  "id": "federal-bolsa-familia",
+  "name": "Bolsa Família",
+  "shortDescription": "Ajuda mensal para famílias com pouca renda",
+  "scope": "federal",
+  "state": null,
+  "municipalityIbge": null,
+  "sector": null,
+  "estimatedValue": {
+    "type": "monthly",
+    "min": 142,
+    "max": 900,
+    "description": "Valor varia conforme composição familiar"
+  },
+  "eligibilityRules": [
+    {
+      "field": "rendaPerCapita",
+      "operator": "lte",
+      "value": 218,
+      "description": "Renda por pessoa de até R$ 218 por mês"
+    },
+    {
+      "field": "cadastradoCadunico",
+      "operator": "eq",
+      "value": true,
+      "description": "Inscrito no Cadastro Único"
+    }
+  ],
+  "whereToApply": "CRAS mais próximo",
+  "documentsRequired": ["CPF de todos da família", "Certidão de nascimento", "Comprovante de residência"],
+  "howToApply": ["Vá ao CRAS da sua cidade", "Leve os documentos", "Faça o Cadastro Único"],
+  "sourceUrl": "https://www.gov.br/mds/...",
+  "lastUpdated": "2024-01-15",
+  "status": "active",
+  "icon": "🏠",
+  "category": "Transferência de Renda"
+}
+```
+
+### Avaliação de Elegibilidade (Completa)
+
+```http
+POST /api/v2/benefits/eligibility/check
+```
+
+Avalia a elegibilidade de um cidadão para todos os benefícios aplicáveis.
+
+**Request Body**:
+```json
+{
+  "profile": {
+    "estado": "SP",
+    "municipioIbge": "3550308",
+    "pessoasNaCasa": 4,
+    "quantidadeFilhos": 2,
+    "temIdoso65Mais": false,
+    "temGestante": false,
+    "temPcd": false,
+    "temCrianca0a6": true,
+    "rendaFamiliarMensal": 800,
+    "trabalhoFormal": false,
+    "temCasaPropria": false,
+    "cadastradoCadunico": true,
+    "recebeBolsaFamilia": false,
+    "recebeBpc": false,
+    "temMei": false,
+    "agricultorFamiliar": false,
+    "pescadorArtesanal": false,
+    "estudante": false,
+    "redePublica": false
+  },
+  "scope": null,
+  "includeNotApplicable": false
+}
+```
+
+**Resposta**:
+```json
+{
+  "profileSummary": {
+    "estado": "SP",
+    "municipio": "São Paulo",
+    "pessoasNaCasa": 4,
+    "rendaFamiliar": 800,
+    "rendaPerCapita": 200,
+    "cadastradoCadunico": true
+  },
+  "summary": {
+    "eligible": [
+      {
+        "benefit": {
+          "id": "federal-bolsa-familia",
+          "name": "Bolsa Família",
+          "shortDescription": "Ajuda mensal para famílias com pouca renda",
+          "estimatedValue": {"type": "monthly", "min": 142, "max": 900}
+        },
+        "status": "eligible",
+        "matchedRules": ["Renda por pessoa de até R$ 218", "Inscrito no Cadastro Único"],
+        "failedRules": [],
+        "inconclusiveRules": [],
+        "estimatedValue": 492,
+        "reason": "Você atende a todos os requisitos"
+      }
+    ],
+    "likelyEligible": [...],
+    "maybe": [...],
+    "notEligible": [],
+    "notApplicable": [],
+    "alreadyReceiving": [],
+    "totalAnalyzed": 28,
+    "totalPotentialMonthly": 1542,
+    "totalPotentialAnnual": 1412,
+    "totalPotentialOneTime": 5000,
+    "prioritySteps": [
+      "Faça ou atualize seu Cadastro Único no CRAS",
+      "Solicite o Bolsa Família - CRAS mais próximo"
+    ],
+    "documentsNeeded": ["CPF de todos da família", "Comprovante de residência"]
+  },
+  "evaluatedAt": "2026-01-29T23:45:00"
+}
+```
+
+### Avaliação Rápida
+
+```http
+POST /api/v2/benefits/eligibility/quick
+```
+
+Avaliação simplificada com poucos parâmetros.
+
+**Query Parameters**:
+- `estado`: UF (obrigatório)
+- `renda_familiar`: Renda mensal da família (obrigatório)
+- `pessoas_na_casa`: Pessoas na casa (default: 1)
+- `cadastrado_cadunico`: Está no CadÚnico? (default: false)
+
+**Exemplo**:
+```bash
+curl -X POST "http://localhost:8000/api/v2/benefits/eligibility/quick?estado=SP&renda_familiar=800&pessoas_na_casa=4&cadastrado_cadunico=true"
+```
+
+**Resposta**:
+```json
+{
+  "estado": "SP",
+  "rendaPerCapita": 200,
+  "totalEligible": 8,
+  "totalLikelyEligible": 4,
+  "totalPotentialMonthly": 1542,
+  "topBenefits": [
+    {"id": "federal-bolsa-familia", "name": "Bolsa Família", "estimatedValue": 492},
+    {"id": "federal-tsee", "name": "Tarifa Social de Energia", "estimatedValue": 60}
+  ],
+  "nextStep": "Faça ou atualize seu Cadastro Único no CRAS"
+}
+```
+
+### Status de Elegibilidade
+
+| Status | Descrição |
+|--------|-----------|
+| `eligible` | Atende a todos os requisitos |
+| `likely_eligible` | Provavelmente elegível, verificar presencialmente |
+| `maybe` | Pode ter direito, verificar no CRAS |
+| `not_eligible` | Não atende aos requisitos |
+| `not_applicable` | Benefício não disponível na região/setor |
+| `already_receiving` | Já recebe este benefício |
+
+### Operadores de Regras
+
+| Operador | Descrição |
+|----------|-----------|
+| `eq` | Igual a |
+| `neq` | Diferente de |
+| `lt` | Menor que |
+| `lte` | Menor ou igual a |
+| `gt` | Maior que |
+| `gte` | Maior ou igual a |
+| `in` | Está na lista |
+| `not_in` | Não está na lista |
+| `has` | Tem valor (truthy) |
+| `not_has` | Não tem valor (falsy) |
+
+### Campos do Perfil do Cidadão
+
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| `estado` | string | UF (obrigatório) |
+| `municipioIbge` | string | Código IBGE do município |
+| `idade` | number | Idade do cidadão |
+| `pessoasNaCasa` | number | Total de pessoas na residência |
+| `quantidadeFilhos` | number | Filhos menores de 18 anos |
+| `temIdoso65Mais` | boolean | Tem idoso 65+ na família |
+| `temGestante` | boolean | Tem gestante na família |
+| `temPcd` | boolean | Tem pessoa com deficiência |
+| `temCrianca0a6` | boolean | Tem criança de 0 a 6 anos |
+| `rendaFamiliarMensal` | number | Renda total da família |
+| `trabalhoFormal` | boolean | Tem trabalho com carteira |
+| `temCasaPropria` | boolean | Possui casa própria |
+| `cadastradoCadunico` | boolean | Inscrito no CadÚnico |
+| `recebeBolsaFamilia` | boolean | Já recebe Bolsa Família |
+| `recebeBpc` | boolean | Já recebe BPC |
+| `temMei` | boolean | É MEI |
+| `agricultorFamiliar` | boolean | É agricultor familiar |
+| `pescadorArtesanal` | boolean | É pescador artesanal |
+| `catadorReciclavel` | boolean | É catador de recicláveis |
+| `trabalhaAplicativo` | boolean | Trabalha como entregador/motorista de app |
+| `estudante` | boolean | É estudante |
+| `redePublica` | boolean | Estuda em rede pública |
