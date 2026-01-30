@@ -3,6 +3,7 @@ package br.gov.tanamao.di
 import android.content.Context
 import androidx.room.Room
 import br.gov.tanamao.data.local.database.AppDatabase
+import br.gov.tanamao.data.local.database.dao.BenefitCacheDao
 import br.gov.tanamao.data.local.database.dao.ConsultationHistoryDao
 import br.gov.tanamao.data.local.database.dao.UserDataCacheDao
 import dagger.Module
@@ -36,6 +37,11 @@ object DatabaseModule {
     @Provides
     fun provideUserDataCacheDao(database: AppDatabase): UserDataCacheDao {
         return database.userDataCacheDao()
+    }
+
+    @Provides
+    fun provideBenefitCacheDao(database: AppDatabase): BenefitCacheDao {
+        return database.benefitCacheDao()
     }
 }
 

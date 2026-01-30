@@ -1,22 +1,38 @@
 /**
  * BenefitDetail - Single benefit page
+ * Uses API v2 with fallback to static JSON
  */
 
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { getBenefitsCatalog, getBenefitById, formatBenefitValue, getStateName } from '../engine/catalog';
+import { useBenefitDetail } from '../hooks/useBenefitsAPI';
+import { formatBenefitValue, getStateName } from '../engine/catalog';
 
 export default function BenefitDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const catalog = getBenefitsCatalog();
-  const benefit = id ? getBenefitById(catalog, id) : undefined;
+  const { data: benefit, isLoading, isError, error } = useBenefitDetail(id);
 
-  if (!benefit) {
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="flex items-center gap-3 text-slate-400">
+          <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+          <span>Carregando benefício...</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Error/Not found state
+  if (isError || !benefit) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-slate-400 mb-4">Benefício não encontrado</p>
+          <p className="text-slate-400 mb-4">
+            {error instanceof Error ? error.message : 'Benefício não encontrado'}
+          </p>
           <Link to="/beneficios" className="text-emerald-400 hover:text-emerald-300">
             ← Voltar ao catálogo
           </Link>

@@ -2,11 +2,13 @@ package br.gov.tanamao.di
 
 import br.gov.tanamao.data.repository.AgentRepositoryImpl
 import br.gov.tanamao.data.repository.AggregationRepositoryImpl
+import br.gov.tanamao.data.repository.BenefitsV2RepositoryImpl
 import br.gov.tanamao.data.repository.MunicipalityRepositoryImpl
 import br.gov.tanamao.data.repository.ProgramRepositoryImpl
 import br.gov.tanamao.data.repository.WalletRepositoryImpl
 import br.gov.tanamao.domain.repository.AgentRepository
 import br.gov.tanamao.domain.repository.AggregationRepository
+import br.gov.tanamao.domain.repository.BenefitsV2Repository
 import br.gov.tanamao.domain.repository.MunicipalityRepository
 import br.gov.tanamao.domain.repository.ProgramRepository
 import br.gov.tanamao.domain.repository.WalletRepository
@@ -49,4 +51,10 @@ abstract class RepositoryModule {
     abstract fun bindWalletRepository(
         impl: WalletRepositoryImpl
     ): WalletRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindBenefitsV2Repository(
+        impl: BenefitsV2RepositoryImpl
+    ): BenefitsV2Repository
 }

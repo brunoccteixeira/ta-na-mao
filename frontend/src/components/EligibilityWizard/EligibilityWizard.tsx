@@ -7,6 +7,8 @@
  * 3. IncomeStep - Renda
  * 4. SpecialStep - Situações especiais
  * 5. RightsWallet - Resultado (Carteira de Direitos)
+ *
+ * Uses API v2 for eligibility check with fallback to local simulation
  */
 
 import { useState, useCallback } from 'react';
@@ -18,6 +20,7 @@ import {
   STEP_TITLES,
   DEFAULT_PROFILE,
 } from './types';
+import { useEligibilityCheck, type EligibilityResponse } from '../../hooks/useBenefitsAPI';
 import BasicInfoStep from './steps/BasicInfoStep';
 import FamilyStep from './steps/FamilyStep';
 import IncomeStep from './steps/IncomeStep';
@@ -36,13 +39,16 @@ export default function EligibilityWizard({
   onComplete,
   onGenerateCarta,
   onFindCras,
-  apiEndpoint: _apiEndpoint = '/api/v1/agent/triagem',
+  apiEndpoint: _apiEndpoint = '/api/v2/benefits/eligibility/check',
 }: Props) {
   const [currentStep, setCurrentStep] = useState<WizardStep>('basic');
   const [profile, setProfile] = useState<CitizenProfile>(DEFAULT_PROFILE);
   const [result, setResult] = useState<TriagemResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // API mutation hook for eligibility check
+  const eligibilityMutation = useEligibilityCheck();
 
   const currentStepIndex = WIZARD_STEPS.indexOf(currentStep);
   const progress = ((currentStepIndex + 1) / WIZARD_STEPS.length) * 100;
@@ -75,20 +81,31 @@ export default function EligibilityWizard({
     setError(null);
 
     try {
-      // Simulação local de triagem (para funcionar sem backend)
-      // Em produção, substituir por chamada real à API
-      const mockResult = simulateTriagem(profile);
+      // Try API first
+      const apiProfile = transformProfileForAPI(profile);
+      const apiResponse = await eligibilityMutation.mutateAsync({ profile: apiProfile });
+      const triagemResult = transformAPIResponse(apiResponse, profile);
 
-      setResult(mockResult);
+      setResult(triagemResult);
       goToStep('result');
-      onComplete?.(mockResult);
+      onComplete?.(triagemResult);
     } catch (err) {
-      console.error('Erro na triagem:', err);
-      setError('Não foi possível processar. Tente novamente.');
+      console.warn('API unavailable, using local simulation:', err);
+
+      try {
+        // Fallback to local simulation
+        const mockResult = simulateTriagem(profile);
+        setResult(mockResult);
+        goToStep('result');
+        onComplete?.(mockResult);
+      } catch (fallbackErr) {
+        console.error('Erro na triagem:', fallbackErr);
+        setError('Não foi possível processar. Tente novamente.');
+      }
     } finally {
       setIsLoading(false);
     }
-  }, [profile, goToStep, onComplete]);
+  }, [profile, goToStep, onComplete, eligibilityMutation]);
 
   const handleSpecialNext = useCallback(() => {
     runTriagem();
@@ -346,5 +363,83 @@ function simulateTriagem(profile: CitizenProfile): TriagemResult {
     valorJaRecebeMensal,
     proximosPassosPrioritarios: proximosPassos,
     documentosNecessarios: documentos,
+  };
+}
+
+/**
+ * Transform local CitizenProfile to API format
+ */
+function transformProfileForAPI(profile: CitizenProfile): import('../../engine/types').CitizenProfile {
+  return {
+    estado: profile.uf || 'SP',
+    municipioIbge: profile.municipioIbge,
+    municipioNome: profile.municipio,
+    idade: profile.idade,
+    cpf: profile.cpf,
+    nome: profile.nome,
+    cep: profile.cep,
+    pessoasNaCasa: profile.pessoasNaCasa,
+    quantidadeFilhos: profile.quantidadeFilhos,
+    temIdoso65Mais: profile.temIdoso65Mais,
+    temGestante: profile.temGestante,
+    temPcd: profile.temPcd,
+    temCrianca0a6: profile.temCrianca0a6,
+    rendaFamiliarMensal: profile.rendaFamiliarMensal,
+    trabalhoFormal: profile.trabalhoFormal,
+    temCasaPropria: profile.temCasaPropria,
+    moradiaZonaRural: profile.moradiaZonaRural,
+    cadastradoCadunico: profile.cadastradoCadunico,
+    nisCadunico: undefined,
+    recebeBolsaFamilia: profile.recebeBolsaFamilia,
+    valorBolsaFamilia: profile.valorBolsaFamilia,
+    recebeBpc: profile.recebeBpc,
+    trabalhou1971_1988: profile.trabalhou1971_1988,
+    temCarteiraAssinada: profile.temCarteiraAssinada,
+    tempoCarteiraAssinada: profile.tempoCarteiraAssinada,
+    profissao: profile.profissao,
+    temMei: profile.temMei,
+    trabalhaAplicativo: profile.trabalhaAplicativo,
+    agricultorFamiliar: profile.agricultorFamiliar,
+    pescadorArtesanal: profile.pescadorArtesanal,
+    catadorReciclavel: profile.catadorReciclavel,
+    mulherMenstruante: profile.mulherMenstruante,
+    estudante: profile.estudante,
+    redePublica: profile.redePublica,
+  };
+}
+
+/**
+ * Transform API response to local TriagemResult format
+ */
+function transformAPIResponse(response: EligibilityResponse, _profile: CitizenProfile): TriagemResult {
+  const { summary } = response;
+
+  // Map API results to local format
+  const mapBenefit = (item: { benefit: { id: string; name: string }; status: string; estimatedValue?: number; reason?: string }) => ({
+    programa: item.benefit.id,
+    programaNome: item.benefit.name,
+    status: item.status as 'elegivel' | 'ja_recebe' | 'inelegivel' | 'inconclusivo',
+    motivo: item.reason || '',
+    valorEstimado: item.estimatedValue,
+  });
+
+  const beneficiosElegiveis = summary.eligible.map(mapBenefit);
+  const beneficiosJaRecebe = summary.alreadyReceiving.map(mapBenefit);
+  const beneficiosInelegiveis = summary.notEligible.map(mapBenefit);
+  const beneficiosInconclusivos = [
+    ...summary.maybe.map(mapBenefit),
+    ...summary.likelyEligible.map(mapBenefit),
+  ];
+
+  return {
+    beneficiosElegiveis,
+    beneficiosJaRecebe,
+    beneficiosInelegiveis,
+    beneficiosInconclusivos,
+    totalProgramasAnalisados: summary.totalAnalyzed,
+    valorPotencialMensal: summary.totalPotentialMonthly,
+    valorJaRecebeMensal: 0, // API doesn't calculate this
+    proximosPassosPrioritarios: summary.prioritySteps,
+    documentosNecessarios: summary.documentsNeeded,
   };
 }

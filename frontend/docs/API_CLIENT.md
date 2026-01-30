@@ -380,6 +380,170 @@ export function useMunicipalitySearch(query: string) {
 
 ---
 
+## API v2 - Catálogo Unificado de Benefícios
+
+### useBenefitsList
+
+Hook para listar benefícios com filtros e paginação. Usa cache localStorage com fallback para JSON estático.
+
+```typescript
+import { useBenefitsList } from '@/hooks/useBenefitsAPI';
+
+function BenefitsCatalog() {
+  const {
+    data,
+    isLoading,
+    isError,
+    error
+  } = useBenefitsList({
+    scope: 'federal',        // 'federal' | 'state' | 'municipal' | 'sectoral'
+    state: 'SP',             // Código UF
+    search: 'bolsa',         // Busca por nome/descrição
+    limit: 50,               // Itens por página
+  });
+
+  if (isLoading) return <Spinner />;
+  if (isError) return <Error message={error.message} />;
+
+  return (
+    <div>
+      <p>{data.total} benefícios encontrados</p>
+      {data.items.map(benefit => (
+        <BenefitCard key={benefit.id} benefit={benefit} />
+      ))}
+    </div>
+  );
+}
+```
+
+### useBenefitDetail
+
+Hook para detalhes de um benefício específico.
+
+```typescript
+import { useBenefitDetail } from '@/hooks/useBenefitsAPI';
+
+function BenefitPage({ benefitId }: { benefitId: string }) {
+  const { data: benefit, isLoading, isError } = useBenefitDetail(benefitId);
+
+  if (isLoading) return <Spinner />;
+  if (isError || !benefit) return <NotFound />;
+
+  return (
+    <div>
+      <h1>{benefit.name}</h1>
+      <p>{benefit.shortDescription}</p>
+      <h2>Quem pode receber</h2>
+      <ul>
+        {benefit.eligibilityRules.map((rule, i) => (
+          <li key={i}>{rule.description}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+### useBenefitsByLocation
+
+Hook para benefícios por localização geográfica.
+
+```typescript
+import { useBenefitsByLocation } from '@/hooks/useBenefitsAPI';
+
+function LocationBenefits({ state, ibge }: { state: string; ibge?: string }) {
+  const { data, isLoading } = useBenefitsByLocation(state, ibge);
+
+  if (isLoading) return <Spinner />;
+
+  return (
+    <div>
+      <h2>Federais ({data.federal.length})</h2>
+      <h2>Estaduais ({data.state.length})</h2>
+      <h2>Municipais ({data.municipal.length})</h2>
+      <h2>Setoriais ({data.sectoral.length})</h2>
+    </div>
+  );
+}
+```
+
+### useEligibilityCheck
+
+Mutation para verificação de elegibilidade completa.
+
+```typescript
+import { useEligibilityCheck } from '@/hooks/useBenefitsAPI';
+
+function EligibilityWizard() {
+  const eligibilityMutation = useEligibilityCheck();
+
+  const handleCheck = async (profile: CitizenProfile) => {
+    try {
+      const result = await eligibilityMutation.mutateAsync({ profile });
+
+      console.log('Elegíveis:', result.summary.eligible);
+      console.log('Valor potencial:', result.summary.totalPotentialMonthly);
+      console.log('Próximos passos:', result.summary.prioritySteps);
+    } catch (error) {
+      console.error('Erro na verificação:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={(e) => { e.preventDefault(); handleCheck(profile); }}>
+      {/* ... campos do formulário ... */}
+      <button
+        type="submit"
+        disabled={eligibilityMutation.isPending}
+      >
+        {eligibilityMutation.isPending ? 'Verificando...' : 'Verificar elegibilidade'}
+      </button>
+    </form>
+  );
+}
+```
+
+### useBenefitsStats
+
+Hook para estatísticas do catálogo.
+
+```typescript
+import { useBenefitsStats } from '@/hooks/useBenefitsAPI';
+
+function CatalogStats() {
+  const { data: stats, isLoading } = useBenefitsStats();
+
+  if (isLoading) return null;
+
+  return (
+    <div>
+      <p>{stats.totalBenefits} benefícios no catálogo</p>
+      <p>{stats.byScope.federal} federais</p>
+      <p>{stats.byScope.state} estaduais</p>
+      <p>{stats.byScope.municipal} municipais</p>
+      <p>{stats.statesCovered} estados cobertos</p>
+    </div>
+  );
+}
+```
+
+### Cache e Fallback
+
+Os hooks v2 implementam cache em três níveis:
+
+1. **React Query Cache**: Cache em memória (5 min stale time)
+2. **localStorage Cache**: Persistente por 24 horas
+3. **JSON Fallback**: Se API e cache falham, usa dados estáticos do bundle
+
+```typescript
+// Limpar cache manualmente
+import { clearBenefitsCache } from '@/hooks/useBenefitsAPI';
+
+clearBenefitsCache(); // Remove cache localStorage
+```
+
+---
+
 ## Tratamento de Erros
 
 ```typescript

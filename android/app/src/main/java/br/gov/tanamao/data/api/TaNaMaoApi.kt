@@ -169,4 +169,66 @@ interface TaNaMaoApi {
     // ============ CRAS PREPARATION ============
     // Called via agent/chat with message "preparar para CRAS" or "checklist CRAS"
     // Response will be in ChatResponseDto.response field
+
+    // ============ BENEFITS API V2 (Unified Catalog) ============
+
+    /**
+     * Get paginated list of benefits with optional filters.
+     */
+    @GET("v2/benefits/")
+    suspend fun getBenefitsV2(
+        @Query("scope") scope: String? = null,
+        @Query("state") state: String? = null,
+        @Query("municipality_ibge") municipalityIbge: String? = null,
+        @Query("sector") sector: String? = null,
+        @Query("category") category: String? = null,
+        @Query("status") status: String? = null,
+        @Query("search") search: String? = null,
+        @Query("page") page: Int = 1,
+        @Query("limit") limit: Int = 50
+    ): BenefitListResponseDto
+
+    /**
+     * Get benefits catalog statistics.
+     */
+    @GET("v2/benefits/stats")
+    suspend fun getBenefitsStats(): BenefitStatsResponseDto
+
+    /**
+     * Get benefits by geographic location (federal + state + municipal + sectoral).
+     */
+    @GET("v2/benefits/by-location/{state_code}")
+    suspend fun getBenefitsByLocation(
+        @Path("state_code") stateCode: String,
+        @Query("municipality_ibge") municipalityIbge: String? = null
+    ): BenefitsByLocationResponseDto
+
+    /**
+     * Get a single benefit by ID.
+     */
+    @GET("v2/benefits/{benefit_id}")
+    suspend fun getBenefitDetailV2(
+        @Path("benefit_id") benefitId: String
+    ): BenefitDetailDto
+
+    // ============ ELIGIBILITY API V2 ============
+
+    /**
+     * Full eligibility check against all benefits.
+     */
+    @POST("v2/benefits/eligibility/check")
+    suspend fun checkEligibility(
+        @Body request: EligibilityRequestDto
+    ): EligibilityResponseDto
+
+    /**
+     * Quick eligibility count (lighter response).
+     */
+    @GET("v2/benefits/eligibility/quick")
+    suspend fun quickEligibilityCheck(
+        @Query("estado") estado: String,
+        @Query("renda_familiar_mensal") rendaFamiliarMensal: Double,
+        @Query("pessoas_na_casa") pessoasNaCasa: Int,
+        @Query("cadastrado_cadunico") cadastradoCadunico: Boolean
+    ): QuickEligibilityResponseDto
 }

@@ -819,3 +819,232 @@ fun loadTimeSeries(program: ProgramCode, stateCode: String? = null) {
     }
 }
 ```
+
+---
+
+## API v2 - Catálogo Unificado de Benefícios
+
+A API v2 fornece acesso ao catálogo unificado de 229+ benefícios sociais brasileiros, com motor de elegibilidade integrado e suporte offline via Room cache.
+
+### Endpoints
+
+```kotlin
+// TaNaMaoApi.kt - Benefits API v2
+
+@GET("v2/benefits/")
+suspend fun getBenefitsV2(
+    @Query("scope") scope: String? = null,
+    @Query("state") state: String? = null,
+    @Query("search") search: String? = null,
+    @Query("page") page: Int = 1,
+    @Query("limit") limit: Int = 50
+): BenefitListResponseDto
+
+@GET("v2/benefits/stats")
+suspend fun getBenefitsStats(): BenefitStatsResponseDto
+
+@GET("v2/benefits/by-location/{state_code}")
+suspend fun getBenefitsByLocation(
+    @Path("state_code") stateCode: String,
+    @Query("municipality_ibge") municipalityIbge: String? = null
+): BenefitsByLocationResponseDto
+
+@GET("v2/benefits/{benefit_id}")
+suspend fun getBenefitDetailV2(
+    @Path("benefit_id") benefitId: String
+): BenefitDetailDto
+
+@POST("v2/benefits/eligibility/check")
+suspend fun checkEligibility(
+    @Body request: EligibilityRequestDto
+): EligibilityResponseDto
+```
+
+### DTOs
+
+```kotlin
+// data/api/dto/BenefitV2Dto.kt
+
+data class BenefitSummaryDto(
+    val id: String,
+    val name: String,
+    @SerializedName("short_description") val shortDescription: String,
+    val scope: String, // "federal", "state", "municipal", "sectoral"
+    val state: String?,
+    @SerializedName("estimated_value") val estimatedValue: EstimatedValueDto?,
+    val status: String,
+    val icon: String?,
+    val category: String?
+)
+
+// data/api/dto/EligibilityV2Dto.kt
+
+data class CitizenProfileDto(
+    val estado: String,
+    @SerializedName("municipio_ibge") val municipioIbge: String? = null,
+    @SerializedName("pessoas_na_casa") val pessoasNaCasa: Int = 1,
+    @SerializedName("renda_familiar_mensal") val rendaFamiliarMensal: Double = 0.0,
+    @SerializedName("cadastrado_cadunico") val cadastradoCadunico: Boolean = false,
+    // ... outros campos
+)
+
+data class EligibilityResponseDto(
+    @SerializedName("profile_summary") val profileSummary: Map<String, Any>,
+    val summary: EligibilitySummaryDto,
+    @SerializedName("evaluated_at") val evaluatedAt: String
+)
+```
+
+### Room Cache
+
+O app usa Room para cache offline dos benefícios:
+
+```kotlin
+// data/local/database/entity/BenefitCacheEntity.kt
+
+@Entity(tableName = "benefits_cache")
+data class BenefitCacheEntity(
+    @PrimaryKey val id: String,
+    val name: String,
+    val shortDescription: String,
+    val scope: String,
+    val state: String?,
+    val estimatedValueJson: String?,
+    val status: String,
+    val icon: String?,
+    val category: String?,
+    val lastUpdated: Long = System.currentTimeMillis(),
+    val expiresAt: Long = System.currentTimeMillis() + (24 * 60 * 60 * 1000)
+)
+
+// data/local/database/dao/BenefitCacheDao.kt
+
+@Dao
+interface BenefitCacheDao {
+    @Query("SELECT * FROM benefits_cache WHERE expiresAt > :now")
+    fun getAll(now: Long = System.currentTimeMillis()): Flow<List<BenefitCacheEntity>>
+
+    @Query("SELECT * FROM benefits_cache WHERE scope = :scope AND expiresAt > :now")
+    suspend fun getByScope(scope: String, now: Long = System.currentTimeMillis()): List<BenefitCacheEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(benefits: List<BenefitCacheEntity>)
+
+    @Query("DELETE FROM benefits_cache")
+    suspend fun deleteAll()
+}
+```
+
+### Repository
+
+```kotlin
+// data/repository/BenefitsV2RepositoryImpl.kt
+
+@Singleton
+class BenefitsV2RepositoryImpl @Inject constructor(
+    private val api: TaNaMaoApi,
+    private val cacheDao: BenefitCacheDao,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher
+) : BenefitsV2Repository {
+
+    override fun getBenefits(forceRefresh: Boolean): Flow<Result<List<BenefitSummaryDto>>> = flow {
+        emit(Result.Loading)
+
+        // Cache-first strategy
+        if (!forceRefresh) {
+            val cached = cacheDao.getAllOnce()
+            if (cached.isNotEmpty()) {
+                emit(Result.Success(cached.map { it.toDto() }))
+            }
+        }
+
+        // Fetch from API
+        try {
+            val response = api.getBenefitsV2(limit = 500)
+            cacheDao.deleteAll()
+            cacheDao.insertAll(response.items.map { BenefitCacheEntity.fromDto(it) })
+            emit(Result.Success(response.items))
+        } catch (e: Exception) {
+            val cached = cacheDao.getAllOnce()
+            if (cached.isEmpty()) {
+                emit(Result.Error(e.toAppError()))
+            }
+        }
+    }.flowOn(dispatcher)
+
+    override suspend fun checkEligibility(
+        profile: CitizenProfileDto,
+        scope: String?,
+        includeNotApplicable: Boolean
+    ): Result<EligibilityResponseDto> = withContext(dispatcher) {
+        try {
+            val request = EligibilityRequestDto(profile, scope, includeNotApplicable)
+            Result.Success(api.checkEligibility(request))
+        } catch (e: Exception) {
+            Result.Error(e.toAppError())
+        }
+    }
+}
+```
+
+### Uso no ViewModel
+
+```kotlin
+@HiltViewModel
+class BenefitsViewModel @Inject constructor(
+    private val repository: BenefitsV2Repository
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow(BenefitsUiState())
+    val uiState: StateFlow<BenefitsUiState> = _uiState.asStateFlow()
+
+    init {
+        loadBenefits()
+    }
+
+    fun loadBenefits(forceRefresh: Boolean = false) {
+        viewModelScope.launch {
+            repository.getBenefits(forceRefresh).collect { result ->
+                when (result) {
+                    is Result.Loading -> _uiState.update { it.copy(isLoading = true) }
+                    is Result.Success -> _uiState.update {
+                        it.copy(isLoading = false, benefits = result.data)
+                    }
+                    is Result.Error -> _uiState.update {
+                        it.copy(isLoading = false, error = result.exception.getUserMessage())
+                    }
+                }
+            }
+        }
+    }
+
+    fun checkEligibility(profile: CitizenProfileDto) {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isCheckingEligibility = true) }
+
+            when (val result = repository.checkEligibility(profile)) {
+                is Result.Success -> _uiState.update {
+                    it.copy(
+                        isCheckingEligibility = false,
+                        eligibilityResult = result.data
+                    )
+                }
+                is Result.Error -> _uiState.update {
+                    it.copy(
+                        isCheckingEligibility = false,
+                        error = result.exception.getUserMessage()
+                    )
+                }
+            }
+        }
+    }
+}
+
+data class BenefitsUiState(
+    val isLoading: Boolean = false,
+    val isCheckingEligibility: Boolean = false,
+    val benefits: List<BenefitSummaryDto> = emptyList(),
+    val eligibilityResult: EligibilityResponseDto? = null,
+    val error: String? = null
+)
+```

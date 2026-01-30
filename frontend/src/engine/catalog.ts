@@ -244,8 +244,9 @@ export function formatCurrency(value: number): string {
 
 /**
  * Format benefit value for display
+ * Accepts either a full Benefit or a partial object with estimatedValue
  */
-export function formatBenefitValue(benefit: Benefit): string {
+export function formatBenefitValue(benefit: { estimatedValue?: Benefit['estimatedValue'] }): string {
   if (!benefit.estimatedValue) return 'Consultar';
 
   const { type, min, max, description } = benefit.estimatedValue;

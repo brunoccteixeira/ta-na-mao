@@ -1,15 +1,13 @@
 /**
  * Catalog - Browse all benefits
+ * Uses API v2 with fallback to static JSON
  */
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  getBenefitsCatalog,
-  getAllBenefits,
-  formatBenefitValue,
-} from '../engine/catalog';
-import { Benefit, BRAZILIAN_STATES } from '../engine/types';
+import { useBenefitsList, type BenefitSummaryAPI } from '../hooks/useBenefitsAPI';
+import { formatBenefitValue } from '../engine/catalog';
+import { BRAZILIAN_STATES } from '../engine/types';
 
 type FilterScope = 'all' | 'federal' | 'state' | 'municipal' | 'sectoral';
 
@@ -65,31 +63,41 @@ export default function Catalog() {
   const [searchQuery, setSearchQuery] = useState('');
   const [scopeFilter, setScopeFilter] = useState<FilterScope>('all');
   const [stateFilter, setStateFilter] = useState<string>('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
 
-  const catalog = getBenefitsCatalog();
-  const allBenefits = useMemo(() => getAllBenefits(catalog), [catalog]);
+  // Debounce search input
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(searchQuery);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
+  // Fetch benefits from API with filters
+  const {
+    data: benefitsData,
+    isLoading,
+    isError,
+    error,
+  } = useBenefitsList({
+    scope: scopeFilter !== 'all' ? scopeFilter : undefined,
+    state: stateFilter || undefined,
+    search: debouncedSearch || undefined,
+    limit: 500, // Get all for now
+  });
+
+  const allBenefits = useMemo(() => {
+    return benefitsData?.items || [];
+  }, [benefitsData]);
+
+  // The API already handles filtering, but we do local filtering for the municipality name search
   const filteredBenefits = useMemo(() => {
     let results = allBenefits;
 
-    // Filter by scope
-    if (scopeFilter !== 'all') {
-      results = results.filter(b => b.scope === scopeFilter);
-    }
-
-    // Filter by state
-    if (stateFilter) {
-      results = results.filter(b =>
-        b.scope === 'federal' ||
-        b.state === stateFilter ||
-        (b.scope === 'sectoral' && !b.state) ||
-        (b.scope === 'municipal' && MUNICIPALITIES[b.municipalityIbge || '']?.state === stateFilter)
-      );
-    }
-
-    // Filter by search query
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
+    // Additional local filtering for municipality name search (API can't do this)
+    if (debouncedSearch.trim()) {
+      const query = debouncedSearch.toLowerCase();
+      // Check if the API search missed any matches on municipality name
       results = results.filter(b =>
         b.name.toLowerCase().includes(query) ||
         b.shortDescription.toLowerCase().includes(query) ||
@@ -99,11 +107,11 @@ export default function Catalog() {
     }
 
     return results;
-  }, [allBenefits, scopeFilter, stateFilter, searchQuery]);
+  }, [allBenefits, debouncedSearch]);
 
   // Group by category
   const groupedBenefits = useMemo(() => {
-    const groups: Record<string, Benefit[]> = {};
+    const groups: Record<string, BenefitSummaryAPI[]> = {};
     filteredBenefits.forEach(b => {
       const cat = b.category || 'Outros';
       if (!groups[cat]) groups[cat] = [];
@@ -199,13 +207,37 @@ export default function Catalog() {
             </div>
           </div>
 
+          {/* Loading state */}
+          {isLoading && (
+            <div className="flex items-center justify-center py-12">
+              <div className="flex items-center gap-3 text-slate-400">
+                <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+                <span>Carregando benefícios...</span>
+              </div>
+            </div>
+          )}
+
+          {/* Error state */}
+          {isError && (
+            <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6">
+              <p className="text-red-400 text-sm">
+                {error instanceof Error ? error.message : 'Erro ao carregar benefícios. Usando dados locais.'}
+              </p>
+            </div>
+          )}
+
           {/* Results count */}
-          <p className="text-sm text-slate-500 mb-4">
-            {filteredBenefits.length} benefício{filteredBenefits.length !== 1 && 's'} encontrado{filteredBenefits.length !== 1 && 's'}
-          </p>
+          {!isLoading && (
+            <p className="text-sm text-slate-500 mb-4">
+              {filteredBenefits.length} benefício{filteredBenefits.length !== 1 && 's'} encontrado{filteredBenefits.length !== 1 && 's'}
+              {benefitsData?.total && benefitsData.total > filteredBenefits.length && (
+                <span className="text-slate-600"> (de {benefitsData.total} total)</span>
+              )}
+            </p>
+          )}
 
           {/* Benefits grid by category */}
-          {Object.entries(groupedBenefits).map(([category, benefits]) => (
+          {!isLoading && Object.entries(groupedBenefits).map(([category, benefits]) => (
             <div key={category} className="mb-8">
               <h2 className="text-lg font-semibold text-white mb-4">
                 {category}
@@ -251,7 +283,7 @@ export default function Catalog() {
             </div>
           ))}
 
-          {filteredBenefits.length === 0 && (
+          {!isLoading && filteredBenefits.length === 0 && (
             <div className="text-center py-12">
               <p className="text-slate-500">Nenhum benefício encontrado</p>
               <button
