@@ -1,0 +1,140 @@
+{
+  "municipality": "Fortaleza",
+  "municipalityIbge": "2304400",
+  "state": "CE",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "ce-fortaleza-locacao-social",
+      "name": "Locação Social",
+      "shortDescription": "Auxílio de R$ 420 para famílias em situação de risco habitacional",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 420,
+        "max": 420,
+        "description": "R$ 420 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "Secretaria de Direitos Humanos e Desenvolvimento Social",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo de risco habitacional"],
+      "howToApply": [
+        "Procure a Secretaria ou CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "ce-fortaleza-bolsa-nota-dez",
+      "name": "Bolsa Nota Dez",
+      "shortDescription": "Bolsa de R$ 200 para estudantes com bom desempenho escolar",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública"
+        }
+      ],
+      "whereToApply": "Escola municipal",
+      "documentsRequired": ["RG", "CPF", "Comprovante de matrícula"],
+      "howToApply": [
+        "Escola indica alunos elegíveis",
+        "Mantenha bom desempenho",
+        "Bolsa é depositada automaticamente"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educação"
+    },
+    {
+      "id": "ce-fortaleza-beneficios-eventuais",
+      "name": "Benefícios Eventuais",
+      "shortDescription": "Auxílios emergenciais para situações de vulnerabilidade",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS do bairro",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

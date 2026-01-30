@@ -14,18 +14,23 @@ O **Tá na Mão** conecta cidadãos brasileiros aos benefícios sociais a que t�
 |------------|-----------|-------|
 | **Android App** | App de acesso a benefícios com chat IA | Kotlin, Jetpack Compose, Hilt |
 | **Backend API** | API REST + Agente IA com 13 ferramentas | Python, FastAPI, Gemini 2.0 |
+| **Website MVP** | Catálogo de benefícios + Wizard de elegibilidade | React, TypeScript, Tailwind |
 | **Dashboard** | Visualização de cobertura por município | React, Leaflet, TypeScript |
 
-## Dados Carregados
+## Catálogo de Benefícios
 
-| Programa | Beneficiários | Valor Mensal |
-|----------|---------------|--------------|
-| TSEE (Tarifa Social) | 14.3M | R$ 911M |
-| Farmácia Popular | 27.4M | R$ 821M |
-| Dignidade Menstrual | 8.0M | R$ 192M |
-| BPC/LOAS | 5.9M | R$ 8.3B |
+| Escopo | Quantidade | Descrição |
+|--------|------------|-----------|
+| Federal | 16 | Bolsa Família, BPC, TSEE, Farmácia Popular, etc. |
+| Estadual | 106 | Todos os 27 estados brasileiros |
+| Municipal | 97 | 40 maiores municípios |
+| Setorial | 10 | Pescadores, agricultores, entregadores, etc. |
+| **Total** | **229** | Benefícios mapeados |
 
-**Cobertura:** 5.570 municípios com geometrias geoespaciais
+**Cobertura geográfica:**
+- 5.570 municípios com geometrias geoespaciais
+- 27 estados com programas estaduais
+- 40 municípios com programas locais (capitais + grandes cidades)
 
 ## Quick Start
 
@@ -55,12 +60,18 @@ export JAVA_HOME=/usr/local/opt/openjdk@17  # macOS com Homebrew
 
 **Testar o app**: Veja [android/COMO_TESTAR.md](android/COMO_TESTAR.md) para opções simples de teste.
 
-### 3. Dashboard (opcional)
+### 3. Website MVP (Catálogo + Elegibilidade)
 
 ```bash
 cd frontend
 npm install && npm run dev    # http://localhost:3000
 ```
+
+**Rotas principais:**
+- `/` - Landing page
+- `/descobrir` - Wizard de elegibilidade
+- `/beneficios` - Catálogo navegável (229 benefícios)
+- `/beneficios/:id` - Detalhe do benefício
 
 ## Qualidade e Testes
 
@@ -99,11 +110,23 @@ cd android && ./gradlew test
 └─────────────────┘
 ```
 
-## Funcionalidades do App
+## Funcionalidades
 
-### Wizard de Triagem de Elegibilidade (Novo!)
-- **Formulário visual de 4 etapas**: dados básicos, família, renda, condições especiais
-- **Carteira de Direitos**: resultado visual com todos os benefícios elegíveis
+### Website MVP (Novo!)
+- **Catálogo de 229 benefícios**: federais, estaduais, municipais e setoriais
+- **Filtros por escopo**: Federal, Estadual, Municipal, Setorial
+- **Filtro por estado**: Todos os 27 estados brasileiros
+- **Busca por texto**: Nome do benefício, descrição ou categoria
+- **Motor de elegibilidade**: Avaliação automática baseada no perfil
+- **PWA**: Instalável como app no celular
+
+### Wizard de Triagem de Elegibilidade
+- **Formulário visual de 5 etapas**: localização, dados básicos, família, renda, profissão
+- **Carteira de Direitos**: resultado visual agrupado por categoria
+  - 🇧🇷 Benefícios Federais
+  - 🏛️ Benefícios Estaduais
+  - 🏘️ Benefícios Municipais
+  - 👷 Benefícios Setoriais
 - **Carta de Encaminhamento**: PDF pré-preenchido com QR Code para validação no CRAS
 - Botão FAB 🎯 "Descobrir Direitos" integrado ao app
 - Reduz tempo de atendimento CRAS de 2h para 30min
@@ -163,9 +186,16 @@ Ta na Mao/
 │   │   └── jobs/         # Scripts de ingestão
 │   └── docs/             # Documentação Backend
 │
-├── frontend/             # Dashboard React
+├── frontend/             # Website MVP + Dashboard
 │   └── src/
-│       ├── components/   # Map, Charts, Cards
+│       ├── components/   # EligibilityWizard, Catalog, Map
+│       ├── pages/        # Home, Eligibility, Catalog, BenefitDetail
+│       ├── engine/       # Motor de elegibilidade
+│       ├── data/benefits/# Catálogo JSON
+│       │   ├── federal.json
+│       │   ├── sectoral.json
+│       │   ├── states/   # 27 arquivos (um por UF)
+│       │   └── municipalities/ # 40 arquivos (código IBGE)
 │       └── api/          # API client
 │
 ├── docs/                 # Documentação geral

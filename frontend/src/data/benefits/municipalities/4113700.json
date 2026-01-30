@@ -1,0 +1,94 @@
+{
+  "municipality": "Londrina",
+  "municipalityIbge": "4113700",
+  "state": "PR",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pr-londrina-beneficios-eventuais",
+      "name": "Benefícios Eventuais Londrina",
+      "shortDescription": "Auxílios emergenciais via CRAS",
+      "scope": "municipal",
+      "state": "PR",
+      "municipalityIbge": "4113700",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4113700",
+          "description": "Morar em Londrina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Londrina",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.londrina.pr.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    },
+    {
+      "id": "pr-londrina-passe-livre-estudantil",
+      "name": "Passe Livre Estudantil Londrina",
+      "shortDescription": "Transporte gratuito para estudantes da rede pública",
+      "scope": "municipal",
+      "state": "PR",
+      "municipalityIbge": "4113700",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4113700",
+          "description": "Morar em Londrina"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública"
+        }
+      ],
+      "whereToApply": "CMTU ou escola",
+      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4"],
+      "howToApply": [
+        "Solicite na escola",
+        "Aguarde aprovação",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.londrina.pr.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎒",
+      "category": "Transporte"
+    }
+  ]
+}

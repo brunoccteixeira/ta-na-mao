@@ -1,0 +1,100 @@
+{
+  "municipality": "Osasco",
+  "municipalityIbge": "3534401",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-osasco-nosso-futuro",
+      "name": "Nosso Futuro",
+      "shortDescription": "Programa de qualificação e transferência de renda para jovens",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3534401",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "Bolsa durante qualificação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3534401",
+          "description": "Morar em Osasco"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 24,
+          "description": "Ter no máximo 24 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Emprego",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de escolaridade"],
+      "howToApply": [
+        "Aguarde edital",
+        "Faça inscrição",
+        "Participe da seleção"
+      ],
+      "sourceUrl": "https://www.osasco.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Qualificação"
+    },
+    {
+      "id": "sp-osasco-fundo-social",
+      "name": "Fundo Social de Solidariedade",
+      "shortDescription": "Auxílios emergenciais para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3534401",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3534401",
+          "description": "Morar em Osasco"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Fundo Social",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.osasco.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

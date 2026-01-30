@@ -1,0 +1,284 @@
+{
+  "state": "SP",
+  "stateName": "São Paulo",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "sp-bolsa-do-povo",
+      "name": "Bolsa do Povo",
+      "shortDescription": "Programa estadual que reúne várias ações de transferência de renda e qualificação profissional.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 540,
+        "description": "Valor varia conforme a ação do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Site bolsadopovo.sp.gov.br ou CRAS",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em SP"
+      ],
+      "howToApply": [
+        "Acesse bolsadopovo.sp.gov.br",
+        "Faça cadastro com CPF e NIS",
+        "Escolha a ação que se encaixa no seu perfil",
+        "Aguarde análise e chamamento"
+      ],
+      "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎯",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-vale-gas",
+      "name": "Vale Gás SP",
+      "shortDescription": "Auxílio de R$ 100 a cada 2 meses para comprar gás de cozinha.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Automático para cadastrados no Bolsa do Povo",
+      "documentsRequired": [
+        "Estar inscrito no Bolsa do Povo"
+      ],
+      "howToApply": [
+        "Cadastre-se no Bolsa do Povo",
+        "O Vale Gás é concedido automaticamente",
+        "O valor vai para o cartão do programa"
+      ],
+      "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "sp-bom-prato",
+      "name": "Bom Prato",
+      "shortDescription": "Refeições a R$ 1,00 (café da manhã) e R$ 1,50 (almoço) em restaurantes populares.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Economia de até R$ 300/mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Estar em São Paulo"
+        }
+      ],
+      "whereToApply": "Qualquer restaurante Bom Prato",
+      "documentsRequired": [
+        "Nenhum documento necessário para comer"
+      ],
+      "howToApply": [
+        "Procure um restaurante Bom Prato na sua cidade",
+        "Vá no horário de funcionamento",
+        "Pague R$ 1,00 ou R$ 1,50 e faça a refeição",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "sp-renda-cidada",
+      "name": "Renda Cidadã",
+      "shortDescription": "Complemento de renda para famílias extremamente pobres de até R$ 115 por mês.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 115,
+        "description": "Até R$ 115 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 109,
+          "description": "Renda por pessoa de até R$ 109"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Vá ao CRAS e atualize o Cadastro Único",
+        "O programa seleciona automaticamente",
+        "Aguarde comunicação do CRAS"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/renda-cidada/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-vivaleite",
+      "name": "Vivaleite",
+      "shortDescription": "Leite grátis para crianças de 6 meses a 6 anos e idosos acima de 60 anos.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 80,
+        "description": "15 litros de leite por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 6 meses a 6 anos OU"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Prefeitura ou entidades conveniadas",
+      "documentsRequired": [
+        "CPF ou RG",
+        "Certidão de nascimento da criança",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou entidade conveniada",
+        "Faça o cadastro com os documentos",
+        "Retire o leite mensalmente no local indicado"
+      ],
+      "sourceUrl": "https://www.vivaleite.sp.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🥛",
+      "category": "Alimentação"
+    },
+    {
+      "id": "sp-via-rapida",
+      "name": "Via Rápida Emprego",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 210,
+        "max": 210,
+        "description": "Bolsa-auxílio durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site viarapida.sp.gov.br ou PAT",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse viarapida.sp.gov.br",
+        "Escolha um curso disponível",
+        "Faça a inscrição online",
+        "Compareça no local e data indicados"
+      ],
+      "sourceUrl": "https://www.viarapida.sp.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação"
+    }
+  ]
+}

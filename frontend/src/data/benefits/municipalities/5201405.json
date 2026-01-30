@@ -1,0 +1,94 @@
+{
+  "municipality": "Aparecida de Goiânia",
+  "municipalityIbge": "5201405",
+  "state": "GO",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "go-aparecidadegoiania-aluguel-social",
+      "name": "Aluguel Social Aparecida",
+      "shortDescription": "Auxílio habitacional para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5201405",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "R$ 300 a R$ 500 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5201405",
+          "description": "Morar em Aparecida de Goiânia"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.aparecida.go.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "go-aparecidadegoiania-beneficios-eventuais",
+      "name": "Benefícios Eventuais Aparecida",
+      "shortDescription": "Auxílios emergenciais para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5201405",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5201405",
+          "description": "Morar em Aparecida de Goiânia"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Aparecida",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.aparecida.go.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

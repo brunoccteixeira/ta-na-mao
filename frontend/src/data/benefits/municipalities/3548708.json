@@ -1,0 +1,94 @@
+{
+  "municipality": "São Bernardo do Campo",
+  "municipalityIbge": "3548708",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-saobernardo-tarifa-social",
+      "name": "Tarifa Social SBC",
+      "shortDescription": "Desconto na conta de água para famílias de baixa renda",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548708",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto na conta de água"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548708",
+          "description": "Morar em São Bernardo do Campo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Sabesp ou CRAS",
+      "documentsRequired": ["CPF", "RG", "NIS", "Conta de água"],
+      "howToApply": [
+        "Procure a Sabesp",
+        "Apresente documentos",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.saobernardo.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💧",
+      "category": "Utilidades"
+    },
+    {
+      "id": "sp-saobernardo-passe-idoso",
+      "name": "Passe Idoso SBC",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548708",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548708",
+          "description": "Morar em São Bernardo do Campo"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "SBCTrans",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a SBCTrans",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.saobernardo.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "state": "CE",
+  "stateName": "Ceará",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "ce-cartao-mais-infancia",
+      "name": "Cartão Mais Infância",
+      "shortDescription": "Auxílio de R$ 100 por mês para famílias com crianças de 0 a 5 anos e 11 meses.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 por mês por família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 5 anos e 11 meses"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 89,
+          "description": "Renda por pessoa de até R$ 89 (extrema pobreza)"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF do responsável",
+        "Certidão de nascimento da criança",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu município",
+        "Atualize o Cadastro Único",
+        "O programa seleciona automaticamente as famílias",
+        "Receba o cartão e saque o benefício"
+      ],
+      "sourceUrl": "https://www.sps.ce.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "👶",
+      "category": "Primeira Infância"
+    },
+    {
+      "id": "ce-vale-gas",
+      "name": "Vale Gás Ceará",
+      "shortDescription": "Auxílio para compra de gás de cozinha para famílias de baixa renda.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 100,
+        "description": "Valor para compra de botijão de gás"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        },
+        {
+          "field": "beneficiarioBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Família"
+        }
+      ],
+      "whereToApply": "CRAS ou posto de atendimento da Cagece",
+      "documentsRequired": [
+        "CPF do responsável familiar",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "O benefício é liberado automaticamente para quem recebe Bolsa Família",
+        "Acompanhe pelo aplicativo Ceará App",
+        "Retire o vale no local indicado"
+      ],
+      "sourceUrl": "https://www.ceara.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "ce-ceara-sem-fome",
+      "name": "Ceará Sem Fome",
+      "shortDescription": "Programa que distribui cestas básicas e garante refeições a R$ 2,00 em restaurantes populares.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de até R$ 300 por mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (para cestas)"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS (para cestas) ou Restaurantes Populares (para refeições)",
+      "documentsRequired": [
+        "Para cestas: CPF, NIS e comprovante de residência",
+        "Para restaurante: nenhum documento"
+      ],
+      "howToApply": [
+        "Para cestas básicas, procure o CRAS",
+        "Para refeições, vá a um Restaurante Popular",
+        "Pague R$ 2,00 pela refeição completa",
+        "Não precisa de cadastro para comer no restaurante"
+      ],
+      "sourceUrl": "https://www.ceara.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ce-cartao-superacao",
+      "name": "Cartão Superação",
+      "shortDescription": "Complemento de renda de até R$ 300 para famílias em extrema pobreza inscritas no Bolsa Família.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Até R$ 300 por mês como complemento"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "beneficiarioBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Família"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 89,
+          "description": "Renda por pessoa de até R$ 89 (extrema pobreza)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF do responsável familiar",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Continue recebendo o Bolsa Família",
+        "O governo seleciona automaticamente as famílias",
+        "O valor é depositado junto com o Bolsa Família"
+      ],
+      "sourceUrl": "https://www.sps.ce.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💪",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "ce-programa-hora-de-construir",
+      "name": "Hora de Construir",
+      "shortDescription": "Material de construção subsidiado para reformar ou ampliar sua casa.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 15000,
+        "description": "Crédito de até R$ 15.000 em material de construção"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliar",
+          "operator": "lte",
+          "value": 4236,
+          "description": "Renda familiar de até 3 salários mínimos"
+        },
+        {
+          "field": "proprietarioImovel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser dono do terreno ou imóvel"
+        }
+      ],
+      "whereToApply": "Lojas credenciadas ou site do programa",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de propriedade do imóvel",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure uma loja credenciada do programa",
+        "Apresente os documentos para análise",
+        "Se aprovado, escolha os materiais",
+        "Pague em parcelas com juros baixos"
+      ],
+      "sourceUrl": "https://www.ceara.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    }
+  ]
+}

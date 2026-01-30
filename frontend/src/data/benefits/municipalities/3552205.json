@@ -1,0 +1,88 @@
+{
+  "municipality": "Sorocaba",
+  "municipalityIbge": "3552205",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-sorocaba-beneficios-eventuais",
+      "name": "Benefícios Eventuais Sorocaba",
+      "shortDescription": "Auxílios emergenciais via CRAS",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3552205",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3552205",
+          "description": "Morar em Sorocaba"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Sorocaba",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.sorocaba.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    },
+    {
+      "id": "sp-sorocaba-passe-livre-idoso",
+      "name": "Passe Livre Idoso Sorocaba",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3552205",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3552205",
+          "description": "Morar em Sorocaba"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Urbes ou terminais",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a Urbes",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.sorocaba.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "municipality": "Santo André",
+  "municipalityIbge": "3547809",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-santoandre-familia-andreense",
+      "name": "Família Andreense",
+      "shortDescription": "Programa de transferência de renda e acompanhamento familiar",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3547809",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 400,
+        "description": "R$ 200 a R$ 400 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3547809",
+          "description": "Morar em Santo André"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Santo André",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.santoandre.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "👨‍👩‍👧",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-santoandre-locacao-social",
+      "name": "Locação Social Santo André",
+      "shortDescription": "Auxílio para famílias em situação de vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3547809",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 600,
+        "description": "R$ 400 a R$ 600 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3547809",
+          "description": "Morar em Santo André"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.santoandre.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    }
+  ]
+}

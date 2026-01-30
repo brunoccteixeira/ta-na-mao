@@ -1,0 +1,223 @@
+{
+  "state": "MG",
+  "stateName": "Minas Gerais",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "mg-piso-mineiro",
+      "name": "Piso Mineiro",
+      "shortDescription": "Complemento de renda para famílias extremamente pobres de Minas Gerais.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 65,
+        "max": 130,
+        "description": "Complementa a renda até o piso estadual"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Morar em Minas Gerais"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Família"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 109,
+          "description": "Renda por pessoa abaixo do piso"
+        }
+      ],
+      "whereToApply": "Automático para quem recebe Bolsa Família em MG",
+      "documentsRequired": [
+        "Estar inscrito no Bolsa Família"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Se elegível, o complemento é automático",
+        "Valor vem junto com o Bolsa Família"
+      ],
+      "sourceUrl": "https://www.social.mg.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "mg-bolsa-merenda",
+      "name": "Bolsa Merenda",
+      "shortDescription": "Auxílio alimentação para famílias de estudantes da rede pública estadual.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 100,
+        "description": "R$ 50 por estudante"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Morar em Minas Gerais"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter filhos na rede estadual de ensino"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola estadual"
+        }
+      ],
+      "whereToApply": "Escola estadual onde o filho estuda",
+      "documentsRequired": [
+        "Matrícula na rede estadual"
+      ],
+      "howToApply": [
+        "Confira se sua escola participa",
+        "Mantenha a frequência escolar em dia",
+        "O benefício é pago automaticamente"
+      ],
+      "sourceUrl": "https://www.educacao.mg.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍎",
+      "category": "Alimentação"
+    },
+    {
+      "id": "mg-restaurante-popular",
+      "name": "Restaurante Popular MG",
+      "shortDescription": "Refeições a R$ 2,00 em restaurantes populares de Minas.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Estar em Minas Gerais"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular de MG",
+      "documentsRequired": [
+        "Nenhum documento necessário"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Vá no horário de funcionamento (almoço)",
+        "Pague R$ 2,00 e faça a refeição"
+      ],
+      "sourceUrl": "https://www.social.mg.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "mg-bolsa-reciclagem",
+      "name": "Bolsa Reciclagem MG",
+      "shortDescription": "Pagamento por material reciclável coletado por catadores em Minas.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 1200,
+        "description": "Valor por tonelada coletada"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Trabalhar em Minas Gerais"
+        },
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        }
+      ],
+      "whereToApply": "SEMAD ou cooperativas credenciadas",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de vínculo com cooperativa/associação",
+        "Cadastro no programa"
+      ],
+      "howToApply": [
+        "Organize-se em cooperativa ou associação",
+        "Cadastre-se no programa Bolsa Reciclagem",
+        "Entregue o material e comprove a coleta",
+        "Receba o pagamento trimestral"
+      ],
+      "sourceUrl": "https://www.meioambiente.mg.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "♻️",
+      "category": "Catadores"
+    },
+    {
+      "id": "mg-travessia",
+      "name": "Programa Travessia",
+      "shortDescription": "Ações integradas de redução da pobreza em municípios com baixo IDH.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 500,
+        "max": 3000,
+        "description": "Valor varia conforme a ação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Morar em Minas Gerais"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS dos municípios participantes",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Comprovante de residência",
+        "NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "Verifique se seu município participa",
+        "Procure o CRAS local",
+        "Inscreva-se nas ações disponíveis"
+      ],
+      "sourceUrl": "https://www.social.mg.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🌉",
+      "category": "Assistência Social"
+    }
+  ]
+}

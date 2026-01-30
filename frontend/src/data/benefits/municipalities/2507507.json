@@ -1,0 +1,146 @@
+{
+  "municipality": "João Pessoa",
+  "municipalityIbge": "2507507",
+  "state": "PB",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pb-joaopessoa-cesta-basica",
+      "name": "Cesta Básica João Pessoa",
+      "shortDescription": "Distribuição de 12.000+ cestas básicas para famílias vulneráveis",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta básica mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de João Pessoa",
+      "documentsRequired": ["CPF", "RG", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite cadastro",
+        "Retire a cesta mensalmente"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pb-joaopessoa-bolsa-creche",
+      "name": "Bolsa Creche",
+      "shortDescription": "Auxílio para famílias com crianças sem vaga em creche pública",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 400,
+        "description": "R$ 200 a R$ 400 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 3 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação ou CRAS",
+      "documentsRequired": ["CPF", "RG", "NIS", "Certidão de nascimento"],
+      "howToApply": [
+        "Solicite vaga em creche",
+        "Se não houver vaga, peça a bolsa",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "👶",
+      "category": "Primeira Infância"
+    },
+    {
+      "id": "pb-joaopessoa-auxilio-aluguel",
+      "name": "Auxílio Aluguel João Pessoa",
+      "shortDescription": "Auxílio para famílias em situação de vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "R$ 300 a R$ 500 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Sedes",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    }
+  ]
+}

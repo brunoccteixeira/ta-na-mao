@@ -1,0 +1,100 @@
+{
+  "municipality": "Belém",
+  "municipalityIbge": "1501402",
+  "state": "PA",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pa-belem-bora-belem",
+      "name": "Bora Belém",
+      "shortDescription": "Auxílio de R$ 150 a R$ 450 para famílias com filhos",
+      "scope": "municipal",
+      "state": "PA",
+      "municipalityIbge": "1501402",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 450,
+        "description": "R$ 150 por filho (máximo 3)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1501402",
+          "description": "Morar em Belém"
+        },
+        {
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter pelo menos 1 filho"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Funpapa",
+      "documentsRequired": ["CPF", "RG", "NIS", "Certidão de nascimento dos filhos"],
+      "howToApply": [
+        "Procure o CRAS ou Funpapa",
+        "Apresente documentos",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.belem.pa.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "👨‍👩‍👧",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "pa-belem-passe-livre-idoso",
+      "name": "Passe Livre Idoso Belém",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "PA",
+      "municipalityIbge": "1501402",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1501402",
+          "description": "Morar em Belém"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Semob ou terminais",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure um posto de atendimento",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.belem.pa.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "municipality": "Porto Velho",
+  "municipalityIbge": "1100205",
+  "state": "RO",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "ro-portovelho-auxilio-social",
+      "name": "Auxílio Social Porto Velho",
+      "shortDescription": "Programa de apoio a famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "RO",
+      "municipalityIbge": "1100205",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150 a R$ 300 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1100205",
+          "description": "Morar em Porto Velho"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Porto Velho",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.portovelho.ro.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "ro-portovelho-beneficios-eventuais",
+      "name": "Benefícios Eventuais Porto Velho",
+      "shortDescription": "Auxílios emergenciais para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "RO",
+      "municipalityIbge": "1100205",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1100205",
+          "description": "Morar em Porto Velho"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Porto Velho",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.portovelho.ro.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

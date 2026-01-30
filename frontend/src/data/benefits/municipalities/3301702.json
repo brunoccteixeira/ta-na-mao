@@ -1,0 +1,126 @@
+{
+  "municipality": "Duque de Caxias",
+  "municipalityIbge": "3301702",
+  "state": "RJ",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "rj-duquedecaxias-primeira-chance",
+      "name": "Primeira Chance",
+      "shortDescription": "Programa de qualificação e inserção profissional para jovens",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3301702",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "Bolsa durante qualificação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3301702",
+          "description": "Morar em Duque de Caxias"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 24,
+          "description": "Ter no máximo 24 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Trabalho",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de escolaridade"],
+      "howToApply": [
+        "Aguarde edital",
+        "Faça inscrição",
+        "Participe da seleção"
+      ],
+      "sourceUrl": "https://www.duquedecaxias.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Qualificação"
+    },
+    {
+      "id": "rj-duquedecaxias-restaurante-povo",
+      "name": "Restaurante do Povo",
+      "shortDescription": "Refeições gratuitas no Restaurante do Povo",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3301702",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição gratuita"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3301702",
+          "description": "Morar em Duque de Caxias"
+        }
+      ],
+      "whereToApply": "Restaurante do Povo",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá ao Restaurante do Povo",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.duquedecaxias.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "rj-duquedecaxias-cafe-trabalhador",
+      "name": "Café do Trabalhador",
+      "shortDescription": "Café da manhã por R$ 0,50 para trabalhadores",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3301702",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Café por R$ 0,50"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3301702",
+          "description": "Morar em Duque de Caxias"
+        }
+      ],
+      "whereToApply": "Restaurante do Povo",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá ao Restaurante do Povo de manhã",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.duquedecaxias.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "☕",
+      "category": "Alimentação"
+    }
+  ]
+}

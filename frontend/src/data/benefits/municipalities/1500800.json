@@ -1,0 +1,88 @@
+{
+  "municipality": "Ananindeua",
+  "municipalityIbge": "1500800",
+  "state": "PA",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pa-ananindeua-beneficios-eventuais",
+      "name": "Benefícios Eventuais Ananindeua",
+      "shortDescription": "Auxílios emergenciais para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "PA",
+      "municipalityIbge": "1500800",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1500800",
+          "description": "Morar em Ananindeua"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Ananindeua",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.ananindeua.pa.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    },
+    {
+      "id": "pa-ananindeua-passe-livre-idoso",
+      "name": "Passe Livre Idoso Ananindeua",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "PA",
+      "municipalityIbge": "1500800",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1500800",
+          "description": "Morar em Ananindeua"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Semutran ou terminais",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a Semutran",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.ananindeua.pa.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

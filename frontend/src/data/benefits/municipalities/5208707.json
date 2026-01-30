@@ -1,0 +1,87 @@
+{
+  "municipality": "Goiânia",
+  "municipalityIbge": "5208707",
+  "state": "GO",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "go-goiania-aluguel-social",
+      "name": "Aluguel Social Goiânia",
+      "shortDescription": "Auxílio de R$ 350 por até 18 meses para famílias em vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5208707",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 350,
+        "max": 350,
+        "description": "R$ 350 por mês por até 18 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5208707",
+          "description": "Morar em Goiânia"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação social",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.goiania.go.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "go-goiania-restaurante-popular",
+      "name": "Restaurante do Bem",
+      "shortDescription": "Refeições a R$ 2 nos restaurantes populares de Goiânia",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5208707",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5208707",
+          "description": "Morar em Goiânia"
+        }
+      ],
+      "whereToApply": "Restaurantes do Bem",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer restaurante do Bem",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.goiania.go.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    }
+  ]
+}

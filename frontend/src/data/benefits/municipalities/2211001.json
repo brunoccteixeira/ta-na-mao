@@ -1,0 +1,100 @@
+{
+  "municipality": "Teresina",
+  "municipalityIbge": "2211001",
+  "state": "PI",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pi-teresina-cartao-sasc",
+      "name": "Cartão SASC",
+      "shortDescription": "Auxílio de R$ 200 para famílias em extrema pobreza",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou SASC",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.teresina.pi.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "pi-teresina-cartao-prosocial",
+      "name": "Cartão Pró-Social",
+      "shortDescription": "Auxílio adicional de R$ 200 para famílias vulneráveis",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou SASC",
+      "documentsRequired": ["CPF", "RG", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Verifique elegibilidade",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.teresina.pi.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💳",
+      "category": "Transferência de Renda"
+    }
+  ]
+}

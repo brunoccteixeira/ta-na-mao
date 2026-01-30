@@ -1,0 +1,158 @@
+{
+  "state": "TO",
+  "stateName": "Tocantins",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "to-auxilio-social-tocantins",
+      "name": "Auxílio Social Tocantins",
+      "shortDescription": "Ajuda mensal para famílias de baixa renda do Tocantins.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 150,
+        "description": "Valor mensal conforme a família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Tocantins"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Faça ou atualize o Cadastro Único",
+        "O governo seleciona as famílias",
+        "Aguarde a comunicação sobre o benefício"
+      ],
+      "sourceUrl": "https://www.to.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "to-vale-gas-tocantins",
+      "name": "Vale Gás Tocantins",
+      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 60,
+        "description": "Cerca de R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Vá ao CRAS se precisar atualizar dados",
+        "O governo faz a seleção automática",
+        "Se selecionado, receba o benefício"
+      ],
+      "sourceUrl": "https://www.to.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "to-cesta-basica-tocantins",
+      "name": "Cesta Básica Tocantins",
+      "shortDescription": "Distribuição de cestas básicas para famílias em situação de pobreza.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 120,
+        "description": "Cesta com alimentos básicos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize o Cadastro Único",
+        "Aguarde a convocação para retirar a cesta",
+        "Leve documento com foto na retirada"
+      ],
+      "sourceUrl": "https://www.to.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    }
+  ]
+}

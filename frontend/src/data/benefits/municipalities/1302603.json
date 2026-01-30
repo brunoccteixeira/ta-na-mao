@@ -1,0 +1,146 @@
+{
+  "municipality": "Manaus",
+  "municipalityIbge": "1302603",
+  "state": "AM",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "am-manaus-passa-facil-social",
+      "name": "Passa Fácil Social",
+      "shortDescription": "Cartão de transporte com tarifa reduzida para pessoas de baixa renda",
+      "scope": "municipal",
+      "state": "AM",
+      "municipalityIbge": "1302603",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Tarifa reduzida de R$ 4,50"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1302603",
+          "description": "Morar em Manaus"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "SMTU ou postos de atendimento",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a SMTU",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.manaus.am.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "am-manaus-passe-livre-estudantil",
+      "name": "Passe Livre Estudantil Manaus",
+      "shortDescription": "Transporte gratuito para estudantes da rede pública",
+      "scope": "municipal",
+      "state": "AM",
+      "municipalityIbge": "1302603",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade total no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1302603",
+          "description": "Morar em Manaus"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública"
+        }
+      ],
+      "whereToApply": "Escola ou SMTU",
+      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4"],
+      "howToApply": [
+        "Solicite na escola",
+        "Aguarde aprovação",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.manaus.am.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎒",
+      "category": "Transporte"
+    },
+    {
+      "id": "am-manaus-bolsa-universidade",
+      "name": "Bolsa Universidade",
+      "shortDescription": "Bolsa de estudos para universitários de baixa renda",
+      "scope": "municipal",
+      "state": "AM",
+      "municipalityIbge": "1302603",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Bolsa integral ou parcial"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "1302603",
+          "description": "Morar em Manaus"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante universitário"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 1518,
+          "description": "Renda por pessoa até 1 salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria Municipal de Educação",
+      "documentsRequired": ["CPF", "RG", "Comprovante de matrícula", "Comprovante de renda"],
+      "howToApply": [
+        "Aguarde edital",
+        "Faça inscrição online",
+        "Apresente documentos"
+      ],
+      "sourceUrl": "https://www.manaus.am.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    }
+  ]
+}

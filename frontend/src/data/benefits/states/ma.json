@@ -1,0 +1,142 @@
+{
+  "state": "MA",
+  "stateName": "Maranhão",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "ma-mais-social",
+      "name": "Mais Social",
+      "shortDescription": "Dinheiro todo mês para famílias pobres do Maranhão.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 350,
+        "description": "Valor depende do tamanho da família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar no Maranhão"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Comprovante de endereço",
+        "NIS do Cadastro Único"
+      ],
+      "howToApply": [
+        "Vá ao CRAS mais perto de você",
+        "Atualize seu Cadastro Único",
+        "O programa escolhe quem pode entrar",
+        "Aguarde o contato do CRAS"
+      ],
+      "sourceUrl": "https://www.ma.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "ma-cozinha-popular",
+      "name": "Cozinha Popular",
+      "shortDescription": "Comida barata em restaurantes do governo. Almoço por preço baixo.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 200,
+        "description": "Economia mensal em comida"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Estar no Maranhão"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares nas cidades",
+      "documentsRequired": [
+        "Não precisa de documento para comer"
+      ],
+      "howToApply": [
+        "Procure um restaurante popular na sua cidade",
+        "Vá no horário do almoço",
+        "Pague o preço baixo e coma",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.ma.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ma-vale-gas",
+      "name": "Vale Gás Maranhão",
+      "shortDescription": "Ajuda para comprar botijão de gás de cozinha.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 100,
+        "description": "Ajuda a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar no Maranhão"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Mantenha seu Cadastro Único em dia",
+        "O governo seleciona quem pode receber",
+        "O dinheiro vai para a conta ou cartão"
+      ],
+      "sourceUrl": "https://www.ma.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

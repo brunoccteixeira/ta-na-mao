@@ -1,9 +1,12 @@
 /**
- * Main App component - Tá na Mão Dashboard & Chat
+ * Main App component - Tá na Mão
+ * Website público + Dashboard administrativo
  */
 
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Home, Eligibility, Catalog, BenefitDetail, About } from './pages';
 import BrazilMap from './components/Map/BrazilMap';
 import ProgramSelector from './components/Dashboard/ProgramSelector';
 import NationalSummary from './components/Dashboard/NationalSummary';
@@ -36,7 +39,7 @@ const queryClient = new QueryClient({
   },
 });
 
-function Dashboard({ onOpenChat, onOpenWizard }: { onOpenChat: () => void; onOpenWizard: () => void }) {
+function AdminDashboard({ onOpenChat, onOpenWizard }: { onOpenChat: () => void; onOpenWizard: () => void }) {
   const { selectedState, selectedMunicipality, selectedRegion, viewLevel } = useDashboardStore();
 
   const REGION_NAMES: Record<string, string> = {
@@ -171,14 +174,11 @@ function WizardPage({ onBack }: { onBack: () => void }) {
   };
 
   const handleGenerateCarta = (profile: CitizenProfile, result: TriagemResult) => {
-    // TODO: Integrar com API de carta de encaminhamento
     console.log('Gerar carta para:', profile, result);
     alert('Funcionalidade de carta será integrada em breve!');
   };
 
   const handleFindCras = (profile: CitizenProfile) => {
-    // TODO: Integrar com busca de CRAS
-    console.log('Buscar CRAS para:', profile);
     const query = encodeURIComponent(`CRAS ${profile.municipio || ''} ${profile.uf || ''}`);
     window.open(`https://www.google.com/maps/search/${query}`, '_blank');
   };
@@ -218,19 +218,40 @@ function WizardPage({ onBack }: { onBack: () => void }) {
   );
 }
 
-export default function App() {
+// Admin Dashboard wrapper with modals
+function AdminPage() {
   const [showChat, setShowChat] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
 
   return (
+    <>
+      <AdminDashboard
+        onOpenChat={() => setShowChat(true)}
+        onOpenWizard={() => setShowWizard(true)}
+      />
+      {showChat && <ChatPage onBack={() => setShowChat(false)} />}
+      {showWizard && <WizardPage onBack={() => setShowWizard(false)} />}
+    </>
+  );
+}
+
+export default function App() {
+  return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <Dashboard
-          onOpenChat={() => setShowChat(true)}
-          onOpenWizard={() => setShowWizard(true)}
-        />
-        {showChat && <ChatPage onBack={() => setShowChat(false)} />}
-        {showWizard && <WizardPage onBack={() => setShowWizard(false)} />}
+        <BrowserRouter>
+          <Routes>
+            {/* Public website routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/descobrir" element={<Eligibility />} />
+            <Route path="/beneficios" element={<Catalog />} />
+            <Route path="/beneficios/:id" element={<BenefitDetail />} />
+            <Route path="/sobre" element={<About />} />
+
+            {/* Admin dashboard */}
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     </ErrorBoundary>
   );

@@ -1,0 +1,253 @@
+{
+  "state": "PR",
+  "stateName": "Parana",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "pr-cartao-futuro",
+      "name": "Cartao Futuro",
+      "shortDescription": "Auxilio de R$ 900 para jovens de baixa renda que estao estudando ou fazendo curso.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 900,
+        "max": 900,
+        "description": "R$ 900 por mes durante o programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter entre 15 e 29 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        }
+      ],
+      "whereToApply": "Site cartaofuturo.pr.gov.br",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Numero do Cadastro Unico)",
+        "Comprovante de matricula em curso"
+      ],
+      "howToApply": [
+        "Acesse cartaofuturo.pr.gov.br",
+        "Faca o cadastro com seus dados",
+        "Escolha um curso de qualificacao",
+        "Aguarde a selecao e comece a receber"
+      ],
+      "sourceUrl": "https://www.cartaofuturo.pr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎯",
+      "category": "Qualificacao"
+    },
+    {
+      "id": "pr-familia-paranaense",
+      "name": "Familia Paranaense",
+      "shortDescription": "Programa que ajuda familias muito pobres com dinheiro e acesso a servicos.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor varia conforme a situacao da familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "Comprovante de residencia",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Faca ou atualize o Cadastro Unico",
+        "A equipe vai visitar sua casa",
+        "Se aprovado, comeca a receber o beneficio"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "👨‍👩‍👧‍👦",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "pr-armazem-da-familia",
+      "name": "Armazem da Familia",
+      "shortDescription": "Supermercado com produtos ate 30% mais baratos para familias de baixa renda.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Economia de ate R$ 200 por mes nas compras"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "Prefeitura ou unidade do Armazem da Familia",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Va a uma unidade do Armazem da Familia",
+        "Faca o cadastro com seus documentos",
+        "Receba o cartao do programa",
+        "Faca compras com desconto"
+      ],
+      "sourceUrl": "https://www.curitiba.pr.gov.br/servicos/armazem-da-familia/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "pr-leite-das-criancas",
+      "name": "Leite das Criancas",
+      "shortDescription": "Leite de graca para criancas de 6 meses a 3 anos de familias de baixa renda.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 80,
+        "description": "7 litros de leite por semana"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter crianca de 6 meses a 3 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "Postos de saude ou locais de distribuicao",
+      "documentsRequired": [
+        "CPF do responsavel",
+        "Certidao de nascimento da crianca",
+        "Comprovante de residencia",
+        "Cartao do SUS da crianca"
+      ],
+      "howToApply": [
+        "Va ao posto de saude ou local indicado",
+        "Faca o cadastro da crianca",
+        "Retire o leite toda semana",
+        "Leve a crianca para pesar todo mes"
+      ],
+      "sourceUrl": "https://www.leitedascriancas.pr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🥛",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "pr-vale-gas-social",
+      "name": "Vale Gas Social PR",
+      "shortDescription": "Ajuda para comprar gas de cozinha para familias de baixa renda.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Numero do Cadastro Unico)",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Unico atualizado",
+        "O beneficio e selecionado automaticamente",
+        "O valor vai para conta da Caixa"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

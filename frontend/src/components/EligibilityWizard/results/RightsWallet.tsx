@@ -1,5 +1,6 @@
 /**
  * RightsWallet - Exibe a "Carteira de Direitos" com benefícios elegíveis
+ * Agrupa por categoria: Federal, Estadual, Setorial
  */
 
 import { TriagemResult, EligibilityResult } from '../types';
@@ -45,6 +46,8 @@ const STATUS_CONFIG = {
 const PROGRAM_ICONS: Record<string, string> = {
   BOLSA_FAMILIA: '👨‍👩‍👧‍👦',
   BPC: '🧓',
+  BPC_IDOSO: '👴',
+  BPC_PCD: '♿',
   TSEE: '💡',
   FARMACIA_POPULAR: '💊',
   AUXILIO_GAS: '🔥',
@@ -52,7 +55,70 @@ const PROGRAM_ICONS: Record<string, string> = {
   MCMV: '🏠',
   MCMV_REFORMAS: '🔨',
   PIS_PASEP: '💰',
+  SVR: '🏦',
+  FGTS: '📋',
+  SEGURO_DESEMPREGO: '🛡️',
+  ABONO_SALARIAL: '💵',
+  TARIFA_SOCIAL_AGUA: '💧',
+  ISENCAO_IPVA: '🚗',
+  PASSE_LIVRE: '🚌',
 };
+
+// Categorias para agrupar benefícios
+const BENEFIT_CATEGORIES: Record<string, { label: string; icon: string; color: string }> = {
+  federal: {
+    label: 'Benefícios Federais',
+    icon: '🇧🇷',
+    color: 'from-blue-600/20 to-blue-500/10 border-blue-500/30',
+  },
+  estadual: {
+    label: 'Benefícios Estaduais',
+    icon: '🏛️',
+    color: 'from-purple-600/20 to-purple-500/10 border-purple-500/30',
+  },
+  municipal: {
+    label: 'Benefícios Municipais',
+    icon: '🏘️',
+    color: 'from-cyan-600/20 to-cyan-500/10 border-cyan-500/30',
+  },
+  setorial: {
+    label: 'Benefícios Setoriais',
+    icon: '👷',
+    color: 'from-amber-600/20 to-amber-500/10 border-amber-500/30',
+  },
+};
+
+// Detecta categoria do benefício baseado no código do programa
+function getBenefitCategory(programa: string): 'federal' | 'estadual' | 'municipal' | 'setorial' {
+  const federalPrograms = [
+    'BOLSA_FAMILIA', 'BPC', 'BPC_IDOSO', 'BPC_PCD', 'TSEE', 'FARMACIA_POPULAR',
+    'AUXILIO_GAS', 'DIGNIDADE_MENSTRUAL', 'MCMV', 'PIS_PASEP', 'SVR', 'FGTS',
+    'SEGURO_DESEMPREGO', 'ABONO_SALARIAL', 'TARIFA_SOCIAL_AGUA', 'ISENCAO_IPVA', 'PASSE_LIVRE'
+  ];
+
+  const setorialPrograms = [
+    'SEGURO_DEFESO', 'PRONAF', 'GARANTIA_SAFRA', 'PAA', 'HABITACAO_RURAL',
+    'BOLSA_RECICLAGEM', 'AUXILIO_INCLUSAO'
+  ];
+
+  if (federalPrograms.includes(programa)) return 'federal';
+  if (setorialPrograms.includes(programa)) return 'setorial';
+
+  // Check for municipal prefixes (format: uf-cidade-programa)
+  // Examples: sp-saopaulo-bolsa-trabalho, rj-riodejaneiro-supera-rj
+  const municipalPattern = /^[a-z]{2}-[a-z]+-/i;
+  if (municipalPattern.test(programa)) {
+    return 'municipal';
+  }
+
+  // Check for state prefixes (format with _UF or state-uf-)
+  if (programa.includes('_SP') || programa.includes('_RJ') || programa.includes('_MG') ||
+      /^state-[a-z]{2}-/i.test(programa)) {
+    return 'estadual';
+  }
+
+  return 'federal'; // Default to federal
+}
 
 function BenefitCard({ benefit }: { benefit: EligibilityResult }) {
   const config = STATUS_CONFIG[benefit.status];
@@ -100,9 +166,60 @@ function BenefitCard({ benefit }: { benefit: EligibilityResult }) {
   );
 }
 
+function CategorySection({
+  category,
+  benefits,
+}: {
+  category: keyof typeof BENEFIT_CATEGORIES;
+  benefits: EligibilityResult[];
+}) {
+  if (benefits.length === 0) return null;
+
+  const config = BENEFIT_CATEGORIES[category];
+  const totalValue = benefits.reduce((sum, b) => sum + (b.valorEstimado || 0), 0);
+
+  return (
+    <div className="space-y-3">
+      <div className={`p-3 rounded-lg bg-gradient-to-r ${config.color} border`}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">{config.icon}</span>
+            <span className="font-medium text-slate-200">{config.label}</span>
+            <span className="px-2 py-0.5 rounded bg-slate-800/50 text-xs text-slate-300">
+              {benefits.length}
+            </span>
+          </div>
+          {totalValue > 0 && (
+            <span className="text-sm font-medium text-emerald-400">
+              até R$ {totalValue.toFixed(0)}/mês
+            </span>
+          )}
+        </div>
+      </div>
+      <div className="space-y-3 pl-2">
+        {benefits.map((b, i) => (
+          <BenefitCard key={`${category}-${i}`} benefit={b} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function RightsWallet({ result, onGenerateCarta, onFindCras, onReset }: Props) {
   const totalElegiveis = result.beneficiosElegiveis.length;
   const totalJaRecebe = result.beneficiosJaRecebe.length;
+
+  // Agrupa benefícios elegíveis por categoria
+  const eligibleByCategory = {
+    federal: result.beneficiosElegiveis.filter(b => getBenefitCategory(b.programa) === 'federal'),
+    estadual: result.beneficiosElegiveis.filter(b => getBenefitCategory(b.programa) === 'estadual'),
+    municipal: result.beneficiosElegiveis.filter(b => getBenefitCategory(b.programa) === 'municipal'),
+    setorial: result.beneficiosElegiveis.filter(b => getBenefitCategory(b.programa) === 'setorial'),
+  };
+
+  const hasCategories = eligibleByCategory.estadual.length > 0 ||
+                        eligibleByCategory.municipal.length > 0 ||
+                        eligibleByCategory.setorial.length > 0;
 
   return (
     <div className="space-y-6">
@@ -150,15 +267,28 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         </div>
       )}
 
-      {/* Benefícios elegíveis */}
+      {/* Benefícios elegíveis - Agrupados por categoria */}
       {totalElegiveis > 0 && (
-        <div className="space-y-3">
+        <div className="space-y-6">
           <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
             Benefícios disponíveis para você
           </h3>
-          {result.beneficiosElegiveis.map((b, i) => (
-            <BenefitCard key={`el-${i}`} benefit={b} />
-          ))}
+
+          {hasCategories ? (
+            <>
+              <CategorySection category="federal" benefits={eligibleByCategory.federal} />
+              <CategorySection category="estadual" benefits={eligibleByCategory.estadual} />
+              <CategorySection category="municipal" benefits={eligibleByCategory.municipal} />
+              <CategorySection category="setorial" benefits={eligibleByCategory.setorial} />
+            </>
+          ) : (
+            // Se só tem federais, mostra sem categoria
+            <div className="space-y-3">
+              {result.beneficiosElegiveis.map((b, i) => (
+                <BenefitCard key={`el-${i}`} benefit={b} />
+              ))}
+            </div>
+          )}
         </div>
       )}
 
@@ -203,6 +333,22 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         </div>
       )}
 
+      {/* Dica sobre benefícios estaduais e municipais */}
+      {eligibleByCategory.estadual.length === 0 && eligibleByCategory.municipal.length === 0 && totalElegiveis > 0 && (
+        <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30">
+          <div className="flex items-start gap-3">
+            <span className="text-xl">💡</span>
+            <div>
+              <p className="text-purple-300 font-medium text-sm">Dica</p>
+              <p className="text-purple-400/80 text-sm mt-1">
+                Seu estado e cidade podem ter benefícios adicionais! Informe sua localização na primeira etapa
+                para vermos programas estaduais e municipais disponíveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Ações */}
       <div className="space-y-3">
         {totalElegiveis > 0 && (
@@ -229,6 +375,14 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         >
           Fazer nova consulta
         </button>
+      </div>
+
+      {/* Footer informativo */}
+      <div className="text-center pt-4 border-t border-slate-800">
+        <p className="text-xs text-slate-500">
+          Análise baseada nas informações fornecidas.
+          Confirme presencialmente no CRAS ou órgão responsável.
+        </p>
       </div>
     </div>
   );

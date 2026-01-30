@@ -1,0 +1,100 @@
+{
+  "municipality": "Maceió",
+  "municipalityIbge": "2704302",
+  "state": "AL",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "al-maceio-auxilio-moradia",
+      "name": "Auxílio-Moradia Maceió",
+      "shortDescription": "Auxílio habitacional para 2.000 famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "R$ 300 a R$ 500 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Semas",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.maceio.al.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "al-maceio-conta-em-dia",
+      "name": "Conta em Dia",
+      "shortDescription": "Auxílio de R$ 50 para pagamento de contas de água e luz",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 50 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Maceió",
+      "documentsRequired": ["CPF", "RG", "NIS", "Contas de água/luz"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Apresente documentos",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.maceio.al.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💡",
+      "category": "Utilidades"
+    }
+  ]
+}

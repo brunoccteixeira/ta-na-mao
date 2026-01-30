@@ -1,0 +1,158 @@
+{
+  "state": "RR",
+  "stateName": "Roraima",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "rr-auxilio-social-roraima",
+      "name": "Auxílio Social Roraima",
+      "shortDescription": "Ajuda mensal para famílias de baixa renda de Roraima.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 150,
+        "description": "Valor mensal conforme a família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em Roraima"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Faça ou atualize o Cadastro Único",
+        "O governo seleciona as famílias",
+        "Aguarde a comunicação sobre o benefício"
+      ],
+      "sourceUrl": "https://www.roraima.rr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "rr-vale-gas-roraima",
+      "name": "Vale Gás Roraima",
+      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 60,
+        "description": "Cerca de R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Vá ao CRAS se precisar atualizar dados",
+        "O governo faz a seleção automática",
+        "Se selecionado, receba o benefício"
+      ],
+      "sourceUrl": "https://www.roraima.rr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "rr-cesta-basica-roraima",
+      "name": "Cesta Básica Roraima",
+      "shortDescription": "Distribuição de cestas básicas para famílias em situação de pobreza.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 120,
+        "description": "Cesta com alimentos básicos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize o Cadastro Único",
+        "Aguarde a convocação para retirar a cesta",
+        "Leve documento com foto na retirada"
+      ],
+      "sourceUrl": "https://www.roraima.rr.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    }
+  ]
+}

@@ -21,6 +21,7 @@ import {
 import BasicInfoStep from './steps/BasicInfoStep';
 import FamilyStep from './steps/FamilyStep';
 import IncomeStep from './steps/IncomeStep';
+import WorkStep from './steps/WorkStep';
 import SpecialStep from './steps/SpecialStep';
 import RightsWallet from './results/RightsWallet';
 
@@ -154,6 +155,14 @@ export default function EligibilityWizard({
         )}
         {currentStep === 'income' && (
           <IncomeStep
+            profile={profile}
+            onUpdate={updateProfile}
+            onNext={goNext}
+            onBack={goBack}
+          />
+        )}
+        {currentStep === 'work' && (
+          <WorkStep
             profile={profile}
             onUpdate={updateProfile}
             onNext={goNext}

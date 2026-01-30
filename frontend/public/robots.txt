@@ -1,0 +1,7 @@
+# Tá na Mão - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://tanamao.com.br/sitemap.xml

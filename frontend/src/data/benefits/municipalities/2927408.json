@@ -1,0 +1,191 @@
+{
+  "municipality": "Salvador",
+  "municipalityIbge": "2927408",
+  "state": "BA",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "ba-salvador-primeiro-passo",
+      "name": "Primeiro Passo",
+      "shortDescription": "Auxílio de R$ 81,50 para famílias com crianças de 0 a 6 anos",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 81.50,
+        "max": 81.50,
+        "description": "R$ 81,50 por criança"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 6 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Prefeitura-Bairro",
+      "documentsRequired": ["CPF", "RG", "Certidão de nascimento da criança", "NIS"],
+      "howToApply": [
+        "Procure o CRAS do bairro",
+        "Apresente documentos",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "👶",
+      "category": "Primeira Infância"
+    },
+    {
+      "id": "ba-salvador-aluguel-social",
+      "name": "Aluguel Social Salvador",
+      "shortDescription": "Auxílio de R$ 400 para famílias em situação de vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 400,
+        "description": "R$ 400 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "Secretaria de Promoção Social (SEMPRE)",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação social",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "ba-salvador-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Refeições gratuitas nos 9 restaurantes populares de Salvador",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição gratuita"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Salvador",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer restaurante popular",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ba-salvador-vida-nova",
+      "name": "Vida Nova",
+      "shortDescription": "Programa de capacitação e transferência de renda para jovens",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 500,
+        "description": "R$ 300 a R$ 500 durante o programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 29,
+          "description": "Ter no máximo 29 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Trabalho",
+      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Faça inscrição no programa",
+        "Aguarde seleção"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Transferência de Renda"
+    }
+  ]
+}

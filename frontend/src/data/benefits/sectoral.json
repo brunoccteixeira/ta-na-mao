@@ -1,0 +1,452 @@
+{
+  "benefits": [
+    {
+      "id": "sectoral-seguro-defeso",
+      "name": "Seguro-Defeso",
+      "shortDescription": "Salário mínimo durante o período de defeso para pescadores artesanais que não podem pescar.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1412,
+        "max": 1412,
+        "description": "1 salário mínimo por mês de defeso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pescador artesanal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "INSS (pelo site, app ou agência)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Registro Geral da Pesca (RGP) ativo",
+        "Comprovante de venda do pescado",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Registro Geral da Pesca atualizado",
+        "Antes do período de defeso, acesse o Meu INSS",
+        "Solicite o Seguro-Defeso",
+        "Aguarde análise e liberação das parcelas"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/seguro-desemprego-do-pescador-artesanal",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🐟",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-pronaf",
+      "name": "PRONAF - Crédito Rural",
+      "shortDescription": "Financiamento com juros baixos para agricultores familiares investirem na produção.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 500000,
+        "description": "Valor depende da linha de crédito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar ou ter propriedade na zona rural"
+        }
+      ],
+      "whereToApply": "Banco do Brasil, Caixa, Banco do Nordeste ou cooperativas de crédito",
+      "documentsRequired": [
+        "DAP (Declaração de Aptidão ao Pronaf) ou CAF",
+        "CPF e RG",
+        "Comprovante de residência",
+        "Projeto de investimento (para valores maiores)"
+      ],
+      "howToApply": [
+        "Obtenha a DAP no sindicato rural ou Emater",
+        "Elabore um projeto simples de uso do dinheiro",
+        "Vá ao banco e apresente os documentos",
+        "Aguarde análise e liberação do crédito"
+      ],
+      "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-garantia-safra",
+      "name": "Garantia-Safra",
+      "shortDescription": "Ajuda de R$ 1.200 por safra para agricultores familiares que perderam a colheita por seca ou enchente.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 1200,
+        "max": 1200,
+        "description": "R$ 1.200 por safra perdida"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar em município que aderiu ao programa"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2824,
+          "description": "Renda familiar de até 1,5 salário mínimo"
+        }
+      ],
+      "whereToApply": "Sindicato Rural ou Secretaria de Agricultura do município",
+      "documentsRequired": [
+        "CPF e RG",
+        "DAP (Declaração de Aptidão ao Pronaf)",
+        "Comprovante de residência",
+        "Declaração de perda de safra"
+      ],
+      "howToApply": [
+        "Faça adesão todo ano no sindicato rural",
+        "Em caso de perda, comunique imediatamente",
+        "A prefeitura declara estado de emergência",
+        "Receba o benefício após confirmação"
+      ],
+      "sourceUrl": "https://www.gov.br/mda/pt-br/assuntos/agricultura-familiar/garantia-safra",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🌧️",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-paa",
+      "name": "PAA - Compra de Alimentos",
+      "shortDescription": "O governo compra alimentos direto do agricultor familiar por preço justo.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 8000,
+        "max": 30000,
+        "description": "Limite de compra por agricultor/ano"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar"
+        }
+      ],
+      "whereToApply": "CONAB, Prefeitura ou organizações de agricultores",
+      "documentsRequired": [
+        "DAP (Declaração de Aptidão ao Pronaf) ou CAF",
+        "CPF e RG",
+        "Nota fiscal de produtor",
+        "Conta bancária para receber"
+      ],
+      "howToApply": [
+        "Procure a CONAB ou prefeitura do seu município",
+        "Cadastre-se como fornecedor",
+        "Entregue os alimentos conforme contrato",
+        "Receba o pagamento direto na conta"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/paa",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🥕",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-habitacao-rural",
+      "name": "Habitação Rural",
+      "shortDescription": "Casa própria para agricultor familiar com subsídio de até 95% do valor.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 30000,
+        "max": 55000,
+        "description": "Subsídio para construção ou reforma"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar na zona rural"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria adequada"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4236,
+          "description": "Renda familiar de até 3 salários mínimos"
+        }
+      ],
+      "whereToApply": "Entidades organizadoras credenciadas ou Caixa",
+      "documentsRequired": [
+        "DAP (Declaração de Aptidão ao Pronaf)",
+        "CPF e RG de todos da família",
+        "Comprovante de propriedade ou posse da terra",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure uma entidade organizadora (sindicato, cooperativa)",
+        "Forme um grupo de famílias interessadas",
+        "Apresente a documentação",
+        "Aguarde seleção e início da obra"
+      ],
+      "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/pnhr",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-mei",
+      "name": "MEI - Microempreendedor Individual",
+      "shortDescription": "Formalize seu negócio pagando pouco e tenha direito a benefícios do INSS.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 70-76/mês dá direito a benefícios"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ser empregado com carteira assinada"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 81000,
+          "description": "Faturar até R$ 81.000 por ano"
+        }
+      ],
+      "whereToApply": "Portal do Empreendedor (gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "Título de eleitor ou recibo IR",
+        "Dados de contato",
+        "Endereço do negócio"
+      ],
+      "howToApply": [
+        "Acesse gov.br/mei",
+        "Faça login com conta Gov.br",
+        "Preencha os dados do seu negócio",
+        "Pronto! Você já é MEI"
+      ],
+      "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💼",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-bolsa-reciclagem",
+      "name": "Bolsa Reciclagem",
+      "shortDescription": "Pagamento por material reciclável coletado por catadores organizados em cooperativas.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 1000,
+        "description": "Valor varia conforme quantidade coletada"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        }
+      ],
+      "whereToApply": "Cooperativas de catadores ou Secretaria de Meio Ambiente",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de vínculo com cooperativa"
+      ],
+      "howToApply": [
+        "Organize-se em cooperativa ou associação",
+        "Cadastre a cooperativa no programa estadual/municipal",
+        "Entregue o material reciclável coletado",
+        "Receba o pagamento por quilo"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-e-inclusao-produtiva",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "♻️",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-auxilio-entregador",
+      "name": "Benefícios para Entregadores",
+      "shortDescription": "Orientações sobre direitos e benefícios para quem trabalha com aplicativos de entrega.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Benefícios variam por programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como entregador de aplicativo"
+        }
+      ],
+      "whereToApply": "CRAS ou programas municipais específicos",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de cadastro nos aplicativos"
+      ],
+      "howToApply": [
+        "Consulte programas municipais na sua cidade",
+        "Verifique se há MEI para sua atividade",
+        "Cadastre-se no CadÚnico se tiver baixa renda",
+        "Acesse Bolsa Família e outros programas se elegível"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🛵",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-pronaf-pesca",
+      "name": "PRONAF Pesca",
+      "shortDescription": "Crédito com juros baixos para pescadores artesanais investirem em equipamentos.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 100000,
+        "description": "Financiamento para embarcação e equipamentos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pescador artesanal"
+        }
+      ],
+      "whereToApply": "Banco do Brasil, Caixa ou Banco do Nordeste",
+      "documentsRequired": [
+        "Registro Geral da Pesca (RGP)",
+        "CPF e RG",
+        "Projeto de investimento",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Obtenha o Registro Geral da Pesca",
+        "Elabore projeto de uso do financiamento",
+        "Procure o banco com os documentos",
+        "Aguarde aprovação do crédito"
+      ],
+      "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🚤",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-auxilio-inclusao",
+      "name": "Auxílio-Inclusão",
+      "shortDescription": "Meio salário mínimo para pessoas com deficiência que recebem BPC e começam a trabalhar.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 706,
+        "max": 706,
+        "description": "Meio salário mínimo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência comprovada"
+        },
+        {
+          "field": "recebeBpc",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber ou ter recebido BPC nos últimos 5 anos"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar empregado com carteira assinada"
+        }
+      ],
+      "whereToApply": "INSS (pelo site, app ou agência)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho",
+        "Laudo médico da deficiência",
+        "Comprovante de vínculo empregatício"
+      ],
+      "howToApply": [
+        "Ao conseguir emprego, acesse o Meu INSS",
+        "Solicite o Auxílio-Inclusão",
+        "O BPC será suspenso e substituído pelo auxílio",
+        "Se perder o emprego, pode voltar ao BPC"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/auxilio-inclusao",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "♿",
+      "category": "PCD"
+    }
+  ]
+}

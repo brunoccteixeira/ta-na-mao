@@ -1,0 +1,88 @@
+{
+  "municipality": "Juiz de Fora",
+  "municipalityIbge": "3136702",
+  "state": "MG",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "mg-juizdefora-beneficios-eventuais",
+      "name": "Benefícios Eventuais Juiz de Fora",
+      "shortDescription": "Auxílios emergenciais para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3136702",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3136702",
+          "description": "Morar em Juiz de Fora"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Juiz de Fora",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.pjf.mg.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    },
+    {
+      "id": "mg-juizdefora-passe-livre-idoso",
+      "name": "Passe Livre Idoso JF",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3136702",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3136702",
+          "description": "Morar em Juiz de Fora"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Settra ou terminais",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a Settra",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.pjf.mg.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

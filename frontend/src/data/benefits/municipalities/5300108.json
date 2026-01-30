@@ -1,0 +1,146 @@
+{
+  "municipality": "Brasília",
+  "municipalityIbge": "5300108",
+  "state": "DF",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "df-brasilia-cartao-prato-cheio",
+      "name": "Cartão Prato Cheio",
+      "shortDescription": "Cartão de R$ 280 para compra de alimentos em famílias de baixa renda",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 280,
+        "max": 280,
+        "description": "R$ 280 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar em Brasília/DF"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou site da SEDES-DF",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS da sua região",
+        "Verifique se está elegível",
+        "Aguarde o cartão"
+      ],
+      "sourceUrl": "https://sedes.df.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "df-brasilia-df-social",
+      "name": "DF Social",
+      "shortDescription": "Programa de transferência de renda para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150 a R$ 300 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar em Brasília/DF"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou site da SEDES-DF",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS da sua região",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://sedes.df.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "df-brasilia-cesta-trabalhador",
+      "name": "Cesta do Trabalhador",
+      "shortDescription": "Cesta básica para trabalhadores informais e desempregados",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta básica mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar em Brasília/DF"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter trabalho formal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS da região",
+      "documentsRequired": ["CPF", "RG", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite a cesta",
+        "Retire no local indicado"
+      ],
+      "sourceUrl": "https://sedes.df.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    }
+  ]
+}

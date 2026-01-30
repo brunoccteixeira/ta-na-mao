@@ -1,0 +1,134 @@
+{
+  "municipality": "Recife",
+  "municipalityIbge": "2611606",
+  "state": "PE",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pe-recife-cnh-social",
+      "name": "CNH Social",
+      "shortDescription": "Carteira de habilitação gratuita para pessoas de baixa renda",
+      "scope": "municipal",
+      "state": "PE",
+      "municipalityIbge": "2611606",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "CNH gratuita"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2611606",
+          "description": "Morar em Recife"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "DETRAN-PE ou CRAS",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Aguarde edital",
+        "Faça inscrição",
+        "Realize os exames"
+      ],
+      "sourceUrl": "https://www.recife.pe.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Qualificação"
+    },
+    {
+      "id": "pe-recife-vem-idoso",
+      "name": "VEM Idoso",
+      "shortDescription": "Cartão de transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "PE",
+      "municipalityIbge": "2611606",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2611606",
+          "description": "Morar em Recife"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Estações do metrô ou postos VEM",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure um posto VEM",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.granderecife.pe.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    },
+    {
+      "id": "pe-recife-vem-estudantil",
+      "name": "VEM Estudantil",
+      "shortDescription": "Meia-passagem para estudantes no transporte público",
+      "scope": "municipal",
+      "state": "PE",
+      "municipalityIbge": "2611606",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "50% de desconto na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2611606",
+          "description": "Morar em Recife"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        }
+      ],
+      "whereToApply": "Estações do metrô ou postos VEM",
+      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4"],
+      "howToApply": [
+        "Procure um posto VEM",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.granderecife.pe.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎒",
+      "category": "Transporte"
+    }
+  ]
+}

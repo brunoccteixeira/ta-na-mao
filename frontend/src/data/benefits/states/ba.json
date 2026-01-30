@@ -1,0 +1,264 @@
+{
+  "state": "BA",
+  "stateName": "Bahia",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "ba-bolsa-presenca",
+      "name": "Bolsa Presença",
+      "shortDescription": "Ajuda de R$ 150 por mês para estudantes do ensino médio da rede pública que mantêm frequência na escola.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mês durante o ano letivo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter entre 14 e 24 anos"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudante do ensino médio da rede estadual"
+        }
+      ],
+      "whereToApply": "Escola onde estuda ou site bolsapresenca.educacao.ba.gov.br",
+      "documentsRequired": [
+        "CPF do estudante",
+        "NIS (Número do Cadastro Único)",
+        "Matrícula ativa no ensino médio estadual"
+      ],
+      "howToApply": [
+        "Verifique se está no Cadastro Único",
+        "Confirme matrícula na rede estadual",
+        "Acesse o site ou procure a secretaria da escola",
+        "Mantenha frequência de pelo menos 75%"
+      ],
+      "sourceUrl": "https://bolsapresenca.educacao.ba.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "ba-mais-futuro",
+      "name": "Mais Futuro",
+      "shortDescription": "Bolsa de até R$ 700 para estudantes de universidades estaduais baianas em situação de vulnerabilidade.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 700,
+        "description": "Entre R$ 400 e R$ 700 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        },
+        {
+          "field": "estudanteUniversitario",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudante de universidade estadual baiana (UNEB, UEFS, UESB ou UESC)"
+        }
+      ],
+      "whereToApply": "Universidade onde estuda",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Comprovante de residência",
+        "Histórico escolar"
+      ],
+      "howToApply": [
+        "Fique atento aos editais da sua universidade",
+        "Reúna os documentos pedidos",
+        "Faça a inscrição no período indicado",
+        "Aguarde o resultado da seleção"
+      ],
+      "sourceUrl": "https://www.ba.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educação"
+    },
+    {
+      "id": "ba-restaurante-popular",
+      "name": "Restaurante Popular da Bahia",
+      "shortDescription": "Refeições completas por R$ 1,00 em restaurantes do governo do estado.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de até R$ 300 por mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Estar na Bahia"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular do estado",
+      "documentsRequired": [
+        "Nenhum documento necessário para comer"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Vá no horário de funcionamento (almoço)",
+        "Pague R$ 1,00 e faça a refeição",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.sjdhds.ba.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ba-primeiro-emprego",
+      "name": "Primeiro Emprego BA",
+      "shortDescription": "Programa que ajuda jovens baianos a conseguir o primeiro emprego com carteira assinada.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1412,
+        "max": 1412,
+        "description": "Salário mínimo durante contrato"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter entre 18 e 24 anos"
+        },
+        {
+          "field": "empregoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Nunca ter trabalhado com carteira assinada"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "SineBahia ou site trabalho.ba.gov.br",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho Digital",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Cadastre-se no SineBahia",
+        "Acesse o site e busque vagas do programa",
+        "Candidate-se às vagas disponíveis",
+        "Compareça às entrevistas agendadas"
+      ],
+      "sourceUrl": "https://www.trabalho.ba.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💼",
+      "category": "Emprego"
+    },
+    {
+      "id": "ba-agua-para-todos",
+      "name": "Água Para Todos BA",
+      "shortDescription": "Cisternas e sistemas de água para famílias da zona rural sem acesso à água tratada.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 8000,
+        "description": "Valor da cisterna ou sistema instalado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "zonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar na zona rural"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218 (linha de pobreza)"
+        }
+      ],
+      "whereToApply": "CRAS do seu município ou prefeitura",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Comprovante de residência rural",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou prefeitura",
+        "Confirme que está no Cadastro Único",
+        "Solicite inclusão no programa",
+        "Aguarde visita técnica e instalação"
+      ],
+      "sourceUrl": "https://www.sihs.ba.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💧",
+      "category": "Infraestrutura"
+    }
+  ]
+}

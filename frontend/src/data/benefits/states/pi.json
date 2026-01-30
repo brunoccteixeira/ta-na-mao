@@ -1,0 +1,151 @@
+{
+  "state": "PI",
+  "stateName": "Piauí",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "pi-cartao-mais-renda",
+      "name": "Cartão Mais Renda",
+      "shortDescription": "Cartão com dinheiro todo mês para famílias pobres do Piauí.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor varia por família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de toda a família",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Atualize seu Cadastro Único no CRAS",
+        "O governo escolhe quem pode participar",
+        "Espere ser chamado",
+        "Pegue seu cartão no local indicado"
+      ],
+      "sourceUrl": "https://www.pi.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💳",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "pi-comida-na-mesa",
+      "name": "Comida na Mesa",
+      "shortDescription": "Programa para garantir comida para quem mais precisa.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 200,
+        "description": "Ajuda mensal em alimentos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 109,
+          "description": "Renda por pessoa de até R$ 109"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Procure o CRAS da sua cidade",
+        "Fale que precisa de ajuda com comida",
+        "Traga seus documentos",
+        "Espere a avaliação"
+      ],
+      "sourceUrl": "https://www.pi.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍚",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pi-agua-para-todos",
+      "name": "Água para Todos PI",
+      "shortDescription": "Cisternas e poços para famílias da zona rural sem água.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 8000,
+        "description": "Cisterna ou poço instalado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        }
+      ],
+      "whereToApply": "Prefeitura ou CRAS",
+      "documentsRequired": [
+        "CPF",
+        "NIS",
+        "Comprovante de que mora na zona rural"
+      ],
+      "howToApply": [
+        "Vá à prefeitura ou CRAS",
+        "Diga que não tem água em casa",
+        "Faça o pedido de cisterna",
+        "Aguarde a equipe visitar sua casa"
+      ],
+      "sourceUrl": "https://www.pi.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💧",
+      "category": "Infraestrutura"
+    }
+  ]
+}

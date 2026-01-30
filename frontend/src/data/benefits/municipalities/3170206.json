@@ -1,0 +1,94 @@
+{
+  "municipality": "Uberlândia",
+  "municipalityIbge": "3170206",
+  "state": "MG",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "mg-uberlandia-tarifa-social-dmae",
+      "name": "Tarifa Social DMAE",
+      "shortDescription": "Desconto de 50% na conta de água para famílias de baixa renda",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3170206",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "50% de desconto na conta de água"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3170206",
+          "description": "Morar em Uberlândia"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "DMAE ou CRAS",
+      "documentsRequired": ["CPF", "RG", "NIS", "Conta de água"],
+      "howToApply": [
+        "Procure o DMAE ou CRAS",
+        "Apresente documentos",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.uberlandia.mg.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💧",
+      "category": "Utilidades"
+    },
+    {
+      "id": "mg-uberlandia-passe-livre-idoso",
+      "name": "Passe Livre Idoso Uberlândia",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3170206",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3170206",
+          "description": "Morar em Uberlândia"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Settran ou terminais",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a Settran",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.uberlandia.mg.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

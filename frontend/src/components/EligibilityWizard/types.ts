@@ -9,8 +9,12 @@ export interface CitizenProfile {
 
   // Localização
   municipio?: string;
+  municipioIbge?: string;
   uf?: string;
   cep?: string;
+
+  // Dados básicos
+  idade?: number;
 
   // Composição familiar
   pessoasNaCasa: number;
@@ -19,9 +23,11 @@ export interface CitizenProfile {
   temIdoso65Mais: boolean;
   temGestante: boolean;
   temPcd: boolean;
+  temCrianca0a6: boolean;
 
   // Renda
   rendaFamiliarMensal: number;
+  trabalhoFormal: boolean;
 
   // Benefícios atuais (se conhecidos)
   recebeBolsaFamilia: boolean;
@@ -31,9 +37,25 @@ export interface CitizenProfile {
 
   // Habitação
   temCasaPropria: boolean;
+  moradiaZonaRural: boolean;
 
   // Trabalho histórico
   trabalhou1971_1988?: boolean;
+  temCarteiraAssinada?: boolean;
+  tempoCarteiraAssinada?: number;
+
+  // Setorial/Profissão
+  profissao?: string;
+  temMei: boolean;
+  trabalhaAplicativo: boolean;
+  agricultorFamiliar: boolean;
+  pescadorArtesanal: boolean;
+  catadorReciclavel: boolean;
+
+  // Especial
+  mulherMenstruante?: boolean;
+  estudante: boolean;
+  redePublica: boolean;
 }
 
 export interface EligibilityResult {
@@ -60,14 +82,15 @@ export interface TriagemResult {
   documentosNecessarios: string[];
 }
 
-export type WizardStep = 'basic' | 'family' | 'income' | 'special' | 'result';
+export type WizardStep = 'basic' | 'family' | 'income' | 'work' | 'special' | 'result';
 
-export const WIZARD_STEPS: WizardStep[] = ['basic', 'family', 'income', 'special', 'result'];
+export const WIZARD_STEPS: WizardStep[] = ['basic', 'family', 'income', 'work', 'special', 'result'];
 
 export const STEP_TITLES: Record<WizardStep, string> = {
   basic: 'Dados Básicos',
   family: 'Família',
   income: 'Renda',
+  work: 'Trabalho',
   special: 'Situação Especial',
   result: 'Seus Direitos',
 };
@@ -79,13 +102,42 @@ export const DEFAULT_PROFILE: CitizenProfile = {
   temIdoso65Mais: false,
   temGestante: false,
   temPcd: false,
+  temCrianca0a6: false,
   rendaFamiliarMensal: 0,
+  trabalhoFormal: false,
   recebeBolsaFamilia: false,
   valorBolsaFamilia: 0,
   recebeBpc: false,
   cadastradoCadunico: false,
   temCasaPropria: false,
+  moradiaZonaRural: false,
+  temMei: false,
+  trabalhaAplicativo: false,
+  agricultorFamiliar: false,
+  pescadorArtesanal: false,
+  catadorReciclavel: false,
+  estudante: false,
+  redePublica: false,
 };
+
+// Profissões disponíveis para seleção
+export const PROFISSOES = [
+  { value: '', label: 'Selecione...' },
+  { value: 'empregado_formal', label: 'Empregado com carteira assinada' },
+  { value: 'autonomo', label: 'Autônomo / Bico / Informal' },
+  { value: 'mei', label: 'MEI - Microempreendedor Individual' },
+  { value: 'pescador', label: 'Pescador artesanal' },
+  { value: 'agricultor', label: 'Agricultor familiar' },
+  { value: 'entregador', label: 'Entregador de aplicativo' },
+  { value: 'motorista_app', label: 'Motorista de aplicativo' },
+  { value: 'catador', label: 'Catador de recicláveis' },
+  { value: 'domestica', label: 'Trabalhador(a) doméstico(a)' },
+  { value: 'desempregado', label: 'Desempregado / Procurando emprego' },
+  { value: 'aposentado', label: 'Aposentado / Pensionista' },
+  { value: 'estudante', label: 'Estudante' },
+  { value: 'do_lar', label: 'Do lar / Cuida da família' },
+  { value: 'outro', label: 'Outro' },
+];
 
 // UFs brasileiras
 export const UFS = [

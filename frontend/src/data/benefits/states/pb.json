@@ -1,0 +1,143 @@
+{
+  "state": "PB",
+  "stateName": "Paraíba",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "pb-pbsocial",
+      "name": "PB Social",
+      "shortDescription": "Dinheiro todo mês para famílias pobres da Paraíba.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor depende do tamanho da família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize seu Cadastro Único",
+        "O programa escolhe quem entra",
+        "Espere o contato do CRAS"
+      ],
+      "sourceUrl": "https://www.paraiba.pb.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "pb-restaurante-popular",
+      "name": "Restaurante Popular PB",
+      "shortDescription": "Comida de qualidade por preço baixo em restaurantes do estado.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Economia em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Estar na Paraíba"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares do estado",
+      "documentsRequired": [
+        "Não precisa de documento"
+      ],
+      "howToApply": [
+        "Procure um restaurante popular",
+        "Vá no horário de almoço",
+        "Pague o preço baixo e coma",
+        "Aberto para todos"
+      ],
+      "sourceUrl": "https://www.paraiba.pb.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pb-cesta-basica",
+      "name": "Cesta Básica PB",
+      "shortDescription": "Cesta de alimentos grátis para famílias muito pobres.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 150,
+        "description": "Uma cesta por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 109,
+          "description": "Renda por pessoa de até R$ 109"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Vá ao CRAS mais perto",
+        "Mostre que precisa da ajuda",
+        "Espere ser chamado para pegar",
+        "Retire a cesta no local indicado"
+      ],
+      "sourceUrl": "https://www.paraiba.pb.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    }
+  ]
+}

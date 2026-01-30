@@ -1,0 +1,192 @@
+{
+  "state": "MS",
+  "stateName": "Mato Grosso do Sul",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "ms-mais-social",
+      "name": "Mais Social",
+      "shortDescription": "Programa que junta varios beneficios para familias de baixa renda. Inclui ajuda em dinheiro e servicos.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 450,
+        "description": "Valor varia conforme a situacao da familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "RG ou certidao de nascimento",
+        "Comprovante de onde mora",
+        "NIS (numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Faca ou atualize o Cadastro Unico",
+        "O programa vai analisar sua situacao",
+        "Aguarde o contato do CRAS"
+      ],
+      "sourceUrl": "https://www.ms.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "ms-vale-renda",
+      "name": "Vale Renda",
+      "shortDescription": "Cesta basica de alimentos entregue todo mes para familias que precisam.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 150,
+        "description": "Cesta com alimentos basicos todo mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Va ao CRAS e atualize seu cadastro",
+        "Informe que quer receber o Vale Renda",
+        "Aguarde a analise",
+        "Retire a cesta no local indicado"
+      ],
+      "sourceUrl": "https://www.ms.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "ms-vale-gas",
+      "name": "Vale Gas MS",
+      "shortDescription": "Ajuda para comprar gas de cozinha. Receba R$ 100 a cada 2 meses.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Mantenha seu Cadastro Unico atualizado",
+        "O programa seleciona automaticamente",
+        "O dinheiro vai para sua conta"
+      ],
+      "sourceUrl": "https://www.ms.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "ms-restaurante-popular",
+      "name": "Restaurante Popular MS",
+      "shortDescription": "Comida de qualidade por preco baixo. Almoco por R$ 2,00.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de ate R$ 300 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Estar em Mato Grosso do Sul"
+        }
+      ],
+      "whereToApply": "Restaurante Popular da sua cidade",
+      "documentsRequired": [
+        "Nao precisa de documento para comer"
+      ],
+      "howToApply": [
+        "Procure o Restaurante Popular na sua cidade",
+        "Va no horario de funcionamento",
+        "Pague R$ 2,00 e faca sua refeicao"
+      ],
+      "sourceUrl": "https://www.ms.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    }
+  ]
+}

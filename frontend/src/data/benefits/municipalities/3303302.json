@@ -1,0 +1,87 @@
+{
+  "municipality": "Niterói",
+  "municipalityIbge": "3303302",
+  "state": "RJ",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "rj-niteroi-moeda-arariboia",
+      "name": "Moeda Social Arariboia",
+      "shortDescription": "Moeda social para estimular o comércio local",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3303302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "R$ 100 a R$ 200 em créditos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3303302",
+          "description": "Morar em Niterói"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "Banco Comunitário ou CRAS",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o Banco Comunitário",
+        "Faça cadastro",
+        "Receba a moeda social"
+      ],
+      "sourceUrl": "https://www.niteroi.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💳",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "rj-niteroi-restaurante-popular",
+      "name": "Restaurante Popular Niterói",
+      "shortDescription": "Refeições a preço acessível no restaurante popular",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3303302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição a preço popular"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3303302",
+          "description": "Morar em Niterói"
+        }
+      ],
+      "whereToApply": "Restaurante Popular de Niterói",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá ao restaurante popular",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.niteroi.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    }
+  ]
+}

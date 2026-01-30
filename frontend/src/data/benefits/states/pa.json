@@ -1,0 +1,144 @@
+{
+  "state": "PA",
+  "stateName": "Pará",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "pa-vale-gas",
+      "name": "Vale Gás Pará",
+      "shortDescription": "Ajuda de R$ 100 a cada 2 meses para comprar gás de cozinha.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Pará"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize seu Cadastro Único",
+        "O governo seleciona automaticamente",
+        "Se selecionado, receba pelo cartão do programa"
+      ],
+      "sourceUrl": "https://www.seaster.pa.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "pa-restaurante-popular",
+      "name": "Restaurante Popular do Pará",
+      "shortDescription": "Refeições a preço baixo em Belém e outras cidades do Pará.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 200,
+        "description": "Economia de até R$ 200/mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Estar no Pará"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares em Belém",
+      "documentsRequired": [
+        "Nenhum documento necessário para comer"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Vá no horário do almoço",
+        "Pague o valor da refeição subsidiada",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.seaster.pa.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pa-renda-para",
+      "name": "Renda Pará",
+      "shortDescription": "Complemento de renda mensal para famílias em situação de pobreza.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Valor mensal conforme a família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Vá ao CRAS e atualize o Cadastro Único",
+        "O programa seleciona automaticamente",
+        "Aguarde comunicação do governo",
+        "Se selecionado, retire o cartão no local indicado"
+      ],
+      "sourceUrl": "https://www.seaster.pa.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    }
+  ]
+}

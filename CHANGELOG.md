@@ -1,5 +1,87 @@
 # Changelog - Tá na Mão
 
+## [2026-01-29] - Sprint 12: Benefícios Municipais
+
+### 🎯 Foco: Catálogo Municipal de Benefícios
+
+Implementação da Fase 2 do MVP Website - adição de benefícios municipais ao catálogo, cobrindo os 40 maiores municípios brasileiros.
+
+### ✅ Frontend
+
+#### Nova Estrutura de Dados Municipais
+- **`frontend/src/data/benefits/municipalities/`** - Pasta com 40 arquivos JSON
+- Cada arquivo nomeado pelo código IBGE do município (ex: `3550308.json` para São Paulo)
+- Estrutura padronizada com metadados, regras de elegibilidade e documentos
+
+#### Municípios Cobertos (40)
+**Top 10:**
+- São Paulo, Rio de Janeiro, Brasília, Salvador, Fortaleza
+- Belo Horizonte, Manaus, Curitiba, Recife, Porto Alegre
+
+**Capitais Regionais (11-20):**
+- Goiânia, Belém, Guarulhos, Campinas, São Luís
+- São Gonçalo, Maceió, Duque de Caxias, Campo Grande, Natal
+
+**Demais Capitais e Grandes Cidades (21-40):**
+- Teresina, São Bernardo, João Pessoa, Osasco, Santo André
+- Ribeirão Preto, Uberlândia, Contagem, Sorocaba, Aracaju
+- Cuiabá, Feira de Santana, Joinville, Aparecida de Goiânia
+- Londrina, Juiz de Fora, Ananindeua, Porto Velho, Niterói, Macapá
+
+#### Atualizações no Engine
+- **`catalog.ts`** - Carregamento dinâmico de benefícios municipais via código IBGE
+  - Nova função `getBenefitsForMunicipality()`
+  - Nova função `getMunicipalitiesWithBenefits()`
+  - Atualizado `getAllBenefits()` para incluir municipais
+  - Atualizado `getBenefitById()` para buscar em municipais
+  - Atualizado `getBenefitsByScope()` com scope 'municipal'
+  - Atualizado `getCatalogStats()` com contadores municipais
+
+#### Atualizações no RightsWallet
+- **Nova categoria "Benefícios Municipais"** com ícone 🏘️ e cor ciano
+- Detecção automática de benefícios municipais pelo padrão de ID
+- Agrupamento de resultados: Federal → Estadual → Municipal → Setorial
+- Dica atualizada para mencionar benefícios estaduais E municipais
+
+#### Atualizações no Catalog
+- **Novo filtro "Municipal"** nos botões de scope
+- Mapeamento de 40 códigos IBGE para nomes de municípios
+- Badge ciano para benefícios municipais
+- Busca por nome de município
+
+### 📊 Estatísticas do Catálogo
+
+| Tipo | Quantidade |
+|------|------------|
+| Federais | 16 |
+| Estaduais | 106 |
+| Municipais | 97 |
+| Setoriais | 10 |
+| **Total** | **229 benefícios** |
+
+### 📝 Categorias de Benefícios Municipais
+
+| Categoria | Exemplos |
+|-----------|----------|
+| Transferência de Renda | Auxílio BH (R$ 600), Mais Social (R$ 450), Bora Belém |
+| Moradia | Bolsa Moradia BH (R$ 800), Aluguel Social, Locação Social |
+| Alimentação | Restaurantes Populares, Cestas Básicas, Bom Prato |
+| Transporte | Passe Livre Idoso, Passe Livre Estudantil, Tarifa Social |
+| Educação | Bolsa Universidade, Bolsa Nota Dez, Todo Jovem na Escola |
+| Utilidades | Tarifa Social Água, Vale Gás, Conta em Dia |
+| Primeira Infância | Primeiro Passo, Bolsa Creche |
+| Qualificação | CNH Social, Primeira Chance, Nosso Futuro |
+
+### 🧪 Verificação
+
+- Build passou sem erros
+- 40 arquivos JSON municipais criados
+- 97 benefícios municipais no catálogo
+- Filtro por município funcionando
+- RightsWallet exibe categoria municipal
+
+---
+
 ## [2026-01-28] - Sprint 11: Crédito Imobiliário (MCMV)
 
 ### 🎯 Foco: Plataforma de Orientação Habitacional

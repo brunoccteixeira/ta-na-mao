@@ -1,0 +1,236 @@
+{
+  "state": "ES",
+  "stateName": "Espírito Santo",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "es-bolsa-capixaba",
+      "name": "Bolsa Capixaba",
+      "shortDescription": "Ajuda de R$ 150 por mes para familias de baixa renda do Espirito Santo.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "Comprovante de residencia no ES",
+        "NIS (Numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto da sua casa",
+        "Faca ou atualize o Cadastro Unico",
+        "Quem se encaixa nas regras entra automaticamente",
+        "O dinheiro vai para conta da Caixa"
+      ],
+      "sourceUrl": "https://setades.es.gov.br/bolsa-capixaba",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "es-nossa-bolsa",
+      "name": "Nossa Bolsa",
+      "shortDescription": "Bolsa de estudos para jovens de baixa renda fazerem curso tecnico ou faculdade.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 800,
+        "description": "Bolsa de estudos parcial ou total"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 1500,
+          "description": "Renda familiar de ate 3 salarios minimos"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site nossabolsa.es.gov.br",
+      "documentsRequired": [
+        "CPF e RG",
+        "Historico escolar",
+        "Comprovante de renda da familia",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Acesse o site nossabolsa.es.gov.br",
+        "Faca o cadastro com seus dados",
+        "Escolha o curso que quer fazer",
+        "Aguarde o resultado da selecao"
+      ],
+      "sourceUrl": "https://nossabolsa.es.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educacao"
+    },
+    {
+      "id": "es-vale-gas-capixaba",
+      "name": "Vale Gas Capixaba",
+      "shortDescription": "Ajuda para comprar gas de cozinha para familias de baixa renda.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "Automatico para quem recebe Bolsa Capixaba",
+      "documentsRequired": [
+        "Ja estar no programa Bolsa Capixaba"
+      ],
+      "howToApply": [
+        "Se voce recebe Bolsa Capixaba, ja tem direito",
+        "O valor e pago junto com o beneficio",
+        "Nao precisa pedir separado"
+      ],
+      "sourceUrl": "https://setades.es.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "es-restaurante-popular",
+      "name": "Restaurante Popular ES",
+      "shortDescription": "Almoco completo por R$ 2,00 em restaurantes do governo.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 250,
+        "description": "Economia de ate R$ 250 por mes em alimentacao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Estar no Espirito Santo"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular do ES",
+      "documentsRequired": [
+        "Nenhum documento necessario"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Va no horario do almoco",
+        "Pague R$ 2,00 e faca a refeicao",
+        "Nao precisa de cadastro"
+      ],
+      "sourceUrl": "https://setades.es.gov.br/restaurante-popular",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "es-qualificar-es",
+      "name": "Qualificar ES",
+      "shortDescription": "Cursos de graca para aprender uma profissao e conseguir emprego.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 200,
+        "description": "Curso gratuito, alguns com bolsa-auxilio"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site qualificar.es.gov.br ou SINE",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse qualificar.es.gov.br",
+        "Veja os cursos disponiveis",
+        "Faca a inscricao online",
+        "Aguarde o inicio das aulas"
+      ],
+      "sourceUrl": "https://qualificar.es.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Qualificacao"
+    }
+  ]
+}

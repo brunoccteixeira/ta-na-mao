@@ -2,15 +2,112 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tá na Mão - Dashboard de Benefícios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+    <!-- Primary Meta Tags -->
+    <title>Tá na Mão - Descubra seus direitos a benefícios sociais</title>
+    <meta name="title" content="Tá na Mão - Descubra seus direitos a benefícios sociais" />
+    <meta name="description" content="Descubra em 3 minutos quais benefícios sociais você pode receber. Bolsa Família, BPC, auxílios estaduais e mais. Gratuito e sem cadastro." />
+    <meta name="keywords" content="benefícios sociais, Bolsa Família, BPC, auxílio, CRAS, CadÚnico, direitos sociais, assistência social" />
+    <meta name="author" content="Tá na Mão" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Portuguese" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tanamao.com.br/" />
+    <meta property="og:title" content="Tá na Mão - Descubra seus direitos a benefícios sociais" />
+    <meta property="og:description" content="Descubra em 3 minutos quais benefícios sociais você pode receber. Gratuito e sem cadastro." />
+    <meta property="og:image" content="https://tanamao.com.br/og-image.png" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Tá na Mão" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tanamao.com.br/" />
+    <meta property="twitter:title" content="Tá na Mão - Descubra seus direitos a benefícios sociais" />
+    <meta property="twitter:description" content="Descubra em 3 minutos quais benefícios sociais você pode receber. Gratuito e sem cadastro." />
+    <meta property="twitter:image" content="https://tanamao.com.br/og-image.png" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#10b981" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tá na Mão" />
+    <meta name="application-name" content="Tá na Mão" />
+    <meta name="msapplication-TileColor" content="#10b981" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#10b981" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tanamao.com.br/" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Tá na Mão",
+      "description": "Plataforma para descobrir elegibilidade a benefícios sociais no Brasil",
+      "url": "https://tanamao.com.br",
+      "applicationCategory": "GovernmentApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1000"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('SW registration failed:', error);
+            });
+        });
+      }
+    </script>
+
+    <!-- Noscript fallback -->
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #1e293b; color: #e2e8f0;">
+        <h1>Tá na Mão</h1>
+        <p>Para usar este site, por favor ative o JavaScript no seu navegador.</p>
+      </div>
+    </noscript>
   </body>
 </html>

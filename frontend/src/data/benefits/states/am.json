@@ -1,0 +1,144 @@
+{
+  "state": "AM",
+  "stateName": "Amazonas",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "am-auxilio-estadual-permanente",
+      "name": "Auxílio Estadual Permanente",
+      "shortDescription": "Ajuda mensal de R$ 150 para famílias de baixa renda do Amazonas.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Agência SEAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Amazonas"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize ou faça o Cadastro Único",
+        "Aguarde a seleção pelo governo",
+        "Se selecionado, receba pelo cartão do programa"
+      ],
+      "sourceUrl": "https://www.seas.am.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "am-prato-cheio",
+      "name": "Prato Cheio",
+      "shortDescription": "Restaurante popular com refeições a R$ 1,00 em Manaus e outras cidades.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Economia de até R$ 250/mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Estar no Amazonas"
+        }
+      ],
+      "whereToApply": "Restaurantes Prato Cheio em Manaus",
+      "documentsRequired": [
+        "Nenhum documento necessário para comer"
+      ],
+      "howToApply": [
+        "Procure um restaurante Prato Cheio",
+        "Vá no horário de funcionamento",
+        "Pague R$ 1,00 e faça sua refeição",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.seas.am.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "am-vale-gas-amazonas",
+      "name": "Vale Gás Amazonas",
+      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 60,
+        "description": "Cerca de R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou Agência SEAS",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Vá ao CRAS se precisar atualizar",
+        "Aguarde a seleção pelo governo",
+        "O benefício é pago junto com outros auxílios"
+      ],
+      "sourceUrl": "https://www.seas.am.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

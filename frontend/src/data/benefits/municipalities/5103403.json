@@ -1,0 +1,100 @@
+{
+  "municipality": "Cuiabá",
+  "municipalityIbge": "5103403",
+  "state": "MT",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "mt-cuiaba-ser-familia",
+      "name": "Ser Família Cuiabá",
+      "shortDescription": "Programa de apoio a famílias em vulnerabilidade social",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150 a R$ 300 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Cuiabá",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "👨‍👩‍👧",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "mt-cuiaba-vale-gas",
+      "name": "Vale Gás Cuiabá",
+      "shortDescription": "Auxílio para compra de gás de cozinha",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS de Cuiabá",
+      "documentsRequired": ["CPF", "RG", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Verifique elegibilidade",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

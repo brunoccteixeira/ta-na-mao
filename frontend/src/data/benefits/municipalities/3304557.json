@@ -1,0 +1,192 @@
+{
+  "municipality": "Rio de Janeiro",
+  "municipalityIbge": "3304557",
+  "state": "RJ",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "rj-riodejaneiro-supera-rj",
+      "name": "SuperaRJ Municipal",
+      "shortDescription": "Complemento ao SuperaRJ estadual para famílias em extrema pobreza",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 300,
+        "description": "Complemento variável"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro capital"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do bairro",
+      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Verifique se está elegível",
+        "Aguarde contato"
+      ],
+      "sourceUrl": "https://prefeitura.rio",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "rj-riodejaneiro-auxilio-habitacional",
+      "name": "Auxílio Habitacional",
+      "shortDescription": "Ajuda de R$ 400 para famílias em situação de rua ou risco habitacional",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 400,
+        "description": "R$ 400 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro capital"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de situação habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Apresente documentos",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://prefeitura.rio",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "rj-riodejaneiro-jae-transporte",
+      "name": "Jaé Transporte Social",
+      "shortDescription": "Cartão de transporte com tarifa reduzida para pessoas de baixa renda",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro capital"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Portal Jaé ou postos de atendimento",
+      "documentsRequired": ["CPF", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Acesse jae.rio",
+        "Faça cadastro",
+        "Retire o cartão no local indicado"
+      ],
+      "sourceUrl": "https://jae.rio",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "rj-riodejaneiro-auxilio-gas",
+      "name": "Auxílio Gás Municipal",
+      "shortDescription": "Vale-gás para famílias de baixa renda cadastradas no CadÚnico",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro capital"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS do bairro",
+      "documentsRequired": ["CPF", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Verifique elegibilidade",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://prefeitura.rio",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

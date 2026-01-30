@@ -1,0 +1,243 @@
+{
+  "state": "SC",
+  "stateName": "Santa Catarina",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "sc-santa-renda",
+      "name": "Santa Renda",
+      "shortDescription": "Ajuda de dinheiro para familias de baixa renda de Santa Catarina.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Valor varia conforme a situacao da familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "Comprovante de residencia em SC",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Faca ou atualize o Cadastro Unico",
+        "Quem se encaixa nas regras entra automaticamente",
+        "O dinheiro vai para conta bancaria"
+      ],
+      "sourceUrl": "https://www.sds.sc.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "sc-cartao-comida-boa",
+      "name": "Cartao Comida Boa",
+      "shortDescription": "Cartao de R$ 100 por mes para comprar comida no mercado.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 por mes em cartao alimentacao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou assistencia social do municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Numero do Cadastro Unico)",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Unico atualizado",
+        "Procure o CRAS para verificar se tem direito",
+        "Receba o cartao e use nos mercados credenciados",
+        "O valor e carregado todo mes"
+      ],
+      "sourceUrl": "https://www.sds.sc.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "sc-restaurante-popular",
+      "name": "Restaurante Popular SC",
+      "shortDescription": "Almoco completo por preco baixo em restaurantes do governo.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Economia de ate R$ 200 por mes em alimentacao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Estar em Santa Catarina"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular de SC",
+      "documentsRequired": [
+        "Nenhum documento necessario"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Va no horario do almoco",
+        "Pague o valor da refeicao e almece",
+        "Nao precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.sds.sc.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "sc-programa-catarinense-de-inclusao-social",
+      "name": "SC Mais Inclusao",
+      "shortDescription": "Programa que ajuda familias muito pobres com cursos e encaminhamento para emprego.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 200,
+        "description": "Cursos gratuitos e auxilio em alguns casos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "CRAS ou SINE do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "NIS (Numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS ou SINE",
+        "Faca o cadastro no programa",
+        "Escolha um curso de qualificacao",
+        "Receba encaminhamento para emprego"
+      ],
+      "sourceUrl": "https://www.sds.sc.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Qualificacao"
+    },
+    {
+      "id": "sc-vale-gas-sc",
+      "name": "Vale Gas SC",
+      "shortDescription": "Ajuda para comprar gas de cozinha para familias de baixa renda.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Numero do Cadastro Unico)",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Unico atualizado",
+        "Procure o CRAS para verificar se tem direito",
+        "Se aprovado, o valor vai para sua conta"
+      ],
+      "sourceUrl": "https://www.sds.sc.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    }
+  ]
+}

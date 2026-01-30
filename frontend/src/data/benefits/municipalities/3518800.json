@@ -1,0 +1,100 @@
+{
+  "municipality": "Guarulhos",
+  "municipalityIbge": "3518800",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-guarulhos-superacao",
+      "name": "SuperAção Guarulhos",
+      "shortDescription": "Programa de transferência de renda para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3518800",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 400,
+        "description": "R$ 200 a R$ 400 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3518800",
+          "description": "Morar em Guarulhos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Guarulhos",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.guarulhos.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-guarulhos-passe-livre-estudantil",
+      "name": "Passe Livre Estudantil Guarulhos",
+      "shortDescription": "Transporte gratuito para estudantes da rede pública",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3518800",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3518800",
+          "description": "Morar em Guarulhos"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública"
+        }
+      ],
+      "whereToApply": "Escola ou Secretaria de Educação",
+      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4"],
+      "howToApply": [
+        "Solicite na escola",
+        "Aguarde aprovação",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.guarulhos.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🎒",
+      "category": "Transporte"
+    }
+  ]
+}

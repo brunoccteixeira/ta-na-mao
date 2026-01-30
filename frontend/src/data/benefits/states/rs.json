@@ -1,0 +1,238 @@
+{
+  "state": "RS",
+  "stateName": "Rio Grande do Sul",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "rs-mais-igual",
+      "name": "RS Mais Igual",
+      "shortDescription": "Cartao de ate R$ 150 por mes para familias muito pobres do Rio Grande do Sul.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 150,
+        "description": "Ate R$ 150 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "Comprovante de residencia no RS",
+        "NIS (Numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Faca ou atualize o Cadastro Unico",
+        "Quem se encaixa nas regras entra automaticamente",
+        "Receba o cartao e use para compras"
+      ],
+      "sourceUrl": "https://www.rs.gov.br/rs-mais-igual",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "rs-todo-jovem-na-escola",
+      "name": "Todo Jovem na Escola",
+      "shortDescription": "Bolsa de R$ 150 por mes para jovens de baixa renda continuarem estudando.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter entre 15 e 24 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        }
+      ],
+      "whereToApply": "Escola estadual ou site do programa",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Numero do Cadastro Unico)",
+        "Comprovante de matricula em escola estadual"
+      ],
+      "howToApply": [
+        "Esteja matriculado em escola estadual do RS",
+        "Tenha Cadastro Unico atualizado",
+        "O programa seleciona automaticamente os alunos",
+        "O valor vai para conta do Banrisul"
+      ],
+      "sourceUrl": "https://educacao.rs.gov.br/todo-jovem-na-escola",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educacao"
+    },
+    {
+      "id": "rs-devolve-icms",
+      "name": "Devolve ICMS",
+      "shortDescription": "Devolucao de ate R$ 100 por trimestre de imposto para familias de baixa renda.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 30,
+        "max": 33,
+        "description": "Ate R$ 100 a cada 3 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "Automatico pelo Cadastro Unico",
+      "documentsRequired": [
+        "Cadastro Unico atualizado",
+        "CPF informado nas notas fiscais"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Unico atualizado",
+        "Peca CPF na nota em todas as compras",
+        "O sistema calcula e paga automaticamente",
+        "O valor vai para conta do Banrisul"
+      ],
+      "sourceUrl": "https://www.sefaz.rs.gov.br/devolve-icms",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💳",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "rs-restaurante-popular",
+      "name": "Restaurante Popular RS",
+      "shortDescription": "Almoco nutritivo por preco baixo em restaurantes do governo.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Economia de ate R$ 200 por mes em alimentacao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Estar no Rio Grande do Sul"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular do RS",
+      "documentsRequired": [
+        "Nenhum documento necessario"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Va no horario do almoco",
+        "Pague o valor da refeicao e almece",
+        "Nao precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.rs.gov.br/restaurante-popular",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "rs-qualifica-rs",
+      "name": "Qualifica RS",
+      "shortDescription": "Cursos de graca para aprender uma profissao e conseguir emprego.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 200,
+        "description": "Curso gratuito, alguns com bolsa-auxilio"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "FGTAS ou SINE do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Procure o SINE ou FGTAS da sua cidade",
+        "Veja os cursos disponiveis",
+        "Faca a inscricao",
+        "Aguarde o inicio das aulas"
+      ],
+      "sourceUrl": "https://fgtas.rs.gov.br/qualifica-rs",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Qualificacao"
+    }
+  ]
+}

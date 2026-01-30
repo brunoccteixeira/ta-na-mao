@@ -1,0 +1,140 @@
+{
+  "municipality": "Curitiba",
+  "municipalityIbge": "4106902",
+  "state": "PR",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "pr-curitiba-aluguel-social",
+      "name": "Programa de Aluguel Social (PAS)",
+      "shortDescription": "Auxílio para famílias em situação de vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "PR",
+      "municipalityIbge": "4106902",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 500,
+        "max": 800,
+        "description": "Valor variável conforme região"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4106902",
+          "description": "Morar em Curitiba"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou FAS (Fundação de Ação Social)",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação social",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.curitiba.pr.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "pr-curitiba-armazem-familia",
+      "name": "Armazém da Família",
+      "shortDescription": "Alimentos e produtos de limpeza com até 30% de desconto",
+      "scope": "municipal",
+      "state": "PR",
+      "municipalityIbge": "4106902",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de até 30% nos produtos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4106902",
+          "description": "Morar em Curitiba"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4554,
+          "description": "Renda familiar até 3 salários mínimos"
+        }
+      ],
+      "whereToApply": "Armazéns da Família",
+      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "Comprovante de renda"],
+      "howToApply": [
+        "Faça cadastro em qualquer Armazém da Família",
+        "Apresente documentos",
+        "Receba o cartão"
+      ],
+      "sourceUrl": "https://www.curitiba.pr.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pr-curitiba-fare-social",
+      "name": "FARE Social",
+      "shortDescription": "Desconto de 50% na tarifa de ônibus para pessoas de baixa renda",
+      "scope": "municipal",
+      "state": "PR",
+      "municipalityIbge": "4106902",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "50% de desconto na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4106902",
+          "description": "Morar em Curitiba"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "URBS ou terminais de ônibus",
+      "documentsRequired": ["CPF", "RG", "NIS", "Foto 3x4"],
+      "howToApply": [
+        "Procure a URBS",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.urbs.curitiba.pr.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    }
+  ]
+}

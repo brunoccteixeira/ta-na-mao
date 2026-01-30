@@ -1,0 +1,144 @@
+{
+  "state": "RN",
+  "stateName": "Rio Grande do Norte",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "rn-rn-mais-igual",
+      "name": "RN Mais Igual",
+      "shortDescription": "Dinheiro todo mês para famílias pobres do Rio Grande do Norte.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor depende da família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Vá ao CRAS mais perto",
+        "Atualize seu Cadastro Único",
+        "O governo escolhe quem pode entrar",
+        "Aguarde contato"
+      ],
+      "sourceUrl": "https://www.rn.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "rn-restaurante-popular",
+      "name": "Restaurante Popular RN",
+      "shortDescription": "Almoço barato em restaurantes do governo.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Economia mensal em comida"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Estar no Rio Grande do Norte"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares do estado",
+      "documentsRequired": [
+        "Não precisa de documento"
+      ],
+      "howToApply": [
+        "Procure um restaurante popular",
+        "Vá no horário de almoço",
+        "Pague o preço baixo",
+        "Aberto para todos"
+      ],
+      "sourceUrl": "https://www.rn.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "rn-minha-casa-rn",
+      "name": "Minha Casa RN",
+      "shortDescription": "Ajuda para ter casa própria para famílias de baixa renda.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 30000,
+        "max": 100000,
+        "description": "Ajuda para comprar casa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda da família até R$ 4.000"
+        }
+      ],
+      "whereToApply": "Prefeitura ou CRAS",
+      "documentsRequired": [
+        "CPF e RG de todos",
+        "Comprovante de renda",
+        "Comprovante de endereço",
+        "Papel que prove que não tem casa"
+      ],
+      "howToApply": [
+        "Vá à prefeitura ou CRAS",
+        "Faça inscrição no programa",
+        "Espere o sorteio ou chamamento",
+        "Leve documentos quando for chamado"
+      ],
+      "sourceUrl": "https://www.rn.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    }
+  ]
+}

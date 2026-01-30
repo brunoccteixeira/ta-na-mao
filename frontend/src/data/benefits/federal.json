@@ -1,0 +1,674 @@
+{
+  "benefits": [
+    {
+      "id": "federal-bolsa-familia",
+      "name": "Bolsa Família",
+      "shortDescription": "Ajuda mensal para famílias com pouca renda. O valor depende de quantas pessoas moram na casa.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 142,
+        "max": 900,
+        "description": "Valor varia conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218 por mês"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Certidão de nascimento ou casamento",
+        "Comprovante de residência",
+        "Carteira de trabalho (se tiver)"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Leve os documentos de toda a família",
+        "Faça ou atualize o Cadastro Único",
+        "Aguarde a análise (pode levar alguns meses)"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "federal-bpc-idoso",
+      "name": "BPC para Idosos",
+      "shortDescription": "Um salário mínimo por mês para idosos de 65 anos ou mais com renda familiar baixa.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1412,
+        "max": 1412,
+        "description": "1 salário mínimo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temIdoso65Mais",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 65 anos ou mais"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 353,
+          "description": "Renda por pessoa de até 1/4 do salário mínimo"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": false,
+          "description": "Não receber Bolsa Família (pode optar por um)"
+        }
+      ],
+      "whereToApply": "INSS (pelo site ou agência) ou CRAS",
+      "documentsRequired": [
+        "CPF",
+        "RG ou CNH",
+        "Comprovante de residência",
+        "Comprovante de renda de todos da família"
+      ],
+      "howToApply": [
+        "Faça o Cadastro Único no CRAS",
+        "Acesse o Meu INSS (site ou app)",
+        "Solicite o BPC para Idoso",
+        "Agende perícia se necessário"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "👴",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-bpc-pcd",
+      "name": "BPC para Pessoa com Deficiência",
+      "shortDescription": "Um salário mínimo por mês para pessoas com deficiência que não podem trabalhar.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1412,
+        "max": 1412,
+        "description": "1 salário mínimo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência física, mental, intelectual ou sensorial"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 353,
+          "description": "Renda por pessoa de até 1/4 do salário mínimo"
+        }
+      ],
+      "whereToApply": "INSS (pelo site ou agência) ou CRAS",
+      "documentsRequired": [
+        "CPF",
+        "RG ou CNH",
+        "Laudos médicos da deficiência",
+        "Comprovante de residência",
+        "Comprovante de renda de todos da família"
+      ],
+      "howToApply": [
+        "Faça o Cadastro Único no CRAS",
+        "Acesse o Meu INSS (site ou app)",
+        "Solicite o BPC para Pessoa com Deficiência",
+        "Agende e compareça à perícia médica"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "♿",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-tsee",
+      "name": "Tarifa Social de Energia",
+      "shortDescription": "Desconto de 10% a 65% na conta de luz para famílias de baixa renda.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 20,
+        "max": 100,
+        "description": "Desconto de 10% a 65% na conta de luz"
+      },
+      "eligibilityRules": [
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Distribuidora de energia da sua região ou pelo site/app",
+      "documentsRequired": [
+        "CPF do titular da conta de luz",
+        "Conta de luz recente",
+        "Número do NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "Verifique se está inscrito no Cadastro Único",
+        "Entre em contato com a distribuidora de energia",
+        "Informe o NIS e CPF do titular",
+        "O desconto começa na próxima conta"
+      ],
+      "sourceUrl": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💡",
+      "category": "Utilidades"
+    },
+    {
+      "id": "federal-farmacia-popular",
+      "name": "Farmácia Popular",
+      "shortDescription": "Medicamentos grátis ou com até 90% de desconto para hipertensão, diabetes e asma.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 300,
+        "description": "Economia mensal em medicamentos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 0,
+          "description": "Qualquer pessoa com receita médica"
+        }
+      ],
+      "whereToApply": "Qualquer farmácia credenciada ao programa",
+      "documentsRequired": [
+        "CPF",
+        "Receita médica válida (até 180 dias)",
+        "Documento com foto"
+      ],
+      "howToApply": [
+        "Consulte um médico e pegue a receita",
+        "Vá a uma farmácia credenciada",
+        "Apresente CPF e receita",
+        "Retire os medicamentos grátis ou com desconto"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-auxilio-gas",
+      "name": "Auxílio Gás",
+      "shortDescription": "Ajuda de R$ 102 a cada 2 meses para comprar gás de cozinha.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 51,
+        "max": 51,
+        "description": "R$ 102 a cada 2 meses (média R$ 51/mês)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Família"
+        }
+      ],
+      "whereToApply": "Automático para quem recebe Bolsa Família",
+      "documentsRequired": [
+        "Não precisa de documentos extras"
+      ],
+      "howToApply": [
+        "Se você recebe Bolsa Família, o Auxílio Gás é automático",
+        "O valor vem junto com o Bolsa Família",
+        "Pago a cada 2 meses"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "federal-mcmv",
+      "name": "Minha Casa Minha Vida",
+      "shortDescription": "Financiamento de casa própria com parcelas que cabem no bolso e subsídios do governo.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 170000,
+        "description": "Subsídio de até R$ 170 mil dependendo da faixa de renda"
+      },
+      "eligibilityRules": [
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8000,
+          "description": "Renda familiar de até R$ 8.000 por mês"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        }
+      ],
+      "whereToApply": "Caixa Econômica Federal, Banco do Brasil ou correspondentes bancários",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de renda (3 últimos meses)",
+        "Comprovante de residência",
+        "Certidão de casamento ou união estável",
+        "Declaração de Imposto de Renda (se fizer)"
+      ],
+      "howToApply": [
+        "Faça simulação no site da Caixa",
+        "Escolha o imóvel (novo ou usado)",
+        "Vá a uma agência da Caixa com os documentos",
+        "Aguarde análise de crédito e aprovação"
+      ],
+      "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/mcmv",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Habitação"
+    },
+    {
+      "id": "federal-pis-pasep",
+      "name": "PIS/PASEP Esquecido",
+      "shortDescription": "Dinheiro do PIS/PASEP que você pode ter direito se trabalhou entre 1971 e 1988.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 10000,
+        "description": "Valor depende do tempo de contribuição"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhou1971_1988",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhou com carteira assinada entre 1971 e 1988"
+        }
+      ],
+      "whereToApply": "Caixa Econômica Federal (PIS) ou Banco do Brasil (PASEP)",
+      "documentsRequired": [
+        "CPF",
+        "RG ou CNH",
+        "Carteira de Trabalho antiga (se tiver)"
+      ],
+      "howToApply": [
+        "Acesse o app Caixa Tem ou FGTS",
+        "Ou vá a uma agência da Caixa/BB",
+        "Consulte se há valores disponíveis",
+        "Solicite o saque se tiver direito"
+      ],
+      "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/pis/Paginas/default.aspx",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Trabalho"
+    },
+    {
+      "id": "federal-svr",
+      "name": "Valores a Receber (SVR)",
+      "shortDescription": "Dinheiro esquecido em bancos que pode estar no seu nome. Consulte gratuitamente.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1,
+        "max": 10000,
+        "description": "Valores variam - consulte gratuitamente"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cpf",
+          "operator": "has",
+          "value": true,
+          "description": "Ter CPF"
+        }
+      ],
+      "whereToApply": "Site oficial do Banco Central",
+      "documentsRequired": [
+        "CPF",
+        "Conta Gov.br nível prata ou ouro para sacar"
+      ],
+      "howToApply": [
+        "Acesse valoresareceber.bcb.gov.br",
+        "Digite seu CPF e data de nascimento",
+        "Veja se tem valores disponíveis",
+        "Se tiver, solicite o saque pelo site"
+      ],
+      "sourceUrl": "https://valoresareceber.bcb.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏦",
+      "category": "Financeiro"
+    },
+    {
+      "id": "federal-fgts",
+      "name": "FGTS Esquecido",
+      "shortDescription": "Saldo de FGTS de empregos antigos que você pode ter direito a sacar.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 50000,
+        "description": "Valor depende do histórico de trabalho"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Já trabalhou com carteira assinada"
+        }
+      ],
+      "whereToApply": "App FGTS da Caixa ou agência da Caixa",
+      "documentsRequired": [
+        "CPF",
+        "RG ou CNH",
+        "Carteira de Trabalho"
+      ],
+      "howToApply": [
+        "Baixe o app FGTS da Caixa",
+        "Consulte seu saldo e contas",
+        "Veja se pode sacar (demissão, aposentadoria, etc.)",
+        "Solicite o saque pelo app ou agência"
+      ],
+      "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📋",
+      "category": "Trabalho"
+    },
+    {
+      "id": "federal-seguro-desemprego",
+      "name": "Seguro-Desemprego",
+      "shortDescription": "Ajuda por alguns meses para quem foi demitido sem justa causa.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1412,
+        "max": 2313,
+        "description": "3 a 5 parcelas dependendo do tempo trabalhado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Estar desempregado (sem carteira assinada)"
+        },
+        {
+          "field": "tempoCarteiraAssinada",
+          "operator": "gte",
+          "value": 12,
+          "description": "Ter trabalhado pelo menos 12 meses nos últimos 18"
+        }
+      ],
+      "whereToApply": "Site do Ministério do Trabalho ou agências do SINE",
+      "documentsRequired": [
+        "Carteira de Trabalho",
+        "Termo de Rescisão",
+        "Requerimento do Seguro-Desemprego (dado pela empresa)",
+        "CPF e RG"
+      ],
+      "howToApply": [
+        "Solicite os documentos na empresa ao ser demitido",
+        "Acesse o Gov.br ou vá ao SINE",
+        "Faça a solicitação em até 120 dias",
+        "Parcelas são depositadas mensalmente"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Trabalho"
+    },
+    {
+      "id": "federal-abono-salarial",
+      "name": "Abono Salarial PIS/PASEP",
+      "shortDescription": "Até 1 salário mínimo por ano para quem trabalhou com carteira assinada.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 118,
+        "max": 1412,
+        "description": "Valor proporcional aos meses trabalhados"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhou com carteira assinada no ano anterior"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2824,
+          "description": "Recebeu até 2 salários mínimos por mês"
+        },
+        {
+          "field": "tempoCarteiraAssinada",
+          "operator": "gte",
+          "value": 30,
+          "description": "Trabalhou pelo menos 30 dias no ano"
+        }
+      ],
+      "whereToApply": "Caixa Econômica Federal (PIS) ou Banco do Brasil (PASEP)",
+      "documentsRequired": [
+        "CPF",
+        "Carteira de Trabalho"
+      ],
+      "howToApply": [
+        "Verifique se está cadastrado no PIS há 5 anos",
+        "Consulte no app Caixa Tem ou Carteira Digital",
+        "O calendário de pagamento é divulgado todo ano",
+        "Saque na data do seu mês de nascimento"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/sacar-o-abono-salarial",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💵",
+      "category": "Trabalho"
+    },
+    {
+      "id": "federal-dignidade-menstrual",
+      "name": "Dignidade Menstrual",
+      "shortDescription": "Absorventes grátis para estudantes de escolas públicas e pessoas em situação de vulnerabilidade.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 20,
+        "max": 40,
+        "description": "Kit mensal de absorventes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "mulherMenstruante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pessoa que menstrua"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública ou estar em vulnerabilidade social"
+        }
+      ],
+      "whereToApply": "Escola pública ou Unidade Básica de Saúde (UBS)",
+      "documentsRequired": [
+        "Documento de matrícula (se estudante)",
+        "CPF",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a direção da sua escola",
+        "Ou vá à UBS mais próxima",
+        "Pergunte sobre o programa de dignidade menstrual",
+        "Retire os absorventes gratuitamente"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/noticias/2023/marco/programa-dignidade-menstrual",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🩸",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-tarifa-social-agua",
+      "name": "Tarifa Social de Água",
+      "shortDescription": "Desconto na conta de água para famílias de baixa renda cadastradas no CadÚnico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 15,
+        "max": 50,
+        "description": "Desconto de até 50% na conta de água"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Companhia de água da sua cidade",
+      "documentsRequired": [
+        "CPF do titular da conta",
+        "Número do NIS (Cadastro Único)",
+        "Conta de água recente"
+      ],
+      "howToApply": [
+        "Verifique se está inscrito no Cadastro Único",
+        "Entre em contato com a companhia de água",
+        "Informe o NIS e solicite a tarifa social",
+        "Aguarde a aplicação do desconto"
+      ],
+      "sourceUrl": "https://www.gov.br/cidades/pt-br/assuntos/saneamento",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💧",
+      "category": "Utilidades"
+    },
+    {
+      "id": "federal-isencao-ipva-pcd",
+      "name": "Isenção de IPVA para PCD",
+      "shortDescription": "Pessoas com deficiência podem ter isenção total do IPVA do veículo.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 5000,
+        "description": "Economia do valor total do IPVA"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência física, visual, mental severa ou autismo"
+        }
+      ],
+      "whereToApply": "Detran do seu estado ou Secretaria da Fazenda",
+      "documentsRequired": [
+        "CPF e RG",
+        "Laudo médico com CID da deficiência",
+        "Documento do veículo (CRLV)",
+        "Comprovante de residência",
+        "CNH especial (se for o condutor)"
+      ],
+      "howToApply": [
+        "Obtenha laudo médico atualizado",
+        "Acesse o site do Detran do seu estado",
+        "Preencha o requerimento de isenção",
+        "Anexe os documentos e aguarde análise"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-isencao-de-ipva",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Veículos"
+    },
+    {
+      "id": "federal-passe-livre",
+      "name": "Passe Livre Interestadual",
+      "shortDescription": "Passagem grátis em ônibus e trem entre estados para pessoas com deficiência de baixa renda.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 200,
+        "max": 2000,
+        "description": "Economia em passagens interestaduais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência comprovada"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 1412,
+          "description": "Renda familiar de até 1 salário mínimo"
+        }
+      ],
+      "whereToApply": "Centros de Referência de Assistência Social (CRAS)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Laudo médico da deficiência",
+        "Comprovante de renda",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Vá ao CRAS com os documentos",
+        "Preencha o formulário do Passe Livre",
+        "Aguarde aprovação e receba a carteira",
+        "Use nas rodoviárias ao viajar entre estados"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    }
+  ]
+}

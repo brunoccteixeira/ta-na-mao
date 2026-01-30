@@ -1,0 +1,94 @@
+{
+  "municipality": "Natal",
+  "municipalityIbge": "2408102",
+  "state": "RN",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "rn-natal-aluguel-social",
+      "name": "Aluguel Social Natal",
+      "shortDescription": "Auxílio de até R$ 600 para famílias em vulnerabilidade habitacional",
+      "scope": "municipal",
+      "state": "RN",
+      "municipalityIbge": "2408102",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 600,
+        "description": "R$ 400 a R$ 600 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2408102",
+          "description": "Morar em Natal"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Semtas",
+      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite avaliação",
+        "Aguarde liberação"
+      ],
+      "sourceUrl": "https://www.natal.rn.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "rn-natal-beneficios-eventuais",
+      "name": "Benefícios Eventuais Natal",
+      "shortDescription": "Auxílios emergenciais para situações de vulnerabilidade",
+      "scope": "municipal",
+      "state": "RN",
+      "municipalityIbge": "2408102",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2408102",
+          "description": "Morar em Natal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS de Natal",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.natal.rn.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

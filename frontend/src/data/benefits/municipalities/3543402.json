@@ -1,0 +1,88 @@
+{
+  "municipality": "Ribeirão Preto",
+  "municipalityIbge": "3543402",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-ribeiraopreto-crepd",
+      "name": "CREPD",
+      "shortDescription": "Centro de Reabilitação e Educação para Pessoas com Deficiência",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3543402",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3543402",
+          "description": "Morar em Ribeirão Preto"
+        },
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter pessoa com deficiência na família"
+        }
+      ],
+      "whereToApply": "CREPD ou CRAS",
+      "documentsRequired": ["CPF", "RG", "Laudo médico", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CREPD",
+        "Apresente documentos",
+        "Aguarde agendamento"
+      ],
+      "sourceUrl": "https://www.ribeiraopreto.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "♿",
+      "category": "Saúde"
+    },
+    {
+      "id": "sp-ribeiraopreto-beneficios-eventuais",
+      "name": "Benefícios Eventuais RP",
+      "shortDescription": "Auxílios emergenciais via CRAS regionais",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3543402",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Valor variável conforme necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3543402",
+          "description": "Morar em Ribeirão Preto"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS da região",
+      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Explique a situação",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.ribeiraopreto.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🆘",
+      "category": "Assistência Emergencial"
+    }
+  ]
+}

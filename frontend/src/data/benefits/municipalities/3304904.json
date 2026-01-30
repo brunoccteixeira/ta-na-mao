@@ -1,0 +1,94 @@
+{
+  "municipality": "São Gonçalo",
+  "municipalityIbge": "3304904",
+  "state": "RJ",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "rj-saogoncalo-cesta-basica",
+      "name": "Cesta Básica Municipal",
+      "shortDescription": "Distribuição de cestas básicas para famílias em vulnerabilidade",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta básica mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de São Gonçalo",
+      "documentsRequired": ["CPF", "RG", "NIS"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Solicite cadastro",
+        "Retire a cesta mensalmente"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação"
+    },
+    {
+      "id": "rj-saogoncalo-passe-livre-idoso",
+      "name": "Passe Livre Idoso São Gonçalo",
+      "shortDescription": "Transporte gratuito para idosos a partir de 60 anos",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Procure a Secretaria de Transporte",
+        "Apresente documentos",
+        "Retire o cartão"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    }
+  ]
+}

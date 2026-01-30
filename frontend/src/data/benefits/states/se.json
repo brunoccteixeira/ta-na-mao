@@ -1,0 +1,137 @@
+{
+  "state": "SE",
+  "stateName": "Sergipe",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "se-cartao-mais-inclusao",
+      "name": "Cartão Mais Inclusão",
+      "shortDescription": "Cartão com dinheiro para famílias pobres de Sergipe.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor depende da família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF de toda a família",
+        "NIS do Cadastro Único",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Atualize seu Cadastro Único",
+        "O governo escolhe quem participa",
+        "Espere o contato"
+      ],
+      "sourceUrl": "https://www.se.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💳",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "se-restaurante-popular",
+      "name": "Restaurante Popular SE",
+      "shortDescription": "Comida de qualidade por preço baixo em Aracaju e cidades.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Economia em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Estar em Sergipe"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares do estado",
+      "documentsRequired": [
+        "Não precisa de documento"
+      ],
+      "howToApply": [
+        "Procure um restaurante popular",
+        "Vá no horário de almoço",
+        "Pague o preço baixo",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.se.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "se-mao-amiga",
+      "name": "Mão Amiga",
+      "shortDescription": "Ajuda para famílias em momento difícil com comida e itens básicos.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 500,
+        "description": "Ajuda emergencial"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS",
+        "Comprovante de endereço"
+      ],
+      "howToApply": [
+        "Vá ao CRAS mais perto",
+        "Explique sua situação difícil",
+        "Leve seus documentos",
+        "O CRAS vai avaliar e ajudar"
+      ],
+      "sourceUrl": "https://www.se.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🤝",
+      "category": "Assistência Social"
+    }
+  ]
+}

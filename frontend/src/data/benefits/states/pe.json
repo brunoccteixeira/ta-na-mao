@@ -1,0 +1,276 @@
+{
+  "state": "PE",
+  "stateName": "Pernambuco",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "pe-no-batente",
+      "name": "PE no Batente",
+      "shortDescription": "Programa de emprego e renda com frentes de trabalho que pagam bolsa de R$ 600 mensais.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 600,
+        "max": 600,
+        "description": "R$ 600 por mês durante 6 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar em Pernambuco"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218 (extrema pobreza)"
+        },
+        {
+          "field": "desempregado",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar desempregado"
+        }
+      ],
+      "whereToApply": "CRAS ou Agência do Trabalho de Pernambuco",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência",
+        "Carteira de Trabalho"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou Agência do Trabalho",
+        "Apresente os documentos",
+        "Faça a inscrição no programa",
+        "Aguarde convocação para as frentes de trabalho"
+      ],
+      "sourceUrl": "https://www.pe.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔨",
+      "category": "Emprego"
+    },
+    {
+      "id": "pe-chapeu-de-palha",
+      "name": "Chapéu de Palha",
+      "shortDescription": "Bolsa de R$ 330 para trabalhadores rurais da cana-de-açúcar e outras culturas durante a entressafra.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 330,
+        "max": 330,
+        "description": "R$ 330 por mês durante a entressafra"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar em Pernambuco"
+        },
+        {
+          "field": "trabalhadorRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser trabalhador rural"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Sindicato Rural ou CRAS do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de trabalho rural",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o sindicato rural ou CRAS",
+        "Comprove que trabalha na agricultura",
+        "Faça a inscrição no período de cadastramento",
+        "Aguarde o pagamento durante a entressafra"
+      ],
+      "sourceUrl": "https://www.pe.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Trabalho Rural"
+    },
+    {
+      "id": "pe-mae-coruja",
+      "name": "Mãe Coruja Pernambucana",
+      "shortDescription": "Acompanhamento de gestantes e bebês com enxoval e orientações de saúde para mães de baixa renda.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 400,
+        "description": "Enxoval do bebê + acompanhamento de saúde"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar em Pernambuco"
+        },
+        {
+          "field": "gestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Unidade de Saúde ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do pré-natal",
+        "Comprovante de residência",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Faça o pré-natal na unidade de saúde",
+        "Procure o CRAS para cadastro no programa",
+        "Participe das reuniões e orientações",
+        "Receba o enxoval ao final da gestação"
+      ],
+      "sourceUrl": "https://www.maecoruja.pe.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "pe-restaurante-popular",
+      "name": "Restaurante Popular PE",
+      "shortDescription": "Refeições de qualidade por R$ 1,00 em restaurantes populares do estado.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de até R$ 300 por mês em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Estar em Pernambuco"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular do estado",
+      "documentsRequired": [
+        "Nenhum documento necessário para comer"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Vá no horário de funcionamento",
+        "Pague R$ 1,00 e faça a refeição",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.pe.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pe-todos-com-agua",
+      "name": "Todos com Água",
+      "shortDescription": "Cisternas e poços para famílias da zona rural sem acesso à água.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 10000,
+        "description": "Valor da cisterna ou poço instalado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar em Pernambuco"
+        },
+        {
+          "field": "zonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar na zona rural"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou prefeitura do município",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "Comprovante de residência rural",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou prefeitura",
+        "Atualize o Cadastro Único",
+        "Solicite inclusão no programa",
+        "Aguarde visita técnica"
+      ],
+      "sourceUrl": "https://www.pe.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💧",
+      "category": "Infraestrutura"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "state": "GO",
+  "stateName": "Goias",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "go-renda-cidada",
+      "name": "Renda Cidada Goias",
+      "shortDescription": "Ajuda em dinheiro para familias de baixa renda. O valor vai direto para sua conta.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Valor varia conforme a situacao da familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "RG ou certidao de nascimento",
+        "Comprovante de onde mora",
+        "NIS (numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Leve seus documentos",
+        "Faca ou atualize o Cadastro Unico",
+        "Aguarde o contato do CRAS"
+      ],
+      "sourceUrl": "https://www.goias.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "go-restaurante-do-bem",
+      "name": "Restaurante do Bem",
+      "shortDescription": "Refeicoes baratas e de qualidade. Almoco por apenas R$ 2,00 em restaurantes do governo.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de ate R$ 300 por mes em comida"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Estar em Goias"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante do Bem",
+      "documentsRequired": [
+        "Nao precisa de documento para comer"
+      ],
+      "howToApply": [
+        "Procure um Restaurante do Bem na sua cidade",
+        "Va no horario do almoco",
+        "Pague R$ 2,00 e faca sua refeicao",
+        "Nao precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.goias.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "go-vale-gas",
+      "name": "Vale Gas Goias",
+      "shortDescription": "Ajuda para comprar gas de cozinha. O dinheiro vai direto para voce.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 60,
+        "description": "R$ 100 a R$ 120 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Va ao CRAS e atualize seu Cadastro Unico",
+        "Confira se voce esta na lista do programa",
+        "O dinheiro vai para sua conta automaticamente"
+      ],
+      "sourceUrl": "https://www.goias.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "go-goias-por-elas",
+      "name": "Goias por Elas",
+      "shortDescription": "Programa para mulheres em situacao dificil. Oferece cursos, ajuda financeira e apoio.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 400,
+        "description": "Bolsa de ate R$ 400 durante capacitacao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias"
+        },
+        {
+          "field": "genero",
+          "operator": "eq",
+          "value": "feminino",
+          "description": "Ser mulher"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda baixa"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria da Mulher",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de onde mora",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou a Secretaria da Mulher",
+        "Faca seu cadastro no programa",
+        "Escolha um curso de capacitacao",
+        "Receba a bolsa enquanto faz o curso"
+      ],
+      "sourceUrl": "https://www.goias.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "👩",
+      "category": "Qualificacao"
+    }
+  ]
+}

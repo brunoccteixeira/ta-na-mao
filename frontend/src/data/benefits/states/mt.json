@@ -1,0 +1,193 @@
+{
+  "state": "MT",
+  "stateName": "Mato Grosso",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "mt-ser-familia",
+      "name": "Ser Familia",
+      "shortDescription": "Programa que ajuda familias pobres com dinheiro todo mes. Complementa o Bolsa Familia.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Valor varia conforme a familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "RG ou certidao de nascimento",
+        "Comprovante de onde mora",
+        "NIS (numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto",
+        "Faca ou atualize o Cadastro Unico",
+        "O programa seleciona as familias automaticamente",
+        "Aguarde o contato"
+      ],
+      "sourceUrl": "https://www.mt.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "👨‍👩‍👧‍👦",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "mt-vale-gas",
+      "name": "Vale Gas MT",
+      "shortDescription": "Ajuda de R$ 100 a cada 2 meses para comprar gas de cozinha.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 100 a cada 2 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Mantenha seu Cadastro Unico atualizado",
+        "O programa seleciona automaticamente",
+        "O dinheiro vai para sua conta"
+      ],
+      "sourceUrl": "https://www.mt.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "mt-restaurante-popular",
+      "name": "Restaurante Popular MT",
+      "shortDescription": "Comida boa e barata. Almoco completo por R$ 2,00.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de ate R$ 300 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Estar em Mato Grosso"
+        }
+      ],
+      "whereToApply": "Restaurante Popular da sua cidade",
+      "documentsRequired": [
+        "Nao precisa de documento para comer"
+      ],
+      "howToApply": [
+        "Procure o Restaurante Popular na sua cidade",
+        "Va no horario de funcionamento",
+        "Pague R$ 2,00 e faca sua refeicao"
+      ],
+      "sourceUrl": "https://www.mt.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "mt-pra-ter-onde-morar",
+      "name": "Pra Ter Onde Morar",
+      "shortDescription": "Programa de moradia para familias de baixa renda. Ajuda a ter sua casa propria.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "once",
+        "min": 10000,
+        "max": 50000,
+        "description": "Subsidio para moradia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 1800,
+          "description": "Renda familiar de ate 3 salarios minimos"
+        }
+      ],
+      "whereToApply": "Prefeitura ou Cohab do seu municipio",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de onde mora",
+        "Certidao de casamento ou uniao estavel"
+      ],
+      "howToApply": [
+        "Procure a Prefeitura ou Cohab",
+        "Faca sua inscricao no programa",
+        "Aguarde o sorteio ou selecao",
+        "Apresente os documentos quando chamado"
+      ],
+      "sourceUrl": "https://www.mt.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    }
+  ]
+}

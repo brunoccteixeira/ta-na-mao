@@ -1,0 +1,173 @@
+{
+  "municipality": "São Paulo",
+  "municipalityIbge": "3550308",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-saopaulo-bolsa-trabalho",
+      "name": "Bolsa Trabalho",
+      "shortDescription": "Ajuda mensal para quem está desempregado e faz cursos de qualificação",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 540,
+        "max": 540,
+        "description": "R$ 540 por mês durante o programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo capital"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou site bolsadopovo.sp.gov.br",
+      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
+      "howToApply": [
+        "Acesse bolsadopovo.sp.gov.br",
+        "Faça cadastro com CPF",
+        "Aguarde seleção"
+      ],
+      "sourceUrl": "https://bolsadopovo.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💼",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-saopaulo-passe-livre-estudantil",
+      "name": "Passe Livre Estudantil",
+      "shortDescription": "Transporte gratuito para estudantes da rede pública municipal e estadual",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade total no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo capital"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública"
+        }
+      ],
+      "whereToApply": "Portal SPTrans ou escola",
+      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4", "Comprovante de residência"],
+      "howToApply": [
+        "Escola solicita via portal SPTrans",
+        "Aguarde aprovação",
+        "Retire o cartão na escola"
+      ],
+      "sourceUrl": "https://bilheteunico.sptrans.com.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "sp-saopaulo-passe-livre-idoso",
+      "name": "Passe Livre Idoso",
+      "shortDescription": "Transporte gratuito para pessoas com 60 anos ou mais",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade total no transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo capital"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "Postos SPTrans ou online",
+      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "howToApply": [
+        "Acesse bilheteunico.sptrans.com.br",
+        "Preencha o cadastro",
+        "Retire o cartão no posto indicado"
+      ],
+      "sourceUrl": "https://bilheteunico.sptrans.com.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🧓",
+      "category": "Transporte"
+    },
+    {
+      "id": "sp-saopaulo-bom-prato",
+      "name": "Bom Prato",
+      "shortDescription": "Refeições a R$ 1 em restaurantes populares do governo",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 1 (café R$ 0,50)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo capital"
+        }
+      ],
+      "whereToApply": "Restaurantes Bom Prato",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer restaurante Bom Prato",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    }
+  ]
+}

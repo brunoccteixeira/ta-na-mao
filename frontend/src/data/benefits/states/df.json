@@ -1,0 +1,194 @@
+{
+  "state": "DF",
+  "stateName": "Distrito Federal",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "df-cartao-prato-cheio",
+      "name": "Cartao Prato Cheio",
+      "shortDescription": "Cartao com R$ 250 por mes para comprar comida. Voce escolhe o que comprar.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 250,
+        "max": 250,
+        "description": "R$ 250 por mes no cartao"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de ate meio salario minimo"
+        }
+      ],
+      "whereToApply": "CRAS ou site da Secretaria de Desenvolvimento Social",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora no DF"
+      ],
+      "howToApply": [
+        "Mantenha seu Cadastro Unico atualizado",
+        "Acesse o site ou va ao CRAS",
+        "Faca a inscricao no programa",
+        "Aguarde receber o cartao em casa"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentacao"
+    },
+    {
+      "id": "df-df-social",
+      "name": "DF Social",
+      "shortDescription": "Programa que ajuda familias de baixa renda com dinheiro todo mes.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Valor varia conforme a familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de ate R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS da sua regiao administrativa",
+      "documentsRequired": [
+        "CPF de todos da familia",
+        "RG ou certidao de nascimento",
+        "Comprovante de onde mora no DF",
+        "NIS (numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Va ao CRAS mais perto de voce",
+        "Faca ou atualize o Cadastro Unico",
+        "Solicite entrada no programa",
+        "Aguarde a analise e o contato"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferencia de Renda"
+    },
+    {
+      "id": "df-cartao-material-escolar",
+      "name": "Cartao Material Escolar",
+      "shortDescription": "Cartao de R$ 320 para comprar material escolar para seus filhos.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "once",
+        "min": 320,
+        "max": 320,
+        "description": "R$ 320 por aluno por ano"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal"
+        },
+        {
+          "field": "temFilhoNaEscola",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter filho na escola publica do DF"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        }
+      ],
+      "whereToApply": "Escola onde o filho estuda",
+      "documentsRequired": [
+        "CPF do responsavel",
+        "CPF ou certidao de nascimento do filho",
+        "Comprovante de matricula na escola publica"
+      ],
+      "howToApply": [
+        "Mantenha o filho matriculado na escola publica",
+        "Mantenha o Cadastro Unico atualizado",
+        "Aguarde o cartao ser enviado para a escola",
+        "Retire na escola com seu documento"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educacao"
+    },
+    {
+      "id": "df-restaurante-comunitario",
+      "name": "Restaurante Comunitario",
+      "shortDescription": "Refeicoes de qualidade por R$ 1,00. Cafe da manha e almoco.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 400,
+        "description": "Economia de ate R$ 400 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Estar no Distrito Federal"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Comunitario do DF",
+      "documentsRequired": [
+        "Nao precisa de documento para comer"
+      ],
+      "howToApply": [
+        "Procure o Restaurante Comunitario mais perto",
+        "Va no horario de funcionamento",
+        "Pague R$ 1,00 e faca sua refeicao",
+        "Nao precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍛",
+      "category": "Alimentacao"
+    }
+  ]
+}

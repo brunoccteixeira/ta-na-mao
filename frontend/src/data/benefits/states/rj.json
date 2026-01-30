@@ -1,0 +1,231 @@
+{
+  "state": "RJ",
+  "stateName": "Rio de Janeiro",
+  "lastUpdated": "2024-01-15",
+  "benefits": [
+    {
+      "id": "rj-supera-rj",
+      "name": "Supera RJ",
+      "shortDescription": "Programa estadual de transferência de renda para famílias em situação de pobreza.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Valor varia conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS ou site do programa",
+      "documentsRequired": [
+        "CPF de todos da família",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência no RJ"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "O programa seleciona automaticamente",
+        "Acompanhe pelo site ou CRAS"
+      ],
+      "sourceUrl": "https://www.superarj.rj.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🎯",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "rj-cartao-recomecar",
+      "name": "Cartão Recomeçar",
+      "shortDescription": "Auxílio para famílias atingidas por desastres naturais no estado do Rio.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 5000,
+        "description": "Valor único de emergência"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        }
+      ],
+      "whereToApply": "Defesa Civil ou Prefeitura após desastre declarado",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Laudo de danos da Defesa Civil"
+      ],
+      "howToApply": [
+        "Após desastre, procure a Defesa Civil",
+        "Registre os danos sofridos",
+        "Aguarde vistoria e avaliação",
+        "Receba o cartão para usar em estabelecimentos"
+      ],
+      "sourceUrl": "https://www.rj.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏚️",
+      "category": "Emergência"
+    },
+    {
+      "id": "rj-restaurante-popular",
+      "name": "Restaurante Popular RJ",
+      "shortDescription": "Refeições a preços populares em restaurantes do estado.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 250,
+        "description": "Economia em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Estar no Rio de Janeiro"
+        }
+      ],
+      "whereToApply": "Qualquer Restaurante Popular",
+      "documentsRequired": [
+        "Nenhum documento necessário"
+      ],
+      "howToApply": [
+        "Procure um Restaurante Popular na sua cidade",
+        "Vá no horário de funcionamento",
+        "Pague o preço popular e faça a refeição"
+      ],
+      "sourceUrl": "https://www.rj.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "rj-riocard-social",
+      "name": "RioCard Social",
+      "shortDescription": "Desconto ou gratuidade no transporte público para pessoas de baixa renda.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Economia em transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 706,
+          "description": "Renda por pessoa de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Postos RioCard ou site",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Verifique se atende aos critérios",
+        "Vá a um posto RioCard com os documentos",
+        "Solicite o cartão social",
+        "Retire após aprovação"
+      ],
+      "sourceUrl": "https://www.riocard.com/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "rj-casa-fluminense",
+      "name": "Casa da Moeda Fluminense",
+      "shortDescription": "Programa habitacional do estado para famílias de baixa renda.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 50000,
+        "max": 150000,
+        "description": "Subsídio para moradia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda familiar de até R$ 4.000"
+        }
+      ],
+      "whereToApply": "Prefeitura ou CEHAB-RJ",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de renda",
+        "Comprovante de residência",
+        "Certidão negativa de propriedade"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CEHAB",
+        "Faça o cadastro habitacional",
+        "Aguarde chamamento por sorteio",
+        "Compareça na data para seleção"
+      ],
+      "sourceUrl": "https://www.rj.gov.br/",
+      "lastUpdated": "2024-01-15",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    }
+  ]
+}

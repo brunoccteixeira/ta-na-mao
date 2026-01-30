@@ -1,0 +1,87 @@
+{
+  "municipality": "Campinas",
+  "municipalityIbge": "3509502",
+  "state": "SP",
+  "lastUpdated": "2026-01-29",
+  "benefits": [
+    {
+      "id": "sp-campinas-renda-campinas",
+      "name": "Renda Campinas",
+      "shortDescription": "Programa de transferência de renda para 25.000 famílias",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150 a R$ 300 conforme composição familiar"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Campinas",
+      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "howToApply": [
+        "Procure o CRAS",
+        "Atualize dados no CadÚnico",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "sp-campinas-restaurante-popular",
+      "name": "Restaurante Popular Campinas",
+      "shortDescription": "Refeições a preço acessível nos restaurantes populares",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição a preço popular"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Campinas",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer restaurante popular",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-01-29",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    }
+  ]
+}
