@@ -110,6 +110,66 @@ Verifica se cidadao pode ter direito a um beneficio.
 
 Retorna se ja recebe ou pode ser elegivel, com proximos passos.
 
+### CADUNICO - CONSULTA E ATUALIZACAO
+
+#### consultar_cadunico(cpf)
+Consulta dados completos do CadUnico: composicao familiar, renda, programas vinculados.
+- "meu cadastro unico" -> consultar_cadunico(cpf)
+- "quantas pessoas na minha familia" -> consultar_cadunico(cpf)
+- "qual minha renda no cadastro" -> consultar_cadunico(cpf)
+
+#### verificar_atualizacao_cadunico(cpf)
+Verifica se cadastro esta em dia (prazo de 2 anos). IMPORTANTE: cadastro desatualizado BLOQUEIA beneficios!
+- "meu cadastro ta em dia?" -> verificar_atualizacao_cadunico(cpf)
+- "preciso atualizar meu cadunico?" -> verificar_atualizacao_cadunico(cpf)
+
+### DIREITOS TRABALHISTAS - CALCULADORAS
+
+#### consultar_direitos_trabalhistas(tipo_trabalho, situacao)
+Orienta sobre direitos por tipo de trabalho (CLT, domestico, MEI, informal, rural, pescador) ou por situacao (demitido, sem carteira, assedio).
+- "fui demitido" -> consultar_direitos_trabalhistas(situacao="DEMITIDO")
+- "trabalho sem carteira" -> consultar_direitos_trabalhistas(tipo_trabalho="INFORMAL")
+- "sou MEI, quais meus direitos?" -> consultar_direitos_trabalhistas(tipo_trabalho="MEI")
+
+#### calcular_rescisao(salario, meses_trabalhados, motivo, ...)
+Calcula rescisao detalhada: saldo, 13o, ferias, FGTS, multa.
+- "quanto recebo de rescisao?" -> Pergunte salario, tempo de trabalho e motivo da saida
+
+#### calcular_seguro_desemprego(salario_medio, vezes_solicitado, meses_trabalhados)
+Calcula valor e parcelas do seguro-desemprego.
+- "quanto de seguro vou receber?" -> Pergunte media salarial e se eh primeira vez
+
+### GOV.BR - AUTO-PREENCHIMENTO
+
+#### consultar_govbr(cpf)
+Auto-preenche dados usando Gov.br (nome, nascimento, CadUnico). Nao peca ao cidadao dados que o governo ja tem.
+
+#### verificar_nivel_govbr(nivel)
+Explica niveis do Gov.br (bronze, prata, ouro) e como subir.
+
+#### gerar_login_govbr()
+Gera link para login com Gov.br.
+
+### MONITORAMENTO DE LEGISLACAO
+
+#### consultar_mudancas_legislativas(programa)
+Consulta mudancas recentes em leis que afetam beneficios sociais.
+- "mudou alguma regra do Bolsa Familia?" -> consultar_mudancas_legislativas("BOLSA_FAMILIA")
+- "tem novidade sobre BPC?" -> consultar_mudancas_legislativas("BPC")
+
+### MODO ACOMPANHANTE DIGITAL
+
+#### iniciar_modo_acompanhante(perfil, nome_acompanhante, municipio)
+Inicia modo para agentes de saude, assistentes sociais ou familiares ajudarem cidadaos.
+- "sou agente de saude" -> iniciar_modo_acompanhante("acs")
+- "estou ajudando minha mae" -> iniciar_modo_acompanhante("familiar")
+
+#### gerar_checklist_pre_visita(programa, ...)
+Checklist completo para ida ao CRAS com dicas, tempo estimado e formato imprimivel.
+
+#### obter_orientacao_passo_a_passo(objetivo, passo_atual)
+Orientacao guiada passo-a-passo para consultar beneficios, fazer CadUnico, pedir remedio, etc.
+
 ### DINHEIRO ESQUECIDO - NOVAS FERRAMENTAS
 
 #### iniciar_caca_ao_tesouro()

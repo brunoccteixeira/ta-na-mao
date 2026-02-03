@@ -42,6 +42,33 @@ from app.agent.tools.pre_atendimento_cras import (
     preparar_pre_atendimento_cras,
     gerar_formulario_pre_cras
 )
+from app.agent.tools.consultar_cadunico import (
+    consultar_cadunico,
+    verificar_atualizacao_cadunico
+)
+from app.agent.tools.rede_protecao import (
+    detectar_urgencia,
+    buscar_servico_protecao
+)
+from app.agent.tools.direitos_trabalhistas import (
+    consultar_direitos_trabalhistas,
+    calcular_rescisao,
+    calcular_seguro_desemprego
+)
+from app.agent.tools.govbr_tools import (
+    consultar_govbr,
+    verificar_nivel_govbr,
+    gerar_login_govbr
+)
+from app.agent.tools.monitor_legislacao_tools import (
+    consultar_mudancas_legislativas
+)
+from app.agent.tools.acompanhante_digital import (
+    iniciar_modo_acompanhante,
+    gerar_checklist_pre_visita,
+    registrar_atendimento,
+    obter_orientacao_passo_a_passo
+)
 
 logger = logging.getLogger(__name__)
 
@@ -586,6 +613,314 @@ TOOL_DECLARATIONS = [
             "required": ["nome", "cpf", "data_nascimento", "telefone", "endereco", "composicao_familiar", "renda_familiar"]
         }
     ),
+    # Tools de CadUnico
+    FunctionDeclaration(
+        name="consultar_cadunico",
+        description="Consulta dados do CadUnico por CPF. Retorna composicao familiar, renda per capita, programas vinculados e situacao cadastral. USE quando cidadao perguntar sobre CadUnico, composicao familiar, renda, ou quando precisar de dados detalhados do cadastro.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao (11 digitos, com ou sem formatacao)"
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    FunctionDeclaration(
+        name="verificar_atualizacao_cadunico",
+        description="Verifica se o CadUnico esta atualizado (prazo de 2 anos). Cadastro desatualizado pode BLOQUEAR beneficios! USE quando cidadao perguntar se cadastro esta em dia, ou para alertar proativamente.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao (11 digitos, com ou sem formatacao)"
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    # Tools de Direitos Trabalhistas
+    FunctionDeclaration(
+        name="consultar_direitos_trabalhistas",
+        description="Orienta sobre direitos trabalhistas por tipo de trabalho (CLT, domestico, MEI, informal, rural, pescador) e por situacao (demitido, sem carteira, assedio). USE quando cidadao mencionar: trabalho, carteira assinada, demitido, direitos, rescisao, hora extra, ferias, MEI, informal.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "tipo_trabalho": {
+                    "type": "string",
+                    "description": "Tipo de trabalho: CLT, DOMESTICO, MEI, INFORMAL, RURAL, PESCADOR"
+                },
+                "situacao": {
+                    "type": "string",
+                    "description": "Situacao especifica: DEMITIDO, SEM_CARTEIRA, ASSEDIO, DIREITOS_NAO_PAGOS"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="calcular_rescisao",
+        description="Calcula rescisao trabalhista detalhada: saldo de salario, 13o, ferias, FGTS, multa. USE quando cidadao perguntar 'quanto vou receber de rescisao?', 'fui demitido, quanto tenho direito?'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "salario": {
+                    "type": "number",
+                    "description": "Salario bruto mensal em reais"
+                },
+                "meses_trabalhados": {
+                    "type": "integer",
+                    "description": "Total de meses trabalhados na empresa"
+                },
+                "motivo": {
+                    "type": "string",
+                    "description": "Motivo: SEM_JUSTA_CAUSA, JUSTA_CAUSA, PEDIDO_DEMISSAO, ACORDO"
+                },
+                "tem_ferias_vencidas": {
+                    "type": "boolean",
+                    "description": "Se tem ferias nao gozadas do periodo anterior"
+                },
+                "dias_trabalhados_mes_atual": {
+                    "type": "integer",
+                    "description": "Dias trabalhados no mes da demissao"
+                },
+                "aviso_previo_indenizado": {
+                    "type": "boolean",
+                    "description": "Se o aviso previo sera pago em dinheiro (padrao: true)"
+                }
+            },
+            "required": ["salario", "meses_trabalhados"]
+        }
+    ),
+    FunctionDeclaration(
+        name="calcular_seguro_desemprego",
+        description="Calcula valor e parcelas do seguro-desemprego. USE quando cidadao perguntar 'quanto vou receber de seguro?', 'tenho direito a seguro-desemprego?'. Informa valor, parcelas, prazo e onde pedir.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "salario_medio": {
+                    "type": "number",
+                    "description": "Media dos ultimos 3 salarios em reais"
+                },
+                "vezes_solicitado": {
+                    "type": "integer",
+                    "description": "Quantas vezes ja pediu seguro: 1 (primeira), 2 (segunda), 3+ (terceira em diante)"
+                },
+                "meses_trabalhados": {
+                    "type": "integer",
+                    "description": "Meses trabalhados nos ultimos 36 meses"
+                }
+            },
+            "required": ["salario_medio"]
+        }
+    ),
+    # Tools de Gov.br
+    FunctionDeclaration(
+        name="consultar_govbr",
+        description="Auto-preenche dados do cidadao usando Gov.br (nome, nascimento, CadUnico). Principio 'nao peca ao cidadao dados que o governo ja tem'. USE quando tiver CPF e quiser economizar perguntas ao cidadao.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao (11 digitos, com ou sem formatacao)"
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    FunctionDeclaration(
+        name="verificar_nivel_govbr",
+        description="Explica niveis de confianca do Gov.br (bronze, prata, ouro) e como subir de nivel. USE quando cidadao perguntar sobre conta Gov.br, login Gov.br, nivel de acesso.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "nivel": {
+                    "type": "string",
+                    "description": "Nivel atual: bronze, prata, ouro. Se nao informado, mostra todos."
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="gerar_login_govbr",
+        description="Gera link para login com Gov.br. USE quando cidadao quiser entrar com conta Gov.br.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    # Tool de Monitoramento de Legislacao
+    FunctionDeclaration(
+        name="consultar_mudancas_legislativas",
+        description="Consulta mudancas recentes na legislacao que afetam beneficios sociais. Monitora DOU e Camara dos Deputados. USE quando cidadao perguntar 'mudou alguma regra?', 'tem novidade sobre Bolsa Familia?', 'vai mudar o BPC?'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "programa": {
+                    "type": "string",
+                    "description": "Filtrar por programa: BOLSA_FAMILIA, BPC, CADUNICO, FARMACIA_POPULAR, TSEE, SEGURO_DESEMPREGO"
+                }
+            },
+            "required": []
+        }
+    ),
+    # Tools de Acompanhante Digital
+    FunctionDeclaration(
+        name="iniciar_modo_acompanhante",
+        description="Inicia modo acompanhante digital para agentes comunitarios (ACS), assistentes sociais ou familiares ajudarem cidadaos. USE quando alguem disser 'estou ajudando alguem', 'sou agente de saude', 'sou assistente social'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "perfil": {
+                    "type": "string",
+                    "description": "Tipo de acompanhante: acs, assistente_social, familiar"
+                },
+                "nome_acompanhante": {
+                    "type": "string",
+                    "description": "Nome do acompanhante (opcional)"
+                },
+                "municipio": {
+                    "type": "string",
+                    "description": "Municipio do atendimento (opcional, para metricas)"
+                }
+            },
+            "required": ["perfil"]
+        }
+    ),
+    FunctionDeclaration(
+        name="gerar_checklist_pre_visita",
+        description="Gera checklist completo para pre-visita ao CRAS com dicas, tempo estimado e formato imprimivel. Mais completo que gerar_checklist. USE no modo acompanhante ou quando cidadao precisa de orientacao detalhada para ida ao CRAS.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "programa": {
+                    "type": "string",
+                    "description": "Programa: CADUNICO, BOLSA_FAMILIA, BPC, TSEE"
+                },
+                "nome_cidadao": {
+                    "type": "string",
+                    "description": "Nome do cidadao (para personalizar)"
+                },
+                "composicao_familiar": {
+                    "type": "integer",
+                    "description": "Numero de pessoas na familia"
+                },
+                "tem_filhos": {
+                    "type": "boolean",
+                    "description": "Se tem filhos menores de 18 anos"
+                },
+                "idoso": {
+                    "type": "boolean",
+                    "description": "Se tem 65+ anos"
+                },
+                "gestante": {
+                    "type": "boolean",
+                    "description": "Se esta gravida"
+                },
+                "deficiencia": {
+                    "type": "boolean",
+                    "description": "Se tem deficiencia"
+                }
+            },
+            "required": ["programa"]
+        }
+    ),
+    FunctionDeclaration(
+        name="registrar_atendimento",
+        description="Registra atendimento de forma anonimizada (CPF hasheado). USE apos concluir atendimento no modo acompanhante para metricas de impacto.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "perfil_acompanhante": {
+                    "type": "string",
+                    "description": "Perfil: acs, assistente_social, familiar"
+                },
+                "acoes_realizadas": {
+                    "type": "array",
+                    "description": "Acoes: consulta, checklist, encaminhamento",
+                    "items": {"type": "string"}
+                },
+                "resultado": {
+                    "type": "string",
+                    "description": "Resultado: beneficio_encontrado, encaminhado_cras, checklist_gerado, consulta_realizada"
+                },
+                "municipio": {
+                    "type": "string",
+                    "description": "Municipio do atendimento"
+                },
+                "cpf_cidadao": {
+                    "type": "string",
+                    "description": "CPF do cidadao (sera hasheado, NUNCA armazenado)"
+                }
+            },
+            "required": ["perfil_acompanhante", "acoes_realizadas", "resultado"]
+        }
+    ),
+    FunctionDeclaration(
+        name="obter_orientacao_passo_a_passo",
+        description="Retorna orientacao passo-a-passo guiada para um objetivo. Cada passo tem instrucoes para o acompanhante e conteudo para o cidadao. USE no modo acompanhante para guiar o atendimento.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "objetivo": {
+                    "type": "string",
+                    "description": "Objetivo: CONSULTAR_BENEFICIOS, FAZER_CADUNICO, PEDIR_REMEDIO, ATUALIZAR_CADUNICO, PEDIR_BPC"
+                },
+                "passo_atual": {
+                    "type": "integer",
+                    "description": "Numero do passo atual (1-indexed, padrao: 1)"
+                },
+                "perfil_acompanhante": {
+                    "type": "string",
+                    "description": "Perfil do acompanhante para instrucoes personalizadas"
+                }
+            },
+            "required": ["objetivo"]
+        }
+    ),
+    # Tools de Rede de Protecao Social
+    FunctionDeclaration(
+        name="detectar_urgencia",
+        description="Detecta situacoes de urgencia na mensagem do cidadao: violencia, fome, desabrigo, ideacao suicida, emergencia medica. Retorna nivel de urgencia e servicos recomendados (CREAS, CAPS, SAMU, CVV, etc). PRIORIDADE MAXIMA - verificar ANTES de qualquer outro fluxo.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "type": "string",
+                    "description": "Mensagem do cidadao para analisar"
+                }
+            },
+            "required": ["mensagem"]
+        }
+    ),
+    FunctionDeclaration(
+        name="buscar_servico_protecao",
+        description="Busca informacoes de servicos de protecao social: CREAS, CAPS, SAMU, Centro POP, Conselho Tutelar, CVV (188), Disque 100, Ligue 180. Retorna telefone, horario e descricao. USE quando cidadao estiver em situacao de vulnerabilidade.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "tipo_servico": {
+                    "type": "string",
+                    "description": "Tipo do servico: CREAS, CAPS, SAMU, CENTRO_POP, CONSELHO_TUTELAR, CVV, DISQUE_100, LIGUE_180"
+                },
+                "cidade": {
+                    "type": "string",
+                    "description": "Cidade do cidadao (para servicos locais)"
+                },
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao"
+                }
+            },
+            "required": ["tipo_servico"]
+        }
+    ),
 ]
 
 # Mapeamento de funcoes para execucao
@@ -619,6 +954,27 @@ TOOL_FUNCTIONS = {
     # Tools de Pre-Atendimento CRAS (Pilar 3)
     "preparar_pre_atendimento_cras": preparar_pre_atendimento_cras,
     "gerar_formulario_pre_cras": gerar_formulario_pre_cras,
+    # Tools de CadUnico
+    "consultar_cadunico": consultar_cadunico,
+    "verificar_atualizacao_cadunico": verificar_atualizacao_cadunico,
+    # Tools de Rede de Protecao Social
+    "detectar_urgencia": detectar_urgencia,
+    "buscar_servico_protecao": buscar_servico_protecao,
+    # Tools de Direitos Trabalhistas
+    "consultar_direitos_trabalhistas": consultar_direitos_trabalhistas,
+    "calcular_rescisao": calcular_rescisao,
+    "calcular_seguro_desemprego": calcular_seguro_desemprego,
+    # Tools de Gov.br
+    "consultar_govbr": consultar_govbr,
+    "verificar_nivel_govbr": verificar_nivel_govbr,
+    "gerar_login_govbr": gerar_login_govbr,
+    # Tool de Monitoramento de Legislacao
+    "consultar_mudancas_legislativas": consultar_mudancas_legislativas,
+    # Tools de Acompanhante Digital
+    "iniciar_modo_acompanhante": iniciar_modo_acompanhante,
+    "gerar_checklist_pre_visita": gerar_checklist_pre_visita,
+    "registrar_atendimento": registrar_atendimento,
+    "obter_orientacao_passo_a_passo": obter_orientacao_passo_a_passo,
 }
 
 

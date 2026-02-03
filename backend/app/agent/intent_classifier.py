@@ -27,6 +27,8 @@ class IntentCategory(str, Enum):
     FARMACIA = "farmacia"
     BENEFICIO = "beneficio"
     DOCUMENTACAO = "documentacao"
+    PROTECAO = "protecao"
+    TRABALHISTA = "trabalhista"
     GERAL = "geral"
 
     def to_flow_type(self) -> Optional[FlowType]:
@@ -35,6 +37,8 @@ class IntentCategory(str, Enum):
             IntentCategory.FARMACIA: FlowType.FARMACIA,
             IntentCategory.BENEFICIO: FlowType.BENEFICIO,
             IntentCategory.DOCUMENTACAO: FlowType.DOCUMENTACAO,
+            IntentCategory.PROTECAO: FlowType.PROTECAO,
+            IntentCategory.TRABALHISTA: FlowType.GERAL,  # Usa Gemini fallback com tools
             IntentCategory.GERAL: FlowType.GERAL,
         }
         return mapping.get(self)
@@ -112,6 +116,42 @@ class IntentClassifier:
                 "horário", "horario", "telefone", "atendimento",
                 "agendar", "agendamento", "marcar"
             ]
+        },
+        IntentCategory.PROTECAO: {
+            "primary": [
+                "violência", "violencia", "apanhando", "abuso",
+                "suicídio", "suicidio", "quero morrer", "me matar",
+                "passando fome", "sem comida", "morando na rua",
+                "situação de rua", "situacao de rua", "desabrigado",
+                "criança abandonada", "crianca abandonada",
+                "trabalho infantil", "ameaça", "ameaca"
+            ],
+            "secondary": [
+                "medo", "socorro", "perigo", "emergência", "emergencia",
+                "creas", "caps", "conselho tutelar",
+                "depressão", "depressao", "drogas",
+                "não aguento mais", "nao aguento mais"
+            ]
+        },
+        IntentCategory.TRABALHISTA: {
+            "primary": [
+                "rescisão", "rescisao", "demitido", "demitida",
+                "demissão", "demissao", "carteira assinada",
+                "direitos trabalhistas", "seguro desemprego",
+                "seguro-desemprego", "fui mandado embora",
+                "hora extra", "férias", "ferias", "13o salário",
+                "13o salario", "décimo terceiro", "decimo terceiro",
+                "aviso prévio", "aviso previo", "fgts"
+            ],
+            "secondary": [
+                "clt", "mei", "informal", "sem carteira",
+                "trabalho doméstico", "trabalho domestico",
+                "empregada doméstica", "empregada domestica",
+                "trabalhador rural", "pescador artesanal",
+                "assédio no trabalho", "assedio no trabalho",
+                "patrão", "patrao", "sindicato",
+                "defensoria", "justiça do trabalho"
+            ]
         }
     }
 
@@ -133,6 +173,20 @@ class IntentClassifier:
             r"(?:quais?|que)\s+documentos?\s+(?:eu\s+)?preciso",
             r"(?:onde|como)\s+(?:é|fica|faz(?:er)?)\s+(?:o\s+)?(?:cadastro|cras)",
             r"(?:lista|checklist)\s+(?:de\s+)?documentos?",
+        ],
+        IntentCategory.PROTECAO: [
+            r"(?:estou|t[ôo])\s+(?:passando|sofrendo)\s+(?:viol[êe]ncia|abuso|fome)",
+            r"(?:quero|vontade\s+de)\s+morrer",
+            r"n[ãa]o\s+aguento\s+mais",
+            r"(?:me|ele|ela)\s+(?:bate|agride|machuca)",
+            r"(?:meu\s+marido|meu\s+pai|minha\s+m[ãa]e)\s+(?:me\s+)?bate",
+        ],
+        IntentCategory.TRABALHISTA: [
+            r"fui\s+(?:demitido|demitida|mandado\s+embora)",
+            r"(?:calcular|quanto)\s+(?:minha\s+)?rescis[ãa]o",
+            r"(?:tenho|posso)\s+(?:ter\s+)?direito\s+(?:a\s+)?seguro",
+            r"trabalhei?\s+(?:sem|com)\s+carteira",
+            r"(?:meu|o)\s+patr[ãa]o\s+(?:n[ãa]o\s+)?(?:paga|assina|registra)",
         ]
     }
 
@@ -178,7 +232,7 @@ class IntentClassifier:
         scores: dict[IntentCategory, Tuple[float, List[str]]] = {}
 
         # Pontuar cada categoria
-        for category in [IntentCategory.FARMACIA, IntentCategory.BENEFICIO, IntentCategory.DOCUMENTACAO]:
+        for category in [IntentCategory.FARMACIA, IntentCategory.BENEFICIO, IntentCategory.DOCUMENTACAO, IntentCategory.PROTECAO, IntentCategory.TRABALHISTA]:
             score, matched = self._score_category(message_lower, category)
             if score > 0:
                 scores[category] = (score, matched)

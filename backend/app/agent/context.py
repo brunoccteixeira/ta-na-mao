@@ -22,6 +22,7 @@ class FlowType(str, Enum):
     FARMACIA = "farmacia"
     BENEFICIO = "beneficio"
     DOCUMENTACAO = "documentacao"
+    PROTECAO = "protecao"
     GERAL = "geral"
 
 

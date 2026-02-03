@@ -59,6 +59,18 @@ class Settings(BaseSettings):
     # Webhook base URL (para configurar nos provedores)
     WEBHOOK_BASE_URL: str = ""
 
+    # CadUnico API
+    CADUNICO_API_URL: str = ""  # URL da API CadUnico (mock quando vazio)
+    CADUNICO_API_KEY: str = ""  # Chave da API CadUnico
+
+    # Gov.br Integration
+    GOVBR_CLIENT_ID: str = ""
+    GOVBR_CLIENT_SECRET: str = ""
+    GOVBR_REDIRECT_URI: str = ""  # ex: https://api.tanamao.com.br/auth/callback
+    CONECTA_GOVBR_URL: str = ""  # ex: https://api.conectagov.estaleiro.serpro.gov.br
+    CONECTA_GOVBR_CLIENT_ID: str = ""
+    CONECTA_GOVBR_CLIENT_SECRET: str = ""
+
     # MCP Configuration
     MCP_ENABLED: bool = True
     MCP_CONFIG_PATH: str = ".mcp.json"

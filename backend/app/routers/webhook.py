@@ -24,6 +24,12 @@ from app.agent.tools.enviar_whatsapp import (
 )
 from app.agent.orchestrator import get_orchestrator
 from app.agent.whatsapp_formatter import format_response_for_whatsapp
+from app.agent.channels.whatsapp_flows import (
+    get_whatsapp_flow_manager,
+    formatar_menu_principal,
+    formatar_menu_retorno,
+    formatar_resposta_whatsapp,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -391,12 +397,35 @@ async def webhook_whatsapp_chat(
         # Mensagem padrao se so enviou imagem
         message = Body or "Enviando imagem..."
 
+        # Pre-processamento WhatsApp Flows (menus numerados)
+        flow_manager = get_whatsapp_flow_manager()
+        transformed_message, menu_response = flow_manager.pre_process_message(
+            message=message,
+            session_id=session_id,
+        )
+
+        # Se o flow manager retornou um menu direto (cidadao pediu menu)
+        if menu_response and transformed_message is None:
+            menu_twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Message>{menu_response}</Message>
+</Response>"""
+            return Response(content=menu_twiml, media_type="application/xml")
+
+        # Se houve mapeamento de opcao numerica, usar mensagem transformada
+        if transformed_message is not None:
+            message = transformed_message
+
         # Processar mensagem com orchestrator
         response = await orchestrator.process_message(
             message=message,
             session_id=session_id,
             image_base64=image_base64
         )
+
+        # Verificar se deve anexar menu de retorno
+        if flow_manager.should_show_return_menu(response.text):
+            response.text = response.text + "\n\n" + formatar_menu_retorno()
 
         # Converter resposta A2UI para TwiML
         twiml = format_response_for_whatsapp(response)

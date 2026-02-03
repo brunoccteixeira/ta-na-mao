@@ -29,7 +29,8 @@ from .response_types import (
     AlertData
 )
 from .intent_classifier import IntentClassifier
-from .subagents import FarmaciaSubAgent, BeneficioSubAgent, DocumentacaoSubAgent
+from .subagents import FarmaciaSubAgent, BeneficioSubAgent, DocumentacaoSubAgent, ProtecaoSubAgent
+from .tools.rede_protecao import detectar_urgencia as _detectar_urgencia
 
 logger = logging.getLogger(__name__)
 
@@ -47,6 +48,7 @@ class AgentOrchestrator:
         FlowType.FARMACIA: FarmaciaSubAgent,
         FlowType.BENEFICIO: BeneficioSubAgent,
         FlowType.DOCUMENTACAO: DocumentacaoSubAgent,
+        FlowType.PROTECAO: ProtecaoSubAgent,
     }
 
     def __init__(self, model_name: str = "gemini-2.0-flash-exp"):
@@ -170,21 +172,29 @@ Se não souber algo específico, oriente a procurar o CRAS."""
         if self.intent_classifier.is_restart(message):
             return self._handle_restart(context)
 
-        # 2. Se já está em um fluxo ativo, continua nele
+        # 2. PRIORIDADE MAXIMA: Verificar urgencia/protecao
+        urgencia_result = _detectar_urgencia(message)
+        if urgencia_result["urgencia_detectada"]:
+            logger.warning(f"Urgencia detectada: nivel={urgencia_result['nivel']}")
+            context.start_flow(FlowType.PROTECAO)
+            subagent = ProtecaoSubAgent(context)
+            return await subagent.process(message)
+
+        # 3. Se já está em um fluxo ativo, continua nele
         if context.active_flow and context.active_flow in self.SUBAGENT_MAP:
             subagent_class = self.SUBAGENT_MAP[context.active_flow]
             subagent = subagent_class(context)
             return await subagent.process(message, image_base64)
 
-        # 3. Classificar intenção
+        # 4. Classificar intenção
         intent = self.intent_classifier.classify(message)
         logger.info(f"Intent classificado: {intent.category} (conf={intent.confidence:.2f})")
 
-        # 4. Se confiança baixa, tenta LLM
+        # 5. Se confiança baixa, tenta LLM
         if intent.confidence < 0.5:
             intent = await self.intent_classifier.classify_with_llm(message)
 
-        # 5. Rotear para sub-agente se categoria conhecida
+        # 6. Rotear para sub-agente se categoria conhecida
         flow_type = intent.category.to_flow_type()
 
         if flow_type and flow_type in self.SUBAGENT_MAP:
@@ -194,7 +204,7 @@ Se não souber algo específico, oriente a procurar o CRAS."""
             subagent = subagent_class(context)
             return await subagent.process(message, image_base64)
 
-        # 6. Fallback para Gemini
+        # 7. Fallback para Gemini
         return await self._gemini_fallback(message, context)
 
     def _handle_greeting(self, context: ConversationContext) -> AgentResponse:
