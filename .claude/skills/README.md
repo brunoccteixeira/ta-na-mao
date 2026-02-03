@@ -72,6 +72,7 @@
 | [finishing-branch](finishing-branch.md) | Workflow para finalizar branches |
 | [git-workflow](git-workflow.md) | Automação de operações git |
 | [skill-creator](skill-creator.md) | Template para criar novas skills |
+| [changelog](changelog.md) | Manter o CHANGELOG do projeto |
 
 ## Skills de Infraestrutura
 
@@ -101,10 +102,10 @@
 | Inclusão & Acessibilidade | 6 | +5 |
 | Economia & Negócios | 4 | +4 |
 | Pesquisa & Dados | 7 | +1 |
-| Desenvolvimento | 7 | — |
+| Desenvolvimento | 8 | +1 |
 | Infraestrutura | 3 | — |
 | Segurança | 4 | +1 |
-| **Total** | **48** | **+23** |
+| **Total** | **49** | **+24** |
 
 ## Uso
 

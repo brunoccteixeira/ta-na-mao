@@ -1,5 +1,24 @@
 # Changelog - Tá na Mão
 
+## [Unreleased]
+
+## [1.5.0] - 2026-02-03 - Skills de Conhecimento Estratégico
+
+### Added
+- **23 novas skills** cobrindo gestão pública, assistência social, economia e tecnologia
+  - **P0 — Crítico:** `cadunico-api` (API CadÚnico via Conecta Gov.br), `whatsapp-flows` (fluxos conversacionais WhatsApp), `rede-protecao` (rede de proteção social + detecção de urgência)
+  - **P1 — Alto:** `govbr-integrator` (Login Único + APIs Conecta), `pwa-offline` (Service Workers, IndexedDB, Background Sync), `monitor-legislacao` (scraping DOU + análise com IA), `direitos-trabalhistas` (calculadoras de rescisão e seguro-desemprego), `acompanhante-digital` (modo acompanhante para agentes comunitários)
+  - **P2 — Médio:** `educacao-financeira` (micro-lições + detector de golpes), `mei-simplificado` (simulador "perco o Bolsa Família se virar MEI?"), `vulnerabilidade-preditiva` (score de risco social), `rede-suas` (navegação CRAS/CREAS/CAPS/Centro POP), `a11y-auditor` (auditoria WCAG 2.1 AA), `dados-abertos` (pipeline ETL de dados governamentais)
+  - **P3 — Futuro:** `voz-acessivel` (speech-to-text/text-to-speech pt-BR), `orcamento-participativo` (votação participativa), `economia-solidaria` (diretório de cooperativas), `impacto-esg` (relatórios ODS), `indicadores-sociais` (APIs IBGE/IPEA/MDS), `painel-gestor` (dashboard B2G), `mapa-social` (choropleth de vulnerabilidade), `pesquisa-campo` (questionários + análise com IA), `seguranca-cidada` (LGPD com consentimento granular)
+- Skill `changelog` para manter documentação padronizada de mudanças
+- 25 skills pré-existentes versionadas no git (antes ficavam apenas locais)
+- README.md das skills reorganizado em 8 categorias com 49 skills no total
+
+### Changed
+- `.gitignore` atualizado: `.claude/` agora é versionada (apenas `settings.local.json` ignorado)
+
+---
+
 ## [2026-01-29] - Sprint 12: Benefícios Municipais
 
 ### 🎯 Foco: Catálogo Municipal de Benefícios
