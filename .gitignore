@@ -36,8 +36,8 @@ Thumbs.db
 *.iml
 local.properties
 
-# Claude Code (local)
-.claude/
+# Claude Code (local settings only)
+.claude/settings.local.json
 
 # Cursor IDE (local)
 .cursor/
