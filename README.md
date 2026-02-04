@@ -252,6 +252,16 @@ Ta na Mao/
 
 ## Documentação
 
+### Documentação Estratégica
+| Documento | Descrição |
+|-----------|-----------|
+| [MANIFESTO.md](MANIFESTO.md) | Visão e missão do projeto |
+| [docs/estrategia/VISAO_ESTRATEGICA.md](docs/estrategia/VISAO_ESTRATEGICA.md) | Estratégia de mercado validada |
+| [docs/estrategia/BENCHMARKING_GLOBAL.md](docs/estrategia/BENCHMARKING_GLOBAL.md) | Comparativo com Propel, Wizbii, Turn2us, Haqdarshak |
+| [docs/estrategia/MAPA_MERCADO.md](docs/estrategia/MAPA_MERCADO.md) | Mapa do ecossistema global de benefícios |
+| [docs/estrategia/MATRIZ_PRIORIZACAO.md](docs/estrategia/MATRIZ_PRIORIZACAO.md) | Recomendações estratégicas priorizadas (P0-P3) |
+| [docs/estrategia/DOCUMENTO_EXECUTIVO.md](docs/estrategia/DOCUMENTO_EXECUTIVO.md) | Sumário executivo e KPIs |
+
 ### Documentação Geral
 | Documento | Descrição |
 |-----------|-----------|
