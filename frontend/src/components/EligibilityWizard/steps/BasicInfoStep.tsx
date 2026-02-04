@@ -45,13 +45,13 @@ export default function BasicInfoStep({ profile, onUpdate, onNext }: Props) {
       {/* Header */}
       <div className="text-center">
         <div className="text-4xl mb-3">🔍</div>
-        <h2 className="text-xl font-bold text-slate-100">Vamos descobrir seus direitos!</h2>
-        <p className="text-slate-400 mt-2">Me conta um pouco sobre você</p>
+        <h2 className="text-xl font-bold text-[var(--text-primary)]">Vamos descobrir seus direitos!</h2>
+        <p className="text-[var(--text-tertiary)] mt-2">Me conta um pouco sobre você</p>
       </div>
 
       {/* CPF Input */}
       <div className="space-y-3">
-        <label className="block text-sm font-medium text-slate-300">
+        <label className="block text-sm font-medium text-[var(--text-secondary)]">
           CPF (opcional - ajuda a encontrar benefícios)
         </label>
 
@@ -62,22 +62,22 @@ export default function BasicInfoStep({ profile, onUpdate, onNext }: Props) {
               value={cpfInput}
               onChange={handleCpfChange}
               placeholder="000.000.000-00"
-              className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-center text-lg tracking-wider"
+              className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-center text-lg tracking-wider"
               maxLength={14}
             />
             <button
               onClick={handleSemCpf}
-              className="w-full text-sm text-slate-400 hover:text-slate-300 py-2"
+              className="w-full text-sm text-[var(--text-tertiary)] hover:text-[var(--text-secondary)] py-2"
             >
               Não tenho CPF ou prefiro não informar
             </button>
           </div>
         ) : (
-          <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700 text-center">
-            <span className="text-slate-400">Continuando sem CPF</span>
+          <div className="p-3 rounded-xl bg-[var(--badge-bg)] border border-[var(--border-color)] text-center">
+            <span className="text-[var(--text-tertiary)]">Continuando sem CPF</span>
             <button
               onClick={() => setSemCpf(false)}
-              className="ml-2 text-emerald-400 hover:text-emerald-300"
+              className="ml-2 text-emerald-600 hover:text-emerald-500"
             >
               Informar CPF
             </button>
@@ -88,7 +88,7 @@ export default function BasicInfoStep({ profile, onUpdate, onNext }: Props) {
       {/* Cidade e UF */}
       <div className="grid grid-cols-3 gap-3">
         <div className="col-span-2">
-          <label className="block text-sm font-medium text-slate-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Cidade
           </label>
           <input
@@ -96,17 +96,17 @@ export default function BasicInfoStep({ profile, onUpdate, onNext }: Props) {
             value={profile.municipio || ''}
             onChange={(e) => onUpdate({ municipio: e.target.value })}
             placeholder="Sua cidade"
-            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+            className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-2">
+          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Estado
           </label>
           <select
             value={profile.uf || ''}
             onChange={(e) => onUpdate({ uf: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+            className="w-full px-4 py-3 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
           >
             <option value="">UF</option>
             {UFS.map((uf) => (
@@ -123,7 +123,7 @@ export default function BasicInfoStep({ profile, onUpdate, onNext }: Props) {
         className={`w-full py-4 rounded-xl font-semibold text-lg transition-all ${
           canProceed
             ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
-            : 'bg-slate-700 text-slate-500 cursor-not-allowed'
+            : 'bg-[var(--border-color)] text-[var(--text-tertiary)] cursor-not-allowed'
         }`}
       >
         Continuar →

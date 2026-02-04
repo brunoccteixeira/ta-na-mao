@@ -16,15 +16,33 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa de até R$ 218 por mês"
+          "description": "Renda por pessoa de até R$ 218 por mês",
+          "legalReference": "Art. 3º, Lei 14.601/2023"
         },
         {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Art. 4º, Lei 14.601/2023"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.601/2023",
+            "description": "Lei do Programa Bolsa Família",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.901/2024",
+            "description": "Regulamenta o Programa Bolsa Família",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d11901.htm"
+          }
+        ]
+      },
       "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
       "documentsRequired": [
         "CPF de todos da família",
@@ -60,13 +78,15 @@
           "field": "temIdoso65Mais",
           "operator": "eq",
           "value": true,
-          "description": "Ter 65 anos ou mais"
+          "description": "Ter 65 anos ou mais",
+          "legalReference": "Art. 20, Lei 8.742/1993 (LOAS)"
         },
         {
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 353,
-          "description": "Renda por pessoa de até 1/4 do salário mínimo"
+          "description": "Renda por pessoa de até 1/4 do salário mínimo",
+          "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         },
         {
           "field": "recebeBolsaFamilia",
@@ -75,6 +95,28 @@
           "description": "Não receber Bolsa Família (pode optar por um)"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "CF/1988, Art. 203, V",
+            "description": "Garantia constitucional de assistência social ao idoso",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "lei",
+            "number": "8.742/1993",
+            "description": "Lei Orgânica da Assistência Social (LOAS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8742.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "6.214/2007",
+            "description": "Regulamenta o BPC",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6214.htm"
+          }
+        ]
+      },
       "whereToApply": "INSS (pelo site ou agência) ou CRAS",
       "documentsRequired": [
         "CPF",
@@ -110,15 +152,33 @@
           "field": "temPcd",
           "operator": "eq",
           "value": true,
-          "description": "Ter deficiência física, mental, intelectual ou sensorial"
+          "description": "Ter deficiência física, mental, intelectual ou sensorial",
+          "legalReference": "Art. 20, §2º, Lei 8.742/1993 (LOAS)"
         },
         {
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 353,
-          "description": "Renda por pessoa de até 1/4 do salário mínimo"
+          "description": "Renda por pessoa de até 1/4 do salário mínimo",
+          "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "CF/1988, Art. 203, V",
+            "description": "Garantia constitucional de assistência social à pessoa com deficiência",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "lei",
+            "number": "8.742/1993",
+            "description": "Lei Orgânica da Assistência Social (LOAS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8742.htm"
+          }
+        ]
+      },
       "whereToApply": "INSS (pelo site ou agência) ou CRAS",
       "documentsRequired": [
         "CPF",
@@ -155,15 +215,33 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 706,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "description": "Renda por pessoa de até meio salário mínimo",
+          "legalReference": "Art. 2º, Lei 12.212/2010"
         },
         {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Art. 2º, §1º, Lei 12.212/2010"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.212/2010",
+            "description": "Lei da Tarifa Social de Energia Elétrica",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12212.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "7.583/2011",
+            "description": "Regulamenta a Tarifa Social de Energia Elétrica",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7583.htm"
+          }
+        ]
+      },
       "whereToApply": "Distribuidora de energia da sua região ou pelo site/app",
       "documentsRequired": [
         "CPF do titular da conta de luz",
@@ -198,9 +276,26 @@
           "field": "idade",
           "operator": "gte",
           "value": 0,
-          "description": "Qualquer pessoa com receita médica"
+          "description": "Qualquer pessoa com receita médica",
+          "legalReference": "Lei 10.858/2004"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.858/2004",
+            "description": "Autoriza a Fundação Oswaldo Cruz a disponibilizar medicamentos mediante ressarcimento",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.858.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "5.090/2004",
+            "description": "Regulamenta o Programa Farmácia Popular do Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d5090.htm"
+          }
+        ]
+      },
       "whereToApply": "Qualquer farmácia credenciada ao programa",
       "documentsRequired": [
         "CPF",
@@ -235,9 +330,20 @@
           "field": "recebeBolsaFamilia",
           "operator": "eq",
           "value": true,
-          "description": "Receber Bolsa Família"
+          "description": "Receber Bolsa Família",
+          "legalReference": "Art. 2º, Lei 14.237/2021"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.237/2021",
+            "description": "Lei do Auxílio Gás dos Brasileiros",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14237.htm"
+          }
+        ]
+      },
       "whereToApply": "Automático para quem recebe Bolsa Família",
       "documentsRequired": [
         "Não precisa de documentos extras"
@@ -269,15 +375,27 @@
           "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 8000,
-          "description": "Renda familiar de até R$ 8.000 por mês"
+          "description": "Renda familiar de até R$ 8.000 por mês",
+          "legalReference": "Art. 4º, Lei 14.620/2023"
         },
         {
           "field": "temCasaPropria",
           "operator": "eq",
           "value": false,
-          "description": "Não ter casa própria"
+          "description": "Não ter casa própria",
+          "legalReference": "Art. 6º, Lei 14.620/2023"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.620/2023",
+            "description": "Lei do Programa Minha Casa, Minha Vida",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14620.htm"
+          }
+        ]
+      },
       "whereToApply": "Caixa Econômica Federal, Banco do Brasil ou correspondentes bancários",
       "documentsRequired": [
         "CPF e RG de todos da família",
@@ -424,15 +542,27 @@
           "field": "trabalhoFormal",
           "operator": "eq",
           "value": false,
-          "description": "Estar desempregado (sem carteira assinada)"
+          "description": "Estar desempregado (sem carteira assinada)",
+          "legalReference": "Art. 3º, Lei 7.998/1990"
         },
         {
           "field": "tempoCarteiraAssinada",
           "operator": "gte",
           "value": 12,
-          "description": "Ter trabalhado pelo menos 12 meses nos últimos 18"
+          "description": "Ter trabalhado pelo menos 12 meses nos últimos 18",
+          "legalReference": "Art. 3º, I, Lei 7.998/1990"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "7.998/1990",
+            "description": "Lei do Programa do Seguro-Desemprego e Abono Salarial",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l7998.htm"
+          }
+        ]
+      },
       "whereToApply": "Site do Ministério do Trabalho ou agências do SINE",
       "documentsRequired": [
         "Carteira de Trabalho",
@@ -516,15 +646,27 @@
           "field": "mulherMenstruante",
           "operator": "eq",
           "value": true,
-          "description": "Ser pessoa que menstrua"
+          "description": "Ser pessoa que menstrua",
+          "legalReference": "Art. 1º, Lei 14.214/2021"
         },
         {
           "field": "redePublica",
           "operator": "eq",
           "value": true,
-          "description": "Estudar em escola pública ou estar em vulnerabilidade social"
+          "description": "Estudar em escola pública ou estar em vulnerabilidade social",
+          "legalReference": "Art. 3º, Lei 14.214/2021"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.214/2021",
+            "description": "Programa de Proteção e Promoção da Saúde Menstrual",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14214.htm"
+          }
+        ]
+      },
       "whereToApply": "Escola pública ou Unidade Básica de Saúde (UBS)",
       "documentsRequired": [
         "Documento de matrícula (se estudante)",
@@ -641,15 +783,27 @@
           "field": "temPcd",
           "operator": "eq",
           "value": true,
-          "description": "Ter deficiência comprovada"
+          "description": "Ter deficiência comprovada",
+          "legalReference": "Art. 1º, Lei 8.899/1994"
         },
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 1412,
-          "description": "Renda familiar de até 1 salário mínimo"
+          "description": "Renda familiar de até 1 salário mínimo",
+          "legalReference": "Art. 1º, Lei 8.899/1994"
         }
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.899/1994",
+            "description": "Lei do Passe Livre para pessoas com deficiência",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8899.htm"
+          }
+        ]
+      },
       "whereToApply": "Centros de Referência de Assistência Social (CRAS)",
       "documentsRequired": [
         "CPF e RG",

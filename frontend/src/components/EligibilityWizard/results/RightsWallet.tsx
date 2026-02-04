@@ -18,28 +18,28 @@ const STATUS_CONFIG = {
     border: 'border-emerald-500/30',
     icon: '🎯',
     label: 'Pode ter direito',
-    labelColor: 'text-emerald-400',
+    labelColor: 'text-emerald-600',
   },
   ja_recebe: {
     bg: 'bg-blue-500/10',
     border: 'border-blue-500/30',
     icon: '✅',
     label: 'Já recebe',
-    labelColor: 'text-blue-400',
+    labelColor: 'text-blue-600',
   },
   inelegivel: {
-    bg: 'bg-slate-700/50',
-    border: 'border-slate-600',
+    bg: 'bg-[var(--badge-bg)]',
+    border: 'border-[var(--border-color)]',
     icon: '❌',
     label: 'Não elegível',
-    labelColor: 'text-slate-400',
+    labelColor: 'text-[var(--text-tertiary)]',
   },
   inconclusivo: {
     bg: 'bg-amber-500/10',
     border: 'border-amber-500/30',
     icon: '❓',
     label: 'Verificar',
-    labelColor: 'text-amber-400',
+    labelColor: 'text-amber-600',
   },
 };
 
@@ -69,22 +69,22 @@ const BENEFIT_CATEGORIES: Record<string, { label: string; icon: string; color: s
   federal: {
     label: 'Benefícios Federais',
     icon: '🇧🇷',
-    color: 'from-blue-600/20 to-blue-500/10 border-blue-500/30',
+    color: 'from-blue-600/15 to-blue-500/5 border-blue-500/30',
   },
   estadual: {
     label: 'Benefícios Estaduais',
     icon: '🏛️',
-    color: 'from-purple-600/20 to-purple-500/10 border-purple-500/30',
+    color: 'from-purple-600/15 to-purple-500/5 border-purple-500/30',
   },
   municipal: {
     label: 'Benefícios Municipais',
     icon: '🏘️',
-    color: 'from-cyan-600/20 to-cyan-500/10 border-cyan-500/30',
+    color: 'from-cyan-600/15 to-cyan-500/5 border-cyan-500/30',
   },
   setorial: {
     label: 'Benefícios Setoriais',
     icon: '👷',
-    color: 'from-amber-600/20 to-amber-500/10 border-amber-500/30',
+    color: 'from-amber-600/15 to-amber-500/5 border-amber-500/30',
   },
 };
 
@@ -105,13 +105,12 @@ function getBenefitCategory(programa: string): 'federal' | 'estadual' | 'municip
   if (setorialPrograms.includes(programa)) return 'setorial';
 
   // Check for municipal prefixes (format: uf-cidade-programa)
-  // Examples: sp-saopaulo-bolsa-trabalho, rj-riodejaneiro-supera-rj
   const municipalPattern = /^[a-z]{2}-[a-z]+-/i;
   if (municipalPattern.test(programa)) {
     return 'municipal';
   }
 
-  // Check for state prefixes (format with _UF or state-uf-)
+  // Check for state prefixes
   if (programa.includes('_SP') || programa.includes('_RJ') || programa.includes('_MG') ||
       /^state-[a-z]{2}-/i.test(programa)) {
     return 'estadual';
@@ -129,34 +128,34 @@ function BenefitCard({ benefit }: { benefit: EligibilityResult }) {
       <div className="p-4">
         {/* Header */}
         <div className="flex items-start gap-3">
-          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-2xl flex-shrink-0">
+          <div className="w-12 h-12 rounded-full bg-[var(--badge-bg)] flex items-center justify-center text-2xl flex-shrink-0">
             {icon}
           </div>
           <div className="flex-1 min-w-0">
-            <h4 className="font-semibold text-slate-200">{benefit.programaNome}</h4>
+            <h4 className="font-semibold text-[var(--text-secondary)]">{benefit.programaNome}</h4>
             <span className={`text-xs font-medium ${config.labelColor}`}>
               {config.icon} {config.label}
             </span>
           </div>
           {benefit.valorEstimado && benefit.status === 'elegivel' && (
             <div className="text-right">
-              <p className="text-xs text-slate-400">até</p>
-              <p className="text-lg font-bold text-emerald-400">
+              <p className="text-xs text-[var(--text-tertiary)]">até</p>
+              <p className="text-lg font-bold text-emerald-600">
                 R$ {benefit.valorEstimado.toFixed(0)}
               </p>
-              <p className="text-xs text-slate-400">/mês</p>
+              <p className="text-xs text-[var(--text-tertiary)]">/mês</p>
             </div>
           )}
         </div>
 
         {/* Motivo */}
-        <p className="mt-3 text-sm text-slate-400 line-clamp-2">
+        <p className="mt-3 text-sm text-[var(--text-tertiary)] line-clamp-2">
           {benefit.motivo}
         </p>
 
         {/* Onde solicitar */}
         {benefit.ondeSolicitar && benefit.status === 'elegivel' && (
-          <div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
+          <div className="mt-3 flex items-center gap-2 text-xs text-[var(--text-tertiary)]">
             <span>📍</span>
             <span>{benefit.ondeSolicitar}</span>
           </div>
@@ -184,13 +183,13 @@ function CategorySection({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl">{config.icon}</span>
-            <span className="font-medium text-slate-200">{config.label}</span>
-            <span className="px-2 py-0.5 rounded bg-slate-800/50 text-xs text-slate-300">
+            <span className="font-medium text-[var(--text-secondary)]">{config.label}</span>
+            <span className="px-2 py-0.5 rounded bg-[var(--badge-bg)] text-xs text-[var(--text-secondary)]">
               {benefits.length}
             </span>
           </div>
           {totalValue > 0 && (
-            <span className="text-sm font-medium text-emerald-400">
+            <span className="text-sm font-medium text-emerald-600">
               até R$ {totalValue.toFixed(0)}/mês
             </span>
           )}
@@ -228,14 +227,14 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         {totalElegiveis > 0 ? (
           <>
             <div className="text-5xl mb-3">🎉</div>
-            <h2 className="text-2xl font-bold text-slate-100">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)]">
               Você pode ter direito a {totalElegiveis} benefício{totalElegiveis > 1 ? 's' : ''}!
             </h2>
           </>
         ) : (
           <>
             <div className="text-5xl mb-3">📋</div>
-            <h2 className="text-2xl font-bold text-slate-100">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)]">
               Resultado da análise
             </h2>
           </>
@@ -244,12 +243,12 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
 
       {/* Valor potencial */}
       {result.valorPotencialMensal > 0 && (
-        <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-600/20 to-emerald-500/10 border border-emerald-500/30">
-          <p className="text-sm text-emerald-300 mb-1">Valor potencial mensal</p>
-          <p className="text-4xl font-bold text-emerald-400">
+        <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-600/15 to-emerald-500/5 border border-emerald-500/30">
+          <p className="text-sm text-emerald-600 mb-1">Valor potencial mensal</p>
+          <p className="text-4xl font-bold text-emerald-600">
             R$ {result.valorPotencialMensal.toFixed(0)}
           </p>
-          <p className="text-xs text-emerald-300/70 mt-1">
+          <p className="text-xs text-emerald-600/60 mt-1">
             em benefícios que você pode receber
           </p>
         </div>
@@ -258,7 +257,7 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
       {/* Benefícios que já recebe */}
       {totalJaRecebe > 0 && (
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+          <h3 className="text-sm font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
             Você já recebe
           </h3>
           {result.beneficiosJaRecebe.map((b, i) => (
@@ -270,7 +269,7 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
       {/* Benefícios elegíveis - Agrupados por categoria */}
       {totalElegiveis > 0 && (
         <div className="space-y-6">
-          <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+          <h3 className="text-sm font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
             Benefícios disponíveis para você
           </h3>
 
@@ -295,7 +294,7 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
       {/* Inconclusivos */}
       {result.beneficiosInconclusivos.length > 0 && (
         <div className="space-y-3">
-          <h3 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+          <h3 className="text-sm font-medium text-[var(--text-tertiary)] uppercase tracking-wider">
             Verificar presencialmente
           </h3>
           {result.beneficiosInconclusivos.map((b, i) => (
@@ -307,11 +306,11 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
       {/* Próximos passos */}
       {result.proximosPassosPrioritarios.length > 0 && (
         <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30">
-          <h3 className="font-medium text-blue-300 mb-3">Próximos passos</h3>
+          <h3 className="font-medium text-blue-600 mb-3">Próximos passos</h3>
           <ol className="space-y-2">
             {result.proximosPassosPrioritarios.map((passo, i) => (
-              <li key={i} className="text-sm text-slate-300 flex gap-2">
-                <span className="text-blue-400 font-medium">{i + 1}.</span>
+              <li key={i} className="text-sm text-[var(--text-secondary)] flex gap-2">
+                <span className="text-blue-600 font-medium">{i + 1}.</span>
                 <span>{passo}</span>
               </li>
             ))}
@@ -321,11 +320,11 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
 
       {/* Documentos necessários */}
       {result.documentosNecessarios.length > 0 && (
-        <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
-          <h3 className="font-medium text-slate-300 mb-3">Documentos necessários</h3>
+        <div className="p-4 rounded-xl bg-[var(--badge-bg)] border border-[var(--border-color)]">
+          <h3 className="font-medium text-[var(--text-secondary)] mb-3">Documentos necessários</h3>
           <div className="flex flex-wrap gap-2">
             {result.documentosNecessarios.slice(0, 6).map((doc, i) => (
-              <span key={i} className="px-3 py-1 rounded-full bg-slate-700 text-sm text-slate-300">
+              <span key={i} className="px-3 py-1 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-sm text-[var(--text-secondary)]">
                 📄 {doc}
               </span>
             ))}
@@ -339,8 +338,8 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
           <div className="flex items-start gap-3">
             <span className="text-xl">💡</span>
             <div>
-              <p className="text-purple-300 font-medium text-sm">Dica</p>
-              <p className="text-purple-400/80 text-sm mt-1">
+              <p className="text-purple-600 font-medium text-sm">Dica</p>
+              <p className="text-purple-600/70 text-sm mt-1">
                 Seu estado e cidade podem ter benefícios adicionais! Informe sua localização na primeira etapa
                 para vermos programas estaduais e municipais disponíveis.
               </p>
@@ -371,15 +370,15 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         )}
         <button
           onClick={onReset}
-          className="w-full py-3 rounded-xl font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all"
+          className="w-full py-3 rounded-xl font-medium bg-[var(--badge-bg)] text-[var(--text-secondary)] hover:bg-[var(--hover-bg)] transition-all"
         >
           Fazer nova consulta
         </button>
       </div>
 
       {/* Footer informativo */}
-      <div className="text-center pt-4 border-t border-slate-800">
-        <p className="text-xs text-slate-500">
+      <div className="text-center pt-4 border-t border-[var(--border-color)]">
+        <p className="text-xs text-[var(--text-tertiary)]">
           Análise baseada nas informações fornecidas.
           Confirme presencialmente no CRAS ou órgão responsável.
         </p>

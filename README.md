@@ -75,7 +75,8 @@ npm install && npm run dev    # http://localhost:3000
 - `/` - Landing page
 - `/descobrir` - Wizard de elegibilidade
 - `/beneficios` - Catálogo navegável (229 benefícios)
-- `/beneficios/:id` - Detalhe do benefício
+- `/beneficios/:id` - Detalhe do benefício (com base legal)
+- `/beneficios/:id/verificar` - Verificador de elegibilidade individual
 
 ## Qualidade e Testes
 
@@ -122,6 +123,8 @@ cd android && ./gradlew test
 - **Filtro por estado**: Todos os 27 estados brasileiros
 - **Busca por texto**: Nome do benefício, descrição ou categoria
 - **Motor de elegibilidade**: Avaliação automática baseada no perfil
+- **Tema claro**: Páginas públicas com tema claro (CSS custom properties); admin permanece dark
+- **Base legal**: Referências a leis e decretos nos benefícios federais (com links para planalto.gov.br)
 - **PWA**: Instalável como app no celular
 
 ### Wizard de Triagem de Elegibilidade

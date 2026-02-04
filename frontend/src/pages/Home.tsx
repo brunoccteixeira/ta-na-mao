@@ -19,18 +19,18 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 z-50">
+      <header className="fixed top-0 left-0 right-0 bg-[var(--bg-header)] backdrop-blur-sm border-b border-[var(--border-color)] z-50">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold text-emerald-400">
+          <Link to="/" className="text-xl font-bold text-emerald-600">
             Tá na Mão
           </Link>
           <nav className="flex gap-4">
-            <Link to="/beneficios" className="text-slate-300 hover:text-white text-sm">
+            <Link to="/beneficios" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm">
               Catálogo
             </Link>
-            <Link to="/sobre" className="text-slate-300 hover:text-white text-sm">
+            <Link to="/sobre" className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm">
               Sobre
             </Link>
           </nav>
@@ -41,10 +41,10 @@ export default function Home() {
       <main className="pt-24 pb-16 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <div className="text-5xl mb-6">🤝</div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
             Descubra seus direitos<br />em 3 minutos
           </h1>
-          <p className="text-lg text-slate-400 mb-8">
+          <p className="text-lg text-[var(--text-tertiary)] mb-8">
             Benefícios federais, estaduais e setoriais<br />
             em um só lugar.
           </p>
@@ -59,34 +59,34 @@ export default function Home() {
 
         {/* Como funciona */}
         <div className="max-w-3xl mx-auto mt-20">
-          <h2 className="text-xl font-semibold text-white text-center mb-8">
+          <h2 className="text-xl font-semibold text-[var(--text-primary)] text-center mb-8">
             Como funciona
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
-              <div className="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="w-12 h-12 rounded-full bg-emerald-600/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📋</span>
               </div>
-              <h3 className="font-medium text-white mb-2">1. Responda perguntas</h3>
-              <p className="text-sm text-slate-400">
+              <h3 className="font-medium text-[var(--text-primary)] mb-2">1. Responda perguntas</h3>
+              <p className="text-sm text-[var(--text-tertiary)]">
                 Algumas perguntas simples sobre você e sua família
               </p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
-              <div className="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="w-12 h-12 rounded-full bg-emerald-600/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">✨</span>
               </div>
-              <h3 className="font-medium text-white mb-2">2. Veja os benefícios</h3>
-              <p className="text-sm text-slate-400">
+              <h3 className="font-medium text-[var(--text-primary)] mb-2">2. Veja os benefícios</h3>
+              <p className="text-sm text-[var(--text-tertiary)]">
                 Descobrimos todos os programas que você pode ter direito
               </p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-slate-800/50 border border-slate-700">
-              <div className="w-12 h-12 rounded-full bg-emerald-600/20 flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="w-12 h-12 rounded-full bg-emerald-600/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">📍</span>
               </div>
-              <h3 className="font-medium text-white mb-2">3. Saiba como pedir</h3>
-              <p className="text-sm text-slate-400">
+              <h3 className="font-medium text-[var(--text-primary)] mb-2">3. Saiba como pedir</h3>
+              <p className="text-sm text-[var(--text-tertiary)]">
                 Te mostramos onde ir e quais documentos levar
               </p>
             </div>
@@ -95,20 +95,20 @@ export default function Home() {
 
         {/* Badges */}
         <div className="max-w-lg mx-auto mt-12 flex justify-center gap-4 flex-wrap">
-          <span className="px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+          <span className="px-4 py-2 rounded-full bg-[var(--badge-bg)] text-[var(--text-secondary)] text-sm">
             ✅ Grátis
           </span>
-          <span className="px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+          <span className="px-4 py-2 rounded-full bg-[var(--badge-bg)] text-[var(--text-secondary)] text-sm">
             ✅ Sem cadastro
           </span>
-          <span className="px-4 py-2 rounded-full bg-slate-800 text-slate-300 text-sm">
+          <span className="px-4 py-2 rounded-full bg-[var(--badge-bg)] text-[var(--text-secondary)] text-sm">
             ✅ Sem senha Gov.br
           </span>
         </div>
 
         {/* Benefícios populares */}
         <div className="max-w-4xl mx-auto mt-20">
-          <h2 className="text-xl font-semibold text-white text-center mb-8">
+          <h2 className="text-xl font-semibold text-[var(--text-primary)] text-center mb-8">
             Principais benefícios
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -116,11 +116,11 @@ export default function Home() {
               <Link
                 key={benefit.id}
                 to={`/beneficios/${benefit.id}`}
-                className="p-4 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 hover:bg-slate-800 transition-all"
+                className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-emerald-500/50 hover:bg-[var(--hover-bg)] transition-all"
               >
                 <span className="text-2xl">{benefit.icon}</span>
-                <h3 className="font-medium text-white mt-2">{benefit.name}</h3>
-                <p className="text-xs text-slate-400 mt-1">{benefit.desc}</p>
+                <h3 className="font-medium text-[var(--text-primary)] mt-2">{benefit.name}</h3>
+                <p className="text-xs text-[var(--text-tertiary)] mt-1">{benefit.desc}</p>
               </Link>
             ))}
           </div>
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="text-center mt-6">
             <Link
               to="/beneficios"
-              className="text-emerald-400 hover:text-emerald-300 text-sm"
+              className="text-emerald-600 hover:text-emerald-500 text-sm"
             >
               Ver todos os {stats.totalBenefits} benefícios →
             </Link>
@@ -137,31 +137,31 @@ export default function Home() {
 
         {/* Cobertura */}
         <div className="max-w-2xl mx-auto mt-20 text-center">
-          <h2 className="text-lg font-semibold text-white mb-6">
+          <h2 className="text-lg font-semibold text-[var(--text-primary)] mb-6">
             📍 Cobertura nacional
           </h2>
           <div className="grid grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
-              <div className="text-2xl font-bold text-emerald-400">
+            <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="text-2xl font-bold text-emerald-600">
                 {stats.federalCount}
               </div>
-              <div className="text-xs text-slate-400 mt-1">
+              <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Benefícios federais
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
-              <div className="text-2xl font-bold text-emerald-400">
+            <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="text-2xl font-bold text-emerald-600">
                 {stats.statesWithBenefits}
               </div>
-              <div className="text-xs text-slate-400 mt-1">
+              <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Estados cobertos
               </div>
             </div>
-            <div className="p-4 rounded-xl bg-slate-800/50 border border-slate-700">
-              <div className="text-2xl font-bold text-emerald-400">
+            <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
+              <div className="text-2xl font-bold text-emerald-600">
                 {stats.sectoralCount}
               </div>
-              <div className="text-xs text-slate-400 mt-1">
+              <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Benefícios setoriais
               </div>
             </div>
@@ -170,12 +170,12 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 py-8 px-4">
+      <footer className="border-t border-[var(--border-color)] py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-slate-500 text-sm">
+          <p className="text-[var(--text-tertiary)] text-sm">
             Este site apenas informa sobre elegibilidade. Não entregamos benefícios diretamente.
           </p>
-          <p className="text-slate-600 text-xs mt-2">
+          <p className="text-[var(--text-tertiary)] text-xs mt-2 opacity-60">
             Tá na Mão © 2024 - Feito para ajudar
           </p>
         </div>

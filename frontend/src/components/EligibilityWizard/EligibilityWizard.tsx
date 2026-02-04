@@ -133,11 +133,11 @@ export default function EligibilityWizard({
       {/* Progress bar */}
       {currentStep !== 'result' && (
         <div className="mb-6">
-          <div className="flex justify-between text-xs text-slate-500 mb-2">
+          <div className="flex justify-between text-xs text-[var(--text-tertiary)] mb-2">
             <span>{STEP_TITLES[currentStep]}</span>
             <span>{currentStepIndex + 1} de {WIZARD_STEPS.length - 1}</span>
           </div>
-          <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+          <div className="h-2 bg-[var(--border-color)] rounded-full overflow-hidden">
             <div
               className="h-full bg-emerald-500 transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -148,13 +148,13 @@ export default function EligibilityWizard({
 
       {/* Error message */}
       {error && (
-        <div className="mb-4 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+        <div className="mb-4 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 text-sm">
           {error}
         </div>
       )}
 
       {/* Steps */}
-      <div className="bg-slate-900/50 rounded-2xl p-6 border border-slate-800">
+      <div className="bg-[var(--bg-card)] rounded-2xl p-6 border border-[var(--border-color)]">
         {currentStep === 'basic' && (
           <BasicInfoStep
             profile={profile}

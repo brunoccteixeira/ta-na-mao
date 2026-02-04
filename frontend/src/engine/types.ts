@@ -12,6 +12,15 @@ export type ValueType = 'monthly' | 'annual' | 'one_time';
 
 export type RuleOperator = 'lte' | 'gte' | 'lt' | 'gt' | 'eq' | 'neq' | 'in' | 'not_in' | 'has' | 'not_has';
 
+export type LegalBasisType = 'lei' | 'decreto' | 'portaria' | 'constituicao' | 'resolucao';
+
+export interface LegalReference {
+  type: LegalBasisType;
+  number: string;       // "14.601/2023"
+  description: string;  // "Lei do Bolsa Família"
+  url?: string;         // planalto.gov.br link
+}
+
 export interface EstimatedValue {
   type: ValueType;
   min?: number;
@@ -24,6 +33,7 @@ export interface EligibilityRule {
   operator: RuleOperator;
   value: unknown;
   description: string;
+  legalReference?: string;  // "Art. 3º, Lei 14.601/2023"
 }
 
 export interface Benefit {
@@ -47,6 +57,9 @@ export interface Benefit {
   whereToApply: string;
   documentsRequired: string[];
   howToApply?: string[];
+
+  // Legal basis
+  legalBasis?: { laws: LegalReference[] };
 
   // Metadata
   sourceUrl?: string;

@@ -4,9 +4,10 @@
  */
 
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Home, Eligibility, Catalog, BenefitDetail, About } from './pages';
+import BenefitChecker from './pages/BenefitChecker';
 import BrazilMap from './components/Map/BrazilMap';
 import ProgramSelector from './components/Dashboard/ProgramSelector';
 import NationalSummary from './components/Dashboard/NationalSummary';
@@ -168,6 +169,14 @@ function AdminDashboard({ onOpenChat, onOpenWizard }: { onOpenChat: () => void; 
   );
 }
 
+function PublicLayout() {
+  return (
+    <div className="theme-light">
+      <Outlet />
+    </div>
+  );
+}
+
 function WizardPage({ onBack }: { onBack: () => void }) {
   const handleComplete = (result: TriagemResult) => {
     console.log('Triagem completa:', result);
@@ -184,7 +193,7 @@ function WizardPage({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950 overflow-auto">
+    <div className="theme-dark fixed inset-0 z-50 bg-slate-950 overflow-auto">
       {/* Header */}
       <header className="sticky top-0 z-10 bg-slate-950/95 backdrop-blur border-b border-slate-800 p-4">
         <div className="max-w-md mx-auto flex items-center gap-3">
@@ -241,14 +250,17 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            {/* Public website routes */}
-            <Route path="/" element={<Home />} />
-            <Route path="/descobrir" element={<Eligibility />} />
-            <Route path="/beneficios" element={<Catalog />} />
-            <Route path="/beneficios/:id" element={<BenefitDetail />} />
-            <Route path="/sobre" element={<About />} />
+            {/* Public website routes — wrapped in light theme */}
+            <Route element={<PublicLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/descobrir" element={<Eligibility />} />
+              <Route path="/beneficios" element={<Catalog />} />
+              <Route path="/beneficios/:id" element={<BenefitDetail />} />
+              <Route path="/beneficios/:id/verificar" element={<BenefitChecker />} />
+              <Route path="/sobre" element={<About />} />
+            </Route>
 
-            {/* Admin dashboard */}
+            {/* Admin dashboard — stays dark */}
             <Route path="/admin" element={<AdminPage />} />
           </Routes>
         </BrowserRouter>

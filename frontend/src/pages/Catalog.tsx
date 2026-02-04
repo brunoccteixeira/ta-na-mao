@@ -136,15 +136,15 @@ export default function Catalog() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800 z-50">
+      <header className="fixed top-0 left-0 right-0 bg-[var(--bg-header)] backdrop-blur-sm border-b border-[var(--border-color)] z-50">
         <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold text-emerald-400">
+          <Link to="/" className="text-xl font-bold text-emerald-600">
             Tá na Mão
           </Link>
           <nav className="flex gap-4">
-            <Link to="/descobrir" className="text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+            <Link to="/descobrir" className="text-emerald-600 hover:text-emerald-500 text-sm font-medium">
               Descobrir meus direitos
             </Link>
           </nav>
@@ -154,10 +154,10 @@ export default function Catalog() {
       {/* Content */}
       <main className="pt-24 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-2xl font-bold text-white mb-2">
+          <h1 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
             Catálogo de Benefícios
           </h1>
-          <p className="text-slate-400 mb-8">
+          <p className="text-[var(--text-tertiary)] mb-8">
             {allBenefits.length} benefícios disponíveis em todo o Brasil
           </p>
 
@@ -170,9 +170,9 @@ export default function Catalog() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar benefício..."
-                className="w-full px-4 py-3 pl-10 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-4 py-3 pl-10 rounded-xl bg-[var(--input-bg)] border border-[var(--input-border)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)]">
                 🔍
               </span>
             </div>
@@ -186,7 +186,7 @@ export default function Catalog() {
                   className={`px-4 py-2 rounded-lg text-sm transition-colors ${
                     scopeFilter === scope
                       ? 'bg-emerald-600 text-white'
-                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      : 'bg-[var(--badge-bg)] text-[var(--text-secondary)] hover:bg-[var(--hover-bg)]'
                   }`}
                 >
                   {scope === 'all' ? 'Todos' : scopeLabel(scope)}
@@ -197,7 +197,7 @@ export default function Catalog() {
               <select
                 value={stateFilter}
                 onChange={(e) => setStateFilter(e.target.value)}
-                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="px-4 py-2 rounded-lg bg-[var(--input-bg)] text-[var(--text-secondary)] border border-[var(--input-border)] focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="">Todos os estados</option>
                 {Object.entries(BRAZILIAN_STATES).map(([code, name]) => (
@@ -210,7 +210,7 @@ export default function Catalog() {
           {/* Loading state */}
           {isLoading && (
             <div className="flex items-center justify-center py-12">
-              <div className="flex items-center gap-3 text-slate-400">
+              <div className="flex items-center gap-3 text-[var(--text-tertiary)]">
                 <div className="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
                 <span>Carregando benefícios...</span>
               </div>
@@ -220,7 +220,7 @@ export default function Catalog() {
           {/* Error state */}
           {isError && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 mb-6">
-              <p className="text-red-400 text-sm">
+              <p className="text-red-500 text-sm">
                 {error instanceof Error ? error.message : 'Erro ao carregar benefícios. Usando dados locais.'}
               </p>
             </div>
@@ -228,10 +228,10 @@ export default function Catalog() {
 
           {/* Results count */}
           {!isLoading && (
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-[var(--text-tertiary)] mb-4">
               {filteredBenefits.length} benefício{filteredBenefits.length !== 1 && 's'} encontrado{filteredBenefits.length !== 1 && 's'}
               {benefitsData?.total && benefitsData.total > filteredBenefits.length && (
-                <span className="text-slate-600"> (de {benefitsData.total} total)</span>
+                <span className="opacity-60"> (de {benefitsData.total} total)</span>
               )}
             </p>
           )}
@@ -239,7 +239,7 @@ export default function Catalog() {
           {/* Benefits grid by category */}
           {!isLoading && Object.entries(groupedBenefits).map(([category, benefits]) => (
             <div key={category} className="mb-8">
-              <h2 className="text-lg font-semibold text-white mb-4">
+              <h2 className="text-lg font-semibold text-[var(--text-primary)] mb-4">
                 {category}
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
@@ -247,31 +247,31 @@ export default function Catalog() {
                   <Link
                     key={benefit.id}
                     to={`/beneficios/${benefit.id}`}
-                    className="p-4 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-emerald-500/50 hover:bg-slate-800 transition-all"
+                    className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] hover:border-emerald-500/50 hover:bg-[var(--hover-bg)] transition-all"
                   >
                     <div className="flex items-start gap-3">
                       <span className="text-2xl">{benefit.icon || '📋'}</span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <h3 className="font-medium text-white truncate">
+                          <h3 className="font-medium text-[var(--text-primary)] truncate">
                             {benefit.name}
                           </h3>
                           <span className={`px-2 py-0.5 rounded text-xs ${
-                            benefit.scope === 'federal' ? 'bg-blue-500/20 text-blue-300' :
-                            benefit.scope === 'state' ? 'bg-purple-500/20 text-purple-300' :
-                            benefit.scope === 'municipal' ? 'bg-cyan-500/20 text-cyan-300' :
-                            'bg-amber-500/20 text-amber-300'
+                            benefit.scope === 'federal' ? 'bg-blue-500/20 text-blue-600' :
+                            benefit.scope === 'state' ? 'bg-purple-500/20 text-purple-600' :
+                            benefit.scope === 'municipal' ? 'bg-cyan-500/20 text-cyan-600' :
+                            'bg-amber-500/20 text-amber-600'
                           }`}>
                             {benefit.scope === 'state' ? benefit.state :
                              benefit.scope === 'municipal' ? getMunicipalityName(benefit.municipalityIbge) :
                              scopeLabel(benefit.scope)}
                           </span>
                         </div>
-                        <p className="text-sm text-slate-400 mt-1 line-clamp-2">
+                        <p className="text-sm text-[var(--text-tertiary)] mt-1 line-clamp-2">
                           {benefit.shortDescription}
                         </p>
                         {benefit.estimatedValue && (
-                          <p className="text-sm text-emerald-400 mt-2 font-medium">
+                          <p className="text-sm text-emerald-600 mt-2 font-medium">
                             {formatBenefitValue(benefit)}
                           </p>
                         )}
@@ -285,14 +285,14 @@ export default function Catalog() {
 
           {!isLoading && filteredBenefits.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-slate-500">Nenhum benefício encontrado</p>
+              <p className="text-[var(--text-tertiary)]">Nenhum benefício encontrado</p>
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setScopeFilter('all');
                   setStateFilter('');
                 }}
-                className="mt-4 text-emerald-400 hover:text-emerald-300"
+                className="mt-4 text-emerald-600 hover:text-emerald-500"
               >
                 Limpar filtros
               </button>

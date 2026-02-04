@@ -62,8 +62,8 @@ export default function SpecialStep({ profile, onUpdate, onNext, onBack, isLoadi
       {/* Header */}
       <div className="text-center">
         <div className="text-4xl mb-3">✨</div>
-        <h2 className="text-xl font-bold text-slate-100">Situações especiais</h2>
-        <p className="text-slate-400 mt-2">
+        <h2 className="text-xl font-bold text-[var(--text-primary)]">Situações especiais</h2>
+        <p className="text-[var(--text-tertiary)] mt-2">
           Marque o que se aplica à sua família
         </p>
       </div>
@@ -76,23 +76,23 @@ export default function SpecialStep({ profile, onUpdate, onNext, onBack, isLoadi
             onClick={() => handleToggle(option.key)}
             className={`w-full p-4 rounded-xl text-left transition-all flex items-center gap-4 ${
               profile[option.key]
-                ? 'bg-emerald-600/20 border-2 border-emerald-500'
-                : 'bg-slate-800 border-2 border-transparent hover:bg-slate-700'
+                ? 'bg-emerald-600/15 border-2 border-emerald-500'
+                : 'bg-[var(--input-bg)] border-2 border-transparent hover:bg-[var(--hover-bg)]'
             }`}
           >
             <div className="text-3xl">{option.icon}</div>
             <div className="flex-1">
               <p className={`font-medium ${
-                profile[option.key] ? 'text-emerald-300' : 'text-slate-200'
+                profile[option.key] ? 'text-emerald-600' : 'text-[var(--text-secondary)]'
               }`}>
                 {option.label}
               </p>
-              <p className="text-sm text-slate-400">{option.description}</p>
+              <p className="text-sm text-[var(--text-tertiary)]">{option.description}</p>
             </div>
             <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
               profile[option.key]
                 ? 'bg-emerald-500 border-emerald-500'
-                : 'border-slate-600'
+                : 'border-[var(--border-color)]'
             }`}>
               {profile[option.key] && (
                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -106,7 +106,7 @@ export default function SpecialStep({ profile, onUpdate, onNext, onBack, isLoadi
 
       {/* Info */}
       <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30">
-        <p className="text-sm text-blue-300">
+        <p className="text-sm text-blue-600">
           <span className="font-medium">Dica:</span> Essas informações ajudam a encontrar benefícios
           específicos para sua situação. Se nenhuma opção se aplica, pode continuar.
         </p>
@@ -117,7 +117,7 @@ export default function SpecialStep({ profile, onUpdate, onNext, onBack, isLoadi
         <button
           onClick={onBack}
           disabled={isLoading}
-          className="flex-1 py-4 rounded-xl font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all disabled:opacity-50"
+          className="flex-1 py-4 rounded-xl font-semibold bg-[var(--badge-bg)] text-[var(--text-secondary)] hover:bg-[var(--hover-bg)] transition-all disabled:opacity-50"
         >
           ← Voltar
         </button>

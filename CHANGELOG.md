@@ -2,6 +2,30 @@
 
 ## [Unreleased]
 
+### Added
+
+#### Tema Claro para Páginas Públicas
+- **Sistema de CSS custom properties** — `.theme-light` e `.theme-dark` wrappers via `index.css`
+- **`PublicLayout`** em `App.tsx` — Todas as 6 rotas públicas envolvidas em `.theme-light` via layout route
+- **Migração de 14 arquivos** de classes hardcoded dark (bg-slate-*, text-white, border-slate-*) para `var()` references
+  - Páginas: Home, Catalog, BenefitDetail, About, Eligibility
+  - Wizard: EligibilityWizard, BasicInfoStep, FamilyStep, IncomeStep, WorkStep, SpecialStep, RightsWallet
+- **Admin permanece dark** — `WizardPage` usa `.theme-dark` wrapper
+- Cores de acento (emerald, status colors) inalteradas — funcionam em ambos os temas
+
+#### Transparência Jurídica (Base Legal)
+- **Novos tipos** em `engine/types.ts`: `LegalBasisType`, `LegalReference`
+  - `legalReference?: string` em `EligibilityRule`
+  - `legalBasis?: { laws: LegalReference[] }` em `Benefit`
+- **Base legal de 10 benefícios federais** em `federal.json`:
+  - Bolsa Família (Lei 14.601/2023), BPC (Lei 8.742/1993 LOAS, CF/1988 Art. 203),
+    TSEE (Lei 12.212/2010), Farmácia Popular (Lei 10.858/2004), Auxílio Gás (Lei 14.237/2021),
+    MCMV (Lei 14.620/2023), Seguro-Desemprego (Lei 7.998/1990),
+    Dignidade Menstrual (Lei 14.214/2021), Passe Livre (Lei 8.899/1994)
+  - URLs do planalto.gov.br para cada lei/decreto
+- **Seção "Base legal"** em `BenefitDetail.tsx` — Cards com badge de tipo, número, descrição e link externo
+- **Referência legal expansível** em `CriterionCard.tsx` — Elemento `<details>` com ícone de balança quando `rule.legalReference` existe
+
 ## [1.6.0] - 2026-02-03 - Implementação Backend P2 + P3 (15 skills)
 
 ### Added
