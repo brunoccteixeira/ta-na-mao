@@ -11,6 +11,11 @@ import { useWizard } from '../WizardContext';
 import BenefitCard from './BenefitCard';
 import { evaluateAllBenefits } from '../../../engine/evaluator';
 import {
+  getBenefitsCatalog,
+  getBenefitsForState,
+  getBenefitsForMunicipality,
+} from '../../../engine/catalog';
+import {
   Gift,
   ArrowRight,
   MapPin,
@@ -25,7 +30,7 @@ import {
   Shield,
   Sparkles,
 } from 'lucide-react';
-import type { EvaluationSummary, CitizenProfile } from '../../../engine/types';
+import type { EvaluationSummary, CitizenProfile, Benefit } from '../../../engine/types';
 
 export default function ResultsDashboard() {
   const { profile, reset } = useWizard();
@@ -35,7 +40,7 @@ export default function ResultsDashboard() {
 
   // Run eligibility evaluation
   useEffect(() => {
-    const evaluate = async () => {
+    const evaluate = () => {
       setIsLoading(true);
       try {
         // Convert WizardProfile to CitizenProfile
@@ -47,7 +52,21 @@ export default function ResultsDashboard() {
           rendaFamiliarMensal: profile.rendaFamiliarMensal || 0,
         };
 
-        const summary = await evaluateAllBenefits(citizenProfile);
+        // Load benefits based on location
+        const catalog = getBenefitsCatalog();
+        let benefits: Benefit[];
+
+        if (citizenProfile.municipioIbge) {
+          benefits = getBenefitsForMunicipality(
+            catalog,
+            citizenProfile.estado,
+            citizenProfile.municipioIbge
+          );
+        } else {
+          benefits = getBenefitsForState(catalog, citizenProfile.estado);
+        }
+
+        const summary = evaluateAllBenefits(citizenProfile, benefits);
         setResults(summary);
       } catch (error) {
         console.error('Error evaluating benefits:', error);

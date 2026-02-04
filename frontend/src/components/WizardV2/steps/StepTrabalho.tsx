@@ -13,7 +13,7 @@ import { QUESTIONS, TRABALHO_OPTIONS, SETORIAL_OPTIONS } from '../../../data/que
 import { ArrowRight, Briefcase, Store, Wrench, Car, UserX, Heart, Home, GraduationCap } from 'lucide-react';
 
 export default function StepTrabalho() {
-  const { profile, updateProfile, nextStep } = useWizard();
+  const { updateProfile, nextStep } = useWizard();
   const [showExplanation, setShowExplanation] = useState(false);
   const [trabalho, setTrabalho] = useState<string | undefined>();
   const [setorial, setSetorial] = useState<string[]>([]);

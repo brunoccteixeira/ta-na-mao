@@ -317,8 +317,8 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
               <StatCard value={totalBenefits} suffix="+" label="Benefícios mapeados" />
+              <StatCard value={federalCount + sectoralCount} suffix="" label="Federais + Setoriais" />
               <StatCard value={statesCovered} suffix="" label="Estados cobertos" />
-              <StatCard value={5570} suffix="" label="Municípios" />
               <StatCard value={42} suffix=" bi" label="Não resgatados no Brasil" />
             </div>
 
