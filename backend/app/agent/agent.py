@@ -69,6 +69,62 @@ from app.agent.tools.acompanhante_digital import (
     registrar_atendimento,
     obter_orientacao_passo_a_passo
 )
+from app.agent.tools.alerta_golpes import (
+    verificar_golpe,
+    simular_orcamento,
+    consultar_educacao_financeira
+)
+from app.agent.tools.simulador_mei import (
+    simular_impacto_mei,
+    guia_formalizacao_mei
+)
+from app.services.score_vulnerabilidade import analisar_vulnerabilidade
+from app.agent.tools.rede_suas import (
+    classificar_necessidade_suas,
+    listar_equipamentos_suas
+)
+from app.services.legibilidade import auditar_texto
+from app.jobs.dados_abertos.orquestrador import consultar_dados_abertos
+from app.agent.tools.comandos_voz import (
+    mapear_comando_voz,
+    listar_comandos_voz,
+    configurar_voz
+)
+from app.agent.tools.orcamento_participativo import (
+    buscar_consultas_abertas,
+    explicar_proposta
+)
+from app.agent.tools.economia_solidaria import (
+    buscar_cooperativas,
+    buscar_feiras,
+    guia_criar_cooperativa
+)
+from app.services.relatorio_impacto import (
+    gerar_relatorio_impacto,
+    consultar_impacto_social
+)
+from app.services.indicadores_sociais import (
+    consultar_indicadores,
+    comparar_municipios
+)
+from app.services.dashboard_gestor import consultar_dashboard_gestor
+from app.services.mapa_social import (
+    listar_camadas,
+    consultar_mapa_social,
+    identificar_desertos
+)
+from app.services.pesquisa_campo import (
+    listar_questionarios,
+    registrar_resposta,
+    gerar_relatorio_pesquisa
+)
+from app.services.seguranca_cidada import (
+    registrar_consentimento,
+    revogar_consentimento,
+    exportar_dados,
+    excluir_dados,
+    consultar_politica_privacidade
+)
 
 logger = logging.getLogger(__name__)
 
@@ -921,6 +977,629 @@ TOOL_DECLARATIONS = [
             "required": ["tipo_servico"]
         }
     ),
+    # Tools de Educacao Financeira / Alerta de Golpes
+    FunctionDeclaration(
+        name="verificar_golpe",
+        description="Detecta possiveis golpes na mensagem do cidadao: PIX falso, emprestimo consignado, cadastro falso, piramide. USE quando cidadao mencionar: golpe, PIX, emprestimo, link, mensagem suspeita, promessa de dinheiro facil.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "type": "string",
+                    "description": "Mensagem ou descricao da situacao para analisar"
+                }
+            },
+            "required": ["mensagem"]
+        }
+    ),
+    FunctionDeclaration(
+        name="simular_orcamento",
+        description="Simula orcamento familiar simples. Mostra quanto sobra, se tem deficit e da dicas. USE quando cidadao perguntar sobre organizar dinheiro, orcamento, gastos, contas.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "renda_total": {
+                    "type": "number",
+                    "description": "Renda total mensal da familia (R$)"
+                },
+                "aluguel": {
+                    "type": "number",
+                    "description": "Valor do aluguel (R$)"
+                },
+                "alimentacao": {
+                    "type": "number",
+                    "description": "Gastos com alimentacao (R$)"
+                },
+                "transporte": {
+                    "type": "number",
+                    "description": "Gastos com transporte (R$)"
+                },
+                "contas": {
+                    "type": "number",
+                    "description": "Contas fixas: luz, agua, internet (R$)"
+                },
+                "outros": {
+                    "type": "number",
+                    "description": "Outros gastos (R$)"
+                }
+            },
+            "required": ["renda_total"]
+        }
+    ),
+    FunctionDeclaration(
+        name="consultar_educacao_financeira",
+        description="Retorna microlecoes de educacao financeira ou opcoes de microcredito. USE quando cidadao perguntar sobre: poupar, economizar, credito, emprestimo, investir, dinheiro.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "tema": {
+                    "type": "string",
+                    "description": "Tema: golpes, orcamento, poupanca, credito, microcredito"
+                }
+            },
+            "required": []
+        }
+    ),
+    # Tools de MEI
+    FunctionDeclaration(
+        name="simular_impacto_mei",
+        description="Simula impacto de virar MEI nos beneficios sociais. Responde: 'Se eu virar MEI, perco meu Bolsa Familia?'. USE quando cidadao mencionar: MEI, microempreendedor, abrir empresa, CNPJ, formalizar, perder beneficio.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "faturamento_estimado": {
+                    "type": "number",
+                    "description": "Faturamento mensal estimado como MEI (R$)"
+                },
+                "despesas_estimadas": {
+                    "type": "number",
+                    "description": "Despesas mensais do negocio (R$)"
+                },
+                "membros_familia": {
+                    "type": "integer",
+                    "description": "Numero de pessoas na familia"
+                },
+                "renda_familiar_atual": {
+                    "type": "number",
+                    "description": "Renda familiar total ATUAL sem MEI (R$)"
+                },
+                "beneficios_atuais": {
+                    "type": "array",
+                    "description": "Beneficios que recebe: BOLSA_FAMILIA, BPC, TSEE, FARMACIA_POPULAR",
+                    "items": {"type": "string"}
+                }
+            },
+            "required": ["faturamento_estimado"]
+        }
+    ),
+    FunctionDeclaration(
+        name="guia_formalizacao_mei",
+        description="Guia passo-a-passo para se formalizar como MEI em 5 passos. USE quando cidadao perguntar: como virar MEI, como abrir MEI, como formalizar.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    # Tool de Vulnerabilidade Preditiva
+    FunctionDeclaration(
+        name="analisar_vulnerabilidade",
+        description="Calcula score de vulnerabilidade social (0-100) e recomenda beneficios proativamente. USE quando tiver dados suficientes da familia para fazer triagem completa: renda, composicao familiar, moradia, trabalho.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "renda_per_capita": {
+                    "type": "number",
+                    "description": "Renda per capita mensal (R$)"
+                },
+                "membros_familia": {
+                    "type": "integer",
+                    "description": "Numero de pessoas na familia"
+                },
+                "criancas_0_6": {
+                    "type": "integer",
+                    "description": "Numero de criancas de 0-6 anos"
+                },
+                "gestantes": {
+                    "type": "integer",
+                    "description": "Numero de gestantes na familia"
+                },
+                "idosos_60_mais": {
+                    "type": "integer",
+                    "description": "Numero de idosos (60+ anos)"
+                },
+                "pessoas_com_deficiencia": {
+                    "type": "integer",
+                    "description": "Numero de pessoas com deficiencia"
+                },
+                "tipo_moradia": {
+                    "type": "string",
+                    "description": "propria, alugada, cedida, ocupacao, rua"
+                },
+                "trabalho_formal": {
+                    "type": "boolean",
+                    "description": "Se algum membro tem trabalho formal"
+                },
+                "desempregados": {
+                    "type": "integer",
+                    "description": "Numero de desempregados na familia"
+                },
+                "cadunico_atualizado": {
+                    "type": "boolean",
+                    "description": "Se o CadUnico esta atualizado"
+                }
+            },
+            "required": ["renda_per_capita", "membros_familia"]
+        }
+    ),
+    # Tools de Rede SUAS
+    FunctionDeclaration(
+        name="classificar_necessidade_suas",
+        description="Classifica necessidade do cidadao e indica equipamento SUAS correto: CRAS (basico), CREAS (violencia), Centro POP (rua), CAPS (saude mental), Conselho Tutelar (criancas). USE quando cidadao descrever situacao complexa que precisa de encaminhamento.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "mensagem": {
+                    "type": "string",
+                    "description": "Mensagem do cidadao descrevendo sua necessidade"
+                },
+                "tem_criancas": {
+                    "type": "boolean",
+                    "description": "Se ha criancas envolvidas"
+                },
+                "idoso": {
+                    "type": "boolean",
+                    "description": "Se envolve idoso"
+                },
+                "situacao_rua": {
+                    "type": "boolean",
+                    "description": "Se esta em situacao de rua"
+                }
+            },
+            "required": ["mensagem"]
+        }
+    ),
+    FunctionDeclaration(
+        name="listar_equipamentos_suas",
+        description="Lista equipamentos da Rede SUAS com servicos oferecidos. USE quando cidadao perguntar: o que eh CRAS, o que eh CREAS, onde buscar ajuda, servicos de assistencia social.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "tipo": {
+                    "type": "string",
+                    "description": "Tipo especifico: CRAS, CREAS, CENTRO_POP, CAPS, CONSELHO_TUTELAR. Se nao informado, lista todos."
+                }
+            },
+            "required": []
+        }
+    ),
+    # Tool de Auditoria de Legibilidade
+    FunctionDeclaration(
+        name="auditar_texto",
+        description="Audita acessibilidade textual: calcula legibilidade (Flesch portugues), detecta jargoes governamentais e sugere linguagem simples. USE internamente para verificar se textos gerados estao acessiveis.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "texto": {
+                    "type": "string",
+                    "description": "Texto para auditar"
+                }
+            },
+            "required": ["texto"]
+        }
+    ),
+    # Tool de Dados Abertos
+    FunctionDeclaration(
+        name="consultar_dados_abertos",
+        description="Consulta dados abertos de beneficios sociais: total de beneficiarios, valores pagos por programa e municipio. USE quando cidadao perguntar: quantas pessoas recebem Bolsa Familia, dados do meu municipio, estatisticas de beneficios.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "programa": {
+                    "type": "string",
+                    "description": "Programa: BOLSA_FAMILIA, BPC, TSEE, FARMACIA_POPULAR, AUXILIO_GAS, SEGURO_DEFESO"
+                },
+                "mes": {
+                    "type": "integer",
+                    "description": "Mes de referencia (1-12)"
+                },
+                "ano": {
+                    "type": "integer",
+                    "description": "Ano de referencia"
+                }
+            },
+            "required": []
+        }
+    ),
+    # === P3 TOOLS ===
+    # Tools de Comandos de Voz
+    FunctionDeclaration(
+        name="mapear_comando_voz",
+        description="Mapeia transcricao de voz para intencao do sistema. Recebe texto do Web Speech API e identifica acao. USE quando cidadao usar entrada por voz.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "transcricao": {
+                    "type": "string",
+                    "description": "Texto transcrito do audio do cidadao"
+                }
+            },
+            "required": ["transcricao"]
+        }
+    ),
+    FunctionDeclaration(
+        name="listar_comandos_voz",
+        description="Lista comandos de voz disponiveis com exemplos. USE quando cidadao perguntar o que pode fazer por voz.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="configurar_voz",
+        description="Retorna configuracoes de voz recomendadas para o frontend (Web Speech API). USE internamente para configurar acessibilidade por voz.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    # Tools de Orcamento Participativo
+    FunctionDeclaration(
+        name="buscar_consultas_abertas",
+        description="Busca consultas de orcamento participativo abertas (federal, estadual, municipal). USE quando cidadao perguntar: 'como participar do orcamento?', 'onde votar?', 'orcamento participativo', 'consulta popular'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Codigo IBGE do municipio (7 digitos)"
+                },
+                "uf": {
+                    "type": "string",
+                    "description": "Sigla do estado (2 letras)"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="explicar_proposta",
+        description="Explica uma proposta de orcamento participativo em linguagem simples. USE quando cidadao quiser entender o que uma proposta significa.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "titulo": {
+                    "type": "string",
+                    "description": "Titulo ou descricao da proposta"
+                },
+                "valor": {
+                    "type": "number",
+                    "description": "Valor destinado (R$)"
+                }
+            },
+            "required": ["titulo"]
+        }
+    ),
+    # Tools de Economia Solidaria
+    FunctionDeclaration(
+        name="buscar_cooperativas",
+        description="Busca cooperativas e empreendimentos solidarios. USE quando cidadao perguntar: 'cooperativa', 'trabalho coletivo', 'economia solidaria', 'banco comunitario', 'moeda social'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Codigo IBGE do municipio"
+                },
+                "uf": {
+                    "type": "string",
+                    "description": "Sigla do estado"
+                },
+                "tipo": {
+                    "type": "string",
+                    "description": "Tipo: trabalho, producao, servicos, catadores, habitacao"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="buscar_feiras",
+        description="Busca feiras solidarias e da agricultura familiar. USE quando cidadao perguntar: 'feira', 'feira organica', 'feira do produtor', 'comprar direto do agricultor'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Codigo IBGE do municipio"
+                },
+                "dia_semana": {
+                    "type": "string",
+                    "description": "Dia da semana: segunda, terca, quarta, quinta, sexta, sabado, domingo"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="guia_criar_cooperativa",
+        description="Guia passo a passo para criar uma cooperativa em 6 passos. USE quando cidadao perguntar: 'como criar cooperativa', 'montar cooperativa', 'trabalho cooperativo'.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    # Tools de Relatorio de Impacto
+    FunctionDeclaration(
+        name="gerar_relatorio_impacto",
+        description="Gera relatorio de impacto social anonimizado (LGPD). Para gestores, parceiros e investidores. USE quando gestor perguntar: 'relatorio de impacto', 'metricas da plataforma', 'numeros do projeto'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "mes": {
+                    "type": "integer",
+                    "description": "Mes de referencia (1-12)"
+                },
+                "ano": {
+                    "type": "integer",
+                    "description": "Ano de referencia"
+                },
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Filtrar por municipio (codigo IBGE)"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="consultar_impacto_social",
+        description="Consulta metricas de impacto social da plataforma por categoria: acesso, financeiro, inclusao, eficiencia. USE quando gestor perguntar sobre resultados da plataforma.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "tipo": {
+                    "type": "string",
+                    "description": "Tipo: acesso, financeiro, inclusao, eficiencia"
+                }
+            },
+            "required": []
+        }
+    ),
+    # Tools de Indicadores Sociais
+    FunctionDeclaration(
+        name="consultar_indicadores",
+        description="Consulta indicadores sociais de um municipio: populacao, renda, IDH, Gini, pobreza, saneamento. USE quando gestor perguntar: 'dados do municipio', 'indicadores sociais', 'IDH', 'taxa de pobreza'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Codigo IBGE do municipio (7 digitos)"
+                },
+                "indicador": {
+                    "type": "string",
+                    "description": "Indicador especifico: populacao, renda, idhm, gini, pobreza, saneamento"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="comparar_municipios",
+        description="Compara indicadores entre municipios (2 a 5). USE quando gestor quiser comparar cidades.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "lista_ibge": {
+                    "type": "array",
+                    "description": "Lista de codigos IBGE dos municipios a comparar",
+                    "items": {"type": "string"}
+                }
+            },
+            "required": ["lista_ibge"]
+        }
+    ),
+    # Tool de Dashboard do Gestor
+    FunctionDeclaration(
+        name="consultar_dashboard_gestor",
+        description="Painel do gestor municipal: visao geral, lacunas de cobertura, benchmark com similares. USE quando secretario de assistencia social perguntar: 'painel do municipio', 'como esta meu municipio?', 'lacunas de cobertura'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Codigo IBGE do municipio"
+                },
+                "modulo": {
+                    "type": "string",
+                    "description": "Modulo: visao_geral, lacunas, benchmark"
+                }
+            },
+            "required": ["municipio_ibge"]
+        }
+    ),
+    # Tools de Mapa Social
+    FunctionDeclaration(
+        name="listar_camadas",
+        description="Lista camadas disponiveis para o mapa social: indicadores, equipamentos SUAS, desertos sociais. USE quando gestor quiser visualizar dados no mapa.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="consultar_mapa_social",
+        description="Consulta dados de uma camada do mapa social: IDH, pobreza, CRAS, desertos de assistencia. USE quando gestor pedir mapa ou visualizacao geoespacial.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "camada": {
+                    "type": "string",
+                    "description": "ID da camada: idh_m, taxa_pobreza, cobertura_bf, gini, saneamento, cras, creas, deserto_social"
+                },
+                "uf": {
+                    "type": "string",
+                    "description": "Filtrar por estado"
+                },
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Filtrar por municipio"
+                }
+            },
+            "required": ["camada"]
+        }
+    ),
+    FunctionDeclaration(
+        name="identificar_desertos",
+        description="Identifica desertos de assistencia social: municipios com ratio familias/CRAS acima do recomendado. USE quando gestor perguntar: 'onde faltam CRAS?', 'cobertura SUAS', 'desertos sociais'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uf": {
+                    "type": "string",
+                    "description": "Filtrar por estado"
+                }
+            },
+            "required": []
+        }
+    ),
+    # Tools de Pesquisa de Campo
+    FunctionDeclaration(
+        name="listar_questionarios",
+        description="Lista questionarios de pesquisa disponiveis: satisfacao, necessidades, atendimento CRAS. USE quando quiser coletar feedback do cidadao.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="registrar_resposta",
+        description="Registra resposta de questionario (100% anonima, sem CPF). USE para coletar pesquisa de satisfacao ou necessidades.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "questionario_id": {
+                    "type": "string",
+                    "description": "ID do questionario: satisfacao, necessidades, atendimento_cras"
+                },
+                "respostas": {
+                    "type": "object",
+                    "description": "Dict com respostas (chave: id da pergunta, valor: resposta)"
+                },
+                "canal": {
+                    "type": "string",
+                    "description": "Canal: app, web, whatsapp, presencial"
+                },
+                "municipio_ibge": {
+                    "type": "string",
+                    "description": "Municipio (opcional, para agregacao)"
+                }
+            },
+            "required": ["questionario_id", "respostas"]
+        }
+    ),
+    FunctionDeclaration(
+        name="gerar_relatorio_pesquisa",
+        description="Gera relatorio agregado de pesquisa (minimo 10 respostas para anonimato). USE quando gestor quiser ver resultados de pesquisa.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "questionario_id": {
+                    "type": "string",
+                    "description": "ID do questionario: satisfacao, necessidades, atendimento_cras"
+                }
+            },
+            "required": ["questionario_id"]
+        }
+    ),
+    # Tools de Seguranca / LGPD
+    FunctionDeclaration(
+        name="registrar_consentimento",
+        description="Registra consentimento do cidadao para uma finalidade (LGPD). USE antes de acessar dados pessoais.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao (sera hasheado)"
+                },
+                "finalidade": {
+                    "type": "string",
+                    "description": "Finalidade: consulta_beneficio, elegibilidade, farmacia, encaminhamento_cras, pesquisa"
+                },
+                "canal": {
+                    "type": "string",
+                    "description": "Canal: app, whatsapp, web"
+                }
+            },
+            "required": ["cpf", "finalidade"]
+        }
+    ),
+    FunctionDeclaration(
+        name="revogar_consentimento",
+        description="Revoga consentimento do cidadao. USE quando cidadao pedir: 'revogar minha permissao', 'nao autorizo mais'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao"
+                },
+                "finalidade": {
+                    "type": "string",
+                    "description": "Finalidade especifica ou vazio para revogar todas"
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    FunctionDeclaration(
+        name="exportar_dados",
+        description="Exporta todos os dados do cidadao (portabilidade LGPD Art. 18). USE quando cidadao perguntar: 'quais dados voces tem sobre mim?', 'meus dados'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao"
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    FunctionDeclaration(
+        name="excluir_dados",
+        description="Exclui todos os dados do cidadao (direito ao esquecimento LGPD Art. 18). USE quando cidadao pedir: 'apaguem meus dados', 'deletar minha conta'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "cpf": {
+                    "type": "string",
+                    "description": "CPF do cidadao"
+                },
+                "confirmar": {
+                    "type": "boolean",
+                    "description": "Se True, executa a exclusao. Sem confirmacao, mostra aviso."
+                }
+            },
+            "required": ["cpf"]
+        }
+    ),
+    FunctionDeclaration(
+        name="consultar_politica_privacidade",
+        description="Retorna politica de privacidade em linguagem simples. USE quando cidadao perguntar: 'meus dados estao seguros?', 'politica de privacidade', 'LGPD'.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
 ]
 
 # Mapeamento de funcoes para execucao
@@ -975,6 +1654,56 @@ TOOL_FUNCTIONS = {
     "gerar_checklist_pre_visita": gerar_checklist_pre_visita,
     "registrar_atendimento": registrar_atendimento,
     "obter_orientacao_passo_a_passo": obter_orientacao_passo_a_passo,
+    # Tools de Educacao Financeira / Alerta de Golpes
+    "verificar_golpe": verificar_golpe,
+    "simular_orcamento": simular_orcamento,
+    "consultar_educacao_financeira": consultar_educacao_financeira,
+    # Tools de MEI
+    "simular_impacto_mei": simular_impacto_mei,
+    "guia_formalizacao_mei": guia_formalizacao_mei,
+    # Tool de Vulnerabilidade Preditiva
+    "analisar_vulnerabilidade": analisar_vulnerabilidade,
+    # Tools de Rede SUAS
+    "classificar_necessidade_suas": classificar_necessidade_suas,
+    "listar_equipamentos_suas": listar_equipamentos_suas,
+    # Tool de Auditoria de Legibilidade
+    "auditar_texto": auditar_texto,
+    # Tool de Dados Abertos
+    "consultar_dados_abertos": consultar_dados_abertos,
+    # === P3 TOOLS ===
+    # Tools de Comandos de Voz
+    "mapear_comando_voz": mapear_comando_voz,
+    "listar_comandos_voz": listar_comandos_voz,
+    "configurar_voz": configurar_voz,
+    # Tools de Orcamento Participativo
+    "buscar_consultas_abertas": buscar_consultas_abertas,
+    "explicar_proposta": explicar_proposta,
+    # Tools de Economia Solidaria
+    "buscar_cooperativas": buscar_cooperativas,
+    "buscar_feiras": buscar_feiras,
+    "guia_criar_cooperativa": guia_criar_cooperativa,
+    # Tools de Relatorio de Impacto
+    "gerar_relatorio_impacto": gerar_relatorio_impacto,
+    "consultar_impacto_social": consultar_impacto_social,
+    # Tools de Indicadores Sociais
+    "consultar_indicadores": consultar_indicadores,
+    "comparar_municipios": comparar_municipios,
+    # Tool de Dashboard do Gestor
+    "consultar_dashboard_gestor": consultar_dashboard_gestor,
+    # Tools de Mapa Social
+    "listar_camadas": listar_camadas,
+    "consultar_mapa_social": consultar_mapa_social,
+    "identificar_desertos": identificar_desertos,
+    # Tools de Pesquisa de Campo
+    "listar_questionarios": listar_questionarios,
+    "registrar_resposta": registrar_resposta,
+    "gerar_relatorio_pesquisa": gerar_relatorio_pesquisa,
+    # Tools de Seguranca / LGPD
+    "registrar_consentimento": registrar_consentimento,
+    "revogar_consentimento": revogar_consentimento,
+    "exportar_dados": exportar_dados,
+    "excluir_dados": excluir_dados,
+    "consultar_politica_privacidade": consultar_politica_privacidade,
 }
 
 
