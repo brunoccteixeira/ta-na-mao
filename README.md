@@ -81,7 +81,7 @@ npm install && npm run dev    # http://localhost:3000
 
 O projeto possui testes automatizados em todas as plataformas:
 
-- **Backend**: pytest com cobertura completa (programs, aggregations, agent)
+- **Backend**: 731 testes pytest (tools, services, routers, agent)
 - **Frontend**: Vitest + React Testing Library
 - **Android**: JUnit + MockK + Turbine para ViewModels
 
@@ -135,12 +135,43 @@ cd android && ./gradlew test
 - Botão FAB 🎯 "Descobrir Direitos" integrado ao app
 - Reduz tempo de atendimento CRAS de 2h para 30min
 
-### Chat com Agente IA
+### Chat com Agente IA (~70 tools)
+
+**Benefícios e Consultas:**
 - Verificação de elegibilidade para benefícios
 - Geração de checklist de documentos
 - Busca de CRAS e farmácias próximas
 - Consulta de dinheiro esquecido (PIS/PASEP, SVR, FGTS)
 - Visão consolidada de dados do usuário (meus dados)
+- Consulta CadÚnico e verificação de atualização
+- Direitos trabalhistas, cálculo de rescisão e seguro-desemprego
+- Integração Gov.br (auto-preenchimento, níveis de conta)
+
+**Proteção e Segurança:**
+- Detecção de urgência (violência, fome, desabrigo, ideação suicida)
+- Rede de proteção social (CREAS, CAPS, SAMU, Centro POP, CVV)
+- Classificação SUAS e roteamento para equipamento correto
+- Alerta de golpes (PIX falso, pirâmide, empréstimo consignado)
+- LGPD: consentimento granular, portabilidade e exclusão de dados
+
+**Planejamento Financeiro:**
+- Simulador de orçamento familiar
+- Simulador de impacto MEI nos benefícios
+- Educação financeira e microcrédito
+- Score de vulnerabilidade preditiva (0-100)
+
+**Gestores e Dados Públicos:**
+- Dashboard municipal (KPIs, lacunas de cobertura, benchmark)
+- Indicadores sociais (IDH, Gini, pobreza) via IBGE/IPEA
+- Mapa social com desertos de assistência
+- Relatórios de impacto ESG anonimizados
+- Pipeline ETL de dados abertos governamentais
+
+**Participação Cidadã:**
+- Orçamento participativo (federal, estadual, municipal)
+- Economia solidária (cooperativas, feiras, moedas sociais)
+- Pesquisa de campo (questionários anônimos + NPS)
+- Acessibilidade por voz (comandos mapeados para intenções)
 
 ### Perfil do Usuário
 - Estatísticas de benefícios e consultas
@@ -184,10 +215,14 @@ Ta na Mao/
 │
 ├── backend/              # API Python/FastAPI
 │   ├── app/
+│   │   ├── agent/        # Agente IA (Gemini 2.0 Flash)
+│   │   │   ├── tools/    # ~40 tools (benefícios, golpes, MEI, voz, etc.)
+│   │   │   └── prompts.py
 │   │   ├── routers/      # Endpoints REST
 │   │   ├── models/       # SQLAlchemy models
-│   │   ├── services/     # Agent, tools
-│   │   └── jobs/         # Scripts de ingestão
+│   │   ├── services/     # Indicadores, mapa, LGPD, vulnerabilidade
+│   │   └── jobs/         # ETL dados abertos
+│   ├── tests/            # 731 testes (pytest)
 │   └── docs/             # Documentação Backend
 │
 ├── frontend/             # Website MVP + Dashboard

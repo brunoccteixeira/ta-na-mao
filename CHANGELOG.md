@@ -2,6 +2,106 @@
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-02-03 - Implementação Backend P2 + P3 (15 skills)
+
+### Added
+
+#### P2 — Prioridade Média (6 skills implementadas)
+
+- **educacao-financeira** (`alerta_golpes.py`) — 3 tools, 19 testes
+  - `verificar_golpe()` — Detecta 5 tipos de golpes comuns (PIX falso, empréstimo consignado, cadastro falso, pirâmide, falso benefício)
+  - `simular_orcamento()` — Simulador de orçamento familiar com alertas e orientações
+  - `consultar_educacao_financeira()` — Micro-lições financeiras e opções de microcrédito (CrediAmigo, Agroamigo, PRONAF)
+
+- **mei-simplificado** (`simulador_mei.py`) — 2 tools, 19 testes
+  - `simular_impacto_mei()` — Simula impacto de formalização MEI em cada benefício (BF, BPC, TSEE, Farmácia Popular)
+  - `guia_formalizacao_mei()` — Guia em 5 passos para se tornar MEI
+
+- **vulnerabilidade-preditiva** (`score_vulnerabilidade.py`) — 1 tool, 16 testes
+  - `analisar_vulnerabilidade()` — Score 0-100 em 6 dimensões (renda 30%, composição 20%, moradia 15%, trabalho 15%, proteção 10%, território 10%)
+  - Faixas: BAIXO (0-25), MODERADO (26-50), ALTO (51-75), CRITICO (76-100)
+  - Recomendações proativas de benefícios baseadas no perfil
+
+- **rede-suas** (`rede_suas.py`) — 2 tools, 23 testes
+  - `classificar_necessidade_suas()` — Roteamento por keywords para CRAS, CREAS, Centro POP, CAPS, Conselho Tutelar
+  - `listar_equipamentos_suas()` — Informações dos equipamentos SUAS com serviços oferecidos
+
+- **a11y-auditor** (`legibilidade.py`) — 1 tool, 19 testes
+  - `auditar_texto()` — Índice Flesch adaptado para português (meta ≥60), detecção de 22 jargões governamentais com substituições em linguagem simples
+
+- **dados-abertos** (`jobs/dados_abertos/`) — 1 tool, 22 testes
+  - Pipeline ETL: Extrator → Transformador → Carregador → Orquestrador
+  - `consultar_dados_abertos()` — Dados públicos de 6 programas (BF, BPC, TSEE, Farmácia Popular, Auxílio Gás, Seguro Defeso)
+  - Agenda de atualização e alertas de qualidade de dados
+
+#### P3 — Prioridade Futura (9 skills implementadas)
+
+- **voz-acessivel** (`comandos_voz.py`) — 3 tools, 16 testes
+  - `mapear_comando_voz()` — Mapeamento de 7 comandos de voz (regex) para intenções do sistema
+  - `listar_comandos_voz()` — Lista comandos disponíveis
+  - `configurar_voz()` — Configurações Web Speech API (pt-BR, rate=0.85)
+
+- **orcamento-participativo** (`orcamento_participativo.py`) — 2 tools, 13 testes
+  - `buscar_consultas_abertas()` — Consultas participativas federais, estaduais e municipais
+  - `explicar_proposta()` — Explicação de propostas em linguagem simples
+  - Guia de votação por canal (web, presencial, WhatsApp)
+
+- **economia-solidaria** (`economia_solidaria.py`) — 3 tools, 18 testes
+  - `buscar_cooperativas()` — Catálogo de cooperativas com moedas sociais (Palmas, Mumbuca, Sampa, Capivari)
+  - `buscar_feiras()` — Feiras solidárias e da agricultura familiar
+  - `guia_criar_cooperativa()` — 6 passos + programas de fomento (PAA, PNAE, PRONAF)
+
+- **impacto-esg** (`relatorio_impacto.py`) — 2 tools, 16 testes
+  - `gerar_relatorio_impacto()` — Relatório anonimizado (LGPD Art. 12) com 4 categorias de métricas
+  - `consultar_impacto_social()` — Métricas por tipo (acesso, financeiro, inclusão, eficiência)
+  - 5 ODS impactados (1, 2, 10, 11, 16)
+
+- **indicadores-sociais** (`indicadores_sociais.py`) — 2 tools, 19 testes
+  - `consultar_indicadores()` — Painel completo: população, renda, IDH, Gini, pobreza, saneamento
+  - `comparar_municipios()` — Comparativo entre 2-5 municípios vs. média nacional
+  - Interpretações em linguagem simples (IDH, Gini, pobreza)
+  - Dados mock para 5 municípios (SP, RJ, Salvador, Brasília, Manaus)
+
+- **painel-gestor** (`dashboard_gestor.py`) — 1 tool, 14 testes
+  - `consultar_dashboard_gestor()` — 3 módulos: visão geral, lacunas de cobertura, benchmark
+  - KPIs: população, famílias CadÚnico, cobertura BF, IDH, taxa de pobreza
+  - Alertas automáticos (cobertura baixa, pobreza alta, saneamento crítico)
+  - Estimativa de equipamentos SUAS necessários
+
+- **mapa-social** (`mapa_social.py`) — 3 tools, 17 testes
+  - `listar_camadas()` — 14 camadas em 3 categorias (indicadores, equipamentos, análise)
+  - `consultar_mapa_social()` — Dados choropleth, pontos de equipamentos, heatmaps
+  - `identificar_desertos()` — Desertos de assistência social por ratio famílias/CRAS
+  - Classificação: ADEQUADO, INSUFICIENTE, CRÍTICO, SEM_COBERTURA
+
+- **pesquisa-campo** (`pesquisa_campo.py`) — 3 tools, 18 testes
+  - `listar_questionarios()` — 3 templates (satisfação, necessidades, atendimento CRAS)
+  - `registrar_resposta()` — Registro 100% anônimo (sem CPF, nome ou telefone)
+  - `gerar_relatorio_pesquisa()` — Relatório agregado (mínimo 10 respostas) + NPS
+  - Coleta multi-canal (app, web, WhatsApp, presencial)
+
+- **seguranca-cidada** (`seguranca_cidada.py`) — 5 tools, 38 testes
+  - `registrar_consentimento()` — Consentimento granular por finalidade (LGPD Art. 7)
+  - `revogar_consentimento()` — Revogação individual ou total
+  - `exportar_dados()` — Portabilidade de dados (LGPD Art. 18, V)
+  - `excluir_dados()` — Direito ao esquecimento (LGPD Art. 18, VI) com confirmação
+  - `consultar_politica_privacidade()` — Política em linguagem simples
+  - Classificação de dados em 4 categorias (pessoais, sensíveis, menores, financeiros)
+  - Plano de resposta a incidentes em 5 etapas
+  - Hash SHA-256 para CPF e IP (nunca armazenados em texto)
+
+### Changed
+- **agent.py** — 24 novas FunctionDeclarations + TOOL_FUNCTIONS registradas (total: ~70 tools)
+- **prompts.py** — Documentação de P2 + P3 adicionada ao SYSTEM_PROMPT
+
+### Stats
+- **36 arquivos** alterados/criados
+- **8.262 linhas** adicionadas
+- **731 testes** passando (0 falhas)
+- **15 novas skills** com **~340 novos testes**
+
+---
+
 ## [1.5.0] - 2026-02-03 - Skills de Conhecimento Estratégico
 
 ### Added
