@@ -1,18 +1,33 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import { MemoryRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Home from '../views/Home';
 
-describe('App', () => {
-  it('renders the dashboard', () => {
-    render(<App />);
-    // Check if main heading is present
-    const heading = screen.getByText(/Dashboard de Benefícios/i);
-    expect(heading).toBeInTheDocument();
-  });
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: false } },
 });
 
+function renderWithProviders(ui: React.ReactElement) {
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <MemoryRouter>
+        {ui}
+      </MemoryRouter>
+    </QueryClientProvider>
+  );
+}
 
+describe('Home', () => {
+  it('renders the homepage heading', () => {
+    renderWithProviders(<Home />);
+    const heading = screen.getByText(/Descubra seus direitos/i);
+    expect(heading).toBeInTheDocument();
+  });
 
-
-
-
+  it('shows the social proof section', () => {
+    renderWithProviders(<Home />);
+    const section = screen.getByText(/Numeros que falam/i);
+    expect(section).toBeInTheDocument();
+  });
+});

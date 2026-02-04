@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * ChatInterface - Main chat component with geolocation and session persistence
  */

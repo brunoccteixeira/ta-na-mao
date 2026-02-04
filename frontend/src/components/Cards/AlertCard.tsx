@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * AlertCard - Renders alert/notification messages
  */

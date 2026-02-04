@@ -6,8 +6,8 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Home, Eligibility, Catalog, BenefitDetail, About } from './pages';
-import BenefitChecker from './pages/BenefitChecker';
+import { Home, Eligibility, Catalog, BenefitDetail, About } from './views';
+import BenefitChecker from './views/BenefitChecker';
 import BrazilMap from './components/Map/BrazilMap';
 import ProgramSelector from './components/Dashboard/ProgramSelector';
 import NationalSummary from './components/Dashboard/NationalSummary';
@@ -29,6 +29,9 @@ import EligibilityWizard from './components/EligibilityWizard';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useDashboardStore } from './stores/dashboardStore';
 import type { CitizenProfile, TriagemResult } from './components/EligibilityWizard/types';
+import { generateCarta } from './utils/generateCarta';
+import AdvisorDashboard from './views/AdvisorDashboard';
+import Empowerment from './views/Empowerment';
 
 // Create React Query client
 const queryClient = new QueryClient({
@@ -170,9 +173,21 @@ function AdminDashboard({ onOpenChat, onOpenWizard }: { onOpenChat: () => void; 
 }
 
 function PublicLayout() {
+  const [showChat, setShowChat] = useState(false);
+
   return (
     <div className="theme-light">
       <Outlet />
+      {/* Chat FAB */}
+      <button
+        onClick={() => setShowChat(true)}
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 shadow-lg shadow-emerald-500/30 flex items-center justify-center text-2xl transition-all hover:scale-110"
+        title="Fale com o assistente"
+        aria-label="Abrir assistente virtual"
+      >
+        💬
+      </button>
+      {showChat && <ChatPage onBack={() => setShowChat(false)} />}
     </div>
   );
 }
@@ -182,9 +197,13 @@ function WizardPage({ onBack }: { onBack: () => void }) {
     console.log('Triagem completa:', result);
   };
 
-  const handleGenerateCarta = (profile: CitizenProfile, result: TriagemResult) => {
-    console.log('Gerar carta para:', profile, result);
-    alert('Funcionalidade de carta será integrada em breve!');
+  const handleGenerateCarta = async (profile: CitizenProfile, result: TriagemResult) => {
+    try {
+      await generateCarta(profile, result);
+    } catch (err) {
+      console.error('Erro ao gerar carta:', err);
+      alert('Erro ao gerar carta. Tente novamente.');
+    }
   };
 
   const handleFindCras = (profile: CitizenProfile) => {
@@ -193,21 +212,21 @@ function WizardPage({ onBack }: { onBack: () => void }) {
   };
 
   return (
-    <div className="theme-dark fixed inset-0 z-50 bg-slate-950 overflow-auto">
+    <div className="theme-dark fixed inset-0 z-50 bg-[var(--bg-primary)] overflow-auto">
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-slate-950/95 backdrop-blur border-b border-slate-800 p-4">
+      <header className="sticky top-0 z-10 bg-[var(--bg-header)] backdrop-blur border-b border-[var(--border-color)] p-4">
         <div className="max-w-md mx-auto flex items-center gap-3">
           <button
             onClick={onBack}
-            className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full bg-[var(--bg-card)] hover:bg-[var(--hover-bg)] flex items-center justify-center transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <div className="flex-1">
-            <h1 className="font-bold text-slate-100">Descobrir Meus Direitos</h1>
-            <p className="text-xs text-slate-400">Triagem de elegibilidade</p>
+            <h1 className="font-bold text-[var(--text-primary)]">Descobrir Meus Direitos</h1>
+            <p className="text-xs text-[var(--text-tertiary)]">Triagem de elegibilidade</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-xl">
             🎯
@@ -258,10 +277,12 @@ export default function App() {
               <Route path="/beneficios/:id" element={<BenefitDetail />} />
               <Route path="/beneficios/:id/verificar" element={<BenefitChecker />} />
               <Route path="/sobre" element={<About />} />
+              <Route path="/empoderamento" element={<Empowerment />} />
             </Route>
 
             {/* Admin dashboard — stays dark */}
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/assessor" element={<AdvisorDashboard />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

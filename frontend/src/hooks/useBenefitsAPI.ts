@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * React Query hooks for Benefits V2 API
  * Provides caching, offline fallback, and loading states

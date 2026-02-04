@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * EligibilityWizard - Wizard principal de triagem de elegibilidade
  *
@@ -11,7 +13,8 @@
  * Uses API v2 for eligibility check with fallback to local simulation
  */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   CitizenProfile,
   TriagemResult,
@@ -21,6 +24,7 @@ import {
   DEFAULT_PROFILE,
 } from './types';
 import { useEligibilityCheck, type EligibilityResponse } from '../../hooks/useBenefitsAPI';
+import { decodeProfile } from '../../utils/shareResult';
 import BasicInfoStep from './steps/BasicInfoStep';
 import FamilyStep from './steps/FamilyStep';
 import IncomeStep from './steps/IncomeStep';
@@ -41,6 +45,7 @@ export default function EligibilityWizard({
   onFindCras,
   apiEndpoint: _apiEndpoint = '/api/v2/benefits/eligibility/check',
 }: Props) {
+  const [searchParams] = useSearchParams();
   const [currentStep, setCurrentStep] = useState<WizardStep>('basic');
   const [profile, setProfile] = useState<CitizenProfile>(DEFAULT_PROFILE);
   const [result, setResult] = useState<TriagemResult | null>(null);
@@ -49,6 +54,23 @@ export default function EligibilityWizard({
 
   // API mutation hook for eligibility check
   const eligibilityMutation = useEligibilityCheck();
+
+  // Auto-load profile from shared link (?r=...)
+  useEffect(() => {
+    const encoded = searchParams.get('r');
+    if (encoded) {
+      const decoded = decodeProfile(encoded);
+      if (decoded) {
+        const restoredProfile = { ...DEFAULT_PROFILE, ...decoded };
+        setProfile(restoredProfile);
+        // Auto-run triagem with the restored profile
+        setTimeout(() => {
+          runTriagemWithProfile(restoredProfile);
+        }, 100);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const currentStepIndex = WIZARD_STEPS.indexOf(currentStep);
   const progress = ((currentStepIndex + 1) / WIZARD_STEPS.length) * 100;
@@ -76,15 +98,14 @@ export default function EligibilityWizard({
     }
   }, [currentStepIndex, goToStep]);
 
-  const runTriagem = useCallback(async () => {
+  const runTriagemWithProfile = useCallback(async (profileToUse: CitizenProfile) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      // Try API first
-      const apiProfile = transformProfileForAPI(profile);
+      const apiProfile = transformProfileForAPI(profileToUse);
       const apiResponse = await eligibilityMutation.mutateAsync({ profile: apiProfile });
-      const triagemResult = transformAPIResponse(apiResponse, profile);
+      const triagemResult = transformAPIResponse(apiResponse, profileToUse);
 
       setResult(triagemResult);
       goToStep('result');
@@ -93,8 +114,7 @@ export default function EligibilityWizard({
       console.warn('API unavailable, using local simulation:', err);
 
       try {
-        // Fallback to local simulation
-        const mockResult = simulateTriagem(profile);
+        const mockResult = simulateTriagem(profileToUse);
         setResult(mockResult);
         goToStep('result');
         onComplete?.(mockResult);
@@ -105,7 +125,11 @@ export default function EligibilityWizard({
     } finally {
       setIsLoading(false);
     }
-  }, [profile, goToStep, onComplete, eligibilityMutation]);
+  }, [goToStep, onComplete, eligibilityMutation]);
+
+  const runTriagem = useCallback(async () => {
+    runTriagemWithProfile(profile);
+  }, [profile, runTriagemWithProfile]);
 
   const handleSpecialNext = useCallback(() => {
     runTriagem();
@@ -198,6 +222,7 @@ export default function EligibilityWizard({
         {currentStep === 'result' && result && (
           <RightsWallet
             result={result}
+            profile={profile}
             onGenerateCarta={handleGenerateCarta}
             onFindCras={handleFindCras}
             onReset={handleReset}

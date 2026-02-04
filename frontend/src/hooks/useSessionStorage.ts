@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * useSessionStorage - Hook for persisting chat session in localStorage
  *

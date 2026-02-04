@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Export button for downloading data in CSV/JSON format
  */

@@ -3,10 +3,9 @@
  * Provides offline support and caching for PWA
  */
 
-const CACHE_NAME = 'tanamao-v1';
+const CACHE_NAME = 'tanamao-v2';
 const STATIC_ASSETS = [
   '/',
-  '/index.html',
   '/manifest.json',
 ];
 

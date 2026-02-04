@@ -3,11 +3,11 @@
  */
 
 import { Link } from 'react-router-dom';
-import { getBenefitsCatalog, getCatalogStats } from '../engine/catalog';
+import { useBenefitsStats } from '../hooks/useBenefitsAPI';
+import SocialProof from '../components/SocialProof';
 
 export default function Home() {
-  const catalog = getBenefitsCatalog();
-  const stats = getCatalogStats(catalog);
+  const { data: stats, isLoading } = useBenefitsStats();
 
   const popularBenefits = [
     { id: 'federal-bolsa-familia', name: 'Bolsa Família', icon: '🏠', desc: 'Ajuda mensal para famílias' },
@@ -17,6 +17,11 @@ export default function Home() {
     { id: 'federal-auxilio-gas', name: 'Auxílio Gás', icon: '🔥', desc: 'Ajuda para comprar gás' },
     { id: 'federal-mcmv', name: 'Minha Casa', icon: '🏡', desc: 'Casa própria facilitada' },
   ];
+
+  const totalBenefits = stats?.totalBenefits ?? 0;
+  const federalCount = stats?.byScope?.federal ?? 0;
+  const statesCovered = stats?.statesCovered ?? 0;
+  const sectoralCount = stats?.byScope?.sectoral ?? 0;
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
@@ -55,6 +60,11 @@ export default function Home() {
           >
             🎯 Descobrir meus direitos
           </Link>
+        </div>
+
+        {/* Social Proof */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <SocialProof />
         </div>
 
         {/* Como funciona */}
@@ -130,7 +140,7 @@ export default function Home() {
               to="/beneficios"
               className="text-emerald-600 hover:text-emerald-500 text-sm"
             >
-              Ver todos os {stats.totalBenefits} benefícios →
+              Ver todos os {isLoading ? '…' : totalBenefits} benefícios →
             </Link>
           </div>
         </div>
@@ -143,7 +153,7 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-4">
             <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div className="text-2xl font-bold text-emerald-600">
-                {stats.federalCount}
+                {isLoading ? '…' : federalCount}
               </div>
               <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Benefícios federais
@@ -151,7 +161,7 @@ export default function Home() {
             </div>
             <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div className="text-2xl font-bold text-emerald-600">
-                {stats.statesWithBenefits}
+                {isLoading ? '…' : statesCovered}
               </div>
               <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Estados cobertos
@@ -159,7 +169,7 @@ export default function Home() {
             </div>
             <div className="p-4 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)]">
               <div className="text-2xl font-bold text-emerald-600">
-                {stats.sectoralCount}
+                {isLoading ? '…' : sectoralCount}
               </div>
               <div className="text-xs text-[var(--text-tertiary)] mt-1">
                 Benefícios setoriais

@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Municipality search with autocomplete
  * Allows quick navigation to any municipality

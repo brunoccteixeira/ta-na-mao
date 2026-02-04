@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Penetration rates table for admin view
  * Shows detailed coverage data for all municipalities with pagination

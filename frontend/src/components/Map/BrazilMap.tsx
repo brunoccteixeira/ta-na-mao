@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Interactive Brazil Map using Leaflet
  * Supports state and municipality level visualization

@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Demographic breakdown showing income and age distribution from CadÚnico
  */

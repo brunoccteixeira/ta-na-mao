@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * BenefitEligibilityChecker — main container that orchestrates header,
  * summary bar, criteria sections, mini-form, and action buttons.

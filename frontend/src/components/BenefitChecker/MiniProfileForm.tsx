@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * MiniProfileForm — lightweight inline form that asks only the fields
  * needed to evaluate a specific benefit's eligibility rules.

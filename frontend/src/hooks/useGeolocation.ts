@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * useGeolocation - Hook for browser geolocation API
  *

@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * BasicInfoStep - Coleta CPF (opcional) e cidade
  */

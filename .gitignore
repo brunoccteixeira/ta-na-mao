@@ -8,6 +8,8 @@ venv/
 dist/
 build/
 *.egg-info/
+.next/
+next-env.d.ts
 
 # Environment
 .env

@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * IncomeStep - Coleta renda familiar
  */

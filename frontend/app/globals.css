@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Light theme — scoped to .theme-light wrapper (public pages) */
+.theme-light {
+  --bg-primary: #F9F9F9;
+  --bg-card: #FFFFFF;
+  --bg-header: rgba(255, 255, 255, 0.95);
+  --hover-bg: #F3F4F6;
+  --input-bg: #F9F9F9;
+  --input-border: #E5E7EB;
+  --badge-bg: #F3F4F6;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-tertiary: #9CA3AF;
+  --border-color: #E5E7EB;
+  --accent: #10B981;
+}
+
+/* Dark theme — scoped to .theme-dark wrapper (admin/wizard) */
+.theme-dark {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-header: rgba(15, 23, 42, 0.95);
+  --hover-bg: #334155;
+  --input-bg: #1e293b;
+  --input-border: #334155;
+  --badge-bg: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #64748b;
+  --border-color: #334155;
+  --accent: #10B981;
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: #0f172a;
+}
+
+.leaflet-control-zoom a {
+  background: #1e293b !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #64748b !important;
+}
+
+.leaflet-control-attribution a {
+  color: #94a3b8 !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-radius: 8px !important;
+}
+
+.leaflet-popup-tip {
+  background: #1e293b !important;
+}
+
+.leaflet-tooltip {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: #334155 !important;
+}

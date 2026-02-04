@@ -1,12 +1,24 @@
+'use client';
+
 /**
  * RightsWallet - Exibe a "Carteira de Direitos" com benefícios elegíveis
  * Agrupa por categoria: Federal, Estadual, Setorial
  */
 
-import { TriagemResult, EligibilityResult } from '../types';
+import { useState } from 'react';
+import { TriagemResult, EligibilityResult, CitizenProfile } from '../types';
+import BenefitStatusTracker from '../../Cards/BenefitStatusTracker';
+import {
+  generateShareLink,
+  generateWhatsAppLink,
+  copyToClipboard,
+} from '../../../utils/shareResult';
+import PartnerBanner from '../../PartnerBanner';
+import ReferralProgram from '../../ReferralProgram';
 
 interface Props {
   result: TriagemResult;
+  profile?: CitizenProfile;
   onGenerateCarta: () => void;
   onFindCras: () => void;
   onReset: () => void;
@@ -160,6 +172,14 @@ function BenefitCard({ benefit }: { benefit: EligibilityResult }) {
             <span>{benefit.ondeSolicitar}</span>
           </div>
         )}
+
+        {/* Status tracker - apenas para elegíveis */}
+        {benefit.status === 'elegivel' && (
+          <BenefitStatusTracker
+            benefitId={benefit.programa}
+            benefitName={benefit.programaNome}
+          />
+        )}
       </div>
     </div>
   );
@@ -204,7 +224,8 @@ function CategorySection({
   );
 }
 
-export default function RightsWallet({ result, onGenerateCarta, onFindCras, onReset }: Props) {
+export default function RightsWallet({ result, profile, onGenerateCarta, onFindCras, onReset }: Props) {
+  const [linkCopied, setLinkCopied] = useState(false);
   const totalElegiveis = result.beneficiosElegiveis.length;
   const totalJaRecebe = result.beneficiosJaRecebe.length;
 
@@ -241,16 +262,33 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         )}
       </div>
 
-      {/* Valor potencial */}
+      {/* Valor potencial - Hero Card */}
       {result.valorPotencialMensal > 0 && (
-        <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-600/15 to-emerald-500/5 border border-emerald-500/30">
-          <p className="text-sm text-emerald-600 mb-1">Valor potencial mensal</p>
-          <p className="text-4xl font-bold text-emerald-600">
-            R$ {result.valorPotencialMensal.toFixed(0)}
+        <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-600/20 via-emerald-500/10 to-teal-500/5 border border-emerald-500/30">
+          <p className="text-sm text-emerald-600 font-medium mb-2">
+            Voce pode receber ate
           </p>
-          <p className="text-xs text-emerald-600/60 mt-1">
-            em benefícios que você pode receber
+          <p className="text-5xl font-extrabold text-emerald-600 tracking-tight">
+            R$ {result.valorPotencialMensal.toLocaleString('pt-BR', { maximumFractionDigits: 0 })}
+            <span className="text-2xl font-semibold">/mes</span>
           </p>
+          <div className="mt-3 pt-3 border-t border-emerald-500/20 flex items-center justify-between">
+            <div>
+              <p className="text-xs text-emerald-600/60">Estimativa anual</p>
+              <p className="text-lg font-bold text-emerald-600">
+                R$ {(result.valorPotencialMensal * 12).toLocaleString('pt-BR', { maximumFractionDigits: 0 })}
+                <span className="text-sm font-normal">/ano</span>
+              </p>
+            </div>
+            {result.valorJaRecebeMensal > 0 && (
+              <div className="text-right">
+                <p className="text-xs text-blue-600/60">Voce ja recebe</p>
+                <p className="text-lg font-bold text-blue-600">
+                  R$ {result.valorJaRecebeMensal.toLocaleString('pt-BR', { maximumFractionDigits: 0 })}/mes
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -348,6 +386,11 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
         </div>
       )}
 
+      {/* Parceiro bancário */}
+      {totalElegiveis > 0 && (
+        <PartnerBanner />
+      )}
+
       {/* Ações */}
       <div className="space-y-3">
         {totalElegiveis > 0 && (
@@ -368,6 +411,43 @@ export default function RightsWallet({ result, onGenerateCarta, onFindCras, onRe
             </button>
           </>
         )}
+        {/* Compartilhar resultado */}
+        {profile && totalElegiveis > 0 && (
+          <div className="p-4 rounded-xl bg-[var(--badge-bg)] border border-[var(--border-color)]">
+            <p className="text-sm font-medium text-[var(--text-secondary)] mb-3">
+              Salvar ou compartilhar seu resultado
+            </p>
+            <div className="flex gap-2">
+              <a
+                href={generateWhatsAppLink(profile, result.valorPotencialMensal)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-2.5 rounded-lg font-medium text-sm bg-green-600 hover:bg-green-500 text-white transition-all text-center"
+              >
+                WhatsApp
+              </a>
+              <button
+                onClick={async () => {
+                  const link = generateShareLink(profile);
+                  const ok = await copyToClipboard(link);
+                  if (ok) {
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }
+                }}
+                className="flex-1 py-2.5 rounded-lg font-medium text-sm bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:bg-[var(--hover-bg)] transition-all"
+              >
+                {linkCopied ? 'Link copiado!' : 'Copiar link'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Programa de indicação */}
+        {totalElegiveis > 0 && (
+          <ReferralProgram valorMensal={result.valorPotencialMensal} />
+        )}
+
         <button
           onClick={onReset}
           className="w-full py-3 rounded-xl font-medium bg-[var(--badge-bg)] text-[var(--text-secondary)] hover:bg-[var(--hover-bg)] transition-all"

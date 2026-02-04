@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Ranking panel showing top municipalities by coverage or gap
  */

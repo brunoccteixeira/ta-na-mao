@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * ChatPage - Full-page chat interface
  */
