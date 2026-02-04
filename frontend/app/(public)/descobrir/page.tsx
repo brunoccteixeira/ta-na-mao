@@ -3,17 +3,18 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const EligibilityWizard = dynamic(
-  () => import('../../../src/components/EligibilityWizard'),
+// WizardV2 - New Wizbii-style eligibility wizard
+const WizardV2 = dynamic(
+  () => import('../../../src/components/WizardV2'),
   { ssr: false }
 );
 
 export default function DiscoverPage() {
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="theme-light">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-[var(--bg-header)] backdrop-blur-sm border-b border-[var(--border-color)] z-50">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
           <Link href="/" className="text-xl font-bold text-emerald-600">
             Ta na Mao
           </Link>
@@ -26,9 +27,9 @@ export default function DiscoverPage() {
         </div>
       </header>
 
-      {/* Content */}
-      <main className="pt-24 pb-16 px-4">
-        <EligibilityWizard />
+      {/* Wizard Content - Full height, handles its own padding */}
+      <main className="pt-14">
+        <WizardV2 />
       </main>
     </div>
   );

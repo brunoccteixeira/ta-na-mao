@@ -8,6 +8,8 @@ from app.models.pedido import Pedido, StatusPedido
 from app.models.beneficiario import Beneficiario, hash_cpf, mask_cpf
 from app.models.carta_encaminhamento import CartaEncaminhamento, StatusCarta
 from app.models.benefit import Benefit, BenefitScope, BenefitStatus
+from app.models.partner import Partner, PartnerConversion, PartnerType, ConversionEvent
+from app.models.advisor import Advisor, Case, CaseNote, CaseStatus, CasePriority
 
 __all__ = [
     "State",
@@ -25,4 +27,13 @@ __all__ = [
     "Benefit",
     "BenefitScope",
     "BenefitStatus",
+    "Partner",
+    "PartnerConversion",
+    "PartnerType",
+    "ConversionEvent",
+    "Advisor",
+    "Case",
+    "CaseNote",
+    "CaseStatus",
+    "CasePriority",
 ]

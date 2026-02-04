@@ -13,7 +13,7 @@ from app.config import settings
 from app.core.logging import setup_logging, get_logger
 from app.core.exceptions import TaNaMaoException
 from app.middleware.metrics import MetricsMiddleware, get_metrics
-from app.routers import municipalities, programs, aggregations, geo, agent, webhook, admin, nearby, sms, voice, carta, benefits_v2
+from app.routers import municipalities, programs, aggregations, geo, agent, webhook, admin, nearby, sms, voice, carta, benefits_v2, partners, advisors, referrals
 from app.agent.mcp import init_mcp, mcp_manager, BrasilAPIMCP, GoogleMapsMCP, PDFOcrMCP
 
 # Setup structured logging
@@ -164,6 +164,21 @@ app.include_router(
     benefits_v2.router,
     prefix="/api/v2/benefits",
     tags=["Benefícios (v2)"],
+)
+app.include_router(
+    partners.router,
+    prefix="/api/v1/partners",
+    tags=["Parceiros"],
+)
+app.include_router(
+    advisors.router,
+    prefix="/api/v1/advisory",
+    tags=["Anjo Social"],
+)
+app.include_router(
+    referrals.router,
+    prefix="/api/v1/referrals",
+    tags=["Indicações"],
 )
 
 

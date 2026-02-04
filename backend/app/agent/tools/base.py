@@ -40,6 +40,9 @@ class UIHint(str, Enum):
     MAP_LOCATION = "map_location"
     MAP_MULTIPLE = "map_multiple"
 
+    # Parceiros
+    PARTNER_CARD = "partner_card"
+
     # Genéricos
     TEXT = "text"
     INFO = "info"

@@ -125,6 +125,10 @@ from app.services.seguranca_cidada import (
     excluir_dados,
     consultar_politica_privacidade
 )
+from app.agent.tools.parceiro_bancario import recomendar_conta_bancaria
+from app.agent.tools.anjo_social import escalonar_anjo_social
+from app.agent.tools.emprego_capacitacao import buscar_vagas, buscar_cursos, simular_microcredito
+from app.agent.tools.comparador_servicos import comparar_planos_celular, comparar_contas_bancarias, verificar_tarifa_energia
 
 logger = logging.getLogger(__name__)
 
@@ -1600,6 +1604,167 @@ TOOL_DECLARATIONS = [
             "required": []
         }
     ),
+    # === ANJO SOCIAL (Escalonamento Humano) ===
+    FunctionDeclaration(
+        name="escalonar_anjo_social",
+        description="Escalona o caso para um assessor social humano (Anjo Social). USE quando: cidadao idoso 65+ com dificuldade, PCD precisando de BPC, 3+ beneficios simultaneos, situacao de emergencia, beneficio negado/recurso. NUNCA escalone sem perguntar ao cidadao se deseja acompanhamento humano.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "motivo": {
+                    "type": "string",
+                    "description": "Motivo do escalonamento (por que a IA esta escalando)"
+                },
+                "beneficios": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Codigos dos beneficios em questao (ex: BPC, BOLSA_FAMILIA)"
+                },
+                "prioridade": {
+                    "type": "string",
+                    "description": "Prioridade: low, medium, high, emergency"
+                },
+                "session_id": {
+                    "type": "string",
+                    "description": "ID anonimo da sessao do cidadao"
+                },
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao (UF)"
+                },
+                "contexto_cidadao": {
+                    "type": "object",
+                    "description": "Contexto anonimo adicional (idade, perfil, sem PII)"
+                }
+            },
+            "required": ["motivo"]
+        }
+    ),
+    # === PARCEIROS BANCÁRIOS ===
+    FunctionDeclaration(
+        name="recomendar_conta_bancaria",
+        description="Recomenda conta bancaria para receber beneficios. Prioriza CAIXA para beneficios federais. USE quando cidadao perguntar: 'como recebo o beneficio?', 'preciso de conta bancaria?', 'qual banco?', 'Caixa Tem', 'como abrir conta'.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao (UF, ex: SP, RJ)"
+                },
+                "beneficios_elegiveis": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Codigos dos beneficios elegiveis (ex: BOLSA_FAMILIA, BPC)"
+                }
+            },
+            "required": []
+        }
+    ),
+    # === EMPREGO E CAPACITAÇÃO ===
+    FunctionDeclaration(
+        name="buscar_vagas",
+        description="Busca vagas de emprego acessiveis para publico CadUnico (sem experiencia, primeiro emprego). USE quando cidadao perguntar sobre emprego, trabalho, vagas, SINE, carteira de trabalho.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao (UF)"
+                },
+                "cidade": {
+                    "type": "string",
+                    "description": "Cidade do cidadao"
+                },
+                "perfil": {
+                    "type": "string",
+                    "description": "Perfil do cidadao (ex: sem experiencia, primeiro emprego)"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="buscar_cursos",
+        description="Busca cursos de capacitacao gratuitos (SENAI, SENAC, SEBRAE, Pronatec). USE quando cidadao perguntar sobre cursos, capacitacao, qualificacao, aprender, estudar, profissao.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao"
+                },
+                "area": {
+                    "type": "string",
+                    "description": "Area de interesse (ex: informatica, construcao, alimentacao, saude)"
+                },
+                "escolaridade": {
+                    "type": "string",
+                    "description": "Nivel de escolaridade do cidadao"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="simular_microcredito",
+        description="Simula microcredito produtivo (CrediAmigo, Pronaf, PNMPO) para empreendedores de baixa renda. USE quando cidadao perguntar sobre emprestimo, credito, abrir negocio, investir, capital de giro.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "valor": {
+                    "type": "number",
+                    "description": "Valor desejado do emprestimo em reais"
+                },
+                "finalidade": {
+                    "type": "string",
+                    "description": "Para que sera usado (ex: comprar mercadoria, equipamento)"
+                }
+            },
+            "required": []
+        }
+    ),
+    # === COMPARADOR DE SERVIÇOS ===
+    FunctionDeclaration(
+        name="comparar_planos_celular",
+        description="Compara planos de celular pre-pago e controle baratos. USE quando cidadao perguntar sobre plano de celular, internet movel, recarga, chip, operadora.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uso": {
+                    "type": "string",
+                    "description": "Tipo de uso: 'so whatsapp', 'redes sociais', 'internet geral'"
+                }
+            },
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="comparar_contas_bancarias",
+        description="Compara contas bancarias digitais gratuitas (Caixa Tem, Nubank, PicPay, Inter). USE quando cidadao perguntar sobre conta bancaria, banco, qual melhor conta, abrir conta.",
+        parameters={
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    ),
+    FunctionDeclaration(
+        name="verificar_tarifa_energia",
+        description="Verifica desconto na conta de luz (TSEE - Tarifa Social) e calcula economia. USE quando cidadao perguntar sobre conta de luz, energia, tarifa social, desconto na luz, economia de energia.",
+        parameters={
+            "type": "object",
+            "properties": {
+                "uf": {
+                    "type": "string",
+                    "description": "Estado do cidadao"
+                },
+                "consumo_kwh": {
+                    "type": "number",
+                    "description": "Consumo mensal em kWh (aparece na conta de luz)"
+                }
+            },
+            "required": []
+        }
+    ),
 ]
 
 # Mapeamento de funcoes para execucao
@@ -1704,6 +1869,18 @@ TOOL_FUNCTIONS = {
     "exportar_dados": exportar_dados,
     "excluir_dados": excluir_dados,
     "consultar_politica_privacidade": consultar_politica_privacidade,
+    # Tools de Parceiros Bancarios
+    "recomendar_conta_bancaria": recomendar_conta_bancaria,
+    # Tools Anjo Social
+    "escalonar_anjo_social": escalonar_anjo_social,
+    # Tools Emprego e Capacitacao
+    "buscar_vagas": buscar_vagas,
+    "buscar_cursos": buscar_cursos,
+    "simular_microcredito": simular_microcredito,
+    # Tools Comparador de Servicos
+    "comparar_planos_celular": comparar_planos_celular,
+    "comparar_contas_bancarias": comparar_contas_bancarias,
+    "verificar_tarifa_energia": verificar_tarifa_energia,
 }
 
 

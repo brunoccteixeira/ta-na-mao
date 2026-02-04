@@ -7,12 +7,17 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Floating animation for hero benefit cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 /* Light theme — scoped to .theme-light wrapper (public pages) */
 .theme-light {
   --bg-primary: #F9F9F9;
   --bg-card: #FFFFFF;
   --bg-header: rgba(255, 255, 255, 0.95);
-  --bg-card-hover: #F3F4F6;
   --hover-bg: #F3F4F6;
   --input-bg: #F9F9F9;
   --input-border: #E5E7EB;
@@ -22,11 +27,6 @@ body {
   --text-tertiary: #9CA3AF;
   --border-color: #E5E7EB;
   --accent: #10B981;
-  --accent-light: #D1FAE5;
-  --status-met: #10B981;
-  --status-pending: #F59E0B;
-  --status-not-met: #EF4444;
-  --status-inactive: #D1D5DB;
 }
 
 /* Dark theme — scoped to .theme-dark wrapper (admin/wizard) */
@@ -34,7 +34,6 @@ body {
   --bg-primary: #0f172a;
   --bg-card: #1e293b;
   --bg-header: rgba(15, 23, 42, 0.95);
-  --bg-card-hover: #334155;
   --hover-bg: #334155;
   --input-bg: #1e293b;
   --input-border: #334155;
@@ -44,11 +43,6 @@ body {
   --text-tertiary: #64748b;
   --border-color: #334155;
   --accent: #10B981;
-  --accent-light: #D1FAE5;
-  --status-met: #10B981;
-  --status-pending: #F59E0B;
-  --status-not-met: #EF4444;
-  --status-inactive: #D1D5DB;
 }
 
 /* Leaflet overrides for dark theme */
@@ -97,4 +91,68 @@ body {
 
 .leaflet-tooltip-top::before {
   border-top-color: #334155 !important;
+}
+
+/* ===== WizardV2 Animations ===== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Slide up animation (for modals) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Slide down animation (for dropdowns) */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Pulse animation for loading */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spin animation for loaders */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
