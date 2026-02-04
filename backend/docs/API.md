@@ -20,6 +20,9 @@ API REST para consulta de dados de programas sociais brasileiros.
 | **Agent V2** | `/agent/v2/` | Chat conversacional com sub-agentes |
 | **Webhook** | `/webhook/whatsapp/` | Integração WhatsApp via Twilio |
 | **Nearby** | `/nearby/` | Farmácias e CRAS próximos (GPS/CEP) |
+| **Partners** | `/partners/` | Parceiros (bancos, fintechs) e conversões |
+| **Advisory** | `/advisory/` | Anjo Social - escalonamento para assessores humanos |
+| **Referrals** | `/referrals/` | Programa de indicação member-get-member |
 
 ---
 
@@ -1468,3 +1471,288 @@ curl -X POST "http://localhost:8000/api/v2/benefits/eligibility/quick?estado=SP&
 | `trabalhaAplicativo` | boolean | Trabalha como entregador/motorista de app |
 | `estudante` | boolean | É estudante |
 | `redePublica` | boolean | Estuda em rede pública |
+
+---
+
+## Ecossistema de Parceiros
+
+APIs para gerenciamento de parceiros, assessores sociais (Anjo Social) e programa de indicações.
+
+### Parceiros
+
+**Base URL**: `/api/v1/partners`
+
+#### Listar Parceiros
+
+```http
+GET /api/v1/partners/
+```
+
+Retorna todos os parceiros ativos (bancos, fintechs, serviços).
+
+**Resposta**:
+```json
+[
+  {
+    "slug": "caixa",
+    "nome": "Caixa Tem",
+    "descricao": "App da Caixa para receber benefícios sociais",
+    "categoria": "banco",
+    "url": "https://www.caixa.gov.br/caixa-tem/",
+    "ativo": true
+  }
+]
+```
+
+#### Detalhes do Parceiro
+
+```http
+GET /api/v1/partners/{slug}
+```
+
+**Parâmetros**:
+- `slug`: Identificador único do parceiro (ex: caixa, nubank)
+
+**Exemplo**:
+```bash
+curl "http://localhost:8000/api/v1/partners/caixa"
+```
+
+#### Registrar Conversão
+
+```http
+POST /api/v1/partners/conversions
+```
+
+Registra evento de conversão (impressão, clique, redirecionamento).
+
+**Request Body**:
+```json
+{
+  "partner_slug": "caixa",
+  "session_id": "abc123",
+  "event": "click",
+  "source": "home_page",
+  "metadata": {"benefit_context": "bolsa_familia"}
+}
+```
+
+**Eventos possíveis**: `impression`, `click`, `redirect`, `signup`
+
+#### Estatísticas de Conversão (Admin)
+
+```http
+GET /api/v1/partners/conversions/stats
+```
+
+**Parâmetros**:
+- `partner_slug` (opcional): Filtrar por parceiro
+- `days`: Período em dias (default: 30, max: 365)
+
+---
+
+### Anjo Social (Advisory)
+
+Sistema de escalonamento para assessores humanos em casos complexos.
+
+**Base URL**: `/api/v1/advisory`
+
+#### Criar Caso
+
+```http
+POST /api/v1/advisory/cases/
+```
+
+Cria um novo caso de assessoria (geralmente via escalonamento da IA).
+
+**Request Body**:
+```json
+{
+  "citizen_session_id": "abc123",
+  "benefits": ["BPC", "BOLSA_FAMILIA"],
+  "escalation_reason": "Idoso 65+ com dificuldade de acesso",
+  "priority": "high",
+  "citizen_context": {
+    "uf": "SP",
+    "idade_estimada": 72,
+    "situacao": "idoso_sozinho"
+  }
+}
+```
+
+**Prioridades**: `low`, `medium`, `high`, `emergency`
+
+**Resposta**:
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "status": "pending",
+  "advisorId": null
+}
+```
+
+#### Consultar Caso
+
+```http
+GET /api/v1/advisory/cases/{case_id}
+```
+
+Retorna detalhes completos do caso com assessor e notas.
+
+#### Atualizar Caso
+
+```http
+PATCH /api/v1/advisory/cases/{case_id}
+```
+
+Atualiza status, prioridade ou atribui assessor.
+
+**Request Body**:
+```json
+{
+  "status": "in_progress",
+  "priority": "high",
+  "advisor_id": "550e8400-e29b-41d4-a716-446655440001"
+}
+```
+
+**Status possíveis**: `pending`, `assigned`, `in_progress`, `resolved`, `closed`
+
+#### Adicionar Nota
+
+```http
+POST /api/v1/advisory/cases/{case_id}/notes
+```
+
+**Request Body**:
+```json
+{
+  "author": "Maria Silva",
+  "content": "Cidadão agendado para CRAS dia 15/02"
+}
+```
+
+#### Listar Casos
+
+```http
+GET /api/v1/advisory/cases/
+```
+
+**Parâmetros**:
+- `advisor_id` (opcional): Filtrar por assessor
+- `status` (opcional): Filtrar por status
+- `priority` (opcional): Filtrar por prioridade
+- `limit`: Máximo de resultados (default: 50)
+- `offset`: Paginação
+
+#### Listar Assessores
+
+```http
+GET /api/v1/advisory/advisors/
+```
+
+Retorna assessores ativos.
+
+#### Criar Assessor
+
+```http
+POST /api/v1/advisory/advisors/
+```
+
+**Request Body**:
+```json
+{
+  "name": "Maria Silva",
+  "email": "maria@cras.gov.br",
+  "role": "assistente_social",
+  "organization": "CRAS Centro",
+  "specialties": ["BPC", "BOLSA_FAMILIA", "MCMV"]
+}
+```
+
+#### Dashboard do Assessor
+
+```http
+GET /api/v1/advisory/advisors/{advisor_id}/dashboard
+```
+
+Retorna dashboard com casos ativos e estatísticas.
+
+**Resposta**:
+```json
+{
+  "advisor": {"name": "Maria Silva", "role": "assistente_social"},
+  "active_cases": 12,
+  "pending_cases": 5,
+  "resolved_this_month": 23,
+  "avg_resolution_days": 3.5,
+  "cases": [...]
+}
+```
+
+---
+
+### Indicações (Referrals)
+
+Programa de indicação member-get-member anônimo.
+
+**Base URL**: `/api/v1/referrals`
+
+#### Registrar Compartilhamento
+
+```http
+POST /api/v1/referrals/
+```
+
+Registra quando um usuário compartilha seu link de indicação.
+
+**Request Body**:
+```json
+{
+  "referral_code": "ABC123",
+  "method": "whatsapp"
+}
+```
+
+**Métodos**: `whatsapp`, `copy`, `sms`
+
+#### Registrar Conversão
+
+```http
+POST /api/v1/referrals/conversion
+```
+
+Registra quando um indicado completa o wizard.
+
+**Request Body**:
+```json
+{
+  "referral_code": "ABC123"
+}
+```
+
+#### Estatísticas (Admin)
+
+```http
+GET /api/v1/referrals/stats
+```
+
+**Parâmetros**:
+- `days`: Período em dias (default: 30)
+
+**Resposta**:
+```json
+{
+  "period_days": 30,
+  "total_shares": 1234,
+  "total_conversions": 456,
+  "unique_sharers": 890,
+  "unique_conversions": 345,
+  "conversion_rate": 0.3876,
+  "by_method": {
+    "whatsapp": 800,
+    "copy": 300,
+    "sms": 134
+  }
+}
+```

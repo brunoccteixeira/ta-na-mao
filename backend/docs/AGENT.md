@@ -1571,3 +1571,296 @@ O campo `habitacao` em `triagem_universal.py` foi enriquecido:
 ### Prioridade BAIXA
 - [ ] Integração Rappi/iFood Farmácia (delivery)
 - [ ] Widget white-label CAIXA
+
+---
+
+## Sprint 12: Ecossistema de Parceiros e Marketplace
+
+Novas tools para integração com parceiros, assessoria humana e serviços financeiros.
+
+### Novas Tools
+
+#### 30. escalonar_anjo_social
+
+Escalona casos complexos para assessores humanos (Anjo Social).
+
+**Quando usar**: Idoso 65+, PCD, 3+ benefícios, emergência, documentação complexa, recurso negado.
+
+```python
+escalonar_anjo_social(
+    motivo="Idoso 72 anos com dificuldade de acesso digital",
+    beneficios=["BPC", "BOLSA_FAMILIA"],
+    prioridade="high",  # low, medium, high, emergency
+    session_id="abc123",
+    uf="SP",
+    contexto_cidadao={"idade_estimada": 72, "situacao": "idoso_sozinho"}
+)
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "escalonamento": {
+    "case_id": "abc12345",
+    "status": "assigned",
+    "prioridade": "high",
+    "motivo": "Idoso 72 anos com dificuldade de acesso digital"
+  },
+  "assessor": {
+    "nome": "Maria Silva",
+    "cargo": "Assistente Social",
+    "organizacao": "do CRAS Centro"
+  },
+  "mensagem_cidadao": "Entendi que sua situação precisa de acompanhamento especial. Vou conectar você com Maria Silva...",
+  "prazo_contato": "3 dias úteis"
+}
+```
+
+**Critérios automáticos de escalonamento**:
+- `idoso_65`: Pessoa idosa (65+) com dificuldade de acesso
+- `pcd`: Pessoa com deficiência que precisa de BPC/LOAS
+- `multiplos_beneficios`: Situação complexa com 3+ benefícios
+- `emergencia`: Vulnerabilidade extrema ou emergência social
+- `documentacao_complexa`: Dificuldade com documentação ou burocracia
+- `recurso_negado`: Benefício negado que precisa de recurso/revisão
+
+#### 31. recomendar_conta_bancaria
+
+Recomenda conta bancária adequada baseada nos benefícios elegíveis.
+
+```python
+recomendar_conta_bancaria(
+    uf="SP",
+    beneficios_elegiveis=["BOLSA_FAMILIA", "BPC", "AUXILIO_GAS"]
+)
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "parceiro": {
+    "nome": "Caixa Tem",
+    "slug": "caixa",
+    "descricao": "App da Caixa para receber benefícios sociais",
+    "vantagens": ["Conta 100% grátis", "Pix ilimitado", "Bolsa Família direto no app"],
+    "como_abrir": "Baixe o app Caixa Tem na Play Store...",
+    "url": "https://www.caixa.gov.br/caixa-tem/"
+  },
+  "motivo": "A Caixa Econômica Federal é o banco que paga os benefícios sociais do governo...",
+  "beneficios_no_banco": ["BOLSA_FAMILIA", "BPC", "AUXILIO_GAS"]
+}
+```
+
+**Lógica**: CAIXA é priorizada para benefícios federais (Bolsa Família, BPC, FGTS, etc). Para outros casos, sugere alternativas como Nubank.
+
+#### 32. comparar_planos_celular
+
+Compara planos de celular pré-pago e controle com foco em economia.
+
+```python
+comparar_planos_celular(uso="só whatsapp")
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "planos": [
+    {
+      "operadora": "Claro",
+      "nome": "Claro Pre 7 dias",
+      "tipo": "Pre-pago",
+      "preco": "R$ 7,99/semana",
+      "dados": "2GB por semana",
+      "apps_ilimitados": ["WhatsApp"],
+      "ligacoes": "100 minutos"
+    }
+  ],
+  "dica": "Se você usa só WhatsApp, um plano pré-pago semanal é mais econômico...",
+  "mensagem_cidadao": "Comparei os planos mais baratos das operadoras..."
+}
+```
+
+#### 33. comparar_contas_bancarias
+
+Compara contas bancárias digitais gratuitas.
+
+```python
+comparar_contas_bancarias()
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "contas": [
+    {
+      "banco": "Caixa Tem",
+      "tipo": "Conta poupança digital",
+      "taxa_mensal": "Grátis",
+      "pix": "Ilimitado e grátis",
+      "vantagens": ["Recebe Bolsa Família e BPC automaticamente"],
+      "ideal_para": "Quem recebe benefício do governo",
+      "destaque": true
+    },
+    {
+      "banco": "Nubank",
+      "tipo": "Conta corrente digital",
+      "vantagens": ["Dinheiro rende automaticamente (100% CDI)"],
+      "ideal_para": "Uso no dia a dia com cartão"
+    }
+  ],
+  "recomendacao_beneficiarios": "Caixa Tem"
+}
+```
+
+#### 34. verificar_tarifa_energia
+
+Verifica elegibilidade para TSEE (Tarifa Social de Energia) e calcula economia.
+
+```python
+verificar_tarifa_energia(uf="SP", consumo_kwh=150)
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "consumo_kwh": 150,
+  "desconto_percentual": 10,
+  "valor_estimado_sem_desconto": 127.50,
+  "valor_estimado_com_desconto": 114.75,
+  "economia_mensal": 12.75,
+  "economia_anual": 153.00,
+  "faixas_desconto": [
+    {"ate_kwh": 30, "desconto": 65},
+    {"ate_kwh": 100, "desconto": 40},
+    {"ate_kwh": 220, "desconto": 10}
+  ],
+  "dicas_economia": ["Desligue aparelhos da tomada...", "Use lâmpadas LED..."],
+  "como_solicitar": "Ligue para a distribuidora de energia..."
+}
+```
+
+#### 35. buscar_vagas
+
+Busca vagas de emprego acessíveis ao público CadÚnico.
+
+```python
+buscar_vagas(uf="SP", cidade="São Paulo", perfil="primeiro emprego")
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "vagas": [
+    {
+      "titulo": "Auxiliar de Serviços Gerais",
+      "empresa": "Via SINE / Portal Emprega Brasil",
+      "tipo": "CLT",
+      "requisitos": "Ensino fundamental, sem experiência necessária",
+      "faixa_salarial": "R$ 1.412 - R$ 1.600",
+      "onde_buscar": "Portal Emprega Brasil (gov.br/trabalho) ou SINE da sua cidade"
+    }
+  ],
+  "como_buscar": {
+    "sine": "SINE de São Paulo, SP (presencial, grátis)",
+    "portal": "Portal Emprega Brasil: gov.br/trabalho"
+  },
+  "mensagem_cidadao": "Dica: Se você recebe Bolsa Família, o SINE tem vagas prioritárias..."
+}
+```
+
+#### 36. buscar_cursos
+
+Busca cursos de capacitação gratuitos (SENAI, SENAC, SEBRAE, AVAMEC).
+
+```python
+buscar_cursos(uf="SP", area="informatica", escolaridade="fundamental")
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "cursos": [
+    {
+      "nome": "Operador de Computador",
+      "instituicao": "SENAC",
+      "modalidade": "Presencial e EAD",
+      "duracao": "160 horas",
+      "requisito": "Ensino fundamental completo",
+      "inscricao": "https://www.ead.senac.br",
+      "areas": ["informatica", "tecnologia"]
+    }
+  ],
+  "dica_pronatec": "O PRONATEC oferece cursos técnicos gratuitos para inscritos no CadÚnico..."
+}
+```
+
+#### 37. simular_microcredito
+
+Simula opções de microcrédito produtivo (CrediAmigo, PRONAF, PNMPO).
+
+```python
+simular_microcredito(valor=5000.00, finalidade="comprar mercadoria")
+```
+
+**Response**:
+```json
+{
+  "sucesso": true,
+  "programas": [
+    {
+      "nome": "CrediAmigo",
+      "banco": "Banco do Nordeste",
+      "valor_max": "R$ 21.000",
+      "juros": "1.98% ao mês (subsidiado)",
+      "parcelas": "Até 12x",
+      "valor_parcela": "R$ 471.60",
+      "requisitos": ["Empreendedor informal ou MEI", "Renda até 3 salários mínimos"],
+      "como_solicitar": "Vá a uma agência do Banco do Nordeste..."
+    },
+    {
+      "nome": "PRONAF - Crédito Rural",
+      "banco": "Banco do Brasil / CAIXA",
+      "juros": "0,5% a 4% ao ano (subsidiado)",
+      "requisitos": ["Agricultor familiar com DAP/CAF"]
+    }
+  ],
+  "mensagem_cidadao": "NUNCA pegue empréstimo com agiota... Os programas do governo são muito mais baratos."
+}
+```
+
+### Total de Tools Atualizado
+
+| Sprint | Tools | Total |
+|--------|-------|-------|
+| Sprint 8 | 16 | 16 |
+| Sprint 9 | +9 | 25 |
+| Sprint 10 | +2 | 27 |
+| Sprint 11 | +2 | 29 |
+| Sprint 12 | +8 | **37** |
+
+### Arquitetura do Ecossistema
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        AGENTE IA                             │
+│         (Detecta situação complexa ou necessidade)          │
+└─────────────────────────────────────────────────────────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────────┐
+│  ANJO SOCIAL  │    │   PARCEIROS   │    │    MARKETPLACE    │
+│ (Assessoria)  │    │  (Financeiro) │    │    (Serviços)     │
+│               │    │               │    │                   │
+│ - Escalonar   │    │ - Caixa Tem   │    │ - Planos celular  │
+│ - Acompanhar  │    │ - Nubank      │    │ - Cursos grátis   │
+│ - Resolver    │    │ - Microcrédito│    │ - Vagas emprego   │
+└───────────────┘    └───────────────┘    └───────────────────┘
+```
