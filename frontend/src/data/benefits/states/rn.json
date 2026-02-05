@@ -1,7 +1,7 @@
 {
   "state": "RN",
   "stateName": "Rio Grande do Norte",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "rn-rn-mais-igual",
@@ -48,7 +48,7 @@
         "Aguarde contato"
       ],
       "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -84,7 +84,7 @@
         "Aberto para todos"
       ],
       "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -135,7 +135,7 @@
         "Leve documentos quando for chamado"
       ],
       "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"

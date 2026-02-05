@@ -3,18 +3,29 @@ Orquestrador do pipeline ETL de dados abertos.
 
 Coordena extracao -> transformacao -> carga para cada programa.
 Gerencia agendamento e monitoramento.
+
+Scheduler:
+    Uses APScheduler for automated monthly data updates.
+    Configure via environment or run manually via /api/v1/admin/jobs/{job_name}/run
 """
 
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Callable
 from dataclasses import dataclass, field
 from datetime import datetime
+
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from apscheduler.triggers.cron import CronTrigger
+from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 from .extrator import ExtratorDadosAbertos, PROGRAMA_FONTE
 from .transformador import TransformadorDados
 from .carregador import CarregadorDados, ResultadoCarga
 
 logger = logging.getLogger(__name__)
+
+# Global scheduler instance
+scheduler: Optional[AsyncIOScheduler] = None
 
 
 # Agenda de execucao (dia do mes, hora)
@@ -25,6 +36,7 @@ AGENDA_PROGRAMAS = {
     "TSEE": {"dia": 8, "hora": 4},
     "AUXILIO_GAS": {"dia": 9, "hora": 4},
     "SEGURO_DEFESO": {"dia": 10, "hora": 4},
+    "CRAS": {"dia": 11, "hora": 4},  # CRAS location data
 }
 
 
@@ -317,3 +329,162 @@ def consultar_dados_abertos(
         ],
         "mensagem": "Dados abertos de beneficios sociais. Escolha um programa para ver detalhes.",
     }
+
+
+# =============================================================================
+# APScheduler Integration
+# =============================================================================
+
+def _job_listener(event):
+    """Log job execution events."""
+    if event.exception:
+        logger.error(f"Job {event.job_id} failed: {event.exception}")
+    else:
+        logger.info(f"Job {event.job_id} completed successfully")
+
+
+async def _run_cras_ingestion():
+    """Wrapper for CRAS ingestion job."""
+    from app.jobs.ingest_cras import ingest_cras_data
+    logger.info("Starting scheduled CRAS ingestion")
+    result = await ingest_cras_data()
+    logger.info(f"CRAS ingestion result: {result.get('records_saved', 0)} records saved")
+    return result
+
+
+async def _run_farmacia_ingestion():
+    """Wrapper for Farmacia Popular ingestion job."""
+    from app.jobs.ingest_farmacia_real import ingest_farmacia_real
+    logger.info("Starting scheduled Farmacia Popular ingestion")
+    await ingest_farmacia_real()
+
+
+async def _run_programa_etl(programa: str):
+    """Wrapper for generic program ETL."""
+    now = datetime.now()
+    orq = OrquestradorETL(modo_mock=False)
+    result = orq.executar_pipeline(programa, now.month, now.year)
+    return result
+
+
+def init_scheduler() -> AsyncIOScheduler:
+    """Initialize the APScheduler with all configured jobs."""
+    global scheduler
+
+    if scheduler is not None:
+        return scheduler
+
+    scheduler = AsyncIOScheduler(timezone="America/Sao_Paulo")
+
+    # Add job listener for logging
+    scheduler.add_listener(_job_listener, EVENT_JOB_EXECUTED | EVENT_JOB_ERROR)
+
+    # Schedule CRAS ingestion (day 11, 4am)
+    scheduler.add_job(
+        _run_cras_ingestion,
+        CronTrigger(day=AGENDA_PROGRAMAS["CRAS"]["dia"], hour=AGENDA_PROGRAMAS["CRAS"]["hora"]),
+        id="ingest_cras",
+        name="CRAS Location Ingestion",
+        replace_existing=True,
+    )
+
+    # Schedule Farmacia Popular ingestion (day 7, 4am)
+    scheduler.add_job(
+        _run_farmacia_ingestion,
+        CronTrigger(day=AGENDA_PROGRAMAS["FARMACIA_POPULAR"]["dia"], hour=AGENDA_PROGRAMAS["FARMACIA_POPULAR"]["hora"]),
+        id="ingest_farmacia",
+        name="Farmacia Popular Ingestion",
+        replace_existing=True,
+    )
+
+    # Schedule other program ETL jobs
+    for programa, config in AGENDA_PROGRAMAS.items():
+        if programa in ("CRAS", "FARMACIA_POPULAR"):
+            continue  # Already handled above
+
+        scheduler.add_job(
+            lambda p=programa: _run_programa_etl(p),
+            CronTrigger(day=config["dia"], hour=config["hora"]),
+            id=f"etl_{programa.lower()}",
+            name=f"{programa} ETL",
+            replace_existing=True,
+        )
+
+    logger.info(f"Scheduler initialized with {len(scheduler.get_jobs())} jobs")
+    return scheduler
+
+
+def start_scheduler() -> None:
+    """Start the scheduler."""
+    global scheduler
+
+    if scheduler is None:
+        init_scheduler()
+
+    if not scheduler.running:
+        scheduler.start()
+        logger.info("ETL Scheduler started")
+
+
+def stop_scheduler() -> None:
+    """Stop the scheduler gracefully."""
+    global scheduler
+
+    if scheduler and scheduler.running:
+        scheduler.shutdown(wait=True)
+        logger.info("ETL Scheduler stopped")
+
+
+def get_scheduler_status() -> Dict[str, Any]:
+    """Get current scheduler status and job information."""
+    global scheduler
+
+    if scheduler is None:
+        return {"running": False, "jobs": []}
+
+    jobs = []
+    for job in scheduler.get_jobs():
+        jobs.append({
+            "id": job.id,
+            "name": job.name,
+            "next_run": job.next_run_time.isoformat() if job.next_run_time else None,
+            "trigger": str(job.trigger),
+        })
+
+    return {
+        "running": scheduler.running,
+        "jobs": jobs,
+        "job_count": len(jobs),
+    }
+
+
+async def run_job_now(job_name: str) -> Dict[str, Any]:
+    """Manually trigger a job to run immediately.
+
+    Args:
+        job_name: One of: cras, farmacia, bolsa_familia, bpc, tsee, auxilio_gas, seguro_defeso
+
+    Returns:
+        Job execution result
+    """
+    job_name = job_name.lower()
+
+    if job_name == "cras":
+        return await _run_cras_ingestion()
+    elif job_name in ("farmacia", "farmacia_popular"):
+        await _run_farmacia_ingestion()
+        return {"status": "completed", "job": "farmacia_popular"}
+    elif job_name in AGENDA_PROGRAMAS:
+        result = await _run_programa_etl(job_name.upper())
+        return {
+            "status": "completed" if result.sucesso else "failed",
+            "job": job_name,
+            "records": result.registros_validos,
+            "error": result.erro,
+        }
+    else:
+        available = list(AGENDA_PROGRAMAS.keys()) + ["farmacia"]
+        return {
+            "status": "error",
+            "error": f"Unknown job: {job_name}. Available: {available}",
+        }

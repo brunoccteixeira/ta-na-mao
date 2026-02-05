@@ -1,7 +1,7 @@
 {
   "state": "MG",
   "stateName": "Minas Gerais",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "mg-piso-mineiro",
@@ -45,7 +45,7 @@
         "Valor vem junto com o Bolsa Família"
       ],
       "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -92,7 +92,7 @@
         "O benefício é pago automaticamente"
       ],
       "sourceUrl": "https://www.educacao.mg.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍎",
       "category": "Alimentação"
@@ -127,7 +127,7 @@
         "Pague R$ 2,00 e faça a refeição"
       ],
       "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -171,7 +171,7 @@
         "Receba o pagamento trimestral"
       ],
       "sourceUrl": "https://www.meioambiente.mg.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "♻️",
       "category": "Catadores"
@@ -214,7 +214,7 @@
         "Inscreva-se nas ações disponíveis"
       ],
       "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🌉",
       "category": "Assistência Social"

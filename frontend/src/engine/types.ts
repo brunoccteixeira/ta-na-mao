@@ -222,14 +222,18 @@ export const SECTORS = {
 
 export const MINIMUM_WAGE_2024 = 1412;
 export const MINIMUM_WAGE_2025 = 1518;
+export const MINIMUM_WAGE_2026 = 1600; // Estimativa baseada em projeção INPC
 
-// Per capita income thresholds (2024/2025)
+// Salário mínimo atual (atualizar anualmente)
+export const MINIMUM_WAGE = MINIMUM_WAGE_2026;
+
+// Per capita income thresholds (2026)
 export const INCOME_THRESHOLDS = {
-  extrema_pobreza: 218,        // R$ 218 per capita
-  pobreza: 218,                // Same for Bolsa Família
-  bpc: MINIMUM_WAGE_2025 / 4,  // 1/4 minimum wage
-  baixa_renda: MINIMUM_WAGE_2025 / 2, // 1/2 minimum wage
-  cadunico: MINIMUM_WAGE_2025 * 3,    // Up to 3x minimum wage for CadUnico
+  extrema_pobreza: 218,            // R$ 218 per capita (valor fixo por lei)
+  pobreza: 218,                    // Same for Bolsa Família
+  bpc: MINIMUM_WAGE / 4,           // 1/4 minimum wage = R$ 400
+  baixa_renda: MINIMUM_WAGE / 2,   // 1/2 minimum wage = R$ 800
+  cadunico: MINIMUM_WAGE * 3,      // Up to 3x minimum wage = R$ 4.800
 };
 
 export const DEFAULT_CITIZEN_PROFILE: CitizenProfile = {

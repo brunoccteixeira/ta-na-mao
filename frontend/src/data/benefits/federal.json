@@ -57,7 +57,7 @@
         "Aguarde a análise (pode levar alguns meses)"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Transferência de Renda"
@@ -69,8 +69,8 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1412,
-        "max": 1412,
+        "min": 1600,
+        "max": 1600,
         "description": "1 salário mínimo"
       },
       "eligibilityRules": [
@@ -84,7 +84,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 353,
+          "value": 400,
           "description": "Renda por pessoa de até 1/4 do salário mínimo",
           "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         },
@@ -131,7 +131,7 @@
         "Agende perícia se necessário"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👴",
       "category": "Assistência Social"
@@ -143,8 +143,8 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1412,
-        "max": 1412,
+        "min": 1600,
+        "max": 1600,
         "description": "1 salário mínimo"
       },
       "eligibilityRules": [
@@ -158,7 +158,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 353,
+          "value": 400,
           "description": "Renda por pessoa de até 1/4 do salário mínimo",
           "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         }
@@ -194,7 +194,7 @@
         "Agende e compareça à perícia médica"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "♿",
       "category": "Assistência Social"
@@ -214,7 +214,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo",
           "legalReference": "Art. 2º, Lei 12.212/2010"
         },
@@ -255,7 +255,7 @@
         "O desconto começa na próxima conta"
       ],
       "sourceUrl": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💡",
       "category": "Utilidades"
@@ -309,7 +309,7 @@
         "Retire os medicamentos grátis ou com desconto"
       ],
       "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💊",
       "category": "Saúde"
@@ -354,7 +354,7 @@
         "Pago a cada 2 meses"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -411,7 +411,7 @@
         "Aguarde análise de crédito e aprovação"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/mcmv",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏡",
       "category": "Habitação"
@@ -448,7 +448,7 @@
         "Solicite o saque se tiver direito"
       ],
       "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/pis/Paginas/default.aspx",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Trabalho"
@@ -484,7 +484,7 @@
         "Se tiver, solicite o saque pelo site"
       ],
       "sourceUrl": "https://valoresareceber.bcb.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏦",
       "category": "Financeiro"
@@ -521,7 +521,7 @@
         "Solicite o saque pelo app ou agência"
       ],
       "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📋",
       "category": "Trabalho"
@@ -533,8 +533,8 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1412,
-        "max": 2313,
+        "min": 1600,
+        "max": 2424,
         "description": "3 a 5 parcelas dependendo do tempo trabalhado"
       },
       "eligibilityRules": [
@@ -577,7 +577,7 @@
         "Parcelas são depositadas mensalmente"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛡️",
       "category": "Trabalho"
@@ -589,8 +589,8 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "annual",
-        "min": 118,
-        "max": 1412,
+        "min": 134,
+        "max": 1600,
         "description": "Valor proporcional aos meses trabalhados"
       },
       "eligibilityRules": [
@@ -603,7 +603,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2824,
+          "value": 3200,
           "description": "Recebeu até 2 salários mínimos por mês"
         },
         {
@@ -625,7 +625,7 @@
         "Saque na data do seu mês de nascimento"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/sacar-o-abono-salarial",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💵",
       "category": "Trabalho"
@@ -680,7 +680,7 @@
         "Retire os absorventes gratuitamente"
       ],
       "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/noticias/2023/marco/programa-dignidade-menstrual",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🩸",
       "category": "Saúde"
@@ -706,7 +706,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -723,7 +723,7 @@
         "Aguarde a aplicação do desconto"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/assuntos/saneamento",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💧",
       "category": "Utilidades"
@@ -762,7 +762,7 @@
         "Anexe os documentos e aguarde análise"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-isencao-de-ipva",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🚗",
       "category": "Veículos"
@@ -789,7 +789,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 1412,
+          "value": 1600,
           "description": "Renda familiar de até 1 salário mínimo",
           "legalReference": "Art. 1º, Lei 8.899/1994"
         }
@@ -819,10 +819,470 @@
         "Use nas rodoviárias ao viajar entre estados"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
+    },
+    {
+      "id": "federal-pe-de-meia",
+      "name": "Pé-de-Meia",
+      "shortDescription": "Dinheiro todo mês para estudantes do ensino médio público. O valor pode chegar a R$ 200 por mês.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês durante o ano letivo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado no ensino médio",
+          "legalReference": "Art. 2º, Lei 14.818/2024"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública",
+          "legalReference": "Art. 2º, Lei 14.818/2024"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único",
+          "legalReference": "Art. 3º, Lei 14.818/2024"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.818/2024",
+            "description": "Lei do Programa Pé-de-Meia",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14818.htm"
+          }
+        ]
+      },
+      "whereToApply": "Automático para estudantes do CadÚnico matriculados no ensino médio público",
+      "documentsRequired": [
+        "CPF do estudante",
+        "Matrícula no ensino médio público",
+        "Família inscrita no Cadastro Único"
+      ],
+      "howToApply": [
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "O estudante precisa estar matriculado no ensino médio público",
+        "O MEC cruza os dados automaticamente",
+        "Acompanhe pelo app Jornada do Estudante"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/pe-de-meia",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "📚",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-prouni",
+      "name": "ProUni",
+      "shortDescription": "Bolsa de estudo integral ou parcial (50%) em faculdades particulares para quem estudou em escola pública.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 3000,
+        "description": "Economia mensal com mensalidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter cursado o ensino médio completo em escola pública ou como bolsista integral em escola particular",
+          "legalReference": "Art. 2º, Lei 11.096/2005"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 2400,
+          "description": "Renda familiar per capita de até 1,5 salário mínimo (bolsa integral) ou até 3 SM (bolsa parcial)",
+          "legalReference": "Art. 1º, Lei 11.096/2005"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "11.096/2005",
+            "description": "Lei do Programa Universidade para Todos",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11096.htm"
+          }
+        ]
+      },
+      "whereToApply": "Site do ProUni (prouniportal.mec.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "Nota do ENEM (mínimo 450 pontos e redação > 0)",
+        "Comprovante de conclusão do ensino médio",
+        "Comprovante de renda de todos da família"
+      ],
+      "howToApply": [
+        "Faça o ENEM e obtenha nota mínima de 450 pontos",
+        "Acesse o site do ProUni no período de inscrição",
+        "Escolha até 2 opções de curso",
+        "Se selecionado, comprove as informações na faculdade"
+      ],
+      "sourceUrl": "https://prouniportal.mec.gov.br/",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-fies",
+      "name": "FIES",
+      "shortDescription": "Financiamento do governo para pagar a faculdade. Você paga depois de formado, com juros baixos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 200000,
+        "description": "Financiamento total do curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 4800,
+          "description": "Renda familiar per capita de até 3 salários mínimos",
+          "legalReference": "Art. 1º, Lei 10.260/2001"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.260/2001",
+            "description": "Lei do FIES",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10260.htm"
+          }
+        ]
+      },
+      "whereToApply": "Site do FIES (fies.mec.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "Nota do ENEM (a partir de 2010)",
+        "Comprovante de matrícula em faculdade credenciada",
+        "Comprovante de renda de todos da família"
+      ],
+      "howToApply": [
+        "Faça o ENEM e obtenha nota mínima de 450 pontos",
+        "Acesse o site do FIES no período de inscrição",
+        "Complete a inscrição e aguarde resultado",
+        "Se selecionado, valide informações no banco e na faculdade"
+      ],
+      "sourceUrl": "https://fies.mec.gov.br/",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-auxilio-brasil-alimentacao",
+      "name": "Alimenta Brasil (Cesta Básica)",
+      "shortDescription": "Distribuição de cestas básicas para famílias em situação de insegurança alimentar pelo CadÚnico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "Valor equivalente da cesta básica"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Lei 14.628/2023"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa de até R$ 218",
+          "legalReference": "Art. 4º, Lei 14.628/2023"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.628/2023",
+            "description": "Lei do Programa Alimenta Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14628.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "Número do NIS (Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "Procure o CRAS ou Banco de Alimentos da cidade",
+        "Pergunte sobre o programa Alimenta Brasil",
+        "Retire a cesta básica nos dias indicados"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/alimenta-brasil",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🥫",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-cozinha-solidaria",
+      "name": "Cozinha Solidária",
+      "shortDescription": "Refeições gratuitas ou a preço baixo (R$ 1) em restaurantes populares para pessoas em vulnerabilidade.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 600,
+        "description": "Economia mensal em alimentação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Preferencialmente inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Restaurante Popular ou Cozinha Solidária mais próxima",
+      "documentsRequired": [
+        "Documento com foto (RG ou CNH)",
+        "NIS do Cadastro Único (não obrigatório em todos)"
+      ],
+      "howToApply": [
+        "Procure o Restaurante Popular ou Cozinha Solidária da sua cidade",
+        "Apresente documento de identificação",
+        "Pague R$ 1 ou retire a refeição gratuita",
+        "Pode almoçar todos os dias úteis"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/cozinhas-solidarias",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-aposentadoria-rural",
+      "name": "Aposentadoria Rural",
+      "shortDescription": "Aposentadoria para trabalhadores rurais com idade reduzida: homens aos 60 e mulheres aos 55 anos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1600,
+        "max": 1600,
+        "description": "1 salário mínimo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Exercer atividade rural",
+          "legalReference": "Art. 48, Lei 8.213/1991"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 55,
+          "description": "Ter 55 anos (mulher) ou 60 anos (homem)",
+          "legalReference": "Art. 48, §1º, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (pelo site, app ou agência)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (se tiver)",
+        "Documentos que comprovem atividade rural",
+        "Declaração do Sindicato dos Trabalhadores Rurais"
+      ],
+      "howToApply": [
+        "Reúna documentos que comprovem atividade rural",
+        "Acesse o Meu INSS ou vá a uma agência",
+        "Solicite a aposentadoria rural",
+        "Aguarde análise e perícia se necessário"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/aposentadorias/aposentadoria-por-idade-do-trabalhador-rural",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "👨‍🌾",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-salario-maternidade",
+      "name": "Salário-Maternidade",
+      "shortDescription": "Pagamento durante a licença-maternidade para quem contribuiu ao INSS. Dura 120 dias.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1600,
+        "max": 8000,
+        "description": "Valor do salário ou média das contribuições"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida ou ter dado à luz",
+          "legalReference": "Art. 71, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (pelo site, app ou agência) - para autônomas/MEI. Para CLT, a empresa paga.",
+      "documentsRequired": [
+        "CPF",
+        "Certidão de nascimento da criança ou atestado médico",
+        "Carteira de Trabalho ou carnês INSS"
+      ],
+      "howToApply": [
+        "Se trabalha com carteira assinada, a empresa paga automaticamente",
+        "Se é MEI, autônoma ou desempregada, acesse o Meu INSS",
+        "Solicite o salário-maternidade",
+        "Receba por 120 dias (4 meses)"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/salario-maternidade",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🤱",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-auxilio-doenca",
+      "name": "Auxílio por Incapacidade Temporária",
+      "shortDescription": "Pagamento mensal para quem não consegue trabalhar por doença ou acidente por mais de 15 dias.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1600,
+        "max": 7000,
+        "description": "91% da média das contribuições"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter contribuído ao INSS",
+          "legalReference": "Art. 59, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (pelo site, app ou agência)",
+      "documentsRequired": [
+        "CPF",
+        "Atestado médico com mais de 15 dias de afastamento",
+        "Carteira de Trabalho",
+        "Exames e laudos médicos"
+      ],
+      "howToApply": [
+        "Fique afastado do trabalho por mais de 15 dias",
+        "Acesse o Meu INSS e solicite o benefício",
+        "Agende a perícia médica",
+        "Compareça à perícia com documentos médicos"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/auxilio-por-incapacidade-temporaria",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "🏥",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-pensao-morte",
+      "name": "Pensão por Morte",
+      "shortDescription": "Pagamento mensal para dependentes de quem faleceu e contribuiu ao INSS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1600,
+        "max": 7000,
+        "description": "Percentual do que o falecido recebia ou receberia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cpf",
+          "operator": "has",
+          "value": true,
+          "description": "Ser dependente de segurado do INSS que faleceu",
+          "legalReference": "Art. 74, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (pelo site, app ou agência)",
+      "documentsRequired": [
+        "CPF do dependente",
+        "Certidão de óbito",
+        "Documentos do falecido (CPF, Carteira de Trabalho)",
+        "Comprovante de dependência (certidão de casamento, nascimento)"
+      ],
+      "howToApply": [
+        "Reúna os documentos do falecido e seus",
+        "Acesse o Meu INSS ou vá a uma agência",
+        "Solicite a pensão por morte",
+        "Aguarde análise e liberação"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/pensao-por-morte",
+      "lastUpdated": "2026-02-04",
+      "status": "active",
+      "icon": "💐",
+      "category": "Previdência"
     }
   ]
 }

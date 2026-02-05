@@ -2,9 +2,13 @@
 Servico de integracao com Gov.br.
 
 Implementa:
-- OAuth 2.0 / OpenID Connect com Gov.br SSO
-- Cliente para Conecta Gov.br APIs
-- Gerenciamento de tokens e niveis de confianca
+- OAuth 2.0 / OpenID Connect com Gov.br SSO (Login unico - disponivel para qualquer app)
+- Integracao com Portal da Transparencia (dados publicos de beneficios)
+- Integracao com SERPRO (validacao de CPF - pago)
+
+IMPORTANTE: Conecta Gov.br (CadUnico tempo real, CPF Light) NAO esta disponivel
+para startups/empresas privadas. Acesso restrito a orgaos da administracao publica.
+Para acessar, necessario parceria B2G (convenio com prefeitura ou MDS).
 
 SEGURANCA: Tokens nunca sao logados. CPF eh hasheado para logs.
 """
@@ -12,7 +16,6 @@ SEGURANCA: Tokens nunca sao logados. CPF eh hasheado para logs.
 import hashlib
 import logging
 import secrets
-from datetime import datetime, timedelta
 from typing import Optional, Dict, Any
 from enum import Enum
 
@@ -72,6 +75,11 @@ def _hash_cpf(cpf: str) -> str:
     return hashlib.sha256(cpf.encode()).hexdigest()[:12]
 
 
+def _limpar_cpf(cpf: str) -> str:
+    """Remove formatacao do CPF."""
+    return "".join(c for c in cpf if c.isdigit())
+
+
 def _get_govbr_config() -> Dict[str, str]:
     """Retorna configuracao do Gov.br a partir do settings."""
     try:
@@ -80,18 +88,12 @@ def _get_govbr_config() -> Dict[str, str]:
             "client_id": getattr(settings, "GOVBR_CLIENT_ID", ""),
             "client_secret": getattr(settings, "GOVBR_CLIENT_SECRET", ""),
             "redirect_uri": getattr(settings, "GOVBR_REDIRECT_URI", ""),
-            "conecta_url": getattr(settings, "CONECTA_GOVBR_URL", ""),
-            "conecta_client_id": getattr(settings, "CONECTA_GOVBR_CLIENT_ID", ""),
-            "conecta_client_secret": getattr(settings, "CONECTA_GOVBR_CLIENT_SECRET", ""),
         }
     except Exception:
         return {
             "client_id": "",
             "client_secret": "",
             "redirect_uri": "",
-            "conecta_url": "",
-            "conecta_client_id": "",
-            "conecta_client_secret": "",
         }
 
 
@@ -102,7 +104,7 @@ def is_govbr_configured() -> bool:
 
 
 # =============================================================================
-# OAuth 2.0 Flow
+# OAuth 2.0 Flow (Login Gov.br - disponivel para qualquer app)
 # =============================================================================
 
 def gerar_url_login(state: Optional[str] = None) -> Dict[str, str]:
@@ -279,7 +281,164 @@ def _descrever_nivel(nivel: NivelConfianca) -> str:
 
 
 # =============================================================================
-# Conecta Gov.br APIs
+# Auto-preenchimento (Principio "Once-Only") - Nova Arquitetura
+# =============================================================================
+
+async def auto_preencher_dados(cpf: str) -> Dict[str, Any]:
+    """Auto-preenche dados do cidadao usando APIs disponiveis.
+
+    Principio "Nao peca ao cidadao dados que o governo ja tem"
+    (Lei 13.726/2018).
+
+    ARQUITETURA:
+    1. SERPRO (se habilitado): valida CPF, nome, data nascimento
+    2. Portal da Transparencia (gratuito): dados de beneficios
+    3. Auto-declaracao: renda e composicao familiar (CadUnico nao disponivel)
+
+    Args:
+        cpf: CPF do cidadao
+
+    Returns:
+        dict com dados auto-preenchidos disponiveis
+    """
+    from app.services import serpro_service, transparencia_service
+
+    cpf_limpo = _limpar_cpf(cpf)
+    cpf_hash = _hash_cpf(cpf_limpo)
+    logger.info(f"Auto-preenchendo dados para cpf_hash={cpf_hash}")
+
+    dados: Dict[str, Any] = {
+        "cpf": cpf_limpo,
+        "preenchido_automaticamente": True,
+        "fontes": [],
+    }
+
+    # 1. Validacao do CPF via SERPRO (se habilitado)
+    if serpro_service.is_serpro_configured():
+        serpro_data = await serpro_service.consultar_cpf(cpf_limpo)
+        if serpro_data.get("valido"):
+            dados["nome"] = serpro_data.get("nome", "")
+            dados["data_nascimento"] = serpro_data.get("nascimento", "")
+            dados["situacao_cpf"] = serpro_data.get("situacao", {})
+            dados["fontes"].append("SERPRO")
+            logger.info(f"Dados SERPRO obtidos para cpf_hash={cpf_hash}")
+    else:
+        # Sem SERPRO, nao conseguimos validar automaticamente
+        dados["serpro_nao_configurado"] = True
+        dados["fontes"].append("Auto-declaracao (SERPRO nao habilitado)")
+
+    # 2. Beneficios via Portal da Transparencia (gratuito)
+    beneficios = await transparencia_service.consultar_beneficios_ou_mock(cpf_limpo)
+    if beneficios.get("cpf_consultado"):
+        dados["beneficios"] = {
+            "eh_beneficiario": beneficios.get("beneficiario_algum_programa", False),
+            "programas": beneficios.get("beneficios_ativos", []),
+            "total_mensal": beneficios.get("total_mensal_estimado", 0),
+        }
+        if "Mock" not in beneficios.get("fonte", ""):
+            dados["fontes"].append("Portal da Transparencia")
+        else:
+            dados["fontes"].append("Mock (Portal da Transparencia nao configurado)")
+
+    # 3. CadUnico: NAO DISPONIVEL para startups
+    # Adiciona aviso e sugere auto-declaracao
+    dados["cadunico"] = {
+        "disponivel": False,
+        "motivo": "Conecta Gov.br nao disponivel para aplicacoes privadas",
+        "alternativa": "Auto-declaracao do cidadao ou parceria B2G",
+    }
+
+    return dados
+
+
+def auto_preencher_dados_sync(cpf: str) -> Dict[str, Any]:
+    """Versao sincrona do auto_preencher_dados para compatibilidade.
+
+    Usa mock quando em modo sincrono.
+    """
+    return _mock_auto_preencher(cpf)
+
+
+def _mock_auto_preencher(cpf: str) -> Dict[str, Any]:
+    """Mock para desenvolvimento quando APIs nao estao configuradas."""
+    cpf_limpo = _limpar_cpf(cpf)
+
+    # CPFs de teste
+    mocks = {
+        "52998224725": {
+            "cpf": "52998224725",
+            "nome": "MARIA DA SILVA SANTOS",
+            "data_nascimento": "15/03/1985",
+            "situacao_cpf": {"codigo": "0", "descricao": "Regular", "regular": True},
+            "beneficios": {
+                "eh_beneficiario": True,
+                "programas": [
+                    {"programa": "Bolsa Familia / Auxilio Brasil", "valor_mensal": 600.0},
+                    {"programa": "Auxilio Gas", "valor_mensal": 104.0},
+                ],
+                "total_mensal": 704.0,
+            },
+            "cadunico": {
+                "disponivel": False,
+                "motivo": "Conecta Gov.br nao disponivel para aplicacoes privadas",
+                "alternativa": "Auto-declaracao do cidadao ou parceria B2G",
+                # Dados simulados para UX (viriam de auto-declaracao)
+                "auto_declaracao": {
+                    "renda_per_capita": 266.67,
+                    "composicao_familiar": 3,
+                    "municipio": "SAO PAULO",
+                    "uf": "SP",
+                },
+            },
+            "preenchido_automaticamente": True,
+            "fontes": ["Mock (APIs nao configuradas)"],
+        },
+        "11144477735": {
+            "cpf": "11144477735",
+            "nome": "JOSE CARLOS OLIVEIRA",
+            "data_nascimento": "20/07/1958",
+            "situacao_cpf": {"codigo": "0", "descricao": "Regular", "regular": True},
+            "beneficios": {
+                "eh_beneficiario": True,
+                "programas": [
+                    {"programa": "BPC - Beneficio de Prestacao Continuada", "valor_mensal": 1412.0},
+                ],
+                "total_mensal": 1412.0,
+            },
+            "cadunico": {
+                "disponivel": False,
+                "motivo": "Conecta Gov.br nao disponivel para aplicacoes privadas",
+                "alternativa": "Auto-declaracao do cidadao ou parceria B2G",
+                "auto_declaracao": {
+                    "renda_per_capita": 0,
+                    "composicao_familiar": 1,
+                    "municipio": "RECIFE",
+                    "uf": "PE",
+                },
+            },
+            "preenchido_automaticamente": True,
+            "fontes": ["Mock (APIs nao configuradas)"],
+        },
+    }
+
+    if cpf_limpo in mocks:
+        return mocks[cpf_limpo]
+
+    return {
+        "cpf": cpf_limpo,
+        "preenchido_automaticamente": False,
+        "fontes": ["Mock (APIs nao configuradas)"],
+        "mensagem": "CPF nao encontrado no mock. Configure SERPRO e/ou Portal da Transparencia.",
+        "cadunico": {
+            "disponivel": False,
+            "motivo": "Conecta Gov.br nao disponivel para aplicacoes privadas",
+            "alternativa": "Auto-declaracao do cidadao ou parceria B2G",
+        },
+    }
+
+
+# =============================================================================
+# Funcoes de Compatibilidade (deprecated)
 # =============================================================================
 
 def consultar_conecta_api(
@@ -287,195 +446,17 @@ def consultar_conecta_api(
     cpf: str,
     access_token: Optional[str] = None,
 ) -> Optional[Dict[str, Any]]:
-    """Consulta uma API do Conecta Gov.br.
+    """DEPRECATED: Conecta Gov.br NAO esta disponivel para startups.
 
-    Args:
-        endpoint: Endpoint da API (ex: /api-cpf-light/v2/)
-        cpf: CPF para consulta
-        access_token: Token de acesso do cidadao (para APIs que exigem)
+    Esta funcao eh mantida apenas para compatibilidade.
+    Use transparencia_service ou serpro_service.
 
     Returns:
-        dict com dados da API ou None se falhou
+        None sempre - API nao disponivel
     """
-    config = _get_govbr_config()
-    cpf_hash = _hash_cpf(cpf)
-
-    if not config["conecta_url"]:
-        logger.warning("Conecta Gov.br nao configurado")
-        return None
-
-    url = f"{config['conecta_url'].rstrip('/')}{endpoint}"
-
-    headers = {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-    }
-
-    # Autenticacao: token do cidadao ou credenciais da aplicacao
-    if access_token:
-        headers["Authorization"] = f"Bearer {access_token}"
-    else:
-        # Client credentials para APIs que nao exigem token do cidadao
-        token = _obter_token_aplicacao()
-        if token:
-            headers["Authorization"] = f"Bearer {token}"
-
-    try:
-        logger.info(f"Conecta API: endpoint={endpoint}, cpf_hash={cpf_hash}")
-
-        with httpx.Client(timeout=_HTTP_TIMEOUT) as client:
-            response = client.get(
-                url,
-                params={"cpf": cpf},
-                headers=headers,
-            )
-
-        if response.status_code == 200:
-            logger.info(f"Conecta API: sucesso para cpf_hash={cpf_hash}")
-            return response.json()
-
-        logger.warning(
-            f"Conecta API: status={response.status_code} "
-            f"endpoint={endpoint} cpf_hash={cpf_hash}"
-        )
-        return None
-
-    except Exception as e:
-        logger.error(f"Conecta API: erro {e}")
-        return None
-
-
-def _obter_token_aplicacao() -> Optional[str]:
-    """Obtem token de aplicacao (client credentials) para Conecta Gov.br."""
-    config = _get_govbr_config()
-
-    if not config["conecta_client_id"]:
-        return None
-
-    try:
-        with httpx.Client(timeout=_HTTP_TIMEOUT) as client:
-            response = client.post(
-                GOVBR_TOKEN_URL,
-                data={
-                    "grant_type": "client_credentials",
-                    "client_id": config["conecta_client_id"],
-                    "client_secret": config["conecta_client_secret"],
-                },
-                headers={"Content-Type": "application/x-www-form-urlencoded"},
-            )
-
-        if response.status_code == 200:
-            return response.json().get("access_token")
-
-        return None
-
-    except Exception as e:
-        logger.error(f"Erro ao obter token de aplicacao: {e}")
-        return None
-
-
-# =============================================================================
-# Auto-preenchimento (Principio "Once-Only")
-# =============================================================================
-
-def auto_preencher_dados(
-    cpf: str,
-    access_token: Optional[str] = None,
-) -> Dict[str, Any]:
-    """Auto-preenche dados do cidadao usando APIs do Gov.br.
-
-    Principio "Nao peca ao cidadao dados que o governo ja tem"
-    (Lei 13.726/2018).
-
-    Args:
-        cpf: CPF do cidadao
-        access_token: Token de acesso Gov.br (para dados mais completos)
-
-    Returns:
-        dict com dados auto-preenchidos disponiveis
-    """
-    cpf_hash = _hash_cpf(cpf)
-    logger.info(f"Auto-preenchendo dados para cpf_hash={cpf_hash}")
-
-    dados = {
-        "cpf": cpf,
-        "preenchido_automaticamente": True,
-        "fonte": "Gov.br Conecta",
-    }
-
-    if not is_govbr_configured():
-        # Retorna mock para desenvolvimento
-        return _mock_auto_preencher(cpf)
-
-    # CPF Light: nome e data de nascimento
-    cpf_data = consultar_conecta_api("/api-cpf-light/v2/", cpf, access_token)
-    if cpf_data:
-        dados["nome"] = cpf_data.get("nome", cpf_data.get("nomePessoaFisica", ""))
-        dados["data_nascimento"] = cpf_data.get(
-            "dataNascimento",
-            cpf_data.get("data_nascimento", "")
-        )
-        dados["situacao_cpf"] = cpf_data.get(
-            "situacaoCadastral",
-            cpf_data.get("situacao", "")
-        )
-
-    # CadUnico: renda, composicao familiar
-    cad_data = consultar_conecta_api("/api-cadunico-servicos/v1/", cpf, access_token)
-    if cad_data:
-        dados["cadunico"] = {
-            "ativo": True,
-            "renda_per_capita": cad_data.get("rendaPerCapita", 0),
-            "composicao_familiar": cad_data.get("quantidadeMembros", 0),
-            "municipio": cad_data.get("municipio", ""),
-            "uf": cad_data.get("uf", ""),
-        }
-
-    return dados
-
-
-def _mock_auto_preencher(cpf: str) -> Dict[str, Any]:
-    """Mock para desenvolvimento quando Gov.br nao esta configurado."""
-    # CPFs de teste
-    mocks = {
-        "52998224725": {
-            "cpf": "52998224725",
-            "nome": "MARIA DA SILVA SANTOS",
-            "data_nascimento": "15/03/1985",
-            "situacao_cpf": "REGULAR",
-            "cadunico": {
-                "ativo": True,
-                "renda_per_capita": 266.67,
-                "composicao_familiar": 3,
-                "municipio": "SAO PAULO",
-                "uf": "SP",
-            },
-            "preenchido_automaticamente": True,
-            "fonte": "Mock (Gov.br nao configurado)",
-        },
-        "11144477735": {
-            "cpf": "11144477735",
-            "nome": "JOSE CARLOS OLIVEIRA",
-            "data_nascimento": "20/07/1958",
-            "situacao_cpf": "REGULAR",
-            "cadunico": {
-                "ativo": True,
-                "renda_per_capita": 0,
-                "composicao_familiar": 1,
-                "municipio": "RECIFE",
-                "uf": "PE",
-            },
-            "preenchido_automaticamente": True,
-            "fonte": "Mock (Gov.br nao configurado)",
-        },
-    }
-
-    if cpf in mocks:
-        return mocks[cpf]
-
-    return {
-        "cpf": cpf,
-        "preenchido_automaticamente": False,
-        "fonte": "Mock (Gov.br nao configurado)",
-        "mensagem": "CPF nao encontrado no mock. Configure Gov.br para consulta real.",
-    }
+    logger.warning(
+        "consultar_conecta_api() chamada, mas Conecta Gov.br "
+        "NAO esta disponivel para startups. "
+        "Use transparencia_service ou serpro_service."
+    )
+    return None

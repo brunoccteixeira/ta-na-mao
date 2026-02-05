@@ -2,19 +2,24 @@
 
 Suporta busca por:
 - Coordenadas GPS (Google Places API)
-- CEP (dados locais)
-- Código IBGE (dados locais)
+- CEP (dados locais ou banco de dados)
+- Código IBGE (dados locais ou banco de dados)
+
+Priority:
+1. Database (cras_locations table) - real national data
+2. JSON fallback (cras_exemplo.json) - example data for development
+3. Google Places API - for coordinate-based searches
 """
 
 import json
 import os
 import logging
-from typing import Optional
+from typing import Optional, List, Dict, Any
 import httpx
 
 logger = logging.getLogger(__name__)
 
-# Carrega base de CRAS
+# Carrega base de CRAS (fallback)
 DATA_PATH = os.path.join(
     os.path.dirname(__file__),
     "..", "..", "..", "data", "cras_exemplo.json"
@@ -23,8 +28,47 @@ DATA_PATH = os.path.join(
 _CRAS_CACHE = None
 
 
+def _carregar_cras_do_banco(ibge_code: str) -> List[Dict[str, Any]]:
+    """Busca CRAS no banco de dados por codigo IBGE."""
+    try:
+        from app.database import SessionLocal
+        from app.models.cras_location import CrasLocation
+
+        db = SessionLocal()
+        try:
+            cras_list = (
+                db.query(CrasLocation)
+                .filter(CrasLocation.ibge_code == ibge_code)
+                .all()
+            )
+
+            if cras_list:
+                logger.info(f"Encontrados {len(cras_list)} CRAS no banco para {ibge_code}")
+                return [
+                    {
+                        "nome": c.nome,
+                        "endereco": c.endereco or "",
+                        "bairro": c.bairro or "",
+                        "cidade": c.municipality.name if c.municipality else "",
+                        "ibge_code": c.ibge_code,
+                        "telefone": c.telefone or "",
+                        "horario": c.horario_funcionamento or "Seg-Sex 8h-17h",
+                        "servicos": c.servicos or ["CadUnico", "BolsaFamilia", "BPC"],
+                        "latitude": c.latitude,
+                        "longitude": c.longitude,
+                    }
+                    for c in cras_list
+                ]
+        finally:
+            db.close()
+    except Exception as e:
+        logger.warning(f"Erro ao buscar CRAS no banco: {e}")
+
+    return []
+
+
 def _carregar_cras() -> dict:
-    """Carrega a base de CRAS do JSON."""
+    """Carrega a base de CRAS do JSON (fallback)."""
     global _CRAS_CACHE
     if _CRAS_CACHE is None:
         try:
@@ -107,15 +151,18 @@ def buscar_cras(
             "cras": []
         }
 
-    # Carregar base de CRAS
-    dados = _carregar_cras()
-    cras_list = dados.get("cras", [])
+    # Tentar buscar no banco de dados primeiro (dados reais nacionais)
+    cras_municipio = _carregar_cras_do_banco(codigo_ibge)
 
-    # Filtrar por municipio
-    cras_municipio = [
-        c for c in cras_list
-        if c.get("ibge_code") == codigo_ibge
-    ]
+    # Fallback para JSON de exemplo se banco estiver vazio
+    if not cras_municipio:
+        logger.debug(f"Banco vazio para {codigo_ibge}, usando fallback JSON")
+        dados = _carregar_cras()
+        cras_list = dados.get("cras", [])
+        cras_municipio = [
+            c for c in cras_list
+            if c.get("ibge_code") == codigo_ibge
+        ]
 
     if not cras_municipio:
         # Retorna mensagem informativa se nao tiver na base
@@ -124,7 +171,7 @@ def buscar_cras(
             "encontrados": 0,
             "municipio": codigo_ibge,
             "cras": [],
-            "mensagem": "Nao encontramos CRAS cadastrados para este municipio na nossa base de exemplo.",
+            "mensagem": "Nao encontramos CRAS cadastrados para este municipio na nossa base.",
             "dica": "Ligue para o Disque Social 121 para encontrar o CRAS mais proximo.",
             "texto_formatado": (
                 "Ainda nao temos os CRAS do seu municipio na nossa base.\n\n"
@@ -152,7 +199,9 @@ def buscar_cras(
             "cidade": cras.get("cidade", ""),
             "telefone": cras.get("telefone", ""),
             "horario": cras.get("horario", ""),
-            "servicos": cras.get("servicos", [])
+            "servicos": cras.get("servicos", []),
+            "latitude": cras.get("latitude"),
+            "longitude": cras.get("longitude"),
         })
 
         linhas_texto.append(f"{i}. {cras['nome']}")
@@ -168,6 +217,7 @@ def buscar_cras(
         "encontrados": len(cras_resultado),
         "municipio": cidade,
         "cras": resultado,
+        "fonte": "database" if cras_municipio else "fallback",
         "texto_formatado": "\n".join(linhas_texto)
     }
 

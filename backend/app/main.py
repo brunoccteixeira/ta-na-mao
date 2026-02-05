@@ -57,6 +57,19 @@ async def lifespan(app: FastAPI):
     else:
         logger.info("mcp_disabled")
 
+    # Initialize ETL scheduler (only in production/staging)
+    if settings.ENVIRONMENT in ("production", "staging"):
+        try:
+            from app.jobs.dados_abertos.orquestrador import start_scheduler, get_scheduler_status
+            start_scheduler()
+            status = get_scheduler_status()
+            logger.info("etl_scheduler_started", job_count=status["job_count"])
+        except Exception as e:
+            logger.error("etl_scheduler_failed", error=str(e))
+            # Continue startup even if scheduler fails
+    else:
+        logger.info("etl_scheduler_skipped", reason="development environment")
+
     yield
 
     # Shutdown
@@ -67,6 +80,15 @@ async def lifespan(app: FastAPI):
             logger.info("mcp_stopped")
         except Exception as e:
             logger.error("mcp_stop_failed", error=str(e))
+
+    # Stop ETL scheduler
+    if settings.ENVIRONMENT in ("production", "staging"):
+        try:
+            from app.jobs.dados_abertos.orquestrador import stop_scheduler
+            stop_scheduler()
+            logger.info("etl_scheduler_stopped")
+        except Exception as e:
+            logger.error("etl_scheduler_stop_failed", error=str(e))
 
     logger.info("application_shutting_down")
 

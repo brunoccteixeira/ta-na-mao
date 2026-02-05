@@ -476,3 +476,94 @@ async def get_admin_summary(
         "critical_municipalities": critical_count,
         "programs_tracked": programs_count,
     }
+
+
+# =============================================================================
+# ETL Scheduler Management
+# =============================================================================
+
+@router.get("/scheduler/status")
+async def get_scheduler_status():
+    """
+    Get the current status of the ETL scheduler.
+
+    Returns information about running jobs and their next scheduled runs.
+    """
+    from app.jobs.dados_abertos.orquestrador import get_scheduler_status
+    return get_scheduler_status()
+
+
+@router.post("/jobs/{job_name}/run")
+async def run_job_manually(job_name: str):
+    """
+    Manually trigger an ETL job to run immediately.
+
+    Available jobs:
+    - cras: CRAS location ingestion
+    - farmacia: Farmacia Popular beneficiary data
+    - bolsa_familia: Bolsa Familia data
+    - bpc: BPC/LOAS data
+    - tsee: Tarifa Social de Energia data
+    - auxilio_gas: Auxilio Gas data
+    - seguro_defeso: Seguro Defeso data
+
+    Note: In production, this endpoint should be protected with authentication.
+    """
+    from app.jobs.dados_abertos.orquestrador import run_job_now
+    result = await run_job_now(job_name)
+    return result
+
+
+@router.get("/cras/stats")
+async def get_cras_stats(
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    Get statistics about CRAS locations in the database.
+
+    Returns counts of CRAS records, geocoding coverage, and state distribution.
+    """
+    from app.models.cras_location import CrasLocation
+
+    # Total CRAS
+    total_stmt = select(func.count(CrasLocation.id))
+    total_result = await db.execute(total_stmt)
+    total_cras = total_result.scalar() or 0
+
+    # CRAS with coordinates
+    geocoded_stmt = select(func.count(CrasLocation.id)).where(
+        CrasLocation.latitude.isnot(None),
+        CrasLocation.longitude.isnot(None)
+    )
+    geocoded_result = await db.execute(geocoded_stmt)
+    geocoded_cras = geocoded_result.scalar() or 0
+
+    # By geocode source
+    source_stmt = (
+        select(CrasLocation.geocode_source, func.count(CrasLocation.id))
+        .where(CrasLocation.geocode_source.isnot(None))
+        .group_by(CrasLocation.geocode_source)
+    )
+    source_result = await db.execute(source_stmt)
+    by_source = {row[0]: row[1] for row in source_result.all()}
+
+    # By state (using ibge_code prefix)
+    state_stmt = (
+        select(
+            func.substr(CrasLocation.ibge_code, 1, 2).label("state_code"),
+            func.count(CrasLocation.id)
+        )
+        .group_by(func.substr(CrasLocation.ibge_code, 1, 2))
+        .order_by(desc(func.count(CrasLocation.id)))
+        .limit(10)
+    )
+    state_result = await db.execute(state_stmt)
+    top_states = [{"state_code": row[0], "count": row[1]} for row in state_result.all()]
+
+    return {
+        "total_cras": total_cras,
+        "geocoded_cras": geocoded_cras,
+        "geocoding_rate": (geocoded_cras / total_cras * 100) if total_cras > 0 else 0,
+        "by_geocode_source": by_source,
+        "top_states": top_states,
+    }

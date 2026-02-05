@@ -1,7 +1,7 @@
 {
   "state": "CE",
   "stateName": "Ceará",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "ce-cartao-mais-infancia",
@@ -55,7 +55,7 @@
         "Receba o cartão e saque o benefício"
       ],
       "sourceUrl": "https://www.sps.ce.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👶",
       "category": "Primeira Infância"
@@ -111,7 +111,7 @@
         "Retire o vale no local indicado"
       ],
       "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -160,7 +160,7 @@
         "Não precisa de cadastro para comer no restaurante"
       ],
       "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -216,7 +216,7 @@
         "O valor é depositado junto com o Bolsa Família"
       ],
       "sourceUrl": "https://www.sps.ce.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💪",
       "category": "Transferência de Renda"
@@ -249,7 +249,7 @@
         {
           "field": "rendaFamiliar",
           "operator": "lte",
-          "value": 4236,
+          "value": 4800,
           "description": "Renda familiar de até 3 salários mínimos"
         },
         {
@@ -274,7 +274,7 @@
         "Pague em parcelas com juros baixos"
       ],
       "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"

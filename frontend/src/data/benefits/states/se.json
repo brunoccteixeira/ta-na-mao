@@ -1,7 +1,7 @@
 {
   "state": "SE",
   "stateName": "Sergipe",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "se-cartao-mais-inclusao",
@@ -48,7 +48,7 @@
         "Espere o contato"
       ],
       "sourceUrl": "https://www.se.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💳",
       "category": "Transferência de Renda"
@@ -84,7 +84,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.se.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -128,7 +128,7 @@
         "O CRAS vai avaliar e ajudar"
       ],
       "sourceUrl": "https://www.se.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🤝",
       "category": "Assistência Social"

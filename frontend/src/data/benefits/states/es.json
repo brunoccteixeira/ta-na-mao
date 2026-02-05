@@ -1,7 +1,7 @@
 {
   "state": "ES",
   "stateName": "Espírito Santo",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "es-bolsa-capixaba",
@@ -48,7 +48,7 @@
         "O dinheiro vai para conta da Caixa"
       ],
       "sourceUrl": "https://setades.es.gov.br/bolsa-capixaba",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferencia de Renda"
@@ -99,7 +99,7 @@
         "Aguarde o resultado da selecao"
       ],
       "sourceUrl": "https://nossabolsa.es.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
       "category": "Educacao"
@@ -146,7 +146,7 @@
         "Nao precisa pedir separado"
       ],
       "sourceUrl": "https://setades.es.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -182,7 +182,7 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://setades.es.gov.br/restaurante-popular",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentacao"
@@ -227,7 +227,7 @@
         "Aguarde o inicio das aulas"
       ],
       "sourceUrl": "https://qualificar.es.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
       "category": "Qualificacao"

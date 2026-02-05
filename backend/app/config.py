@@ -63,13 +63,32 @@ class Settings(BaseSettings):
     CADUNICO_API_URL: str = ""  # URL da API CadUnico (mock quando vazio)
     CADUNICO_API_KEY: str = ""  # Chave da API CadUnico
 
-    # Gov.br Integration
+    # Gov.br Integration (Login SSO - disponivel para qualquer aplicacao)
     GOVBR_CLIENT_ID: str = ""
     GOVBR_CLIENT_SECRET: str = ""
     GOVBR_REDIRECT_URI: str = ""  # ex: https://api.tanamao.com.br/auth/callback
-    CONECTA_GOVBR_URL: str = ""  # ex: https://api.conectagov.estaleiro.serpro.gov.br
-    CONECTA_GOVBR_CLIENT_ID: str = ""
-    CONECTA_GOVBR_CLIENT_SECRET: str = ""
+
+    # Portal da Transparencia (gratuito, dados publicos de beneficios)
+    # Cadastre-se em: https://portaldatransparencia.gov.br/api-de-dados
+    TRANSPARENCIA_API_KEY: str = ""
+
+    # SERPRO Consulta CPF (pago, ~R$ 0,66/consulta)
+    # Contrate em: https://loja.serpro.gov.br/pin
+    SERPRO_CONSUMER_KEY: str = ""
+    SERPRO_CONSUMER_SECRET: str = ""
+    SERPRO_ENABLED: bool = False  # Feature flag para habilitar consultas pagas
+
+    # NOTA: Conecta Gov.br NAO esta disponivel para startups/empresas privadas
+    # Acesso restrito a orgaos da administracao publica federal
+    # As variaveis abaixo sao mantidas para referencia futura (parceria B2G)
+    # CONECTA_GOVBR_URL: str = ""
+    # CONECTA_GOVBR_CLIENT_ID: str = ""
+    # CONECTA_GOVBR_CLIENT_SECRET: str = ""
+
+    # Geocoding
+    # Google Geocoding API (paid fallback, ~R$0.01-0.05/request)
+    # Get key at: https://console.cloud.google.com/apis/credentials
+    GOOGLE_GEOCODING_KEY: str = ""
 
     # MCP Configuration
     MCP_ENABLED: bool = True

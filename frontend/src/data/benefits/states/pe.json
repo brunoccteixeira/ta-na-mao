@@ -1,7 +1,7 @@
 {
   "state": "PE",
   "stateName": "Pernambuco",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "pe-no-batente",
@@ -61,7 +61,7 @@
         "Aguarde convocação para as frentes de trabalho"
       ],
       "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔨",
       "category": "Emprego"
@@ -100,7 +100,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -118,7 +118,7 @@
         "Aguarde o pagamento durante a entressafra"
       ],
       "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🌾",
       "category": "Trabalho Rural"
@@ -157,7 +157,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -175,7 +175,7 @@
         "Receba o enxoval ao final da gestação"
       ],
       "sourceUrl": "https://www.maecoruja.pe.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🤰",
       "category": "Saúde Materno-Infantil"
@@ -211,7 +211,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -267,7 +267,7 @@
         "Aguarde visita técnica"
       ],
       "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"

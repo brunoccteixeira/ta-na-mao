@@ -1,7 +1,7 @@
 {
   "state": "PA",
   "stateName": "Pará",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "pa-vale-gas",
@@ -48,7 +48,7 @@
         "Se selecionado, receba pelo cartão do programa"
       ],
       "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -84,7 +84,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -135,7 +135,7 @@
         "Se selecionado, retire o cartão no local indicado"
       ],
       "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"

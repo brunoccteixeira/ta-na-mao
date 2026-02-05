@@ -1,7 +1,7 @@
 {
   "state": "SP",
   "stateName": "São Paulo",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "sp-bolsa-do-povo",
@@ -31,7 +31,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -48,7 +48,7 @@
         "Aguarde análise e chamamento"
       ],
       "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎯",
       "category": "Transferência de Renda"
@@ -81,7 +81,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -95,7 +95,7 @@
         "O valor vai para o cartão do programa"
       ],
       "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -131,7 +131,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -180,7 +180,7 @@
         "Aguarde comunicação do CRAS"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/renda-cidada/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -213,7 +213,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -230,7 +230,7 @@
         "Retire o leite mensalmente no local indicado"
       ],
       "sourceUrl": "https://www.vivaleite.sp.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🥛",
       "category": "Alimentação"
@@ -275,7 +275,7 @@
         "Compareça no local e data indicados"
       ],
       "sourceUrl": "https://www.viarapida.sp.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
       "category": "Qualificação"

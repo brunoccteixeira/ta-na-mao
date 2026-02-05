@@ -1,7 +1,7 @@
 {
   "state": "SC",
   "stateName": "Santa Catarina",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "sc-santa-renda",
@@ -48,7 +48,7 @@
         "O dinheiro vai para conta bancaria"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferencia de Renda"
@@ -98,7 +98,7 @@
         "O valor e carregado todo mes"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛒",
       "category": "Alimentacao"
@@ -134,7 +134,7 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentacao"
@@ -185,7 +185,7 @@
         "Receba encaminhamento para emprego"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
       "category": "Qualificacao"
@@ -234,7 +234,7 @@
         "Se aprovado, o valor vai para sua conta"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"

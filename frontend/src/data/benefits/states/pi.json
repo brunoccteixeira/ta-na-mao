@@ -1,7 +1,7 @@
 {
   "state": "PI",
   "stateName": "Piauí",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "pi-cartao-mais-renda",
@@ -48,7 +48,7 @@
         "Pegue seu cartão no local indicado"
       ],
       "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💳",
       "category": "Transferência de Renda"
@@ -98,7 +98,7 @@
         "Espere a avaliação"
       ],
       "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍚",
       "category": "Alimentação"
@@ -142,7 +142,7 @@
         "Aguarde a equipe visitar sua casa"
       ],
       "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"

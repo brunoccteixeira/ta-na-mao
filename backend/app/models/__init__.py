@@ -10,6 +10,7 @@ from app.models.carta_encaminhamento import CartaEncaminhamento, StatusCarta
 from app.models.benefit import Benefit, BenefitScope, BenefitStatus
 from app.models.partner import Partner, PartnerConversion, PartnerType, ConversionEvent
 from app.models.advisor import Advisor, Case, CaseNote, CaseStatus, CasePriority
+from app.models.cras_location import CrasLocation
 
 __all__ = [
     "State",
@@ -36,4 +37,5 @@ __all__ = [
     "CaseNote",
     "CaseStatus",
     "CasePriority",
+    "CrasLocation",
 ]

@@ -1,7 +1,7 @@
 {
   "state": "AM",
   "stateName": "Amazonas",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "am-auxilio-estadual-permanente",
@@ -49,7 +49,7 @@
         "Se selecionado, receba pelo cartão do programa"
       ],
       "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -85,7 +85,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -135,7 +135,7 @@
         "O benefício é pago junto com outros auxílios"
       ],
       "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"

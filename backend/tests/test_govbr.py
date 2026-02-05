@@ -1,25 +1,29 @@
 """
 Testes para integracao Gov.br.
 
-Testa auto-preenchimento, niveis de confianca,
-URL de login e servico mock.
+Testa Login SSO, niveis de confianca, e nova arquitetura
+de auto-preenchimento usando Portal da Transparencia e SERPRO.
 """
 
 import pytest
+from unittest.mock import patch, AsyncMock
+
 from app.services.govbr_service import (
-    auto_preencher_dados,
     gerar_url_login,
     is_govbr_configured,
     _determinar_nivel,
     _descrever_nivel,
     _mock_auto_preencher,
+    auto_preencher_dados_sync,
     NivelConfianca,
     PERMISSOES_POR_NIVEL,
 )
 from app.agent.tools.govbr_tools import (
     consultar_govbr,
+    consultar_govbr_sync,
     verificar_nivel_govbr,
     gerar_login_govbr,
+    explicar_apis_disponiveis,
 )
 
 
@@ -60,14 +64,13 @@ class TestNivelConfianca:
 
 
 class TestMockAutoPreenchimento:
-    """Testes para mock de auto-preenchimento."""
+    """Testes para mock de auto-preenchimento (nova arquitetura)."""
 
     def test_cpf_conhecido_retorna_dados(self):
         """CPF de teste deve retornar dados completos."""
         result = _mock_auto_preencher("52998224725")
         assert result["nome"] == "MARIA DA SILVA SANTOS"
         assert result["preenchido_automaticamente"] is True
-        assert "cadunico" in result
 
     def test_cpf_idoso_retorna_dados(self):
         """CPF de idoso de teste deve retornar dados."""
@@ -79,45 +82,99 @@ class TestMockAutoPreenchimento:
         result = _mock_auto_preencher("99999999999")
         assert result["preenchido_automaticamente"] is False
 
-    def test_mock_inclui_cadunico(self):
-        """Mock deve incluir dados do CadUnico."""
+    def test_mock_inclui_beneficios(self):
+        """Mock deve incluir dados de beneficios."""
         result = _mock_auto_preencher("52998224725")
-        cad = result["cadunico"]
-        assert cad["ativo"] is True
-        assert cad["renda_per_capita"] > 0
-        assert cad["composicao_familiar"] > 0
+        assert "beneficios" in result
+        assert result["beneficios"]["eh_beneficiario"] is True
+
+    def test_mock_cadunico_nao_disponivel(self):
+        """Mock deve indicar que CadUnico nao esta disponivel."""
+        result = _mock_auto_preencher("52998224725")
+        assert "cadunico" in result
+        assert result["cadunico"]["disponivel"] is False
+
+    def test_mock_inclui_auto_declaracao(self):
+        """Mock deve incluir sugestao de auto-declaracao."""
+        result = _mock_auto_preencher("52998224725")
+        assert "auto_declaracao" in result["cadunico"]
 
 
-class TestConsultarGovbr:
-    """Testes para tool consultar_govbr."""
+class TestConsultarGovbrSync:
+    """Testes para tool consultar_govbr_sync (modo sincrono)."""
 
     def test_cpf_invalido(self):
         """CPF invalido deve retornar erro."""
-        result = consultar_govbr("123")
+        result = consultar_govbr_sync("123")
         assert result["encontrado"] is False
         assert "invalido" in result["erro"].lower()
 
     def test_cpf_formatado(self):
         """CPF formatado deve ser aceito."""
-        result = consultar_govbr("529.982.247-25")
+        result = consultar_govbr_sync("529.982.247-25")
         assert result["encontrado"] is True
         assert result["nome"] == "MARIA DA SILVA SANTOS"
 
     def test_cpf_limpo(self):
         """CPF sem formatacao deve funcionar."""
-        result = consultar_govbr("52998224725")
+        result = consultar_govbr_sync("52998224725")
         assert result["encontrado"] is True
 
     def test_cpf_nao_encontrado(self):
         """CPF nao cadastrado deve retornar nao encontrado."""
-        result = consultar_govbr("99999999999")
+        result = consultar_govbr_sync("99999999999")
         assert result["encontrado"] is False
 
-    def test_retorna_cadunico(self):
-        """Deve retornar dados do CadUnico se disponivel."""
-        result = consultar_govbr("52998224725")
-        assert "cadunico" in result
-        assert result["cadunico"]["ativo"] is True
+
+class TestConsultarGovbrAsync:
+    """Testes para tool consultar_govbr (modo async)."""
+
+    @pytest.mark.asyncio
+    async def test_cpf_invalido(self):
+        """CPF invalido deve retornar erro."""
+        result = await consultar_govbr("123")
+        assert result["encontrado"] is False
+        assert "invalido" in result["erro"].lower()
+
+    @pytest.mark.asyncio
+    async def test_cpf_formatado(self):
+        """CPF formatado deve ser aceito."""
+        with patch("app.services.serpro_service.is_serpro_configured", return_value=False):
+            with patch("app.services.transparencia_service.is_transparencia_configured", return_value=False):
+                result = await consultar_govbr("529.982.247-25")
+                assert result["encontrado"] is True
+
+    @pytest.mark.asyncio
+    async def test_cpf_limpo(self):
+        """CPF sem formatacao deve funcionar."""
+        with patch("app.services.serpro_service.is_serpro_configured", return_value=False):
+            with patch("app.services.transparencia_service.is_transparencia_configured", return_value=False):
+                result = await consultar_govbr("52998224725")
+                assert result["encontrado"] is True
+
+    @pytest.mark.asyncio
+    async def test_formato_cpf_invalido(self):
+        """CPF com formato invalido deve retornar erro."""
+        result = await consultar_govbr("11111111111")
+        assert result["encontrado"] is False
+        assert "erro" in result
+
+    @pytest.mark.asyncio
+    async def test_retorna_beneficios(self):
+        """Deve retornar dados de beneficios."""
+        with patch("app.services.serpro_service.is_serpro_configured", return_value=False):
+            with patch("app.services.transparencia_service.is_transparencia_configured", return_value=False):
+                result = await consultar_govbr("52998224725")
+                assert "beneficios" in result or "eh_beneficiario" in result
+
+    @pytest.mark.asyncio
+    async def test_cadunico_nao_disponivel(self):
+        """Deve indicar que CadUnico nao esta disponivel."""
+        with patch("app.services.serpro_service.is_serpro_configured", return_value=False):
+            with patch("app.services.transparencia_service.is_transparencia_configured", return_value=False):
+                result = await consultar_govbr("52998224725")
+                assert "cadunico" in result
+                assert result["cadunico"]["disponivel"] is False
 
 
 class TestVerificarNivelGovbr:
@@ -163,6 +220,12 @@ class TestGerarLoginGovbr:
         assert result["configurado"] is False
         assert "alternativa" in result or "mensagem" in result
 
+    def test_tem_nota_sobre_disponibilidade(self):
+        """Deve explicar que Login Gov.br eh disponivel."""
+        result = gerar_login_govbr()
+        if not result["configurado"]:
+            assert "nota" in result
+
 
 class TestUrlLogin:
     """Testes para geracao de URL de login."""
@@ -178,3 +241,48 @@ class TestUrlLogin:
         result = gerar_url_login()
         # Mesmo sem config, state eh gerado ou vazio
         assert "state" in result
+
+
+class TestExplicarAPIs:
+    """Testes para funcao explicar_apis_disponiveis."""
+
+    def test_lista_apis_disponiveis(self):
+        """Deve listar APIs disponiveis."""
+        result = explicar_apis_disponiveis()
+        assert "apis_disponiveis" in result
+        assert "portal_transparencia" in result["apis_disponiveis"]
+        assert "serpro_cpf" in result["apis_disponiveis"]
+        assert "login_govbr" in result["apis_disponiveis"]
+
+    def test_lista_apis_nao_disponiveis(self):
+        """Deve listar APIs nao disponiveis."""
+        result = explicar_apis_disponiveis()
+        assert "apis_nao_disponiveis" in result
+        assert "conecta_govbr" in result["apis_nao_disponiveis"]
+
+    def test_indica_motivo_restricao(self):
+        """Deve indicar motivo da restricao."""
+        result = explicar_apis_disponiveis()
+        conecta = result["apis_nao_disponiveis"]["conecta_govbr"]
+        assert "motivo" in conecta
+        assert "publica" in conecta["motivo"].lower() or "restrito" in conecta["motivo"].lower()
+
+    def test_sugere_alternativa(self):
+        """Deve sugerir alternativa."""
+        result = explicar_apis_disponiveis()
+        conecta = result["apis_nao_disponiveis"]["conecta_govbr"]
+        assert "alternativa" in conecta
+
+
+class TestAutoPreenchimentoSync:
+    """Testes para auto_preencher_dados_sync."""
+
+    def test_retorna_dados_mock(self):
+        """Versao sync deve retornar mock."""
+        result = auto_preencher_dados_sync("52998224725")
+        assert result["nome"] == "MARIA DA SILVA SANTOS"
+
+    def test_cpf_desconhecido(self):
+        """CPF desconhecido deve indicar nao encontrado."""
+        result = auto_preencher_dados_sync("99999999999")
+        assert result["preenchido_automaticamente"] is False

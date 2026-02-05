@@ -1,7 +1,7 @@
 {
   "state": "RS",
   "stateName": "Rio Grande do Sul",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "rs-mais-igual",
@@ -48,7 +48,7 @@
         "Receba o cartao e use para compras"
       ],
       "sourceUrl": "https://www.rs.gov.br/rs-mais-igual",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferencia de Renda"
@@ -99,7 +99,7 @@
         "O valor vai para conta do Banrisul"
       ],
       "sourceUrl": "https://educacao.rs.gov.br/todo-jovem-na-escola",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
       "category": "Educacao"
@@ -132,7 +132,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de ate meio salario minimo"
         }
       ],
@@ -148,7 +148,7 @@
         "O valor vai para conta do Banrisul"
       ],
       "sourceUrl": "https://www.sefaz.rs.gov.br/devolve-icms",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💳",
       "category": "Transferencia de Renda"
@@ -184,7 +184,7 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.rs.gov.br/restaurante-popular",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentacao"
@@ -229,7 +229,7 @@
         "Aguarde o inicio das aulas"
       ],
       "sourceUrl": "https://fgtas.rs.gov.br/qualifica-rs",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
       "category": "Qualificacao"

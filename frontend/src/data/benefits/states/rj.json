@@ -1,7 +1,7 @@
 {
   "state": "RJ",
   "stateName": "Rio de Janeiro",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "rj-supera-rj",
@@ -47,7 +47,7 @@
         "Acompanhe pelo site ou CRAS"
       ],
       "sourceUrl": "https://www.superarj.rj.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎯",
       "category": "Transferência de Renda"
@@ -85,7 +85,7 @@
         "Receba o cartão para usar em estabelecimentos"
       ],
       "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏚️",
       "category": "Emergência"
@@ -120,7 +120,7 @@
         "Pague o preço popular e faça a refeição"
       ],
       "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -153,7 +153,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         }
       ],
@@ -171,7 +171,7 @@
         "Retire após aprovação"
       ],
       "sourceUrl": "https://www.riocard.com/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
@@ -222,7 +222,7 @@
         "Compareça na data para seleção"
       ],
       "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"

@@ -8,8 +8,8 @@
       "sector": "pescador",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1412,
-        "max": 1412,
+        "min": 1600,
+        "max": 1600,
         "description": "1 salário mínimo por mês de defeso"
       },
       "eligibilityRules": [
@@ -40,7 +40,7 @@
         "Aguarde análise e liberação das parcelas"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/seguro-desemprego-do-pescador-artesanal",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🐟",
       "category": "Pescadores"
@@ -85,7 +85,7 @@
         "Aguarde análise e liberação do crédito"
       ],
       "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🌾",
       "category": "Agricultores"
@@ -118,7 +118,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2824,
+          "value": 2400,
           "description": "Renda familiar de até 1,5 salário mínimo"
         }
       ],
@@ -136,7 +136,7 @@
         "Receba o benefício após confirmação"
       ],
       "sourceUrl": "https://www.gov.br/mda/pt-br/assuntos/agricultura-familiar/garantia-safra",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🌧️",
       "category": "Agricultores"
@@ -175,7 +175,7 @@
         "Receba o pagamento direto na conta"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/paa",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🥕",
       "category": "Agricultores"
@@ -214,7 +214,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4236,
+          "value": 4800,
           "description": "Renda familiar de até 3 salários mínimos"
         }
       ],
@@ -232,7 +232,7 @@
         "Aguarde seleção e início da obra"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/pnhr",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Agricultores"
@@ -277,7 +277,7 @@
         "Pronto! Você já é MEI"
       ],
       "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💼",
       "category": "Empreendedorismo"
@@ -315,7 +315,7 @@
         "Receba o pagamento por quilo"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-e-inclusao-produtiva",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "♻️",
       "category": "Catadores"
@@ -353,7 +353,7 @@
         "Acesse Bolsa Família e outros programas se elegível"
       ],
       "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛵",
       "category": "Entregadores"
@@ -392,7 +392,7 @@
         "Aguarde aprovação do crédito"
       ],
       "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🚤",
       "category": "Pescadores"
@@ -405,8 +405,8 @@
       "sector": "pcd",
       "estimatedValue": {
         "type": "monthly",
-        "min": 706,
-        "max": 706,
+        "min": 800,
+        "max": 800,
         "description": "Meio salário mínimo"
       },
       "eligibilityRules": [
@@ -443,7 +443,7 @@
         "Se perder o emprego, pode voltar ao BPC"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/auxilio-inclusao",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "♿",
       "category": "PCD"

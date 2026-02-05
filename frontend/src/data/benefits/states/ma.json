@@ -1,7 +1,7 @@
 {
   "state": "MA",
   "stateName": "Maranhão",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "ma-mais-social",
@@ -48,7 +48,7 @@
         "Aguarde o contato do CRAS"
       ],
       "sourceUrl": "https://www.ma.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -84,7 +84,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.ma.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -133,7 +133,7 @@
         "O dinheiro vai para a conta ou cartão"
       ],
       "sourceUrl": "https://www.ma.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"

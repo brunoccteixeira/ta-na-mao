@@ -1,7 +1,7 @@
 {
   "state": "DF",
   "stateName": "Distrito Federal",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "df-cartao-prato-cheio",
@@ -31,7 +31,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de ate meio salario minimo"
         }
       ],
@@ -48,7 +48,7 @@
         "Aguarde receber o cartao em casa"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentacao"
@@ -99,7 +99,7 @@
         "Aguarde a analise e o contato"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferencia de Renda"
@@ -149,7 +149,7 @@
         "Retire na escola com seu documento"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
       "category": "Educacao"
@@ -185,7 +185,7 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍛",
       "category": "Alimentacao"

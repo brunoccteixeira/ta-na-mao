@@ -1,7 +1,7 @@
 {
   "state": "BA",
   "stateName": "Bahia",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "ba-bolsa-presenca",
@@ -54,7 +54,7 @@
         "Mantenha frequência de pelo menos 75%"
       ],
       "sourceUrl": "https://bolsapresenca.educacao.ba.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
@@ -81,7 +81,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de até meio salário mínimo"
         },
         {
@@ -106,7 +106,7 @@
         "Aguarde o resultado da seleção"
       ],
       "sourceUrl": "https://www.ba.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
       "category": "Educação"
@@ -142,7 +142,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.sjdhds.ba.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -155,8 +155,8 @@
       "state": "BA",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1412,
-        "max": 1412,
+        "min": 1600,
+        "max": 1600,
         "description": "Salário mínimo durante contrato"
       },
       "eligibilityRules": [
@@ -199,7 +199,7 @@
         "Compareça às entrevistas agendadas"
       ],
       "sourceUrl": "https://www.trabalho.ba.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💼",
       "category": "Emprego"
@@ -255,7 +255,7 @@
         "Aguarde visita técnica e instalação"
       ],
       "sourceUrl": "https://www.sihs.ba.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"

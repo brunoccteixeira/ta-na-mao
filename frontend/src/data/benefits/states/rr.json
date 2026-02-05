@@ -1,7 +1,7 @@
 {
   "state": "RR",
   "stateName": "Roraima",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "rr-auxilio-social-roraima",
@@ -49,7 +49,7 @@
         "Aguarde a comunicação sobre o benefício"
       ],
       "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -99,7 +99,7 @@
         "Se selecionado, receba o benefício"
       ],
       "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -149,7 +149,7 @@
         "Leve documento com foto na retirada"
       ],
       "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"

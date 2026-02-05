@@ -1,7 +1,7 @@
 {
   "state": "PB",
   "stateName": "Paraíba",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "pb-pbsocial",
@@ -48,7 +48,7 @@
         "Espere o contato do CRAS"
       ],
       "sourceUrl": "https://www.paraiba.pb.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -84,7 +84,7 @@
         "Aberto para todos"
       ],
       "sourceUrl": "https://www.paraiba.pb.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -134,7 +134,7 @@
         "Retire a cesta no local indicado"
       ],
       "sourceUrl": "https://www.paraiba.pb.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"

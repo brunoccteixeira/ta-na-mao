@@ -1,7 +1,7 @@
 {
   "state": "PR",
   "stateName": "Parana",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "pr-cartao-futuro",
@@ -49,7 +49,7 @@
         "Aguarde a selecao e comece a receber"
       ],
       "sourceUrl": "https://www.cartaofuturo.pr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎯",
       "category": "Qualificacao"
@@ -99,7 +99,7 @@
         "Se aprovado, comeca a receber o beneficio"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👨‍👩‍👧‍👦",
       "category": "Transferencia de Renda"
@@ -126,7 +126,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de ate meio salario minimo"
         }
       ],
@@ -144,7 +144,7 @@
         "Faca compras com desconto"
       ],
       "sourceUrl": "https://www.curitiba.pr.gov.br/servicos/armazem-da-familia/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛒",
       "category": "Alimentacao"
@@ -177,7 +177,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de ate meio salario minimo"
         }
       ],
@@ -195,7 +195,7 @@
         "Leve a crianca para pesar todo mes"
       ],
       "sourceUrl": "https://www.leitedascriancas.pr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🥛",
       "category": "Alimentacao"
@@ -244,7 +244,7 @@
         "O valor vai para conta da Caixa"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"

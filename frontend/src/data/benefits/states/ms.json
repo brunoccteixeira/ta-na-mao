@@ -1,7 +1,7 @@
 {
   "state": "MS",
   "stateName": "Mato Grosso do Sul",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "ms-mais-social",
@@ -49,7 +49,7 @@
         "Aguarde o contato do CRAS"
       ],
       "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💰",
       "category": "Transferencia de Renda"
@@ -99,7 +99,7 @@
         "Retire a cesta no local indicado"
       ],
       "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛒",
       "category": "Alimentacao"
@@ -132,7 +132,7 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 800,
           "description": "Renda por pessoa de ate meio salario minimo"
         }
       ],
@@ -148,7 +148,7 @@
         "O dinheiro vai para sua conta"
       ],
       "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -183,7 +183,7 @@
         "Pague R$ 2,00 e faca sua refeicao"
       ],
       "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentacao"

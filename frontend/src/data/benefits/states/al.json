@@ -1,7 +1,7 @@
 {
   "state": "AL",
   "stateName": "Alagoas",
-  "lastUpdated": "2024-01-15",
+  "lastUpdated": "2026-02-04",
   "benefits": [
     {
       "id": "al-cartao-cria",
@@ -55,7 +55,7 @@
         "Espere ser chamado"
       ],
       "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👶",
       "category": "Transferência de Renda"
@@ -91,7 +91,7 @@
         "Aberto para todos"
       ],
       "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -142,7 +142,7 @@
         "Leve documentos quando chamado"
       ],
       "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2024-01-15",
+      "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"
