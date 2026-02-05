@@ -36,6 +36,9 @@ python -m app.jobs.ingest_population
 
 # 3. Geometrias municipais (para mapas)
 python -m app.jobs.ingest_mun_geometries
+
+# 4. CRAS - Centros de Referência de Assistência Social
+python -m app.jobs.ingest_cras
 ```
 
 ### Dados do CadÚnico (Base para Cálculo de Cobertura)
@@ -131,7 +134,59 @@ Saved 5571 records, skipped 0
 
 ---
 
-### 2. ingest_bolsa_familia.py
+### 2. ingest_cras.py ⭐ ATUALIZADO
+
+**Fonte**: API SAGI Equipamentos (MDS)
+
+**URL**: https://aplicacoes.mds.gov.br/sagi/servicos/equipamentos
+
+**Uso**:
+```bash
+# Ingerir todos os CRAS do Brasil
+python -m app.jobs.ingest_cras
+
+# Modo teste (não salva no banco)
+python -m app.jobs.ingest_cras --dry-run
+```
+
+**O que faz**:
+- Consulta API SOLR do SAGI Equipamentos (dados oficiais do MDS)
+- Extrai ~8.900 CRAS de todos os municípios brasileiros
+- Inclui coordenadas geográficas (93% geocodificados)
+- Fallback para arquivo JSON local quando API indisponível
+- Salva na tabela `cras_locations`
+
+**Dados extraídos**:
+- Nome e endereço do CRAS
+- Código IBGE do município
+- Coordenadas (latitude/longitude)
+- Telefone de contato
+- Serviços disponíveis (CadÚnico, Bolsa Família, BPC, Tarifa Social)
+
+**Resultado esperado**:
+```
+Fetching CRAS data from SAGI Equipamentos API...
+Fetched batch 0-5000 of 8923
+Fetched batch 5000-8923 of 8923
+Total CRAS fetched from SAGI: 8923
+Fetched 8923 CRAS records, 8296 with coordinates
+Database save complete: {'created': 8923, 'updated': 0, 'skipped': 0}
+```
+
+**Dados por estado** (top 5):
+| UF | CRAS |
+|----|------|
+| MG | 1.264 |
+| SP | 1.260 |
+| BA | 710 |
+| RS | 619 |
+| PR | 591 |
+
+**Nota**: A API usa HTTPS obrigatoriamente. HTTP retorna "Connection reset by peer".
+
+---
+
+### 3. ingest_bolsa_familia.py
 
 **Fonte**: Portal da Transparência (CGU)
 

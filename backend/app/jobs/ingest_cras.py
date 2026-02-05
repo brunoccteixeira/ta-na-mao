@@ -1,160 +1,195 @@
-"""CRAS data ingestion from Censo SUAS.
+"""CRAS data ingestion from MDS/SAGI API.
 
 Downloads and processes CRAS (Centro de Referencia de Assistencia Social)
-data from the Censo SUAS (Sistema Unico de Assistencia Social).
+data from the official MDS/SAGI Equipamentos API.
 
-Data source: https://aplicacoes.mds.gov.br/sagi/censosuas
+Data source: http://aplicacoes.mds.gov.br/sagi/servicos/equipamentos
+API provides ~8,923 CRAS records with geocoding included.
 
 Pipeline:
-1. Download Censo SUAS data (Excel/CSV)
-2. Parse addresses and contact information
-3. Geocode addresses using free services (Nominatim) with Google fallback
-4. Upsert to cras_locations table
+1. Fetch CRAS data from SAGI Equipamentos API (JSON format)
+2. Map API fields to CrasLocation schema
+3. Upsert to cras_locations table (no geocoding needed - API provides coordinates)
 """
 
 import asyncio
-import csv
-import io
+import json
 import logging
+import os
 import re
 from datetime import datetime
-from typing import Dict, List, Optional, Any
+from typing import Any
 
 import httpx
-from sqlalchemy import select
 from sqlalchemy.orm import Session
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 from app.database import SessionLocal
 from app.models import Municipality
 from app.models.cras_location import CrasLocation
-from app.services.geocoding_service import geocode_address
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Censo SUAS data URLs
-# The MDS publishes Censo SUAS data in various formats
-# Check: https://aplicacoes.mds.gov.br/sagi/censosuas
-CENSO_SUAS_BASE_URL = "https://aplicacoes.mds.gov.br/sagi"
+# API oficial MDS/SAGI - Equipamentos SUAS
+# Retorna ~8,923 CRAS com geocodificação inclusa
+# IMPORTANTE: Usar HTTPS - HTTP retorna "Connection reset by peer"
+SAGI_EQUIPAMENTOS_URL = "https://aplicacoes.mds.gov.br/sagi/servicos/equipamentos"
 
-# Mapa Social - Alternative source with CRAS locations
-MAPA_SOCIAL_URL = "https://aplicacoes.mds.gov.br/sagi/miv/miv.php"
-
-# Fallback: IBGE service listing (may have CRAS)
-IBGE_SERVICODADOS_URL = "https://servicodados.ibge.gov.br"
+# Bounding box do Brasil para validação de coordenadas
+BRASIL_LAT_MIN = -33.75  # RS sul
+BRASIL_LAT_MAX = 5.27    # RR norte
+BRASIL_LON_MIN = -73.99  # AC oeste
+BRASIL_LON_MAX = -32.39  # Fernando de Noronha leste
 
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=2, max=30))
-async def fetch_censo_suas_data(ano: int = 2023) -> Optional[List[Dict[str, Any]]]:
-    """Fetch CRAS data from Censo SUAS.
+async def fetch_sagi_cras_data(batch_size: int = 5000) -> list[dict[str, Any]] | None:
+    """Fetch CRAS data from the official MDS/SAGI Equipamentos API.
 
-    The Censo SUAS publishes data about social assistance units including CRAS.
-    Data is typically available in Excel format.
+    The API provides ~8,923 CRAS records with geocoding already included.
+    Uses Solr-style query parameters.
 
     Args:
-        ano: Reference year (default: most recent available)
+        batch_size: Number of records per request (API limit is ~10000)
 
     Returns:
         List of CRAS records or None if fetch fails
     """
-    logger.info(f"Fetching Censo SUAS data for year {ano}...")
+    logger.info("Fetching CRAS data from SAGI Equipamentos API...")
 
-    # NOTE: The actual URL varies by year and MDS infrastructure changes
-    # This is a placeholder that should be updated based on current MDS portal
-    # Typical format: censosuas/{ano}/EquipamentosCRAS.csv
+    all_records: list[dict[str, Any]] = []
+    start = 0
 
-    # Try the Mapa Social API which provides CRAS locations
     try:
         async with httpx.AsyncClient(timeout=120.0, follow_redirects=True) as client:
-            # Check if there's a direct CSV/JSON endpoint
-            # MDS often provides data downloads on specific pages
-            response = await client.get(
-                f"{CENSO_SUAS_BASE_URL}/censosuas/censo{ano}",
-                params={"formato": "json"}
-            )
+            while True:
+                params = {
+                    "q": "*:*",
+                    "fq": "tipo_equipamento:CRAS",
+                    "wt": "json",
+                    "rows": batch_size,
+                    "start": start,
+                }
 
-            if response.status_code == 200:
+                response = await client.get(SAGI_EQUIPAMENTOS_URL, params=params)
+
+                if response.status_code != 200:
+                    logger.error(f"SAGI API returned status {response.status_code}")
+                    break
+
                 data = response.json()
-                if isinstance(data, list) and len(data) > 0:
-                    logger.info(f"Fetched {len(data)} CRAS records from Censo SUAS")
-                    return data
+                response_data = data.get("response", {})
+                docs = response_data.get("docs", [])
+                total = response_data.get("numFound", 0)
 
+                if not docs:
+                    break
+
+                # Map API fields to our schema
+                for doc in docs:
+                    record = _map_sagi_to_cras(doc)
+                    if record:
+                        all_records.append(record)
+
+                logger.info(f"Fetched batch {start}-{start + len(docs)} of {total}")
+
+                start += len(docs)
+                if start >= total:
+                    break
+
+                # Small delay between batches to be polite
+                await asyncio.sleep(0.5)
+
+            if all_records:
+                logger.info(f"Total CRAS fetched from SAGI: {len(all_records)}")
+                return all_records
+
+    except httpx.TimeoutException:
+        logger.warning("SAGI API timeout")
+    except httpx.RequestError as e:
+        logger.warning(f"SAGI API request error: {e}")
+    except json.JSONDecodeError as e:
+        logger.warning(f"SAGI API JSON parse error: {e}")
     except Exception as e:
-        logger.warning(f"Direct Censo SUAS fetch failed: {e}")
+        logger.warning(f"SAGI API fetch failed: {e}")
 
-    # Fallback: Try to download from dados.gov.br
-    try:
-        async with httpx.AsyncClient(timeout=120.0, follow_redirects=True) as client:
-            # dados.gov.br often mirrors MDS data
-            response = await client.get(
-                "https://dados.gov.br/dados/conjuntos-dados/censo-suas",
-                headers={"Accept": "application/json"}
-            )
-
-            if response.status_code == 200:
-                # Parse the catalog to find CRAS data
-                data = response.json()
-                resources = data.get("resources", [])
-                for resource in resources:
-                    if "cras" in resource.get("name", "").lower():
-                        csv_url = resource.get("url")
-                        if csv_url:
-                            csv_response = await client.get(csv_url)
-                            if csv_response.status_code == 200:
-                                return _parse_cras_csv(csv_response.text)
-
-    except Exception as e:
-        logger.warning(f"dados.gov.br fetch failed: {e}")
-
-    logger.warning("Could not fetch Censo SUAS data from any source")
     return None
 
 
-def _parse_cras_csv(csv_content: str) -> List[Dict[str, Any]]:
-    """Parse CRAS CSV data into structured records."""
-    records = []
+def _map_sagi_to_cras(doc: dict[str, Any]) -> dict[str, Any] | None:
+    """Map SAGI API document to CrasLocation schema.
 
-    # Try to detect delimiter
-    delimiter = ";" if ";" in csv_content[:1000] else ","
+    API fields:
+        - id_equipamento: unique ID
+        - ibge: IBGE code (7 digits)
+        - nome: CRAS name
+        - endereco: street address
+        - numero: street number
+        - bairro: neighborhood
+        - cep: postal code
+        - cidade: city name
+        - uf: state code
+        - telefone: phone number
+        - georef_location: "lat,lon" string
+        - data_atualizacao: last update date
+    """
+    ibge = doc.get("ibge")
+    nome = doc.get("nome")
 
-    reader = csv.DictReader(io.StringIO(csv_content), delimiter=delimiter)
+    if not ibge or not nome:
+        return None
 
-    for row in reader:
-        # Map common column names to our schema
-        record = {
-            "nome": _get_field(row, ["nome", "nome_cras", "nm_cras", "equipamento"]),
-            "ibge_code": _get_field(row, ["ibge", "cod_ibge", "co_ibge", "municipio_ibge"]),
-            "endereco": _get_field(row, ["endereco", "logradouro", "ds_endereco"]),
-            "bairro": _get_field(row, ["bairro", "ds_bairro"]),
-            "cep": _get_field(row, ["cep", "co_cep"]),
-            "telefone": _get_field(row, ["telefone", "nu_telefone", "fone"]),
-            "email": _get_field(row, ["email", "ds_email"]),
-            "cidade": _get_field(row, ["municipio", "nome_municipio", "cidade"]),
-            "uf": _get_field(row, ["uf", "sigla_uf", "estado"]),
-        }
+    # Parse georef_location (format: "lat,lon")
+    lat, lon = None, None
+    georef = doc.get("georef_location")
+    if georef and isinstance(georef, str) and "," in georef:
+        try:
+            parts = georef.split(",")
+            lat = float(parts[0].strip())
+            lon = float(parts[1].strip())
 
-        # Only add if we have minimum required fields
-        if record["nome"] and (record["ibge_code"] or (record["cidade"] and record["uf"])):
-            records.append(record)
+            # Validate coordinates are within Brazil
+            if not _is_valid_brazil_coordinate(lat, lon):
+                logger.debug(f"Invalid coordinates for {nome}: {lat}, {lon}")
+                lat, lon = None, None
+        except (ValueError, IndexError):
+            pass
 
-    logger.info(f"Parsed {len(records)} CRAS records from CSV")
-    return records
+    # Build full address
+    endereco = doc.get("endereco", "")
+    numero = doc.get("numero")
+    if numero:
+        endereco = f"{endereco}, {numero}".strip(", ")
+
+    return {
+        "id_equipamento": doc.get("id_equipamento"),
+        "ibge_code": str(ibge),
+        "nome": nome,
+        "endereco": endereco or None,
+        "bairro": doc.get("bairro"),
+        "cep": _normalize_cep(doc.get("cep")),
+        "cidade": doc.get("cidade"),
+        "uf": doc.get("uf"),
+        "telefone": doc.get("telefone"),
+        "latitude": lat,
+        "longitude": lon,
+        "geocode_source": "sagi" if lat else None,
+        "data_atualizacao": doc.get("data_atualizacao"),
+    }
 
 
-def _get_field(row: dict, possible_keys: List[str]) -> Optional[str]:
-    """Get field value trying multiple possible column names."""
-    for key in possible_keys:
-        # Try exact match (case-insensitive)
-        for actual_key in row.keys():
-            if actual_key.lower() == key.lower():
-                value = row[actual_key]
-                if value and str(value).strip():
-                    return str(value).strip()
-    return None
+def _is_valid_brazil_coordinate(lat: float | None, lon: float | None) -> bool:
+    """Validate that coordinates are within Brazil's bounding box."""
+    if lat is None or lon is None:
+        return False
+    return (
+        BRASIL_LAT_MIN <= lat <= BRASIL_LAT_MAX
+        and BRASIL_LON_MIN <= lon <= BRASIL_LON_MAX
+    )
 
 
-def _normalize_ibge_code(code: Optional[str]) -> Optional[str]:
+def _normalize_ibge_code(code: str | None) -> str | None:
     """Normalize IBGE code to 7 digits."""
     if not code:
         return None
@@ -169,7 +204,7 @@ def _normalize_ibge_code(code: Optional[str]) -> Optional[str]:
     return None
 
 
-def _normalize_cep(cep: Optional[str]) -> Optional[str]:
+def _normalize_cep(cep: str | None) -> str | None:
     """Normalize CEP to 8 digits without formatting."""
     if not cep:
         return None
@@ -178,81 +213,16 @@ def _normalize_cep(cep: Optional[str]) -> Optional[str]:
     return cep if len(cep) == 8 else None
 
 
-async def geocode_cras_batch(
-    cras_records: List[Dict[str, Any]],
-    batch_size: int = 10,
-    delay_seconds: float = 1.0,
-) -> List[Dict[str, Any]]:
-    """Geocode CRAS records in batches with rate limiting.
-
-    Args:
-        cras_records: List of CRAS records to geocode
-        batch_size: Number of concurrent geocoding requests
-        delay_seconds: Delay between batches to respect rate limits
-
-    Returns:
-        List of CRAS records with added latitude/longitude/geocode_source
-    """
-    results = []
-    total = len(cras_records)
-
-    for i in range(0, total, batch_size):
-        batch = cras_records[i:i + batch_size]
-
-        tasks = []
-        for record in batch:
-            tasks.append(geocode_single_cras(record))
-
-        batch_results = await asyncio.gather(*tasks)
-        results.extend(batch_results)
-
-        geocoded = sum(1 for r in batch_results if r.get("latitude"))
-        logger.info(f"Geocoded batch {i//batch_size + 1}: {geocoded}/{len(batch)} success")
-
-        if i + batch_size < total:
-            await asyncio.sleep(delay_seconds)
-
-    total_geocoded = sum(1 for r in results if r.get("latitude"))
-    logger.info(f"Total geocoded: {total_geocoded}/{total} ({100*total_geocoded/total:.1f}%)")
-
-    return results
-
-
-async def geocode_single_cras(record: Dict[str, Any]) -> Dict[str, Any]:
-    """Geocode a single CRAS record."""
-    endereco = record.get("endereco", "")
-    cidade = record.get("cidade", "")
-    uf = record.get("uf", "")
-    cep = record.get("cep")
-
-    if not (endereco or cidade):
-        return record
-
-    lat, lon, source = await geocode_address(
-        endereco=endereco,
-        cidade=cidade,
-        uf=uf,
-        cep=cep,
-    )
-
-    return {
-        **record,
-        "latitude": lat,
-        "longitude": lon,
-        "geocode_source": source,
-    }
-
-
 def save_cras_to_db(
     db: Session,
-    cras_records: List[Dict[str, Any]],
-    source: str = "censo_suas",
-) -> Dict[str, int]:
+    cras_records: list[dict[str, Any]],
+    source: str = "sagi",
+) -> dict[str, int]:
     """Save CRAS records to database using upsert logic.
 
     Args:
         db: Database session
-        cras_records: List of CRAS records with geocoding data
+        cras_records: List of CRAS records (already geocoded from SAGI)
         source: Data source identifier
 
     Returns:
@@ -325,8 +295,13 @@ def save_cras_to_db(
     return stats
 
 
-async def ingest_cras_data(dry_run: bool = False) -> Dict[str, Any]:
+async def ingest_cras_data(dry_run: bool = False) -> dict[str, Any]:
     """Main function to ingest CRAS data.
+
+    Pipeline:
+    1. Fetch from SAGI API (includes geocoding)
+    2. Fallback to local JSON if API fails
+    3. Upsert to database
 
     Args:
         dry_run: If True, fetch and process data but don't save to DB
@@ -337,21 +312,24 @@ async def ingest_cras_data(dry_run: bool = False) -> Dict[str, Any]:
     logger.info("Starting CRAS data ingestion")
     start_time = datetime.now()
 
-    result = {
+    result: dict[str, Any] = {
         "started_at": start_time.isoformat(),
-        "source": "censo_suas",
+        "source": "sagi",
         "records_fetched": 0,
         "records_geocoded": 0,
         "records_saved": 0,
         "errors": [],
     }
 
-    # Step 1: Fetch data
-    cras_records = await fetch_censo_suas_data()
+    # Step 1: Fetch data from SAGI API (already geocoded)
+    cras_records = await fetch_sagi_cras_data()
 
     if not cras_records:
-        # Try loading from local fallback file
+        # Fallback to local JSON file
+        logger.info("SAGI API failed, trying local fallback...")
         cras_records = _load_fallback_data()
+        if cras_records:
+            result["source"] = "fallback_json"
 
     if not cras_records:
         result["errors"].append("Failed to fetch CRAS data from any source")
@@ -359,11 +337,13 @@ async def ingest_cras_data(dry_run: bool = False) -> Dict[str, Any]:
         return result
 
     result["records_fetched"] = len(cras_records)
-    logger.info(f"Fetched {len(cras_records)} CRAS records")
+    # SAGI data already includes geocoding
+    result["records_geocoded"] = sum(1 for r in cras_records if r.get("latitude"))
 
-    # Step 2: Geocode addresses
-    geocoded_records = await geocode_cras_batch(cras_records)
-    result["records_geocoded"] = sum(1 for r in geocoded_records if r.get("latitude"))
+    logger.info(
+        f"Fetched {len(cras_records)} CRAS records, "
+        f"{result['records_geocoded']} with coordinates"
+    )
 
     if dry_run:
         logger.info("Dry run - skipping database save")
@@ -371,10 +351,10 @@ async def ingest_cras_data(dry_run: bool = False) -> Dict[str, Any]:
         result["finished_at"] = datetime.now().isoformat()
         return result
 
-    # Step 3: Save to database
+    # Step 2: Save to database
     db = SessionLocal()
     try:
-        save_stats = save_cras_to_db(db, geocoded_records)
+        save_stats = save_cras_to_db(db, cras_records, source=result["source"])
         result["records_saved"] = save_stats["created"] + save_stats["updated"]
         result["created"] = save_stats["created"]
         result["updated"] = save_stats["updated"]
@@ -398,23 +378,40 @@ async def ingest_cras_data(dry_run: bool = False) -> Dict[str, Any]:
     return result
 
 
-def _load_fallback_data() -> Optional[List[Dict[str, Any]]]:
-    """Load CRAS data from local fallback file if available."""
-    import json
-    import os
+def _load_fallback_data() -> list[dict[str, Any]] | None:
+    """Load CRAS data from local fallback file if available.
 
+    The fallback file contains sample CRAS data covering all Brazilian regions.
+    """
     fallback_path = os.path.join(
         os.path.dirname(__file__),
         "..", "..", "data", "cras_exemplo.json"
     )
 
     try:
-        with open(fallback_path, "r", encoding="utf-8") as f:
+        with open(fallback_path, encoding="utf-8") as f:
             data = json.load(f)
             cras_list = data.get("cras", [])
             if cras_list:
-                logger.info(f"Loaded {len(cras_list)} CRAS from fallback file")
-                return cras_list
+                # Map fallback format to standard schema
+                mapped = []
+                for item in cras_list:
+                    coords = item.get("coordenadas", {})
+                    mapped.append({
+                        "ibge_code": item.get("ibge_code"),
+                        "nome": item.get("nome"),
+                        "endereco": item.get("endereco"),
+                        "bairro": item.get("bairro"),
+                        "cep": item.get("cep"),
+                        "cidade": item.get("cidade"),
+                        "uf": item.get("uf"),
+                        "telefone": item.get("telefone"),
+                        "latitude": coords.get("lat"),
+                        "longitude": coords.get("lng"),
+                        "geocode_source": "fallback",
+                    })
+                logger.info(f"Loaded {len(mapped)} CRAS from fallback file")
+                return mapped
     except FileNotFoundError:
         logger.debug("No fallback CRAS file found")
     except Exception as e:

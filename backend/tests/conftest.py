@@ -1,5 +1,8 @@
 """
 Configurações e fixtures compartilhadas para testes.
+
+Imports are done inside fixtures to allow unit tests to run even when
+some dependencies (like google.generativeai) are not installed.
 """
 
 import os
@@ -7,13 +10,6 @@ import pytest
 import asyncio
 from typing import Generator, AsyncGenerator
 from unittest.mock import Mock, MagicMock
-from httpx import AsyncClient
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
-from sqlalchemy.pool import NullPool
-
-from app.main import app
-from app.database import Base, get_db
-from app.config import settings
 
 
 # Check if we're using SQLite (test mode) or PostgreSQL
@@ -27,6 +23,12 @@ requires_postgres = pytest.mark.skipif(
     IS_SQLITE_TEST,
     reason="Test requires PostgreSQL with PostGIS/JSONB support (set USE_POSTGRES_TESTS=1)"
 )
+
+
+# Tables with PostgreSQL-specific features (not supported in SQLite)
+# - states, municipalities: PostGIS geometry columns
+# - pedidos, beneficiary_data: JSONB columns
+TABLES_POSTGRES_ONLY = {"states", "municipalities", "pedidos", "beneficiary_data"}
 
 
 @pytest.fixture(scope="session")
@@ -51,21 +53,22 @@ def mock_twilio_credentials(monkeypatch):
     monkeypatch.setenv("TWILIO_WHATSAPP_FROM", "whatsapp:+14155238886")
 
 
-# Tables with PostgreSQL-specific features (not supported in SQLite)
-# - states, municipalities: PostGIS geometry columns
-# - pedidos, beneficiary_data: JSONB columns
-TABLES_POSTGRES_ONLY = {"states", "municipalities", "pedidos", "beneficiary_data"}
-
-
 # Database fixtures for testing (async)
 @pytest.fixture(scope="function")
-async def test_db() -> AsyncGenerator[AsyncSession, None]:
+async def test_db():
     """Cria banco de dados para testes (async).
 
     Uses SQLite in-memory by default. Set USE_POSTGRES_TESTS=1 for PostgreSQL.
 
     IMPORTANT: Uses SAVEPOINT/ROLLBACK to isolate each test - no data persists.
     """
+    # Lazy imports
+    from httpx import AsyncClient
+    from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
+    from sqlalchemy.pool import NullPool
+    from app.database import Base
+    from app.config import settings
+
     if USE_POSTGRES:
         # Use real PostgreSQL database
         db_url = settings.DATABASE_URL
@@ -142,19 +145,25 @@ async def test_db() -> AsyncGenerator[AsyncSession, None]:
 
 
 @pytest.fixture
-async def client(test_db: AsyncSession) -> AsyncGenerator[AsyncClient, None]:
+async def client(test_db):
     """Cria cliente de teste FastAPI com banco de dados mockado (async)."""
+    # Lazy imports
+    from httpx import AsyncClient
+    from sqlalchemy.ext.asyncio import AsyncSession
+    from app.main import app
+    from app.database import get_db
+
     async def override_get_db():
         try:
             yield test_db
         finally:
             pass
-    
+
     app.dependency_overrides[get_db] = override_get_db
-    
+
     async with AsyncClient(app=app, base_url="http://test") as test_client:
         yield test_client
-    
+
     app.dependency_overrides.clear()
 
 

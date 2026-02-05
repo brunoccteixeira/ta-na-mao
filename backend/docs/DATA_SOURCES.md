@@ -7,6 +7,7 @@ Este documento descreve as fontes de dados utilizadas pelo sistema Tá na Mão.
 | Programa | Fonte | URL | Formato | Atualização |
 |----------|-------|-----|---------|-------------|
 | **CadÚnico** | API MiSocial (MDS) | aplicacoes.mds.gov.br/sagi/servicos/misocial | JSON/SOLR | Mensal |
+| **CRAS** | API SAGI Equipamentos | aplicacoes.mds.gov.br/sagi/servicos/equipamentos | JSON/SOLR | Eventual |
 | Bolsa Família | Portal da Transparência | portaldatransparencia.gov.br | CSV/ZIP | Mensal |
 | BPC/LOAS | Portal da Transparência | portaldatransparencia.gov.br | CSV/ZIP | Mensal |
 | Farmácia Popular | OpenDataSUS | opendatasus.saude.gov.br | CSV/ZIP | Mensal |
@@ -58,7 +59,74 @@ O Bolsa Família é um programa social que atende famílias cadastradas no CadÚ
 
 ---
 
-## 2. BPC/LOAS - Benefício de Prestação Continuada
+## 2. CRAS - Centro de Referência de Assistência Social ⭐ NOVO
+
+### Descrição
+Os CRAS são unidades públicas de atendimento do SUAS (Sistema Único de Assistência Social), responsáveis por:
+- Cadastramento no CadÚnico
+- Encaminhamento para Bolsa Família
+- Orientação sobre BPC/LOAS
+- Tarifa Social de Energia Elétrica
+- Outros serviços socioassistenciais
+
+### Fonte
+- **API SAGI Equipamentos** - Ministério do Desenvolvimento Social (MDS)
+- URL: https://aplicacoes.mds.gov.br/sagi/servicos/equipamentos
+
+### Dados Disponíveis
+- ~8.900 CRAS em todo o Brasil
+- Coordenadas geográficas (93% geocodificados)
+- Endereço completo
+- Código IBGE do município
+- Telefone de contato
+
+### Estrutura da API (SOLR)
+```json
+{
+  "response": {
+    "numFound": 8923,
+    "docs": [
+      {
+        "id_equipamento": "12345",
+        "ibge": "3550308",
+        "nome": "CRAS Vila Mariana",
+        "endereco": "Rua Domingos de Morais",
+        "numero": "1000",
+        "bairro": "Vila Mariana",
+        "cep": "04010100",
+        "cidade": "Sao Paulo",
+        "uf": "SP",
+        "telefone": "(11) 5573-1515",
+        "georef_location": "-23.5889,-46.6388"
+      }
+    ]
+  }
+}
+```
+
+### Verificação de Consistência
+- **Dados oficiais (MDS)**: ~8.900 CRAS
+- **Nossa ingestão**: 9.009 CRAS (Fev/2026)
+- **Geocodificados**: 8.382 (93%)
+- **Status**: ✅ Consistente
+
+### Distribuição por Estado (Top 10)
+| UF | CRAS | UF | CRAS |
+|----|------|----|----|
+| MG | 1.264 | CE | 421 |
+| SP | 1.260 | SC | 408 |
+| BA | 710 | PE | 357 |
+| RS | 619 | MA | 330 |
+| PR | 591 | GO | 308 |
+
+### Notas Técnicas
+- **IMPORTANTE**: Usar HTTPS obrigatoriamente. HTTP retorna "Connection reset by peer"
+- Fallback para arquivo JSON local (`data/cras_exemplo.json`) quando API indisponível
+- Atualização eventual (dados de equipamentos mudam pouco)
+
+---
+
+## 3. BPC/LOAS - Benefício de Prestação Continuada
 
 ### Descrição
 Benefício assistencial de um salário mínimo mensal para idosos (65+) e pessoas com deficiência de baixa renda.
