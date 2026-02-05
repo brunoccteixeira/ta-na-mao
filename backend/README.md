@@ -18,6 +18,14 @@ O **Tá na Mão** é uma plataforma que consolida dados de programas sociais do 
 | **Dignidade Menstrual** | OpenDataSUS | ~358k beneficiários |
 | **PIS/PASEP** | Caixa/BB | R$ 26.3bi não resgatados |
 
+### Dados de Localização
+
+| Entidade | Registros | Fonte | Atualização |
+|----------|-----------|-------|-------------|
+| **CRAS** | ~8.300 | Censo SUAS/MDS | Mensal (automático) |
+| **Farmácias Populares** | ~31.000 | OpenDataSUS | Mensal (automático) |
+| **Municípios** | 5.570 | IBGE | Anual |
+
 ### Canais de Distribuição (Roadmap)
 
 | Canal | Status | Descrição |
@@ -87,6 +95,31 @@ python -m app.jobs.ingest_dignidade
 
 # Dados históricos (10 anos Farmácia Popular)
 python -m app.jobs.ingest_historical
+
+# CRAS (localizações com geocodificação)
+python -m app.jobs.ingest_cras
+```
+
+### Scheduler Automático (Produção)
+
+Em produção, os jobs rodam automaticamente via APScheduler:
+
+| Job | Dia | Hora | Comando Manual |
+|-----|-----|------|----------------|
+| Bolsa Família | 5 | 03:00 | `POST /api/v1/admin/jobs/bolsa_familia/run` |
+| BPC/LOAS | 6 | 03:00 | `POST /api/v1/admin/jobs/bpc/run` |
+| Farmácia Popular | 7 | 04:00 | `POST /api/v1/admin/jobs/farmacia/run` |
+| CRAS | 11 | 04:00 | `POST /api/v1/admin/jobs/cras/run` |
+
+```bash
+# Status do scheduler
+curl http://localhost:8000/api/v1/admin/scheduler/status
+
+# Trigger manual (ex: CRAS)
+curl -X POST http://localhost:8000/api/v1/admin/jobs/cras/run
+
+# Estatísticas CRAS
+curl http://localhost:8000/api/v1/admin/cras/stats
 ```
 
 ### 7. Iniciar API
@@ -108,6 +141,10 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 | `Program` | programs | Programas sociais rastreados |
 | `BeneficiaryData` | beneficiary_data | Dados por município/programa/mês |
 | `CadUnicoData` | cadunico_data | Dados demográficos do CadÚnico |
+| `CrasLocation` | cras_locations | ~8.300 CRAS com coordenadas |
+| `Benefit` | benefits | Catálogo de 229 benefícios |
+| `Partner` | partners | Parceiros e conversões |
+| `Advisor/Case` | advisors/cases | Sistema Anjo Social |
 
 ### Relacionamentos
 
@@ -205,10 +242,22 @@ backend/
 │   │       ├── processar_receita.py   # MCP + Fallback Gemini Vision
 │   │       ├── enviar_whatsapp.py     # Twilio
 │   │       └── preparar_pedido.py
+│   ├── services/           # Serviços de negócio
+│   │   ├── geocoding_service.py    # Geocodificação (Nominatim + Google)
+│   │   ├── serpro_service.py       # Consulta CPF via SERPRO
+│   │   ├── transparencia_service.py # Portal da Transparência API
+│   │   ├── eligibility_service.py  # Motor de elegibilidade
+│   │   └── govbr_service.py        # Integração Gov.br
 │   ├── jobs/               # Scripts de ingestão de dados
+│   │   ├── dados_abertos/          # Pipeline ETL orquestrado
+│   │   │   ├── orquestrador.py     # APScheduler + coordenação
+│   │   │   ├── extrator.py
+│   │   │   ├── transformador.py
+│   │   │   └── carregador.py
+│   │   ├── ingest_cras.py          # CRAS locations (~8.300)
 │   │   ├── ingest_bolsa_familia.py
 │   │   ├── ingest_bpc_real.py
-│   │   ├── ingest_farmacia_real.py
+│   │   ├── ingest_farmacia_real.py # Farmácias (~31.000)
 │   │   ├── ingest_dignidade.py
 │   │   ├── ingest_tsee.py
 │   │   └── ingest_historical.py
@@ -267,6 +316,9 @@ A API está disponível em `http://localhost:8000` com documentação interativa
 | **`POST /api/v1/agent/v2/start`** | Iniciar sessão de chat |
 | **`POST /api/v1/agent/v2/chat`** | Enviar mensagem ao agente |
 | **`POST /api/v1/webhook/whatsapp/chat`** | Chat via WhatsApp (Twilio) |
+| `GET /api/v1/admin/scheduler/status` | Status do scheduler ETL |
+| `POST /api/v1/admin/jobs/{name}/run` | Trigger manual de job |
+| `GET /api/v1/admin/cras/stats` | Estatísticas CRAS |
 
 ### Exemplos
 
@@ -420,6 +472,45 @@ MCP_TIMEOUT=30000
 ```
 
 Veja [MCP_SETUP.md](../docs/MCP_SETUP.md) para documentação completa.
+
+## Serviços de Integração
+
+### Geocodificação
+
+Converte endereços em coordenadas para busca de CRAS/farmácias por proximidade.
+
+| Estratégia | Custo | Cobertura |
+|------------|-------|-----------|
+| Nominatim (OSM) | Gratuito | ~80% |
+| Google Geocoding | ~R$0.01/req | ~99% |
+
+```python
+from app.services.geocoding_service import geocode_address
+
+lat, lon, source = await geocode_address(
+    endereco="Rua Augusta, 100",
+    cidade="São Paulo",
+    uf="SP"
+)
+# source: "nominatim" ou "google"
+```
+
+### APIs Governamentais
+
+| Serviço | Arquivo | Descrição |
+|---------|---------|-----------|
+| SERPRO | `serpro_service.py` | Consulta CPF (pago, ~R$0.66/req) |
+| Transparência | `transparencia_service.py` | Benefícios pagos (gratuito) |
+| Gov.br | `govbr_service.py` | Login SSO + auto-preenchimento |
+
+```bash
+# Configuração (.env)
+SERPRO_CONSUMER_KEY=xxx
+SERPRO_CONSUMER_SECRET=xxx
+SERPRO_ENABLED=false  # Feature flag
+
+TRANSPARENCIA_API_KEY=xxx  # Gratuito, cadastro em portaldatransparencia.gov.br
+```
 
 ## Documentação Adicional
 

@@ -204,6 +204,40 @@ cd android && ./gradlew test
 - Processamento por Gemini Vision
 - Identificação de medicamentos elegíveis
 
+### Data Ingestion & Scheduler
+
+O backend possui um sistema automatizado de ingestão de dados governamentais:
+
+**Fontes de Dados:**
+| Dado | Registros | Fonte | Frequência |
+|------|-----------|-------|------------|
+| CRAS | ~8.300 | Censo SUAS/MDS | Mensal |
+| Farmácias Populares | ~31.000 | OpenDataSUS | Mensal |
+| Bolsa Família | ~5.570 municípios | Portal Transparência | Mensal |
+| BPC/LOAS | ~5.570 municípios | Portal Transparência | Mensal |
+
+**Scheduler (APScheduler):**
+- Jobs automáticos executam mensalmente (madrugada)
+- Configurável via `AGENDA_PROGRAMAS` em `orquestrador.py`
+- Inicia automaticamente em produção/staging
+
+**Geocodificação:**
+- Primário: Nominatim/OpenStreetMap (gratuito)
+- Fallback: Google Geocoding API (pago, ~R$0.01/request)
+- Cobertura: ~80% dos endereços geocodificados automaticamente
+
+**Admin API:**
+```bash
+# Status do scheduler
+GET /api/v1/admin/scheduler/status
+
+# Trigger manual de job
+POST /api/v1/admin/jobs/{job_name}/run
+
+# Estatísticas CRAS
+GET /api/v1/admin/cras/stats
+```
+
 ## Estrutura do Projeto
 
 ```

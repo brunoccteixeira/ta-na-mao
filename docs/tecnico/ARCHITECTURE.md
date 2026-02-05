@@ -12,23 +12,32 @@ graph TB
         Web[React Dashboard]
         Mobile[Android App]
     end
-    
+
     subgraph "API Layer"
         API[FastAPI Backend]
         Agent[Gemini Agent]
     end
-    
+
+    subgraph "ETL Layer"
+        Scheduler[APScheduler]
+        Jobs[Ingestion Jobs]
+        Geocoding[Geocoding Service]
+    end
+
     subgraph "Data Layer"
         PG[(PostgreSQL + PostGIS)]
         Redis[(Redis Cache)]
     end
-    
+
     subgraph "External Services"
         IBGE[IBGE API]
         Gemini[Google Gemini]
         Twilio[Twilio WhatsApp]
+        MDS[MDS/Censo SUAS]
+        OpenDataSUS[OpenDataSUS]
+        Nominatim[Nominatim/OSM]
     end
-    
+
     Web --> API
     Mobile --> API
     API --> Agent
@@ -37,6 +46,13 @@ graph TB
     Agent --> Gemini
     API --> IBGE
     Agent --> Twilio
+
+    Scheduler --> Jobs
+    Jobs --> PG
+    Jobs --> Geocoding
+    Geocoding --> Nominatim
+    Jobs --> MDS
+    Jobs --> OpenDataSUS
 ```
 
 ## Componentes Principais
@@ -102,17 +118,47 @@ backend/
 
 ## Fluxo de Dados
 
-### 1. Ingestão de Dados
+### 1. Ingestão de Dados (ETL Pipeline)
 
 ```
-Fontes Externas → Jobs de Ingestão → PostgreSQL
+Fontes Externas → Scheduler → Jobs → Geocoding → PostgreSQL
 ```
 
-**Fontes:**
-- Portal da Transparência
-- OpenDataSUS
-- ANEEL
-- IBGE
+**Arquitetura ETL:**
+```
+backend/app/jobs/
+├── dados_abertos/
+│   ├── orquestrador.py    # APScheduler + coordenação
+│   ├── extrator.py        # Download de dados
+│   ├── transformador.py   # Validação e normalização
+│   └── carregador.py      # Upsert no banco
+├── ingest_cras.py         # CRAS locations (~8.300)
+├── ingest_farmacia_real.py # Farmácias (~31.000)
+└── ingest_population.py   # População IBGE
+```
+
+**Scheduler (APScheduler):**
+| Job | Dia do Mês | Hora | Fonte |
+|-----|------------|------|-------|
+| Bolsa Família | 5 | 03:00 | Portal Transparência |
+| BPC/LOAS | 6 | 03:00 | Portal Transparência |
+| Farmácia Popular | 7 | 04:00 | OpenDataSUS |
+| TSEE | 8 | 04:00 | ANEEL |
+| Auxílio Gás | 9 | 04:00 | Portal Transparência |
+| Seguro Defeso | 10 | 04:00 | Portal Transparência |
+| CRAS Locations | 11 | 04:00 | Censo SUAS/MDS |
+
+**Geocodificação:**
+- Serviço: `app/services/geocoding_service.py`
+- Estratégia: Nominatim (gratuito) → Google API (fallback pago)
+- Cobertura: ~80% automático, resto manual
+
+**Fontes de Dados:**
+- Portal da Transparência (benefícios federais)
+- OpenDataSUS (Farmácia Popular)
+- Censo SUAS/MDS (CRAS locations)
+- ANEEL (Tarifa Social)
+- IBGE (população, municípios)
 
 ### 2. Consulta de Dados
 
@@ -143,14 +189,20 @@ Usuário → API → Gemini Agent → Tools → Resposta
 - **Program**: Programas sociais
 - **BeneficiaryData**: Dados agregados por município/programa/mês
 - **CadUnicoData**: Dados demográficos do CadÚnico
+- **CrasLocation**: Localizações de CRAS (~8.300 registros)
 - **Pedido**: Pedidos de medicamentos
 - **Beneficiario**: Beneficiários (com hash de CPF)
+- **Benefit**: Catálogo de benefícios (229 benefícios)
+- **Partner**: Parceiros e conversões
+- **Advisor/Case**: Sistema Anjo Social
 
 ### Índices
 
 - `municipalities.ibge_code` (único)
 - `beneficiary_data(municipality_id, program_id, reference_date)`
 - `municipalities.geometry` (GIST para PostGIS)
+- `cras_locations.ibge_code` (busca por município)
+- `cras_locations(latitude, longitude)` (busca por coordenadas)
 
 ## Cache Strategy
 
@@ -227,12 +279,17 @@ Usuário → API → Gemini Agent → Tools → Resposta
 - ✅ Testes em todas as plataformas
 - ✅ CI/CD completo (GitHub Actions)
 - ✅ Logging estruturado e métricas
+- ✅ ETL Scheduler (APScheduler)
+- ✅ CRAS Database (~8.300 localizações)
+- ✅ Geocodificação automática (Nominatim + Google)
+- ✅ APIs Gov.br (SERPRO, Transparência)
 
 ### Fase 2 (Próxima)
 - [ ] Autenticação JWT para endpoints admin
 - [ ] Rate limiting
 - [ ] Aumentar cobertura de testes (>70%)
 - [ ] OpenTelemetry tracing
+- [ ] Ingestão completa Censo SUAS
 
 ### Fase 3 (Futura)
 - [ ] Kubernetes deployment
