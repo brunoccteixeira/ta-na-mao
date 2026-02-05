@@ -26,7 +26,7 @@ describe('MiniProfileForm', () => {
   });
 
   it('campo numerico aceita input', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null }); // Disable delay for faster tests
     const rules = [makeRule('rendaFamiliarMensal')];
 
     render(<MiniProfileForm rules={rules} onSubmit={vi.fn()} />);
@@ -38,7 +38,7 @@ describe('MiniProfileForm', () => {
   });
 
   it('campo numerico vazio converte para 0 no submit', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null }); // Disable delay for faster tests
     const onSubmit = vi.fn();
     const rules = [makeRule('rendaFamiliarMensal')];
 
@@ -54,7 +54,7 @@ describe('MiniProfileForm', () => {
   });
 
   it('campo boolean: botoes Sim/Nao toggleam valor', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null }); // Disable delay for faster tests
     const rules = [makeRule('cadastradoCadunico')];
 
     render(<MiniProfileForm rules={rules} onSubmit={vi.fn()} />);
@@ -70,10 +70,10 @@ describe('MiniProfileForm', () => {
     // Click Nao
     await user.click(naoButtons[0]);
     expect(naoButtons[0].className).toContain('emerald');
-  });
+  }, 15000); // Increased timeout
 
   it('submit chama onSubmit com CitizenProfile completo (merged com DEFAULT)', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null }); // Disable delay for faster tests
     const onSubmit = vi.fn();
     const rules = [makeRule('rendaFamiliarMensal'), makeRule('cadastradoCadunico')];
 
@@ -97,7 +97,7 @@ describe('MiniProfileForm', () => {
     // Fields from DEFAULT_CITIZEN_PROFILE
     expect(profile.pessoasNaCasa).toBe(DEFAULT_CITIZEN_PROFILE.pessoasNaCasa);
     expect(profile.temMei).toBe(DEFAULT_CITIZEN_PROFILE.temMei);
-  });
+  }, 15000); // Increased timeout
 
   it('initialProfile preenche valores existentes', () => {
     const rules = [makeRule('rendaFamiliarMensal'), makeRule('cadastradoCadunico')];

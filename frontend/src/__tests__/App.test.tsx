@@ -27,7 +27,8 @@ describe('Home', () => {
 
   it('shows the social proof section', () => {
     renderWithProviders(<Home />);
-    const section = screen.getByText(/Numeros que falam/i);
+    // The redesigned Home has a stats section with data sources
+    const section = screen.getByText(/Dados oficiais de:/i);
     expect(section).toBeInTheDocument();
   });
 });
