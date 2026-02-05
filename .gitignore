@@ -46,3 +46,6 @@ local.properties
 
 # Releases locais
 releases/
+
+# TypeScript build cache
+*.tsbuildinfo
