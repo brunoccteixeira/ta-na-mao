@@ -1,96 +1,144 @@
-"""Tests for CRAS data ingestion."""
+"""Tests for CRAS data ingestion from SAGI API."""
 
 import pytest
 from unittest.mock import AsyncMock, patch, MagicMock
 from datetime import datetime
 
 from app.jobs.ingest_cras import (
-    _parse_cras_csv,
-    _get_field,
+    _map_sagi_to_cras,
     _normalize_ibge_code,
     _normalize_cep,
-    geocode_single_cras,
+    _is_valid_brazil_coordinate,
     save_cras_to_db,
     ingest_cras_data,
+    fetch_sagi_cras_data,
 )
 
 
-class TestCSVParsing:
-    """Tests for CSV parsing functions."""
+class TestSagiMapping:
+    """Tests for SAGI API field mapping."""
 
-    def test_parse_cras_csv_semicolon(self):
-        """Test parsing CSV with semicolon delimiter."""
-        csv_content = """nome;ibge;endereco;bairro;cep;telefone;email;municipio;uf
-CRAS Centro;3550308;Rua Augusta, 100;Centro;01305000;1133334444;cras@sp.gov.br;Sao Paulo;SP
-CRAS Vila;3550308;Av Brasil, 200;Vila Maria;02000000;1122223333;cras2@sp.gov.br;Sao Paulo;SP"""
+    def test_map_sagi_to_cras_complete(self):
+        """Test mapping complete SAGI document."""
+        doc = {
+            "id_equipamento": "12345",
+            "ibge": "3550308",
+            "nome": "CRAS Vila Mariana",
+            "endereco": "Rua Domingos de Morais",
+            "numero": "1000",
+            "bairro": "Vila Mariana",
+            "cep": "04010100",
+            "cidade": "Sao Paulo",
+            "uf": "SP",
+            "telefone": "(11) 5573-1515",
+            "georef_location": "-23.5889,-46.6388",
+            "data_atualizacao": "2026-01-15",
+        }
 
-        result = _parse_cras_csv(csv_content)
+        result = _map_sagi_to_cras(doc)
 
-        assert len(result) == 2
-        assert result[0]["nome"] == "CRAS Centro"
-        assert result[0]["ibge_code"] == "3550308"
-        assert result[0]["endereco"] == "Rua Augusta, 100"
-        assert result[0]["uf"] == "SP"
+        assert result is not None
+        assert result["ibge_code"] == "3550308"
+        assert result["nome"] == "CRAS Vila Mariana"
+        assert result["endereco"] == "Rua Domingos de Morais, 1000"
+        assert result["bairro"] == "Vila Mariana"
+        assert result["cep"] == "04010100"
+        assert result["cidade"] == "Sao Paulo"
+        assert result["uf"] == "SP"
+        assert result["telefone"] == "(11) 5573-1515"
+        assert result["latitude"] == -23.5889
+        assert result["longitude"] == -46.6388
+        assert result["geocode_source"] == "sagi"
 
-    def test_parse_cras_csv_comma(self):
-        """Test parsing CSV with comma delimiter."""
-        csv_content = """nome,cod_ibge,logradouro,ds_bairro,co_cep,nu_telefone,ds_email,nome_municipio,sigla_uf
-CRAS Teste,3304557,Rua Teste 123,Centro,20000000,2133334444,cras@rj.gov.br,Rio de Janeiro,RJ"""
+    def test_map_sagi_to_cras_minimal(self):
+        """Test mapping SAGI document with only required fields."""
+        doc = {
+            "ibge": "3550308",
+            "nome": "CRAS Minimo",
+        }
 
-        result = _parse_cras_csv(csv_content)
+        result = _map_sagi_to_cras(doc)
 
-        assert len(result) == 1
-        assert result[0]["nome"] == "CRAS Teste"
-        assert result[0]["ibge_code"] == "3304557"
-        assert result[0]["cidade"] == "Rio de Janeiro"
+        assert result is not None
+        assert result["ibge_code"] == "3550308"
+        assert result["nome"] == "CRAS Minimo"
+        assert result["latitude"] is None
+        assert result["longitude"] is None
+        assert result["geocode_source"] is None
 
-    def test_parse_cras_csv_empty(self):
-        """Test parsing empty CSV."""
-        csv_content = """nome;ibge;endereco"""
+    def test_map_sagi_to_cras_missing_ibge(self):
+        """Test mapping fails without IBGE code."""
+        doc = {"nome": "CRAS Sem IBGE"}
 
-        result = _parse_cras_csv(csv_content)
+        result = _map_sagi_to_cras(doc)
 
-        assert len(result) == 0
+        assert result is None
 
-    def test_parse_cras_csv_missing_fields(self):
-        """Test parsing CSV with missing optional fields."""
-        csv_content = """nome;ibge;municipio;uf
-CRAS Minimo;1234567;Cidade Teste;TE"""
+    def test_map_sagi_to_cras_missing_name(self):
+        """Test mapping fails without name."""
+        doc = {"ibge": "3550308"}
 
-        result = _parse_cras_csv(csv_content)
+        result = _map_sagi_to_cras(doc)
 
-        assert len(result) == 1
-        assert result[0]["nome"] == "CRAS Minimo"
-        assert result[0]["endereco"] is None
+        assert result is None
+
+    def test_map_sagi_to_cras_invalid_coordinates(self):
+        """Test mapping rejects coordinates outside Brazil."""
+        doc = {
+            "ibge": "3550308",
+            "nome": "CRAS Coordenadas Invalidas",
+            "georef_location": "40.7128,-74.0060",  # NYC coordinates
+        }
+
+        result = _map_sagi_to_cras(doc)
+
+        assert result is not None
+        assert result["latitude"] is None
+        assert result["longitude"] is None
+
+    def test_map_sagi_to_cras_malformed_coordinates(self):
+        """Test mapping handles malformed coordinates."""
+        doc = {
+            "ibge": "3550308",
+            "nome": "CRAS Coords Malformadas",
+            "georef_location": "not,valid",
+        }
+
+        result = _map_sagi_to_cras(doc)
+
+        assert result is not None
+        assert result["latitude"] is None
+        assert result["longitude"] is None
 
 
-class TestFieldExtraction:
-    """Tests for field extraction helpers."""
+class TestCoordinateValidation:
+    """Tests for Brazil bounding box validation."""
 
-    def test_get_field_exact_match(self):
-        """Test exact field name match."""
-        row = {"nome": "CRAS Centro", "endereco": "Rua A"}
-        assert _get_field(row, ["nome"]) == "CRAS Centro"
+    def test_valid_sao_paulo(self):
+        """Test valid coordinates in Sao Paulo."""
+        assert _is_valid_brazil_coordinate(-23.55, -46.63) is True
 
-    def test_get_field_case_insensitive(self):
-        """Test case-insensitive field match."""
-        row = {"NOME": "CRAS Centro", "ENDERECO": "Rua A"}
-        assert _get_field(row, ["nome"]) == "CRAS Centro"
+    def test_valid_manaus(self):
+        """Test valid coordinates in Manaus (northern Brazil)."""
+        assert _is_valid_brazil_coordinate(-3.12, -60.02) is True
 
-    def test_get_field_fallback(self):
-        """Test fallback to secondary field names."""
-        row = {"nm_cras": "CRAS Vila", "ds_endereco": "Rua B"}
-        assert _get_field(row, ["nome", "nome_cras", "nm_cras"]) == "CRAS Vila"
+    def test_valid_porto_alegre(self):
+        """Test valid coordinates in Porto Alegre (southern Brazil)."""
+        assert _is_valid_brazil_coordinate(-30.03, -51.23) is True
 
-    def test_get_field_not_found(self):
-        """Test when field is not found."""
-        row = {"campo_outro": "valor"}
-        assert _get_field(row, ["nome", "endereco"]) is None
+    def test_invalid_nyc(self):
+        """Test NYC coordinates are rejected."""
+        assert _is_valid_brazil_coordinate(40.71, -74.01) is False
 
-    def test_get_field_empty_value(self):
-        """Test when field value is empty."""
-        row = {"nome": "", "nome_cras": "CRAS Real"}
-        assert _get_field(row, ["nome", "nome_cras"]) == "CRAS Real"
+    def test_invalid_paris(self):
+        """Test Paris coordinates are rejected."""
+        assert _is_valid_brazil_coordinate(48.86, 2.35) is False
+
+    def test_invalid_none(self):
+        """Test None coordinates are rejected."""
+        assert _is_valid_brazil_coordinate(None, None) is False
+        assert _is_valid_brazil_coordinate(-23.55, None) is False
+        assert _is_valid_brazil_coordinate(None, -46.63) is False
 
 
 class TestNormalization:
@@ -129,59 +177,74 @@ class TestNormalization:
         assert _normalize_cep(None) is None
 
 
-class TestGeocodeSingleCras:
-    """Tests for single CRAS geocoding."""
+class TestFetchSagiData:
+    """Tests for SAGI API fetch."""
 
     @pytest.mark.asyncio
-    async def test_geocode_single_success(self):
-        """Test successful single CRAS geocoding."""
-        record = {
-            "nome": "CRAS Centro",
-            "endereco": "Rua Augusta, 100",
-            "cidade": "Sao Paulo",
-            "uf": "SP",
-            "cep": "01305000"
+    async def test_fetch_sagi_success(self):
+        """Test successful fetch from SAGI API."""
+        mock_response_data = {
+            "response": {
+                "numFound": 2,
+                "docs": [
+                    {
+                        "ibge": "3550308",
+                        "nome": "CRAS SP 1",
+                        "georef_location": "-23.55,-46.63",
+                    },
+                    {
+                        "ibge": "3304557",
+                        "nome": "CRAS RJ 1",
+                        "georef_location": "-22.91,-43.21",
+                    },
+                ],
+            }
         }
 
-        with patch("app.jobs.ingest_cras.geocode_address") as mock_geocode:
-            mock_geocode.return_value = (-23.55, -46.63, "nominatim")
+        with patch("app.jobs.ingest_cras.httpx.AsyncClient") as mock_client:
+            mock_instance = AsyncMock()
+            mock_client.return_value.__aenter__.return_value = mock_instance
 
-            result = await geocode_single_cras(record)
+            mock_response = MagicMock()
+            mock_response.status_code = 200
+            mock_response.json.return_value = mock_response_data
+            mock_instance.get.return_value = mock_response
 
-            assert result["latitude"] == -23.55
-            assert result["longitude"] == -46.63
-            assert result["geocode_source"] == "nominatim"
-            assert result["nome"] == "CRAS Centro"
+            result = await fetch_sagi_cras_data()
 
-    @pytest.mark.asyncio
-    async def test_geocode_single_no_address(self):
-        """Test geocoding with missing address."""
-        record = {"nome": "CRAS Sem Endereco"}
-
-        result = await geocode_single_cras(record)
-
-        # Should return unchanged record
-        assert result["nome"] == "CRAS Sem Endereco"
-        assert "latitude" not in result or result.get("latitude") is None
+            assert result is not None
+            assert len(result) == 2
+            assert result[0]["nome"] == "CRAS SP 1"
+            assert result[1]["nome"] == "CRAS RJ 1"
 
     @pytest.mark.asyncio
-    async def test_geocode_single_failure(self):
-        """Test geocoding failure (no coordinates returned)."""
-        record = {
-            "nome": "CRAS Teste",
-            "endereco": "Endereco Invalido",
-            "cidade": "Cidade",
-            "uf": "UF"
-        }
+    async def test_fetch_sagi_api_error(self):
+        """Test handling API error status."""
+        with patch("app.jobs.ingest_cras.httpx.AsyncClient") as mock_client:
+            mock_instance = AsyncMock()
+            mock_client.return_value.__aenter__.return_value = mock_instance
 
-        with patch("app.jobs.ingest_cras.geocode_address") as mock_geocode:
-            mock_geocode.return_value = (None, None, None)
+            mock_response = MagicMock()
+            mock_response.status_code = 500
+            mock_instance.get.return_value = mock_response
 
-            result = await geocode_single_cras(record)
+            result = await fetch_sagi_cras_data()
 
-            assert result["latitude"] is None
-            assert result["longitude"] is None
-            assert result["geocode_source"] is None
+            assert result is None
+
+    @pytest.mark.asyncio
+    async def test_fetch_sagi_timeout(self):
+        """Test handling request timeout."""
+        import httpx
+
+        with patch("app.jobs.ingest_cras.httpx.AsyncClient") as mock_client:
+            mock_instance = AsyncMock()
+            mock_client.return_value.__aenter__.return_value = mock_instance
+            mock_instance.get.side_effect = httpx.TimeoutException("timeout")
+
+            result = await fetch_sagi_cras_data()
+
+            assert result is None
 
 
 class TestSaveCrasToDb:
@@ -189,7 +252,6 @@ class TestSaveCrasToDb:
 
     def test_save_cras_creates_new(self):
         """Test creating new CRAS records."""
-        # Mock database session
         mock_db = MagicMock()
 
         # Mock municipality query
@@ -207,13 +269,13 @@ class TestSaveCrasToDb:
                 "endereco": "Rua Nova, 123",
                 "latitude": -23.55,
                 "longitude": -46.63,
-                "geocode_source": "nominatim"
+                "geocode_source": "sagi",
             }
         ]
 
-        stats = save_cras_to_db(mock_db, records, source="test")
+        stats = save_cras_to_db(mock_db, records, source="sagi")
 
-        assert stats["created"] >= 0  # May be 0 due to mock setup
+        assert stats["created"] >= 0
         mock_db.commit.assert_called_once()
 
     def test_save_cras_skips_invalid(self):
@@ -226,7 +288,7 @@ class TestSaveCrasToDb:
             {"nome": "CRAS Sem IBGE"},
         ]
 
-        stats = save_cras_to_db(mock_db, records, source="test")
+        stats = save_cras_to_db(mock_db, records, source="sagi")
 
         assert stats["skipped"] == 2
 
@@ -238,43 +300,109 @@ class TestIngestCrasData:
     async def test_ingest_dry_run(self):
         """Test dry run mode (no database save)."""
         mock_records = [
-            {"nome": "CRAS 1", "ibge_code": "3550308", "cidade": "SP", "uf": "SP"},
-            {"nome": "CRAS 2", "ibge_code": "3304557", "cidade": "RJ", "uf": "RJ"},
+            {
+                "nome": "CRAS 1",
+                "ibge_code": "3550308",
+                "latitude": -23.55,
+                "longitude": -46.63,
+                "geocode_source": "sagi",
+            },
+            {
+                "nome": "CRAS 2",
+                "ibge_code": "3304557",
+                "latitude": -22.91,
+                "longitude": -43.21,
+                "geocode_source": "sagi",
+            },
         ]
 
-        with patch("app.jobs.ingest_cras.fetch_censo_suas_data", return_value=mock_records):
-            with patch("app.jobs.ingest_cras.geocode_cras_batch") as mock_geocode:
-                mock_geocode.return_value = [
-                    {**r, "latitude": -23.5, "longitude": -46.6, "geocode_source": "test"}
-                    for r in mock_records
-                ]
+        with patch("app.jobs.ingest_cras.fetch_sagi_cras_data", return_value=mock_records):
+            result = await ingest_cras_data(dry_run=True)
 
-                result = await ingest_cras_data(dry_run=True)
-
-                assert result["dry_run"] is True
-                assert result["records_fetched"] == 2
-                assert result["records_geocoded"] == 2
-                assert "records_saved" not in result or result.get("records_saved") is None
+            assert result["dry_run"] is True
+            assert result["records_fetched"] == 2
+            assert result["records_geocoded"] == 2
+            assert result["source"] == "sagi"
 
     @pytest.mark.asyncio
     async def test_ingest_fallback_data(self):
-        """Test loading fallback data when fetch fails."""
+        """Test loading fallback data when SAGI fails."""
         fallback_data = [
-            {"nome": "CRAS Fallback", "ibge_code": "3550308", "cidade": "SP", "uf": "SP"}
+            {
+                "nome": "CRAS Fallback",
+                "ibge_code": "3550308",
+                "latitude": -23.55,
+                "longitude": -46.63,
+                "geocode_source": "fallback",
+            }
         ]
 
-        with patch("app.jobs.ingest_cras.fetch_censo_suas_data", return_value=None):
+        with patch("app.jobs.ingest_cras.fetch_sagi_cras_data", return_value=None):
             with patch("app.jobs.ingest_cras._load_fallback_data", return_value=fallback_data):
-                with patch("app.jobs.ingest_cras.geocode_cras_batch", return_value=fallback_data):
-                    result = await ingest_cras_data(dry_run=True)
+                result = await ingest_cras_data(dry_run=True)
 
-                    assert result["records_fetched"] == 1
+                assert result["records_fetched"] == 1
+                assert result["source"] == "fallback_json"
 
     @pytest.mark.asyncio
     async def test_ingest_no_data(self):
         """Test when no data is available."""
-        with patch("app.jobs.ingest_cras.fetch_censo_suas_data", return_value=None):
+        with patch("app.jobs.ingest_cras.fetch_sagi_cras_data", return_value=None):
             with patch("app.jobs.ingest_cras._load_fallback_data", return_value=None):
                 result = await ingest_cras_data(dry_run=True)
 
                 assert "Failed to fetch CRAS data" in result["errors"][0]
+
+    @pytest.mark.asyncio
+    async def test_ingest_with_database_save(self):
+        """Test full ingestion with database save."""
+        mock_records = [
+            {
+                "nome": "CRAS Test",
+                "ibge_code": "3550308",
+                "latitude": -23.55,
+                "longitude": -46.63,
+                "geocode_source": "sagi",
+            }
+        ]
+
+        mock_save_stats = {"created": 1, "updated": 0, "skipped": 0}
+
+        with patch("app.jobs.ingest_cras.fetch_sagi_cras_data", return_value=mock_records):
+            with patch("app.jobs.ingest_cras.SessionLocal") as mock_session:
+                mock_db = MagicMock()
+                mock_session.return_value = mock_db
+
+                with patch("app.jobs.ingest_cras.save_cras_to_db", return_value=mock_save_stats):
+                    result = await ingest_cras_data(dry_run=False)
+
+                    assert result["records_saved"] == 1
+                    assert result["created"] == 1
+                    assert result["updated"] == 0
+
+
+class TestFallbackLoading:
+    """Tests for fallback JSON loading."""
+
+    def test_load_fallback_maps_coordinates(self):
+        """Test fallback loader correctly maps coordinate format."""
+        from app.jobs.ingest_cras import _load_fallback_data
+
+        # Test actual fallback file
+        data = _load_fallback_data()
+
+        if data:  # Only test if file exists
+            assert len(data) > 0
+            first = data[0]
+
+            # Check mapped fields
+            assert "ibge_code" in first
+            assert "nome" in first
+            assert "latitude" in first
+            assert "longitude" in first
+            assert "geocode_source" in first
+
+            # Check coordinates are numeric
+            if first["latitude"] is not None:
+                assert isinstance(first["latitude"], (int, float))
+                assert isinstance(first["longitude"], (int, float))

@@ -98,7 +98,10 @@ export interface CrasCardData {
   phone?: string;
   hours?: string;
   distance?: string;
+  distance_meters?: number;
   services?: string[];
+  latitude?: number;
+  longitude?: number;
 }
 
 export interface OrderStatusData {

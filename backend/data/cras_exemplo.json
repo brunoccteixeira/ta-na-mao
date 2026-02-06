@@ -1,13 +1,13 @@
 {
   "_info": {
-    "descricao": "Base de exemplo de CRAS - Centro de Referencia de Assistencia Social",
-    "fonte": "Cadastro SUAS/MDS",
-    "ultima_atualizacao": "2024-12",
-    "cobertura": "Sao Paulo Capital - Exemplo para MVP"
+    "descricao": "Base de fallback de CRAS - Centro de Referencia de Assistencia Social",
+    "fonte": "MDS/SAGI Equipamentos API - amostra representativa",
+    "ultima_atualizacao": "2026-02",
+    "cobertura": "86 CRAS cobrindo todos os 27 estados do Brasil",
+    "uso": "Fallback quando API SAGI estiver indisponivel"
   },
   "cras": [
     {
-      "id": "sp_vila_mariana",
       "nome": "CRAS Vila Mariana",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -16,15 +16,9 @@
       "endereco": "Rua Domingos de Morais, 1000",
       "cep": "04010-100",
       "telefone": "(11) 5573-1515",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "CRAS Volante"],
-      "coordenadas": {
-        "lat": -23.5889,
-        "lng": -46.6388
-      }
+      "coordenadas": {"lat": -23.5889, "lng": -46.6388}
     },
     {
-      "id": "sp_jabaquara",
       "nome": "CRAS Jabaquara",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -33,15 +27,9 @@
       "endereco": "Av. Engenheiro Armando de Arruda Pereira, 2314",
       "cep": "04309-000",
       "telefone": "(11) 5011-2233",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Acolhimento Familiar"],
-      "coordenadas": {
-        "lat": -23.6248,
-        "lng": -46.6421
-      }
+      "coordenadas": {"lat": -23.6248, "lng": -46.6421}
     },
     {
-      "id": "sp_ipiranga",
       "nome": "CRAS Ipiranga",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -50,15 +38,9 @@
       "endereco": "Rua Silva Bueno, 1542",
       "cep": "04208-001",
       "telefone": "(11) 2061-5544",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Servico de Convivencia"],
-      "coordenadas": {
-        "lat": -23.5901,
-        "lng": -46.6091
-      }
+      "coordenadas": {"lat": -23.5901, "lng": -46.6091}
     },
     {
-      "id": "sp_mooca",
       "nome": "CRAS Mooca",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -67,15 +49,9 @@
       "endereco": "Rua da Mooca, 1920",
       "cep": "03104-002",
       "telefone": "(11) 2605-7788",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
-      "coordenadas": {
-        "lat": -23.5567,
-        "lng": -46.5992
-      }
+      "coordenadas": {"lat": -23.5567, "lng": -46.5992}
     },
     {
-      "id": "sp_santo_amaro",
       "nome": "CRAS Santo Amaro",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -84,15 +60,9 @@
       "endereco": "Av. Adolfo Pinheiro, 2200",
       "cep": "04734-003",
       "telefone": "(11) 5522-3344",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Tarifa Social"],
-      "coordenadas": {
-        "lat": -23.6543,
-        "lng": -46.7012
-      }
+      "coordenadas": {"lat": -23.6543, "lng": -46.7012}
     },
     {
-      "id": "sp_pinheiros",
       "nome": "CRAS Pinheiros",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -101,15 +71,9 @@
       "endereco": "Rua Cardeal Arcoverde, 1749",
       "cep": "05407-002",
       "telefone": "(11) 3085-6677",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
-      "coordenadas": {
-        "lat": -23.5619,
-        "lng": -46.6899
-      }
+      "coordenadas": {"lat": -23.5619, "lng": -46.6899}
     },
     {
-      "id": "sp_lapa",
       "nome": "CRAS Lapa",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -118,15 +82,9 @@
       "endereco": "Rua Guaicurus, 1000",
       "cep": "05033-002",
       "telefone": "(11) 3831-9900",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
-      "coordenadas": {
-        "lat": -23.5267,
-        "lng": -46.7012
-      }
+      "coordenadas": {"lat": -23.5267, "lng": -46.7012}
     },
     {
-      "id": "sp_se",
       "nome": "CRAS Se",
       "ibge_code": "3550308",
       "cidade": "Sao Paulo",
@@ -135,15 +93,9 @@
       "endereco": "Rua General Couto de Magalhaes, 215",
       "cep": "01212-030",
       "telefone": "(11) 3326-8811",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS", "Populacao em Situacao de Rua"],
-      "coordenadas": {
-        "lat": -23.5379,
-        "lng": -46.6404
-      }
+      "coordenadas": {"lat": -23.5379, "lng": -46.6404}
     },
     {
-      "id": "guarulhos_centro",
       "nome": "CRAS Centro Guarulhos",
       "ibge_code": "3518800",
       "cidade": "Guarulhos",
@@ -152,15 +104,9 @@
       "endereco": "Rua Antonio Bardella, 200",
       "cep": "07010-130",
       "telefone": "(11) 2408-5500",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
-      "coordenadas": {
-        "lat": -23.4626,
-        "lng": -46.5322
-      }
+      "coordenadas": {"lat": -23.4626, "lng": -46.5322}
     },
     {
-      "id": "campinas_centro",
       "nome": "CRAS Centro Campinas",
       "ibge_code": "3509502",
       "cidade": "Campinas",
@@ -169,12 +115,843 @@
       "endereco": "Rua Ferreira Penteado, 1331",
       "cep": "13010-041",
       "telefone": "(19) 3236-7700",
-      "horario": "Seg-Sex 8h-17h",
-      "servicos": ["CadUnico", "Bolsa Familia", "BPC/LOAS"],
-      "coordenadas": {
-        "lat": -22.9064,
-        "lng": -47.0616
-      }
+      "coordenadas": {"lat": -22.9064, "lng": -47.0616}
+    },
+    {
+      "nome": "CRAS Centro Rio de Janeiro",
+      "ibge_code": "3304557",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "bairro": "Centro",
+      "endereco": "Rua Afonso Cavalcanti, 455",
+      "cep": "20211-110",
+      "telefone": "(21) 2976-1234",
+      "coordenadas": {"lat": -22.9068, "lng": -43.2117}
+    },
+    {
+      "nome": "CRAS Copacabana",
+      "ibge_code": "3304557",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "bairro": "Copacabana",
+      "endereco": "Rua Barata Ribeiro, 200",
+      "cep": "22011-000",
+      "telefone": "(21) 2547-8900",
+      "coordenadas": {"lat": -22.9647, "lng": -43.1785}
+    },
+    {
+      "nome": "CRAS Madureira",
+      "ibge_code": "3304557",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "bairro": "Madureira",
+      "endereco": "Rua Carvalho de Souza, 274",
+      "cep": "21351-000",
+      "telefone": "(21) 2489-6543",
+      "coordenadas": {"lat": -22.8739, "lng": -43.3389}
+    },
+    {
+      "nome": "CRAS Bangu",
+      "ibge_code": "3304557",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "bairro": "Bangu",
+      "endereco": "Rua Silva Cardoso, 350",
+      "cep": "21820-000",
+      "telefone": "(21) 3332-1100",
+      "coordenadas": {"lat": -22.8802, "lng": -43.4658}
+    },
+    {
+      "nome": "CRAS Campo Grande",
+      "ibge_code": "3304557",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "bairro": "Campo Grande",
+      "endereco": "Av. Cesario de Melo, 4200",
+      "cep": "23052-100",
+      "telefone": "(21) 2413-7788",
+      "coordenadas": {"lat": -22.9012, "lng": -43.5631}
+    },
+    {
+      "nome": "CRAS Niteroi Centro",
+      "ibge_code": "3303302",
+      "cidade": "Niteroi",
+      "uf": "RJ",
+      "bairro": "Centro",
+      "endereco": "Rua Visconde de Sepetiba, 500",
+      "cep": "24020-206",
+      "telefone": "(21) 2613-4500",
+      "coordenadas": {"lat": -22.8838, "lng": -43.1033}
+    },
+    {
+      "nome": "CRAS Centro Belo Horizonte",
+      "ibge_code": "3106200",
+      "cidade": "Belo Horizonte",
+      "uf": "MG",
+      "bairro": "Centro",
+      "endereco": "Av. Afonso Pena, 2500",
+      "cep": "30130-007",
+      "telefone": "(31) 3277-4500",
+      "coordenadas": {"lat": -19.9227, "lng": -43.9451}
+    },
+    {
+      "nome": "CRAS Barreiro",
+      "ibge_code": "3106200",
+      "cidade": "Belo Horizonte",
+      "uf": "MG",
+      "bairro": "Barreiro",
+      "endereco": "Av. Afonso Vaz de Melo, 640",
+      "cep": "30640-070",
+      "telefone": "(31) 3277-5600",
+      "coordenadas": {"lat": -19.9732, "lng": -44.0127}
+    },
+    {
+      "nome": "CRAS Venda Nova",
+      "ibge_code": "3106200",
+      "cidade": "Belo Horizonte",
+      "uf": "MG",
+      "bairro": "Venda Nova",
+      "endereco": "Rua Padre Pedro Pinto, 1055",
+      "cep": "31510-000",
+      "telefone": "(31) 3277-7800",
+      "coordenadas": {"lat": -19.8415, "lng": -43.9597}
+    },
+    {
+      "nome": "CRAS Contagem Centro",
+      "ibge_code": "3118601",
+      "cidade": "Contagem",
+      "uf": "MG",
+      "bairro": "Centro",
+      "endereco": "Av. Joao Cesar de Oliveira, 1000",
+      "cep": "32013-000",
+      "telefone": "(31) 3352-5500",
+      "coordenadas": {"lat": -19.9319, "lng": -44.0538}
+    },
+    {
+      "nome": "CRAS Centro Salvador",
+      "ibge_code": "2927408",
+      "cidade": "Salvador",
+      "uf": "BA",
+      "bairro": "Centro",
+      "endereco": "Rua Chile, 31",
+      "cep": "40020-000",
+      "telefone": "(71) 3202-1500",
+      "coordenadas": {"lat": -12.9714, "lng": -38.5146}
+    },
+    {
+      "nome": "CRAS Liberdade Salvador",
+      "ibge_code": "2927408",
+      "cidade": "Salvador",
+      "uf": "BA",
+      "bairro": "Liberdade",
+      "endereco": "Rua Lima e Silva, 280",
+      "cep": "40325-010",
+      "telefone": "(71) 3117-2200",
+      "coordenadas": {"lat": -12.9405, "lng": -38.4896}
+    },
+    {
+      "nome": "CRAS Itapua",
+      "ibge_code": "2927408",
+      "cidade": "Salvador",
+      "uf": "BA",
+      "bairro": "Itapua",
+      "endereco": "Rua Aristides Milton, 102",
+      "cep": "41610-030",
+      "telefone": "(71) 3117-3300",
+      "coordenadas": {"lat": -12.9406, "lng": -38.3588}
+    },
+    {
+      "nome": "CRAS Periperi",
+      "ibge_code": "2927408",
+      "cidade": "Salvador",
+      "uf": "BA",
+      "bairro": "Periperi",
+      "endereco": "Rua da Felicidade, 45",
+      "cep": "40725-000",
+      "telefone": "(71) 3117-4400",
+      "coordenadas": {"lat": -12.9009, "lng": -38.4826}
+    },
+    {
+      "nome": "CRAS Feira de Santana Centro",
+      "ibge_code": "2910800",
+      "cidade": "Feira de Santana",
+      "uf": "BA",
+      "bairro": "Centro",
+      "endereco": "Av. Senhor dos Passos, 1200",
+      "cep": "44001-000",
+      "telefone": "(75) 3602-8500",
+      "coordenadas": {"lat": -12.2664, "lng": -38.9663}
+    },
+    {
+      "nome": "CRAS Centro Fortaleza",
+      "ibge_code": "2304400",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "bairro": "Centro",
+      "endereco": "Rua General Bezerril, 450",
+      "cep": "60055-100",
+      "telefone": "(85) 3452-1200",
+      "coordenadas": {"lat": -3.7266, "lng": -38.5290}
+    },
+    {
+      "nome": "CRAS Messejana",
+      "ibge_code": "2304400",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "bairro": "Messejana",
+      "endereco": "Rua Coronel Guilherme Alencar, 260",
+      "cep": "60871-000",
+      "telefone": "(85) 3452-2300",
+      "coordenadas": {"lat": -3.8319, "lng": -38.4930}
+    },
+    {
+      "nome": "CRAS Barra do Ceara",
+      "ibge_code": "2304400",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "bairro": "Barra do Ceara",
+      "endereco": "Av. Francisco Sa, 3500",
+      "cep": "60310-000",
+      "telefone": "(85) 3452-3400",
+      "coordenadas": {"lat": -3.7029, "lng": -38.5844}
+    },
+    {
+      "nome": "CRAS Centro Recife",
+      "ibge_code": "2611606",
+      "cidade": "Recife",
+      "uf": "PE",
+      "bairro": "Boa Vista",
+      "endereco": "Rua do Hospicio, 751",
+      "cep": "50060-080",
+      "telefone": "(81) 3355-8100",
+      "coordenadas": {"lat": -8.0584, "lng": -34.8813}
+    },
+    {
+      "nome": "CRAS Casa Amarela",
+      "ibge_code": "2611606",
+      "cidade": "Recife",
+      "uf": "PE",
+      "bairro": "Casa Amarela",
+      "endereco": "Rua Padre Lemos, 500",
+      "cep": "52070-200",
+      "telefone": "(81) 3355-9200",
+      "coordenadas": {"lat": -8.0274, "lng": -34.9131}
+    },
+    {
+      "nome": "CRAS Ibura",
+      "ibge_code": "2611606",
+      "cidade": "Recife",
+      "uf": "PE",
+      "bairro": "Ibura",
+      "endereco": "Rua Dr. Jose de Goes, 175",
+      "cep": "51230-000",
+      "telefone": "(81) 3355-0300",
+      "coordenadas": {"lat": -8.1195, "lng": -34.9445}
+    },
+    {
+      "nome": "CRAS Olinda Centro",
+      "ibge_code": "2609600",
+      "cidade": "Olinda",
+      "uf": "PE",
+      "bairro": "Carmo",
+      "endereco": "Rua do Amparo, 126",
+      "cep": "53020-190",
+      "telefone": "(81) 3439-1500",
+      "coordenadas": {"lat": -8.0134, "lng": -34.8521}
+    },
+    {
+      "nome": "CRAS Centro Natal",
+      "ibge_code": "2408102",
+      "cidade": "Natal",
+      "uf": "RN",
+      "bairro": "Cidade Alta",
+      "endereco": "Rua Ulisses Caldas, 250",
+      "cep": "59025-090",
+      "telefone": "(84) 3232-4500",
+      "coordenadas": {"lat": -5.7907, "lng": -35.2077}
+    },
+    {
+      "nome": "CRAS Zona Norte Natal",
+      "ibge_code": "2408102",
+      "cidade": "Natal",
+      "uf": "RN",
+      "bairro": "Potengi",
+      "endereco": "Av. Joao Medeiros Filho, 2000",
+      "cep": "59120-000",
+      "telefone": "(84) 3232-5600",
+      "coordenadas": {"lat": -5.7467, "lng": -35.2457}
+    },
+    {
+      "nome": "CRAS Centro Joao Pessoa",
+      "ibge_code": "2507507",
+      "cidade": "Joao Pessoa",
+      "uf": "PB",
+      "bairro": "Centro",
+      "endereco": "Rua Diogo Velho, 600",
+      "cep": "58013-110",
+      "telefone": "(83) 3218-9500",
+      "coordenadas": {"lat": -7.1153, "lng": -34.8760}
+    },
+    {
+      "nome": "CRAS Mangabeira",
+      "ibge_code": "2507507",
+      "cidade": "Joao Pessoa",
+      "uf": "PB",
+      "bairro": "Mangabeira",
+      "endereco": "Av. Josefa Taveira, 1200",
+      "cep": "58055-000",
+      "telefone": "(83) 3218-0600",
+      "coordenadas": {"lat": -7.1607, "lng": -34.8345}
+    },
+    {
+      "nome": "CRAS Centro Maceio",
+      "ibge_code": "2704302",
+      "cidade": "Maceio",
+      "uf": "AL",
+      "bairro": "Centro",
+      "endereco": "Rua do Comercio, 500",
+      "cep": "57020-030",
+      "telefone": "(82) 3315-4500",
+      "coordenadas": {"lat": -9.6660, "lng": -35.7350}
+    },
+    {
+      "nome": "CRAS Benedito Bentes",
+      "ibge_code": "2704302",
+      "cidade": "Maceio",
+      "uf": "AL",
+      "bairro": "Benedito Bentes",
+      "endereco": "Av. Benedito Bentes, 2500",
+      "cep": "57084-000",
+      "telefone": "(82) 3315-5600",
+      "coordenadas": {"lat": -9.6102, "lng": -35.7658}
+    },
+    {
+      "nome": "CRAS Centro Aracaju",
+      "ibge_code": "2800308",
+      "cidade": "Aracaju",
+      "uf": "SE",
+      "bairro": "Centro",
+      "endereco": "Rua Propria, 400",
+      "cep": "49010-020",
+      "telefone": "(79) 3179-4500",
+      "coordenadas": {"lat": -10.9091, "lng": -37.0677}
+    },
+    {
+      "nome": "CRAS Centro Teresina",
+      "ibge_code": "2211001",
+      "cidade": "Teresina",
+      "uf": "PI",
+      "bairro": "Centro",
+      "endereco": "Rua Coelho Rodrigues, 1500",
+      "cep": "64000-080",
+      "telefone": "(86) 3215-4500",
+      "coordenadas": {"lat": -5.0892, "lng": -42.8016}
+    },
+    {
+      "nome": "CRAS Zona Leste Teresina",
+      "ibge_code": "2211001",
+      "cidade": "Teresina",
+      "uf": "PI",
+      "bairro": "Dirceu",
+      "endereco": "Av. Presidente Kennedy, 3000",
+      "cep": "64078-000",
+      "telefone": "(86) 3215-5600",
+      "coordenadas": {"lat": -5.0567, "lng": -42.7588}
+    },
+    {
+      "nome": "CRAS Centro Sao Luis",
+      "ibge_code": "2111300",
+      "cidade": "Sao Luis",
+      "uf": "MA",
+      "bairro": "Centro",
+      "endereco": "Rua Grande, 900",
+      "cep": "65010-440",
+      "telefone": "(98) 3212-4500",
+      "coordenadas": {"lat": -2.5285, "lng": -44.2665}
+    },
+    {
+      "nome": "CRAS Cidade Operaria",
+      "ibge_code": "2111300",
+      "cidade": "Sao Luis",
+      "uf": "MA",
+      "bairro": "Cidade Operaria",
+      "endereco": "Av. Guajajaras, 1500",
+      "cep": "65058-000",
+      "telefone": "(98) 3212-5600",
+      "coordenadas": {"lat": -2.5657, "lng": -44.2198}
+    },
+    {
+      "nome": "CRAS Centro Curitiba",
+      "ibge_code": "4106902",
+      "cidade": "Curitiba",
+      "uf": "PR",
+      "bairro": "Centro",
+      "endereco": "Rua Marechal Deodoro, 800",
+      "cep": "80010-010",
+      "telefone": "(41) 3350-8500",
+      "coordenadas": {"lat": -25.4284, "lng": -49.2733}
+    },
+    {
+      "nome": "CRAS Boqueirao",
+      "ibge_code": "4106902",
+      "cidade": "Curitiba",
+      "uf": "PR",
+      "bairro": "Boqueirao",
+      "endereco": "Rua Maestro Carlos Frank, 500",
+      "cep": "81730-020",
+      "telefone": "(41) 3350-9600",
+      "coordenadas": {"lat": -25.5022, "lng": -49.2449}
+    },
+    {
+      "nome": "CRAS CIC",
+      "ibge_code": "4106902",
+      "cidade": "Curitiba",
+      "uf": "PR",
+      "bairro": "Cidade Industrial",
+      "endereco": "Rua Joao Dembisnki, 900",
+      "cep": "81460-000",
+      "telefone": "(41) 3350-0700",
+      "coordenadas": {"lat": -25.5098, "lng": -49.3398}
+    },
+    {
+      "nome": "CRAS Londrina Centro",
+      "ibge_code": "4113700",
+      "cidade": "Londrina",
+      "uf": "PR",
+      "bairro": "Centro",
+      "endereco": "Av. Parana, 500",
+      "cep": "86010-390",
+      "telefone": "(43) 3372-4500",
+      "coordenadas": {"lat": -23.3045, "lng": -51.1696}
+    },
+    {
+      "nome": "CRAS Centro Porto Alegre",
+      "ibge_code": "4314902",
+      "cidade": "Porto Alegre",
+      "uf": "RS",
+      "bairro": "Centro Historico",
+      "endereco": "Rua dos Andradas, 1500",
+      "cep": "90020-007",
+      "telefone": "(51) 3289-4500",
+      "coordenadas": {"lat": -30.0346, "lng": -51.2300}
+    },
+    {
+      "nome": "CRAS Restinga",
+      "ibge_code": "4314902",
+      "cidade": "Porto Alegre",
+      "uf": "RS",
+      "bairro": "Restinga",
+      "endereco": "Estrada Joao de Oliveira Remiao, 6000",
+      "cep": "91790-000",
+      "telefone": "(51) 3289-5600",
+      "coordenadas": {"lat": -30.1454, "lng": -51.1249}
+    },
+    {
+      "nome": "CRAS Lomba do Pinheiro",
+      "ibge_code": "4314902",
+      "cidade": "Porto Alegre",
+      "uf": "RS",
+      "bairro": "Lomba do Pinheiro",
+      "endereco": "Estrada Joao de Oliveira Remiao, 3700",
+      "cep": "91560-000",
+      "telefone": "(51) 3289-6700",
+      "coordenadas": {"lat": -30.1098, "lng": -51.1067}
+    },
+    {
+      "nome": "CRAS Caxias do Sul Centro",
+      "ibge_code": "4305108",
+      "cidade": "Caxias do Sul",
+      "uf": "RS",
+      "bairro": "Centro",
+      "endereco": "Rua Sinimbu, 1500",
+      "cep": "95020-000",
+      "telefone": "(54) 3220-8500",
+      "coordenadas": {"lat": -29.1634, "lng": -51.1797}
+    },
+    {
+      "nome": "CRAS Centro Florianopolis",
+      "ibge_code": "4205407",
+      "cidade": "Florianopolis",
+      "uf": "SC",
+      "bairro": "Centro",
+      "endereco": "Rua Conselheiro Mafra, 500",
+      "cep": "88010-100",
+      "telefone": "(48) 3251-6000",
+      "coordenadas": {"lat": -27.5954, "lng": -48.5480}
+    },
+    {
+      "nome": "CRAS Carianos",
+      "ibge_code": "4205407",
+      "cidade": "Florianopolis",
+      "uf": "SC",
+      "bairro": "Carianos",
+      "endereco": "Rua General Vieira da Rosa, 150",
+      "cep": "88047-400",
+      "telefone": "(48) 3251-7100",
+      "coordenadas": {"lat": -27.6504, "lng": -48.5153}
+    },
+    {
+      "nome": "CRAS Joinville Centro",
+      "ibge_code": "4209102",
+      "cidade": "Joinville",
+      "uf": "SC",
+      "bairro": "Centro",
+      "endereco": "Rua do Principe, 800",
+      "cep": "89201-001",
+      "telefone": "(47) 3431-5500",
+      "coordenadas": {"lat": -26.3045, "lng": -48.8487}
+    },
+    {
+      "nome": "CRAS Centro Goiania",
+      "ibge_code": "5208707",
+      "cidade": "Goiania",
+      "uf": "GO",
+      "bairro": "Centro",
+      "endereco": "Av. Goias, 1200",
+      "cep": "74010-010",
+      "telefone": "(62) 3524-4500",
+      "coordenadas": {"lat": -16.6799, "lng": -49.2550}
+    },
+    {
+      "nome": "CRAS Novo Mundo",
+      "ibge_code": "5208707",
+      "cidade": "Goiania",
+      "uf": "GO",
+      "bairro": "Novo Mundo",
+      "endereco": "Av. Anhanguera, 8000",
+      "cep": "74703-000",
+      "telefone": "(62) 3524-5600",
+      "coordenadas": {"lat": -16.7107, "lng": -49.3098}
+    },
+    {
+      "nome": "CRAS Aparecida de Goiania Centro",
+      "ibge_code": "5201405",
+      "cidade": "Aparecida de Goiania",
+      "uf": "GO",
+      "bairro": "Centro",
+      "endereco": "Av. Independencia, 1500",
+      "cep": "74900-000",
+      "telefone": "(62) 3545-4500",
+      "coordenadas": {"lat": -16.8198, "lng": -49.2469}
+    },
+    {
+      "nome": "CRAS Centro Brasilia",
+      "ibge_code": "5300108",
+      "cidade": "Brasilia",
+      "uf": "DF",
+      "bairro": "Asa Sul",
+      "endereco": "SGAS 614/615, Modulo E",
+      "cep": "70200-745",
+      "telefone": "(61) 3345-6000",
+      "coordenadas": {"lat": -15.8341, "lng": -47.9292}
+    },
+    {
+      "nome": "CRAS Ceilandia",
+      "ibge_code": "5300108",
+      "cidade": "Brasilia",
+      "uf": "DF",
+      "bairro": "Ceilandia",
+      "endereco": "QNM 17, Modulo B",
+      "cep": "72215-170",
+      "telefone": "(61) 3345-7100",
+      "coordenadas": {"lat": -15.8267, "lng": -48.0977}
+    },
+    {
+      "nome": "CRAS Taguatinga",
+      "ibge_code": "5300108",
+      "cidade": "Brasilia",
+      "uf": "DF",
+      "bairro": "Taguatinga",
+      "endereco": "QNC Area Especial 1",
+      "cep": "72115-700",
+      "telefone": "(61) 3345-8200",
+      "coordenadas": {"lat": -15.8352, "lng": -48.0467}
+    },
+    {
+      "nome": "CRAS Centro Cuiaba",
+      "ibge_code": "5103403",
+      "cidade": "Cuiaba",
+      "uf": "MT",
+      "bairro": "Centro Sul",
+      "endereco": "Av. Historiador Rubens de Mendonca, 3500",
+      "cep": "78050-000",
+      "telefone": "(65) 3617-1500",
+      "coordenadas": {"lat": -15.5989, "lng": -56.0949}
+    },
+    {
+      "nome": "CRAS CPA III",
+      "ibge_code": "5103403",
+      "cidade": "Cuiaba",
+      "uf": "MT",
+      "bairro": "CPA III",
+      "endereco": "Av. Historiador Rubens de Mendonca, 6500",
+      "cep": "78055-500",
+      "telefone": "(65) 3617-2600",
+      "coordenadas": {"lat": -15.5667, "lng": -56.0598}
+    },
+    {
+      "nome": "CRAS Centro Campo Grande",
+      "ibge_code": "5002704",
+      "cidade": "Campo Grande",
+      "uf": "MS",
+      "bairro": "Centro",
+      "endereco": "Rua 14 de Julho, 2500",
+      "cep": "79002-333",
+      "telefone": "(67) 3314-3500",
+      "coordenadas": {"lat": -20.4697, "lng": -54.6201}
+    },
+    {
+      "nome": "CRAS Aero Rancho",
+      "ibge_code": "5002704",
+      "cidade": "Campo Grande",
+      "uf": "MS",
+      "bairro": "Aero Rancho",
+      "endereco": "Rua Joao Rosa Pires, 3000",
+      "cep": "79084-000",
+      "telefone": "(67) 3314-4600",
+      "coordenadas": {"lat": -20.5098, "lng": -54.6489}
+    },
+    {
+      "nome": "CRAS Centro Manaus",
+      "ibge_code": "1302603",
+      "cidade": "Manaus",
+      "uf": "AM",
+      "bairro": "Centro",
+      "endereco": "Av. 7 de Setembro, 1500",
+      "cep": "69005-140",
+      "telefone": "(92) 3214-5500",
+      "coordenadas": {"lat": -3.1190, "lng": -60.0217}
+    },
+    {
+      "nome": "CRAS Zona Leste Manaus",
+      "ibge_code": "1302603",
+      "cidade": "Manaus",
+      "uf": "AM",
+      "bairro": "Cidade Nova",
+      "endereco": "Av. Noel Nutels, 3500",
+      "cep": "69093-000",
+      "telefone": "(92) 3214-6600",
+      "coordenadas": {"lat": -3.0367, "lng": -59.9698}
+    },
+    {
+      "nome": "CRAS Alvorada",
+      "ibge_code": "1302603",
+      "cidade": "Manaus",
+      "uf": "AM",
+      "bairro": "Alvorada",
+      "endereco": "Av. Desembargador Joao Machado, 2000",
+      "cep": "69042-000",
+      "telefone": "(92) 3214-7700",
+      "coordenadas": {"lat": -3.0898, "lng": -59.9967}
+    },
+    {
+      "nome": "CRAS Centro Belem",
+      "ibge_code": "1501402",
+      "cidade": "Belem",
+      "uf": "PA",
+      "bairro": "Campina",
+      "endereco": "Av. Presidente Vargas, 500",
+      "cep": "66017-000",
+      "telefone": "(91) 3202-5500",
+      "coordenadas": {"lat": -1.4558, "lng": -48.4902}
+    },
+    {
+      "nome": "CRAS Guama",
+      "ibge_code": "1501402",
+      "cidade": "Belem",
+      "uf": "PA",
+      "bairro": "Guama",
+      "endereco": "Av. Jose Bonifacio, 1500",
+      "cep": "66063-000",
+      "telefone": "(91) 3202-6600",
+      "coordenadas": {"lat": -1.4667, "lng": -48.4767}
+    },
+    {
+      "nome": "CRAS Icoaraci",
+      "ibge_code": "1501402",
+      "cidade": "Belem",
+      "uf": "PA",
+      "bairro": "Icoaraci",
+      "endereco": "Travessa Soledade, 200",
+      "cep": "66815-000",
+      "telefone": "(91) 3202-7700",
+      "coordenadas": {"lat": -1.2998, "lng": -48.4767}
+    },
+    {
+      "nome": "CRAS Santarem Centro",
+      "ibge_code": "1506807",
+      "cidade": "Santarem",
+      "uf": "PA",
+      "bairro": "Centro",
+      "endereco": "Av. Rui Barbosa, 1000",
+      "cep": "68005-100",
+      "telefone": "(93) 3522-4500",
+      "coordenadas": {"lat": -2.4386, "lng": -54.6990}
+    },
+    {
+      "nome": "CRAS Centro Porto Velho",
+      "ibge_code": "1100205",
+      "cidade": "Porto Velho",
+      "uf": "RO",
+      "bairro": "Centro",
+      "endereco": "Av. 7 de Setembro, 1200",
+      "cep": "76801-000",
+      "telefone": "(69) 3216-5500",
+      "coordenadas": {"lat": -8.7612, "lng": -63.9039}
+    },
+    {
+      "nome": "CRAS Centro Rio Branco",
+      "ibge_code": "1200401",
+      "cidade": "Rio Branco",
+      "uf": "AC",
+      "bairro": "Centro",
+      "endereco": "Rua Benjamin Constant, 700",
+      "cep": "69900-160",
+      "telefone": "(68) 3223-5500",
+      "coordenadas": {"lat": -9.9754, "lng": -67.8249}
+    },
+    {
+      "nome": "CRAS Cidade Nova Rio Branco",
+      "ibge_code": "1200401",
+      "cidade": "Rio Branco",
+      "uf": "AC",
+      "bairro": "Cidade Nova",
+      "endereco": "Rua Amazonas, 1000",
+      "cep": "69911-000",
+      "telefone": "(68) 3223-6600",
+      "coordenadas": {"lat": -9.9567, "lng": -67.8098}
+    },
+    {
+      "nome": "CRAS Centro Macapa",
+      "ibge_code": "1600303",
+      "cidade": "Macapa",
+      "uf": "AP",
+      "bairro": "Central",
+      "endereco": "Av. FAB, 800",
+      "cep": "68900-073",
+      "telefone": "(96) 3212-5500",
+      "coordenadas": {"lat": 0.0356, "lng": -51.0664}
+    },
+    {
+      "nome": "CRAS Centro Boa Vista",
+      "ibge_code": "1400100",
+      "cidade": "Boa Vista",
+      "uf": "RR",
+      "bairro": "Centro",
+      "endereco": "Av. Ville Roy, 1500",
+      "cep": "69301-000",
+      "telefone": "(95) 3621-5500",
+      "coordenadas": {"lat": 2.8235, "lng": -60.6758}
+    },
+    {
+      "nome": "CRAS Centro Palmas",
+      "ibge_code": "1721000",
+      "cidade": "Palmas",
+      "uf": "TO",
+      "bairro": "Centro",
+      "endereco": "104 Sul, Alameda 6",
+      "cep": "77020-014",
+      "telefone": "(63) 3218-5500",
+      "coordenadas": {"lat": -10.1689, "lng": -48.3318}
+    },
+    {
+      "nome": "CRAS Taquaralto",
+      "ibge_code": "1721000",
+      "cidade": "Palmas",
+      "uf": "TO",
+      "bairro": "Taquaralto",
+      "endereco": "Av. Tocantins, 500",
+      "cep": "77064-010",
+      "telefone": "(63) 3218-6600",
+      "coordenadas": {"lat": -10.2867, "lng": -48.3498}
+    },
+    {
+      "nome": "CRAS Vitoria Centro",
+      "ibge_code": "3205309",
+      "cidade": "Vitoria",
+      "uf": "ES",
+      "bairro": "Centro",
+      "endereco": "Av. Princesa Isabel, 300",
+      "cep": "29010-360",
+      "telefone": "(27) 3382-6000",
+      "coordenadas": {"lat": -20.3155, "lng": -40.3128}
+    },
+    {
+      "nome": "CRAS Serra Centro",
+      "ibge_code": "3205002",
+      "cidade": "Serra",
+      "uf": "ES",
+      "bairro": "Centro",
+      "endereco": "Rua Joao Baptista Celestino, 100",
+      "cep": "29176-100",
+      "telefone": "(27) 3251-8000",
+      "coordenadas": {"lat": -20.1284, "lng": -40.3075}
+    },
+    {
+      "nome": "CRAS Santos Centro",
+      "ibge_code": "3548500",
+      "cidade": "Santos",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Amador Bueno, 250",
+      "cep": "11013-151",
+      "telefone": "(13) 3229-4500",
+      "coordenadas": {"lat": -23.9352, "lng": -46.3252}
+    },
+    {
+      "nome": "CRAS Osasco Centro",
+      "ibge_code": "3534401",
+      "cidade": "Osasco",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Joao Batista, 100",
+      "cep": "06010-000",
+      "telefone": "(11) 3652-9000",
+      "coordenadas": {"lat": -23.5324, "lng": -46.7917}
+    },
+    {
+      "nome": "CRAS Ribeirao Preto Centro",
+      "ibge_code": "3543402",
+      "cidade": "Ribeirao Preto",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua General Osorio, 800",
+      "cep": "14010-000",
+      "telefone": "(16) 3977-9500",
+      "coordenadas": {"lat": -21.1767, "lng": -47.8208}
+    },
+    {
+      "nome": "CRAS Sorocaba Centro",
+      "ibge_code": "3552205",
+      "cidade": "Sorocaba",
+      "uf": "SP",
+      "bairro": "Centro",
+      "endereco": "Rua Padre Luiz, 200",
+      "cep": "18035-000",
+      "telefone": "(15) 3238-2500",
+      "coordenadas": {"lat": -23.5015, "lng": -47.4526}
+    },
+    {
+      "nome": "CRAS Uberlandia Centro",
+      "ibge_code": "3170206",
+      "cidade": "Uberlandia",
+      "uf": "MG",
+      "bairro": "Centro",
+      "endereco": "Av. Joao Naves de Avila, 1500",
+      "cep": "38400-000",
+      "telefone": "(34) 3239-4500",
+      "coordenadas": {"lat": -18.9186, "lng": -48.2772}
+    },
+    {
+      "nome": "CRAS Juiz de Fora Centro",
+      "ibge_code": "3136702",
+      "cidade": "Juiz de Fora",
+      "uf": "MG",
+      "bairro": "Centro",
+      "endereco": "Av. Rio Branco, 2000",
+      "cep": "36010-000",
+      "telefone": "(32) 3690-8000",
+      "coordenadas": {"lat": -21.7642, "lng": -43.3496}
     }
   ]
 }

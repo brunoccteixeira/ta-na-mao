@@ -6,7 +6,7 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Home, Eligibility, Catalog, BenefitDetail, About } from './views';
+import { Home, Eligibility, Catalog, BenefitDetail, About, CrasFinder } from './views';
 import BenefitChecker from './views/BenefitChecker';
 import BrazilMap from './components/Map/BrazilMap';
 import ProgramSelector from './components/Dashboard/ProgramSelector';
@@ -278,6 +278,7 @@ export default function App() {
               <Route path="/beneficios/:id/verificar" element={<BenefitChecker />} />
               <Route path="/sobre" element={<About />} />
               <Route path="/empoderamento" element={<Empowerment />} />
+              <Route path="/cras" element={<CrasFinder />} />
             </Route>
 
             {/* Admin dashboard — stays dark */}

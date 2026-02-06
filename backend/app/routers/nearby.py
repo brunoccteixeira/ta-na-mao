@@ -28,6 +28,8 @@ class ServiceLocation(BaseModel):
     horario: Optional[str] = None
     aberto_agora: Optional[bool] = None
     delivery: Optional[bool] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
     links: dict = {}
 
 
@@ -188,6 +190,8 @@ async def buscar_cras_proximos(
                 telefone=c.get("telefone"),
                 horario=c.get("horario"),
                 aberto_agora=c.get("aberto_agora"),
+                latitude=c.get("latitude"),
+                longitude=c.get("longitude"),
                 links=c.get("links", {})
             )
             for c in cras_list
