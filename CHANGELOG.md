@@ -4,6 +4,22 @@
 
 ### Added
 
+#### CRAS Finder - Encontrar CRAS próximos
+- **Endpoint `GET /api/v1/nearby/cras`** — Busca por GPS (lat/lng) ou CEP, raio configurável, fallback para JSON local
+- **`CrasFinder` view** (`src/views/CrasFinder.tsx`) — Busca dual (GPS + CEP), toggle mapa/lista, cards com ligar/traçar rota
+- **`CrasMap` component** (`src/components/Map/CrasMap.tsx`) — Mapa Leaflet interativo com markers, popups, raio de busca
+- **`useNearbyCras` hook** (`src/hooks/useNearbyCras.ts`) — Integração com API, cálculo de distância Haversine
+- **Rota `/cras`** via Next.js App Router em `app/(public)/cras/page.tsx`
+- **Fallback database** — 86 CRAS de exemplo cobrindo todos os 27 estados
+- **Testes de ingestão** — Suite completa para pipeline SAGI API com ~40 test cases
+- **Tipo `CrasCardData`** em `chatClient.ts` para integração com agente
+
+#### Home Redesign (Wizbii-style)
+- **Hero com foto** — Imagem Gemini (mãe brasileira + bebê) em grid 50/50, blend suave à esquerda
+- **Destaques fluorescentes** — Marca-texto verde (`linear-gradient`) em "seus direitos!", "benefícios sociais", etc.
+- **Layout espaçado** — Tipografia maior (3.5rem), padding generoso, bullet points estilo Wizbii (→)
+- **CTA pill-shaped** — Botão rounded-full com hover scale
+
 #### Tema Claro para Páginas Públicas
 - **Sistema de CSS custom properties** — `.theme-light` e `.theme-dark` wrappers via `index.css`
 - **`PublicLayout`** em `App.tsx` — Todas as 6 rotas públicas envolvidas em `.theme-light` via layout route

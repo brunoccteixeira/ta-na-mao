@@ -99,87 +99,67 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
       </header>
 
       <main>
-        {/* ─── HERO ─── */}
-        <section className="pt-28 pb-16 px-4 md:pt-32 md:pb-24">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        {/* ─── HERO (Wizbii-style) ─── */}
+        <section className="pt-20 md:pt-24">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-0">
             {/* Left: Text */}
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--text-primary)] leading-tight">
+            <div className="px-6 sm:px-10 lg:px-16 py-16 md:py-28">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 leading-[1.12] tracking-tight">
                 Não deixe passar<br />
-                seus direitos!
+                <span style={{ backgroundImage: 'linear-gradient(transparent 55%, #6ee7b7 55%)' }}>
+                  seus direitos!
+                </span>
               </h1>
-              <p className="text-[var(--text-secondary)] mt-4 text-lg">
-                Tá na Mão, seu guia de benefícios sociais:
+
+              <p className="text-slate-500 mt-6 text-lg lg:text-xl max-w-md leading-relaxed">
+                Tá na Mão, seu guia de{' '}
+                <span style={{ backgroundImage: 'linear-gradient(transparent 55%, #6ee7b7 55%)' }} className="font-semibold text-slate-700">
+                  benefícios sociais
+                </span>:
               </p>
 
-              <ul className="mt-6 space-y-3 text-left inline-block">
+              <ul className="mt-8 space-y-4">
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs font-bold">→</span>
-                  <span className="text-[var(--text-primary)] font-semibold">Simulação rápida</span>
+                  <span className="text-emerald-500 font-bold text-xl">→</span>
+                  <span className="text-slate-800 font-semibold text-lg">Simulação rápida</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs font-bold">→</span>
-                  <span className="text-[var(--text-primary)] font-semibold">Acompanhamento gratuito</span>
+                  <span className="text-emerald-500 font-bold text-xl">→</span>
+                  <span className="text-slate-800 font-semibold text-lg">Acompanhamento gratuito</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs font-bold">→</span>
-                  <span className="text-[var(--text-primary)] font-semibold">100% grátis</span>
+                  <span className="text-emerald-500 font-bold text-xl">→</span>
+                  <span className="text-slate-800 font-semibold text-lg">100% grátis</span>
                 </li>
               </ul>
 
-              <div className="mt-8">
+              <div className="mt-10">
                 <Link
                   href="/descobrir"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-lg rounded-2xl transition-all shadow-lg shadow-emerald-600/20 hover:shadow-emerald-500/30"
+                  className="inline-flex items-center gap-2 px-9 py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-lg rounded-full transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-400/30 hover:scale-[1.02]"
                 >
-                  Descobrir meus direitos →
+                  Descobrir meus direitos
+                  <span className="text-xl">→</span>
                 </Link>
-                <p className="text-[var(--text-tertiary)] text-sm mt-3">
+                <p className="text-slate-400 text-sm mt-4">
                   Simulação rápida e sem cadastro
                 </p>
               </div>
             </div>
 
-            {/* Right: Floating benefit cards */}
-            <div className="flex-1 relative hidden md:block">
-              <div className="relative w-full max-w-md mx-auto h-80">
-                {/* Background circle */}
-                <div className="absolute inset-0 m-auto w-72 h-72 rounded-full bg-emerald-50" />
-
-                {/* Floating cards */}
-                <div className="absolute top-4 right-0 bg-white rounded-xl shadow-lg p-3 border border-gray-100" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <p className="text-xs text-gray-500">Bolsa Família</p>
-                  <p className="text-emerald-600 font-bold">R$ 600,00<span className="text-xs font-normal text-gray-400"> /mês</span></p>
-                </div>
-
-                <div className="absolute top-28 -left-4 bg-white rounded-xl shadow-lg p-3 border border-gray-100" style={{ animation: 'float 3s ease-in-out infinite 0.5s' }}>
-                  <p className="text-xs text-gray-500">Farmácia Popular</p>
-                  <p className="text-emerald-600 font-bold">100% grátis</p>
-                </div>
-
-                <div className="absolute bottom-8 right-4 bg-white rounded-xl shadow-lg p-3 border border-gray-100" style={{ animation: 'float 3s ease-in-out infinite 1s' }}>
-                  <p className="text-xs text-gray-500">Tarifa Social Luz</p>
-                  <p className="text-emerald-600 font-bold">-65%<span className="text-xs font-normal text-gray-400"> na conta</span></p>
-                </div>
-
-                {/* Eligibility badge */}
-                <div className="absolute -top-2 right-0 bg-slate-800 text-white rounded-xl px-4 py-2 shadow-lg">
-                  <p className="text-xs opacity-80">Benefícios elegíveis:</p>
-                  <p className="text-emerald-400 font-bold text-lg">R$ 8.640<span className="text-xs font-normal opacity-80"> /ano</span></p>
-                </div>
-
-                {/* Status badges */}
-                <div className="absolute bottom-0 -left-2 flex flex-col gap-2">
-                  <span className="inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-medium px-3 py-1.5 rounded-full shadow">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Simulação concluída
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 bg-emerald-500 text-white text-xs font-medium px-3 py-1.5 rounded-full shadow">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                    Documentos enviados
-                  </span>
-                </div>
-              </div>
+            {/* Right: Hero Image */}
+            <div className="relative w-full h-[350px] sm:h-[450px] md:h-[600px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/hero-family.png"
+                alt="Mãe brasileira feliz usando o celular com seu bebê"
+                className="w-full h-full object-cover object-top"
+              />
+              {/* Soft left-edge blend into white background */}
+              <div
+                className="absolute inset-0 pointer-events-none hidden md:block"
+                style={{ background: 'linear-gradient(to right, white 0%, transparent 15%)' }}
+              />
             </div>
           </div>
         </section>
@@ -190,7 +170,10 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
             <div className="flex-1">
               <h2 className="text-2xl md:text-4xl font-extrabold leading-tight">
                 Ninguém deveria deixar<br />
-                de receber seus direitos!
+                de receber{' '}
+                <span style={{ backgroundImage: 'linear-gradient(transparent 55%, rgba(52,211,153,0.4) 55%)' }}>
+                  seus direitos!
+                </span>
               </h2>
               <p className="text-slate-300 mt-4">
                 Para usar nosso serviço você só precisa:
@@ -391,7 +374,11 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
         <section className="bg-slate-900 text-white py-16 px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold">
-              Descubra seus direitos agora
+              Descubra{' '}
+              <span style={{ backgroundImage: 'linear-gradient(transparent 55%, rgba(52,211,153,0.4) 55%)' }}>
+                seus direitos
+              </span>{' '}
+              agora
             </h2>
             <p className="text-slate-300 mt-3">
               Simulação gratuita, sem cadastro, sem senha Gov.br
