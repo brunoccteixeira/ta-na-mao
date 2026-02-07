@@ -144,7 +144,7 @@
     {
       "id": "sectoral-paa",
       "name": "PAA - Compra de Alimentos",
-      "shortDescription": "O governo compra alimentos direto do agricultor familiar por preço justo.",
+      "shortDescription": "Governo compra alimentos de agricultores familiares com DAP/CAF ativa. Vertente setorial do PAA focada no produtor.",
       "scope": "sectoral",
       "sector": "agricultor",
       "estimatedValue": {
@@ -178,7 +178,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥕",
-      "category": "Agricultores"
+      "category": "Agricultores",
+      "metadata": {
+        "disclaimer": "Perspectiva do agricultor no PAA federal. O benefício federal foca na distribuição; este foca na compra do agricultor."
+      }
     },
     {
       "id": "sectoral-habitacao-rural",
@@ -973,7 +976,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍎",
-      "category": "Agricultores"
+      "category": "Agricultores",
+      "metadata": {
+        "disclaimer": "Perspectiva do agricultor fornecedor do PNAE. O benefício federal foca no aluno; este foca no agricultor que vende para escolas."
+      }
     },
     {
       "id": "sectoral-registro-pesca",
@@ -2093,7 +2099,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Servidores Públicos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-servidor-auxilio-saude",
@@ -2136,7 +2142,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏥",
-      "category": "Servidores Públicos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-servidor-auxilio-transporte",
@@ -2179,7 +2185,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
-      "category": "Servidores Públicos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-servidor-auxilio-creche",
@@ -2222,7 +2228,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
-      "category": "Servidores Públicos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-servidor-licenca-capacitacao",
@@ -2266,7 +2272,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
-      "category": "Servidores Públicos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-estudante-bolsa-permanencia",
@@ -2317,7 +2323,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
-      "category": "Estudantes"
+      "category": "Educação"
     },
     {
       "id": "sectoral-estudante-auxilio-moradia",
@@ -2368,7 +2374,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Estudantes"
+      "category": "Educação"
     },
     {
       "id": "sectoral-estudante-restaurante-universitario",
@@ -2410,7 +2416,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍛",
-      "category": "Estudantes"
+      "category": "Educação"
     },
     {
       "id": "sectoral-estudante-auxilio-transporte",
@@ -2454,7 +2460,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚍",
-      "category": "Estudantes"
+      "category": "Educação"
     },
     {
       "id": "sectoral-estudante-auxilio-material",
@@ -2497,7 +2503,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📖",
-      "category": "Estudantes"
+      "category": "Educação"
     },
     {
       "id": "sectoral-idoso-gratuidade-transporte",
@@ -2545,7 +2551,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
-      "category": "Idosos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-idoso-meia-entrada",
@@ -2590,7 +2596,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
-      "category": "Idosos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-idoso-centro-convivencia",
@@ -2626,7 +2632,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤝",
-      "category": "Idosos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-idoso-prioridade-habitacao",
@@ -2687,7 +2693,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏡",
-      "category": "Idosos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-idoso-carteira-idoso",
@@ -2741,7 +2747,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🪪",
-      "category": "Idosos"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-gestante-rede-cegonha",
@@ -2779,7 +2785,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤰",
-      "category": "Gestantes"
+      "category": "Saúde Materno-Infantil"
     },
     {
       "id": "sectoral-gestante-kit-maternidade",
@@ -2823,7 +2829,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎁",
-      "category": "Gestantes",
+      "category": "Saúde Materno-Infantil",
       "metadata": {
         "disclaimer": "Disponibilidade do kit varia por município e estado. Consulte sua UBS."
       }
@@ -2878,7 +2884,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👼",
-      "category": "Gestantes"
+      "category": "Saúde Materno-Infantil"
     },
     {
       "id": "sectoral-gestante-primeira-infancia-bf",
@@ -2935,7 +2941,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
-      "category": "Gestantes"
+      "category": "Saúde Materno-Infantil",
+      "metadata": {
+        "disclaimer": "Componente do Bolsa Família voltado para gestantes e mães de crianças 0-6 anos. Complementa o piso de R$ 600."
+      }
     },
     {
       "id": "sectoral-gestante-licenca-maternidade",
@@ -2994,7 +3003,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤱",
-      "category": "Gestantes"
+      "category": "Saúde Materno-Infantil"
     },
     {
       "id": "sectoral-indigena-bolsa-permanencia",
@@ -3045,12 +3054,12 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
-      "category": "Povos Tradicionais"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-indigena-cisternas",
       "name": "Programa Cisternas (Água para Todos)",
-      "shortDescription": "Instalação gratuita de cisternas para captação de água da chuva em comunidades rurais e tradicionais.",
+      "shortDescription": "Instalação gratuita de cisternas para comunidades indígenas e quilombolas em áreas de escassez hídrica. Programa federal com foco em povos tradicionais.",
       "scope": "sectoral",
       "sector": "indigena_quilombola",
       "estimatedValue": {
@@ -3095,7 +3104,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Povos Tradicionais"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Programa federal (Cisternas/Água para Todos) com foco específico em povos tradicionais. Não duplica o benefício federal genérico."
+      }
     },
     {
       "id": "sectoral-indigena-sesai",
@@ -3132,7 +3144,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏥",
-      "category": "Povos Tradicionais"
+      "category": "Assistência Social"
     },
     {
       "id": "sectoral-indigena-pnae-diferenciado",
@@ -3184,7 +3196,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Povos Tradicionais"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Vertente diferenciada do PNAE federal com valor 60% maior e cardápio respeitando tradições alimentares. Complementa o PNAE regular."
+      }
     },
     {
       "id": "sectoral-indigena-titulacao-terras",
@@ -3244,7 +3259,886 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏞️",
-      "category": "Povos Tradicionais"
+      "category": "Assistência Social"
+    },
+    {
+      "id": "sectoral-agricultor-dap-caf",
+      "name": "DAP/CAF — Cadastro da Agricultura Familiar",
+      "shortDescription": "Documento que identifica o agricultor familiar e dá acesso a crédito rural, PRONAF e PAA.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Documento gratuito — porta de entrada para PRONAF, PAA, PNAE e outros"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultor",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar (até 4 módulos fiscais)"
+        },
+        {
+          "field": "rendaBrutaAgro",
+          "operator": "lte",
+          "value": 500000,
+          "description": "Renda bruta anual de até R$ 500 mil"
+        }
+      ],
+      "whereToApply": "Sindicato rural, EMATER ou entidade credenciada",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de posse/propriedade da terra",
+        "DAP anterior (se renovação)"
+      ],
+      "howToApply": [
+        "Procure o sindicato rural ou EMATER do seu município",
+        "Solicite a emissão da CAF (substitui a DAP)",
+        "Documento é gratuito e válido por 3 anos"
+      ],
+      "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/dap-caf",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-agricultor-terra-legal",
+      "name": "Programa Terra Legal",
+      "shortDescription": "Regularização fundiária de terras públicas federais na Amazônia Legal para posseiros de até 2.500 hectares.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Título de propriedade gratuito para áreas de até 1 módulo fiscal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultor",
+          "operator": "eq",
+          "value": true,
+          "description": "Ocupar terra pública federal na Amazônia Legal"
+        },
+        {
+          "field": "tempoOcupacao",
+          "operator": "gte",
+          "value": 5,
+          "description": "Ocupar a terra há pelo menos 5 anos"
+        }
+      ],
+      "whereToApply": "INCRA ou mutirão Terra Legal na sua região",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de ocupação",
+        "Croqui da área",
+        "Georreferenciamento (para áreas maiores)"
+      ],
+      "howToApply": [
+        "Procure o INCRA ou aguarde mutirão Terra Legal",
+        "Apresente documentos de ocupação",
+        "A área será vistoriada e georreferenciada",
+        "Título é emitido para áreas regulares"
+      ],
+      "sourceUrl": "https://www.gov.br/incra/pt-br/assuntos/governanca-fundiaria/terra-legal",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌍",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-autonomo-inss-facultativo",
+      "name": "INSS Facultativo Baixa Renda",
+      "shortDescription": "Contribuição ao INSS com alíquota reduzida de 5% sobre o salário mínimo para autônomos de baixa renda.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 81,05/mês (5% do SM) garante aposentadoria por idade e outros benefícios"
+      },
+      "eligibilityRules": [
+        {
+          "field": "autonomo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar por conta própria sem vínculo CLT"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "whereToApply": "Meu INSS (app ou site) ou agência do INSS",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de inscrição no CadÚnico"
+      ],
+      "howToApply": [
+        "Inscreva-se como Contribuinte Individual no INSS",
+        "Solicite a alíquota reduzida de 5%",
+        "Pague a GPS mensalmente (código 1929)",
+        "Garante aposentadoria por idade, salário-maternidade e auxílio-doença"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/contribuicao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏛️",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-autonomo-qualifica-autonomo",
+      "name": "Qualifica Autônomo (SINE)",
+      "shortDescription": "Cursos gratuitos de qualificação para trabalhadores autônomos via SINE e Sistema S.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de 20 a 200 horas em diversas áreas"
+      },
+      "eligibilityRules": [
+        {
+          "field": "autonomo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar por conta própria"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "SINE (Sistema Nacional de Emprego) ou unidades do SENAI/SENAC",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o SINE mais próximo",
+        "Consulte os cursos disponíveis",
+        "Inscreva-se gratuitamente"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/sine",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-catador-pro-catador",
+      "name": "Programa Pró-Catador",
+      "shortDescription": "Apoio a cooperativas de catadores com equipamentos, capacitação e infraestrutura de triagem.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Equipamentos e infraestrutura para cooperativas — prensas, esteiras, galpões"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catador",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        },
+        {
+          "field": "cooperativa",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar organizado em cooperativa ou associação"
+        }
+      ],
+      "whereToApply": "Secretaria Municipal de Meio Ambiente ou MDS",
+      "documentsRequired": [
+        "CNPJ da cooperativa",
+        "Ata de fundação",
+        "Lista de cooperados",
+        "CPF e RG dos responsáveis"
+      ],
+      "howToApply": [
+        "Organize-se em cooperativa ou associação",
+        "Registre a cooperativa com CNPJ",
+        "Procure a prefeitura sobre editais do Pró-Catador",
+        "Apresente projeto de infraestrutura"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/inclusao-produtiva-urbana/catadores",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-catador-auxilio-equipamento",
+      "name": "Auxílio Equipamento para Catadores",
+      "shortDescription": "Doação de carrinhos, bags e EPIs para catadores individuais e cooperados via programas municipais.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 500,
+        "description": "Kit com carrinho, bags, luvas e EPIs — valor estimado R$ 500"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catador",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Meio Ambiente do município",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de atividade de catação"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou secretaria de meio ambiente",
+        "Comprove que trabalha como catador",
+        "Solicite o kit de equipamentos"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/inclusao-produtiva-urbana/catadores",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🧤",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-clt-plr",
+      "name": "PLR — Participação nos Lucros e Resultados",
+      "shortDescription": "Pagamento semestral ou anual baseado nos resultados da empresa, negociado em acordo coletivo.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Valor variável conforme acordo coletivo — isento de IR até R$ 7.790 (2026)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadorCLT",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter vínculo CLT com empresa que paga PLR"
+        },
+        {
+          "field": "acordoColetivo",
+          "operator": "eq",
+          "value": true,
+          "description": "PLR prevista em acordo/convenção coletiva"
+        }
+      ],
+      "whereToApply": "Empregador — pagamento automático conforme acordo coletivo",
+      "documentsRequired": [
+        "Nenhum — o benefício é automático se previsto em acordo"
+      ],
+      "howToApply": [
+        "Verifique se sua empresa tem acordo de PLR",
+        "Consulte o sindicato da sua categoria",
+        "O pagamento é feito pelo empregador em data prevista no acordo"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l10101.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💵",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-clt-vale-cultura",
+      "name": "Vale Cultura (CLT)",
+      "shortDescription": "R$ 50/mês para trabalhadores CLT com renda de até 5 SM gastarem em cinema, livros, shows e teatro.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 50/mês em cartão para gastos culturais — cinema, livros, shows, teatro"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadorCLT",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter vínculo CLT"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8105,
+          "description": "Renda de até 5 salários mínimos"
+        }
+      ],
+      "whereToApply": "Empregador (empresa deve aderir ao programa)",
+      "documentsRequired": [
+        "Nenhum — o empregador cadastra o trabalhador"
+      ],
+      "howToApply": [
+        "Verifique se sua empresa aderiu ao Programa de Cultura do Trabalhador",
+        "Se aderiu, o cartão Vale Cultura é entregue automaticamente",
+        "Se não aderiu, sugira ao RH da empresa"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/vale-cultura",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎭",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-domestica-abono-salarial",
+      "name": "Abono Salarial PIS (Doméstica)",
+      "shortDescription": "Pagamento anual de até 1 salário mínimo para empregadas domésticas registradas com carteira.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 135,
+        "max": 1621,
+        "description": "Até R$ 1.621/ano proporcional aos meses trabalhados"
+      },
+      "eligibilityRules": [
+        {
+          "field": "empregadaDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica com carteira assinada"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Ter recebido até 2 SM de média mensal"
+        },
+        {
+          "field": "tempoTrabalho",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter trabalhado ao menos 30 dias com carteira no ano-base"
+        }
+      ],
+      "whereToApply": "Caixa Econômica Federal (PIS)",
+      "documentsRequired": [
+        "CPF",
+        "Carteira de trabalho",
+        "Número PIS"
+      ],
+      "howToApply": [
+        "Verifique se tem direito no app Carteira de Trabalho Digital",
+        "O pagamento é feito automaticamente pela Caixa",
+        "Calendário segue o mês de nascimento"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/abono-salarial",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-domestica-salario-familia",
+      "name": "Salário Família (Doméstica)",
+      "shortDescription": "Adicional de R$ 62,04 por filho de até 14 anos para empregadas domésticas de baixa renda.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 62,
+        "max": 62,
+        "description": "R$ 62,04 por filho de até 14 anos (ou inválido de qualquer idade)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "empregadaDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica registrada"
+        },
+        {
+          "field": "temFilhosMenores",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter filhos de até 14 anos"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 1819.26,
+          "description": "Remuneração de até R$ 1.819,26"
+        }
+      ],
+      "whereToApply": "Empregador — pagamento junto com o salário",
+      "documentsRequired": [
+        "Certidão de nascimento dos filhos",
+        "Carteira de vacinação (até 6 anos)",
+        "Comprovante de frequência escolar (7 a 14 anos)"
+      ],
+      "howToApply": [
+        "Apresente certidão de nascimento dos filhos ao empregador",
+        "Mantenha vacinação e frequência escolar em dia",
+        "O empregador paga junto com o salário e é reembolsado pelo INSS"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/salario-familia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👨‍👩‍👧",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-entregador-seguro-acidente",
+      "name": "Seguro Acidente para Entregadores",
+      "shortDescription": "Seguro obrigatório contra acidentes de trabalho para entregadores de plataformas digitais.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 30000,
+        "description": "Indenização de até R$ 30.000 em caso de acidente durante entrega"
+      },
+      "eligibilityRules": [
+        {
+          "field": "entregador",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como entregador de plataforma digital"
+        },
+        {
+          "field": "cadastradoPlataforma",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar cadastrado em plataforma (iFood, Rappi, etc.)"
+        }
+      ],
+      "whereToApply": "Plataforma digital em que está cadastrado",
+      "documentsRequired": [
+        "CPF",
+        "Boletim de ocorrência (se acidente)",
+        "Laudo médico"
+      ],
+      "howToApply": [
+        "Em caso de acidente durante entrega, abra chamado na plataforma",
+        "Apresente BO e laudo médico",
+        "A plataforma aciona o seguro contratado"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Entregadores",
+      "metadata": {
+        "disclaimer": "Cobertura varia por plataforma. Regulamentação em discussão no Congresso."
+      }
+    },
+    {
+      "id": "sectoral-entregador-capacitacao-digital",
+      "name": "Capacitação Digital para Entregadores",
+      "shortDescription": "Cursos gratuitos de educação financeira, segurança no trânsito e empreendedorismo para entregadores.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos online e presenciais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "entregador",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como entregador"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "SENAI, SENAC ou plataformas parceiras (iFood, Rappi)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de atividade como entregador"
+      ],
+      "howToApply": [
+        "Acesse os cursos gratuitos oferecidos pelas plataformas",
+        "Consulte o SENAI/SENAC sobre cursos para entregadores",
+        "Muitos cursos são 100% online"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📱",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-mei-acredita-mei",
+      "name": "Acredita MEI (Microcrédito)",
+      "shortDescription": "Microcrédito de até R$ 6.000 com juros reduzidos para MEIs inscritos no CadÚnico.",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 6000,
+        "description": "Empréstimo de R$ 100 a R$ 6.000 com juros subsidiados"
+      },
+      "eligibilityRules": [
+        {
+          "field": "mei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser MEI ativo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Instituições de microcrédito credenciadas ou Caixa Econômica",
+      "documentsRequired": [
+        "CCMEI",
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Tenha o MEI ativo e CadÚnico atualizado",
+        "Procure agente de microcrédito ou Caixa Econômica",
+        "Apresente plano simplificado do negócio",
+        "Crédito liberado em conta após aprovação"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/acredita",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-mei-sala-empreendedor",
+      "name": "Sala do Empreendedor",
+      "shortDescription": "Atendimento gratuito para MEIs nas prefeituras: abertura, alteração, declaração anual e orientações.",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito — abertura, alteração, DASN e orientação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "mei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser MEI ou querer se tornar MEI"
+        }
+      ],
+      "whereToApply": "Sala do Empreendedor na prefeitura ou SEBRAE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a Sala do Empreendedor na sua prefeitura",
+        "Atendimento gratuito para todas as questões do MEI",
+        "Inclui ajuda com DASN-MEI anual e emissão de notas"
+      ],
+      "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/mei",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏢",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-motorista-dpvat",
+      "name": "Seguro DPVAT (Motoristas de App)",
+      "shortDescription": "Seguro obrigatório que indeniza vítimas de acidentes de trânsito, incluindo motoristas de aplicativo.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 13500,
+        "description": "Até R$ 13.500 por morte + despesas médicas + invalidez permanente"
+      },
+      "eligibilityRules": [
+        {
+          "field": "motoristaApp",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser motorista de aplicativo"
+        },
+        {
+          "field": "veiculoRegularizado",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter veículo com DPVAT/Seguro SPVAT pago"
+        }
+      ],
+      "whereToApply": "Seguradora credenciada pelo DPVAT ou online",
+      "documentsRequired": [
+        "BO (Boletim de Ocorrência)",
+        "Laudo médico IML",
+        "CPF e RG",
+        "Documento do veículo"
+      ],
+      "howToApply": [
+        "Em caso de acidente, registre BO",
+        "Procure atendimento médico pelo SUS",
+        "Solicite indenização DPVAT com documentos",
+        "Prazo de até 3 anos para requerer"
+      ],
+      "sourceUrl": "https://www.gov.br/transportes/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Motoristas de App",
+      "metadata": {
+        "disclaimer": "DPVAT em reestruturação como SPVAT (Lei 14.867/2024). Consulte atualizações."
+      }
+    },
+    {
+      "id": "sectoral-motorista-qualifica-mobilidade",
+      "name": "Qualifica Mobilidade",
+      "shortDescription": "Cursos gratuitos de direção defensiva, primeiros socorros e gestão financeira para motoristas de app.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — presenciais e online"
+      },
+      "eligibilityRules": [
+        {
+          "field": "motoristaApp",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como motorista de aplicativo"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 21,
+          "description": "Ter 21 anos ou mais (CNH categoria B)"
+        }
+      ],
+      "whereToApply": "SEST/SENAT, SENAI ou plataformas parceiras",
+      "documentsRequired": [
+        "CPF e RG",
+        "CNH",
+        "Comprovante de cadastro em plataforma"
+      ],
+      "howToApply": [
+        "Procure o SEST/SENAT mais próximo",
+        "Consulte cursos gratuitos para motoristas",
+        "Inscreva-se presencialmente ou online"
+      ],
+      "sourceUrl": "https://www.sestsenat.org.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Motoristas de App"
+    },
+    {
+      "id": "sectoral-pcd-bpc-trabalho",
+      "name": "BPC Trabalho (Acumulação)",
+      "shortDescription": "Pessoa com deficiência que recebe BPC pode trabalhar e ter o benefício suspenso (não cancelado) por até 2 anos.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 1621,
+        "description": "BPC de R$ 1.621 suspenso durante trabalho — pode ser reativado se perder emprego"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Pessoa com deficiência beneficiária do BPC"
+        },
+        {
+          "field": "empregado",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter obtido emprego formal"
+        }
+      ],
+      "whereToApply": "INSS (Meu INSS ou agência)",
+      "documentsRequired": [
+        "CPF",
+        "Carteira de trabalho",
+        "NIS"
+      ],
+      "howToApply": [
+        "Ao conseguir emprego, o BPC é suspenso automaticamente",
+        "Se perder o emprego em até 2 anos, o BPC pode ser reativado",
+        "Não é necessário nova avaliação médica para reativação"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/bpc",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💼",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-pcd-viver-sem-limite",
+      "name": "Viver sem Limite",
+      "shortDescription": "Plano Nacional dos Direitos da Pessoa com Deficiência: educação, saúde, inclusão social e acessibilidade.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Acesso a órteses, próteses, cadeiras de rodas e adaptações pelo SUS — gratuito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pessoa com deficiência"
+        }
+      ],
+      "whereToApply": "UBS, CRAS ou Centro Especializado em Reabilitação (CER)",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Laudo médico",
+        "CPF e RG"
+      ],
+      "howToApply": [
+        "Procure a UBS ou CRAS mais próximo",
+        "Solicite encaminhamento para o CER",
+        "Avaliação multiprofissional definirá os equipamentos necessários",
+        "Órteses, próteses e cadeiras de rodas são fornecidas pelo SUS"
+      ],
+      "sourceUrl": "https://www.gov.br/mdh/pt-br/assuntos/noticias/plano-viver-sem-limite",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "♿",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-pescador-pronaf-pesca",
+      "name": "PRONAF Pesca",
+      "shortDescription": "Crédito rural com juros reduzidos para pescadores artesanais investirem em embarcações e equipamentos.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 2000,
+        "max": 100000,
+        "description": "Crédito de R$ 2.000 a R$ 100.000 com juros de 1% a 2,5% ao ano"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pescador artesanal com RGP ativo"
+        },
+        {
+          "field": "dap",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter DAP ou CAF da pesca"
+        }
+      ],
+      "whereToApply": "Banco do Brasil, Banco do Nordeste ou cooperativa de crédito",
+      "documentsRequired": [
+        "RGP (Registro Geral da Pesca)",
+        "DAP/CAF da Pesca",
+        "CPF e RG",
+        "Projeto de investimento simplificado"
+      ],
+      "howToApply": [
+        "Mantenha o RGP e DAP/CAF atualizados",
+        "Procure o banco ou cooperativa de crédito",
+        "Apresente projeto de investimento",
+        "Juros são os mais baixos do mercado"
+      ],
+      "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/pronaf",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚤",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-pescador-seguro-artesanal",
+      "name": "Seguro do Pescador Artesanal",
+      "shortDescription": "Cobertura em caso de acidente durante a atividade pesqueira para pescadores artesanais registrados.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 30000,
+        "description": "Indenização de até R$ 30.000 em caso de acidente ou morte durante pesca"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pescador artesanal com RGP ativo"
+        },
+        {
+          "field": "contribuinteINSS",
+          "operator": "eq",
+          "value": true,
+          "description": "Contribuir como segurado especial do INSS"
+        }
+      ],
+      "whereToApply": "INSS (Meu INSS ou agência)",
+      "documentsRequired": [
+        "RGP ativo",
+        "BO (se acidente)",
+        "Laudo médico",
+        "CPF e RG"
+      ],
+      "howToApply": [
+        "Mantenha o RGP atualizado",
+        "Em caso de acidente, procure o INSS",
+        "Solicite auxílio-acidente ou pensão por morte",
+        "Prazo de até 5 anos para requerer"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Pescadores"
     }
   ]
 }

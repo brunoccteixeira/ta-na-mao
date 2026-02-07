@@ -1,0 +1,356 @@
+{
+  "municipality": "Barreiras",
+  "municipalityIbge": "2903201",
+  "state": "BA",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "ba-barreiras-restaurante-popular",
+      "name": "Restaurante Popular (Barreiras)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Barreiras. Almoço completo subsidiado pelo governo.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3 — economia de até R$ 400/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        }
+      ],
+      "whereToApply": "Restaurante Popular em Barreiras",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima",
+        "Refeições no almoço, sem necessidade de cadastro prévio",
+        "Atendimento prioritário para CadÚnico"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "attribution": "Programa estadual: Restaurante Popular (Bahia)",
+        "template": true,
+        "disclaimer": "Verifique disponibilidade e endereço no site da prefeitura."
+      }
+    },
+    {
+      "id": "ba-barreiras-transporte-social",
+      "name": "Passe Social (Barreiras)",
+      "shortDescription": "Tarifa reduzida ou gratuidade no transporte público para moradores de baixa renda em Barreiras.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens de ônibus"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Barreiras ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS",
+        "Apresente documentos e NIS",
+        "Solicite o cartão de transporte social",
+        "Cartão é recarregado mensalmente"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade e regras variam. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "ba-barreiras-iptu-social",
+      "name": "IPTU Social (Barreiras)",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Barreiras.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU para imóveis de baixo valor"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Barreiras",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "IPTU do imóvel",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda ou Finanças",
+        "Solicite isenção ou desconto do IPTU",
+        "Apresente comprovante de renda",
+        "Isenção geralmente para imóveis de até 60m²"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Regras de isenção variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "ba-barreiras-habitacao-municipal",
+      "name": "Habitação Popular (Barreiras)",
+      "shortDescription": "Programa habitacional municipal de Barreiras com lotes urbanizados e casas populares.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social de R$ 300 a R$ 500/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Barreiras ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de renda",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação",
+        "Inscreva-se no programa habitacional",
+        "Aguarde sorteio ou classificação"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programas habitacionais variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "ba-barreiras-capacitacao",
+      "name": "Qualifica Barreiras",
+      "shortDescription": "Cursos gratuitos de capacitação profissional oferecidos pela prefeitura de Barreiras.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — informática, beleza, construção, gastronomia, etc."
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho/Desenvolvimento de Barreiras ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Consulte os cursos disponíveis na prefeitura ou SINE",
+        "Faça inscrição online ou presencial",
+        "Alguns cursos oferecem bolsa-auxílio"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Cursos variam por semestre. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "ba-barreiras-farmacia-municipal",
+      "name": "Farmácia Municipal (Barreiras)",
+      "shortDescription": "Medicamentos gratuitos na farmácia municipal de Barreiras com receita do SUS.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME/REMUME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Barreiras",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica do SUS",
+        "CPF"
+      ],
+      "howToApply": [
+        "Obtenha receita em consulta no SUS (UBS ou hospital público)",
+        "Dirija-se à farmácia municipal",
+        "Apresente receita e Cartão SUS",
+        "Retire os medicamentos disponíveis gratuitamente"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+      }
+    },
+    {
+      "id": "ba-barreiras-programa-local",
+      "name": "Programa Cerrado Sustentável",
+      "shortDescription": "Apoio a agricultores familiares do cerrado baiano com técnicas sustentáveis.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2903201",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura para detalhes do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2903201",
+          "description": "Morar em Barreiras"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (preferencialmente)"
+        }
+      ],
+      "whereToApply": "Prefeitura de Barreiras ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS",
+        "Informe-se sobre os requisitos específicos",
+        "Faça inscrição conforme orientação"
+      ],
+      "sourceUrl": "https://www.barreiras.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Agricultores",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programa municipal — consulte a prefeitura para informações atualizadas."
+      }
+    }
+  ]
+}

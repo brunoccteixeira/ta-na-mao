@@ -3586,7 +3586,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Microcrédito"
+      "category": "Empreendedorismo"
     },
     {
       "id": "federal-desenrola",
@@ -3638,7 +3638,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔓",
-      "category": "Inclusão Financeira"
+      "category": "Empreendedorismo"
     },
     {
       "id": "federal-pnmpo",
@@ -3691,7 +3691,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏪",
-      "category": "Microcrédito"
+      "category": "Empreendedorismo"
     },
     {
       "id": "federal-bolsa-atleta",
@@ -3744,7 +3744,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
-      "category": "Esporte"
+      "category": "Cultura"
     },
     {
       "id": "federal-auxilio-reconstrucao",
@@ -3787,7 +3787,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏚️",
-      "category": "Proteção Social"
+      "category": "Assistência Social"
     },
     {
       "id": "federal-casa-mulher",
@@ -3839,7 +3839,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Proteção Social"
+      "category": "Assistência Social"
     },
     {
       "id": "federal-cisternas",
@@ -3888,7 +3888,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "federal-tarifa-social-telecom",
@@ -3931,7 +3931,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📞",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "federal-credito-instalacao",
@@ -3968,7 +3968,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
-      "category": "Reforma Agrária"
+      "category": "Agricultores"
     },
     {
       "id": "federal-paa",
@@ -4112,55 +4112,57 @@
       "category": "Educação"
     },
     {
-      "id": "federal-auxilio-gas-nacional",
-      "name": "Auxílio Gás dos Brasileiros",
-      "shortDescription": "Auxílio bimestral de R$ 104 para compra de gás de cozinha, pago a famílias de baixa renda via CadÚnico.",
+      "id": "federal-pronera",
+      "name": "PRONERA — Educação na Reforma Agrária",
+      "shortDescription": "Cursos de alfabetização, ensino fundamental, médio e superior gratuitos para assentados da reforma agrária.",
       "scope": "federal",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 52,
-        "max": 52,
-        "description": "R$ 104 a cada 2 meses (equivalente a R$ 52/mês) — 50% do preço médio do botijão de 13kg"
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — da alfabetização à pós-graduação para assentados e trabalhadores rurais"
       },
       "eligibilityRules": [
         {
-          "field": "cadastradoCadunico",
+          "field": "assentado",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Ser assentado ou acampado da reforma agrária, ou trabalhador rural"
         },
         {
-          "field": "rendaPerCapita",
-          "operator": "lte",
-          "value": 810.5,
-          "description": "Renda per capita de até meio salário mínimo"
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter 15 anos ou mais (para alfabetização) ou idade escolar"
         }
       ],
       "legalBasis": {
         "laws": [
           {
-            "type": "lei",
-            "number": "14.237/2021",
-            "description": "Programa Auxílio Gás dos Brasileiros",
-            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14237.htm"
+            "type": "decreto",
+            "number": "7.352/2010",
+            "description": "Política de Educação do Campo",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/d7352.htm"
           }
         ]
       },
-      "whereToApply": "CRAS — benefício automático para famílias do CadÚnico selecionadas",
+      "whereToApply": "INCRA regional ou universidade parceira",
       "documentsRequired": [
-        "Cadastro Único atualizado"
+        "CPF e RG",
+        "Comprovante de residência em assentamento",
+        "Comprovante de escolaridade"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado no CRAS",
-        "A seleção é automática com base nos dados do CadÚnico",
-        "Prioridade para famílias com renda per capita até meio SM",
-        "O pagamento é feito junto com o Bolsa Família pela Caixa"
+        "Procure o escritório do INCRA da sua região",
+        "Informe-se sobre cursos PRONERA disponíveis",
+        "Inscreva-se no curso adequado ao seu nível de escolaridade",
+        "Cursos são oferecidos por universidades parceiras do INCRA"
       ],
-      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
+      "sourceUrl": "https://www.gov.br/incra/pt-br/assuntos/educacao-e-cidadania/pronera",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🔥",
-      "category": "Transferência de Renda"
+      "icon": "📚",
+      "category": "Educação"
     }
   ]
 }

@@ -1,0 +1,308 @@
+{
+  "municipality": "Canindé",
+  "municipalityIbge": "2301000",
+  "state": "CE",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "ce-caninde-restaurante-popular",
+      "name": "Restaurante do Povo (Canindé)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Canindé.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        }
+      ],
+      "whereToApply": "Restaurante do Povo em Canindé",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-transporte-social",
+      "name": "Passe Social (Canindé)",
+      "shortDescription": "Tarifa reduzida no transporte público em Canindé.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Canindé",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-iptu-social",
+      "name": "IPTU Social (Canindé)",
+      "shortDescription": "Isenção no IPTU para famílias de baixa renda em Canindé.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 SM"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Canindé",
+      "documentsRequired": [
+        "CPF e RG",
+        "IPTU",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-habitacao-municipal",
+      "name": "Habitação Popular (Canindé)",
+      "shortDescription": "Programa habitacional municipal de Canindé.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 SM"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Canindé",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-capacitacao",
+      "name": "Qualifica Canindé",
+      "shortDescription": "Cursos gratuitos de capacitação em Canindé.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho de Canindé ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Consulte cursos na prefeitura ou SINE"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-farmacia-municipal",
+      "name": "Farmácia Municipal (Canindé)",
+      "shortDescription": "Medicamentos gratuitos em Canindé com receita SUS.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Canindé",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica"
+      ],
+      "howToApply": [
+        "Obtenha receita no SUS",
+        "Retire medicamentos na farmácia municipal"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "ce-caninde-programa-local",
+      "name": "Programa Romaria Social",
+      "shortDescription": "Apoio a trabalhadores informais do turismo religioso com qualificação e microcrédito.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2301000",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2301000",
+          "description": "Morar em Canindé"
+        }
+      ],
+      "whereToApply": "Prefeitura de Canindé",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS"
+      ],
+      "sourceUrl": "https://www.caninde.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⛪",
+      "category": "Emprego e Renda",
+      "metadata": {
+        "template": true
+      }
+    }
+  ]
+}

@@ -382,6 +382,150 @@
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
+    },
+    {
+      "id": "to-microcredito-estadual",
+      "name": "Programa Tocantins Empreendedor",
+      "shortDescription": "Microcrédito orientado para empreendedores tocantinenses de baixa renda.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 300,
+        "max": 15000,
+        "description": "Empréstimo de R$ 300 a R$ 15.000 com juros reduzidos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar em TO"
+        },
+        {
+          "field": "empreendedor",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empreendedor (formal ou informal)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        }
+      ],
+      "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência no estado",
+        "Documentação específica do programa"
+      ],
+      "howToApply": [
+        "Acesse o site do governo do estado",
+        "Procure o edital ou programa específico",
+        "Faça inscrição conforme orientações do edital"
+      ],
+      "sourceUrl": "https://www.to.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "Empreendedorismo",
+      "metadata": {
+        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+      }
+    },
+    {
+      "id": "to-fomento-cultura",
+      "name": "Fundo Estadual de Cultura TO",
+      "shortDescription": "Editais de fomento à cultura tocantinense: sússia, catira, artesanato indígena.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 50000,
+        "description": "Prêmios e editais de R$ 5.000 a R$ 50.000 por projeto"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar em TO"
+        },
+        {
+          "field": "projetoCultural",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter projeto cultural inscrito em edital estadual"
+        }
+      ],
+      "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência no estado",
+        "Documentação específica do programa"
+      ],
+      "howToApply": [
+        "Acesse o site do governo do estado",
+        "Procure o edital ou programa específico",
+        "Faça inscrição conforme orientações do edital"
+      ],
+      "sourceUrl": "https://www.to.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎭",
+      "category": "Cultura",
+      "metadata": {
+        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+      }
+    },
+    {
+      "id": "to-bolsa-atleta-estadual",
+      "name": "Bolsa Atleta Tocantins",
+      "shortDescription": "Auxílio para atletas tocantinenses em competições oficiais.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 2000,
+        "description": "R$ 200 a R$ 2.000/mês conforme categoria do atleta"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar em TO"
+        },
+        {
+          "field": "atleta",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser atleta de rendimento em modalidade reconhecida"
+        }
+      ],
+      "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência no estado",
+        "Documentação específica do programa"
+      ],
+      "howToApply": [
+        "Acesse o site do governo do estado",
+        "Procure o edital ou programa específico",
+        "Faça inscrição conforme orientações do edital"
+      ],
+      "sourceUrl": "https://www.to.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏅",
+      "category": "Cultura",
+      "metadata": {
+        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+      }
     }
   ]
 }

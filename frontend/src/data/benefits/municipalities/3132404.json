@@ -1,0 +1,349 @@
+{
+  "municipality": "Ipatinga",
+  "municipalityIbge": "3132404",
+  "state": "MG",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "mg-ipatinga-restaurante-popular-3132404",
+      "name": "Restaurante Popular (Ipatinga)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Ipatinga. Almoço completo subsidiado pelo governo.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3 — economia de até R$ 400/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        }
+      ],
+      "whereToApply": "Restaurante Popular em Ipatinga",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima",
+        "Refeições no almoço, sem necessidade de cadastro prévio",
+        "Atendimento prioritário para CadÚnico"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "attribution": "Programa estadual: Restaurante Popular (Minas Gerais)",
+        "template": true,
+        "disclaimer": "Verifique disponibilidade e endereço no site da prefeitura."
+      }
+    },
+    {
+      "id": "mg-ipatinga-transporte-social-3132404",
+      "name": "Passe Social (Ipatinga)",
+      "shortDescription": "Tarifa reduzida ou gratuidade no transporte público para moradores de baixa renda em Ipatinga.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens de ônibus"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Ipatinga ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS",
+        "Apresente documentos e NIS",
+        "Solicite o cartão de transporte social"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade e regras variam. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-ipatinga-iptu-social-3132404",
+      "name": "IPTU Social (Ipatinga)",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Ipatinga.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU para imóveis de baixo valor"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Ipatinga",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "IPTU do imóvel",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda ou Finanças",
+        "Solicite isenção ou desconto do IPTU",
+        "Isenção geralmente para imóveis de até 60m²"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Regras de isenção variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-ipatinga-habitacao-municipal-3132404",
+      "name": "Habitação Popular (Ipatinga)",
+      "shortDescription": "Programa habitacional municipal de Ipatinga com lotes urbanizados e casas populares.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Ipatinga ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de renda",
+        "NIS"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação",
+        "Aguarde sorteio ou classificação"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programas habitacionais variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-ipatinga-capacitacao-3132404",
+      "name": "Qualifica Ipatinga",
+      "shortDescription": "Cursos gratuitos de capacitação profissional oferecidos pela prefeitura de Ipatinga.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — informática, beleza, construção, gastronomia, etc."
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho de Ipatinga ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Consulte cursos disponíveis na prefeitura ou SINE",
+        "Faça inscrição online ou presencial"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Cursos variam por semestre. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-ipatinga-farmacia-municipal-3132404",
+      "name": "Farmácia Municipal (Ipatinga)",
+      "shortDescription": "Medicamentos gratuitos na farmácia municipal de Ipatinga com receita do SUS.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME/REMUME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Ipatinga",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica do SUS",
+        "CPF"
+      ],
+      "howToApply": [
+        "Obtenha receita em consulta no SUS",
+        "Dirija-se à farmácia municipal",
+        "Retire os medicamentos gratuitamente"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+      }
+    },
+    {
+      "id": "mg-ipatinga-programa-local-3132404",
+      "name": "Programa Usiminas Social",
+      "shortDescription": "Qualificação em siderurgia e metalurgia em parceria com o polo industrial.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3132404",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura para detalhes do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3132404",
+          "description": "Morar em Ipatinga"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (preferencialmente)"
+        }
+      ],
+      "whereToApply": "Prefeitura de Ipatinga ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS",
+        "Informe-se sobre os requisitos específicos",
+        "Faça inscrição conforme orientação"
+      ],
+      "sourceUrl": "https://www.ipatinga.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔧",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programa municipal — consulte a prefeitura para informações atualizadas."
+      }
+    }
+  ]
+}

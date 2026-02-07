@@ -1,0 +1,356 @@
+{
+  "municipality": "Patos de Minas",
+  "municipalityIbge": "3148004",
+  "state": "MG",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "mg-patos-de-minas-restaurante-popular",
+      "name": "Restaurante Popular (Patos de Minas)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Patos de Minas. Almoço completo subsidiado pelo governo.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3 — economia de até R$ 400/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        }
+      ],
+      "whereToApply": "Restaurante Popular em Patos de Minas",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima",
+        "Refeições no almoço, sem necessidade de cadastro prévio",
+        "Atendimento prioritário para CadÚnico"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "attribution": "Programa estadual: Restaurante Popular (Minas Gerais)",
+        "template": true,
+        "disclaimer": "Verifique disponibilidade e endereço no site da prefeitura."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-transporte-social",
+      "name": "Passe Social (Patos de Minas)",
+      "shortDescription": "Tarifa reduzida ou gratuidade no transporte público para moradores de baixa renda em Patos de Minas.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens de ônibus"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Patos de Minas ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS",
+        "Apresente documentos e NIS",
+        "Solicite o cartão de transporte social",
+        "Cartão é recarregado mensalmente"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade e regras variam. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-iptu-social",
+      "name": "IPTU Social (Patos de Minas)",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Patos de Minas.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU para imóveis de baixo valor"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Patos de Minas",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "IPTU do imóvel",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda ou Finanças",
+        "Solicite isenção ou desconto do IPTU",
+        "Apresente comprovante de renda",
+        "Isenção geralmente para imóveis de até 60m²"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Regras de isenção variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-habitacao-municipal",
+      "name": "Habitação Popular (Patos de Minas)",
+      "shortDescription": "Programa habitacional municipal de Patos de Minas com lotes urbanizados e casas populares.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social de R$ 300 a R$ 500/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Patos de Minas ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de renda",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação",
+        "Inscreva-se no programa habitacional",
+        "Aguarde sorteio ou classificação"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programas habitacionais variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-capacitacao",
+      "name": "Qualifica Patos de Minas",
+      "shortDescription": "Cursos gratuitos de capacitação profissional oferecidos pela prefeitura de Patos de Minas.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — informática, beleza, construção, gastronomia, etc."
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho/Desenvolvimento de Patos de Minas ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Consulte os cursos disponíveis na prefeitura ou SINE",
+        "Faça inscrição online ou presencial",
+        "Alguns cursos oferecem bolsa-auxílio"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Cursos variam por semestre. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-farmacia-municipal",
+      "name": "Farmácia Municipal (Patos de Minas)",
+      "shortDescription": "Medicamentos gratuitos na farmácia municipal de Patos de Minas com receita do SUS.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME/REMUME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Patos de Minas",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica do SUS",
+        "CPF"
+      ],
+      "howToApply": [
+        "Obtenha receita em consulta no SUS (UBS ou hospital público)",
+        "Dirija-se à farmácia municipal",
+        "Apresente receita e Cartão SUS",
+        "Retire os medicamentos disponíveis gratuitamente"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+      }
+    },
+    {
+      "id": "mg-patos-de-minas-programa-local",
+      "name": "Programa Leite Solidário Triângulo",
+      "shortDescription": "Distribuição de leite para crianças de 0 a 6 anos do CadÚnico.",
+      "scope": "municipal",
+      "state": "MG",
+      "municipalityIbge": "3148004",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura para detalhes do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3148004",
+          "description": "Morar em Patos de Minas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (preferencialmente)"
+        }
+      ],
+      "whereToApply": "Prefeitura de Patos de Minas ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS",
+        "Informe-se sobre os requisitos específicos",
+        "Faça inscrição conforme orientação"
+      ],
+      "sourceUrl": "https://www.patos-de-minas.mg.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🥛",
+      "category": "Alimentação",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programa municipal — consulte a prefeitura para informações atualizadas."
+      }
+    }
+  ]
+}

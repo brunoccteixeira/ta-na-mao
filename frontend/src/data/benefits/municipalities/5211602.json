@@ -1,0 +1,356 @@
+{
+  "municipality": "Valparaíso de Goiás",
+  "municipalityIbge": "5211602",
+  "state": "GO",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "go-valparaiso-de-goias-restaurante-popular",
+      "name": "Restaurante do Bem (OVG) (Valparaíso de Goiás)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Valparaíso de Goiás. Almoço completo subsidiado pelo governo.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3 — economia de até R$ 400/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        }
+      ],
+      "whereToApply": "Restaurante do Bem (OVG) em Valparaíso de Goiás",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima",
+        "Refeições no almoço, sem necessidade de cadastro prévio",
+        "Atendimento prioritário para CadÚnico"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "attribution": "Programa estadual: Restaurante do Bem (OVG) (Goiás)",
+        "template": true,
+        "disclaimer": "Verifique disponibilidade e endereço no site da prefeitura."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-transporte-social",
+      "name": "Passe Social (Valparaíso de Goiás)",
+      "shortDescription": "Tarifa reduzida ou gratuidade no transporte público para moradores de baixa renda em Valparaíso de Goiás.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens de ônibus"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Valparaíso de Goiás ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS",
+        "Apresente documentos e NIS",
+        "Solicite o cartão de transporte social",
+        "Cartão é recarregado mensalmente"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade e regras variam. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-iptu-social",
+      "name": "IPTU Social (Valparaíso de Goiás)",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Valparaíso de Goiás.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU para imóveis de baixo valor"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Valparaíso de Goiás",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "IPTU do imóvel",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda ou Finanças",
+        "Solicite isenção ou desconto do IPTU",
+        "Apresente comprovante de renda",
+        "Isenção geralmente para imóveis de até 60m²"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Regras de isenção variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-habitacao-municipal",
+      "name": "Habitação Popular (Valparaíso de Goiás)",
+      "shortDescription": "Programa habitacional municipal de Valparaíso de Goiás com lotes urbanizados e casas populares.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social de R$ 300 a R$ 500/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Valparaíso de Goiás ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de renda",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação",
+        "Inscreva-se no programa habitacional",
+        "Aguarde sorteio ou classificação"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programas habitacionais variam por município. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-capacitacao",
+      "name": "Qualifica Valparaíso de Goiás",
+      "shortDescription": "Cursos gratuitos de capacitação profissional oferecidos pela prefeitura de Valparaíso de Goiás.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos — informática, beleza, construção, gastronomia, etc."
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho/Desenvolvimento de Valparaíso de Goiás ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Consulte os cursos disponíveis na prefeitura ou SINE",
+        "Faça inscrição online ou presencial",
+        "Alguns cursos oferecem bolsa-auxílio"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Cursos variam por semestre. Consulte a prefeitura."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-farmacia-municipal",
+      "name": "Farmácia Municipal (Valparaíso de Goiás)",
+      "shortDescription": "Medicamentos gratuitos na farmácia municipal de Valparaíso de Goiás com receita do SUS.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME/REMUME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Valparaíso de Goiás",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica do SUS",
+        "CPF"
+      ],
+      "howToApply": [
+        "Obtenha receita em consulta no SUS (UBS ou hospital público)",
+        "Dirija-se à farmácia municipal",
+        "Apresente receita e Cartão SUS",
+        "Retire os medicamentos disponíveis gratuitamente"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+      }
+    },
+    {
+      "id": "go-valparaiso-de-goias-programa-local",
+      "name": "Programa Casa Popular Valparaíso",
+      "shortDescription": "Habitação popular com lotes urbanizados e financiamento facilitado.",
+      "scope": "municipal",
+      "state": "GO",
+      "municipalityIbge": "5211602",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura para detalhes do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5211602",
+          "description": "Morar em Valparaíso de Goiás"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (preferencialmente)"
+        }
+      ],
+      "whereToApply": "Prefeitura de Valparaíso de Goiás ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS",
+        "Informe-se sobre os requisitos específicos",
+        "Faça inscrição conforme orientação"
+      ],
+      "sourceUrl": "https://www.valparaiso-de-goias.go.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true,
+        "disclaimer": "Programa municipal — consulte a prefeitura para informações atualizadas."
+      }
+    }
+  ]
+}

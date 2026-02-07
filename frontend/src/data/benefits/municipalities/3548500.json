@@ -1,0 +1,308 @@
+{
+  "municipality": "Presidente Prudente",
+  "municipalityIbge": "3548500",
+  "state": "SP",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "sp-presidente-prudente-restaurante-popular",
+      "name": "Bom Prato (Presidente Prudente)",
+      "shortDescription": "Refeições a R$ 1 a R$ 3 em Presidente Prudente.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 1 a R$ 3"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        }
+      ],
+      "whereToApply": "Bom Prato em Presidente Prudente",
+      "documentsRequired": [
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Procure a unidade mais próxima"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-transporte-social",
+      "name": "Passe Social (Presidente Prudente)",
+      "shortDescription": "Tarifa reduzida no transporte público em Presidente Prudente.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% nas passagens"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Transporte de Presidente Prudente",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a secretaria de transporte ou CRAS"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-iptu-social",
+      "name": "IPTU Social (Presidente Prudente)",
+      "shortDescription": "Isenção no IPTU para famílias de baixa renda em Presidente Prudente.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Isenção de 50% a 100% no IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 SM"
+        }
+      ],
+      "whereToApply": "Secretaria de Fazenda de Presidente Prudente",
+      "documentsRequired": [
+        "CPF e RG",
+        "IPTU",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Fazenda"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-habitacao-municipal",
+      "name": "Habitação Popular (Presidente Prudente)",
+      "shortDescription": "Programa habitacional municipal de Presidente Prudente.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Casa própria subsidiada ou aluguel social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 SM"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação de Presidente Prudente",
+      "documentsRequired": [
+        "CPF e RG",
+        "NIS",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único",
+        "Procure a Secretaria de Habitação"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏗️",
+      "category": "Moradia",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-capacitacao",
+      "name": "Qualifica Presidente Prudente",
+      "shortDescription": "Cursos gratuitos de capacitação em Presidente Prudente.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Trabalho de Presidente Prudente ou SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Consulte cursos na prefeitura ou SINE"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-farmacia-municipal",
+      "name": "Farmácia Municipal (Presidente Prudente)",
+      "shortDescription": "Medicamentos gratuitos em Presidente Prudente com receita SUS.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos da lista RENAME"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        },
+        {
+          "field": "cartaoSUS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter Cartão SUS"
+        }
+      ],
+      "whereToApply": "Farmácia Municipal ou UBS de Presidente Prudente",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Receita médica"
+      ],
+      "howToApply": [
+        "Obtenha receita no SUS",
+        "Retire medicamentos na farmácia municipal"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "metadata": {
+        "template": true
+      }
+    },
+    {
+      "id": "sp-presidente-prudente-programa-local",
+      "name": "Programa Pontal Social",
+      "shortDescription": "Qualificação e inclusão produtiva para assentados do Pontal do Paranapanema.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3548500",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultar prefeitura"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3548500",
+          "description": "Morar em Presidente Prudente"
+        }
+      ],
+      "whereToApply": "Prefeitura de Presidente Prudente",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a prefeitura ou CRAS"
+      ],
+      "sourceUrl": "https://www.presidente-prudente.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Agricultores",
+      "metadata": {
+        "template": true
+      }
+    }
+  ]
+}
