@@ -1,19 +1,19 @@
 {
   "state": "DF",
   "stateName": "Distrito Federal",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "df-cartao-prato-cheio",
       "name": "Cartao Prato Cheio",
-      "shortDescription": "Cartao com R$ 250 por mes para comprar comida. Voce escolhe o que comprar.",
+      "shortDescription": "Cartao com R$ 280 por mes para comprar comida. Voce escolhe o que comprar.",
       "scope": "state",
       "state": "DF",
       "estimatedValue": {
         "type": "monthly",
-        "min": 250,
-        "max": 250,
-        "description": "R$ 250 por mes no cartao"
+        "min": 280,
+        "max": 280,
+        "description": "R$ 280 por mes no cartao (reajustado em set/2025)"
       },
       "eligibilityRules": [
         {
@@ -29,10 +29,10 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3200,
+          "description": "Renda familiar de ate meio salario minimo por pessoa (aprox. R$ 800 x 4 pessoas)"
         }
       ],
       "whereToApply": "CRAS ou site da Secretaria de Desenvolvimento Social",
@@ -48,22 +48,22 @@
         "Aguarde receber o cartao em casa"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "df-df-social",
       "name": "DF Social",
-      "shortDescription": "Programa que ajuda familias de baixa renda com dinheiro todo mes.",
+      "shortDescription": "R$ 150 por mes para familias de baixa renda do Distrito Federal. Atende 70 mil familias.",
       "scope": "state",
       "state": "DF",
       "estimatedValue": {
         "type": "monthly",
         "min": 150,
-        "max": 300,
-        "description": "Valor varia conforme a familia"
+        "max": 150,
+        "description": "R$ 150 por mes (valor fixo)"
       },
       "eligibilityRules": [
         {
@@ -79,10 +79,10 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 2424,
+          "description": "Renda per capita de ate R$ 606 (equivale a R$ 2.424 para familia de 4)"
         }
       ],
       "whereToApply": "CRAS da sua regiao administrativa",
@@ -99,10 +99,10 @@
         "Aguarde a analise e o contato"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "df-cartao-material-escolar",
@@ -111,7 +111,7 @@
       "scope": "state",
       "state": "DF",
       "estimatedValue": {
-        "type": "once",
+        "type": "one_time",
         "min": 320,
         "max": 320,
         "description": "R$ 320 por aluno por ano"
@@ -124,9 +124,9 @@
           "description": "Morar no Distrito Federal"
         },
         {
-          "field": "temFilhoNaEscola",
-          "operator": "eq",
-          "value": true,
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
           "description": "Ter filho na escola publica do DF"
         },
         {
@@ -152,12 +152,12 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
-      "category": "Educacao"
+      "category": "Educação"
     },
     {
       "id": "df-restaurante-comunitario",
       "name": "Restaurante Comunitario",
-      "shortDescription": "Refeicoes de qualidade por R$ 1,00. Cafe da manha e almoco.",
+      "shortDescription": "Refeicoes de qualidade: cafe da manha R$ 0,50, almoco R$ 1,00, jantar R$ 0,50.",
       "scope": "state",
       "state": "DF",
       "estimatedValue": {
@@ -181,14 +181,167 @@
       "howToApply": [
         "Procure o Restaurante Comunitario mais perto",
         "Va no horario de funcionamento",
-        "Pague R$ 1,00 e faca sua refeicao",
+        "Pague R$ 0,50 (cafe/jantar) ou R$ 1,00 (almoco) e faca sua refeicao",
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍛",
-      "category": "Alimentacao"
+      "category": "Alimentação"
+    },
+    {
+      "id": "df-qualifica-df",
+      "name": "QualificaDF",
+      "shortDescription": "Cursos gratuitos de qualificacao profissional com 240 horas. Voce recebe material, uniforme, lanche, passe livre estudantil e certificado.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Curso gratuito com kit didatico, 2 camisetas, passe livre estudantil, lanche diario e certificado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "Site da SEDET (sedet.df.gov.br) ou Agencia do Trabalhador",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de onde mora no DF"
+      ],
+      "howToApply": [
+        "Acesse o site da SEDET (sedet.df.gov.br)",
+        "Faca sua inscricao no periodo de vagas",
+        "Aguarde o resultado da selecao",
+        "Compareca no local do curso com seus documentos"
+      ],
+      "sourceUrl": "https://sedet.df.gov.br/qualificacao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "df-bolsa-maternidade",
+      "name": "Bolsa Maternidade DF",
+      "shortDescription": "Kit com enxoval do bebe e R$ 200 para maes de baixa renda quando o bebe nasce.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 mais kit enxoval com roupas e itens para o bebe"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser gestante ou ter tido bebe ha menos de 30 dias"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3200,
+          "description": "Renda familiar de ate meio salario minimo por pessoa (aprox. R$ 800 x 4 pessoas)"
+        }
+      ],
+      "whereToApply": "CRAS mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Certidao de nascimento do bebe",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de onde mora no DF"
+      ],
+      "howToApply": [
+        "Apos o nascimento do bebe, va ao CRAS mais perto",
+        "Leve a certidao de nascimento e seus documentos",
+        "Solicite o Bolsa Maternidade",
+        "Receba o kit enxoval e o auxilio de R$ 200"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/w/programa-bolsa-maternidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "df-morar-df",
+      "name": "Morar DF",
+      "shortDescription": "Subsidio de ate R$ 16 mil para ajudar na entrada da casa propria. O governo paga parte do valor.",
+      "scope": "state",
+      "state": "DF",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 15000,
+        "max": 16079,
+        "description": "Subsidio de ate R$ 16 mil para entrada do imovel"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "DF",
+          "description": "Morar no Distrito Federal ha pelo menos 5 anos"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Nao ter casa propria no DF"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar inscrito na CODHAB"
+        }
+      ],
+      "whereToApply": "Site da CODHAB (codhab.df.gov.br)",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de residencia no DF ha 5 anos",
+        "Certidao de casamento ou uniao estavel"
+      ],
+      "howToApply": [
+        "Acesse o site da CODHAB e faca seu cadastro",
+        "Envie os documentos pedidos",
+        "Aguarde a habilitacao do seu cadastro",
+        "Quando aprovado, use o subsidio para dar entrada no imovel"
+      ],
+      "sourceUrl": "https://www.codhab.df.gov.br/postagem/2074",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
   "state": "PA",
   "stateName": "Pará",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pa-vale-gas",
       "name": "Vale Gás Pará",
-      "shortDescription": "Ajuda de R$ 100 a cada 2 meses para comprar gás de cozinha.",
+      "shortDescription": "Crédito de R$ 100 pago em 2 parcelas para comprar gás de cozinha. Para famílias em extrema pobreza que recebem Bolsa Família.",
       "scope": "state",
       "state": "PA",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 50,
-        "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "type": "one_time",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 pagos em 2 parcelas via Banpará"
       },
       "eligibilityRules": [
         {
@@ -29,26 +29,32 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 0,
+          "description": "Renda per capita declarada igual a R$ 0,00 (extrema pobreza)"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Família"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Consulte no site da SEASTER ou Banpará com seu CPF",
       "documentsRequired": [
         "CPF",
         "NIS (Número do Cadastro Único)",
         "Comprovante de residência no Pará"
       ],
       "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize seu Cadastro Único",
-        "O governo seleciona automaticamente",
-        "Se selecionado, receba pelo cartão do programa"
+        "Mantenha o Cadastro Único atualizado",
+        "A seleção é feita pela SEASTER automaticamente",
+        "Consulte se foi selecionado em ce.banpara.b.br/valegas ou no site da SEASTER",
+        "O crédito de R$ 100 é disponibilizado pelo Banpará"
       ],
       "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -92,14 +98,16 @@
     {
       "id": "pa-renda-para",
       "name": "Renda Pará",
-      "shortDescription": "Complemento de renda mensal para famílias em situação de pobreza.",
+      "shortDescription": "Programa emergencial de transferencia de renda criado na pandemia. Teve varias fases (R$ 100, R$ 400, R$ 500). Verificar novas edicoes no site da SEASTER.",
       "scope": "state",
       "state": "PA",
       "estimatedValue": {
-        "type": "monthly",
+        "type": "one_time",
         "min": 100,
-        "max": 200,
-        "description": "Valor mensal conforme a família"
+        "max": 500,
+        "description": "Valor variou conforme a fase do programa (R$ 100 a R$ 500 por parcela). Programa emergencial.",
+        "estimated": true,
+        "estimatedRationale": "Programa emergencial com varias fases: Renda Para 100, 400 e 500. Operado pelo Banpara. Ultimos pagamentos registrados em 2021-2022."
       },
       "eligibilityRules": [
         {
@@ -115,10 +123,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -134,11 +142,218 @@
         "Aguarde comunicação do governo",
         "Se selecionado, retire o cartão no local indicado"
       ],
-      "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
+      "sourceUrl": "https://www.seaster.pa.gov.br/rendapara.html",
+      "lastUpdated": "2026-02-07",
+      "status": "suspended",
       "icon": "💰",
       "category": "Transferência de Renda"
+    },
+    {
+      "id": "pa-primeiro-oficio",
+      "name": "Primeiro Ofício Pará",
+      "shortDescription": "Programa do governo do Pará que ajuda jovens a conseguir o primeiro emprego com curso e trabalho.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 500,
+        "max": 800,
+        "description": "Bolsa-auxílio durante o período do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 24,
+          "description": "Ter no máximo 24 anos"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter emprego formal"
+        }
+      ],
+      "whereToApply": "SINE Pará ou SEASTER (Secretaria de Assistência Social, Trabalho, Emprego e Renda)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Pará",
+        "Comprovante de escolaridade",
+        "Carteira de Trabalho"
+      ],
+      "howToApply": [
+        "Procure o SINE Pará na sua cidade",
+        "Faça a inscrição no programa Primeiro Ofício",
+        "Participe do curso de qualificação",
+        "Seja encaminhado para vaga de trabalho"
+      ],
+      "sourceUrl": "https://www.seaster.pa.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "pa-sua-casa",
+      "name": "Programa Sua Casa - Pará",
+      "shortDescription": "Até R$ 21 mil para construir, reformar ou melhorar sua casa no Pará.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 21000,
+        "description": "Auxílio de até R$ 21 mil para material e mão de obra"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4236,
+          "description": "Renda da família de até 3 salários mínimos (R$ 4.236)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "COHAB Pará em Belém ou prefeitura do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Pará",
+        "Comprovante de renda",
+        "Documento do imóvel (posse ou propriedade)"
+      ],
+      "howToApply": [
+        "Procure a COHAB Pará ou a prefeitura da sua cidade",
+        "Faça a inscrição no programa Sua Casa",
+        "Apresente os documentos do imóvel",
+        "Aguarde a vistoria e aprovação para receber o auxílio"
+      ],
+      "sourceUrl": "http://www.cohab.pa.gov.br/sua-casa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "pa-saude-gestante-para",
+      "name": "Rede Alyne Pará - Saúde da Gestante",
+      "shortDescription": "Pré-natal completo e parto seguro para gestantes do Pará pelo SUS.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        }
+      ],
+      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Comprovante de residência",
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Vá ao posto de saúde mais perto da sua casa",
+        "Peça para iniciar o acompanhamento pré-natal",
+        "Receba a caderneta da gestante",
+        "Faça todas as consultas e exames no prazo"
+      ],
+      "sourceUrl": "http://www.saude.pa.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "pa-bolsa-uepa",
+      "name": "Bolsa Incentivo Acadêmico UEPA",
+      "shortDescription": "Bolsa de R$ 500 por mês para estudantes de baixa renda da Universidade do Estado do Pará.",
+      "scope": "state",
+      "state": "PA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 500,
+        "max": 500,
+        "description": "R$ 500 por mês durante 12 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PA",
+          "description": "Morar no Pará"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3300,
+          "description": "Renda da familia de ate R$ 3300 (~R$ 660 por pessoa)"
+        }
+      ],
+      "whereToApply": "Diretoria de Assistência Estudantil (DAE) da UEPA",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula na UEPA",
+        "Comprovante de renda familiar",
+        "Histórico escolar do ensino médio em escola pública"
+      ],
+      "howToApply": [
+        "Verifique o edital no site da UEPA (www.uepa.br)",
+        "Faça a inscrição online no prazo do edital",
+        "Envie os documentos de comprovação de renda",
+        "Aguarde o resultado e mantenha bom desempenho"
+      ],
+      "sourceUrl": "https://www.uepa.br/pt-br/content/uepa-abre-inscricoes-para-bolsa-incentivo-academico-2025",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

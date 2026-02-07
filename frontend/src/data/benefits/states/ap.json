@@ -1,7 +1,7 @@
 {
   "state": "AP",
   "stateName": "Amapá",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ap-auxilio-social-amapa",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -57,14 +57,14 @@
     {
       "id": "ap-vale-gas-amapa",
       "name": "Vale Gás Amapá",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Vale Gás Social do Amapá para famílias vulneráveis, com gás de cozinha gratuito.",
       "scope": "state",
       "state": "AP",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 50,
-        "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "type": "one_time",
+        "min": 100,
+        "max": 300,
+        "description": "Recargas de botijão de gás (programa estadual com emenda parlamentar)"
       },
       "eligibilityRules": [
         {
@@ -80,10 +80,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -99,7 +99,7 @@
         "Se selecionado, receba o benefício"
       ],
       "sourceUrl": "https://www.amapa.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -130,10 +130,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Assistência Social",
@@ -153,6 +153,206 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "ap-qualifica-amapa",
+      "name": "Qualifica Amapá",
+      "shortDescription": "Cursos gratuitos para aprender uma profissão e conseguir emprego no Amapá.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "Casa do Trabalhador ou site da SETE Amapá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da SETE ou vá à Casa do Trabalhador",
+        "Escolha o curso que mais combina com você",
+        "Faça a inscrição online ou presencial",
+        "Participe das aulas e receba o certificado"
+      ],
+      "sourceUrl": "https://sete.portal.ap.gov.br/noticia/1005/governo-do-estado-lanca-projeto-qualifica-amapa-para-fomentar-geracao-de-emprego-e-renda",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ap-habitacao-amapa",
+      "name": "Habitação Popular Amapá",
+      "shortDescription": "Ajuda do governo do Amapá para famílias de baixa renda conseguirem moradia digna.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 25000,
+        "description": "Subsídio para moradia de até R$ 25 mil"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria de Habitação do Amapá ou prefeitura de Macapá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Amapá",
+        "Comprovante de renda",
+        "Certidão de nascimento ou casamento"
+      ],
+      "howToApply": [
+        "Procure a Secretaria de Habitação ou a prefeitura",
+        "Faça a inscrição no programa habitacional",
+        "Apresente todos os documentos pedidos",
+        "Aguarde a seleção e chamamento"
+      ],
+      "sourceUrl": "https://macapa.ap.gov.br/habitacional/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "ap-saude-gestante-amapa",
+      "name": "Rede Alyne Amapá - Saúde da Gestante",
+      "shortDescription": "Acompanhamento gratuito de pré-natal e parto para gestantes do Amapá pelo SUS.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        }
+      ],
+      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Comprovante de residência",
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Vá ao posto de saúde mais perto da sua casa",
+        "Peça para iniciar o pré-natal",
+        "Receba a caderneta da gestante",
+        "Faça todas as consultas e exames marcados"
+      ],
+      "sourceUrl": "https://www.amapa.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ap-bolsa-educacao-amapa",
+      "name": "Bolsa Educação Amapá",
+      "shortDescription": "Ajuda para estudantes de baixa renda do Amapá continuarem na escola ou faculdade.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa mensal conforme o nível de ensino"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3000,
+          "description": "Renda da familia de ate R$ 3000 (~R$ 600 por pessoa)"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação do Amapá ou escola estadual",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Verifique os editais no site da Secretaria de Educação",
+        "Faça a inscrição no período indicado",
+        "Apresente os documentos pedidos",
+        "Mantenha a frequência escolar em dia"
+      ],
+      "sourceUrl": "https://www.amapa.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

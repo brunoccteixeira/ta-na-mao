@@ -1,19 +1,19 @@
 {
   "state": "PE",
   "stateName": "Pernambuco",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pe-no-batente",
       "name": "PE no Batente",
-      "shortDescription": "Programa de emprego e renda com frentes de trabalho que pagam bolsa de R$ 600 mensais.",
+      "shortDescription": "Programa de inclusão produtiva com qualificação profissional para pessoas em situação de vulnerabilidade social.",
       "scope": "state",
       "state": "PE",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 600,
-        "max": 600,
-        "description": "R$ 600 por mês durante 6 meses"
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Qualificação profissional gratuita com encaminhamento ao mercado de trabalho"
       },
       "eligibilityRules": [
         {
@@ -35,19 +35,19 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218 (extrema pobreza)"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         },
         {
-          "field": "desempregado",
+          "field": "trabalhoFormal",
           "operator": "eq",
-          "value": true,
-          "description": "Estar desempregado"
+          "value": false,
+          "description": "Estar desempregado (sem trabalho formal)"
         }
       ],
-      "whereToApply": "CRAS ou Agência do Trabalho de Pernambuco",
+      "whereToApply": "CRAS, Agência do Trabalho ou SAS/PE",
       "documentsRequired": [
         "CPF e RG",
         "NIS (Número do Cadastro Único)",
@@ -57,11 +57,11 @@
       "howToApply": [
         "Procure o CRAS ou Agência do Trabalho",
         "Apresente os documentos",
-        "Faça a inscrição no programa",
-        "Aguarde convocação para as frentes de trabalho"
+        "Participe das etapas: escolarização, qualificação e inclusão produtiva",
+        "Conclua o curso e receba encaminhamento ao trabalho"
       ],
-      "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.sas.pe.gov.br/programas-e-projetos-2/pe-no-batente/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔨",
       "category": "Emprego"
@@ -69,14 +69,14 @@
     {
       "id": "pe-chapeu-de-palha",
       "name": "Chapéu de Palha",
-      "shortDescription": "Bolsa de R$ 330 para trabalhadores rurais da cana-de-açúcar e outras culturas durante a entressafra.",
+      "shortDescription": "Bolsa de R$ 373 para trabalhadores rurais da cana-de-açúcar, fruticultura irrigada e pesca artesanal durante a entressafra.",
       "scope": "state",
       "state": "PE",
       "estimatedValue": {
         "type": "monthly",
-        "min": 330,
-        "max": 330,
-        "description": "R$ 330 por mês durante a entressafra"
+        "min": 373,
+        "max": 388,
+        "description": "De R$ 373 a R$ 388 por mês durante até 5 meses de entressafra (valor varia por segmento)"
       },
       "eligibilityRules": [
         {
@@ -86,10 +86,10 @@
           "description": "Morar em Pernambuco"
         },
         {
-          "field": "trabalhadorRural",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
-          "description": "Ser trabalhador rural"
+          "description": "Ser trabalhador rural (cana-de-açúcar, fruticultura irrigada ou pescador artesanal)"
         },
         {
           "field": "cadastradoCadunico",
@@ -98,10 +98,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "Sindicato Rural ou CRAS do seu município",
@@ -117,8 +117,8 @@
         "Faça a inscrição no período de cadastramento",
         "Aguarde o pagamento durante a entressafra"
       ],
-      "sourceUrl": "https://www.pe.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/chapeu-de-palha/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
       "category": "Trabalho Rural"
@@ -143,7 +143,7 @@
           "description": "Morar em Pernambuco"
         },
         {
-          "field": "gestante",
+          "field": "temGestante",
           "operator": "eq",
           "value": true,
           "description": "Estar grávida"
@@ -155,10 +155,10 @@
           "description": "Inscrita no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (meio salário mínimo por pessoa para família de 4)"
         }
       ],
       "whereToApply": "Unidade de Saúde ou CRAS",
@@ -236,7 +236,7 @@
           "description": "Morar em Pernambuco"
         },
         {
-          "field": "zonaRural",
+          "field": "moradiaZonaRural",
           "operator": "eq",
           "value": true,
           "description": "Morar na zona rural"
@@ -248,10 +248,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou prefeitura do município",
@@ -271,6 +271,104 @@
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"
+    },
+    {
+      "id": "pe-qualifica-pe",
+      "name": "Qualifica PE",
+      "shortDescription": "Cursos de graça para aprender uma profissão em Pernambuco. São mais de 21 mil vagas.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar em Pernambuco"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site da SEDEPE (sedepe.pe.gov.br) ou Agência do Trabalho",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da SEDEPE",
+        "Escolha o curso na sua região",
+        "Faça a inscrição online",
+        "Compareça às aulas na data marcada"
+      ],
+      "sourceUrl": "https://www.sedepe.pe.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "pe-vem-passe-livre",
+      "name": "VEM Passe Livre Estudantil",
+      "shortDescription": "Cartão com 44 passagens de ônibus grátis por mês para estudantes da rede estadual na Região Metropolitana do Recife. Mais 26 meias-passagens extras disponíveis.",
+      "scope": "state",
+      "state": "PE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "44 passagens gratuitas + até 26 meias-passagens por mês (total de até 70 viagens)",
+        "estimated": true,
+        "estimatedRationale": "44 créditos gratuitos + 26 meias-passagens = até 70 passagens/mês. Economia estimada com base na tarifa do STPP/RMR"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PE",
+          "description": "Morar na Região Metropolitana do Recife (RMR)"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante da rede pública estadual com matrícula ativa e frequência comprovada"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual ou ser cotista da UPE"
+        }
+      ],
+      "whereToApply": "Site cartaovem.com.br ou App Cartão VEM. Retirada: Posto VEM (Rua da Soledade, 259, Boa Vista, Recife)",
+      "documentsRequired": [
+        "CPF do estudante",
+        "Comprovante de matrícula na rede estadual",
+        "E-mail válido",
+        "Foto recente"
+      ],
+      "howToApply": [
+        "Acesse o site cartaovem.com.br ou baixe o App Cartão VEM",
+        "Faça o cadastro com seu CPF e dados da escola",
+        "Retire o cartão no Posto VEM (Rua da Soledade, 259, Boa Vista, Recife)",
+        "O cartão é carregado com 44 créditos grátis por mês (segunda a sexta, período letivo)",
+        "Além dos 44, você pode carregar até 26 meias-passagens extras"
+      ],
+      "sourceUrl": "https://www.granderecife.pe.gov.br/servicos/bilhetagem-eletronica/vem-passe-livre/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "state": "MT",
   "stateName": "Mato Grosso",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "mt-ser-familia",
@@ -29,10 +29,10 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -52,19 +52,19 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👨‍👩‍👧‍👦",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "mt-vale-gas",
       "name": "Vale Gas MT",
-      "shortDescription": "Ajuda de R$ 100 a cada 2 meses para comprar gas de cozinha.",
+      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo. MT tem o botijao mais caro do pais (R$ 125).",
       "scope": "state",
       "state": "MT",
       "estimatedValue": {
         "type": "monthly",
         "min": 50,
-        "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "max": 60,
+        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 125 em MT)"
       },
       "eligibilityRules": [
         {
@@ -80,25 +80,25 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu municipio",
+      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (numero do Cadastro Unico)",
         "Comprovante de onde mora"
       ],
       "howToApply": [
-        "Mantenha seu Cadastro Unico atualizado",
-        "O programa seleciona automaticamente",
-        "O dinheiro vai para sua conta"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "A selecao e feita automaticamente pelo governo federal",
+        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
       ],
-      "sourceUrl": "https://www.mt.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -136,7 +136,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "mt-pra-ter-onde-morar",
@@ -145,7 +145,7 @@
       "scope": "state",
       "state": "MT",
       "estimatedValue": {
-        "type": "once",
+        "type": "one_time",
         "min": 10000,
         "max": 50000,
         "description": "Subsidio para moradia"
@@ -164,10 +164,10 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 1800,
-          "description": "Renda familiar de ate 3 salarios minimos"
+          "value": 7200,
+          "description": "Renda familiar de até R$ 7.200 (~3 salários mínimos)"
         }
       ],
       "whereToApply": "Prefeitura ou Cohab do seu municipio",
@@ -187,7 +187,147 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🏠",
-      "category": "Moradia"
+      "category": "Habitação"
+    },
+    {
+      "id": "mt-peq-qualifica",
+      "name": "PEQ - Qualificacao Profissional MT",
+      "shortDescription": "Cursos gratuitos para aprender uma profissao. Sao 20 mil vagas em todos os municipios de Mato Grosso.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos com certificado profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "Site da SECITECI (secitec.mt.gov.br) ou Escola Tecnica do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Acesse o site da SECITECI ou va ate a escola tecnica",
+        "Escolha o curso disponivel na sua cidade",
+        "Faca sua inscricao no periodo de vagas",
+        "Compareca no local do curso com seus documentos"
+      ],
+      "sourceUrl": "https://www.secitec.mt.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "mt-rede-cegonha-mt",
+      "name": "Rede Cegonha MT",
+      "shortDescription": "Cuidado completo para gestantes e bebes. Pre-natal gratuito, exames e acompanhamento ate o parto.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Pre-natal completo e parto gratuitos pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser gestante"
+        }
+      ],
+      "whereToApply": "UBS (Unidade Basica de Saude) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartao SUS",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Va a UBS assim que souber da gravidez",
+        "Faca o cadastro no programa de pre-natal",
+        "Compareca a todas as consultas e exames",
+        "Receba acompanhamento completo ate apos o parto"
+      ],
+      "sourceUrl": "https://www.saude.mt.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "mt-bolsa-estudantil",
+      "name": "Assistencia Estudantil MT",
+      "shortDescription": "Auxilio para estudantes de baixa renda em escolas tecnicas e faculdades publicas de Mato Grosso.",
+      "scope": "state",
+      "state": "MT",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 400,
+        "description": "De R$ 80 a R$ 400 por mes conforme a necessidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MT",
+          "description": "Morar em Mato Grosso"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante de escola tecnica ou faculdade publica"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda da familia de ate R$ 4000 (~R$ 800 por pessoa)"
+        }
+      ],
+      "whereToApply": "Secretaria de assistencia estudantil da sua escola ou faculdade",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matricula",
+        "Comprovante de renda da familia",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Fique de olho nos editais da sua escola ou faculdade",
+        "Faca a inscricao no periodo certo",
+        "Envie os documentos e preencha o questionario social",
+        "Aguarde o resultado da selecao"
+      ],
+      "sourceUrl": "https://www.seduc.mt.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

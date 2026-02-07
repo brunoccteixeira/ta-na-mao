@@ -1,19 +1,19 @@
 {
   "state": "RS",
   "stateName": "Rio Grande do Sul",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "rs-mais-igual",
-      "name": "RS Mais Igual",
-      "shortDescription": "Cartao de ate R$ 150 por mes para familias muito pobres do Rio Grande do Sul.",
+      "id": "rs-familia-gaucha",
+      "name": "Familia Gaucha",
+      "shortDescription": "Ate R$ 250 por mes durante 22 meses para familias em pobreza e extrema pobreza no RS. Inclui acompanhamento por agentes sociais.",
       "scope": "state",
       "state": "RS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 150,
-        "description": "Ate R$ 150 por mes"
+        "min": 200,
+        "max": 250,
+        "description": "R$ 200 via Cartao Cidadao + R$ 50 extra por crianca de 0 a 6 anos (temporario, 22 meses)"
       },
       "eligibilityRules": [
         {
@@ -29,29 +29,29 @@
           "description": "Inscrito no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu municipio",
+      "whereToApply": "CRAS dos 92 municipios participantes",
       "documentsRequired": [
         "CPF de todos da familia",
         "Comprovante de residencia no RS",
         "NIS (Numero do Cadastro Unico)"
       ],
       "howToApply": [
-        "Va ao CRAS mais perto de voce",
-        "Faca ou atualize o Cadastro Unico",
-        "Quem se encaixa nas regras entra automaticamente",
-        "Receba o cartao e use para compras"
+        "Verifique se seu municipio participa (92 municipios)",
+        "Va ao CRAS e atualize o Cadastro Unico",
+        "A selecao e feita pelo Indice de Vulnerabilidade Familiar (IVF/RS)",
+        "Se selecionado, receba o Cartao Cidadao do Banrisul"
       ],
-      "sourceUrl": "https://www.rs.gov.br/rs-mais-igual",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://social.rs.gov.br/familia-gaucha",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "rs-todo-jovem-na-escola",
@@ -102,7 +102,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
-      "category": "Educacao"
+      "category": "Educação"
     },
     {
       "id": "rs-devolve-icms",
@@ -130,10 +130,10 @@
           "description": "Inscrito no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "Automatico pelo Cadastro Unico",
@@ -151,7 +151,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💳",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "rs-restaurante-popular",
@@ -187,7 +187,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "rs-qualifica-rs",
@@ -232,7 +232,115 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
-      "category": "Qualificacao"
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "rs-mae-gaucha",
+      "name": "Mae Gaucha",
+      "shortDescription": "Kit enxoval gratis com roupas e itens para o bebe, entregue para gestantes de baixa renda.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 400,
+        "description": "Kit enxoval com roupas e itens para o bebe"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida (a partir da 28a semana)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Unico"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Familia"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "Cartao do SUS",
+        "CPF ou RG",
+        "Comprovante do Bolsa Familia",
+        "Comprovante de pre-natal em dia"
+      ],
+      "howToApply": [
+        "Faca o pre-natal na UBS mais perto de casa",
+        "Mantenha o Cadastro Unico atualizado",
+        "Procure o CRAS para se cadastrar no programa",
+        "Receba o kit enxoval a partir da 28a semana"
+      ],
+      "sourceUrl": "https://social.rs.gov.br/programa-mae-gaucha",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "rs-porta-de-entrada",
+      "name": "Porta de Entrada",
+      "shortDescription": "Subsidio de R$ 20 mil para familias de baixa renda comprarem a casa propria no RS.",
+      "scope": "state",
+      "state": "RS",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 15000,
+        "max": 20000,
+        "description": "Subsidio de ate R$ 20 mil para entrada da casa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RS",
+          "description": "Morar no Rio Grande do Sul"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Nao ter casa propria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 7060,
+          "description": "Renda familiar de ate 5 salarios minimos"
+        }
+      ],
+      "whereToApply": "Site portadeentrada.rs.gov.br",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de residencia no RS",
+        "Certidao negativa de propriedade de imovel"
+      ],
+      "howToApply": [
+        "Acesse portadeentrada.rs.gov.br",
+        "Faca o cadastro como beneficiario",
+        "Escolha um imovel do Minha Casa Minha Vida",
+        "Use o subsidio como parte da entrada"
+      ],
+      "sourceUrl": "https://portadeentrada.rs.gov.br/sobre-o-programa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

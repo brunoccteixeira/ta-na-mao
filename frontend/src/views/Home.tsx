@@ -67,7 +67,7 @@ export default function Home() {
     { id: 'federal-mcmv', name: 'Minha Casa', icon: '🏡', desc: 'Casa própria facilitada', value: 'Subsídio até R$ 55 mil' },
   ];
 
-  const totalBenefits = stats?.totalBenefits ?? 229;
+  const totalBenefits = stats?.totalBenefits ?? 174;
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">

@@ -1,7 +1,7 @@
 {
   "state": "AC",
   "stateName": "Acre",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ac-auxilio-renda-acre",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -57,14 +57,14 @@
     {
       "id": "ac-vale-gas-acre",
       "name": "Vale Gás Acre",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo. O Acre tem o maior valor de referência do país (R$ 122).",
       "scope": "state",
       "state": "AC",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
+        "min": 40,
         "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "description": "4 a 6 recargas por ano via programa federal Gás do Povo (botijão ~R$ 122 no AC)"
       },
       "eligibilityRules": [
         {
@@ -80,26 +80,26 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Revendas de gás credenciadas ao programa Gás do Povo",
       "documentsRequired": [
+        "Cartão Bolsa Família ou cartão Gás do Povo",
         "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
+        "NIS (Número do Cadastro Único)"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar dados",
-        "O governo faz a seleção automática",
-        "Se selecionado, receba o benefício"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é automática pelo governo federal",
+        "Retire o botijão grátis na revenda credenciada mais perto",
+        "Use o cartão Bolsa Família, app Gás do Povo ou vale impresso"
       ],
-      "sourceUrl": "https://www.ac.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -130,10 +130,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -153,6 +153,206 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "ac-qualifica-acre",
+      "name": "Qualifica Acre",
+      "shortDescription": "Cursos gratuitos para aprender uma profissão e conseguir emprego no Acre.",
+      "scope": "state",
+      "state": "AC",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AC",
+          "description": "Morar no Acre"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "SINE Acre ou Polo Digital SEICT em Rio Branco",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Procure o SINE Acre na sua cidade",
+        "Escolha o curso que mais combina com você",
+        "Faça a inscrição no local ou pelo site do SINE",
+        "Participe das aulas e receba o certificado"
+      ],
+      "sourceUrl": "https://sine.ac.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ac-cohab-acre",
+      "name": "COHAB Acre - Moradia Popular",
+      "shortDescription": "Ajuda do governo do Acre para famílias de baixa renda conseguirem casa própria.",
+      "scope": "state",
+      "state": "AC",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 30000,
+        "description": "Subsídio para moradia de até R$ 30 mil"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AC",
+          "description": "Morar no Acre"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "COHAB Acre em Rio Branco ou prefeitura do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Acre",
+        "Comprovante de renda",
+        "Certidão de nascimento ou casamento"
+      ],
+      "howToApply": [
+        "Procure a COHAB Acre ou a prefeitura da sua cidade",
+        "Faça a inscrição no programa habitacional",
+        "Apresente todos os documentos pedidos",
+        "Aguarde a seleção e o chamamento"
+      ],
+      "sourceUrl": "http://cohab.acre.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "ac-saude-materno-infantil",
+      "name": "Rede Alyne Acre - Saúde da Gestante",
+      "shortDescription": "Acompanhamento gratuito de pré-natal e parto para gestantes do Acre no SUS.",
+      "scope": "state",
+      "state": "AC",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AC",
+          "description": "Morar no Acre"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        }
+      ],
+      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Comprovante de residência",
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Vá ao posto de saúde mais perto da sua casa",
+        "Peça para iniciar o pré-natal",
+        "Receba a caderneta da gestante",
+        "Faça todas as consultas e exames marcados"
+      ],
+      "sourceUrl": "https://agencia.ac.gov.br/governo-do-acre-assina-ordem-de-servico-para-nova-etapa-da-maternidade-de-rio-branco-reforcando-compromisso-com-as-futuras-geracoes/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ac-bolsa-educacao-acre",
+      "name": "Bolsa Educação Acre",
+      "shortDescription": "Ajuda para estudantes de baixa renda do Acre continuarem na escola ou faculdade.",
+      "scope": "state",
+      "state": "AC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa mensal conforme o nível de ensino"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AC",
+          "description": "Morar no Acre"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3000,
+          "description": "Renda da familia de ate R$ 3000 (~R$ 600 por pessoa)"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação do Acre (SEE) ou escola estadual",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Verifique os editais no site da SEE Acre",
+        "Faça a inscrição online ou na escola",
+        "Apresente os documentos pedidos",
+        "Mantenha a frequência escolar em dia"
+      ],
+      "sourceUrl": "https://see.ac.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

@@ -52,6 +52,14 @@
 | [impacto-esg](impacto-esg/SKILL.md) | Relatórios de impacto social (ESG/ODS) |
 | [vulnerabilidade-preditiva](vulnerabilidade-preditiva/SKILL.md) | Score de risco social + recomendações proativas |
 
+## Skills de Conformidade & Auditoria
+
+| Skill | Descrição |
+|-------|-----------|
+| [auditor-beneficios](auditor-beneficios/SKILL.md) | Auditar features de benefícios contra legislação vigente |
+| [jornada-cidadao](jornada-cidadao/SKILL.md) | Mapear jornada completa do cidadão para cada benefício |
+| [fonte-oficial](fonte-oficial/SKILL.md) | Catálogo de fontes oficiais e protocolo de validação de dados |
+
 ## Skills de Pesquisa & Dados
 
 | Skill | Descrição |
@@ -102,13 +110,14 @@
 |-----------|--------|
 | Domínio (Benefícios) | 10 |
 | Gestão Pública | 7 |
+| Conformidade & Auditoria | 3 |
 | Inclusão & Acessibilidade | 6 |
 | Economia & Negócios | 4 |
 | Pesquisa & Dados | 7 |
 | Desenvolvimento | 8 |
 | Infraestrutura | 3 |
 | Segurança | 4 |
-| **Total** | **49** |
+| **Total** | **52** |
 
 ## Uso
 
@@ -116,8 +125,9 @@
 /run-tests
 /beneficio-checker
 /deep-research
-/cadunico-api
-/rede-protecao
+/auditor-beneficios
+/jornada-cidadao
+/fonte-oficial
 ```
 
 ## MCP Servers Integrados

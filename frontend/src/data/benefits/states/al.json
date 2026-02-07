@@ -1,7 +1,7 @@
 {
   "state": "AL",
   "stateName": "Alagoas",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "al-cartao-cria",
@@ -35,10 +35,10 @@
           "description": "Ter filhos de 0 a 6 anos"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -63,7 +63,7 @@
     {
       "id": "al-restaurante-popular",
       "name": "Restaurante Popular AL",
-      "shortDescription": "Almoço por preço baixo em restaurantes do governo.",
+      "shortDescription": "Almoco por R$ 3,00 e cafe da manha por R$ 1,00 nos restaurantes populares de Maceio.",
       "scope": "state",
       "state": "AL",
       "estimatedValue": {
@@ -87,11 +87,11 @@
       "howToApply": [
         "Procure um restaurante popular",
         "Vá no horário de almoço",
-        "Pague o preço baixo",
+        "Pague R$ 3,00 (almoco) ou R$ 1,00 (cafe da manha)",
         "Aberto para todos"
       ],
       "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -146,6 +146,226 @@
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"
+    },
+    {
+      "id": "al-qualifica-alagoas",
+      "name": "Qualifica Alagoas",
+      "shortDescription": "Cursos de graça para você aprender uma profissão e conseguir trabalho.",
+      "scope": "state",
+      "state": "AL",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AL",
+          "description": "Morar em Alagoas"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3200,
+          "description": "Renda familiar de até meio salário mínimo por pessoa (simplificado para família de 4)"
+        }
+      ],
+      "whereToApply": "SINE Maceió, SINE Arapiraca ou site alagoasdigital.al.gov.br",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Procure o SINE da sua cidade",
+        "Veja os cursos disponíveis",
+        "Faça sua inscrição com os documentos",
+        "Compareça às aulas no horário marcado"
+      ],
+      "sourceUrl": "https://alagoasdigital.al.gov.br/servico/72",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "al-programa-cria-gestante",
+      "name": "CRIA Gestante",
+      "shortDescription": "Acompanhamento da gravidez e do bebê com visitas em casa e orientações de saúde.",
+      "scope": "state",
+      "state": "AL",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mês pelo Cartão CRIA para gestantes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AL",
+          "description": "Morar em Alagoas"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida ou ter criança de até 6 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (R$ 218 por pessoa para família de 4)"
+        }
+      ],
+      "whereToApply": "CRAS ou Unidade de Saúde do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do pré-natal",
+        "NIS do Cadastro Único",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Faça o pré-natal na unidade de saúde",
+        "Procure o CRAS para se cadastrar",
+        "Atualize seu Cadastro Único",
+        "Receba visitas e acompanhamento em casa"
+      ],
+      "sourceUrl": "https://cria.al.gov.br/institucional",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "al-prepara-jovem",
+      "name": "Prepara Jovem AL",
+      "shortDescription": "Programa para jovens fazerem cursos e conseguirem o primeiro emprego.",
+      "scope": "state",
+      "state": "AL",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Bolsa durante o período do curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AL",
+          "description": "Morar em Alagoas"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter entre 18 e 29 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar estudando ou ter terminado o ensino médio"
+        }
+      ],
+      "whereToApply": "SINE Maceió ou Secretaria de Trabalho de Alagoas",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de escolaridade",
+        "Comprovante de residência",
+        "Carteira de Trabalho Digital"
+      ],
+      "howToApply": [
+        "Procure o SINE ou a Secretaria de Trabalho",
+        "Faça sua inscrição quando abrir edital",
+        "Participe da seleção",
+        "Frequente o curso de qualificação"
+      ],
+      "sourceUrl": "https://www.al.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "al-passe-livre-intermunicipal",
+      "name": "Passe Livre Intermunicipal AL",
+      "shortDescription": "Transporte de graça entre cidades de Alagoas para pessoas com deficiência ou doença cronica que fazem tratamento fora do municipio. Renda familiar ate 3 salarios minimos.",
+      "scope": "state",
+      "state": "AL",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Economia com passagens intermunicipais (dias úteis, ônibus comum)",
+        "estimated": true,
+        "estimatedRationale": "Valor estimado de economia baseado em passagens intermunicipais em Alagoas"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AL",
+          "description": "Morar em Alagoas"
+        },
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pessoa com deficiência ou patologia crônica em tratamento fora do município de moradia"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4800,
+          "description": "Renda familiar de até 3 salários mínimos (R$ 4.800)"
+        }
+      ],
+      "whereToApply": "Seades/NAPD (Av. Comendador Calaça, 1399, Poço, Maceió) ou CRAS do município (para Cartão da Pessoa Idosa)",
+      "documentsRequired": [
+        "CPF e RG ou Certidão de Nascimento",
+        "Comprovante de residência",
+        "Foto 3x4",
+        "Formulário preenchido pelo assistente social e médico da instituição de tratamento",
+        "Laudo médico comprovando deficiência ou patologia crônica",
+        "Documentação do responsável legal (se menor de idade)"
+      ],
+      "howToApply": [
+        "Procure a instituição onde faz tratamento médico",
+        "Peça ao assistente social e médico que preencham o formulário",
+        "Vá ao NAPD/Seades em Maceió com os documentos",
+        "Aguarde a emissão da Carteira de Passe Livre Intermunicipal",
+        "O passe é válido em dias úteis, em ônibus comuns nas linhas intermunicipais"
+      ],
+      "sourceUrl": "https://arsal.al.gov.br/superintendencia/superintendencia-de-assistencia-social/nucleo-de-apoio-a-pessoa-com-deficiencia-napd/carteira-de-passe-livre",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

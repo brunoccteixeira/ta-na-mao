@@ -1,7 +1,7 @@
 {
   "state": "PR",
   "stateName": "Parana",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pr-cartao-futuro",
@@ -52,7 +52,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎯",
-      "category": "Qualificacao"
+      "category": "Qualificação Profissional"
     },
     {
       "id": "pr-familia-paranaense",
@@ -80,10 +80,10 @@
           "description": "Inscrito no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -102,12 +102,12 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👨‍👩‍👧‍👦",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "pr-armazem-da-familia",
       "name": "Armazem da Familia",
-      "shortDescription": "Supermercado com produtos ate 30% mais baratos para familias de baixa renda.",
+      "shortDescription": "Supermercado com produtos ate 30% mais baratos para familias de baixa renda em Curitiba e regiao.",
       "scope": "state",
       "state": "PR",
       "estimatedValue": {
@@ -124,13 +124,13 @@
           "description": "Morar no Parana"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 7590,
+          "description": "Renda familiar de ate 5 salarios minimos (R$ 7.590)"
         }
       ],
-      "whereToApply": "Prefeitura ou unidade do Armazem da Familia",
+      "whereToApply": "Unidade do Armazem da Familia em Curitiba (programa municipal)",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -144,10 +144,10 @@
         "Faca compras com desconto"
       ],
       "sourceUrl": "https://www.curitiba.pr.gov.br/servicos/armazem-da-familia/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🛒",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "pr-leite-das-criancas",
@@ -175,10 +175,10 @@
           "description": "Ter crianca de 6 meses a 3 anos"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (R$ 759, ou ~R$ 3.036 para familia de 4)"
         }
       ],
       "whereToApply": "Postos de saude ou locais de distribuicao",
@@ -195,22 +195,22 @@
         "Leve a crianca para pesar todo mes"
       ],
       "sourceUrl": "https://www.leitedascriancas.pr.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥛",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "pr-vale-gas-social",
       "name": "Vale Gas Social PR",
-      "shortDescription": "Ajuda para comprar gas de cozinha para familias de baixa renda.",
+      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda no Parana.",
       "scope": "state",
       "state": "PR",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
+        "min": 40,
         "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 96 no PR)"
       },
       "eligibilityRules": [
         {
@@ -226,28 +226,123 @@
           "description": "Inscrito no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu municipio",
+      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (Numero do Cadastro Unico)",
         "Comprovante de residencia"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Unico atualizado",
-        "O beneficio e selecionado automaticamente",
-        "O valor vai para conta da Caixa"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "A selecao e feita automaticamente pelo governo federal",
+        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
       ],
-      "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
+    },
+    {
+      "id": "pr-mae-paranaense",
+      "name": "Rede Mae Paranaense",
+      "shortDescription": "Programa que garante pre-natal de qualidade e parto seguro para gestantes do Parana.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida ou ter bebe recem-nascido"
+        }
+      ],
+      "whereToApply": "Unidade Basica de Saude (UBS) mais perto de casa",
+      "documentsRequired": [
+        "Cartao do SUS",
+        "CPF ou RG",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Va a UBS mais perto da sua casa",
+        "Faca o cadastro no pre-natal",
+        "A equipe classifica o risco da gestacao e indica a maternidade certa",
+        "Faca pelo menos 7 consultas de pre-natal"
+      ],
+      "sourceUrl": "https://www.saude.pr.gov.br/Pagina/Linha-de-Atencao-Materno-Infantil",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "pr-casa-facil",
+      "name": "Casa Facil Parana",
+      "shortDescription": "Subsidio de ate R$ 20 mil para familias de baixa renda comprarem a casa propria no Parana.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 20000,
+        "description": "Subsidio de ate R$ 20 mil para entrada da casa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Parana"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Nao ter casa propria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 6000,
+          "description": "Renda familiar de ate 4 salarios minimos"
+        }
+      ],
+      "whereToApply": "Site da COHAPAR (cohapar.pr.gov.br/cadastro)",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de residencia",
+        "Certidao negativa de propriedade de imovel"
+      ],
+      "howToApply": [
+        "Acesse cohapar.pr.gov.br/cadastro",
+        "Faca o cadastro familiar completo",
+        "Escolha o empreendimento de interesse",
+        "Aguarde o chamamento e selecao"
+      ],
+      "sourceUrl": "https://www.cohapar.pr.gov.br/Pagina/Casa-Facil-Parana",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

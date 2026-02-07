@@ -1,7 +1,7 @@
 {
   "state": "TO",
   "stateName": "Tocantins",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "to-auxilio-social-tocantins",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -57,14 +57,14 @@
     {
       "id": "to-vale-gas-tocantins",
       "name": "Vale Gás Tocantins",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "3 recargas grátis de botijão de gás para famílias em extrema pobreza que NÃO recebem Bolsa Família.",
       "scope": "state",
       "state": "TO",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 50,
-        "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "type": "one_time",
+        "min": 300,
+        "max": 360,
+        "description": "3 recargas de botijão de 13 kg (total ~R$ 300 a R$ 360)"
       },
       "eligibilityRules": [
         {
@@ -80,26 +80,32 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 712,
+          "description": "Renda per capita de até R$ 178 (equivale a ~R$ 712 para família de 4)"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": false,
+          "description": "NÃO receber Bolsa Família"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Site valegas.to.gov.br ou CRAS do seu município",
       "documentsRequired": [
-        "CPF",
         "NIS (Número do Cadastro Único)",
+        "CPF",
         "Comprovante de residência"
       ],
       "howToApply": [
+        "Acesse valegas.to.gov.br e informe seu NIS para verificar se tem direito",
         "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar dados",
-        "O governo faz a seleção automática",
-        "Se selecionado, receba o benefício"
+        "A seleção é feita pela SETAS automaticamente",
+        "Retire o botijão no ponto de distribuição indicado"
       ],
-      "sourceUrl": "https://www.to.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://valegas.to.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -130,10 +136,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Assistência Social",
@@ -153,6 +159,218 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "to-profissao-estudante",
+      "name": "Profissão Estudante Tocantins",
+      "shortDescription": "Programa do governo do Tocantins que oferece educação profissional e tecnológica nas escolas estaduais.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Ensino profissional gratuito com certificação"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter pelo menos 14 anos"
+        }
+      ],
+      "whereToApply": "Escola estadual do Tocantins ou Secretaria de Educação (SEDUC-TO)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula na rede estadual",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Verifique as escolas que oferecem o programa",
+        "Faça a matrícula na escola estadual participante",
+        "Escolha a área profissional de interesse",
+        "Frequente as aulas e receba o certificado"
+      ],
+      "sourceUrl": "https://www.consed.org.br/noticia/profissao-estudante-governo-do-tocantins-lanca-projeto-de-educacao-profissional-e-tecnologica-no-retorno-das-aulas-da-rede-estadual",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "to-em-casa",
+      "name": "TO em Casa - Habitação Popular",
+      "shortDescription": "Programa do governo do Tocantins para construir, reformar ou alugar moradia para famílias de baixa renda.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 25000,
+        "description": "Subsídio para construção, reforma ou aluguel social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Secretaria das Cidades, Habitação e Desenvolvimento Regional (SECIHD) ou prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Tocantins",
+        "Comprovante de renda",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure a SECIHD ou a prefeitura da sua cidade",
+        "Faça a inscrição no programa TO em Casa",
+        "Apresente todos os documentos pedidos",
+        "Aguarde a seleção e o chamamento"
+      ],
+      "sourceUrl": "https://www.to.gov.br/secihd",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "to-maos-que-cuidam",
+      "name": "Mãos que Cuidam-TO",
+      "shortDescription": "Programa de cuidado para gestantes e crianças de 0 a 6 anos no Tocantins, com visitas em casa.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Acompanhamento gratuito com visitas domiciliares"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Cartão SUS",
+        "Caderneta da gestante",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade",
+        "Peça para entrar no programa Mãos que Cuidam-TO",
+        "Uma equipe vai fazer visitas na sua casa",
+        "Mantenha as consultas do pré-natal em dia"
+      ],
+      "sourceUrl": "https://www.to.gov.br/secom/noticias/governo-do-tocantins-lanca-programa-maos-que-cuidam-to-com-foco-na-primeira-infancia/tiwq6roze1l",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "to-presente-profe",
+      "name": "Programa Presente PROFE - Bolsa Estudante",
+      "shortDescription": "Bolsa de R$ 100 por mês e R$ 1.000 no fim do ano para estudantes da rede estadual do Tocantins.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 200,
+        "description": "R$ 100/mês + R$ 1.000 no fim do ano letivo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar na rede pública estadual"
+        }
+      ],
+      "whereToApply": "Escola estadual onde o aluno está matriculado",
+      "documentsRequired": [
+        "CPF do aluno",
+        "RG do aluno",
+        "Comprovante de matrícula na rede estadual",
+        "Conta bancária em nome do aluno ou responsável"
+      ],
+      "howToApply": [
+        "Esteja matriculado na rede estadual do Tocantins",
+        "Mantenha frequência escolar mínima exigida",
+        "Tenha bom desempenho nas avaliações",
+        "A bolsa é paga automaticamente a quem cumprir os critérios"
+      ],
+      "sourceUrl": "https://conexaoto.com.br/2025/12/23/wanderlei-autoriza-pagamento-de-r-9-3-milhoes-referente-ao-encerramento-do-ano-letivo-de-programa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

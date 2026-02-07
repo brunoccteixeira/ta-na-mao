@@ -1,7 +1,7 @@
 {
   "state": "BA",
   "stateName": "Bahia",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ba-bolsa-presenca",
@@ -79,13 +79,13 @@
           "description": "Morar na Bahia"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3200,
+          "description": "Renda familiar de até meio salário mínimo por pessoa (cerca de R$ 3.200 para família de 4)"
         },
         {
-          "field": "estudanteUniversitario",
+          "field": "estudante",
           "operator": "eq",
           "value": true,
           "description": "Estudante de universidade estadual baiana (UNEB, UEFS, UESB ou UESC)"
@@ -114,7 +114,7 @@
     {
       "id": "ba-restaurante-popular",
       "name": "Restaurante Popular da Bahia",
-      "shortDescription": "Refeições completas por R$ 1,00 em restaurantes do governo do estado.",
+      "shortDescription": "Refeicoes gratuitas ou a preco popular em restaurantes do governo. Em Salvador, gratis para inscritos no CadUnico.",
       "scope": "state",
       "state": "BA",
       "estimatedValue": {
@@ -138,26 +138,26 @@
       "howToApply": [
         "Procure um Restaurante Popular na sua cidade",
         "Vá no horário de funcionamento (almoço)",
-        "Pague R$ 1,00 e faça a refeição",
+        "Em Salvador, refeicao gratis para inscritos no CadUnico. Demais: valor subsidiado.",
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.sjdhds.ba.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
       "id": "ba-primeiro-emprego",
-      "name": "Primeiro Emprego BA",
-      "shortDescription": "Programa que ajuda jovens baianos a conseguir o primeiro emprego com carteira assinada.",
+      "name": "Projeto Primeiro Emprego BA",
+      "shortDescription": "Contrato CLT de até 2 anos para egressos do ensino técnico da rede estadual, em funções da sua área de formação.",
       "scope": "state",
       "state": "BA",
       "estimatedValue": {
         "type": "monthly",
         "min": 1600,
         "max": 1600,
-        "description": "Salário mínimo durante contrato"
+        "description": "Salário CLT (valor varia conforme função e órgão contratante)"
       },
       "eligibilityRules": [
         {
@@ -167,39 +167,33 @@
           "description": "Morar na Bahia"
         },
         {
-          "field": "idade",
-          "operator": "gte",
-          "value": 18,
-          "description": "Ter entre 18 e 24 anos"
-        },
-        {
-          "field": "empregoFormal",
-          "operator": "eq",
-          "value": false,
-          "description": "Nunca ter trabalhado com carteira assinada"
-        },
-        {
-          "field": "cadastradoCadunico",
+          "field": "estudante",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Ter concluído curso técnico na Rede Estadual de Educação Profissional (a partir de 2015)"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Estar sem emprego formal"
         }
       ],
-      "whereToApply": "SineBahia ou site trabalho.ba.gov.br",
+      "whereToApply": "Site primeiroemprego.educacao.ba.gov.br ou SETRE",
       "documentsRequired": [
         "CPF e RG",
+        "Diploma ou certificado do curso técnico da rede estadual",
         "Carteira de Trabalho Digital",
-        "Comprovante de residência",
-        "Comprovante de escolaridade"
+        "Comprovante de residência"
       ],
       "howToApply": [
-        "Cadastre-se no SineBahia",
-        "Acesse o site e busque vagas do programa",
-        "Candidate-se às vagas disponíveis",
-        "Compareça às entrevistas agendadas"
+        "Acesse o site primeiroemprego.educacao.ba.gov.br",
+        "Verifique se seu curso técnico está listado",
+        "Faça a inscrição e aguarde convocação por ranking escolar",
+        "Compareça à entrevista e inicie o contrato CLT de até 2 anos"
       ],
-      "sourceUrl": "https://www.trabalho.ba.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://estudantes.educacao.ba.gov.br/primeiroemprego",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💼",
       "category": "Emprego"
@@ -224,7 +218,7 @@
           "description": "Morar na Bahia"
         },
         {
-          "field": "zonaRural",
+          "field": "moradiaZonaRural",
           "operator": "eq",
           "value": true,
           "description": "Morar na zona rural"
@@ -236,10 +230,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218 (linha de pobreza)"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município ou prefeitura",
@@ -254,11 +248,114 @@
         "Solicite inclusão no programa",
         "Aguarde visita técnica e instalação"
       ],
-      "sourceUrl": "https://www.sihs.ba.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "http://aguaparatodos.ba.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"
+    },
+    {
+      "id": "ba-mae-bahia",
+      "name": "Mãe Bahia",
+      "shortDescription": "Programa que garante pré-natal de qualidade e parto seguro para gestantes em toda a Bahia.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito de pré-natal e parto"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida"
+        }
+      ],
+      "whereToApply": "Unidade Básica de Saúde ou Maternidade do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do SUS",
+        "Comprovante de residência",
+        "Cartão do pré-natal"
+      ],
+      "howToApply": [
+        "Procure a Unidade de Saúde mais perto",
+        "Inicie o pré-natal assim que souber da gravidez",
+        "Faça todas as consultas e exames pedidos",
+        "O programa garante atendimento na maternidade da sua região"
+      ],
+      "sourceUrl": "https://www.saude.ba.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ba-transporte-estudantil",
+      "name": "Transporte Escolar Gratuito BA (PETE/BA)",
+      "shortDescription": "Transporte escolar de graça para estudantes do ensino médio da rede estadual que moram na zona rural.",
+      "scope": "state",
+      "state": "BA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Economia mensal com transporte escolar (valor estimado do deslocamento rural-urbano)",
+        "estimated": true,
+        "estimatedRationale": "O PETE/BA transfere recursos aos municípios, não ao estudante diretamente. Valor estimado de economia."
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "BA",
+          "description": "Morar na Bahia"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante do ensino médio da rede estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar na zona rural (o PETE/BA atende estudantes residentes no meio rural)"
+        }
+      ],
+      "whereToApply": "Secretaria da escola ou Secretaria de Educação do Estado (SEC-BA)",
+      "documentsRequired": [
+        "CPF e RG do estudante",
+        "Comprovante de matrícula no ensino médio da rede estadual",
+        "Comprovante de residência na zona rural"
+      ],
+      "howToApply": [
+        "Fale na secretaria da sua escola sobre o transporte escolar",
+        "Informe que mora na zona rural e precisa de transporte",
+        "Apresente comprovante de residência rural",
+        "Aguarde a disponibilização da rota de transporte pelo município"
+      ],
+      "sourceUrl": "https://municipios.educacao.ba.gov.br/pete",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

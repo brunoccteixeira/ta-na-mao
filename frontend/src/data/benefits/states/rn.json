@@ -1,7 +1,7 @@
 {
   "state": "RN",
   "stateName": "Rio Grande do Norte",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rn-rn-mais-igual",
@@ -29,10 +29,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -139,6 +139,192 @@
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"
+    },
+    {
+      "id": "rn-jovem-potiguar",
+      "name": "Jovem Potiguar",
+      "shortDescription": "Cursos de graça para jovens aprenderem uma profissão no Rio Grande do Norte.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter entre 15 e 29 anos"
+        }
+      ],
+      "whereToApply": "IFRN (Instituto Federal do RN) ou SINE da sua cidade",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site do IFRN ou procure o SINE",
+        "Veja os cursos disponíveis na sua cidade",
+        "Faça a inscrição no prazo",
+        "Frequente as aulas até o final"
+      ],
+      "sourceUrl": "https://portal.ifrn.edu.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "rn-programa-materno-infantil",
+      "name": "Rede Materno-Infantil RN",
+      "shortDescription": "Atendimento de saúde para grávidas e bebês com pré-natal, parto e acompanhamento.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito de pré-natal e parto pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida ou ter criança pequena"
+        }
+      ],
+      "whereToApply": "Unidade Básica de Saúde do seu bairro",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do SUS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a Unidade de Saúde mais perto",
+        "Comece o pré-natal assim que souber da gravidez",
+        "Faça todas as consultas e exames",
+        "O hospital da sua região vai fazer o parto"
+      ],
+      "sourceUrl": "https://www.rn.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "rn-bolsa-estudante",
+      "name": "Bolsa Estudante RN",
+      "shortDescription": "Bolsa para estudantes de baixa renda de universidades públicas do Rio Grande do Norte.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 700,
+        "description": "Bolsa mensal para ajudar com gastos da faculdade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em universidade pública do RN"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda da familia de ate R$ 4000 (~R$ 800 por pessoa)"
+        }
+      ],
+      "whereToApply": "Universidade onde estuda (UERN, UFRN)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Fique atento aos editais da sua universidade",
+        "Reúna os documentos de renda e matrícula",
+        "Faça inscrição no prazo do edital",
+        "Aguarde o resultado da seleção"
+      ],
+      "sourceUrl": "https://www.rn.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "rn-meia-passagem-estudantil",
+      "name": "Meia-Passagem Estudantil RN",
+      "shortDescription": "Desconto de 50% na passagem de ônibus para estudantes em Natal e outras cidades do RN. Pague metade do valor da passagem com o cartão estudantil.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 150,
+        "description": "Economia de ~R$ 2,15 por viagem (50% de desconto sobre tarifa de R$ 4,30 em Natal)",
+        "estimated": true,
+        "estimatedRationale": "Desconto de 50% sobre tarifa municipal. Em Natal, tarifa R$ 4,30, meia R$ 2,15. Economia depende do uso diário."
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante regularmente matriculado (Lei Federal 12.933/2013)"
+        }
+      ],
+      "whereToApply": "STTU Natal (Portal do Estudante Natal) ou empresa de transporte da sua cidade",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula atualizado",
+        "Foto recente",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Em Natal: acesse o Portal do Estudante Natal ou o App NuBus para solicitar o NatalCard Estudante",
+        "Apresente os documentos para emissão da Identidade Estudantil",
+        "Recadastramento anual obrigatório (dez-jan para o ano seguinte)",
+        "Use o cartão nos ônibus para pagar metade da passagem"
+      ],
+      "sourceUrl": "https://www.natal.rn.gov.br/sttu/identidade_estudantil",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

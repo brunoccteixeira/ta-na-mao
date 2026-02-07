@@ -8,9 +8,9 @@
       "sector": "pescador",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 1600,
-        "description": "1 salário mínimo por mês de defeso"
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621) por mês de defeso"
       },
       "eligibilityRules": [
         {
@@ -127,7 +127,7 @@
         "CPF e RG",
         "DAP (Declaração de Aptidão ao Pronaf)",
         "Comprovante de residência",
-        "Declaração de perda de safra"
+        "Comprovante de adesão ao Garantia-Safra (via sindicato ou Emater)"
       ],
       "howToApply": [
         "Faça adesão todo ano no sindicato rural",
@@ -149,9 +149,9 @@
       "sector": "agricultor",
       "estimatedValue": {
         "type": "annual",
-        "min": 8000,
+        "min": 15000,
         "max": 30000,
-        "description": "Limite de compra por agricultor/ano"
+        "description": "R$ 15 mil/ano por agricultor (até R$ 30 mil em emergências)"
       },
       "eligibilityRules": [
         {
@@ -188,9 +188,9 @@
       "sector": "agricultor",
       "estimatedValue": {
         "type": "one_time",
-        "min": 30000,
-        "max": 55000,
-        "description": "Subsídio para construção ou reforma"
+        "min": 40000,
+        "max": 75000,
+        "description": "Subsídio de R$ 40-75 mil para construção ou reforma (Portaria MCID 786/2024)"
       },
       "eligibilityRules": [
         {
@@ -214,8 +214,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4800,
-          "description": "Renda familiar de até 3 salários mínimos"
+          "value": 3333,
+          "description": "Renda familiar bruta de até R$ 40 mil/ano (Faixa Rural 1)"
         }
       ],
       "whereToApply": "Entidades organizadoras credenciadas ou Caixa",
@@ -247,7 +247,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Contribuição de R$ 70-76/mês dá direito a benefícios"
+        "description": "Contribuição de R$ 81-87/mês dá direito a benefícios INSS"
       },
       "eligibilityRules": [
         {
@@ -284,8 +284,8 @@
     },
     {
       "id": "sectoral-bolsa-reciclagem",
-      "name": "Bolsa Reciclagem",
-      "shortDescription": "Pagamento por material reciclável coletado por catadores organizados em cooperativas.",
+      "name": "Bolsa Reciclagem (MG)",
+      "shortDescription": "[Minas Gerais] Pagamento trimestral por material reciclável coletado por catadores organizados em cooperativas. Programa exclusivo do estado de MG.",
       "scope": "sectoral",
       "sector": "catador",
       "estimatedValue": {
@@ -322,8 +322,8 @@
     },
     {
       "id": "sectoral-auxilio-entregador",
-      "name": "Benefícios para Entregadores",
-      "shortDescription": "Orientações sobre direitos e benefícios para quem trabalha com aplicativos de entrega.",
+      "name": "Orientações para Entregadores de App",
+      "shortDescription": "Guia informativo sobre direitos e programas disponíveis para entregadores de aplicativo. Não é um benefício específico — consulte MEI, CadÚnico e programas municipais.",
       "scope": "sectoral",
       "sector": "entregador",
       "estimatedValue": {
@@ -405,9 +405,9 @@
       "sector": "pcd",
       "estimatedValue": {
         "type": "monthly",
-        "min": 800,
-        "max": 800,
-        "description": "Meio salário mínimo"
+        "min": 811,
+        "max": 811,
+        "description": "50% do salário mínimo (R$ 810,50 em 2026)"
       },
       "eligibilityRules": [
         {
@@ -447,6 +447,611 @@
       "status": "active",
       "icon": "♿",
       "category": "PCD"
+    },
+    {
+      "id": "sectoral-domestica-fgts",
+      "name": "FGTS Doméstica",
+      "shortDescription": "Empregador deposita 8% do salário todo mês no FGTS da trabalhadora doméstica, mais 3,2% de antecipação da multa.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 130,
+        "max": 182,
+        "description": "11,2% sobre o salário (8% FGTS + 3,2% multa antecipada = R$ 182/mês sobre SM)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadoraDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica com carteira assinada"
+        }
+      ],
+      "whereToApply": "eSocial Doméstico (gov.br/esocial) — empregador cadastra e gera a DAE",
+      "documentsRequired": [
+        "CPF",
+        "NIS/PIS/PASEP",
+        "Carteira de Trabalho (CTPS)",
+        "Contrato de trabalho registrado no eSocial"
+      ],
+      "howToApply": [
+        "O empregador deve cadastrar o vínculo no eSocial Doméstico",
+        "Todo mês, o empregador gera e paga a DAE (guia unificada)",
+        "Consulte seu saldo no app FGTS da Caixa",
+        "Em caso de demissão sem justa causa, saque o FGTS + multa"
+      ],
+      "sourceUrl": "https://www.gov.br/esocial/pt-br/empregador-domestico",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-domestica-seguro-desemprego",
+      "name": "Seguro-Desemprego Doméstica",
+      "shortDescription": "3 parcelas de 1 salário mínimo para empregada doméstica demitida sem justa causa.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 4863,
+        "max": 4863,
+        "description": "3 parcelas de R$ 1.621 (salário mínimo vigente)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadoraDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Ter sido demitida sem justa causa"
+        }
+      ],
+      "whereToApply": "Superintendências Regionais do Trabalho, SINE ou gov.br",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS)",
+        "Termo de Rescisão do Contrato de Trabalho",
+        "Comprovante de 15 meses de emprego doméstico nos últimos 24 meses (CTPS)",
+        "Requerimento do Seguro-Desemprego Doméstico"
+      ],
+      "howToApply": [
+        "Após demissão sem justa causa, reúna os documentos",
+        "Solicite em até 90 dias após a dispensa",
+        "Vá a uma Superintendência do Trabalho ou SINE",
+        "Aguarde análise e receba as 3 parcelas"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego/seguro-desemprego-empregado-domestico",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-domestica-vale-transporte",
+      "name": "Vale-Transporte Doméstica",
+      "shortDescription": "Empregador é obrigado a fornecer vale-transporte, descontando no máximo 6% do salário.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 180,
+        "max": 400,
+        "description": "Valor varia conforme cidade e quantidade de conduções"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadoraDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica com carteira assinada"
+        }
+      ],
+      "whereToApply": "Solicitar diretamente ao empregador por escrito",
+      "documentsRequired": [
+        "Declaração informando endereço e trajeto",
+        "Comprovante de residência",
+        "Indicação dos meios de transporte utilizados"
+      ],
+      "howToApply": [
+        "Informe ao empregador seu endereço e trajeto por escrito",
+        "O empregador providencia o cartão de transporte da cidade",
+        "O desconto máximo é de 6% do seu salário",
+        "O restante do custo é pago pelo empregador"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l7418.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-clt-fgts",
+      "name": "FGTS – Saque e Direitos",
+      "shortDescription": "Todo mês o empregador deposita 8% do seu salário no FGTS. Na demissão sem justa causa, recebe multa de 40%.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 130,
+        "max": 130,
+        "description": "8% do salário depositado mensalmente (R$ 130/mês sobre SM)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter carteira assinada (CLT)"
+        }
+      ],
+      "whereToApply": "App FGTS (Caixa) para consulta; Caixa Econômica Federal para saque",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS)",
+        "Termo de Rescisão (para saque por demissão)"
+      ],
+      "howToApply": [
+        "O depósito de 8% é automático pelo empregador",
+        "Consulte o saldo no app FGTS da Caixa",
+        "Em caso de demissão sem justa causa, saque o saldo + multa de 40%",
+        "Também pode sacar para compra de imóvel ou doença grave"
+      ],
+      "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-clt-13-ferias",
+      "name": "13º Salário e Férias +1/3",
+      "shortDescription": "Todo trabalhador CLT tem direito a 1 salário extra no fim do ano e férias remuneradas com adicional de 1/3.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 1621,
+        "max": 1621,
+        "description": "13º = 1 salário mínimo (R$ 1.621). Férias = salário + 1/3 (R$ 2.161). Pagos separadamente."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter carteira assinada (CLT)"
+        }
+      ],
+      "whereToApply": "Pago automaticamente pelo empregador",
+      "documentsRequired": [
+        "Carteira de Trabalho (CTPS) registrada"
+      ],
+      "howToApply": [
+        "O 13º é pago em 2 parcelas: 1ª até novembro, 2ª até 20 de dezembro",
+        "Férias de 30 dias após 12 meses de trabalho",
+        "Receba salário + 1/3 adicional durante as férias",
+        "Pode vender até 10 dias de férias (abono pecuniário)"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l4090.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎄",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-pcd-passe-livre",
+      "name": "Passe Livre Interestadual PCD",
+      "shortDescription": "Passagem gratuita em ônibus interestadual para pessoas com deficiência de baixa renda.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 3000,
+        "description": "Economia com passagens interestaduais",
+        "estimated": true,
+        "estimatedRationale": "Valor depende da frequência de viagens"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência comprovada"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 1621,
+          "description": "Renda familiar per capita de até 1 salário mínimo (R$ 1.621)"
+        }
+      ],
+      "whereToApply": "Portal Passe Livre (passelivre.antt.gov.br) com login Gov.br",
+      "documentsRequired": [
+        "CPF e documento de identidade",
+        "Laudo médico do SUS (emitido há no máximo 1 ano)",
+        "Comprovante de inscrição no CadÚnico ou BPC",
+        "Conta Gov.br"
+      ],
+      "howToApply": [
+        "Acesse passelivre.antt.gov.br com login Gov.br",
+        "Preencha o requerimento online",
+        "Envie o laudo médico do SUS",
+        "Receba a carteirinha digital do Passe Livre"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual-digital",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-pcd-isencao-ipi",
+      "name": "Isenção IPI – Compra de Carro PCD",
+      "shortDescription": "Pessoa com deficiência pode comprar carro com isenção de IPI (até R$ 200 mil), economizando até 20%.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 40000,
+        "description": "Economia de IPI varia conforme o veículo",
+        "estimated": true,
+        "estimatedRationale": "IPI varia de 7% a 25% sobre o valor do veículo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência física, visual, auditiva, mental severa ou TEA"
+        }
+      ],
+      "whereToApply": "SISEN – Sistema de Isenção da Receita Federal (sisen.receita.fazenda.gov.br)",
+      "documentsRequired": [
+        "CPF e documento de identidade",
+        "Laudo médico comprovando a deficiência",
+        "Comprovante de regularidade fiscal (CND)",
+        "Requerimento no portal SISEN"
+      ],
+      "howToApply": [
+        "Obtenha laudo médico conforme tipo de deficiência",
+        "Acesse o portal SISEN da Receita Federal",
+        "Preencha o requerimento de isenção de IPI",
+        "Aguarde análise (em média 3 dias úteis)"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-isencao-de-impostos-para-comprar-carro",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚗",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-pcd-cota-emprego",
+      "name": "Cota de Emprego PCD",
+      "shortDescription": "Empresas com 100+ funcionários devem reservar de 2% a 5% das vagas para pessoas com deficiência.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 3000,
+        "description": "Salário varia conforme a vaga (piso = salário mínimo)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência comprovada (laudo médico)"
+        }
+      ],
+      "whereToApply": "SINE, agências de emprego, portais de vagas PCD ou diretamente nas empresas",
+      "documentsRequired": [
+        "CPF e RG",
+        "Laudo médico atualizado comprovando deficiência",
+        "Carteira de Trabalho (CTPS)",
+        "Currículo"
+      ],
+      "howToApply": [
+        "Cadastre-se no SINE ou portais de vagas para PCD",
+        "Empresas com 100+ funcionários são obrigadas a contratar",
+        "Cotas: 2% (até 200), 3% (201-500), 4% (501-1000), 5% (1001+)",
+        "Procure o setor de RH das empresas da sua região"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💼",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-cataforte",
+      "name": "CATAFORTE – Fortalecimento de Cooperativas",
+      "shortDescription": "Apoio financeiro e técnico para cooperativas de catadores de recicláveis se organizarem melhor.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 100000,
+        "description": "R$ 20k a R$ 100k por cooperativa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        }
+      ],
+      "whereToApply": "Fundação Banco do Brasil, BNDES ou editais do MDS",
+      "documentsRequired": [
+        "CNPJ da cooperativa ou associação",
+        "Ata de fundação da cooperativa",
+        "Lista de cooperados com CPF",
+        "Projeto de fortalecimento"
+      ],
+      "howToApply": [
+        "Organize-se em cooperativa ou associação formalizada",
+        "Acompanhe editais da Fundação BB e BNDES",
+        "Apresente projeto de investimento em infraestrutura",
+        "Receba recursos para equipamentos, galpão e capacitação"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-e-inclusao-produtiva",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏭",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-pro-catador",
+      "name": "Pró-Catador – Inclusão Produtiva",
+      "shortDescription": "Programa de capacitação, apoio técnico e inclusão produtiva para catadores de recicláveis.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Capacitação e apoio técnico (sem valor monetário direto)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador de material reciclável"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS, Secretaria de Assistência Social ou cooperativas parceiras",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de inscrição no CadÚnico",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu município",
+        "Informe que é catador e deseja capacitação",
+        "Participe dos cursos e atividades oferecidas",
+        "Conecte-se com cooperativas da sua região"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-e-inclusao-produtiva",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-app-mei",
+      "name": "MEI para Entregadores e Motoristas",
+      "shortDescription": "Motoristas e entregadores de app podem se formalizar como MEI, pagando R$ 76/mês e tendo INSS.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 86/mês (DAS 2026) dá acesso a benefícios do INSS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como motorista ou entregador de aplicativo"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter carteira assinada em outro emprego"
+        }
+      ],
+      "whereToApply": "Portal do Empreendedor (gov.br/mei)",
+      "documentsRequired": [
+        "CPF",
+        "Título de eleitor ou recibo do IR",
+        "Dados de contato e endereço",
+        "CNH (para motoristas)"
+      ],
+      "howToApply": [
+        "Acesse gov.br/mei e faça login com Gov.br",
+        "Escolha a atividade: CNAE 5229-0/99 (motorista de app) ou 5320-2/02 (entregador)",
+        "Complete o cadastro gratuito",
+        "Pague a DAS mensal de R$ 86 para ter INSS e benefícios"
+      ],
+      "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📱",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-app-regulamentacao",
+      "name": "Regulamentação de Motoristas de App",
+      "shortDescription": "Projeto de lei em tramitação para garantir direitos previdenciários e limite de jornada a motoristas de aplicativo.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Direitos em tramitação legislativa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como motorista ou entregador de aplicativo"
+        }
+      ],
+      "whereToApply": "Informativo — acompanhe pelo site da Câmara dos Deputados",
+      "documentsRequired": [
+        "Nenhum documento necessário (apenas informativo)"
+      ],
+      "howToApply": [
+        "O PLP 12/2024 propõe contribuição INSS de 7,5% para motoristas",
+        "Plataformas contribuiriam com 20% ao INSS",
+        "Limite de 12h/dia de conexão à plataforma",
+        "Acompanhe a tramitação em camara.leg.br"
+      ],
+      "sourceUrl": "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2419243",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⚖️",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-pnae",
+      "name": "PNAE – Alimentação Escolar",
+      "shortDescription": "Venda de alimentos diretamente para escolas públicas com limite de R$ 40 mil por agricultor/ano.",
+      "scope": "sectoral",
+      "sector": "agricultor",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 5000,
+        "max": 40000,
+        "description": "Limite individual de R$ 40 mil/ano por DAP"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar com DAP ou CAF"
+        }
+      ],
+      "whereToApply": "Prefeitura do município (chamada pública) ou CONAB",
+      "documentsRequired": [
+        "DAP (Declaração de Aptidão ao Pronaf) ou CAF",
+        "CPF e RG",
+        "Projeto de venda com lista de produtos",
+        "Nota fiscal de produtor"
+      ],
+      "howToApply": [
+        "Acompanhe as chamadas públicas da prefeitura",
+        "Apresente o projeto de venda com seus produtos",
+        "Entregue os alimentos nas escolas conforme contrato",
+        "Receba pagamento de até R$ 40 mil/ano"
+      ],
+      "sourceUrl": "https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/programas/pnae",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍎",
+      "category": "Agricultores"
+    },
+    {
+      "id": "sectoral-registro-pesca",
+      "name": "Registro Geral da Pesca (RGP)",
+      "shortDescription": "Documento gratuito que habilita o pescador artesanal a pescar legalmente e acessar benefícios como o Seguro-Defeso.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuito — habilita acesso a outros benefícios"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Exercer atividade de pesca artesanal"
+        }
+      ],
+      "whereToApply": "Sistema PesqBrasil (Gov.br) ou Superintendência Federal de Pesca",
+      "documentsRequired": [
+        "CPF e Carteira de Identidade Nacional (CIN)",
+        "Comprovante de residência",
+        "Foto 3x4 recente",
+        "Número do PIS, PASEP, NIT ou NIS"
+      ],
+      "howToApply": [
+        "Acesse o sistema PesqBrasil com login Gov.br",
+        "Preencha os dados de pescador artesanal",
+        "Atualize anualmente para manter o registro ativo",
+        "Com o RGP ativo, solicite o Seguro-Defeso e outros benefícios"
+      ],
+      "sourceUrl": "https://www.gov.br/mpa/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-mei-credito",
+      "name": "PRONAMPE – Crédito do Empreendedor",
+      "shortDescription": "Empréstimo com juros baixos (Selic + 6%) para MEI e microempresas, de R$ 5 mil até R$ 150 mil.",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 250000,
+        "description": "Até 30% do faturamento anual, máximo R$ 250 mil (Portaria MEMP 273/2025)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temMei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter MEI ou microempresa ativa há mais de 1 ano"
+        }
+      ],
+      "whereToApply": "Bancos parceiros: Caixa, BB, Bradesco, Itaú, Santander, Sicredi, BNB",
+      "documentsRequired": [
+        "CNPJ ativo",
+        "Certidão Negativa de Débitos (CND)",
+        "Autorização para compartilhar faturamento com a Receita Federal",
+        "Documentos pessoais (CPF, RG)"
+      ],
+      "howToApply": [
+        "Verifique se seu MEI tem mais de 1 ano de atividade",
+        "Mantenha a empresa em dia com obrigações fiscais",
+        "Procure um banco parceiro do PRONAMPE",
+        "Prazo de até 72 meses para pagar com carência de até 12 meses"
+      ],
+      "sourceUrl": "https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/pronampe",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💳",
+      "category": "Empreendedorismo"
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
   "state": "ES",
   "stateName": "Espírito Santo",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "es-bolsa-capixaba",
       "name": "Bolsa Capixaba",
-      "shortDescription": "Ajuda de R$ 150 por mes para familias de baixa renda do Espirito Santo.",
+      "shortDescription": "De R$ 50 a R$ 600 por mes para familias de baixa renda do Espirito Santo que NAO recebem Bolsa Familia.",
       "scope": "state",
       "state": "ES",
       "estimatedValue": {
         "type": "monthly",
-        "min": 150,
-        "max": 150,
-        "description": "R$ 150 por mes"
+        "min": 50,
+        "max": 600,
+        "description": "De R$ 50 a R$ 600 por mes (media R$ 164), conforme renda per capita"
       },
       "eligibilityRules": [
         {
@@ -26,13 +26,19 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Unico"
+          "description": "Inscrito no Cadastro Unico (atualizado)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": false,
+          "description": "NAO receber Bolsa Familia"
+        },
+        {
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 620,
+          "description": "Renda familiar de ate R$ 620 (renda per capita ate R$ 155 para familia de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -47,11 +53,11 @@
         "Quem se encaixa nas regras entra automaticamente",
         "O dinheiro vai para conta da Caixa"
       ],
-      "sourceUrl": "https://setades.es.gov.br/bolsa-capixaba",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://setades.es.gov.br/Acessar-o-beneficio-do-Bolsa-Capixaba",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "es-nossa-bolsa",
@@ -73,10 +79,10 @@
           "description": "Morar no Espirito Santo"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 1500,
-          "description": "Renda familiar de ate 3 salarios minimos"
+          "value": 6000,
+          "description": "Renda familiar de até R$ 6.000 (~3 salários mínimos)"
         },
         {
           "field": "idade",
@@ -102,19 +108,19 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
-      "category": "Educacao"
+      "category": "Educação"
     },
     {
       "id": "es-vale-gas-capixaba",
       "name": "Vale Gas Capixaba",
-      "shortDescription": "Ajuda para comprar gas de cozinha para familias de baixa renda.",
+      "shortDescription": "R$ 100 a cada 2 meses para comprar gas de cozinha. Para familias do Bolsa Familia com crianca menor de 6 anos.",
       "scope": "state",
       "state": "ES",
       "estimatedValue": {
         "type": "monthly",
         "min": 50,
         "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "description": "R$ 100 a cada 2 meses (6 parcelas, total R$ 600/ano)"
       },
       "eligibilityRules": [
         {
@@ -127,26 +133,41 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Unico"
+          "description": "Inscrito no Cadastro Unico (atualizado nos ultimos 24 meses)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Familia (com beneficio liberado)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 872,
+          "description": "Renda per capita de ate R$ 218 (equivale a ~R$ 872 para familia de 4)"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter pelo menos uma crianca com menos de 6 anos"
         }
       ],
-      "whereToApply": "Automatico para quem recebe Bolsa Capixaba",
+      "whereToApply": "Automatico - selecao feita pela Setades via CadUnico",
       "documentsRequired": [
-        "Ja estar no programa Bolsa Capixaba"
+        "Estar no Cadastro Unico atualizado",
+        "Receber Bolsa Familia",
+        "Ter crianca menor de 6 anos na familia"
       ],
       "howToApply": [
-        "Se voce recebe Bolsa Capixaba, ja tem direito",
-        "O valor e pago junto com o beneficio",
-        "Nao precisa pedir separado"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "Esteja recebendo Bolsa Familia",
+        "A selecao e automatica pela Setades",
+        "Nao e necessario fazer cadastro separado"
       ],
-      "sourceUrl": "https://setades.es.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://setades.es.gov.br/vale-gas-capixaba",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -185,7 +206,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "es-qualificar-es",
@@ -230,7 +251,108 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🎓",
-      "category": "Qualificacao"
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "es-rede-bem-nascer",
+      "name": "Rede Bem Nascer",
+      "shortDescription": "Programa que cuida da saude da mae e do bebe, com pre-natal de qualidade e parto seguro perto de casa.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida ou ter bebe recem-nascido"
+        }
+      ],
+      "whereToApply": "Unidade Basica de Saude (UBS) mais perto de casa",
+      "documentsRequired": [
+        "Cartao do SUS",
+        "CPF ou RG",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Va a UBS mais perto da sua casa",
+        "Faca o cadastro no pre-natal",
+        "A equipe vai acompanhar sua gravidez e indicar a maternidade para o parto",
+        "O atendimento e gratuito pelo SUS"
+      ],
+      "sourceUrl": "https://saude.es.gov.br/rede-bem-nascer-investimentos-contribuem-para",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "es-nossa-casa",
+      "name": "Programa Nossa Casa",
+      "shortDescription": "Ajuda de ate R$ 20 mil para familias de baixa renda comprarem a casa propria no Espirito Santo.",
+      "scope": "state",
+      "state": "ES",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 20000,
+        "description": "Subsidio de ate R$ 20 mil para entrada da casa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "ES",
+          "description": "Morar no Espirito Santo"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Nao ter casa propria"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda familiar de ate 3 salarios minimos"
+        }
+      ],
+      "whereToApply": "Site Conecta Cidadao ou SEDURB",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de residencia no ES",
+        "NIS (Numero do Cadastro Unico)"
+      ],
+      "howToApply": [
+        "Acesse o site conectacidadao.es.gov.br",
+        "Va em Habitacao e Imoveis e depois Programa Nossa Casa",
+        "Faca o cadastro com seus dados",
+        "Aguarde a analise e selecao"
+      ],
+      "sourceUrl": "https://sedurb.es.gov.br/programa-nossa-casa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

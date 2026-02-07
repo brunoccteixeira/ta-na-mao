@@ -9,6 +9,7 @@ import {
   EligibilityResult,
   EligibilityStatus,
   EvaluationSummary,
+  MINIMUM_WAGE,
 } from './types';
 
 /**
@@ -142,6 +143,8 @@ function matchesSector(profile: CitizenProfile, benefit: Benefit): boolean {
     mei: 'temMei',
     autonomo: 'temMei', // MEI is a form of autonomo
     pcd: 'temPcd',
+    domestica: 'trabalhadoraDomestica',
+    clt: 'trabalhoFormal',
   };
 
   const profileField = sectorMap[benefit.sector];
@@ -168,12 +171,12 @@ function calculateEstimatedValue(
     if (profile.temCrianca0a6) valor += 150 * Math.min(profile.quantidadeFilhos, 3);
     if (profile.quantidadeFilhos > 0) valor += 50 * profile.quantidadeFilhos;
     if (profile.temGestante) valor += 50;
-    return Math.min(valor, max || 900);
+    return Math.min(valor, max || 1800);
   }
 
   if (benefit.id === 'federal-abono-salarial') {
-    // Proporcional aos meses trabalhados (assume 12 meses)
-    return max || 1412;
+    // Proporcional aos meses trabalhados (assume 12 meses = 1 SM)
+    return max || MINIMUM_WAGE;
   }
 
   // Default to average or min

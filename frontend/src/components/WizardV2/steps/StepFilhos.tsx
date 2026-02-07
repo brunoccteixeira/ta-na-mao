@@ -104,7 +104,7 @@ export default function StepFilhos() {
         />
         {profile.temIdoso65Mais && (
           <p className="mt-2 text-xs text-emerald-600">
-            Idosos 65+ podem ter direito ao BPC/LOAS (R$ 1.518/mês)
+            Idosos 65+ podem ter direito ao BPC/LOAS (R$ 1.621/mês)
           </p>
         )}
       </div>

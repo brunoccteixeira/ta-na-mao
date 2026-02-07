@@ -1,38 +1,38 @@
 {
   "state": "MS",
   "stateName": "Mato Grosso do Sul",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ms-mais-social",
       "name": "Mais Social",
-      "shortDescription": "Programa que junta varios beneficios para familias de baixa renda. Inclui ajuda em dinheiro e servicos.",
+      "shortDescription": "R$ 450 por mes no cartao para comprar alimentos, gas e produtos de limpeza. Atende mais de 37 mil familias.",
       "scope": "state",
       "state": "MS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 200,
+        "min": 450,
         "max": 450,
-        "description": "Valor varia conforme a situacao da familia"
+        "description": "R$ 450 por mes no cartao (valor fixo desde jan/2024)"
       },
       "eligibilityRules": [
         {
           "field": "estado",
           "operator": "eq",
           "value": "MS",
-          "description": "Morar em Mato Grosso do Sul"
+          "description": "Morar em Mato Grosso do Sul ha pelo menos 2 anos"
         },
         {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Estar no Cadastro Unico"
+          "description": "Inscrito e atualizado no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (equivale a R$ 3.036 para familia de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -48,11 +48,11 @@
         "O programa vai analisar sua situacao",
         "Aguarde o contato do CRAS"
       ],
-      "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.sead.ms.gov.br/programas-e-projetos/mais-social/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "ms-vale-renda",
@@ -80,10 +80,10 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -102,19 +102,19 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🛒",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "ms-vale-gas",
       "name": "Vale Gas MS",
-      "shortDescription": "Ajuda para comprar gas de cozinha. Receba R$ 100 a cada 2 meses.",
+      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda em MS.",
       "scope": "state",
       "state": "MS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
+        "min": 40,
         "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 99 em MS)"
       },
       "eligibilityRules": [
         {
@@ -130,25 +130,25 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu municipio",
+      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (numero do Cadastro Unico)",
         "Comprovante de onde mora"
       ],
       "howToApply": [
-        "Mantenha seu Cadastro Unico atualizado",
-        "O programa seleciona automaticamente",
-        "O dinheiro vai para sua conta"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "A selecao e feita automaticamente pelo governo federal",
+        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
       ],
-      "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -186,7 +186,154 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
+    },
+    {
+      "id": "ms-qualifica",
+      "name": "MS Qualifica",
+      "shortDescription": "Cursos gratuitos para voce aprender uma profissao e conseguir emprego. Tem cursos presenciais e online.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos com certificado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "Site do MS Qualifica (msqualifica.ms.gov.br) ou FUNTRAB da sua cidade",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Acesse o site msqualifica.ms.gov.br",
+        "Escolha o curso que deseja fazer",
+        "Faca sua inscricao online",
+        "Compareca no local do curso com seus documentos"
+      ],
+      "sourceUrl": "https://www.funtrab.ms.gov.br/Geral/ms-qualifica/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ms-supera",
+      "name": "MS Supera",
+      "shortDescription": "Bolsa de 1 salario minimo para estudantes de baixa renda em faculdade ou curso tecnico.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1518,
+        "max": 1518,
+        "description": "1 salario minimo por mes (R$ 1.518)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul ha mais de 2 anos"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em faculdade ou curso tecnico"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 7590,
+          "description": "Renda da familia de ate R$ 7590 (~R$ 1518 por pessoa)"
+        }
+      ],
+      "whereToApply": "Site da SEAD (sead.ms.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matricula em faculdade ou curso tecnico",
+        "Comprovante de renda",
+        "NIS (numero do Cadastro Unico)",
+        "Comprovante de residencia em MS ha 2 anos"
+      ],
+      "howToApply": [
+        "Acesse o site da SEAD (sead.ms.gov.br)",
+        "Faca sua inscricao no periodo de vagas",
+        "Envie os documentos pedidos",
+        "Aguarde o resultado da selecao"
+      ],
+      "sourceUrl": "https://www.sead.ms.gov.br/programa-ms-supera/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "ms-protecao-gestante",
+      "name": "Protecao a Gestante MS",
+      "shortDescription": "Acompanhamento gratuito da gravidez com pre-natal completo, exames e cuidados para mae e bebe.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Pre-natal completo e exames gratuitos pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser gestante"
+        }
+      ],
+      "whereToApply": "UBS (Unidade Basica de Saude) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartao SUS",
+        "Comprovante de onde mora"
+      ],
+      "howToApply": [
+        "Va a UBS mais perto de voce assim que souber da gravidez",
+        "Faca o cadastro no programa de pre-natal",
+        "Faca todas as consultas e exames marcados",
+        "Receba acompanhamento ate o bebe nascer e depois"
+      ],
+      "sourceUrl": "https://telessaude.saude.ms.gov.br/?p=7706",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
     }
   ]
 }

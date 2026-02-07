@@ -1,7 +1,7 @@
 {
   "state": "CE",
   "stateName": "Ceará",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ce-cartao-mais-infancia",
@@ -35,10 +35,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 89,
-          "description": "Renda por pessoa de até R$ 89 (extrema pobreza)"
+          "value": 356,
+          "description": "Renda familiar de até R$ 356 (extrema pobreza, ~R$ 89 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -63,14 +63,14 @@
     {
       "id": "ce-vale-gas",
       "name": "Vale Gás Ceará",
-      "shortDescription": "Auxílio para compra de gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Recarga grátis de botijão de gás 3 vezes por ano para famílias do Bolsa Família.",
       "scope": "state",
       "state": "CE",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 100,
-        "description": "Valor para compra de botijão de gás"
+        "min": 30,
+        "max": 35,
+        "description": "3 recargas gratuitas de botijão por ano (1 botijão ~R$ 110, equivale a ~R$ 28/mês)"
       },
       "eligibilityRules": [
         {
@@ -83,35 +83,35 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Inscrito no Cadastro Único (atualizado nos últimos 24 meses)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 1092,
+          "description": "Renda per capita de até R$ 273 (equivale a ~R$ 1.092 para família de 4)"
         },
         {
-          "field": "beneficiarioBolsaFamilia",
+          "field": "recebeBolsaFamilia",
           "operator": "eq",
           "value": true,
-          "description": "Receber Bolsa Família"
+          "description": "Receber Bolsa Família (benefício não pode estar bloqueado ou suspenso)"
         }
       ],
-      "whereToApply": "CRAS ou posto de atendimento da Cagece",
+      "whereToApply": "Distribuição via CRAS ou postos indicados pelo governo estadual",
       "documentsRequired": [
         "CPF do responsável familiar",
         "NIS (Número do Cadastro Único)",
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "O benefício é liberado automaticamente para quem recebe Bolsa Família",
-        "Acompanhe pelo aplicativo Ceará App",
-        "Retire o vale no local indicado"
+        "Mantenha o Cadastro Único atualizado nos últimos 24 meses",
+        "Esteja recebendo Bolsa Família (sem bloqueio ou suspensão)",
+        "A seleção é automática via base do CadÚnico",
+        "Retire o tíquete e troque por botijão cheio em distribuidora credenciada"
       ],
-      "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.sps.ce.gov.br/institucional/secretarias-executivas/protecao-social/protecao-social-basica/vale-gas-social-destaques/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -142,10 +142,10 @@
           "description": "Inscrito no Cadastro Único (para cestas)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS (para cestas) ou Restaurantes Populares (para refeições)",
@@ -185,16 +185,16 @@
           "description": "Morar no Ceará"
         },
         {
-          "field": "beneficiarioBolsaFamilia",
+          "field": "recebeBolsaFamilia",
           "operator": "eq",
           "value": true,
           "description": "Receber Bolsa Família"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 89,
-          "description": "Renda por pessoa de até R$ 89 (extrema pobreza)"
+          "value": 356,
+          "description": "Renda familiar de até R$ 356 (extrema pobreza, ~R$ 89 por pessoa para família de 4)"
         },
         {
           "field": "cadastradoCadunico",
@@ -247,16 +247,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaFamiliar",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 4800,
           "description": "Renda familiar de até 3 salários mínimos"
-        },
-        {
-          "field": "proprietarioImovel",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser dono do terreno ou imóvel"
         }
       ],
       "whereToApply": "Lojas credenciadas ou site do programa",
@@ -278,6 +272,118 @@
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"
+    },
+    {
+      "id": "ce-bolsa-universitaria",
+      "name": "Bolsa Universitária do Ceará",
+      "shortDescription": "Bolsa para estudantes de baixa renda que estão na universidade pública do Ceará.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 700,
+        "description": "Bolsa mensal para ajudar com gastos da faculdade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em universidade pública estadual"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
+        }
+      ],
+      "whereToApply": "Universidade onde estuda (UECE, UVA, URCA)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Comprovante de residência",
+        "Histórico escolar"
+      ],
+      "howToApply": [
+        "Fique atento aos editais da sua universidade",
+        "Reúna os documentos pedidos",
+        "Faça a inscrição no prazo do edital",
+        "Aguarde o resultado da seleção"
+      ],
+      "sourceUrl": "https://www.seduc.ce.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "ce-vaivem",
+      "name": "VaiVem Estudantil",
+      "shortDescription": "Duas passagens grátis por dia (ida e volta) em ônibus, metrô e vans para estudantes da Região Metropolitana de Fortaleza.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "Economia de até R$ 300/mês em passagens (estimativa baseada em tarifa intermunicipal RMF)",
+        "estimated": true,
+        "estimatedRationale": "Cálculo: 2 passagens/dia x 22 dias úteis x tarifa média intermunicipal RMF"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar na Região Metropolitana de Fortaleza (15 municípios: Aquiraz, Cascavel, Caucaia, Chorozinho, Eusébio, Fortaleza, Guaiúba, Horizonte, Itaitinga, Maracanaú, Maranguape, Pacajus, Pacatuba, Pindoretama e São Gonçalo do Amarante)",
+          "legalReference": "Lei Estadual 18.684/2023, Art. 1º"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em instituição de ensino (pública ou privada) em município diferente do de moradia, com carteira estudantil válida para a macrorregião",
+          "legalReference": "Lei Estadual 18.684/2023, Art. 2º"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "18.684/2023",
+            "description": "Lei que institui o Programa VaiVem na Região Metropolitana de Fortaleza",
+            "url": "https://www.arce.ce.gov.br/2023/12/18/governador-elmano-de-freitas-sanciona-lei-que-institui-o-programa-vaivem/"
+          }
+        ]
+      },
+      "whereToApply": "Site vaivem.ce.gov.br ou postos de atendimento do Detran-CE em terminais de ônibus",
+      "documentsRequired": [
+        "CPF (cartão vinculado ao CPF do beneficiário)",
+        "Carteira estudantil válida para a macrorregião",
+        "Comprovante de matrícula em município diferente do de moradia",
+        "Dados biométricos (coletados no posto de atendimento)"
+      ],
+      "howToApply": [
+        "Acesse o site vaivem.ce.gov.br para verificar seu pré-cadastro",
+        "Se tiver carteira estudantil válida, o pré-cadastro é automático via ARCE",
+        "Compareça ao posto de atendimento para coleta biométrica",
+        "Retire o cartão eletrônico personalizado (pessoal e intransferível)",
+        "Use 2 passagens gratuitas por dia (ida e volta) em ônibus, metrô e vans"
+      ],
+      "sourceUrl": "https://www.vaivem.ce.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

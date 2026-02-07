@@ -54,7 +54,7 @@ export default function StepEspecial() {
         />
         {profile.temPcd && (
           <p className="mt-2 text-xs text-blue-600">
-            Pessoas com deficiência podem ter direito ao BPC (R$ 1.518/mês), Passe Livre e outros benefícios
+            Pessoas com deficiência podem ter direito ao BPC (R$ 1.621/mês), Passe Livre e outros benefícios
           </p>
         )}
       </div>
@@ -74,10 +74,16 @@ export default function StepEspecial() {
             </p>
           </div>
         </div>
-        <YesNo
-          value={profile.estudante}
-          onChange={(value) => updateProfile({ estudante: value ?? false })}
-        />
+        {profile.estudante ? (
+          <p className="text-sm text-purple-600 font-medium">
+            Você já informou que é estudante
+          </p>
+        ) : (
+          <YesNo
+            value={profile.estudante}
+            onChange={(value) => updateProfile({ estudante: value ?? false })}
+          />
+        )}
 
         {/* Public school sub-question */}
         {profile.estudante && (

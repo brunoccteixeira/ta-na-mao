@@ -123,6 +123,7 @@ export interface CitizenProfile {
   agricultorFamiliar: boolean;
   pescadorArtesanal: boolean;
   catadorReciclavel: boolean;
+  trabalhadoraDomestica: boolean;
 
   // Special conditions
   mulherMenstruante?: boolean;
@@ -220,11 +221,13 @@ export const SECTORS = {
   mei: 'Microempreendedor Individual',
   domestica: 'Trabalhadora Doméstica',
   autonomo: 'Trabalhador Autônomo',
+  clt: 'Trabalhador CLT',
+  pcd: 'Pessoa com Deficiência',
 };
 
 export const MINIMUM_WAGE_2024 = 1412;
 export const MINIMUM_WAGE_2025 = 1518;
-export const MINIMUM_WAGE_2026 = 1600; // Estimativa baseada em projeção INPC
+export const MINIMUM_WAGE_2026 = 1621; // Decreto 12.797/2025
 
 // Salário mínimo atual (atualizar anualmente)
 export const MINIMUM_WAGE = MINIMUM_WAGE_2026;
@@ -258,6 +261,8 @@ export const DEFAULT_CITIZEN_PROFILE: CitizenProfile = {
   agricultorFamiliar: false,
   pescadorArtesanal: false,
   catadorReciclavel: false,
+  trabalhadoraDomestica: false,
+  temCarteiraAssinada: false,
   estudante: false,
   redePublica: false,
 };

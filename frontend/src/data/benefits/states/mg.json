@@ -1,19 +1,21 @@
 {
   "state": "MG",
   "stateName": "Minas Gerais",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "mg-piso-mineiro",
       "name": "Piso Mineiro",
-      "shortDescription": "Complemento de renda para famílias extremamente pobres de Minas Gerais.",
+      "shortDescription": "ATENCAO: O Piso Mineiro e um repasse do estado para os municipios (R$ 5/familia), nao um beneficio direto ao cidadao. Familias do Bolsa Familia em extrema pobreza podem receber ajuda extra via municipio.",
       "scope": "state",
       "state": "MG",
       "estimatedValue": {
         "type": "monthly",
-        "min": 65,
-        "max": 130,
-        "description": "Complementa a renda até o piso estadual"
+        "min": 0,
+        "max": 0,
+        "description": "Repasse do estado ao municipio (R$ 5/familia). Nao ha pagamento direto ao cidadao.",
+        "estimated": true,
+        "estimatedRationale": "O Piso Mineiro repassa R$ 5 por familia para os municipios financiarem acoes de assistencia social. Nao e transferencia direta."
       },
       "eligibilityRules": [
         {
@@ -29,23 +31,23 @@
           "description": "Receber Bolsa Família"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 109,
-          "description": "Renda por pessoa abaixo do piso"
+          "value": 436,
+          "description": "Renda familiar de até R$ 436 (equivale a ~R$ 109 por pessoa para família de 4)"
         }
       ],
-      "whereToApply": "Automático para quem recebe Bolsa Família em MG",
+      "whereToApply": "CRAS do seu municipio (o beneficio indireto depende do municipio)",
       "documentsRequired": [
         "Estar inscrito no Bolsa Família"
       ],
       "howToApply": [
         "Mantenha o Cadastro Único atualizado",
-        "Se elegível, o complemento é automático",
-        "Valor vem junto com o Bolsa Família"
+        "Procure o CRAS para saber quais acoes seu municipio oferece",
+        "O Piso Mineiro financia acoes do municipio, nao e pago diretamente a voce"
       ],
       "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -80,19 +82,27 @@
           "operator": "eq",
           "value": true,
           "description": "Estudar em escola estadual"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Unico (extrema pobreza)"
         }
       ],
       "whereToApply": "Escola estadual onde o filho estuda",
       "documentsRequired": [
-        "Matrícula na rede estadual"
+        "Matricula na rede estadual",
+        "NIS (Numero do Cadastro Unico)"
       ],
       "howToApply": [
         "Confira se sua escola participa",
-        "Mantenha a frequência escolar em dia",
-        "O benefício é pago automaticamente"
+        "Mantenha a frequencia escolar em dia",
+        "Mantenha o Cadastro Unico atualizado",
+        "O beneficio e pago automaticamente para quem se encaixa"
       ],
       "sourceUrl": "https://www.educacao.mg.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍎",
       "category": "Alimentação"
@@ -100,7 +110,7 @@
     {
       "id": "mg-restaurante-popular",
       "name": "Restaurante Popular MG",
-      "shortDescription": "Refeições a R$ 2,00 em restaurantes populares de Minas.",
+      "shortDescription": "Refeicoes a preco popular em restaurantes de Minas. Valor varia por cidade (de R$ 1,00 a R$ 7,99).",
       "scope": "state",
       "state": "MG",
       "estimatedValue": {
@@ -124,10 +134,10 @@
       "howToApply": [
         "Procure um Restaurante Popular na sua cidade",
         "Vá no horário de funcionamento (almoço)",
-        "Pague R$ 2,00 e faça a refeição"
+        "Pague o valor da refeicao (varia por cidade, consulte no local)"
       ],
       "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -135,14 +145,16 @@
     {
       "id": "mg-bolsa-reciclagem",
       "name": "Bolsa Reciclagem MG",
-      "shortDescription": "Pagamento por material reciclável coletado por catadores em Minas.",
+      "shortDescription": "Incentivo financeiro trimestral para cooperativas de catadores de material reciclável em Minas Gerais.",
       "scope": "state",
       "state": "MG",
       "estimatedValue": {
         "type": "monthly",
-        "min": 200,
-        "max": 1200,
-        "description": "Valor por tonelada coletada"
+        "min": 100,
+        "max": 500,
+        "description": "Valor trimestral rateado entre catadores, conforme produção da cooperativa (90% repassado aos catadores)",
+        "estimated": true,
+        "estimatedRationale": "O pagamento é feito à cooperativa/associação por trimestre, com base na produção. Pelo menos 90% é repassado aos catadores."
       },
       "eligibilityRules": [
         {
@@ -158,35 +170,37 @@
           "description": "Ser catador de material reciclável"
         }
       ],
-      "whereToApply": "SEMAD ou cooperativas credenciadas",
+      "whereToApply": "SEMAD/MG ou cooperativas/associações credenciadas",
       "documentsRequired": [
         "CPF e RG",
-        "Comprovante de vínculo com cooperativa/associação",
-        "Cadastro no programa"
+        "Comprovante de vínculo com cooperativa ou associação de catadores",
+        "Cadastro da cooperativa no programa junto à SEMAD"
       ],
       "howToApply": [
-        "Organize-se em cooperativa ou associação",
-        "Cadastre-se no programa Bolsa Reciclagem",
-        "Entregue o material e comprove a coleta",
-        "Receba o pagamento trimestral"
+        "Organize-se em cooperativa ou associação de catadores",
+        "A cooperativa deve se cadastrar na SEMAD (Lei 19.823/2011)",
+        "Registre a produção trimestral de materiais recicláveis",
+        "Receba o pagamento trimestral (mínimo 90% repassado aos catadores)"
       ],
-      "sourceUrl": "https://www.meioambiente.mg.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://meioambiente.mg.gov.br/w/governo-de-minas-repassa-mais-de-r-910-mil-do-bolsa-reciclagem-a-cooperativas-de-cata-dores",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "♻️",
       "category": "Catadores"
     },
     {
       "id": "mg-travessia",
-      "name": "Programa Travessia",
-      "shortDescription": "Ações integradas de redução da pobreza em municípios com baixo IDH.",
+      "name": "Programa Travessia / Percursos Gerais",
+      "shortDescription": "Ações integradas de redução da pobreza em municípios com baixo IDH: qualificação, infraestrutura, assistência social e geração de renda.",
       "scope": "state",
       "state": "MG",
       "estimatedValue": {
         "type": "one_time",
-        "min": 500,
-        "max": 3000,
-        "description": "Valor varia conforme a ação"
+        "min": 0,
+        "max": 0,
+        "description": "Ações coletivas no município (qualificação, obras, assistência social). Não é benefício individual direto.",
+        "estimated": true,
+        "estimatedRationale": "O investimento é de R$ 800 mil por município, em obras e ações coletivas. Não há transferência direta ao cidadão."
       },
       "eligibilityRules": [
         {
@@ -202,22 +216,118 @@
           "description": "Inscrito no Cadastro Único"
         }
       ],
-      "whereToApply": "CRAS dos municípios participantes",
+      "whereToApply": "CRAS dos municípios participantes (principalmente Norte e Jequitinhonha)",
       "documentsRequired": [
         "CPF de todos da família",
         "Comprovante de residência",
         "NIS (Cadastro Único)"
       ],
       "howToApply": [
-        "Verifique se seu município participa",
+        "Verifique se seu município participa do programa (foco em municípios com baixo IDH)",
         "Procure o CRAS local",
-        "Inscreva-se nas ações disponíveis"
+        "Inscreva-se nas ações disponíveis (qualificação, assistência social, geração de renda)"
       ],
-      "sourceUrl": "https://www.social.mg.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://social.mg.gov.br/habitacao/programas-projetos",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌉",
       "category": "Assistência Social"
+    },
+    {
+      "id": "mg-minas-forma",
+      "name": "Minas Forma",
+      "shortDescription": "Cursos de graca para aprender uma profissao. Voce recebe R$ 6 por hora de aula (de R$ 210 a R$ 600 no total, conforme duracao do curso).",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 210,
+        "max": 600,
+        "description": "Bolsa-auxilio de R$ 6 por hora frequentada (R$ 210 para cursos de 35h, R$ 600 para cursos de 100h)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Morar em Minas Gerais"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site da Sedese ou SINE do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site social.mg.gov.br e procure o Minas Forma",
+        "Veja os cursos disponiveis na sua regiao",
+        "Faca a inscricao online ou no SINE",
+        "Aguarde o inicio das aulas e receba a bolsa"
+      ],
+      "sourceUrl": "https://social.mg.gov.br/trabalho-e-emprego/educacao-profissional/minas-forma",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "mg-filhos-de-minas",
+      "name": "Filhos de Minas",
+      "shortDescription": "Kit enxoval gratis para gestantes que fazem o pre-natal direitinho pelo SUS.",
+      "scope": "state",
+      "state": "MG",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 400,
+        "description": "Kit com 14 itens para o bebe"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MG",
+          "description": "Morar em Minas Gerais"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": true,
+          "description": "Receber Bolsa Familia"
+        }
+      ],
+      "whereToApply": "Unidade Basica de Saude (UBS) onde faz o pre-natal",
+      "documentsRequired": [
+        "Cartao do SUS",
+        "CPF ou RG",
+        "Comprovante do Bolsa Familia",
+        "Cartao de vacinas em dia"
+      ],
+      "howToApply": [
+        "Faca o pre-natal na UBS mais perto de casa",
+        "Tenha pelo menos 5 consultas ate a 28a semana",
+        "Mantenha as vacinas em dia",
+        "O kit e entregue na UBS ou maternidade"
+      ],
+      "sourceUrl": "https://www.saude.mg.gov.br/noticias/estado-lanca-programa-filhos-de-minas-para-avancar-na-qualidade-da-assistencia-a-gestantes-e-criancas/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
     }
   ]
 }

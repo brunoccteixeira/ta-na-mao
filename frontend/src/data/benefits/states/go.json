@@ -1,19 +1,19 @@
 {
   "state": "GO",
   "stateName": "Goias",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "go-renda-cidada",
       "name": "Renda Cidada Goias",
-      "shortDescription": "Ajuda em dinheiro para familias de baixa renda. O valor vai direto para sua conta.",
+      "shortDescription": "De R$ 80 a R$ 160 por mes para familias de baixa renda de Goias. Pago pela Caixa. Dura 24 meses, renovavel.",
       "scope": "state",
       "state": "GO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
-        "max": 250,
-        "description": "Valor varia conforme a situacao da familia"
+        "min": 80,
+        "max": 160,
+        "description": "De R$ 80 a R$ 160 por mes durante 24 meses (renovavel)"
       },
       "eligibilityRules": [
         {
@@ -26,13 +26,13 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Estar no Cadastro Unico"
+          "description": "Estar no Cadastro Unico (interligado ao CadUnico)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de ate R$ 218"
+          "value": 600,
+          "description": "Renda per capita de ate R$ 150 (equivale a R$ 600 para familia de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -48,11 +48,11 @@
         "Faca ou atualize o Cadastro Unico",
         "Aguarde o contato do CRAS"
       ],
-      "sourceUrl": "https://www.goias.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://goias.gov.br/controladoria/programa-renda-cidada-torna-se-mais-eficaz-e-transparente/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Transferencia de Renda"
+      "category": "Transferência de Renda"
     },
     {
       "id": "go-restaurante-do-bem",
@@ -88,19 +88,19 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentacao"
+      "category": "Alimentação"
     },
     {
       "id": "go-vale-gas",
       "name": "Vale Gas Goias",
-      "shortDescription": "Ajuda para comprar gas de cozinha. O dinheiro vai direto para voce.",
+      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda em Goias.",
       "scope": "state",
       "state": "GO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 60,
-        "description": "R$ 100 a R$ 120 a cada 2 meses"
+        "min": 40,
+        "max": 50,
+        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 98 em GO)"
       },
       "eligibilityRules": [
         {
@@ -116,25 +116,25 @@
           "description": "Estar no Cadastro Unico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de ate meio salario minimo"
+          "value": 3036,
+          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu municipio",
+      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (numero do Cadastro Unico)",
         "Comprovante de onde mora"
       ],
       "howToApply": [
-        "Va ao CRAS e atualize seu Cadastro Unico",
-        "Confira se voce esta na lista do programa",
-        "O dinheiro vai para sua conta automaticamente"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "A selecao e feita automaticamente pelo governo federal",
+        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
       ],
-      "sourceUrl": "https://www.goias.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -159,16 +159,10 @@
           "description": "Morar em Goias"
         },
         {
-          "field": "genero",
-          "operator": "eq",
-          "value": "feminino",
-          "description": "Ser mulher"
-        },
-        {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda baixa"
+          "value": 4000,
+          "description": "Renda familiar baixa (ate meio salario por pessoa). Programa destinado a mulheres."
         }
       ],
       "whereToApply": "CRAS ou Secretaria da Mulher",
@@ -188,7 +182,181 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "👩",
-      "category": "Qualificacao"
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "go-bolsa-estudo",
+      "name": "Bolsa Estudo Goias",
+      "shortDescription": "Dinheiro todo mes para estudantes do 9o ano e ensino medio da escola publica estadual. De R$ 130 a R$ 150 por mes.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 130,
+        "max": 150,
+        "description": "R$ 130 por mes (regular) ou R$ 150 (integral), em 10 parcelas por ano. Disclaimer: valores reajustados em dez/2025, confirme na escola."
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante do 9o ano ou ensino medio da rede estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola publica estadual de Goias"
+        }
+      ],
+      "whereToApply": "Escola estadual onde estuda",
+      "documentsRequired": [
+        "CPF do estudante",
+        "CPF do responsavel (se menor de 18)",
+        "Comprovante de matricula na rede estadual"
+      ],
+      "howToApply": [
+        "Esteja matriculado no 9o ano ou ensino medio da escola publica estadual de Goias",
+        "Mantenha frequencia minima de 75% em todas as materias",
+        "Tenha bom desempenho nas avaliacoes bimestrais",
+        "O pagamento e automatico se cumprir os requisitos. Disclaimer: valor pode variar; confirme na escola."
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "21.162/2021",
+            "description": "Lei Estadual do Bolsa Estudo Goiás"
+          }
+        ]
+      },
+      "sourceUrl": "https://goias.gov.br/educacao/programa-bolsa-estudo-sobre-o-programa-2/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "go-maes-de-goias",
+      "name": "Maes de Goias",
+      "shortDescription": "R$ 300 por mes para maes com filhos de 0 a 6 anos em situacao de pobreza extrema.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 300,
+        "description": "R$ 300 por mes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias"
+        },
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter filho de 0 a 6 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 545,
+          "description": "Renda da familia de ate R$ 545 (extrema pobreza, ~R$ 109 por pessoa)"
+        }
+      ],
+      "whereToApply": "CRAS do seu municipio",
+      "documentsRequired": [
+        "CPF",
+        "NIS (numero do Cadastro Unico)",
+        "Certidao de nascimento dos filhos",
+        "Carteira de vacinacao dos filhos atualizada"
+      ],
+      "howToApply": [
+        "Mantenha seu Cadastro Unico atualizado no CRAS",
+        "Tenha a vacinacao dos filhos em dia",
+        "O governo seleciona automaticamente pela base do CadUnico",
+        "Aguarde o contato ou confira no site do Goias Social"
+      ],
+      "sourceUrl": "https://goias.gov.br/social/programa-maes-de-goias-lista-de-beneficiarias/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "go-casas-custo-zero",
+      "name": "Casas a Custo Zero",
+      "shortDescription": "Casa propria de graca para familias de baixa renda. O governo paga tudo, voce nao paga nada.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 80000,
+        "max": 130000,
+        "description": "Casa pronta sem nenhum custo para a familia"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goias ha pelo menos 3 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no Cadastro Unico atualizado"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Nao ter casa propria nem terreno"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2277,
+          "description": "Renda familiar de ate 1,5 salario minimo"
+        }
+      ],
+      "whereToApply": "Site da AGEHAB (goias.gov.br/agehab) ou Prefeitura do seu municipio",
+      "documentsRequired": [
+        "CPF e RG de todos da familia",
+        "Comprovante de renda",
+        "Comprovante de residencia no municipio ha 3 anos",
+        "NIS (numero do Cadastro Unico)",
+        "Titulo de eleitor com domicilio no municipio"
+      ],
+      "howToApply": [
+        "Fique de olho nos editais no site da AGEHAB",
+        "Faca sua inscricao no periodo de vagas do seu municipio",
+        "Aguarde o sorteio das casas",
+        "Se sorteado, apresente os documentos e aguarde a entrega"
+      ],
+      "sourceUrl": "https://goias.gov.br/agehab/category/casas-a-custo-zero/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

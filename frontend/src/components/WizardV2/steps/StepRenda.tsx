@@ -27,8 +27,8 @@ export default function StepRenda() {
   const thresholds = {
     extremaPobreza: 218,
     bolsaFamilia: 218,
-    bpc: 379, // 1/4 salário mínimo
-    cadunico: 759, // 1/2 salário mínimo
+    bpc: 405, // 1/4 salário mínimo (R$ 1.621/4)
+    cadunico: 811, // 1/2 salário mínimo (R$ 1.621/2)
     mcmv: 2000, // Faixa 1 per capita (family up to 2830)
   };
 

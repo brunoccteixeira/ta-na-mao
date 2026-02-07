@@ -1,7 +1,7 @@
 {
   "state": "PI",
   "stateName": "Piauí",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pi-cartao-mais-renda",
@@ -29,10 +29,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -79,10 +79,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 109,
-          "description": "Renda por pessoa de até R$ 109"
+          "value": 436,
+          "description": "Renda familiar de até R$ 436 (equivale a ~R$ 109 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -123,10 +123,22 @@
           "description": "Morar no Piauí"
         },
         {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Morar na zona rural"
+        },
+        {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter Cadastro Único"
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (renda per capita de até meio salário mínimo)"
         }
       ],
       "whereToApply": "Prefeitura ou CRAS",
@@ -142,10 +154,206 @@
         "Aguarde a equipe visitar sua casa"
       ],
       "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
       "category": "Infraestrutura"
+    },
+    {
+      "id": "pi-qualifica-piaui",
+      "name": "Qualifica Piauí",
+      "shortDescription": "Cursos de graça para aprender uma profissão e conseguir trabalho no Piauí.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Assistência Social",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "NIS do Cadastro Único",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou SINE da sua cidade",
+        "Veja os cursos disponíveis",
+        "Faça sua inscrição com os documentos",
+        "Participe do curso até o final para receber o certificado"
+      ],
+      "sourceUrl": "https://www.pi.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "pi-alfabetiza-piaui",
+      "name": "Alfabetiza Piauí",
+      "shortDescription": "Programa para quem não sabe ler e escrever. Paga bolsa de R$ 600 para participar das aulas.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 600,
+        "max": 600,
+        "description": "R$ 600 por mês durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter 15 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação do Piauí ou escola mais perto",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a escola ou Secretaria de Educação da sua cidade",
+        "Diga que quer aprender a ler e escrever",
+        "Faça a inscrição no programa",
+        "Frequente as aulas e receba a bolsa de R$ 600"
+      ],
+      "sourceUrl": "https://www.seduc.pi.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "pi-primeira-infancia",
+      "name": "Piauí Primeira Infância",
+      "shortDescription": "Acompanhamento de gestantes e crianças de 0 a 6 anos com caderneta digital e visitas em casa.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Acompanhamento gratuito de saúde"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida ou ter criança de 0 a 6 anos"
+        }
+      ],
+      "whereToApply": "Unidade Básica de Saúde ou CRAS do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do SUS",
+        "Cartão do pré-natal",
+        "Certidão de nascimento da criança"
+      ],
+      "howToApply": [
+        "Procure a Unidade de Saúde mais perto",
+        "Inicie o pré-natal assim que souber da gravidez",
+        "Cadastre-se no programa",
+        "Receba acompanhamento e visitas em casa"
+      ],
+      "sourceUrl": "https://primeirainfancia.pi.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "pi-morar-bem",
+      "name": "Morar Bem Piauí",
+      "shortDescription": "Casas populares para famílias de baixa renda no Piauí, especialmente na zona rural.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 30000,
+        "max": 80000,
+        "description": "Casa popular com subsídio do governo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Prefeitura ou CRAS do seu município",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de renda",
+        "Comprovante de endereço",
+        "NIS do Cadastro Único"
+      ],
+      "howToApply": [
+        "Vá à prefeitura ou CRAS da sua cidade",
+        "Faça inscrição no programa de habitação",
+        "Apresente todos os documentos",
+        "Aguarde o sorteio ou chamamento"
+      ],
+      "sourceUrl": "https://pidigital.pi.gov.br/app/catalog/habitacao/programa-morar-bem-piaui",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

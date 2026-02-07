@@ -1,7 +1,7 @@
 {
   "state": "PB",
   "stateName": "Paraíba",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pb-pbsocial",
@@ -29,10 +29,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -115,10 +115,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 109,
-          "description": "Renda por pessoa de até R$ 109"
+          "value": 436,
+          "description": "Renda familiar de até R$ 436 (equivale a ~R$ 109 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -138,6 +138,225 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "pb-primeira-chance",
+      "name": "Primeira Chance PB",
+      "shortDescription": "Programa de estágio com bolsa para estudantes do ensino técnico da rede estadual.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 500,
+        "max": 700,
+        "description": "Bolsa-estágio mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante do ensino técnico da rede estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação da Paraíba ou escola técnica",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula em curso técnico estadual",
+        "Comprovante de residência",
+        "Carteira de Trabalho Digital"
+      ],
+      "howToApply": [
+        "Fique atento ao edital na sua escola",
+        "Faça a inscrição no período indicado",
+        "Aguarde a seleção e convocação",
+        "Compareça ao local de estágio"
+      ],
+      "sourceUrl": "https://paraiba.pb.gov.br/diretas/secretaria-da-educacao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "pb-bolsa-permanencia",
+      "name": "Bolsa Permanência PB",
+      "shortDescription": "Bolsa de R$ 1.500 por mês para estudantes pobres de universidades públicas da Paraíba.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1500,
+        "max": 1500,
+        "description": "R$ 1.500 por mês para moradia, alimentação e transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em universidade pública da Paraíba"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4000,
+          "description": "Renda da familia de ate R$ 4000 (~R$ 800 por pessoa)"
+        }
+      ],
+      "whereToApply": "FAPESQ ou universidade onde estuda",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula em universidade pública",
+        "Comprovante de renda familiar",
+        "Comprovante de residência",
+        "Histórico escolar"
+      ],
+      "howToApply": [
+        "Acesse o site da FAPESQ (fapesq.rpp.br)",
+        "Fique atento ao edital do programa",
+        "Faça a inscrição no prazo",
+        "Envie os documentos e aguarde o resultado"
+      ],
+      "sourceUrl": "https://fapesq.rpp.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "pb-paraiba-primeira-infancia",
+      "name": "Paraíba Primeira Infância",
+      "shortDescription": "Cuidado para gestantes e crianças de 0 a 6 anos com visitas, saúde e apoio social.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Acompanhamento gratuito de saúde e assistência social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida ou ter criança de 0 a 6 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS ou Unidade de Saúde do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do SUS",
+        "Cartão do pré-natal",
+        "NIS do Cadastro Único",
+        "Certidão de nascimento da criança"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou a Unidade de Saúde",
+        "Faça o pré-natal e as consultas do bebê",
+        "Cadastre-se no programa",
+        "Receba visitas e orientações em casa"
+      ],
+      "sourceUrl": "https://paraiba.pb.gov.br/diretas/secretaria-de-desenvolvimento-humano/programas/programa-paraiba-primeira-infancia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "pb-parceiros-habitacao",
+      "name": "Parceiros da Habitação PB",
+      "shortDescription": "Casas populares para famílias de baixa renda da Paraíba com ajuda do governo.",
+      "scope": "state",
+      "state": "PB",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 30000,
+        "max": 100000,
+        "description": "Casa popular com subsídio do governo"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PB",
+          "description": "Morar na Paraíba"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CEHAP (Companhia Estadual de Habitação Popular) ou Prefeitura",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de renda",
+        "Comprovante de endereço",
+        "NIS do Cadastro Único",
+        "Certidão de casamento ou nascimento dos filhos"
+      ],
+      "howToApply": [
+        "Procure a CEHAP ou a prefeitura da sua cidade",
+        "Faça a inscrição no programa de habitação",
+        "Apresente todos os documentos",
+        "Aguarde o sorteio ou chamamento"
+      ],
+      "sourceUrl": "http://cehap.pb.gov.br/sitecehap/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

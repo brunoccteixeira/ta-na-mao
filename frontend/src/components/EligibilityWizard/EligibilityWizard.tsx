@@ -427,6 +427,7 @@ function transformProfileForAPI(profile: CitizenProfile): import('../../engine/t
     agricultorFamiliar: profile.agricultorFamiliar,
     pescadorArtesanal: profile.pescadorArtesanal,
     catadorReciclavel: profile.catadorReciclavel,
+    trabalhadoraDomestica: profile.trabalhadoraDomestica ?? false,
     mulherMenstruante: profile.mulherMenstruante,
     estudante: profile.estudante,
     redePublica: profile.redePublica,

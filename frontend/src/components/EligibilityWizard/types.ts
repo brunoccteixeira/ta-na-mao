@@ -51,6 +51,7 @@ export interface CitizenProfile {
   agricultorFamiliar: boolean;
   pescadorArtesanal: boolean;
   catadorReciclavel: boolean;
+  trabalhadoraDomestica: boolean;
 
   // Especial
   mulherMenstruante?: boolean;
@@ -116,6 +117,7 @@ export const DEFAULT_PROFILE: CitizenProfile = {
   agricultorFamiliar: false,
   pescadorArtesanal: false,
   catadorReciclavel: false,
+  trabalhadoraDomestica: false,
   estudante: false,
   redePublica: false,
 };

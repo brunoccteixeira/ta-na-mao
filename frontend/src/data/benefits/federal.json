@@ -7,9 +7,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 142,
-        "max": 900,
-        "description": "Valor varia conforme composição familiar"
+        "min": 600,
+        "max": 1800,
+        "description": "Mínimo R$ 600 por família, com adicionais por criança e adolescente"
       },
       "eligibilityRules": [
         {
@@ -37,9 +37,9 @@
           },
           {
             "type": "decreto",
-            "number": "11.901/2024",
+            "number": "12.064/2024",
             "description": "Regulamenta o Programa Bolsa Família",
-            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d11901.htm"
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d12064.htm"
           }
         ]
       },
@@ -51,13 +51,14 @@
         "Carteira de trabalho (se tiver)"
       ],
       "howToApply": [
-        "Vá ao CRAS da sua cidade",
+        "Vá ao CRAS (posto de assistência social) da sua cidade",
         "Leve os documentos de toda a família",
         "Faça ou atualize o Cadastro Único",
-        "Aguarde a análise (pode levar alguns meses)"
+        "Aguarde a análise (pode levar alguns meses)",
+        "O pagamento é feito pelo app Caixa Tem"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
       "category": "Transferência de Renda"
@@ -69,9 +70,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 1600,
-        "description": "1 salário mínimo"
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621 em 2026)"
       },
       "eligibilityRules": [
         {
@@ -84,8 +85,8 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 400,
-          "description": "Renda por pessoa de até 1/4 do salário mínimo",
+          "value": 405.25,
+          "description": "Renda por pessoa de até R$ 405,25 (1/4 do salário mínimo)",
           "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         },
         {
@@ -125,13 +126,13 @@
         "Comprovante de renda de todos da família"
       ],
       "howToApply": [
-        "Faça o Cadastro Único no CRAS",
-        "Acesse o Meu INSS (site ou app)",
+        "Faça o Cadastro Único no CRAS (posto de assistência social)",
+        "Acesse o Meu INSS (site ou app) ou ligue 135",
         "Solicite o BPC para Idoso",
-        "Agende perícia se necessário"
+        "Aguarde análise (não precisa de perícia médica)"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👴",
       "category": "Assistência Social"
@@ -139,13 +140,13 @@
     {
       "id": "federal-bpc-pcd",
       "name": "BPC para Pessoa com Deficiência",
-      "shortDescription": "Um salário mínimo por mês para pessoas com deficiência que não podem trabalhar.",
+      "shortDescription": "Um salário mínimo por mês para pessoas com deficiência de longo prazo e renda familiar baixa.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 1600,
-        "description": "1 salário mínimo"
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621 em 2026)"
       },
       "eligibilityRules": [
         {
@@ -158,8 +159,8 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 400,
-          "description": "Renda por pessoa de até 1/4 do salário mínimo",
+          "value": 405.25,
+          "description": "Renda por pessoa de até R$ 405,25 (1/4 do salário mínimo)",
           "legalReference": "Art. 20, §3º, Lei 8.742/1993"
         }
       ],
@@ -188,13 +189,13 @@
         "Comprovante de renda de todos da família"
       ],
       "howToApply": [
-        "Faça o Cadastro Único no CRAS",
-        "Acesse o Meu INSS (site ou app)",
+        "Faça o Cadastro Único no CRAS (posto de assistência social)",
+        "Acesse o Meu INSS (site ou app) ou ligue 135",
         "Solicite o BPC para Pessoa com Deficiência",
-        "Agende e compareça à perícia médica"
+        "Agende e compareça à avaliação social e médica do INSS"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc-loas",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "♿",
       "category": "Assistência Social"
@@ -202,20 +203,20 @@
     {
       "id": "federal-tsee",
       "name": "Tarifa Social de Energia",
-      "shortDescription": "Desconto de 10% a 65% na conta de luz para famílias de baixa renda.",
+      "shortDescription": "Conta de luz 100% grátis até 80 kWh/mês para famílias de baixa renda (Programa Luz do Povo).",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
         "min": 20,
         "max": 100,
-        "description": "Desconto de 10% a 65% na conta de luz"
+        "description": "Isenção total de 100% até 80 kWh/mês (Lei 15.235/2025 - Luz do Povo)"
       },
       "eligibilityRules": [
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo",
+          "value": 810.5,
+          "description": "Renda por pessoa de até R$ 810,50 (meio salário mínimo)",
           "legalReference": "Art. 2º, Lei 12.212/2010"
         },
         {
@@ -239,6 +240,12 @@
             "number": "7.583/2011",
             "description": "Regulamenta a Tarifa Social de Energia Elétrica",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7583.htm"
+          },
+          {
+            "type": "lei",
+            "number": "15.235/2025",
+            "description": "Programa Luz do Povo - Reformula Tarifa Social de Energia",
+            "url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2025/Lei/L15235.htm"
           }
         ]
       },
@@ -255,7 +262,7 @@
         "O desconto começa na próxima conta"
       ],
       "sourceUrl": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/tarifa-social",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💡",
       "category": "Utilidades"
@@ -263,7 +270,7 @@
     {
       "id": "federal-farmacia-popular",
       "name": "Farmácia Popular",
-      "shortDescription": "Medicamentos grátis ou com até 90% de desconto para hipertensão, diabetes e asma.",
+      "shortDescription": "Medicamentos grátis para hipertensão, diabetes, asma, colesterol e outras doenças crônicas. Todos os 41 itens são 100% gratuitos.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
@@ -304,33 +311,40 @@
       ],
       "howToApply": [
         "Consulte um médico e pegue a receita",
-        "Vá a uma farmácia credenciada",
-        "Apresente CPF e receita",
-        "Retire os medicamentos grátis ou com desconto"
+        "Vá a uma farmácia credenciada ao programa",
+        "Apresente CPF e receita médica",
+        "Retire os medicamentos 100% grátis"
       ],
       "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💊",
       "category": "Saúde"
     },
     {
       "id": "federal-auxilio-gas",
-      "name": "Auxílio Gás",
-      "shortDescription": "Ajuda de R$ 102 a cada 2 meses para comprar gás de cozinha.",
+      "name": "Gás do Povo (Auxílio Gás)",
+      "shortDescription": "Botijão de gás gratuito para famílias de baixa renda. De 4 a 6 botijões por ano conforme tamanho da família.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 51,
-        "max": 51,
-        "description": "R$ 102 a cada 2 meses (média R$ 51/mês)"
+        "min": 90,
+        "max": 110,
+        "description": "Valor equivalente do botijão de gás gratuito (bimestral)"
       },
       "eligibilityRules": [
         {
-          "field": "recebeBolsaFamilia",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Receber Bolsa Família",
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Lei 14.237/2021; MP 1.313/2025"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa de até R$ 810,50 (meio salário mínimo)",
           "legalReference": "Art. 2º, Lei 14.237/2021"
         }
       ],
@@ -341,20 +355,29 @@
             "number": "14.237/2021",
             "description": "Lei do Auxílio Gás dos Brasileiros",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14237.htm"
+          },
+          {
+            "type": "medida_provisoria",
+            "number": "MP 1.313/2025",
+            "description": "Institui o Programa Gás do Povo",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/mpv/mpv1313.htm"
           }
         ]
       },
-      "whereToApply": "Automático para quem recebe Bolsa Família",
+      "whereToApply": "Automático para quem está no CadÚnico com renda elegível. Distribuição nos pontos de entrega do município.",
       "documentsRequired": [
-        "Não precisa de documentos extras"
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Documento com foto"
       ],
       "howToApply": [
-        "Se você recebe Bolsa Família, o Auxílio Gás é automático",
-        "O valor vem junto com o Bolsa Família",
-        "Pago a cada 2 meses"
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "Famílias elegíveis são selecionadas automaticamente",
+        "Retire o botijão gratuito no ponto de entrega do seu município",
+        "O cronograma é divulgado pela prefeitura"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -367,16 +390,16 @@
       "estimatedValue": {
         "type": "one_time",
         "min": 20000,
-        "max": 170000,
-        "description": "Subsídio de até R$ 170 mil dependendo da faixa de renda"
+        "max": 55000,
+        "description": "Subsídio de até R$ 55 mil (R$ 65 mil no Norte/Nordeste) para Faixas 1 e 2"
       },
       "eligibilityRules": [
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 8000,
-          "description": "Renda familiar de até R$ 8.000 por mês",
-          "legalReference": "Art. 4º, Lei 14.620/2023"
+          "value": 8600,
+          "description": "Renda familiar de até R$ 8.600 por mês (Faixa 3)",
+          "legalReference": "Art. 4º, Lei 14.620/2023; Portaria MCid 399/2025"
         },
         {
           "field": "temCasaPropria",
@@ -396,7 +419,7 @@
           }
         ]
       },
-      "whereToApply": "Caixa Econômica Federal, Banco do Brasil ou correspondentes bancários",
+      "whereToApply": "Faixa 1: Prefeitura ou CRAS. Faixas 2, 3 e 4: Caixa Econômica Federal ou correspondentes bancários.",
       "documentsRequired": [
         "CPF e RG de todos da família",
         "Comprovante de renda (3 últimos meses)",
@@ -405,13 +428,14 @@
         "Declaração de Imposto de Renda (se fizer)"
       ],
       "howToApply": [
-        "Faça simulação no site da Caixa",
-        "Escolha o imóvel (novo ou usado)",
-        "Vá a uma agência da Caixa com os documentos",
+        "Faixa 1 (renda até R$ 2.850): cadastre-se na prefeitura ou CRAS e aguarde seleção",
+        "Faixas 2 a 4: faça simulação no site da Caixa (caixa.gov.br)",
+        "Escolha o imóvel (novo ou usado dentro do limite)",
+        "Vá a uma agência da Caixa com os documentos de toda a família",
         "Aguarde análise de crédito e aprovação"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/mcmv",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏡",
       "category": "Habitação"
@@ -442,16 +466,32 @@
         "Carteira de Trabalho antiga (se tiver)"
       ],
       "howToApply": [
-        "Acesse o app Caixa Tem ou FGTS",
+        "Acesse o app FGTS da Caixa",
         "Ou vá a uma agência da Caixa/BB",
         "Consulte se há valores disponíveis",
         "Solicite o saque se tiver direito"
       ],
       "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/pis/Paginas/default.aspx",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Trabalho"
+      "category": "Trabalho",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei_complementar",
+            "number": "LC 26/1975",
+            "description": "Unificação do PIS/PASEP",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/Lcp26.htm"
+          },
+          {
+            "type": "medida_provisoria",
+            "number": "MP 946/2020",
+            "description": "Extinção do fundo PIS/PASEP e transferência ao FGTS",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/mpv/mpv946.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-svr",
@@ -484,10 +524,20 @@
         "Se tiver, solicite o saque pelo site"
       ],
       "sourceUrl": "https://valoresareceber.bcb.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏦",
-      "category": "Financeiro"
+      "category": "Financeiro",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "resolucao",
+            "number": "Resolução BCB 132/2021",
+            "description": "Institui o Sistema de Valores a Receber",
+            "url": "https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=132"
+          }
+        ]
+      }
     },
     {
       "id": "federal-fgts",
@@ -521,10 +571,20 @@
         "Solicite o saque pelo app ou agência"
       ],
       "sourceUrl": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/Paginas/default.aspx",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📋",
-      "category": "Trabalho"
+      "category": "Trabalho",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.036/1990",
+            "description": "Lei do FGTS",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8036cons.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-seguro-desemprego",
@@ -533,9 +593,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 2424,
-        "description": "3 a 5 parcelas dependendo do tempo trabalhado"
+        "min": 1621,
+        "max": 2519,
+        "description": "3 a 5 parcelas de R$ 1.621 a R$ 2.518,65"
       },
       "eligibilityRules": [
         {
@@ -577,7 +637,7 @@
         "Parcelas são depositadas mensalmente"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🛡️",
       "category": "Trabalho"
@@ -589,9 +649,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "annual",
-        "min": 134,
-        "max": 1600,
-        "description": "Valor proporcional aos meses trabalhados"
+        "min": 135,
+        "max": 1621,
+        "description": "Proporcional aos meses trabalhados (1/12 a 12/12 do SM)"
       },
       "eligibilityRules": [
         {
@@ -603,8 +663,9 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3200,
-          "description": "Recebeu até 2 salários mínimos por mês"
+          "value": 2766,
+          "description": "Recebeu até R$ 2.766 de média mensal no ano-base (regra 2026)",
+          "legalReference": "Lei 7.998/1990; Lei 14.848/2024"
         },
         {
           "field": "tempoCarteiraAssinada",
@@ -625,7 +686,7 @@
         "Saque na data do seu mês de nascimento"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/sacar-o-abono-salarial",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💵",
       "category": "Trabalho"
@@ -639,15 +700,15 @@
         "type": "monthly",
         "min": 20,
         "max": 40,
-        "description": "Kit mensal de absorventes"
+        "description": "40 absorventes a cada 56 dias via Farmácia Popular"
       },
       "eligibilityRules": [
         {
           "field": "mulherMenstruante",
           "operator": "eq",
           "value": true,
-          "description": "Ser pessoa que menstrua",
-          "legalReference": "Art. 1º, Lei 14.214/2021"
+          "description": "Ser pessoa que menstrua, de 10 a 49 anos",
+          "legalReference": "Art. 1º, Lei 14.214/2021; Portaria GM/MS 3.076/2024"
         },
         {
           "field": "redePublica",
@@ -664,23 +725,34 @@
             "number": "14.214/2021",
             "description": "Programa de Proteção e Promoção da Saúde Menstrual",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14214.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.432/2023",
+            "description": "Regulamenta o Programa Dignidade Menstrual",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11432.htm"
+          },
+          {
+            "type": "portaria",
+            "number": "GM/MS 3.076/2024",
+            "description": "Regras de distribuição: 40 absorventes a cada 56 dias, faixa 10-49 anos"
           }
         ]
       },
-      "whereToApply": "Escola pública ou Unidade Básica de Saúde (UBS)",
+      "whereToApply": "Farmácia Popular credenciada (autorização via UBS ou app ConecteSUS)",
       "documentsRequired": [
         "Documento de matrícula (se estudante)",
         "CPF",
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure a direção da sua escola",
-        "Ou vá à UBS mais próxima",
-        "Pergunte sobre o programa de dignidade menstrual",
-        "Retire os absorventes gratuitamente"
+        "Estudantes: procure a direção da escola pública",
+        "Demais beneficiárias: vá a uma Farmácia Popular com CPF e documento com foto",
+        "Retire os absorventes gratuitamente",
+        "A retirada pode ser feita a cada 56 dias"
       ],
       "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/noticias/2023/marco/programa-dignidade-menstrual",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🩸",
       "category": "Saúde"
@@ -706,8 +778,9 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 810.5,
+          "description": "Renda por pessoa de até R$ 810,50 (meio salário mínimo)",
+          "legalReference": "Lei 14.898/2024"
         }
       ],
       "whereToApply": "Companhia de água da sua cidade",
@@ -723,21 +796,31 @@
         "Aguarde a aplicação do desconto"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/assuntos/saneamento",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Utilidades"
+      "category": "Utilidades",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.898/2024",
+            "description": "Diretrizes para a Tarifa Social de Água e Esgoto",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14898.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-isencao-ipva-pcd",
-      "name": "Isenção de IPVA para PCD",
-      "shortDescription": "Pessoas com deficiência podem ter isenção total do IPVA do veículo.",
+      "name": "Isenção de IPI para PCD",
+      "shortDescription": "Pessoas com deficiência podem ter isenção de IPI (imposto federal) na compra de veículo. A isenção de IPVA varia por estado.",
       "scope": "federal",
       "estimatedValue": {
-        "type": "annual",
-        "min": 500,
-        "max": 5000,
-        "description": "Economia do valor total do IPVA"
+        "type": "one_time",
+        "min": 5000,
+        "max": 30000,
+        "description": "Economia de IPI na compra do veículo (varia conforme valor do carro)"
       },
       "eligibilityRules": [
         {
@@ -747,25 +830,42 @@
           "description": "Ter deficiência física, visual, mental severa ou autismo"
         }
       ],
-      "whereToApply": "Detran do seu estado ou Secretaria da Fazenda",
+      "whereToApply": "Receita Federal (isenção de IPI) e Detran do seu estado (isenção de IPVA)",
       "documentsRequired": [
         "CPF e RG",
         "Laudo médico com CID da deficiência",
-        "Documento do veículo (CRLV)",
+        "CNH especial (se for o condutor)",
         "Comprovante de residência",
-        "CNH especial (se for o condutor)"
+        "Declaração de Imposto de Renda"
       ],
       "howToApply": [
-        "Obtenha laudo médico atualizado",
-        "Acesse o site do Detran do seu estado",
-        "Preencha o requerimento de isenção",
-        "Anexe os documentos e aguarde análise"
+        "Obtenha laudo médico do SUS ou médico credenciado",
+        "Acesse o sistema SISEN da Receita Federal (sisen.receita.fazenda.gov.br)",
+        "Preencha o requerimento de isenção de IPI",
+        "Aguarde a carta de autorização da Receita Federal",
+        "Compre o veículo com a isenção (máximo R$ 200 mil)"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-isencao-de-ipva",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚗",
-      "category": "Veículos"
+      "category": "Veículos",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.989/1995",
+            "description": "Isenção de IPI para pessoas com deficiência",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8989.htm"
+          },
+          {
+            "type": "lei",
+            "number": "14.183/2021",
+            "description": "Atualiza regras de isenção de IPI para PCD",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14183.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-passe-livre",
@@ -787,10 +887,10 @@
           "legalReference": "Art. 1º, Lei 8.899/1994"
         },
         {
-          "field": "rendaFamiliarMensal",
+          "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 1600,
-          "description": "Renda familiar de até 1 salário mínimo",
+          "value": 1621,
+          "description": "Renda por pessoa de até R$ 1.621 (1 salário mínimo)",
           "legalReference": "Art. 1º, Lei 8.899/1994"
         }
       ],
@@ -804,7 +904,7 @@
           }
         ]
       },
-      "whereToApply": "Centros de Referência de Assistência Social (CRAS)",
+      "whereToApply": "Portal Gov.br (gov.br/pt-br/servicos/obter-passe-livre-interestadual) ou CRAS",
       "documentsRequired": [
         "CPF e RG",
         "Laudo médico da deficiência",
@@ -813,13 +913,14 @@
         "Foto 3x4"
       ],
       "howToApply": [
-        "Vá ao CRAS com os documentos",
-        "Preencha o formulário do Passe Livre",
-        "Aguarde aprovação e receba a carteira",
+        "Acesse gov.br/pt-br/servicos/obter-passe-livre-interestadual (principal)",
+        "Ou vá ao CRAS da sua cidade com os documentos",
+        "Preencha o formulário e anexe os documentos",
+        "Aguarde aprovação e receba a credencial",
         "Use nas rodoviárias ao viajar entre estados"
       ],
       "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-passe-livre-interestadual",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
@@ -827,13 +928,13 @@
     {
       "id": "federal-pe-de-meia",
       "name": "Pé-de-Meia",
-      "shortDescription": "Dinheiro todo mês para estudantes do ensino médio público. O valor pode chegar a R$ 200 por mês.",
+      "shortDescription": "Incentivo financeiro para estudantes do ensino médio público. R$ 200/mês + bônus por conclusão de ano e ENEM.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
         "min": 200,
-        "max": 200,
-        "description": "R$ 200 por mês durante o ano letivo"
+        "max": 3200,
+        "description": "R$ 200/ano (matrícula) + R$ 1.800/ano (frequência: 9x R$ 200) + R$ 1.000/ano (conclusão) + R$ 200 (ENEM). Total até R$ 3.200/ano"
       },
       "eligibilityRules": [
         {
@@ -881,7 +982,7 @@
         "Acompanhe pelo app Jornada do Estudante"
       ],
       "sourceUrl": "https://www.gov.br/mec/pt-br/pe-de-meia",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
       "category": "Educação"
@@ -908,8 +1009,8 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 2400,
-          "description": "Renda familiar per capita de até 1,5 salário mínimo (bolsa integral) ou até 3 SM (bolsa parcial)",
+          "value": 4863,
+          "description": "Bolsa integral: renda per capita até 1,5 SM (R$ 2.431). Bolsa parcial: até 3 SM (R$ 4.863)",
           "legalReference": "Art. 1º, Lei 11.096/2005"
         }
       ],
@@ -937,7 +1038,7 @@
         "Se selecionado, comprove as informações na faculdade"
       ],
       "sourceUrl": "https://prouniportal.mec.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
@@ -945,7 +1046,7 @@
     {
       "id": "federal-fies",
       "name": "FIES",
-      "shortDescription": "Financiamento do governo para pagar a faculdade. Você paga depois de formado, com juros baixos.",
+      "shortDescription": "Financiamento do governo para pagar a faculdade com juros zero. Você paga depois de formado.",
       "scope": "federal",
       "estimatedValue": {
         "type": "one_time",
@@ -957,8 +1058,8 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 4800,
-          "description": "Renda familiar per capita de até 3 salários mínimos",
+          "value": 4863,
+          "description": "Renda familiar per capita de até 3 salários mínimos (R$ 4.863)",
           "legalReference": "Art. 1º, Lei 10.260/2001"
         }
       ],
@@ -986,21 +1087,21 @@
         "Se selecionado, valide informações no banco e na faculdade"
       ],
       "sourceUrl": "https://fies.mec.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
     },
     {
       "id": "federal-auxilio-brasil-alimentacao",
-      "name": "Alimenta Brasil (Cesta Básica)",
-      "shortDescription": "Distribuição de cestas básicas para famílias em situação de insegurança alimentar pelo CadÚnico.",
+      "name": "PAA - Programa de Aquisição de Alimentos",
+      "shortDescription": "Governo compra alimentos de agricultores familiares e distribui para famílias em vulnerabilidade via CRAS e bancos de alimentos.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
         "min": 100,
         "max": 200,
-        "description": "Valor equivalente da cesta básica"
+        "description": "Valor equivalente dos alimentos recebidos (distribuição, não dinheiro)"
       },
       "eligibilityRules": [
         {
@@ -1023,7 +1124,7 @@
           {
             "type": "lei",
             "number": "14.628/2023",
-            "description": "Lei do Programa Alimenta Brasil",
+            "description": "Reinstitui o PAA (extinguiu o Alimenta Brasil)",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14628.htm"
           }
         ]
@@ -1037,11 +1138,11 @@
       "howToApply": [
         "Faça ou atualize o Cadastro Único no CRAS",
         "Procure o CRAS ou Banco de Alimentos da cidade",
-        "Pergunte sobre o programa Alimenta Brasil",
-        "Retire a cesta básica nos dias indicados"
+        "Pergunte se o município participa do PAA",
+        "Famílias elegíveis são selecionadas automaticamente via CadÚnico"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/alimenta-brasil",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥫",
       "category": "Alimentação"
@@ -1077,10 +1178,26 @@
         "Pode almoçar todos os dias úteis"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/cozinhas-solidarias",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.628/2023",
+            "description": "Lei do SISAN (inclui Cozinhas Solidárias, Arts. 54-60)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14628.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.937/2024",
+            "description": "Regulamenta as Cozinhas Solidárias",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/D11937.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-aposentadoria-rural",
@@ -1089,9 +1206,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 1600,
-        "description": "1 salário mínimo"
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621 em 2026)"
       },
       "eligibilityRules": [
         {
@@ -1133,7 +1250,7 @@
         "Aguarde análise e perícia se necessário"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/aposentadorias/aposentadoria-por-idade-do-trabalhador-rural",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👨‍🌾",
       "category": "Previdência"
@@ -1145,9 +1262,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 8000,
-        "description": "Valor do salário ou média das contribuições"
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 SM (R$ 1.621) ao teto INSS (R$ 8.475,55)"
       },
       "eligibilityRules": [
         {
@@ -1181,7 +1298,7 @@
         "Receba por 120 dias (4 meses)"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/salario-maternidade",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤱",
       "category": "Previdência"
@@ -1193,9 +1310,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 7000,
-        "description": "91% da média das contribuições"
+        "min": 1621,
+        "max": 7713,
+        "description": "91% da média das contribuições (min 1 SM, max ~R$ 7.713)"
       },
       "eligibilityRules": [
         {
@@ -1230,7 +1347,7 @@
         "Compareça à perícia com documentos médicos"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/auxilio-por-incapacidade-temporaria",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏥",
       "category": "Previdência"
@@ -1242,9 +1359,9 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 7000,
-        "description": "Percentual do que o falecido recebia ou receberia"
+        "min": 1621,
+        "max": 8476,
+        "description": "50% + 10% por dependente do que o falecido recebia (EC 103/2019)"
       },
       "eligibilityRules": [
         {
@@ -1273,13 +1390,14 @@
         "Comprovante de dependência (certidão de casamento, nascimento)"
       ],
       "howToApply": [
+        "IMPORTANTE: solicite em até 90 dias após o óbito para receber desde a data da morte",
         "Reúna os documentos do falecido e seus",
         "Acesse o Meu INSS ou vá a uma agência",
         "Solicite a pensão por morte",
         "Aguarde análise e liberação"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/pensao-por-morte",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💐",
       "category": "Previdência"
@@ -1755,9 +1873,9 @@
         "type": "monthly",
         "min": 68,
         "max": 340,
-        "description": "R$ 67,54 por filho menor de 14 anos (valor 2025)",
+        "description": "R$ 67,54 por filho menor de 14 anos (valor 2026)",
         "estimated": true,
-        "estimatedRationale": "Cota de R$ 67,54 por filho em 2025 (Portaria MPS/MF nº 6/2025). Exemplo: 5 filhos = R$ 337,70. Valor 2026 não publicado à data."
+        "estimatedRationale": "Cota de R$ 67,54 por filho em 2026 (Portaria MPS/MF nº 13/2026). Exemplo: 5 filhos = R$ 337,70."
       },
       "eligibilityRules": [
         {
@@ -1884,6 +2002,12 @@
       "legalBasis": {
         "laws": [
           {
+            "type": "lei",
+            "number": "15.344/2026",
+            "description": "Institui a Política Nacional de Indução à Docência - Mais Professores para o Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/L15344.htm"
+          },
+          {
             "type": "decreto",
             "number": "12.358/2025",
             "description": "Institui o Programa Mais Professores para o Brasil",
@@ -1909,62 +2033,6 @@
       "status": "active",
       "icon": "👩‍🏫",
       "category": "Educação"
-    },
-    {
-      "id": "federal-gas-do-povo",
-      "name": "Gás do Povo",
-      "shortDescription": "Botijões de gás de cozinha grátis para famílias de baixa renda do CadÚnico. Substitui o modelo de vale-gás em dinheiro.",
-      "scope": "federal",
-      "estimatedValue": {
-        "type": "annual",
-        "min": 400,
-        "max": 700,
-        "description": "4 a 6 botijões de 13kg grátis por ano",
-        "estimated": true,
-        "estimatedRationale": "Estimativa baseada em 4-6 botijões a ~R$ 110 cada (preço médio nacional 2026)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único",
-          "legalReference": "Lei 14.237/2021; MP 1.313/2025"
-        },
-        {
-          "field": "rendaPerCapita",
-          "operator": "lte",
-          "value": 810,
-          "description": "Renda por pessoa de até meio salário mínimo",
-          "legalReference": "Lei 14.237/2021"
-        }
-      ],
-      "legalBasis": {
-        "laws": [
-          {
-            "type": "lei",
-            "number": "14.237/2021",
-            "description": "Lei do Auxílio Gás dos Brasileiros",
-            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14237.htm"
-          }
-        ]
-      },
-      "whereToApply": "Consulte pelo site gasdopovo.mds.gov.br ou no CRAS",
-      "documentsRequired": [
-        "Inscrição atualizada no CadÚnico",
-        "CPF do responsável familiar"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado no CRAS",
-        "Consulte se foi selecionado em gasdopovo.mds.gov.br",
-        "Retire o botijão nos pontos de distribuição indicados",
-        "O programa seleciona automaticamente famílias do CadÚnico"
-      ],
-      "sourceUrl": "https://gasdopovo.mds.gov.br/",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
     },
     {
       "id": "federal-brasil-saudavel",
@@ -2113,6 +2181,12 @@
             "number": "7.572/2011",
             "description": "Regulamenta o Bolsa Verde",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7572.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.635/2023",
+            "description": "Reativa e reformula o Programa Bolsa Verde",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/D11635.htm"
           }
         ]
       },
@@ -2214,15 +2288,15 @@
           "field": "temIdoso65Mais",
           "operator": "eq",
           "value": true,
-          "description": "Ter 60 anos ou mais (para transporte interestadual)",
+          "description": "Ter 60 anos ou mais",
           "legalReference": "Art. 40, Lei 10.741/2003 (Estatuto do Idoso)"
         },
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 3242,
-          "description": "Renda de até 2 salários mínimos (R$ 3.242 em 2026)",
-          "legalReference": "Art. 40, Lei 10.741/2003"
+          "description": "Renda individual de até 2 salários mínimos (R$ 3.242 em 2026)",
+          "legalReference": "Art. 40, §1º, Lei 10.741/2003"
         },
         {
           "field": "cadastradoCadunico",

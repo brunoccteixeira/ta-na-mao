@@ -1,7 +1,7 @@
 {
   "state": "RR",
   "stateName": "Roraima",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rr-auxilio-social-roraima",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -57,14 +57,14 @@
     {
       "id": "rr-vale-gas-roraima",
       "name": "Vale Gás Roraima",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda em Roraima.",
       "scope": "state",
       "state": "RR",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "min": 45,
+        "max": 55,
+        "description": "4 a 6 recargas por ano via programa federal Gás do Povo (botijão ~R$ 113 em RR)"
       },
       "eligibilityRules": [
         {
@@ -80,26 +80,25 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "CRAS do seu município ou revenda credenciada do Gás do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (Número do Cadastro Único)",
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar dados",
-        "O governo faz a seleção automática",
-        "Se selecionado, receba o benefício"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é feita automaticamente pelo governo federal",
+        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
       ],
-      "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -130,10 +129,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Assistência Social",
@@ -153,6 +152,206 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "rr-sine-qualificacao",
+      "name": "SINE Roraima - Qualificação e Emprego",
+      "shortDescription": "Cursos gratuitos e vagas de emprego pelo SINE de Roraima, com vale-transporte e lanche.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos com vale-transporte e lanche"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "SINE / Casa do Trabalhador em Boa Vista (Rua Pavão, 206, Mecejana)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carteira de Trabalho"
+      ],
+      "howToApply": [
+        "Vá ao SINE / Casa do Trabalhador em Boa Vista",
+        "Faça seu cadastro para vagas de emprego",
+        "Escolha um curso de qualificação gratuito",
+        "Participe das aulas e receba certificado do SENAI"
+      ],
+      "sourceUrl": "https://roraimanarede.com.br/sine-roraima-oferece-113-vagas-de-emprego-e-cursos-gratuitos-de-qualificacao/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "rr-censo-habitacional",
+      "name": "Censo Habitacional Roraima",
+      "shortDescription": "Cadastro para futuros programas de moradia do governo de Roraima. Prioridade para famílias em risco.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 10000,
+        "max": 30000,
+        "description": "Subsídio para moradia conforme programa selecionado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Auditório do IERR em Boa Vista ou prefeitura do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência em Roraima",
+        "Comprovante de renda",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Vá ao ponto de cadastro do Censo Habitacional na sua cidade",
+        "Faça o pré-cadastro presencial com seus documentos",
+        "Informe sua situação de moradia atual",
+        "Aguarde ser chamado para os programas habitacionais"
+      ],
+      "sourceUrl": "https://portal.rr.gov.br/governo-de-roraima-inicia-pre-cadastramento-para-novos-programas-de-moradia/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "rr-colo-de-mae",
+      "name": "Programa Colo de Mãe",
+      "shortDescription": "Cartão de R$ 200 por mês, kit enxoval e acompanhamento para gestantes de baixa renda em Roraima.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês por criança até 36 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda familiar de até R$ 2.640 (meio salário mínimo por pessoa para família de 4)"
+        }
+      ],
+      "whereToApply": "SETRABES Roraima ou CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Cartão SUS",
+        "Caderneta da gestante com pelo menos 3 consultas",
+        "Comprovante de renda",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure a SETRABES ou o CRAS da sua cidade",
+        "Faça a inscrição entre a 21ª e 35ª semana de gestação",
+        "Mantenha as consultas do pré-natal em dia",
+        "Receba o kit enxoval e o cartão de R$ 200"
+      ],
+      "sourceUrl": "https://setrabes.rr.gov.br/colo-de-mae/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "rr-escolegis-capacitacao",
+      "name": "Escolegis Roraima - Capacitação Gratuita",
+      "shortDescription": "Cursos online gratuitos de capacitação para moradores de Roraima. Mais de 177 mil certificados em 2025.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos online gratuitos com certificado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "Site da Escolegis (Assembleia Legislativa de Roraima)",
+      "documentsRequired": [
+        "CPF",
+        "E-mail válido",
+        "Comprovante de residência em Roraima"
+      ],
+      "howToApply": [
+        "Acesse o site da Escolegis da Assembleia Legislativa de Roraima",
+        "Faça seu cadastro com CPF e e-mail",
+        "Escolha o curso desejado",
+        "Complete as aulas online e baixe seu certificado"
+      ],
+      "sourceUrl": "https://al.rr.leg.br/2026/01/13/balanco-2025-escolegis-fortalece-a-qualificacao-profissional-em-roraima-com-mais-de-177-mil-certificados-entregues/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

@@ -1,54 +1,53 @@
 {
   "state": "MA",
   "stateName": "Maranhão",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "ma-mais-social",
-      "name": "Mais Social",
-      "shortDescription": "Dinheiro todo mês para famílias pobres do Maranhão.",
+      "id": "ma-maranhao-livre-da-fome",
+      "name": "Maranhao Livre da Fome",
+      "shortDescription": "R$ 200 por mes + R$ 50 por crianca de 0 a 6 anos para familias em extrema pobreza. Atende 95 mil familias.",
       "scope": "state",
       "state": "MA",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
+        "min": 200,
         "max": 350,
-        "description": "Valor depende do tamanho da família"
+        "description": "R$ 200 base + R$ 50 por crianca de 0 a 6 anos"
       },
       "eligibilityRules": [
         {
           "field": "estado",
           "operator": "eq",
           "value": "MA",
-          "description": "Morar no Maranhão"
+          "description": "Morar no Maranhao"
         },
         {
-          "field": "cadastradoCadunico",
+          "field": "recebeBolsaFamilia",
           "operator": "eq",
           "value": true,
-          "description": "Ter Cadastro Único"
+          "description": "Receber Bolsa Familia"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda per capita de ate R$ 218 APOS receber o Bolsa Familia (equivale a R$ 872 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Automatico para beneficiarios do Bolsa Familia que se enquadram",
       "documentsRequired": [
-        "CPF de todos da família",
-        "Comprovante de endereço",
-        "NIS do Cadastro Único"
+        "Estar inscrito no Bolsa Familia",
+        "Cadastro Unico atualizado"
       ],
       "howToApply": [
-        "Vá ao CRAS mais perto de você",
-        "Atualize seu Cadastro Único",
-        "O programa escolhe quem pode entrar",
-        "Aguarde o contato do CRAS"
+        "Mantenha o Cadastro Unico atualizado no CRAS",
+        "Esteja recebendo Bolsa Familia",
+        "A selecao e automatica",
+        "Pagamentos iniciaram em maio de 2025"
       ],
-      "sourceUrl": "https://www.ma.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://maranhaolivredafome.ma.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -92,14 +91,14 @@
     {
       "id": "ma-vale-gas",
       "name": "Vale Gás Maranhão",
-      "shortDescription": "Ajuda para comprar botijão de gás de cozinha.",
+      "shortDescription": "3 recargas grátis de botijão de gás por ano para famílias em extrema pobreza (renda zero).",
       "scope": "state",
       "state": "MA",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 100,
-        "description": "Ajuda a cada 2 meses"
+        "min": 25,
+        "max": 30,
+        "description": "3 recargas de botijão por ano (~R$ 100 cada, equivale a ~R$ 25/mês)"
       },
       "eligibilityRules": [
         {
@@ -112,31 +111,231 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter Cadastro Único"
+          "description": "Inscrito no Cadastro Único (atualizado nos últimos 2 anos)"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 0,
+          "description": "Renda per capita declarada igual a R$ 0,00 (extrema vulnerabilidade)"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Distribuição via SEDES nos municípios selecionados",
       "documentsRequired": [
         "CPF",
         "NIS do Cadastro Único",
         "Comprovante de endereço"
       ],
       "howToApply": [
-        "Mantenha seu Cadastro Único em dia",
-        "O governo seleciona quem pode receber",
-        "O dinheiro vai para a conta ou cartão"
+        "Mantenha o Cadastro Único atualizado (últimos 2 anos)",
+        "A seleção é feita pela SEDES e IMESC automaticamente",
+        "Retire o vale-gás e troque na distribuidora credenciada",
+        "São 3 recargas de botijão por ano"
       ],
-      "sourceUrl": "https://www.ma.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://sedes.ma.gov.br/servicos/solicitar-vale-gas",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
+    },
+    {
+      "id": "ma-qualifica-maranhao",
+      "name": "Qualifica Maranhão",
+      "shortDescription": "Cursos de graça para aprender uma profissão e conseguir emprego.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar no Maranhão"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "Plataforma Maranhão Profissionalizado ou SINE da sua cidade",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da Secretaria de Educação",
+        "Escolha o curso que quer fazer",
+        "Faça a inscrição com seus documentos",
+        "Compareça às aulas no dia marcado"
+      ],
+      "sourceUrl": "https://www.educacao.ma.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ma-bolsa-estudante-destaque",
+      "name": "Bolsa Estudante Destaque",
+      "shortDescription": "Bolsa de R$ 1.000 por mês para estudantes da rede pública que tiraram as melhores notas no ENEM.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1000,
+        "max": 1000,
+        "description": "R$ 1.000 por mês durante a faculdade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar no Maranhão"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter concluído ensino médio na rede pública estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter estudado em escola pública"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação do Maranhão",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de conclusão do ensino médio na rede estadual",
+        "Comprovante de aprovação no ENEM ou PAES",
+        "Comprovante de matrícula na faculdade"
+      ],
+      "howToApply": [
+        "Conclua o ensino médio na rede estadual",
+        "Faça o ENEM ou PAES e tire boa nota",
+        "O governo seleciona os melhores alunos",
+        "Receba a bolsa durante toda a faculdade"
+      ],
+      "sourceUrl": "https://www.ma.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "ma-cheque-gestante",
+      "name": "Cheque Cesta Básica Gestante",
+      "shortDescription": "R$ 100 por mês para grávidas que fazem o pré-natal direitinho. São até 9 parcelas.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 100,
+        "description": "R$ 100 por mês durante até 9 meses"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar no Maranhão"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 1600,
+          "description": "Renda da família de até 1 salário mínimo"
+        }
+      ],
+      "whereToApply": "Unidade Básica de Saúde do seu município",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do SUS",
+        "Cartão do pré-natal",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure a Unidade de Saúde mais perto",
+        "Inicie o pré-natal",
+        "Cadastre-se no programa",
+        "Faça as consultas do pré-natal para receber o dinheiro"
+      ],
+      "sourceUrl": "https://www.saude.ma.gov.br/cheque-gestante/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ma-transporte-escolar-gratis",
+      "name": "Meu Transporte Escolar Grátis",
+      "shortDescription": "Cartão com 2 passagens de ônibus grátis por dia escolar para estudantes da rede estadual na Grande Ilha de São Luís e Imperatriz.",
+      "scope": "state",
+      "state": "MA",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 90,
+        "max": 200,
+        "description": "Duas meias-passagens grátis por dia escolar (R$ 4,20/dia em dias letivos)",
+        "estimated": true,
+        "estimatedRationale": "Cálculo: 2 meias-passagens x R$ 2,10 x ~22 dias letivos/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MA",
+          "description": "Morar na Grande Ilha de São Luís ou Imperatriz (municípios com bilhetagem eletrônica)"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante da rede pública estadual do Maranhão"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual"
+        }
+      ],
+      "whereToApply": "Site sistemas.educacao.ma.gov.br/MeuTransporteEscolar ou Secretaria de Educação",
+      "documentsRequired": [
+        "CPF e RG do estudante",
+        "Comprovante de matrícula na rede estadual",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse o site sistemas.educacao.ma.gov.br/MeuTransporteEscolar",
+        "Faça o cadastro com seus dados e matrícula",
+        "Aguarde receber o cartão na sua escola",
+        "Use as 2 passagens grátis nos dias de aula (ida e volta)"
+      ],
+      "sourceUrl": "https://www.educacao.ma.gov.br/meu-transporte-escolar-gratis-estudantes-da-rede-publica-estadual-irao-receber-beneficio-para-garantir-acesso-as-escolas/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

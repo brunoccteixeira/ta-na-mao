@@ -4,6 +4,32 @@
 
 ### Added
 
+#### Fase C — Expansão Estadual do Catálogo (106→189 benefícios)
+- **83 novos benefícios estaduais** distribuídos nos 27 estados (de 3-6 para 7 cada)
+- **Catálogo total: 257 benefícios** (43 federal + 25 setorial + 189 estadual)
+- Categorias preenchidas por estado: Qualificação Profissional, Habitação, Saúde Materno-Infantil, Educação, Transporte
+- Todos os benefícios baseados em programas reais pesquisados em fontes oficiais estaduais
+- **Lote Nordeste (9 UFs)**: AL, BA, CE, MA, PB, PE, PI, RN, SE — programas como CRIA-AL, Mãe Bahia, VaiVem-CE, Qualifica PE
+- **Lote Norte (7 UFs)**: AC, AM, AP, PA, RO, RR, TO — programas como CETAM-AM, Mamãe Cheguei-RO, Profissão Estudante-TO
+- **Lote Centro-Oeste (4 UFs)**: DF, GO, MS, MT — programas como QualificaDF, Mães de Goiás, MS Supera, PEQ-MT
+- **Lote Sul+Sudeste (7 UFs)**: ES, MG, RJ, SP, PR, RS, SC — programas como Mãe Paulistana, Porta de Entrada-RS, Casa Catarina
+- Zero mudanças em TypeScript ou Python — apenas edição de 27 arquivos JSON
+
+#### Fase B — Expansão Setorial do Catálogo (10→25 benefícios)
+- **15 novos benefícios setoriais** em `sectoral.json`, com pesquisa oficial (Gov.br, Planalto, ANTT, Receita Federal)
+- **Setor Doméstica (NEW — 3):** FGTS Doméstica (LC 150/2015), Seguro-Desemprego Doméstica, Vale-Transporte Doméstica
+- **Setor CLT (NEW — 2):** FGTS – Saque e Direitos (Lei 8.036/1990), 13º Salário e Férias +1/3
+- **Setor PCD (1→4):** Passe Livre Interestadual (Lei 8.899/1994), Isenção IPI Carro (Lei 8.989/1995), Cota de Emprego (Lei 8.213/1991)
+- **Setor Catadores (1→3):** CATAFORTE, Pró-Catador (Decreto 11.414/2023)
+- **Setor Entregadores/Motoristas (1→3):** MEI para Entregadores, Regulamentação de Apps (PLP 12/2024)
+- **Setor Agricultores (4→5):** PNAE – Alimentação Escolar (Lei 15.226/2025)
+- **Setor Pescadores (2→3):** Registro Geral da Pesca (RGP)
+- **Setor MEI/Autônomos (1→2):** PRONAMPE – Crédito do Empreendedor
+- **Novo campo `trabalhadoraDomestica`** em CitizenProfile (frontend + backend)
+- **Novos setores `clt` e `pcd`** na constante SECTORS
+- **Mappings `domestica`/`clt`** no evaluator sectorMap
+- **Wizard StepTrabalho** — CLT agora mostra opções setoriais; mapping doméstica adicionado
+
 #### CRAS Finder - Encontrar CRAS próximos
 - **Endpoint `GET /api/v1/nearby/cras`** — Busca por GPS (lat/lng) ou CEP, raio configurável, fallback para JSON local
 - **`CrasFinder` view** (`src/views/CrasFinder.tsx`) — Busca dual (GPS + CEP), toggle mapa/lista, cards com ligar/traçar rota

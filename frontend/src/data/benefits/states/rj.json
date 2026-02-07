@@ -1,19 +1,19 @@
 {
   "state": "RJ",
   "stateName": "Rio de Janeiro",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rj-supera-rj",
       "name": "Supera RJ",
-      "shortDescription": "Programa estadual de transferência de renda para famílias em situação de pobreza.",
+      "shortDescription": "ENCERRADO em julho/2023. Era programa de transferencia de renda criado na pandemia. Beneficiarios foram migrados para o Bolsa Familia.",
       "scope": "state",
       "state": "RJ",
       "estimatedValue": {
         "type": "monthly",
         "min": 200,
-        "max": 500,
-        "description": "Valor varia conforme composição familiar"
+        "max": 380,
+        "description": "R$ 200 base + R$ 80 gas + R$ 50 por filho (max 2). Programa ENCERRADO."
       },
       "eligibilityRules": [
         {
@@ -29,26 +29,26 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 840,
+          "description": "Renda per capita de ate R$ 210 (equivale a R$ 840 para familia de 4)"
         }
       ],
-      "whereToApply": "CRAS ou site do programa",
+      "whereToApply": "Programa encerrado. Procure o CRAS para Bolsa Familia.",
       "documentsRequired": [
         "CPF de todos da família",
         "NIS (Cadastro Único)",
         "Comprovante de residência no RJ"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "O programa seleciona automaticamente",
-        "Acompanhe pelo site ou CRAS"
+        "Este programa foi ENCERRADO em julho de 2023",
+        "Beneficiarios foram migrados para o Bolsa Familia",
+        "Procure o CRAS para se inscrever no Bolsa Familia"
       ],
-      "sourceUrl": "https://www.superarj.rj.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
+      "sourceUrl": "https://agenciabrasil.ebc.com.br/geral/noticia/2023-07/governo-estadual-encerra-programa-supera-rj",
+      "lastUpdated": "2026-02-07",
+      "status": "ended",
       "icon": "🎯",
       "category": "Transferência de Renda"
     },
@@ -61,8 +61,8 @@
       "estimatedValue": {
         "type": "one_time",
         "min": 3000,
-        "max": 5000,
-        "description": "Valor único de emergência"
+        "max": 3000,
+        "description": "R$ 3.000 em parcela única para compra de materiais de construção, mobiliário e eletrodomésticos"
       },
       "eligibilityRules": [
         {
@@ -70,6 +70,18 @@
           "operator": "eq",
           "value": "RJ",
           "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4800,
+          "description": "Renda familiar de até 3 salários mínimos ou renda per capita de até meio salário mínimo"
         }
       ],
       "whereToApply": "Defesa Civil ou Prefeitura após desastre declarado",
@@ -85,7 +97,7 @@
         "Receba o cartão para usar em estabelecimentos"
       ],
       "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏚️",
       "category": "Emergência"
@@ -151,10 +163,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "Postos RioCard ou site",
@@ -226,6 +238,95 @@
       "status": "active",
       "icon": "🏠",
       "category": "Habitação"
+    },
+    {
+      "id": "rj-faetec-qualifica",
+      "name": "FAETEC Cursos Gratuitos",
+      "shortDescription": "Mais de 37 mil vagas em cursos de graca para aprender uma profissao no Rio de Janeiro.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos totalmente gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter 15 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site da FAETEC (www.faetec.rj.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residencia",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site www.faetec.rj.gov.br",
+        "Veja os cursos disponiveis na sua regiao",
+        "Faca a inscricao online no periodo aberto",
+        "A selecao e por sorteio eletronico"
+      ],
+      "sourceUrl": "https://www.faetec.rj.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "rj-cegonha-carioca",
+      "name": "Cegonha Carioca",
+      "shortDescription": "Programa que acompanha a gestante do pre-natal ao parto, com enxoval gratis e transporte para a maternidade.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 500,
+        "description": "Kit enxoval + transporte + acompanhamento gratuito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida"
+        }
+      ],
+      "whereToApply": "Unidade Basica de Saude (UBS) ou Clinica da Familia",
+      "documentsRequired": [
+        "Cartao do SUS",
+        "CPF ou RG",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Procure a UBS ou Clinica da Familia mais perto de casa",
+        "Faca o cadastro no pre-natal",
+        "Faca todas as consultas e exames pedidos",
+        "Receba o kit enxoval na visita a maternidade no 3o trimestre"
+      ],
+      "sourceUrl": "https://saude.prefeitura.rio/cegonha-carioca/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
     }
   ]
 }

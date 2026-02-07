@@ -1,19 +1,19 @@
 {
   "state": "SE",
   "stateName": "Sergipe",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "se-cartao-mais-inclusao",
       "name": "Cartão Mais Inclusão",
-      "shortDescription": "Cartão com dinheiro para famílias pobres de Sergipe.",
+      "shortDescription": "Cartao mensal para comprar alimentos para familias vulneraveis de Sergipe. Programa permanente com inscricoes abertas.",
       "scope": "state",
       "state": "SE",
       "estimatedValue": {
         "type": "monthly",
         "min": 100,
         "max": 300,
-        "description": "Valor depende da família"
+        "description": "Valor mensal no cartao para compra de alimentos"
       },
       "eligibilityRules": [
         {
@@ -29,10 +29,10 @@
           "description": "Ter Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -42,13 +42,13 @@
         "Comprovante de endereço"
       ],
       "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize seu Cadastro Único",
-        "O governo escolhe quem participa",
-        "Espere o contato"
+        "Inscricoes no site cmaisinscricoes.assistenciasocial.se.gov.br",
+        "Ou va ao CRAS da sua cidade",
+        "Atualize seu Cadastro Unico",
+        "Aguarde a analise e entrega do cartao nas agencias do Banese"
       ],
-      "sourceUrl": "https://www.se.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://assistenciasocial.se.gov.br/seasic-divulga-lista-dos-contemplados-com-o-cartao-cmais/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💳",
       "category": "Transferência de Renda"
@@ -92,14 +92,14 @@
     {
       "id": "se-mao-amiga",
       "name": "Mão Amiga",
-      "shortDescription": "Ajuda para famílias em momento difícil com comida e itens básicos.",
+      "shortDescription": "Bolsa de R$ 250 por mês (4 parcelas) para trabalhadores rurais da cana-de-açúcar, laranja, pesca e bacia leiteira durante a entressafra.",
       "scope": "state",
       "state": "SE",
       "estimatedValue": {
-        "type": "one_time",
-        "min": 100,
-        "max": 500,
-        "description": "Ajuda emergencial"
+        "type": "monthly",
+        "min": 250,
+        "max": 250,
+        "description": "R$ 250 por mês durante 4 meses de entressafra (total de R$ 1.000)"
       },
       "eligibilityRules": [
         {
@@ -109,29 +109,241 @@
           "description": "Morar em Sergipe"
         },
         {
+          "field": "agricultorFamiliar",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser trabalhador rural (cana-de-açúcar, laranja, bacia leiteira ou pescador artesanal)"
+        },
+        {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter Cadastro Único"
+          "description": "Inscrito no Cadastro Único"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "Site maoamiga.assistenciasocial.se.gov.br ou SEASIC",
       "documentsRequired": [
-        "CPF",
-        "NIS",
-        "Comprovante de endereço"
+        "CPF e RG",
+        "NIS (Cadastro Único)",
+        "Comprovante de trabalho rural",
+        "Comprovante de residência"
       ],
       "howToApply": [
-        "Vá ao CRAS mais perto",
-        "Explique sua situação difícil",
-        "Leve seus documentos",
-        "O CRAS vai avaliar e ajudar"
+        "Acesse o site maoamiga.assistenciasocial.se.gov.br no período de inscrição",
+        "Faça o cadastro como trabalhador rural",
+        "Comprove vínculo com a atividade (cana, laranja, pesca ou bacia leiteira)",
+        "Aguarde o pagamento durante a entressafra"
+      ],
+      "sourceUrl": "https://assistenciasocial.se.gov.br/programa-mao-amiga/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Trabalho Rural"
+    },
+    {
+      "id": "se-qualifica-sergipe",
+      "name": "Qualifica Sergipe",
+      "shortDescription": "Cursos de graça para aprender uma profissão, com ajuda de R$ 6,25 por hora para transporte e comida.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 500,
+        "max": 1500,
+        "description": "Curso gratuito + auxílio de R$ 6,25 por hora-aula"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter 16 anos ou mais"
+        }
+      ],
+      "whereToApply": "SETEEM (Secretaria de Trabalho) ou SINE de Sergipe",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Procure o SINE ou a Secretaria de Trabalho",
+        "Veja os cursos disponíveis",
+        "Faça sua inscrição com os documentos",
+        "Frequente as aulas e receba o auxílio"
       ],
       "sourceUrl": "https://www.se.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤝",
-      "category": "Assistência Social"
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "se-estudante-monitor",
+      "name": "Estudante Monitor SE",
+      "shortDescription": "Bolsa de R$ 439 por mês para estudantes da rede estadual que ajudam na escola.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 439,
+        "max": 439,
+        "description": "R$ 439 por mês como bolsa-auxílio"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante da rede estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação de Sergipe ou na própria escola",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula na rede estadual",
+        "Título de eleitor (se tiver 18 anos ou mais)",
+        "Comprovante de frequência escolar acima de 75%"
+      ],
+      "howToApply": [
+        "Fique atento ao edital na sua escola",
+        "Tenha média acima de 6,0 e frequência acima de 75%",
+        "Faça a inscrição no prazo do edital",
+        "Se selecionado, cumpra as 20 horas semanais de monitoria"
+      ],
+      "sourceUrl": "https://seduc.se.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "se-mae-sergipana",
+      "name": "Mãe Sergipana",
+      "shortDescription": "R$ 200 por mês para grávidas de baixa renda que fazem o pré-natal. São 6 parcelas mais enxoval.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês durante 6 meses + kit enxoval"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida (até o 5º mês)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (R$ 218 por pessoa para família de 4)"
+        }
+      ],
+      "whereToApply": "Site da SEASIC (assistenciasocial.se.gov.br) ou CRAS",
+      "documentsRequired": [
+        "CPF e RG",
+        "Cartão do pré-natal com pelo menos 1 consulta",
+        "Comprovante de residência em Sergipe",
+        "Comprovante de renda",
+        "NIS do Cadastro Único"
+      ],
+      "howToApply": [
+        "Comece o pré-natal na Unidade de Saúde",
+        "Acesse o site da SEASIC e faça a inscrição",
+        "Envie os documentos pedidos",
+        "Continue fazendo o pré-natal para receber as parcelas"
+      ],
+      "sourceUrl": "https://assistenciasocial.se.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "se-casa-sergipana",
+      "name": "Casa Sergipana",
+      "shortDescription": "Programa de moradia popular com até R$ 20 mil de ajuda para famílias de baixa renda.",
+      "scope": "state",
+      "state": "SE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 80000,
+        "description": "Subsídio de até R$ 20 mil ou casa popular"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SE",
+          "description": "Morar em Sergipe"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2640,
+          "description": "Renda da família de até R$ 2.640 (Faixa 1)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "SEASIC ou Prefeitura do seu município",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de renda",
+        "Comprovante de endereço",
+        "NIS do Cadastro Único",
+        "Certidão de nascimento ou casamento"
+      ],
+      "howToApply": [
+        "Acesse o site da SEASIC para se inscrever",
+        "Apresente todos os documentos",
+        "Aguarde a análise e seleção",
+        "Se aprovado, receba a moradia ou subsídio"
+      ],
+      "sourceUrl": "https://assistenciasocial.se.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
     }
   ]
 }

@@ -37,13 +37,18 @@ export default function StepTrabalho() {
 
   const handleTrabalhoChange = (value: string) => {
     setTrabalho(value);
+    setSetorial([]); // Reset sectoral selections when changing work type
 
-    // Map to profile fields
+    // Map to profile fields + reset sectoral flags
     updateProfile({
       trabalhoFormal: value === 'clt',
       temMei: value === 'mei',
       trabalhaAplicativo: value === 'app',
       estudante: value === 'estudante',
+      agricultorFamiliar: false,
+      pescadorArtesanal: false,
+      catadorReciclavel: false,
+      trabalhadoraDomestica: false,
     });
   };
 
@@ -53,6 +58,7 @@ export default function StepTrabalho() {
       agricultorFamiliar: values.includes('agricultor'),
       pescadorArtesanal: values.includes('pescador'),
       catadorReciclavel: values.includes('catador'),
+      trabalhadoraDomestica: values.includes('domestica'),
     });
   };
 
@@ -63,7 +69,9 @@ export default function StepTrabalho() {
   };
 
   // Show sectoral options for certain work types
-  const showSetorial = trabalho && ['autonomo', 'desempregado', 'do_lar'].includes(trabalho);
+  // Mostrar opções setoriais para todos os tipos de trabalho
+  // Um entregador pode ser agricultor, um MEI pode ser pescador, um aposentado pode ser agricultor rural
+  const showSetorial = !!trabalho;
 
   return (
     <div>

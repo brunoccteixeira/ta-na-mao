@@ -102,11 +102,20 @@ type WizardAction =
 // Reducer
 function wizardReducer(state: WizardState, action: WizardAction): WizardState {
   switch (action.type) {
-    case 'UPDATE_PROFILE':
+    case 'UPDATE_PROFILE': {
+      const updatedProfile = { ...state.profile, ...action.payload };
+      // Clear dependent fields when pessoasNaCasa drops to 1 (no dependents possible)
+      if (action.payload.pessoasNaCasa === 1) {
+        updatedProfile.quantidadeFilhos = 0;
+        updatedProfile.temIdoso65Mais = false;
+        updatedProfile.temGestante = false;
+        updatedProfile.temCrianca0a6 = false;
+      }
       return {
         ...state,
-        profile: { ...state.profile, ...action.payload },
+        profile: updatedProfile,
       };
+    }
 
     case 'GO_TO_STEP': {
       const newVisited = new Set(state.visitedSteps);

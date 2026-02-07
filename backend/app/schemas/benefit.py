@@ -140,6 +140,7 @@ class CitizenProfile(BaseModel):
     agricultor_familiar: bool = Field(False, alias="agricultorFamiliar")
     pescador_artesanal: bool = Field(False, alias="pescadorArtesanal")
     catador_reciclavel: bool = Field(False, alias="catadorReciclavel")
+    trabalhadora_domestica: bool = Field(False, alias="trabalhadoraDomestica")
 
     # Special conditions
     mulher_menstruante: Optional[bool] = Field(None, alias="mulherMenstruante")

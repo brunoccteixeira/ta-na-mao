@@ -1,7 +1,7 @@
 {
   "state": "SP",
   "stateName": "São Paulo",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "sp-bolsa-do-povo",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3200,
+          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "Site bolsadopovo.sp.gov.br ou CRAS",
@@ -56,14 +56,14 @@
     {
       "id": "sp-vale-gas",
       "name": "Vale Gás SP",
-      "shortDescription": "Auxílio de R$ 100 a cada 2 meses para comprar gás de cozinha.",
+      "shortDescription": "Auxílio de R$ 110 a cada 2 meses para comprar gás de cozinha, via Bolsa do Povo.",
       "scope": "state",
       "state": "SP",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 50,
-        "description": "R$ 100 a cada 2 meses"
+        "min": 55,
+        "max": 55,
+        "description": "R$ 110 a cada 2 meses (3 parcelas por ano, total R$ 330/ano)"
       },
       "eligibilityRules": [
         {
@@ -79,23 +79,32 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 712,
+          "description": "Renda per capita de até R$ 178 (equivale a ~R$ 712 para família de 4)"
+        },
+        {
+          "field": "recebeBolsaFamilia",
+          "operator": "eq",
+          "value": false,
+          "description": "NÃO receber Bolsa Família (programa atende quem não recebe)"
         }
       ],
-      "whereToApply": "Automático para cadastrados no Bolsa do Povo",
+      "whereToApply": "Automático para cadastrados no CadÚnico via Bolsa do Povo",
       "documentsRequired": [
-        "Estar inscrito no Bolsa do Povo"
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em SP"
       ],
       "howToApply": [
-        "Cadastre-se no Bolsa do Povo",
-        "O Vale Gás é concedido automaticamente",
-        "O valor vai para o cartão do programa"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é automática via base do CadÚnico",
+        "O valor é pago pelo cartão Bolsa do Povo",
+        "São 3 parcelas de R$ 110 por ano, a cada 2 meses"
       ],
-      "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/acoes-de-protecao-social/vale-gas/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -103,7 +112,7 @@
     {
       "id": "sp-bom-prato",
       "name": "Bom Prato",
-      "shortDescription": "Refeições a R$ 1,00 (café da manhã) e R$ 1,50 (almoço) em restaurantes populares.",
+      "shortDescription": "Refeições a R$ 0,50 (café da manhã) e R$ 1,00 (almoço e jantar) em restaurantes populares.",
       "scope": "state",
       "state": "SP",
       "estimatedValue": {
@@ -127,11 +136,11 @@
       "howToApply": [
         "Procure um restaurante Bom Prato na sua cidade",
         "Vá no horário de funcionamento",
-        "Pague R$ 1,00 ou R$ 1,50 e faça a refeição",
+        "Pague R$ 0,50 (café) ou R$ 1,00 (almoço/jantar) e faça a refeição",
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -156,10 +165,10 @@
           "description": "Morar em São Paulo"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 109,
-          "description": "Renda por pessoa de até R$ 109"
+          "value": 436,
+          "description": "Renda familiar de até R$ 436 (equivale a ~R$ 109 por pessoa para família de 4)"
         },
         {
           "field": "cadastradoCadunico",
@@ -208,13 +217,13 @@
           "field": "temCrianca0a6",
           "operator": "eq",
           "value": true,
-          "description": "Ter criança de 6 meses a 6 anos OU"
+          "description": "Ter criança de 6 meses a 6 anos OU idoso acima de 60 anos"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 800,
-          "description": "Renda por pessoa de até meio salário mínimo"
+          "value": 3036,
+          "description": "Renda familiar de até 2 salários mínimos (R$ 3.036)"
         }
       ],
       "whereToApply": "Prefeitura ou entidades conveniadas",
@@ -230,7 +239,7 @@
         "Retire o leite mensalmente no local indicado"
       ],
       "sourceUrl": "https://www.vivaleite.sp.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥛",
       "category": "Alimentação"
@@ -278,7 +287,51 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "📚",
-      "category": "Qualificação"
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "sp-mae-paulistana",
+      "name": "Mae Paulistana",
+      "shortDescription": "Programa que cuida da gestante do pre-natal ao parto, com enxoval de 24 itens, transporte gratis e vaga na creche.",
+      "scope": "state",
+      "state": "SP",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 300,
+        "max": 600,
+        "description": "Kit enxoval 24 itens + transporte gratis + vaga creche"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SP",
+          "description": "Morar em Sao Paulo"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gravida"
+        }
+      ],
+      "whereToApply": "Unidade Basica de Saude (UBS) mais perto de casa",
+      "documentsRequired": [
+        "Cartao do SUS (ou RG e comprovante de residencia para fazer o cartao)",
+        "CPF ou RG",
+        "Comprovante de residencia"
+      ],
+      "howToApply": [
+        "Va a UBS mais perto da sua casa assim que souber que esta gravida",
+        "Faca o cadastro no pre-natal ate a 12a semana",
+        "Faca todas as consultas (minimo 7) e exames pedidos",
+        "Receba o kit enxoval na maternidade apos o parto"
+      ],
+      "sourceUrl": "https://prefeitura.sp.gov.br/web/saude/w/atencao_basica/5657",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
     }
   ]
 }

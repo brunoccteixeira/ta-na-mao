@@ -1,7 +1,7 @@
 {
   "state": "AM",
   "stateName": "Amazonas",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "am-auxilio-estadual-permanente",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou Agência SEAS do seu município",
@@ -93,14 +93,14 @@
     {
       "id": "am-vale-gas-amazonas",
       "name": "Vale Gás Amazonas",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda no Amazonas.",
       "scope": "state",
       "state": "AM",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
+        "min": 40,
         "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "description": "4 a 6 recargas por ano via programa federal Gás do Povo"
       },
       "eligibilityRules": [
         {
@@ -116,29 +116,222 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
         }
       ],
-      "whereToApply": "CRAS ou Agência SEAS",
+      "whereToApply": "CRAS ou revenda credenciada do Gás do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (Número do Cadastro Único)",
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar",
-        "Aguarde a seleção pelo governo",
-        "O benefício é pago junto com outros auxílios"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é feita automaticamente pelo governo federal",
+        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
       ],
-      "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
+    },
+    {
+      "id": "am-cetam-qualificacao",
+      "name": "CETAM - Cursos de Qualificação Profissional",
+      "shortDescription": "Cursos gratuitos para aprender uma profissão no Amazonas. Mais de 7 mil vagas por ano.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos gratuitos de qualificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "CETAM (Centro de Educação Tecnológica do Amazonas) ou SINE nos PACs",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site cetam.am.gov.br quando abrirem as inscrições",
+        "Escolha o curso desejado",
+        "Faça a inscrição online no prazo do edital",
+        "Compareça no local e horário indicados"
+      ],
+      "sourceUrl": "https://www.agenciaamazonas.am.gov.br/noticias/cetam-publica-primeiro-edital-de-2026-para-cursos-de-qualificacao-profissional-presenciais-para-a-capital-nesta-segunda-feira/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "am-amazonas-meu-lar",
+      "name": "Amazonas Meu Lar",
+      "shortDescription": "Subsídio de até R$ 35 mil para famílias de baixa renda comprarem a casa própria no Amazonas.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 35000,
+        "description": "Subsídio de R$ 20 mil a R$ 35 mil conforme a renda"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8000,
+          "description": "Renda da família de até R$ 8.000"
+        }
+      ],
+      "whereToApply": "Site do programa ou SUHAB em Manaus",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Amazonas",
+        "Comprovante de renda",
+        "Certidão de nascimento ou casamento"
+      ],
+      "howToApply": [
+        "Acesse o site www.amazonasmeular.am.gov.br",
+        "Faça o pré-cadastro online",
+        "Aguarde a análise dos documentos",
+        "Se aprovado, escolha o imóvel disponível"
+      ],
+      "sourceUrl": "https://www.amazonasmeular.am.gov.br/programa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "am-rede-alyne-amazonas",
+      "name": "Rede Alyne Amazonas - Saúde da Gestante",
+      "shortDescription": "Pré-natal completo e parto seguro para gestantes do Amazonas pelo SUS.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        }
+      ],
+      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Comprovante de residência",
+        "Documento de identidade"
+      ],
+      "howToApply": [
+        "Vá ao posto de saúde mais perto da sua casa",
+        "Peça para iniciar o acompanhamento pré-natal",
+        "Receba a caderneta da gestante",
+        "Faça todas as consultas e exames no prazo"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/noticias-para-os-estados/amazonas/2024/setembro/nova-estrategia-para-reduzir-mortalidade-materna-chega-no-amazonas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "am-bolsa-universidade-manaus",
+      "name": "Bolsa Universidade Manaus",
+      "shortDescription": "Bolsas de até 100% em faculdades particulares para estudantes de baixa renda em Manaus.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 1500,
+        "description": "Bolsa de 50% a 100% da mensalidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3000,
+          "description": "Renda da familia de ate R$ 3000 (~R$ 600 por pessoa)"
+        }
+      ],
+      "whereToApply": "Site da Prefeitura de Manaus ou presencial no Sine Manaus",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula em faculdade particular de Manaus",
+        "Comprovante de renda familiar",
+        "Comprovante de residência em Manaus"
+      ],
+      "howToApply": [
+        "Acesse o site da Prefeitura de Manaus no período de inscrição",
+        "Faça a inscrição no Programa Bolsa Universidade",
+        "Apresente os documentos pedidos",
+        "Se aprovado, a bolsa é paga direto para a faculdade"
+      ],
+      "sourceUrl": "https://www.manaus.am.gov.br/noticia/socioinclusao/programa-bolsa-universidade2025/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

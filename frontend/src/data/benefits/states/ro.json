@@ -1,7 +1,7 @@
 {
   "state": "RO",
   "stateName": "Rondônia",
-  "lastUpdated": "2026-02-04",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ro-auxilio-renda-rondonia",
@@ -29,10 +29,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu município",
@@ -57,14 +57,14 @@
     {
       "id": "ro-vale-gas-rondonia",
       "name": "Vale Gás Rondônia",
-      "shortDescription": "Ajuda para comprar gás de cozinha para famílias de baixa renda.",
+      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda em Rondônia.",
       "scope": "state",
       "state": "RO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 50,
-        "max": 60,
-        "description": "Cerca de R$ 100 a cada 2 meses"
+        "min": 40,
+        "max": 55,
+        "description": "4 a 6 recargas por ano via programa federal Gás do Povo"
       },
       "eligibilityRules": [
         {
@@ -80,26 +80,25 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 3036,
+          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
         }
       ],
-      "whereToApply": "CRAS do seu município",
+      "whereToApply": "CRAS do seu município ou revenda credenciada do Gás do Povo",
       "documentsRequired": [
         "CPF",
         "NIS (Número do Cadastro Único)",
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar dados",
-        "O governo faz a seleção automática",
-        "Se selecionado, receba o benefício"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é feita automaticamente pelo governo federal",
+        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
       ],
-      "sourceUrl": "https://www.rondonia.ro.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
@@ -130,10 +129,10 @@
           "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa de até R$ 218"
+          "value": 872,
+          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Assistência Social",
@@ -153,6 +152,207 @@
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "ro-idep-cursos-tecnicos",
+      "name": "IDEP - Cursos Técnicos Gratuitos",
+      "shortDescription": "Mais de 1.500 vagas em cursos técnicos gratuitos do governo de Rondônia para conseguir emprego.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cursos técnicos gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "IDEP (Instituto de Educação Profissional) ou SINE Rondônia",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site do governo rondonia.ro.gov.br para ver os editais",
+        "Escolha o curso técnico desejado",
+        "Faça a inscrição online no prazo do edital",
+        "Compareça nas aulas no turno escolhido"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/governo-de-ro-oferta-1-500-vagas-de-cursos-tecnicos-em-porto-velho-inscricoes-encerram-quarta-feira-28/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ro-meu-sonho",
+      "name": "Programa Meu Sonho",
+      "shortDescription": "Subsídio de até R$ 30 mil do governo de Rondônia para ajudar famílias a comprar a casa própria.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 30000,
+        "description": "Subsídio de R$ 20 mil a R$ 30 mil conforme a renda"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8000,
+          "description": "Renda da família de até R$ 8.000"
+        }
+      ],
+      "whereToApply": "Site do programa ou SEAS Rondônia",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência em Rondônia há 5 anos",
+        "Comprovante de renda",
+        "Certidão de nascimento ou casamento"
+      ],
+      "howToApply": [
+        "Acesse o sistema Meu Sonho no Portal do Cidadão de Rondônia",
+        "Faça o cadastro online com seus dados",
+        "Envie os documentos pedidos",
+        "Aguarde a análise e seleção pelo governo"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/seas/programas-e-projetos/programa-meu-sonho/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Habitação"
+    },
+    {
+      "id": "ro-mamae-cheguei",
+      "name": "Programa Mamãe Cheguei",
+      "shortDescription": "Kit enxoval e acompanhamento para gestantes de baixa renda em Rondônia.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 200,
+        "max": 500,
+        "description": "Kit enxoval para o bebê e acompanhamento social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter gestante na família"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Cartão SUS",
+        "Caderneta da gestante atualizada",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Vá ao CRAS da sua cidade com até 20 semanas de gestação",
+        "Faça a inscrição no programa Mamãe Cheguei",
+        "Mantenha as consultas do pré-natal em dia",
+        "Receba o kit enxoval entre o 8º e 9º mês de gravidez"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/seas/programas-e-projetos/programa-mamae-cheguei/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ro-educacao-profissional",
+      "name": "Educação Profissional Rondônia",
+      "shortDescription": "Cursos profissionalizantes gratuitos para jovens e adultos nas escolas estaduais de Rondônia.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Ensino gratuito com certificação profissional"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter pelo menos 14 anos"
+        }
+      ],
+      "whereToApply": "Secretaria de Educação de Rondônia (SEDUC) ou escola estadual",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade",
+        "Certidão de nascimento"
+      ],
+      "howToApply": [
+        "Acesse o site da SEDUC Rondônia para ver os cursos",
+        "Faça a matrícula no período da chamada escolar",
+        "Compareça com os documentos na escola indicada",
+        "Frequente as aulas e receba o certificado"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/governo-de-ro-inicia-chamada-escolar-publica-online-2025-para-estudantes-fora-da-escola/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }
