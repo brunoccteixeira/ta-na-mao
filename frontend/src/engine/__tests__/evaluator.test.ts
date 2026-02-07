@@ -123,19 +123,21 @@ describe('Operators — using real benefit rules', () => {
     expect(result.status).toBe('eligible');
   });
 
-  // neq: BPC Idoso requires recebeBolsaFamilia === false (eq false acts as neq true)
-  it('eq false: recebeBolsaFamilia === false passes (BPC Idoso rule)', () => {
+  // BPC Idoso agora permite acumulação com Bolsa Família (Lei 14.601/2023)
+  it('BPC Idoso: recebeBolsaFamilia=true still eligible (Lei 14.601/2023)', () => {
     const bpc = findBenefit('federal-bpc-idoso');
     const profile = makeProfile({
       temIdoso65Mais: true,
       rendaFamiliarMensal: 400,
       pessoasNaCasa: 1,
-      recebeBolsaFamilia: false,
+      recebeBolsaFamilia: true,
     });
     const result = evaluateBenefit(profile, bpc);
+    // Não deve ter regra de Bolsa Família em failedRules
     expect(result.failedRules).not.toContain(
       expect.stringContaining('Bolsa Família')
     );
+    expect(result.status).toBe('eligible');
   });
 });
 

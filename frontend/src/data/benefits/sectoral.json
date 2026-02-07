@@ -3487,49 +3487,6 @@
       "category": "Catadores"
     },
     {
-      "id": "sectoral-catador-auxilio-equipamento",
-      "name": "Auxílio Equipamento para Catadores",
-      "shortDescription": "Doação de carrinhos, bags e EPIs para catadores individuais e cooperados via programas municipais.",
-      "scope": "sectoral",
-      "sector": "catador",
-      "estimatedValue": {
-        "type": "one_time",
-        "min": 0,
-        "max": 500,
-        "description": "Kit com carrinho, bags, luvas e EPIs — valor estimado R$ 500"
-      },
-      "eligibilityRules": [
-        {
-          "field": "catadorReciclavel",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser catador de material reciclável"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        }
-      ],
-      "whereToApply": "CRAS ou Secretaria de Meio Ambiente do município",
-      "documentsRequired": [
-        "CPF e RG",
-        "NIS",
-        "Comprovante de atividade de catação"
-      ],
-      "howToApply": [
-        "Procure o CRAS ou secretaria de meio ambiente",
-        "Comprove que trabalha como catador",
-        "Solicite o kit de equipamentos"
-      ],
-      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/inclusao-produtiva-urbana/catadores",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🧤",
-      "category": "Catadores"
-    },
-    {
       "id": "sectoral-clt-plr",
       "name": "PLR — Participação nos Lucros e Resultados",
       "shortDescription": "Pagamento semestral ou anual baseado nos resultados da empresa, negociado em acordo coletivo.",
@@ -3610,55 +3567,6 @@
       "status": "active",
       "icon": "🎭",
       "category": "CLT"
-    },
-    {
-      "id": "sectoral-domestica-abono-salarial",
-      "name": "Abono Salarial PIS (Doméstica)",
-      "shortDescription": "Pagamento anual de até 1 salário mínimo para empregadas domésticas registradas com carteira.",
-      "scope": "sectoral",
-      "sector": "domestica",
-      "estimatedValue": {
-        "type": "annual",
-        "min": 135,
-        "max": 1621,
-        "description": "Até R$ 1.621/ano proporcional aos meses trabalhados"
-      },
-      "eligibilityRules": [
-        {
-          "field": "trabalhadoraDomestica",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser empregada doméstica com carteira assinada"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3242,
-          "description": "Ter recebido até 2 SM de média mensal"
-        },
-        {
-          "field": "tempoTrabalho",
-          "operator": "gte",
-          "value": 1,
-          "description": "Ter trabalhado ao menos 30 dias com carteira no ano-base"
-        }
-      ],
-      "whereToApply": "Caixa Econômica Federal (PIS)",
-      "documentsRequired": [
-        "CPF",
-        "Carteira de trabalho",
-        "Número PIS"
-      ],
-      "howToApply": [
-        "Verifique se tem direito no app Carteira de Trabalho Digital",
-        "O pagamento é feito automaticamente pela Caixa",
-        "Calendário segue o mês de nascimento"
-      ],
-      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/abono-salarial",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "💰",
-      "category": "Domésticas"
     },
     {
       "id": "sectoral-domestica-salario-familia",
@@ -3795,7 +3703,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📱",
-      "category": "Entregadores"
+      "category": "Entregadores",
+      "metadata": {
+        "disclaimer": "Cursos oferecidos por mix de iniciativa privada (iFood, Rappi) e programas públicos (SENAI, PRONATEC). Disponibilidade varia por região."
+      }
     },
     {
       "id": "sectoral-mei-acredita-mei",
@@ -3880,8 +3791,8 @@
     },
     {
       "id": "sectoral-motorista-dpvat",
-      "name": "Seguro DPVAT (Motoristas de App)",
-      "shortDescription": "Seguro obrigatório que indeniza vítimas de acidentes de trânsito, incluindo motoristas de aplicativo.",
+      "name": "Seguro SPVAT (ex-DPVAT)",
+      "shortDescription": "Seguro obrigatório de trânsito que cobre despesas médicas (até R$ 2.700), invalidez permanente (até R$ 13.500) e morte (R$ 13.500). Reestruturado como SPVAT pela Lei 14.867/2024.",
       "scope": "sectoral",
       "sector": "motorista_app",
       "estimatedValue": {
@@ -3923,63 +3834,20 @@
       "icon": "🛡️",
       "category": "Motoristas de App",
       "metadata": {
-        "disclaimer": "DPVAT em reestruturação como SPVAT (Lei 14.867/2024). Consulte atualizações."
+        "disclaimer": "DPVAT foi reestruturado como SPVAT (Seguro Obrigatório para Proteção de Vítimas de Acidentes de Trânsito) pela Lei 14.867/2024. Cobrança retomada em 2025."
       }
     },
     {
-      "id": "sectoral-motorista-qualifica-mobilidade",
-      "name": "Qualifica Mobilidade",
-      "shortDescription": "Cursos gratuitos de direção defensiva, primeiros socorros e gestão financeira para motoristas de app.",
-      "scope": "sectoral",
-      "sector": "motorista_app",
-      "estimatedValue": {
-        "type": "one_time",
-        "min": 0,
-        "max": 0,
-        "description": "Cursos gratuitos — presenciais e online"
-      },
-      "eligibilityRules": [
-        {
-          "field": "trabalhaAplicativo",
-          "operator": "eq",
-          "value": true,
-          "description": "Trabalhar como motorista de aplicativo"
-        },
-        {
-          "field": "idade",
-          "operator": "gte",
-          "value": 21,
-          "description": "Ter 21 anos ou mais (CNH categoria B)"
-        }
-      ],
-      "whereToApply": "SEST/SENAT, SENAI ou plataformas parceiras",
-      "documentsRequired": [
-        "CPF e RG",
-        "CNH",
-        "Comprovante de cadastro em plataforma"
-      ],
-      "howToApply": [
-        "Procure o SEST/SENAT mais próximo",
-        "Consulte cursos gratuitos para motoristas",
-        "Inscreva-se presencialmente ou online"
-      ],
-      "sourceUrl": "https://www.sestsenat.org.br",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🎓",
-      "category": "Motoristas de App"
-    },
-    {
       "id": "sectoral-pcd-bpc-trabalho",
-      "name": "BPC Trabalho (Acumulação)",
-      "shortDescription": "Pessoa com deficiência que recebe BPC pode trabalhar e ter o benefício suspenso (não cancelado) por até 2 anos.",
+      "name": "Auxílio-Inclusão (PCD)",
+      "shortDescription": "Auxílio de meio salário mínimo (R$ 810,50) para pessoas com deficiência que recebem BPC e começam a trabalhar formalmente. Permite acumular BPC + salário por até 2 anos. Lei 14.176/2021.",
       "scope": "sectoral",
       "sector": "pcd",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1621,
-        "max": 1621,
-        "description": "BPC de R$ 1.621 suspenso durante trabalho — pode ser reativado se perder emprego"
+        "min": 810.5,
+        "max": 810.5,
+        "description": "R$ 810.50/mês (meio salário mínimo 2026)"
       },
       "eligibilityRules": [
         {
@@ -4006,11 +3874,14 @@
         "Se perder o emprego em até 2 anos, o BPC pode ser reativado",
         "Não é necessário nova avaliação médica para reativação"
       ],
-      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/bpc",
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/auxilioinclusao",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💼",
-      "category": "PCD"
+      "category": "PCD",
+      "metadata": {
+        "disclaimer": "Antigo BPC Trabalho. Regulamentado pela Lei 14.176/2021. O beneficiário mantém o BPC + salário por até 2 anos após contratação formal."
+      }
     },
     {
       "id": "sectoral-pcd-viver-sem-limite",

@@ -4,13 +4,17 @@
 
 import {
   Benefit,
+  BenefitWarning,
   CitizenProfile,
   EligibilityRule,
   EligibilityResult,
   EligibilityStatus,
   EvaluationSummary,
+  UnlockedBenefit,
   MINIMUM_WAGE,
 } from './types';
+
+import { BENEFIT_RELATIONS } from './benefitRelations';
 
 /**
  * Calculate per capita income
@@ -297,6 +301,110 @@ export function evaluateBenefit(
 }
 
 /**
+ * Apply benefit relations (exclusions, cascades, suggestions) as post-processing.
+ * Does NOT mutate input results — returns new arrays.
+ */
+export function applyBenefitRelations(
+  results: EligibilityResult[],
+  _profile: CitizenProfile
+): {
+  warnings: BenefitWarning[];
+  unlocked: UnlockedBenefit[];
+  excludedIds: Set<string>;
+} {
+  const warnings: BenefitWarning[] = [];
+  const unlocked: UnlockedBenefit[] = [];
+  const excludedIds = new Set<string>();
+  const seenWarnings = new Set<string>();
+
+  // IDs que são elegíveis ou already_receiving (podem participar de relações)
+  const activeIds = new Set(
+    results
+      .filter(r => r.status === 'eligible' || r.status === 'likely_eligible' || r.status === 'already_receiving')
+      .map(r => r.benefit.id)
+  );
+
+  const resultMap = new Map(results.map(r => [r.benefit.id, r]));
+
+  for (const relation of BENEFIT_RELATIONS) {
+    const fromActive = activeIds.has(relation.from);
+    const toActive = activeIds.has(relation.to);
+
+    if (relation.type === 'excludes') {
+      // Ambos elegíveis? → avisar e excluir o de menor valor
+      const fromMatch = fromActive || (relation.bidirectional && toActive);
+      const toMatch = toActive || (relation.bidirectional && fromActive);
+
+      if (fromMatch && toMatch && fromActive && toActive) {
+        const key = [relation.from, relation.to].sort().join('|');
+        if (seenWarnings.has(key)) continue;
+        seenWarnings.add(key);
+
+        const fromResult = resultMap.get(relation.from);
+        const toResult = resultMap.get(relation.to);
+        const fromValue = fromResult?.estimatedValue ?? 0;
+        const toValue = toResult?.estimatedValue ?? 0;
+
+        // Excluir o de menor valor (se empate, exclui o segundo)
+        const excludedId = fromValue >= toValue ? relation.to : relation.from;
+        excludedIds.add(excludedId);
+
+        warnings.push({
+          benefitIds: [relation.from, relation.to],
+          type: 'exclusion',
+          message: relation.description,
+          legalBasis: relation.legalBasis,
+        });
+      }
+    } else if (relation.type === 'unlocks') {
+      // Gatilho ativo → benefício destino é automático
+      if (fromActive) {
+        const toResult = resultMap.get(relation.to);
+        const alreadyUnlocked = unlocked.some(u => u.benefitId === relation.to);
+        if (!alreadyUnlocked) {
+          unlocked.push({
+            benefitId: relation.to,
+            benefitName: toResult?.benefit.name ?? relation.to,
+            unlockedBy: relation.from,
+            automatic: true,
+            description: relation.description,
+          });
+        }
+      }
+    } else if (relation.type === 'suggests') {
+      // Sugestão informativa
+      if (fromActive || (relation.bidirectional && toActive)) {
+        const key = [relation.from, relation.to].sort().join('|');
+        if (seenWarnings.has(key)) continue;
+        seenWarnings.add(key);
+
+        warnings.push({
+          benefitIds: [relation.from, relation.to],
+          type: 'info',
+          message: relation.description,
+          legalBasis: relation.legalBasis,
+        });
+      }
+    } else if (relation.type === 'choose_best') {
+      if (fromActive && toActive) {
+        const key = [relation.from, relation.to].sort().join('|');
+        if (seenWarnings.has(key)) continue;
+        seenWarnings.add(key);
+
+        warnings.push({
+          benefitIds: [relation.from, relation.to],
+          type: 'choose_best',
+          message: relation.description,
+          legalBasis: relation.legalBasis,
+        });
+      }
+    }
+  }
+
+  return { warnings, unlocked, excludedIds };
+}
+
+/**
  * Evaluate all benefits in a catalog against a citizen profile
  */
 export function evaluateAllBenefits(
@@ -329,6 +437,18 @@ export function evaluateAllBenefits(
   const totalPotentialMonthly = calculateTotal(eligibleAndLikely, 'monthly');
   const totalPotentialAnnual = calculateTotal(eligibleAndLikely, 'annual');
   const totalPotentialOneTime = calculateTotal(eligibleAndLikely, 'one_time');
+
+  // Apply benefit relations (exclusions, cascades, suggestions)
+  const { warnings, unlocked, excludedIds } = applyBenefitRelations(results, profile);
+
+  // Calculate adjusted monthly total (excluding conflicting benefits)
+  const totalAdjustedMonthly = eligibleAndLikely.reduce((sum, r) => {
+    if (excludedIds.has(r.benefit.id)) return sum;
+    if (r.benefit.estimatedValue?.type === 'monthly' && r.estimatedValue) {
+      return sum + r.estimatedValue;
+    }
+    return sum;
+  }, 0);
 
   // Collect all required documents
   const documentsNeeded = new Set<string>();
@@ -365,6 +485,9 @@ export function evaluateAllBenefits(
     totalPotentialMonthly,
     totalPotentialAnnual,
     totalPotentialOneTime,
+    warnings,
+    unlocked,
+    totalAdjustedMonthly,
     prioritySteps,
     documentsNeeded: Array.from(documentsNeeded),
   };

@@ -1,0 +1,561 @@
+/**
+ * INTEGRATION EXAMPLES — Jornadas do Cidadão
+ *
+ * Este arquivo contém exemplos práticos de como integrar as jornadas
+ * na UI da plataforma Tá na Mão.
+ *
+ * NÃO USE ESTE ARQUIVO DIRETAMENTE. Copie os trechos relevantes
+ * para seus componentes.
+ */
+
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { useRouter } from 'next/navigation';
+
+// ============================================================================
+// EXEMPLO 1: Mapeamento de Tipo de Benefício → Arquivo de Jornada
+// ============================================================================
+
+type BenefitType =
+  | 'transferencia-renda'
+  | 'alimentacao'
+  | 'utilidades'
+  | 'jovem-emprego'
+  | 'documentacao';
+
+const JOURNEY_MAP: Record<BenefitType, string> = {
+  'transferencia-renda': '/jornada/jornada-transferencia-renda-estadual.md',
+  'alimentacao': '/jornada/jornada-programa-alimentar-estadual.md',
+  'utilidades': '/jornada/jornada-programa-utilidades.md',
+  'jovem-emprego': '/jornada/jornada-programa-jovem-emprego.md',
+  'documentacao': '/jornada/jornada-programa-documentacao.md',
+};
+
+/**
+ * Inferir tipo de benefício pela categoria ou ID
+ */
+function getBenefitType(benefit: { category: string; id: string }): BenefitType {
+  const { category, id } = benefit;
+
+  // Por categoria
+  if (category === 'Transferência de Renda') return 'transferencia-renda';
+  if (category === 'Alimentação') return 'alimentacao';
+  if (category === 'Utilidades') return 'utilidades';
+  if (['Juventude', 'Emprego e Renda', 'Qualificação Profissional'].includes(category)) {
+    return 'jovem-emprego';
+  }
+  if (category === 'Documentação') return 'documentacao';
+
+  // Por ID (fallback)
+  if (id.includes('renda') || id.includes('livre-fome')) return 'transferencia-renda';
+  if (id.includes('alimenta') || id.includes('restaurante')) return 'alimentacao';
+  if (id.includes('agua') || id.includes('gas') || id.includes('luz')) return 'utilidades';
+  if (id.includes('jovem') || id.includes('emprego') || id.includes('primeiro')) return 'jovem-emprego';
+  if (id.includes('cnh') || id.includes('habilita') || id.includes('identidade')) return 'documentacao';
+
+  // Default
+  return 'transferencia-renda';
+}
+
+// ============================================================================
+// EXEMPLO 2: Componente de Navegação por Etapas (Tabs)
+// ============================================================================
+
+const JOURNEY_STEPS = [
+  { id: 1, name: 'DESCOBRE', icon: '🔍' },
+  { id: 2, name: 'VERIFICA', icon: '✓' },
+  { id: 3, name: 'PREPARA', icon: '📄' },
+  { id: 4, name: 'AUTORIZA', icon: '🔐' },
+  { id: 5, name: 'ACESSA', icon: '🚪' },
+  { id: 6, name: 'RECEBE', icon: '💰' },
+  { id: 7, name: 'RENOVA', icon: '🔄' },
+];
+
+function JourneyStepNav({ currentStep, onStepChange }: {
+  currentStep: number;
+  onStepChange: (step: number) => void;
+}) {
+  return (
+    <div className="flex overflow-x-auto gap-2 pb-4 mb-6 border-b">
+      {JOURNEY_STEPS.map((step) => (
+        <button
+          key={step.id}
+          onClick={() => onStepChange(step.id)}
+          className={`
+            flex-shrink-0 px-4 py-2 rounded-lg font-medium transition-all
+            ${currentStep === step.id
+              ? 'bg-emerald-500 text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }
+          `}
+        >
+          <span className="mr-2">{step.icon}</span>
+          <span className="text-sm">{step.id}. {step.name}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 3: Barra de Progresso
+// ============================================================================
+
+function JourneyProgressBar({ currentStep, totalSteps = 7 }: {
+  currentStep: number;
+  totalSteps?: number;
+}) {
+  const progress = (currentStep / totalSteps) * 100;
+
+  return (
+    <div className="w-full bg-gray-200 rounded-full h-2 mb-6">
+      <div
+        className="bg-emerald-500 h-2 rounded-full transition-all duration-300"
+        style={{ width: `${progress}%` }}
+      />
+      <p className="text-sm text-gray-600 mt-2">
+        Etapa {currentStep} de {totalSteps} concluída
+      </p>
+    </div>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 4: Renderização de Markdown com Customizações
+// ============================================================================
+
+function JourneyMarkdown({ content }: { content: string }) {
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        // Tabelas
+        table: ({ node, ...props }) => (
+          <div className="overflow-x-auto my-4">
+            <table className="min-w-full border border-gray-300" {...props} />
+          </div>
+        ),
+        thead: ({ node, ...props }) => (
+          <thead className="bg-emerald-50" {...props} />
+        ),
+        th: ({ node, ...props }) => (
+          <th className="border border-gray-300 px-4 py-2 text-left font-semibold" {...props} />
+        ),
+        td: ({ node, ...props }) => (
+          <td className="border border-gray-300 px-4 py-2" {...props} />
+        ),
+
+        // Checkboxes
+        input: ({ node, ...props }) => {
+          if (props.type === 'checkbox') {
+            return (
+              <input
+                type="checkbox"
+                className="mr-2 h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                {...props}
+              />
+            );
+          }
+          return <input {...props} />;
+        },
+
+        // Headers
+        h1: ({ node, ...props }) => (
+          <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4" {...props} />
+        ),
+        h2: ({ node, ...props }) => (
+          <h2 className="text-2xl font-bold text-emerald-600 mt-6 mb-3" {...props} />
+        ),
+        h3: ({ node, ...props }) => (
+          <h3 className="text-xl font-semibold text-gray-800 mt-4 mb-2" {...props} />
+        ),
+
+        // Listas
+        ul: ({ node, ...props }) => (
+          <ul className="list-disc list-inside space-y-1 my-2" {...props} />
+        ),
+        ol: ({ node, ...props }) => (
+          <ol className="list-decimal list-inside space-y-1 my-2" {...props} />
+        ),
+
+        // Blockquotes
+        blockquote: ({ node, ...props }) => (
+          <blockquote className="border-l-4 border-emerald-500 pl-4 py-2 my-4 bg-emerald-50 italic" {...props} />
+        ),
+
+        // Links
+        a: ({ node, ...props }) => (
+          <a className="text-emerald-600 underline hover:text-emerald-700" target="_blank" rel="noopener noreferrer" {...props} />
+        ),
+
+        // Code blocks
+        code: ({ node, inline, ...props }: any) => {
+          if (inline) {
+            return <code className="bg-gray-100 px-1 py-0.5 rounded text-sm" {...props} />;
+          }
+          return <code className="block bg-gray-100 p-2 rounded my-2 text-sm" {...props} />;
+        },
+      }}
+    >
+      {content}
+    </ReactMarkdown>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 5: Busca Interna na Jornada
+// ============================================================================
+
+function JourneySearch({ content, onHighlight }: {
+  content: string;
+  onHighlight: (highlighted: string) => void;
+}) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (term: string) => {
+    setSearchTerm(term);
+    if (term.length < 3) {
+      onHighlight(content);
+      return;
+    }
+
+    // Highlight search term
+    const highlighted = content.replace(
+      new RegExp(`(${term})`, 'gi'),
+      '<mark class="bg-yellow-200">$1</mark>'
+    );
+    onHighlight(highlighted);
+  };
+
+  return (
+    <div className="mb-6">
+      <input
+        type="text"
+        placeholder="Buscar na jornada (CPF, CRAS, telefone, prazo...)"
+        value={searchTerm}
+        onChange={(e) => handleSearch(e.target.value)}
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+      />
+      {searchTerm.length >= 3 && (
+        <p className="text-sm text-gray-600 mt-2">
+          Buscando por "{searchTerm}"...
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 6: Botões de Compartilhamento
+// ============================================================================
+
+function JourneyShareButtons({ benefitName, url }: {
+  benefitName: string;
+  url: string;
+}) {
+  const shareWhatsApp = () => {
+    const text = encodeURIComponent(`Veja como conseguir ${benefitName}: ${url}`);
+    window.open(`https://wa.me/?text=${text}`, '_blank');
+  };
+
+  const shareFacebook = () => {
+    const fbUrl = encodeURIComponent(url);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${fbUrl}`, '_blank');
+  };
+
+  const shareEmail = () => {
+    const subject = encodeURIComponent(`Como conseguir ${benefitName}`);
+    const body = encodeURIComponent(`Veja o passo a passo completo: ${url}`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  };
+
+  const downloadPDF = () => {
+    window.print(); // Requer CSS @media print otimizado
+  };
+
+  return (
+    <div className="flex gap-2 mb-6">
+      <button
+        onClick={shareWhatsApp}
+        className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center gap-2"
+      >
+        <span>📱</span> WhatsApp
+      </button>
+      <button
+        onClick={shareFacebook}
+        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
+      >
+        <span>👍</span> Facebook
+      </button>
+      <button
+        onClick={shareEmail}
+        className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 flex items-center gap-2"
+      >
+        <span>✉️</span> E-mail
+      </button>
+      <button
+        onClick={downloadPDF}
+        className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center gap-2"
+      >
+        <span>📄</span> Download PDF
+      </button>
+    </div>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 7: Leitura em Voz Alta (Web Speech API)
+// ============================================================================
+
+function JourneyAudioReader({ text }: { text: string }) {
+  const [isReading, setIsReading] = useState(false);
+
+  const speak = () => {
+    if ('speechSynthesis' in window) {
+      // Remove markdown syntax antes de falar
+      const cleanText = text
+        .replace(/[#*_`]/g, '') // Remove markdown chars
+        .replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1') // Remove links
+        .replace(/\|/g, ' '); // Remove table pipes
+
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = 'pt-BR';
+      utterance.rate = 0.9; // Velocidade (0.1 a 10)
+      utterance.pitch = 1; // Tom (0 a 2)
+
+      utterance.onstart = () => setIsReading(true);
+      utterance.onend = () => setIsReading(false);
+
+      speechSynthesis.speak(utterance);
+    } else {
+      alert('Seu navegador não suporta leitura em voz alta.');
+    }
+  };
+
+  const stop = () => {
+    speechSynthesis.cancel();
+    setIsReading(false);
+  };
+
+  return (
+    <button
+      onClick={isReading ? stop : speak}
+      className={`
+        px-4 py-2 rounded-lg font-medium flex items-center gap-2
+        ${isReading ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'}
+        text-white
+      `}
+    >
+      <span>{isReading ? '⏸️' : '🔊'}</span>
+      {isReading ? 'Parar Leitura' : 'Ler em Voz Alta'}
+    </button>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 8: Componente Completo de Jornada
+// ============================================================================
+
+function JourneyPage({ benefit }: { benefit: any }) {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [journeyContent, setJourneyContent] = useState('');
+  const [highlightedContent, setHighlightedContent] = useState('');
+
+  const benefitType = getBenefitType(benefit);
+  const journeyFile = JOURNEY_MAP[benefitType];
+
+  // Carregar conteúdo do markdown
+  React.useEffect(() => {
+    fetch(journeyFile)
+      .then(res => res.text())
+      .then(content => {
+        setJourneyContent(content);
+        setHighlightedContent(content);
+      });
+  }, [journeyFile]);
+
+  // Extrair seção da etapa atual
+  const getStepContent = () => {
+    const stepHeading = `## Etapa ${currentStep}:`;
+    const nextStepHeading = `## Etapa ${currentStep + 1}:`;
+
+    const startIndex = highlightedContent.indexOf(stepHeading);
+    const endIndex = highlightedContent.indexOf(nextStepHeading);
+
+    if (startIndex === -1) return highlightedContent;
+    if (endIndex === -1) return highlightedContent.substring(startIndex);
+
+    return highlightedContent.substring(startIndex, endIndex);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          Jornada Completa: {benefit.name}
+        </h1>
+        <p className="text-gray-600">
+          Siga as 7 etapas para conseguir este benefício
+        </p>
+      </div>
+
+      {/* Progress Bar */}
+      <JourneyProgressBar currentStep={currentStep} />
+
+      {/* Step Navigation */}
+      <JourneyStepNav currentStep={currentStep} onStepChange={setCurrentStep} />
+
+      {/* Search */}
+      <JourneySearch content={journeyContent} onHighlight={setHighlightedContent} />
+
+      {/* Share Buttons */}
+      <JourneyShareButtons
+        benefitName={benefit.name}
+        url={window.location.href}
+      />
+
+      {/* Content */}
+      <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <JourneyMarkdown content={getStepContent()} />
+      </div>
+
+      {/* Audio Reader */}
+      <div className="flex justify-center mb-6">
+        <JourneyAudioReader text={getStepContent()} />
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-between">
+        <button
+          onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
+          disabled={currentStep === 1}
+          className="px-6 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          ← Etapa Anterior
+        </button>
+        <button
+          onClick={() => setCurrentStep(Math.min(7, currentStep + 1))}
+          disabled={currentStep === 7}
+          className="px-6 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Próxima Etapa →
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// EXEMPLO 9: CSS para Impressão (PDF Download)
+// ============================================================================
+
+const PRINT_CSS = `
+@media print {
+  /* Esconder elementos de navegação */
+  nav, .journey-step-nav, .journey-search, .journey-share-buttons, .journey-audio-reader {
+    display: none !important;
+  }
+
+  /* Quebras de página */
+  h2 {
+    page-break-before: always;
+    page-break-after: avoid;
+  }
+
+  table, blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+
+  /* Fontes e cores */
+  body {
+    font-size: 12pt;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  /* Mostrar URLs dos links */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Margens */
+  @page {
+    margin: 2cm;
+  }
+}
+`;
+
+// ============================================================================
+// EXEMPLO 10: Menu Lateral (Sidebar) Alternativo
+// ============================================================================
+
+function JourneySidebar({ currentStep, onStepChange }: {
+  currentStep: number;
+  onStepChange: (step: number) => void;
+}) {
+  return (
+    <aside className="w-64 bg-white rounded-lg shadow-sm p-4">
+      <h3 className="font-bold text-gray-900 mb-4">Navegação</h3>
+
+      {/* Etapas */}
+      <nav className="space-y-2 mb-6">
+        {JOURNEY_STEPS.map((step) => (
+          <button
+            key={step.id}
+            onClick={() => onStepChange(step.id)}
+            className={`
+              w-full text-left px-3 py-2 rounded-lg transition-all
+              ${currentStep === step.id
+                ? 'bg-emerald-500 text-white font-semibold'
+                : 'text-gray-700 hover:bg-gray-100'
+              }
+            `}
+          >
+            <span className="mr-2">{step.icon}</span>
+            {step.id}. {step.name}
+          </button>
+        ))}
+      </nav>
+
+      {/* Seções Extras */}
+      <div className="border-t pt-4">
+        <h4 className="font-semibold text-gray-900 mb-2">Seções Especiais</h4>
+        <nav className="space-y-2">
+          <button className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+            🛣️ Caminhos Alternativos
+          </button>
+          <button className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+            ⚠️ Armadilhas Comuns
+          </button>
+          <button className="w-full text-left px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
+            📞 Canais de Suporte
+          </button>
+        </nav>
+      </div>
+    </aside>
+  );
+}
+
+// ============================================================================
+// EXPORT (não use este arquivo diretamente, copie os trechos necessários)
+// ============================================================================
+
+export {
+  getBenefitType,
+  JourneyStepNav,
+  JourneyProgressBar,
+  JourneyMarkdown,
+  JourneySearch,
+  JourneyShareButtons,
+  JourneyAudioReader,
+  JourneyPage,
+  JourneySidebar,
+  PRINT_CSS,
+};

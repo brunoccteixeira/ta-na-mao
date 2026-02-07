@@ -465,9 +465,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
-      "category": "Cultura",
+      "category": "Esporte",
       "metadata": {
-        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
+        "disclaimer": "Programa de bolsa atleta estadual em AM não confirmado. Verifique junto à secretaria de esportes do estado.",
+        "verified": false
       }
     }
   ]

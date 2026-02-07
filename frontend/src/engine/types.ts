@@ -156,6 +156,21 @@ export interface EligibilityResult {
   reason?: string;
 }
 
+export interface BenefitWarning {
+  benefitIds: string[];
+  type: 'exclusion' | 'cascade' | 'choose_best' | 'info';
+  message: string;
+  legalBasis?: string;
+}
+
+export interface UnlockedBenefit {
+  benefitId: string;
+  benefitName: string;
+  unlockedBy: string;
+  automatic: boolean;
+  description: string;
+}
+
 export interface EvaluationSummary {
   eligible: EligibilityResult[];
   likelyEligible: EligibilityResult[];
@@ -168,6 +183,11 @@ export interface EvaluationSummary {
   totalPotentialMonthly: number;
   totalPotentialAnnual: number;
   totalPotentialOneTime: number;
+
+  // Relações entre benefícios (pós-processamento)
+  warnings?: BenefitWarning[];
+  unlocked?: UnlockedBenefit[];
+  totalAdjustedMonthly?: number;
 
   prioritySteps: string[];
   documentsNeeded: string[];

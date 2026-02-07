@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "rn-parnamirim-rn-mais-justo",
-      "name": "RN Mais Justo",
-      "shortDescription": "Programa estadual de assistência social integrada focado em redução da pobreza. Governo do Rio Grande do Norte — disponível em Parnamirim",
+      "id": "rn-parnamirim-cesta-basica",
+      "name": "Programa de Segurança Alimentar",
+      "shortDescription": "Cesta básica ou vale-alimentação para famílias em vulnerabilidade em Parnamirim. Procure o CRAS para saber os programas disponíveis.",
       "scope": "municipal",
       "state": "RN",
       "municipalityIbge": "2403251",
       "estimatedValue": {
         "type": "monthly",
         "min": 0,
-        "max": 0,
-        "description": "Ações integradas de assistência social"
+        "max": 200,
+        "description": "Valor varia conforme programa municipal/estadual"
       },
       "eligibilityRules": [
         {
@@ -345,7 +345,7 @@
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS do município",
+      "whereToApply": "CRAS de Parnamirim",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -354,16 +354,19 @@
       ],
       "howToApply": [
         "Procure o CRAS de Parnamirim",
-        "Apresente documentos e comprove elegibilidade",
-        "Aguarde avaliação e inclusão no programa"
+        "Informe-se sobre programas de segurança alimentar disponíveis",
+        "Apresente documentos e solicite inclusão"
       ],
-      "sourceUrl": "https://www.rn.gov.br/",
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "⚖️",
-      "category": "Assistência Social",
+      "icon": "🛒",
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true,
       "metadata": {
-        "researchSource": "state-common"
+        "template": true,
+        "disclaimer": "Não identificamos programa estadual de transferência de renda confirmado em RN. Procure o CRAS local para conhecer os programas sociais disponíveis na sua cidade e estado."
       }
     }
   ]

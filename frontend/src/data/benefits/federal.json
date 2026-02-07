@@ -88,12 +88,6 @@
           "value": 405.25,
           "description": "Renda por pessoa de até R$ 405,25 (1/4 do salário mínimo)",
           "legalReference": "Art. 20, §3º, Lei 8.742/1993"
-        },
-        {
-          "field": "recebeBolsaFamilia",
-          "operator": "eq",
-          "value": false,
-          "description": "Não receber Bolsa Família (pode optar por um)"
         }
       ],
       "legalBasis": {
@@ -3490,7 +3484,7 @@
       "icon": "👶",
       "category": "Transferência de Renda",
       "metadata": {
-        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+        "disclaimer": "O Brasil Carinhoso foi integrado ao Bolsa Família em 2023. O benefício é pago automaticamente junto com o Bolsa Família para famílias com crianças de 0-6 anos em extrema pobreza."
       }
     },
     {
@@ -3645,11 +3639,11 @@
       ],
       "sourceUrl": "https://www.gov.br/fazenda/pt-br/assuntos/desenrola",
       "lastUpdated": "2026-02-07",
-      "status": "active",
+      "status": "discontinued",
       "icon": "🔓",
       "category": "Empreendedorismo",
       "metadata": {
-        "disclaimer": "Programa com prazo de adesão. Consulte vigência atual em gov.br/fazenda."
+        "disclaimer": "O Desenrola Brasil encerrou em maio de 2024. Para renegociação de dívidas, procure o Serasa Limpa Nome ou o programa Acredita no Primeiro Passo."
       }
     },
     {
@@ -3711,13 +3705,13 @@
     {
       "id": "federal-bolsa-atleta",
       "name": "Bolsa Atleta",
-      "shortDescription": "Auxílio mensal para atletas de alto rendimento em diversas categorias, do estudantil ao olímpico.",
+      "shortDescription": "Bolsa mensal para atletas com resultados em competições oficiais. De R$ 410 (Estudantil) a R$ 16.629 (Pódio).",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
         "min": 410,
         "max": 16629,
-        "description": "R$ 410 (Estudantil) a R$ 16.629 (Olímpico/Paralímpico) por mês"
+        "description": "De R$ 410/mês (Estudantil) a R$ 16.629/mês (Pódio). Categorias: Estudantil R$ 410, Nacional R$ 925, Internacional R$ 1.850, Olímpico R$ 3.100, Pódio R$ 16.629"
       },
       "eligibilityRules": [
         {
@@ -4011,8 +4005,8 @@
       "estimatedValue": {
         "type": "annual",
         "min": 0,
-        "max": 12000,
-        "description": "Até R$ 12.000/ano por agricultor familiar (compra institucional)"
+        "max": 15000,
+        "description": "Limite de R$ 15.000/ano por DAP (Declaração de Aptidão ao Pronaf)"
       },
       "eligibilityRules": [
         {

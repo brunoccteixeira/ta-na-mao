@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "sc-blumenau-renda-extra-sc",
-      "name": "SC Mais Renda",
-      "shortDescription": "Programa estadual de complemento de renda para famílias em vulnerabilidade social. Governo de Santa Catarina — disponível em Blumenau",
+      "id": "sc-blumenau-cesta-basica",
+      "name": "Programa de Segurança Alimentar",
+      "shortDescription": "Cesta básica ou vale-alimentação para famílias em vulnerabilidade em Blumenau. Procure o CRAS para saber os programas disponíveis.",
       "scope": "municipal",
       "state": "SC",
       "municipalityIbge": "4202404",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
+        "min": 0,
         "max": 200,
-        "description": "Benefício mensal complementar conforme composição familiar"
+        "description": "Valor varia conforme programa municipal/estadual"
       },
       "eligibilityRules": [
         {
@@ -345,7 +345,7 @@
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS do município",
+      "whereToApply": "CRAS de Blumenau",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -354,16 +354,19 @@
       ],
       "howToApply": [
         "Procure o CRAS de Blumenau",
-        "Apresente documentos e comprove elegibilidade",
-        "Aguarde avaliação e inclusão no programa"
+        "Informe-se sobre programas de segurança alimentar disponíveis",
+        "Apresente documentos e solicite inclusão"
       ],
-      "sourceUrl": "https://www.sst.sc.gov.br/",
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda",
+      "icon": "🛒",
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true,
       "metadata": {
-        "researchSource": "state-common"
+        "template": true,
+        "disclaimer": "Não identificamos programa estadual de transferência de renda confirmado em SC. Procure o CRAS local para conhecer os programas sociais disponíveis na sua cidade e estado."
       }
     }
   ]
