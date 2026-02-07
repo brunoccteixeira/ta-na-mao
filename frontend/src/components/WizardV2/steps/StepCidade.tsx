@@ -9,22 +9,34 @@ import { useWizard } from '../WizardContext';
 import SelectWithSearch, { SelectOption } from '../inputs/SelectWithSearch';
 import ExplanationModal, { WhyButton } from '../ExplanationModal';
 import { QUESTIONS, fetchCitiesByState } from '../../../data/questions';
-import { ArrowRight, Loader2 } from 'lucide-react';
+import { ArrowRight, Loader2, AlertTriangle, RefreshCw } from 'lucide-react';
 
 export default function StepCidade() {
   const { profile, updateProfile, nextStep } = useWizard();
   const [showExplanation, setShowExplanation] = useState(false);
   const [cities, setCities] = useState<SelectOption[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [fetchError, setFetchError] = useState<string | null>(null);
+  const [lastFetchedState, setLastFetchedState] = useState<string | undefined>(undefined);
   const question = QUESTIONS.cidade;
 
   // Fetch cities when state changes
   useEffect(() => {
     if (profile.estado) {
+      // Limpar município se o estado mudou
+      if (lastFetchedState && lastFetchedState !== profile.estado) {
+        updateProfile({ municipioIbge: undefined, municipioNome: undefined });
+      }
+      setLastFetchedState(profile.estado);
       setIsLoading(true);
+      setFetchError(null);
       fetchCitiesByState(profile.estado)
         .then((data) => {
           setCities(data);
+        })
+        .catch(() => {
+          setFetchError('Não foi possível carregar as cidades. Verifique sua conexão.');
+          setCities([]);
         })
         .finally(() => {
           setIsLoading(false);
@@ -71,6 +83,26 @@ export default function StepCidade() {
           <div className="flex items-center justify-center py-8">
             <Loader2 className="w-6 h-6 text-emerald-500 animate-spin" />
             <span className="ml-2 text-[var(--text-secondary)]">Carregando cidades...</span>
+          </div>
+        ) : fetchError ? (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <AlertTriangle className="w-8 h-8 text-amber-500 mb-3" />
+            <p className="text-sm text-[var(--text-secondary)] mb-4">{fetchError}</p>
+            <button
+              type="button"
+              onClick={() => {
+                setFetchError(null);
+                setIsLoading(true);
+                fetchCitiesByState(profile.estado!)
+                  .then((data) => setCities(data))
+                  .catch(() => setFetchError('Não foi possível carregar as cidades. Verifique sua conexão.'))
+                  .finally(() => setIsLoading(false));
+              }}
+              className="flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg text-sm font-medium hover:bg-emerald-600 transition-colors"
+            >
+              <RefreshCw className="w-4 h-4" />
+              Tentar novamente
+            </button>
           </div>
         ) : (
           <SelectWithSearch

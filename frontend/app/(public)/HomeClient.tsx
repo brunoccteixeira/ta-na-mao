@@ -308,21 +308,28 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
             {/* Trust: Data sources */}
             <div className="text-center">
               <p className="text-[var(--text-tertiary)] text-sm mb-4">Dados oficiais de:</p>
-              <div className="flex flex-wrap justify-center gap-6 items-center">
+              <div className="flex flex-wrap justify-center gap-8 items-center">
                 {[
-                  { name: 'Gov.br', color: 'text-blue-600' },
-                  { name: 'MDS', color: 'text-orange-600' },
-                  { name: 'IBGE', color: 'text-green-700' },
-                  { name: 'DataSUS', color: 'text-red-600' },
-                  { name: 'Caixa', color: 'text-blue-800' },
-                  { name: 'INSS', color: 'text-indigo-600' },
+                  { name: 'Gov.br', logo: '/images/logos/govbr.svg', url: 'https://www.gov.br' },
+                  { name: 'MDS', logo: '/images/logos/mds.svg', url: 'https://www.gov.br/mds' },
+                  { name: 'IBGE', logo: '/images/logos/ibge.svg', url: 'https://www.ibge.gov.br' },
+                  { name: 'DataSUS', logo: '/images/logos/datasus.svg', url: 'https://datasus.saude.gov.br' },
+                  { name: 'Caixa', logo: '/images/logos/caixa.svg', url: 'https://www.caixa.gov.br' },
+                  { name: 'INSS', logo: '/images/logos/inss.svg', url: 'https://www.gov.br/inss' },
                 ].map((source) => (
-                  <span
+                  <a
                     key={source.name}
-                    className={`${source.color} font-bold text-lg opacity-60 hover:opacity-100 transition-opacity`}
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                   >
-                    {source.name}
-                  </span>
+                    <img
+                      src={source.logo}
+                      alt={source.name}
+                      className="h-9 w-auto"
+                    />
+                  </a>
                 ))}
               </div>
             </div>
@@ -365,6 +372,50 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
                 className="text-emerald-600 hover:text-emerald-500 font-medium"
               >
                 Ver todos os {totalBenefits} benefícios →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── SERVIÇOS RÁPIDOS ─── */}
+        <section className="py-12 px-4 bg-[var(--bg-card)] border-y border-[var(--border-color)]">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] text-center mb-3">
+              Serviços rápidos
+            </h2>
+            <p className="text-[var(--text-tertiary)] text-center mb-8">
+              Encontre atendimento perto de você
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link
+                href="/cras"
+                className="flex items-center gap-4 p-5 rounded-xl bg-white border border-[var(--border-color)] hover:border-purple-400 hover:shadow-md transition-all group"
+              >
+                <span className="text-3xl">🏛️</span>
+                <div>
+                  <h3 className="font-semibold text-[var(--text-primary)] group-hover:text-purple-600 transition-colors">Encontrar CRAS</h3>
+                  <p className="text-sm text-[var(--text-tertiary)]">CadÚnico e assistência social</p>
+                </div>
+              </Link>
+              <Link
+                href="/farmacia"
+                className="flex items-center gap-4 p-5 rounded-xl bg-white border border-[var(--border-color)] hover:border-emerald-400 hover:shadow-md transition-all group"
+              >
+                <span className="text-3xl">💊</span>
+                <div>
+                  <h3 className="font-semibold text-[var(--text-primary)] group-hover:text-emerald-600 transition-colors">Farmácia Popular</h3>
+                  <p className="text-sm text-[var(--text-tertiary)]">Medicamentos 100% grátis</p>
+                </div>
+              </Link>
+              <Link
+                href="/dignidade-menstrual"
+                className="flex items-center gap-4 p-5 rounded-xl bg-white border border-[var(--border-color)] hover:border-rose-400 hover:shadow-md transition-all group"
+              >
+                <span className="text-3xl">🩸</span>
+                <div>
+                  <h3 className="font-semibold text-[var(--text-primary)] group-hover:text-rose-600 transition-colors">Dignidade Menstrual</h3>
+                  <p className="text-sm text-[var(--text-tertiary)]">Absorventes grátis todo mês</p>
+                </div>
               </Link>
             </div>
           </div>

@@ -55,7 +55,7 @@ MEDICAMENTOS_FARMACIA_POPULAR: Dict[str, List[Dict]] = {
         {"nome": "Medroxiprogesterona", "principio_ativo": "acetato de medroxiprogesterona", "dosagens": ["150mg/ml"], "gratuito": True},
     ],
     "incontinencia": [
-        {"nome": "Fralda Geriátrica", "principio_ativo": "fralda descartavel", "dosagens": ["P", "M", "G", "EG"], "gratuito": True},
+        {"nome": "Fralda Geriátrica", "principio_ativo": "fralda descartavel", "dosagens": ["P", "M", "G", "EG"], "gratuito": False, "desconto": "40%"},
     ],
 }
 
@@ -172,6 +172,7 @@ def buscar_medicamento(nome: str) -> Optional[Dict]:
                     "categoria": categoria,
                     "dosagens": med["dosagens"],
                     "gratuito": med["gratuito"],
+                    "desconto": med.get("desconto"),
                     "similaridade": max_sim
                 }
 
@@ -200,17 +201,26 @@ def verificar_cobertura_receita(medicamentos: List[str]) -> Dict:
     Returns:
         Dict com medicamentos cobertos e não cobertos
     """
-    cobertos = []
+    gratuitos = []
+    com_desconto = []
     nao_cobertos = []
 
     for med in medicamentos:
         resultado = buscar_medicamento(med)
         if resultado["encontrado"] and resultado["gratuito"]:
-            cobertos.append({
+            gratuitos.append({
                 "nome_receita": med,
                 "nome_programa": resultado["nome"],
                 "categoria": resultado["categoria"],
                 "dosagens_disponiveis": resultado["dosagens"]
+            })
+        elif resultado["encontrado"] and resultado.get("desconto"):
+            com_desconto.append({
+                "nome_receita": med,
+                "nome_programa": resultado["nome"],
+                "categoria": resultado["categoria"],
+                "dosagens_disponiveis": resultado["dosagens"],
+                "desconto": resultado["desconto"]
             })
         else:
             nao_cobertos.append({
@@ -221,24 +231,33 @@ def verificar_cobertura_receita(medicamentos: List[str]) -> Dict:
 
     return {
         "total_medicamentos": len(medicamentos),
-        "cobertos": len(cobertos),
+        "cobertos": len(gratuitos),
+        "com_desconto": len(com_desconto),
         "nao_cobertos": len(nao_cobertos),
-        "medicamentos_cobertos": cobertos,
+        "medicamentos_cobertos": gratuitos,
+        "medicamentos_com_desconto": com_desconto,
         "medicamentos_nao_cobertos": nao_cobertos,
-        "todos_cobertos": len(nao_cobertos) == 0,
-        "texto_resumo": _gerar_texto_resumo(cobertos, nao_cobertos)
+        "todos_cobertos": len(nao_cobertos) == 0 and len(com_desconto) == 0,
+        "texto_resumo": _gerar_texto_resumo(gratuitos, com_desconto, nao_cobertos)
     }
 
 
-def _gerar_texto_resumo(cobertos: List[Dict], nao_cobertos: List[Dict]) -> str:
+def _gerar_texto_resumo(gratuitos: List[Dict], com_desconto: List[Dict], nao_cobertos: List[Dict]) -> str:
     """Gera texto de resumo da verificação de cobertura."""
     linhas = []
 
-    if cobertos:
+    if gratuitos:
         linhas.append("✅ **MEDICAMENTOS GRATUITOS no Farmácia Popular:**")
-        for med in cobertos:
+        for med in gratuitos:
             dosagens = ", ".join(med["dosagens_disponiveis"])
             linhas.append(f"   • {med['nome_programa']} ({dosagens})")
+        linhas.append("")
+
+    if com_desconto:
+        linhas.append("💰 **COM DESCONTO no Farmácia Popular:**")
+        for med in com_desconto:
+            dosagens = ", ".join(med["dosagens_disponiveis"])
+            linhas.append(f"   • {med['nome_programa']} ({dosagens}) — desconto de {med['desconto']}")
         linhas.append("")
 
     if nao_cobertos:
@@ -249,12 +268,13 @@ def _gerar_texto_resumo(cobertos: List[Dict], nao_cobertos: List[Dict]) -> str:
                 linhas.append(f"     💡 {med['sugestao']}")
         linhas.append("")
 
-    if cobertos and not nao_cobertos:
+    if gratuitos and not nao_cobertos and not com_desconto:
         linhas.append("🎉 **Todos os medicamentos são gratuitos!**")
         linhas.append("Leve sua receita e documento com CPF a qualquer farmácia credenciada.")
-    elif cobertos:
-        linhas.append("📋 Leve a receita para retirar os medicamentos gratuitos.")
-        linhas.append("Os demais precisam ser comprados normalmente.")
+    elif gratuitos or com_desconto:
+        linhas.append("📋 Leve a receita para retirar os medicamentos na farmácia credenciada.")
+        if nao_cobertos:
+            linhas.append("Os demais precisam ser comprados normalmente.")
     else:
         linhas.append("😔 Nenhum medicamento desta receita está no Farmácia Popular.")
 

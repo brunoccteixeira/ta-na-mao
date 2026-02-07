@@ -36,6 +36,7 @@ export default function ResultsDashboard() {
   const { profile, reset } = useWizard();
   const [results, setResults] = useState<EvaluationSummary | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'eligible' | 'likely' | 'maybe' | 'receiving'>('eligible');
 
   // Run eligibility evaluation
@@ -70,6 +71,9 @@ export default function ResultsDashboard() {
         setResults(summary);
       } catch (error) {
         console.error('Error evaluating benefits:', error);
+        setErrorMessage(
+          'Houve um problema ao analisar seus benefícios. Isso pode acontecer se os dados estiverem incompletos.'
+        );
       } finally {
         setIsLoading(false);
       }
@@ -126,13 +130,16 @@ export default function ResultsDashboard() {
   if (!results) {
     return (
       <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center p-4">
-        <div className="text-center">
-          <p className="text-[var(--text-primary)]">Erro ao carregar resultados</p>
+        <div className="text-center max-w-sm">
+          <p className="text-[var(--text-primary)] font-semibold mb-2">Não foi possível carregar os resultados</p>
+          {errorMessage && (
+            <p className="text-sm text-[var(--text-secondary)] mb-4">{errorMessage}</p>
+          )}
           <button
             onClick={reset}
-            className="mt-4 px-4 py-2 bg-emerald-500 text-white rounded-lg"
+            className="mt-2 px-6 py-3 bg-emerald-500 text-white rounded-xl font-medium hover:bg-emerald-600 transition-colors"
           >
-            Tentar novamente
+            Recomeçar análise
           </button>
         </div>
       </div>

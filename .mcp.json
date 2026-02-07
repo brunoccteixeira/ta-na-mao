@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "mcpServers": {
     "brasil-api": {
       "type": "stdio",
@@ -57,60 +56,5 @@
       },
       "description": "Base de conhecimento vetorial para documentação de benefícios"
     }
-  },
-  "mcpTools": {
-    "brasil-api": {
-      "enabled": true,
-      "tools": [
-        "cep-lookup",
-        "cnpj-lookup",
-        "ddd-lookup",
-        "get-banks",
-        "get-holidays"
-      ]
-    },
-    "google-maps": {
-      "enabled": true,
-      "tools": [
-        "search_nearby",
-        "get_place_details",
-        "maps_geocode",
-        "maps_reverse_geocode",
-        "maps_distance_matrix",
-        "maps_directions"
-      ]
-    },
-    "pdf-ocr": {
-      "enabled": true,
-      "tools": [
-        "extract_text",
-        "extract_images",
-        "ocr_image"
-      ]
-    },
-    "twilio": {
-      "enabled": true,
-      "tools": [
-        "send_sms",
-        "send_whatsapp",
-        "make_call",
-        "get_call_status"
-      ]
-    }
-  },
-  "permissions": {
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Read(./secrets/**)",
-      "Read(**/*credentials*)",
-      "Read(**/*password*)",
-      "Read(**/*token*)"
-    ]
-  },
-  "settings": {
-    "debug": false,
-    "logLevel": "info",
-    "timeout": 30000
   }
 }

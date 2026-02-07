@@ -6,7 +6,7 @@
  * Calculates age automatically
  */
 
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 interface Props {
@@ -30,8 +30,22 @@ export default function DateSelect({
 }: Props) {
   const currentYear = new Date().getFullYear();
 
-  // Generate options
-  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+  // Generate days based on selected month/year
+  const maxDay = useMemo(() => {
+    if (month && year) return new Date(year, month, 0).getDate();
+    if (month) return new Date(2024, month, 0).getDate(); // leap year as safe default
+    return 31;
+  }, [month, year]);
+
+  const days = Array.from({ length: maxDay }, (_, i) => i + 1);
+
+  // Reset day if it exceeds the max for the selected month
+  useEffect(() => {
+    if (day && day > maxDay) {
+      onChangeDay(maxDay);
+    }
+  }, [maxDay, day, onChangeDay]);
+
   const months = [
     { value: 1, label: 'Janeiro' },
     { value: 2, label: 'Fevereiro' },

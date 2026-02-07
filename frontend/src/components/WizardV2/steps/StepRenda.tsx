@@ -14,6 +14,7 @@ import { ArrowRight, AlertCircle, CheckCircle } from 'lucide-react';
 export default function StepRenda() {
   const { profile, updateProfile, nextStep } = useWizard();
   const [showExplanation, setShowExplanation] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(profile.rendaFamiliarMensal > 0);
   const question = QUESTIONS.renda;
 
   // Calculate per capita
@@ -92,7 +93,10 @@ export default function StepRenda() {
       <div className="mb-6">
         <MoneyInput
           value={profile.rendaFamiliarMensal}
-          onChange={(value) => updateProfile({ rendaFamiliarMensal: value })}
+          onChange={(value) => {
+            setHasInteracted(true);
+            updateProfile({ rendaFamiliarMensal: value });
+          }}
           placeholder="0"
           presets={RENDA_PRESETS}
         />
@@ -151,7 +155,11 @@ export default function StepRenda() {
       {/* Continue button */}
       <button
         onClick={handleNext}
-        className="w-full py-4 rounded-xl font-semibold text-white flex items-center justify-center gap-2 transition-all bg-emerald-500 hover:bg-emerald-600"
+        disabled={!hasInteracted}
+        className={`
+          w-full py-4 rounded-xl font-semibold text-white flex items-center justify-center gap-2 transition-all
+          ${hasInteracted ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-gray-300 cursor-not-allowed'}
+        `}
       >
         Continuar
         <ArrowRight className="w-5 h-5" />

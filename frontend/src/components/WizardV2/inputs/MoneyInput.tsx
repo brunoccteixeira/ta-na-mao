@@ -24,6 +24,7 @@ export default function MoneyInput({
   presets,
 }: Props) {
   const [displayValue, setDisplayValue] = useState('');
+  const [showMaxWarning, setShowMaxWarning] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Sync display value with prop
@@ -50,8 +51,12 @@ export default function MoneyInput({
     const num = parseNumber(raw);
 
     // Limit to reasonable max (R$ 999.999)
-    if (num > 999999) return;
+    if (num > 999999) {
+      setShowMaxWarning(true);
+      return;
+    }
 
+    setShowMaxWarning(false);
     setDisplayValue(num > 0 ? formatNumber(num) : '');
     onChange(num);
   };
@@ -84,6 +89,11 @@ export default function MoneyInput({
           "
         />
       </div>
+
+      {/* Max value warning */}
+      {showMaxWarning && (
+        <p className="mt-1 text-xs text-amber-600">Valor máximo: R$ 999.999</p>
+      )}
 
       {/* Quick presets */}
       {presets && presets.length > 0 && (
