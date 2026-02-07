@@ -121,7 +121,7 @@ export default function ResultsDashboard() {
             <Sparkles className="w-8 h-8 text-white" />
           </div>
           <p className="text-[var(--text-primary)] font-semibold">Analisando seus benefícios...</p>
-          <p className="text-[var(--text-tertiary)] text-sm mt-1">Verificando mais de 200 programas</p>
+          <p className="text-[var(--text-tertiary)] text-sm mt-1">Verificando mais de 1.300 programas</p>
         </div>
       </div>
     );

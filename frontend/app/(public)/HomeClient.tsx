@@ -6,6 +6,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
 interface HomeClientProps {
@@ -65,7 +66,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
 
 const popularBenefits = [
   { id: 'federal-bolsa-familia', name: 'Bolsa Família', icon: '🏠', desc: 'Ajuda mensal para famílias', value: 'Até R$ 900/mês' },
-  { id: 'federal-bpc-idoso', name: 'BPC Idoso', icon: '👴', desc: 'Salário mínimo para 65+', value: 'R$ 1.412/mês' },
+  { id: 'federal-bpc-idoso', name: 'BPC Idoso', icon: '👴', desc: 'Salário mínimo para 65+', value: 'R$ 1.621/mês' },
   { id: 'federal-farmacia-popular', name: 'Farmácia Popular', icon: '💊', desc: 'Remédios grátis', value: '100% grátis' },
   { id: 'federal-tsee', name: 'Tarifa Social Luz', icon: '💡', desc: 'Desconto na conta de luz', value: 'Até 65% off' },
   { id: 'federal-auxilio-gas', name: 'Auxílio Gás', icon: '🔥', desc: 'Ajuda para comprar gás', value: 'R$ 104/bimestre' },
@@ -149,11 +150,13 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
 
             {/* Right: Hero Image */}
             <div className="relative w-full h-[350px] sm:h-[450px] md:h-[600px] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/images/hero-family.png"
                 alt="Mãe brasileira feliz usando o celular com seu bebê"
-                className="w-full h-full object-cover object-top"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               {/* Soft left-edge blend into white background */}
               <div
@@ -453,7 +456,7 @@ export default function HomeClient({ totalBenefits, federalCount, statesCovered,
             Este site apenas informa sobre elegibilidade. Não entregamos benefícios diretamente.
           </p>
           <p className="text-[var(--text-tertiary)] text-xs mt-2 opacity-60">
-            Tá na Mão &copy; 2025 - Feito para ajudar
+            Tá na Mão &copy; 2026 - Feito para ajudar
           </p>
         </div>
       </footer>

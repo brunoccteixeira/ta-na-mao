@@ -44,7 +44,7 @@ export default function WizardLayout({ children }: Props) {
             </div>
             <div>
               <p className="text-sm opacity-90">5 minutos para descobrir</p>
-              <p className="text-lg font-bold">+200 benefícios</p>
+              <p className="text-lg font-bold">+1.300 benefícios</p>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function WizardLayout({ children }: Props) {
             <div className="space-y-6">
               <StatItem
                 icon={<Gift className="w-6 h-6" />}
-                value="+200"
+                value="+1.300"
                 label="benefícios mapeados"
               />
               <StatItem
