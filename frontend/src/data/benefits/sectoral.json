@@ -1238,7 +1238,7 @@
           "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 2766,
-          "description": "Remuneração média mensal de até R$ 2.765,93 no ano-base (limite corrigido pelo INPC, EC 135/2024)"
+          "description": "Remuneração média mensal de até R$ 2.765,93 no ano-base (teto EC 135/2024, corrigido pelo INPC)"
         }
       ],
       "whereToApply": "Pagamento automático — consulte no app Carteira de Trabalho Digital ou Caixa",
@@ -2207,10 +2207,10 @@
           "description": "Ser servidor público federal ativo"
         },
         {
-          "field": "temFilhosMenores",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter filho(s) de até 5 anos de idade"
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter pelo menos 1 filho menor de idade"
         }
       ],
       "whereToApply": "Órgão de lotação (RH do órgão federal)",
@@ -2283,8 +2283,8 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 400,
-        "max": 900,
-        "description": "R$ 400/mês (geral) ou R$ 900/mês (indígenas e quilombolas)"
+        "max": 1400,
+        "description": "R$ 400/mês (geral) ou R$ 1.400/mês (indígenas e quilombolas)"
       },
       "eligibilityRules": [
         {
@@ -2296,14 +2296,8 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 810.5,
-          "description": "Renda per capita familiar de até meio salário mínimo"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "value": 2431.5,
+          "description": "Renda per capita familiar de até 1,5 salário mínimo (R$ 2.431,50)"
         }
       ],
       "whereToApply": "Coordenação de assistência estudantil da universidade",
@@ -2532,6 +2526,12 @@
             "number": "Art. 230, §2º, CF/88",
             "description": "Gratuidade aos maiores de 65 anos nos transportes coletivos urbanos",
             "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "lei",
+            "number": "10.741/2003",
+            "description": "Estatuto do Idoso — Art. 39: gratuidade nos transportes coletivos públicos urbanos",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
           }
         ]
       },
@@ -2763,7 +2763,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "gestante",
+          "field": "temGestante",
           "operator": "eq",
           "value": true,
           "description": "Estar gestante ou em pós-parto (até 2 anos do bebê)"
@@ -2801,7 +2801,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "gestante",
+          "field": "temGestante",
           "operator": "eq",
           "value": true,
           "description": "Estar gestante com pré-natal no SUS"
@@ -2912,10 +2912,10 @@
           "description": "Renda per capita de até R$ 218"
         },
         {
-          "field": "temFilhosMenores",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter criança de 0 a 6 anos na família"
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter pelo menos 1 filho menor de idade"
         }
       ],
       "legalBasis": {
@@ -2955,12 +2955,12 @@
       "estimatedValue": {
         "type": "one_time",
         "min": 1621,
-        "max": 0,
-        "description": "Salário integral por 120 dias (CLT) ou 180 dias (Empresa Cidadã/servidor). Mínimo = salário mínimo."
+        "max": 8475.55,
+        "description": "Salário integral por 120 dias (CLT) ou 180 dias (Empresa Cidadã). Mínimo = R$ 1.621 (SM). Máximo = teto INSS R$ 8.475,55."
       },
       "eligibilityRules": [
         {
-          "field": "gestante",
+          "field": "temGestante",
           "operator": "eq",
           "value": true,
           "description": "Estar gestante ou ter dado à luz recentemente"
@@ -2969,7 +2969,7 @@
           "field": "contribuinteINSS",
           "operator": "eq",
           "value": true,
-          "description": "Ter contribuído ao INSS (carência de 10 meses para contribuinte individual)"
+          "description": "Ter contribuído ao INSS (CLT: sem carência; contribuinte individual/MEI: 1 contribuição — STF/IN 188/2025)"
         }
       ],
       "legalBasis": {
@@ -3070,7 +3070,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "areaRural",
+          "field": "moradiaZonaRural",
           "operator": "eq",
           "value": true,
           "description": "Residir em área rural do semiárido ou região com escassez hídrica"
@@ -3275,7 +3275,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "agricultor",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
           "description": "Ser agricultor familiar (até 4 módulos fiscais)"
@@ -3318,7 +3318,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "agricultor",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
           "description": "Ocupar terra pública federal na Amazônia Legal"
@@ -3363,7 +3363,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "autonomo",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
           "description": "Trabalhar por conta própria sem vínculo CLT"
@@ -3413,7 +3413,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "autonomo",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
           "description": "Trabalhar por conta própria"
@@ -3455,7 +3455,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "catador",
+          "field": "catadorReciclavel",
           "operator": "eq",
           "value": true,
           "description": "Ser catador de material reciclável"
@@ -3500,7 +3500,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "catador",
+          "field": "catadorReciclavel",
           "operator": "eq",
           "value": true,
           "description": "Ser catador de material reciclável"
@@ -3543,7 +3543,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "trabalhadorCLT",
+          "field": "trabalhoFormal",
           "operator": "eq",
           "value": true,
           "description": "Ter vínculo CLT com empresa que paga PLR"
@@ -3584,7 +3584,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "trabalhadorCLT",
+          "field": "trabalhoFormal",
           "operator": "eq",
           "value": true,
           "description": "Ter vínculo CLT"
@@ -3625,7 +3625,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "empregadaDomestica",
+          "field": "trabalhadoraDomestica",
           "operator": "eq",
           "value": true,
           "description": "Ser empregada doméstica com carteira assinada"
@@ -3674,16 +3674,16 @@
       },
       "eligibilityRules": [
         {
-          "field": "empregadaDomestica",
+          "field": "trabalhadoraDomestica",
           "operator": "eq",
           "value": true,
           "description": "Ser empregada doméstica registrada"
         },
         {
-          "field": "temFilhosMenores",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter filhos de até 14 anos"
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter pelo menos 1 filho menor de idade"
         },
         {
           "field": "rendaFamiliarMensal",
@@ -3723,7 +3723,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "entregador",
+          "field": "trabalhaAplicativo",
           "operator": "eq",
           "value": true,
           "description": "Trabalhar como entregador de plataforma digital"
@@ -3769,7 +3769,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "entregador",
+          "field": "trabalhaAplicativo",
           "operator": "eq",
           "value": true,
           "description": "Trabalhar como entregador"
@@ -3811,7 +3811,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "mei",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
           "description": "Ser MEI ativo"
@@ -3856,7 +3856,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "mei",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
           "description": "Ser MEI ou querer se tornar MEI"
@@ -3892,7 +3892,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "motoristaApp",
+          "field": "trabalhaAplicativo",
           "operator": "eq",
           "value": true,
           "description": "Ser motorista de aplicativo"
@@ -3940,7 +3940,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "motoristaApp",
+          "field": "trabalhaAplicativo",
           "operator": "eq",
           "value": true,
           "description": "Trabalhar como motorista de aplicativo"
@@ -3983,13 +3983,13 @@
       },
       "eligibilityRules": [
         {
-          "field": "pcd",
+          "field": "temPcd",
           "operator": "eq",
           "value": true,
           "description": "Pessoa com deficiência beneficiária do BPC"
         },
         {
-          "field": "empregado",
+          "field": "trabalhoFormal",
           "operator": "eq",
           "value": true,
           "description": "Ter obtido emprego formal"
@@ -4026,7 +4026,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "pcd",
+          "field": "temPcd",
           "operator": "eq",
           "value": true,
           "description": "Ser pessoa com deficiência"

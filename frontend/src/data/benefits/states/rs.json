@@ -148,7 +148,7 @@
         "O valor vai para conta do Banrisul"
       ],
       "sourceUrl": "https://www.sefaz.rs.gov.br/devolve-icms",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💳",
       "category": "Transferência de Renda"
@@ -385,7 +385,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rs.gov.br",
+      "sourceUrl": "https://www.rs.gov.br/carta-de-servicos/servicos?servico=1316",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
@@ -431,7 +431,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rs.gov.br",
+      "sourceUrl": "https://cultura.rs.gov.br/editais-2025",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
@@ -477,7 +477,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rs.gov.br",
+      "sourceUrl": "https://esporte.rs.gov.br/bolsaatletars2025",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",

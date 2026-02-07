@@ -371,13 +371,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rn.gov.br",
+      "sourceUrl": "https://www.rn.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Empreendedorismo",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     },
     {
@@ -417,13 +417,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rn.gov.br",
+      "sourceUrl": "https://www.rn.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     },
     {
@@ -463,13 +463,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rn.gov.br",
+      "sourceUrl": "https://www.rn.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     }
   ]

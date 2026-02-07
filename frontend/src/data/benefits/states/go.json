@@ -12,8 +12,8 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 100,
-        "max": 160,
-        "description": "R$ 100 base + R$ 10/dependente (até 4) + R$ 40 para doenças crônicas/gestantes"
+        "max": 260,
+        "description": "R$ 100 base + R$ 10/dependente escolar 6-17 anos (até R$ 120) + R$ 40 para doenças crônicas/gestantes"
       },
       "eligibilityRules": [
         {
@@ -29,10 +29,10 @@
           "description": "Estar no Cadastro Unico (interligado ao CadUnico)"
         },
         {
-          "field": "rendaFamiliarMensal",
+          "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 600,
-          "description": "Renda per capita de ate R$ 150 (equivale a R$ 600 para familia de 4)"
+          "value": 150,
+          "description": "Renda per capita de até R$ 150 (extrema pobreza)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -403,7 +403,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.goias.gov.br",
+      "sourceUrl": "https://www.goiasfomento.com/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
@@ -449,7 +449,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.goias.gov.br",
+      "sourceUrl": "https://goias.gov.br/cultura/fundo-de-arte-e-cultura/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
@@ -495,7 +495,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.goias.gov.br",
+      "sourceUrl": "https://goias.gov.br/esporte/pro-atleta/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",

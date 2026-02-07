@@ -369,7 +369,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.amazonas.am.gov.br",
+      "sourceUrl": "https://www.afeam.am.gov.br/linhas-de-financiamento/afeam-microcredito-pj/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
@@ -415,13 +415,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.amazonas.am.gov.br",
+      "sourceUrl": "https://www.amazonas.am.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     },
     {
@@ -461,13 +461,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.amazonas.am.gov.br",
+      "sourceUrl": "https://www.amazonas.am.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     }
   ]

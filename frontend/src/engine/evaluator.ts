@@ -145,6 +145,11 @@ function matchesSector(profile: CitizenProfile, benefit: Benefit): boolean {
     pcd: 'temPcd',
     domestica: 'trabalhadoraDomestica',
     clt: 'trabalhoFormal',
+    servidor_publico: 'servidorPublico',
+    estudante: 'estudante',
+    idoso: 'temIdoso65Mais',
+    gestante: 'temGestante',
+    indigena_quilombola: 'indigenaOuQuilombola',
   };
 
   const profileField = sectorMap[benefit.sector];

@@ -203,7 +203,7 @@
     {
       "id": "federal-tsee",
       "name": "Tarifa Social de Energia",
-      "shortDescription": "Conta de luz 100% grátis até 80 kWh/mês para famílias de baixa renda (Programa Luz do Povo).",
+      "shortDescription": "Conta de luz 100% grátis até 80 kWh/mês para famílias de baixa renda inscritas no CadÚnico (Programa Luz do Povo, Lei 15.235/2025).",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
@@ -373,8 +373,8 @@
       "howToApply": [
         "Faça ou atualize o Cadastro Único no CRAS",
         "Famílias elegíveis são selecionadas automaticamente",
-        "Retire o botijão gratuito no ponto de entrega do seu município",
-        "O cronograma é divulgado pela prefeitura"
+        "Retire o botijão gratuito em revendedor credenciado usando voucher (app, QR code ou cartão Bolsa Família)",
+        "O cronograma segue o calendário do Bolsa Família"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
       "lastUpdated": "2026-02-07",
@@ -1066,7 +1066,7 @@
     {
       "id": "federal-fies",
       "name": "FIES",
-      "shortDescription": "Financiamento do governo para pagar a faculdade com juros zero. Você paga depois de formado.",
+      "shortDescription": "Financiamento do governo para pagar a faculdade. FIES Social (renda até meio SM + CadÚnico) tem juro zero e financia 100%.",
       "scope": "federal",
       "estimatedValue": {
         "type": "one_time",
@@ -3469,10 +3469,10 @@
           "description": "Renda per capita de até R$ 218"
         },
         {
-          "field": "temFilhosMenores",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter criança de 0 a 6 anos"
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter pelo menos 1 filho menor de idade"
         }
       ],
       "whereToApply": "CRAS — benefício automático vinculado ao Bolsa Família",
@@ -3488,7 +3488,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
-      "category": "Transferência de Renda"
+      "category": "Transferência de Renda",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-pnae",
@@ -3532,7 +3535,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-acredita",
@@ -3586,7 +3592,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Empreendedorismo"
+      "category": "Empreendedorismo",
+      "metadata": {
+        "disclaimer": "Taxas de juros e limites variam conforme operador de crédito. Consulte condições atuais."
+      }
     },
     {
       "id": "federal-desenrola",
@@ -3638,7 +3647,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔓",
-      "category": "Empreendedorismo"
+      "category": "Empreendedorismo",
+      "metadata": {
+        "disclaimer": "Programa com prazo de adesão. Consulte vigência atual em gov.br/fazenda."
+      }
     },
     {
       "id": "federal-pnmpo",
@@ -3691,7 +3703,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏪",
-      "category": "Empreendedorismo"
+      "category": "Empreendedorismo",
+      "metadata": {
+        "disclaimer": "Taxas de juros e limites variam conforme operador de crédito. Consulte condições atuais."
+      }
     },
     {
       "id": "federal-bolsa-atleta",
@@ -3744,7 +3759,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
-      "category": "Cultura"
+      "category": "Cultura",
+      "metadata": {
+        "disclaimer": "Valores variam conforme categoria (Estudantil a Olímpico). Inscrição via edital anual."
+      }
     },
     {
       "id": "federal-auxilio-reconstrucao",
@@ -3787,7 +3805,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏚️",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Disponível apenas em municípios com decreto de emergência ou calamidade pública vigente."
+      }
     },
     {
       "id": "federal-casa-mulher",
@@ -3839,7 +3860,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-cisternas",
@@ -3854,7 +3878,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "areaRural",
+          "field": "moradiaZonaRural",
           "operator": "eq",
           "value": true,
           "description": "Residir em área rural do semiárido"
@@ -3888,7 +3912,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Utilidades"
+      "category": "Utilidades",
+      "metadata": {
+        "disclaimer": "Disponibilidade depende de convênios com governos estaduais/municipais e editais do MDS."
+      }
     },
     {
       "id": "federal-tarifa-social-telecom",
@@ -3931,7 +3958,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📞",
-      "category": "Utilidades"
+      "category": "Utilidades",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-credito-instalacao",
@@ -3968,7 +3998,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
-      "category": "Agricultores"
+      "category": "Agricultores",
+      "metadata": {
+        "disclaimer": "Exclusivo para assentados de reforma agrária com portaria INCRA."
+      }
     },
     {
       "id": "federal-paa",
@@ -3983,7 +4016,7 @@
       },
       "eligibilityRules": [
         {
-          "field": "agricultor",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
           "description": "Ser agricultor familiar com DAP/CAF ativa"
@@ -4021,7 +4054,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥕",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "metadata": {
+        "disclaimer": "Disponibilidade depende de dotação orçamentária e editais locais do MDS."
+      }
     },
     {
       "id": "federal-cras-paif",
@@ -4057,7 +4093,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤝",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-programa-caminho-escola",
@@ -4078,7 +4117,7 @@
           "description": "Matriculado em escola pública"
         },
         {
-          "field": "areaRural",
+          "field": "moradiaZonaRural",
           "operator": "eq",
           "value": true,
           "description": "Residir em área rural ou ribeirinha"
@@ -4109,7 +4148,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
-      "category": "Educação"
+      "category": "Educação",
+      "metadata": {
+        "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      }
     },
     {
       "id": "federal-pronera",
@@ -4162,7 +4204,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
-      "category": "Educação"
+      "category": "Educação",
+      "metadata": {
+        "disclaimer": "Vagas dependem de editais do INCRA em parceria com universidades."
+      }
     }
   ]
 }

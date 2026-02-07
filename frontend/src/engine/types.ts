@@ -124,6 +124,8 @@ export interface CitizenProfile {
   pescadorArtesanal: boolean;
   catadorReciclavel: boolean;
   trabalhadoraDomestica: boolean;
+  servidorPublico?: boolean;
+  indigenaOuQuilombola?: boolean;
 
   // Special conditions
   mulherMenstruante?: boolean;
@@ -223,6 +225,11 @@ export const SECTORS = {
   autonomo: 'Trabalhador Autônomo',
   clt: 'Trabalhador CLT',
   pcd: 'Pessoa com Deficiência',
+  servidor_publico: 'Servidor Público',
+  estudante: 'Estudante',
+  idoso: 'Idoso (65+)',
+  gestante: 'Gestante',
+  indigena_quilombola: 'Indígena ou Quilombola',
 };
 
 export const MINIMUM_WAGE_2024 = 1412;
@@ -262,6 +269,8 @@ export const DEFAULT_CITIZEN_PROFILE: CitizenProfile = {
   pescadorArtesanal: false,
   catadorReciclavel: false,
   trabalhadoraDomestica: false,
+  servidorPublico: false,
+  indigenaOuQuilombola: false,
   temCarteiraAssinada: false,
   estudante: false,
   redePublica: false,

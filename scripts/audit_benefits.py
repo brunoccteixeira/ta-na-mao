@@ -323,6 +323,42 @@ def check_cross_reference(benefits: list[dict]) -> list[AuditFinding]:
     return findings
 
 
+# Fields the evaluator engine actually recognizes
+KNOWN_EVALUATOR_FIELDS = {
+    "estado", "municipioIbge", "municipioNome", "cep",
+    "idade", "cpf", "nome",
+    "pessoasNaCasa", "quantidadeFilhos", "temIdoso65Mais", "temGestante",
+    "temPcd", "temCrianca0a6",
+    "rendaFamiliarMensal", "rendaPerCapita",  # rendaPerCapita is computed
+    "trabalhoFormal", "temCasaPropria", "moradiaZonaRural",
+    "cadastradoCadunico", "nisCadunico", "recebeBolsaFamilia",
+    "valorBolsaFamilia", "recebeBpc",
+    "trabalhou1971_1988", "temCarteiraAssinada", "tempoCarteiraAssinada", "fezSaqueFgts",
+    "profissao", "temMei", "trabalhaAplicativo",
+    "agricultorFamiliar", "pescadorArtesanal", "catadorReciclavel",
+    "trabalhadoraDomestica",
+    "mulherMenstruante", "idadeMulher",
+    "estudante", "redePublica",
+}
+
+
+def check_evaluator_fields(benefit: dict) -> list[AuditFinding]:
+    """Check G: Validate that eligibility rule fields are recognized by the evaluator engine."""
+    findings = []
+    bid = benefit.get("id", "UNKNOWN")
+
+    for rule in benefit.get("eligibilityRules", []):
+        field = rule.get("field", "")
+        if field and field not in KNOWN_EVALUATOR_FIELDS:
+            findings.append(AuditFinding(
+                bid, "evaluator_fields", HIGH,
+                f"Unknown field '{field}' in eligibility rule — evaluator won't match it",
+                "eligibilityRules"
+            ))
+
+    return findings
+
+
 def check_audit_status_orphans(benefits: list[dict]) -> list[AuditFinding]:
     """Check for orphan entries in audit-status.json."""
     findings = []
@@ -377,6 +413,7 @@ def run_audit():
         all_findings.extend(check_legal_basis(b))
         all_findings.extend(check_urls(b))
         all_findings.extend(check_content(b))
+        all_findings.extend(check_evaluator_fields(b))
 
     # Cross-reference checks (all at once)
     all_findings.extend(check_cross_reference(benefits))

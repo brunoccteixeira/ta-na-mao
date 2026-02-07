@@ -133,7 +133,7 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Estar no Cadastro Unico"
+          "description": "Pais ou responsáveis beneficiários do Bolsa Família ou programa federal similar"
         }
       ],
       "whereToApply": "Escola onde o filho estuda",
@@ -148,8 +148,8 @@
         "Aguarde o cartao ser enviado para a escola",
         "Retire na escola com seu documento"
       ],
-      "sourceUrl": "https://www.sedes.df.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.educacao.df.gov.br/material-escolar/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
       "category": "Educação"
@@ -392,7 +392,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.df.gov.br",
+      "sourceUrl": "https://www.sedet.df.gov.br/concessao-de-microcredito-prospera",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
@@ -438,7 +438,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.cultura.df.gov.br",
+      "sourceUrl": "https://www.cultura.df.gov.br/fundo-de-apoio-a-cultura-do-distrito-federal/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
@@ -484,7 +484,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.df.gov.br",
+      "sourceUrl": "https://www.esporte.df.gov.br/bolsa-atleta",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",

@@ -11,9 +11,9 @@
       "state": "RJ",
       "estimatedValue": {
         "type": "monthly",
-        "min": 200,
+        "min": 280,
         "max": 380,
-        "description": "R$ 200 base + R$ 80 gas + R$ 50 por filho (max 2). Programa ENCERRADO."
+        "description": "R$ 280 base + R$ 50 por filho (max 2). Programa ENCERRADO em julho/2023."
       },
       "eligibilityRules": [
         {
@@ -378,7 +378,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rj.gov.br",
+      "sourceUrl": "https://www.agerio.com.br/areas-de-atuacao/microcredito-agerio/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
@@ -424,7 +424,7 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rj.gov.br",
+      "sourceUrl": "https://cultura.rj.gov.br/lei-de-incentivo-a-cultura/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎭",
@@ -470,13 +470,13 @@
         "Procure o edital ou programa específico",
         "Faça inscrição conforme orientações do edital"
       ],
-      "sourceUrl": "https://www.rj.gov.br",
+      "sourceUrl": "https://www.rj.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
       }
     }
   ]
