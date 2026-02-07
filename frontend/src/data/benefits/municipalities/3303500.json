@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "rj-novaiguacu-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Nova Iguaçu",
+      "id": "rj-novaiguacu-superarj",
+      "name": "SuperaRJ",
+      "shortDescription": "Programa estadual de renda mínima com transferência direta para famílias em vulnerabilidade. Governo do Estado do RJ — disponível em Nova Iguaçu",
       "scope": "municipal",
       "state": "RJ",
       "municipalityIbge": "3303500",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 200,
+        "max": 300,
+        "description": "Benefício mensal complementar à renda familiar"
       },
       "eligibilityRules": [
         {
@@ -341,11 +341,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Nova Iguaçu",
+      "whereToApply": "CRAS ou site do SuperaRJ",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Nova Iguaçu",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.novaiguacu.rj.gov.br",
+      "sourceUrl": "https://www.superarj.rj.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💰",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

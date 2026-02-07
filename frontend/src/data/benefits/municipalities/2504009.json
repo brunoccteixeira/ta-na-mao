@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "pb-campinagrande-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Campina Grande",
+      "id": "pb-campinagrande-cartao-alimentacao",
+      "name": "Cartão Alimentação Cidadã",
+      "shortDescription": "Crédito mensal para compra de alimentos em estabelecimentos credenciados. Governo da Paraíba — disponível em Campina Grande",
       "scope": "municipal",
       "state": "PB",
       "municipalityIbge": "2504009",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 50,
+        "max": 50,
+        "description": "R$ 50/mês para compra exclusiva de alimentos"
       },
       "eligibilityRules": [
         {
@@ -342,10 +342,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de Campina Grande",
+      "whereToApply": "CRAS ou Secretaria de Desenvolvimento Humano",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Campina Grande",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.campinagrande.pb.gov.br",
+      "sourceUrl": "https://paraiba.pb.gov.br/diretas/secretaria-de-desenvolvimento-humano/programas/cartao-alimentacao",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "🛒",
+      "category": "Alimentação",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

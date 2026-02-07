@@ -301,9 +301,9 @@
       "category": "Saúde"
     },
     {
-      "id": "pr-cambe-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Cambé",
+      "id": "pr-cambe-familia-paranaense",
+      "name": "Família Paranaense",
+      "shortDescription": "Gestão integrada de serviços sociais para famílias vulneráveis em assistência, saúde, educação e trabalho. Governo do PR — disponível em Cambé",
       "scope": "municipal",
       "state": "PR",
       "municipalityIbge": "4103701",
@@ -311,7 +311,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Cesta básica mensal"
+        "description": "Cofinanciamento estadual + benefícios emergenciais via CRAS"
       },
       "eligibilityRules": [
         {
@@ -329,11 +329,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Cambé",
+      "whereToApply": "CRAS do município",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Cambé",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.cambe.pr.gov.br",
+      "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/Editoria/Familia-Paranaense",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👨‍👩‍👧‍👦",
+      "category": "Assistência Social",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

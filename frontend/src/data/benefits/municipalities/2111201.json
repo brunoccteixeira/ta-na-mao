@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "ma-saojosederibamar-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de São José de Ribamar",
+      "id": "ma-saojosederibamar-livre-da-fome",
+      "name": "Maranhão Livre da Fome",
+      "shortDescription": "Programa de combate à fome com transferência de renda para compra de alimentos. Governo do Maranhão — disponível em São José de Ribamar",
       "scope": "municipal",
       "state": "MA",
       "municipalityIbge": "2111201",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 200,
+        "max": 300,
+        "description": "R$ 200/mês + R$ 50 por criança de 0-6 anos + complemento renda"
       },
       "eligibilityRules": [
         {
@@ -330,10 +330,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de São José de Ribamar",
+      "whereToApply": "CRAS ou site do programa",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de São José de Ribamar",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.saojosederibamar.ma.gov.br",
+      "sourceUrl": "https://maranhaolivredafome.ma.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "🍲",
+      "category": "Alimentação",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

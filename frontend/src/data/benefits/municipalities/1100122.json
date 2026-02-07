@@ -313,9 +313,9 @@
       "templateGenerated": true
     },
     {
-      "id": "ro-jiparana-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Ji-Paraná",
+      "id": "ro-jiparana-prato-facil",
+      "name": "Prato Fácil",
+      "shortDescription": "Refeições saudáveis por R$ 2 em restaurantes credenciados para famílias do CadÚnico. Governo de Rondônia — disponível em Ji-Paraná",
       "scope": "municipal",
       "state": "RO",
       "municipalityIbge": "1100122",
@@ -323,7 +323,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Cesta básica mensal"
+        "description": "Refeição completa por R$ 2 em restaurantes credenciados"
       },
       "eligibilityRules": [
         {
@@ -337,15 +337,9 @@
           "operator": "eq",
           "value": true,
           "description": "Estar no CadÚnico"
-        },
-        {
-          "field": "rendaPerCapita",
-          "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
         }
       ],
-      "whereToApply": "CRAS de Ji-Paraná",
+      "whereToApply": "Restaurantes credenciados do Prato Fácil",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +347,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Ji-Paraná",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.ji-parana.ro.gov.br",
+      "sourceUrl": "https://rondonia.ro.gov.br/seas/programas-e-projetos/pratofacil/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

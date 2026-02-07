@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "mt-sorriso-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Sorriso",
+      "id": "mt-sorriso-ser-familia",
+      "name": "SER Família",
+      "shortDescription": "Programa integrado de assistência social com transferência de renda, alimentação e capacitação. Governo de Mato Grosso — disponível em Sorriso",
       "scope": "municipal",
       "state": "MT",
       "municipalityIbge": "5107925",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 150,
+        "max": 300,
+        "description": "Benefício base + auxílios por criança, idoso ou PCD"
       },
       "eligibilityRules": [
         {
@@ -330,10 +330,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de Sorriso",
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Sorriso",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.sorriso.mt.gov.br",
+      "sourceUrl": "https://www.setasc.mt.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👨‍👩‍👧",
+      "category": "Assistência Social",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

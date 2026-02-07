@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "rs-cachoeirinha-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Cachoeirinha",
+      "id": "rs-cachoeirinha-devolve-icms",
+      "name": "Devolve ICMS",
+      "shortDescription": "Devolução trimestral de parte do ICMS pago em compras para famílias de baixa renda. Governo do RS — disponível em Cachoeirinha",
       "scope": "municipal",
       "state": "RS",
       "municipalityIbge": "4303103",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "type": "quarterly",
+        "min": 150,
+        "max": 250,
+        "description": "R$ 150 fixos trimestrais + 75% do ICMS sobre compras com CPF"
       },
       "eligibilityRules": [
         {
@@ -329,11 +329,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Cachoeirinha",
+      "whereToApply": "Automático via CadÚnico — peça CPF na nota fiscal",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Cachoeirinha",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.cachoeirinha.rs.gov.br",
+      "sourceUrl": "https://devolveicms.rs.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💳",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

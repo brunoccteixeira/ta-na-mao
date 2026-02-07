@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "rs-santamaria-cesta-basica-santamaria",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias vulneráveis de Santa Maria",
+      "id": "rs-santamaria-devolve-icms",
+      "name": "Devolve ICMS",
+      "shortDescription": "Devolução trimestral de parte do ICMS pago em compras para famílias de baixa renda. Governo do RS — disponível em Santa Maria",
       "scope": "municipal",
       "state": "RS",
       "municipalityIbge": "4316907",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "type": "quarterly",
+        "min": 150,
+        "max": 250,
+        "description": "R$ 150 fixos trimestrais + 75% do ICMS sobre compras com CPF"
       },
       "eligibilityRules": [
         {
@@ -341,11 +341,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social de Santa Maria",
+      "whereToApply": "Automático via CadÚnico — peça CPF na nota fiscal",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Apresente documentos",
-        "Aguarde avaliação"
+        "Procure o CRAS de Santa Maria",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.santamaria.rs.gov.br",
+      "sourceUrl": "https://devolveicms.rs.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💳",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "ce-caucaia-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Caucaia",
+      "id": "ce-caucaia-mais-infancia",
+      "name": "Cartão Mais Infância Ceará",
+      "shortDescription": "Transferência de renda estadual para famílias com crianças de 0-6 anos em extrema pobreza. Governo do Ceará — disponível em Caucaia",
       "scope": "municipal",
       "state": "CE",
       "municipalityIbge": "2303709",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150/mês + R$ 50 por criança adicional de 0-6 anos"
       },
       "eligibilityRules": [
         {
@@ -342,10 +342,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de Caucaia",
+      "whereToApply": "CRAS ou site do programa",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Caucaia",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.caucaia.ce.gov.br",
+      "sourceUrl": "https://www.sps.ce.gov.br/mais-infancia-ceara/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👶",
+      "category": "Primeira Infância",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

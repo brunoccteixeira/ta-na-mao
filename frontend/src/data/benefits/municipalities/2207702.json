@@ -313,9 +313,9 @@
       "templateGenerated": true
     },
     {
-      "id": "pi-parnaiba-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Parnaíba",
+      "id": "pi-parnaiba-piaui-oportunidades",
+      "name": "Piauí Oportunidades",
+      "shortDescription": "Conexão entre jovens e mercado de trabalho através de estágios, aprendizagem e primeiro emprego. Governo do Piauí — disponível em Parnaíba",
       "scope": "municipal",
       "state": "PI",
       "municipalityIbge": "2207702",
@@ -323,7 +323,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Cesta básica mensal"
+        "description": "Auxílio financeiro durante qualificação + encaminhamento"
       },
       "eligibilityRules": [
         {
@@ -339,13 +339,13 @@
           "description": "Estar no CadÚnico"
         },
         {
-          "field": "rendaPerCapita",
-          "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter pelo menos 14 anos"
         }
       ],
-      "whereToApply": "CRAS de Parnaíba",
+      "whereToApply": "Site do programa ou SINE",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Parnaíba",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.parnaiba.pi.gov.br",
+      "sourceUrl": "https://piauioportunidades.pi.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👔",
+      "category": "Emprego e Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

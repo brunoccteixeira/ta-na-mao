@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "ba-itabuna4802-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Itabuna",
+      "id": "ba-itabuna4802-bolsa-presenca",
+      "name": "Bolsa Presença",
+      "shortDescription": "Transferência de renda mensal para famílias com estudantes na rede estadual pública em situação de vulnerabilidade. Governo da Bahia — disponível em Itabuna",
       "scope": "municipal",
       "state": "BA",
       "municipalityIbge": "2914802",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 150,
+        "max": 250,
+        "description": "R$ 150/mês + R$ 50 por estudante adicional na rede estadual"
       },
       "eligibilityRules": [
         {
@@ -330,10 +330,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de Itabuna",
+      "whereToApply": "Escola estadual do estudante",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Itabuna",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.itabuna.ba.gov.br",
+      "sourceUrl": "https://institucional.educacao.ba.gov.br/bolsapresenca",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "📚",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

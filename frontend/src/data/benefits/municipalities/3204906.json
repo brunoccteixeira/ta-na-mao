@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "es-saomateus-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de São Mateus",
+      "id": "es-saomateus-bolsa-capixaba",
+      "name": "Bolsa Capixaba",
+      "shortDescription": "Transferência de renda estadual para famílias em vulnerabilidade social. Governo do Espírito Santo — disponível em São Mateus",
       "scope": "municipal",
       "state": "ES",
       "municipalityIbge": "3204906",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 100,
+        "max": 300,
+        "description": "Benefício variável com prazo de 90 dias para uso no cartão"
       },
       "eligibilityRules": [
         {
@@ -329,11 +329,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de São Mateus",
+      "whereToApply": "CRAS ou site da SETADES",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de São Mateus",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.saomateus.es.gov.br",
+      "sourceUrl": "https://setades.es.gov.br/bolsa-capixaba",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💰",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

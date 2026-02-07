@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "ap-santana0600-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Santana",
+      "id": "ap-santana0600-habilita-amapa",
+      "name": "Habilita Amapá",
+      "shortDescription": "Primeira habilitação gratuita (CNH categoria A ou B) para população de baixa renda. Governo do Amapá — disponível em Santana",
       "scope": "municipal",
       "state": "AP",
       "municipalityIbge": "1600600",
       "estimatedValue": {
-        "type": "monthly",
+        "type": "one_time",
         "min": 0,
         "max": 0,
-        "description": "Cesta básica mensal"
+        "description": "Isenção total de custos (cursos, exames, LADV, até 2 reexames)"
       },
       "eligibilityRules": [
         {
@@ -327,13 +327,13 @@
           "description": "Estar no CadÚnico"
         },
         {
-          "field": "rendaPerCapita",
-          "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter pelo menos 18 anos"
         }
       ],
-      "whereToApply": "CRAS de Santana",
+      "whereToApply": "DETRAN-AP ou site do programa",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Santana",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.santana.ap.gov.br",
+      "sourceUrl": "https://www.detran.ap.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "🚗",
+      "category": "Documentação",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

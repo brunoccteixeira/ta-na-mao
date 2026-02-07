@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "pe-vitoriadesantoantao-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Vitória de Santo Antão",
+      "id": "pe-vitoriadesantoantao-chapeu-de-palha",
+      "name": "Chapéu de Palha",
+      "shortDescription": "Auxílio para trabalhadores rurais e pescadores artesanais durante entressafra. Governo de Pernambuco — disponível em Vitória de Santo Antão",
       "scope": "municipal",
       "state": "PE",
       "municipalityIbge": "2616407",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 373,
+        "max": 388,
+        "description": "5 parcelas anuais no período de entressafra"
       },
       "eligibilityRules": [
         {
@@ -341,11 +341,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Vitória de Santo Antão",
+      "whereToApply": "Sindicato de trabalhadores rurais ou CRAS",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Vitória de Santo Antão",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.vitoriadesantoantao.pe.gov.br",
+      "sourceUrl": "https://www.sas.pe.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "🧑‍🌾",
+      "category": "Assistência Social",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

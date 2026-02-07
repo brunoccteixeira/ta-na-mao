@@ -301,9 +301,9 @@
       "category": "Saúde"
     },
     {
-      "id": "pa-marituba-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Marituba",
+      "id": "pa-marituba-agua-para",
+      "name": "Água Pará",
+      "shortDescription": "Pagamento de contas de água (até 20m³/mês) para famílias em vulnerabilidade social. Governo do Pará — disponível em Marituba",
       "scope": "municipal",
       "state": "PA",
       "municipalityIbge": "1504422",
@@ -311,7 +311,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Cesta básica mensal"
+        "description": "Cobertura total da conta de água até 20.000 litros mensais"
       },
       "eligibilityRules": [
         {
@@ -329,11 +329,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Marituba",
+      "whereToApply": "Agência da COSANPA ou CRAS",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Marituba",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.marituba.pa.gov.br",
+      "sourceUrl": "https://www.cosanpa.pa.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💧",
+      "category": "Utilidades",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "sc-balneariocamboriu-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Balneário Camboriú",
+      "id": "sc-balneariocamboriu-renda-extra-sc",
+      "name": "SC Mais Renda",
+      "shortDescription": "Programa estadual de complemento de renda para famílias em vulnerabilidade social. Governo de Santa Catarina — disponível em Balneário Camboriú",
       "scope": "municipal",
       "state": "SC",
       "municipalityIbge": "4202008",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 100,
+        "max": 200,
+        "description": "Benefício mensal complementar conforme composição familiar"
       },
       "eligibilityRules": [
         {
@@ -329,11 +329,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS de Balneário Camboriú",
+      "whereToApply": "CRAS do município",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Balneário Camboriú",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.balneariocamboriu.sc.gov.br",
+      "sourceUrl": "https://www.sst.sc.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "💰",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

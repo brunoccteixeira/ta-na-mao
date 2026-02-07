@@ -301,17 +301,17 @@
       "category": "Saúde"
     },
     {
-      "id": "mt-tangaradaserra-cesta-basica",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Tangará da Serra",
+      "id": "mt-tangaradaserra-ser-familia",
+      "name": "SER Família",
+      "shortDescription": "Programa integrado de assistência social com transferência de renda, alimentação e capacitação. Governo de Mato Grosso — disponível em Tangará da Serra",
       "scope": "municipal",
       "state": "MT",
       "municipalityIbge": "5107958",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 150,
+        "max": 300,
+        "description": "Benefício base + auxílios por criança, idoso ou PCD"
       },
       "eligibilityRules": [
         {
@@ -330,10 +330,10 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "description": "Renda por pessoa até R$ 218 (extrema pobreza)"
         }
       ],
-      "whereToApply": "CRAS de Tangará da Serra",
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -341,15 +341,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Solicite a cesta básica",
-        "Aguarde avaliação social"
+        "Procure o CRAS de Tangará da Serra",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.tangaradaserra.mt.gov.br",
+      "sourceUrl": "https://www.setasc.mt.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👨‍👩‍👧",
+      "category": "Assistência Social",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

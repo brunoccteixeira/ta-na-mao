@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "to-araguaina-cesta-basica-araguaina",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias vulneráveis de Araguaína",
+      "id": "to-araguaina-jovem-trabalhador-to",
+      "name": "Jovem Trabalhador",
+      "shortDescription": "Maior programa de inclusão profissional de jovens do Norte, inserindo 3.000 jovens no mercado. Governo do Tocantins — disponível em Araguaína",
       "scope": "municipal",
       "state": "TO",
       "municipalityIbge": "1702109",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 663,
+        "max": 663,
+        "description": "R$ 663/mês por 4 horas diárias de trabalho"
       },
       "eligibilityRules": [
         {
@@ -339,13 +339,19 @@
           "description": "Estar no CadÚnico"
         },
         {
-          "field": "rendaPerCapita",
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "idade",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 24,
+          "description": "Ter no máximo 24 anos"
         }
       ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social de Araguaína",
+      "whereToApply": "Site do programa ou SINE",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +359,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Apresente documentos",
-        "Aguarde avaliação"
+        "Procure o CRAS de Araguaína",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.araguaina.to.gov.br",
+      "sourceUrl": "https://jovemtrabalhadorto.org.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👔",
+      "category": "Emprego e Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }

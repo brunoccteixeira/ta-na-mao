@@ -313,17 +313,17 @@
       "templateGenerated": true
     },
     {
-      "id": "go-luziania-cesta-basica-luziania",
-      "name": "Cesta Básica Municipal",
-      "shortDescription": "Cesta básica para famílias vulneráveis de Luziânia",
+      "id": "go-luziania-maes-de-goias",
+      "name": "Mães de Goiás",
+      "shortDescription": "Programa de proteção social com transferência de renda para famílias chefiadas por mulheres em vulnerabilidade. Governo de Goiás — disponível em Luziânia",
       "scope": "municipal",
       "state": "GO",
       "municipalityIbge": "5212501",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 0,
-        "description": "Cesta básica mensal"
+        "min": 150,
+        "max": 300,
+        "description": "Benefício mensal para mães em vulnerabilidade social"
       },
       "eligibilityRules": [
         {
@@ -341,11 +341,11 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 218,
-          "description": "Renda por pessoa até R$ 218"
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social de Luziânia",
+      "whereToApply": "CRAS ou Secretaria de Assistência Social",
       "documentsRequired": [
         "CPF",
         "RG",
@@ -353,15 +353,18 @@
         "Comprovante de residência"
       ],
       "howToApply": [
-        "Procure o CRAS do seu bairro",
-        "Apresente documentos",
-        "Aguarde avaliação"
+        "Procure o CRAS de Luziânia",
+        "Apresente documentos e comprove elegibilidade",
+        "Aguarde avaliação e inclusão no programa"
       ],
-      "sourceUrl": "https://www.luziania.go.gov.br",
+      "sourceUrl": "https://goias.gov.br/social/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
+      "icon": "👩‍👧",
+      "category": "Transferência de Renda",
+      "metadata": {
+        "researchSource": "state-common"
+      }
     }
   ]
 }
