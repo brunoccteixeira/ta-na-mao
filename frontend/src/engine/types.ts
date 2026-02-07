@@ -26,6 +26,8 @@ export interface EstimatedValue {
   min?: number;
   max?: number;
   description?: string;
+  estimated?: boolean;
+  estimatedRationale?: string;
 }
 
 export interface EligibilityRule {

@@ -1283,6 +1283,1056 @@
       "status": "active",
       "icon": "💐",
       "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-idade",
+      "name": "Aposentadoria por Idade",
+      "shortDescription": "Para quem contribuiu ao INSS e atingiu a idade mínima: 65 anos (homem) ou 62 anos (mulher), com pelo menos 15 anos de contribuição.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 62,
+          "description": "Ter 62 anos (mulher) ou 65 anos (homem)",
+          "legalReference": "Art. 201, §7º, CF/88, com redação da EC 103/2019"
+        },
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter contribuído ao INSS por pelo menos 15 anos",
+          "legalReference": "Art. 19, EC 103/2019"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "CF/1988, Art. 201, §7º",
+            "description": "Aposentadoria por idade no RGPS",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou agência)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Carteira de Trabalho (todas)",
+        "Carnês de contribuição ao INSS (se tiver)",
+        "Certidão de Tempo de Contribuição (se servidor público)"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS (site ou app)",
+        "Clique em 'Novo Pedido' e busque 'aposentadoria'",
+        "Preencha os dados e envie os documentos",
+        "Acompanhe o andamento em 'Consultar Pedidos'"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-urbana",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👴",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-tempo",
+      "name": "Aposentadoria por Tempo de Contribuição",
+      "shortDescription": "Para quem já contribuía ao INSS antes de novembro de 2019 e se enquadra nas regras de transição (pedágio ou pontos).",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Já contribuía ao INSS antes de 13/11/2019 e cumpre regras de transição",
+          "legalReference": "Art. 15 a 21, EC 103/2019"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "EC 103/2019, Arts. 15-21",
+            "description": "Regras de transição da Reforma da Previdência",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+          },
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei de Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou agência)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Carteira de Trabalho (todas)",
+        "Carnês de contribuição ao INSS",
+        "Documentos que comprovem todo o tempo trabalhado"
+      ],
+      "howToApply": [
+        "Faça uma simulação no Meu INSS para ver qual regra de transição é melhor",
+        "Acesse 'Novo Pedido' e busque 'aposentadoria por tempo'",
+        "Envie todos os documentos",
+        "Acompanhe em 'Consultar Pedidos'"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-tempo-de-contribuicao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⏳",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-invalidez",
+      "name": "Aposentadoria por Invalidez",
+      "shortDescription": "Para quem ficou permanentemente incapaz de trabalhar por doença ou acidente, comprovado por perícia do INSS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS. Pode ter acréscimo de 25% se precisar de cuidador.",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter contribuído ao INSS (carência de 12 meses, exceto acidente)",
+          "legalReference": "Art. 42, Lei 8.213/1991"
+        },
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar permanentemente incapaz para o trabalho (comprovado por perícia)",
+          "legalReference": "Art. 42, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Arts. 42-45",
+            "description": "Aposentadoria por Incapacidade Permanente",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "3.048/1999, Art. 45",
+            "description": "Regulamento da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/decreto/d3048.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou ligue 135)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Laudos e exames médicos que comprovem a incapacidade",
+        "Carteira de Trabalho ou carnês do INSS",
+        "Atestado médico recente"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS ou ligue 135",
+        "Solicite 'Benefício por Incapacidade Permanente'",
+        "Agende e compareça à perícia médica do INSS",
+        "Leve todos os laudos e exames médicos"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-incapacidade-permanente",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏥",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-especial",
+      "name": "Aposentadoria Especial",
+      "shortDescription": "Para quem trabalhou exposto a agentes nocivos à saúde (barulho, produtos químicos, etc.) por 15, 20 ou 25 anos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter trabalhado 15, 20 ou 25 anos em atividade com exposição a agentes nocivos",
+          "legalReference": "Art. 57, Lei 8.213/1991; Arts. 19-21, EC 103/2019"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Art. 57-58",
+            "description": "Aposentadoria Especial",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          },
+          {
+            "type": "constituicao",
+            "number": "EC 103/2019, Arts. 19-21",
+            "description": "Regras de transição para aposentadoria especial",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou agência)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Carteira de Trabalho",
+        "PPP (Perfil Profissiográfico Previdenciário) de cada emprego",
+        "LTCAT (Laudo Técnico das Condições Ambientais de Trabalho)"
+      ],
+      "howToApply": [
+        "Peça o PPP atualizado em cada empresa onde trabalhou",
+        "Acesse o Meu INSS e solicite 'Aposentadoria Especial'",
+        "Envie o PPP e demais documentos",
+        "Acompanhe o andamento pelo Meu INSS"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-especial",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⚠️",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-hibrida",
+      "name": "Aposentadoria Híbrida (Rural + Urbana)",
+      "shortDescription": "Para quem trabalhou parte da vida no campo e parte na cidade. Junta os dois tempos para se aposentar.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 62,
+          "description": "Ter 62 anos (mulher) ou 65 anos (homem)",
+          "legalReference": "Art. 48, §3º, Lei 8.213/1991"
+        },
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 15 anos de contribuição somando trabalho rural e urbano",
+          "legalReference": "Art. 48, §3º, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Art. 48, §3º",
+            "description": "Aposentadoria híbrida por idade",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou agência)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Carteira de Trabalho",
+        "Documentos que comprovem atividade rural (notas de produtor, contratos, declaração do sindicato)",
+        "Carnês de contribuição do INSS"
+      ],
+      "howToApply": [
+        "Reúna documentos que comprovem trabalho rural e urbano",
+        "Acesse o Meu INSS e solicite 'Aposentadoria por Idade'",
+        "Informe que deseja somar tempo rural + urbano",
+        "Aguarde análise e apresente documentos se solicitado"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-do-trabalhador-rural",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-aposentadoria-professor",
+      "name": "Aposentadoria do Professor",
+      "shortDescription": "Para professores da educação básica (infantil, fundamental e médio) com regras especiais: 5 anos a menos de contribuição.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8476,
+        "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
+        "estimated": true,
+        "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser professor(a) da educação básica com 25 anos (mulher) ou 30 anos (homem) de magistério",
+          "legalReference": "Art. 201, §8º, CF/88; EC 103/2019"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "CF/1988, Art. 201, §8º",
+            "description": "Aposentadoria especial do professor",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "constituicao",
+            "number": "EC 103/2019",
+            "description": "Regras de transição para professores",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS pelo site ou app, ou agência)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Carteira de Trabalho",
+        "Declarações das escolas comprovando função de magistério",
+        "Certidão de Tempo de Contribuição (se professor público)"
+      ],
+      "howToApply": [
+        "Reúna declarações de todas as escolas onde lecionou",
+        "Acesse o Meu INSS e solicite 'Aposentadoria por Tempo de Contribuição'",
+        "Informe que é professor da educação básica",
+        "Acompanhe pelo Meu INSS ou ligue 135"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-tempo-de-contribuicao-do-professor",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👩‍🏫",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-auxilio-acidente",
+      "name": "Auxílio-Acidente",
+      "shortDescription": "Indenização mensal para quem sofreu acidente e ficou com sequelas que reduzem a capacidade de trabalho.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 810,
+        "max": 4238,
+        "description": "50% do salário-benefício",
+        "estimated": true,
+        "estimatedRationale": "50% do salário-benefício, que vai de 1 SM a teto INSS. Estimativa: R$ 810 a R$ 4.238"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCarteiraAssinada",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregado, doméstico, trabalhador avulso ou segurado especial",
+          "legalReference": "Art. 86, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Art. 86",
+            "description": "Auxílio-Acidente",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (ligue 135 ou Meu INSS)",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Laudos médicos comprovando as sequelas permanentes",
+        "CAT (Comunicação de Acidente de Trabalho) se for acidente de trabalho"
+      ],
+      "howToApply": [
+        "Ligue para o 135 do INSS",
+        "Agende e compareça à perícia médica",
+        "Leve todos os laudos e exames",
+        "O benefício começa no dia seguinte ao fim do auxílio-doença"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-acidente",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🩹",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-auxilio-reclusao",
+      "name": "Auxílio-Reclusão",
+      "shortDescription": "Pagamento de 1 salário mínimo para a família de quem está preso em regime fechado e era segurado do INSS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621 em 2026)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cpf",
+          "operator": "has",
+          "value": true,
+          "description": "Ser dependente de segurado do INSS preso em regime fechado",
+          "legalReference": "Art. 80, Lei 8.213/1991; EC 103/2019"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Art. 80",
+            "description": "Auxílio-Reclusão",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          },
+          {
+            "type": "constituicao",
+            "number": "EC 103/2019",
+            "description": "Restringiu ao regime fechado e valor máximo de 1 SM",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+          }
+        ]
+      },
+      "whereToApply": "INSS (Meu INSS ou agência)",
+      "documentsRequired": [
+        "CPF do dependente",
+        "Certidão judicial de prisão em regime fechado",
+        "Comprovante de dependência (certidão de casamento, nascimento)",
+        "Documentos do preso (CPF, Carteira de Trabalho)"
+      ],
+      "howToApply": [
+        "Reúna os documentos do preso e do dependente",
+        "Acesse o Meu INSS ou vá a uma agência",
+        "Solicite o auxílio-reclusão",
+        "A cada 3 meses, apresente nova declaração de cárcere"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/auxilio-reclusao/auxilio-reclusao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔒",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-salario-familia",
+      "name": "Salário-Família",
+      "shortDescription": "Valor extra por cada filho menor de 14 anos para trabalhadores de baixa renda. Pago junto com o salário.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 68,
+        "max": 340,
+        "description": "R$ 67,54 por filho menor de 14 anos (valor 2025)",
+        "estimated": true,
+        "estimatedRationale": "Cota de R$ 67,54 por filho em 2025 (Portaria MPS/MF nº 6/2025). Exemplo: 5 filhos = R$ 337,70. Valor 2026 não publicado à data."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar com carteira assinada ou ser aposentado/pensionista do INSS",
+          "legalReference": "Art. 65, Lei 8.213/1991"
+        },
+        {
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter filho(s) menor(es) de 14 anos ou filho(s) inválido(s) de qualquer idade",
+          "legalReference": "Art. 66, Lei 8.213/1991"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991, Arts. 65-70",
+            "description": "Salário-Família",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "Diretamente com o empregador (para quem trabalha com carteira) ou no INSS (para aposentados)",
+      "documentsRequired": [
+        "Certidão de nascimento de cada filho",
+        "Carteira de vacinação (filhos até 6 anos)",
+        "Comprovante de frequência escolar (filhos de 4 a 14 anos)",
+        "Termo de responsabilidade"
+      ],
+      "howToApply": [
+        "Se trabalha com carteira: peça ao RH da empresa",
+        "Se é aposentado: solicite pelo Meu INSS",
+        "Apresente certidão de nascimento dos filhos",
+        "Renove anualmente com carteira de vacinação e comprovante escolar"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/salario-familia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Previdência"
+    },
+    {
+      "id": "federal-sisu",
+      "name": "SISU - Universidades Públicas",
+      "shortDescription": "Entrada em universidades públicas gratuitas usando a nota do ENEM. Não tem mensalidade.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 5000,
+        "max": 60000,
+        "description": "Economia anual com mensalidade (ensino gratuito)",
+        "estimated": true,
+        "estimatedRationale": "Valor estimado comparando com mensalidades de faculdades particulares equivalentes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter concluído o ensino médio e feito o ENEM (sem zerar redação)",
+          "legalReference": "Portaria Normativa MEC nº 21/2012"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "portaria",
+            "number": "Portaria Normativa MEC nº 21/2012",
+            "description": "Regulamenta o SISU",
+            "url": "https://sisugestao.mec.gov.br/docs/portaria-2012-21.pdf"
+          },
+          {
+            "type": "lei",
+            "number": "12.711/2012",
+            "description": "Lei de Cotas para instituições federais",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm"
+          }
+        ]
+      },
+      "whereToApply": "Portal Único de Acesso ao Ensino Superior (acessounico.mec.gov.br/sisu)",
+      "documentsRequired": [
+        "CPF",
+        "Nota do ENEM (uma das 3 últimas edições)",
+        "Certificado de conclusão do ensino médio",
+        "Para cotistas: comprovantes de renda e/ou escola pública"
+      ],
+      "howToApply": [
+        "Faça o ENEM e não zere a redação",
+        "Acesse o Portal do SISU no período de inscrição (janeiro)",
+        "Escolha até 2 opções de curso",
+        "Se aprovado, faça a matrícula na universidade com os documentos"
+      ],
+      "sourceUrl": "https://acessounico.mec.gov.br/sisu",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-pe-de-meia-licenciaturas",
+      "name": "Pé-de-Meia Licenciaturas",
+      "shortDescription": "R$ 1.050 por mês para quem faz faculdade de professor (licenciatura) e tirou boa nota no ENEM (650+ pontos).",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1050,
+        "max": 1050,
+        "description": "R$ 700/mês (saque imediato) + R$ 350/mês (poupança liberada ao virar professor)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em licenciatura presencial via SISU, ProUni ou FIES",
+          "legalReference": "Decreto 12.358/2025"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "12.358/2025",
+            "description": "Institui o Programa Mais Professores para o Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/D12358.htm"
+          }
+        ]
+      },
+      "whereToApply": "Plataforma Freire da CAPES (freire.capes.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "Nota do ENEM (média 650+ pontos)",
+        "Comprovante de matrícula em licenciatura presencial",
+        "Conta Gov.br"
+      ],
+      "howToApply": [
+        "Faça o ENEM com média de pelo menos 650 pontos",
+        "Ingresse em licenciatura presencial via SISU, ProUni ou FIES",
+        "Cadastre-se na Plataforma Freire (freire.capes.gov.br)",
+        "Ative a Poupança Social no app do Banco do Brasil"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/mais-professores/pe-de-meia-licenciaturas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👩‍🏫",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-gas-do-povo",
+      "name": "Gás do Povo",
+      "shortDescription": "Botijões de gás de cozinha grátis para famílias de baixa renda do CadÚnico. Substitui o modelo de vale-gás em dinheiro.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 400,
+        "max": 700,
+        "description": "4 a 6 botijões de 13kg grátis por ano",
+        "estimated": true,
+        "estimatedRationale": "Estimativa baseada em 4-6 botijões a ~R$ 110 cada (preço médio nacional 2026)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Lei 14.237/2021; MP 1.313/2025"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda por pessoa de até meio salário mínimo",
+          "legalReference": "Lei 14.237/2021"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.237/2021",
+            "description": "Lei do Auxílio Gás dos Brasileiros",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14237.htm"
+          }
+        ]
+      },
+      "whereToApply": "Consulte pelo site gasdopovo.mds.gov.br ou no CRAS",
+      "documentsRequired": [
+        "Inscrição atualizada no CadÚnico",
+        "CPF do responsável familiar"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "Consulte se foi selecionado em gasdopovo.mds.gov.br",
+        "Retire o botijão nos pontos de distribuição indicados",
+        "O programa seleciona automaticamente famílias do CadÚnico"
+      ],
+      "sourceUrl": "https://gasdopovo.mds.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Utilidades"
+    },
+    {
+      "id": "federal-brasil-saudavel",
+      "name": "Brasil Saudável",
+      "shortDescription": "Programa do SUS para eliminar 14 doenças que afetam quem vive em situação de pobreza. Tratamento gratuito na UBS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 5000,
+        "description": "Economia com tratamento gratuito pelo SUS",
+        "estimated": true,
+        "estimatedRationale": "Valor estimado da economia com consultas, exames e medicamentos que seriam pagos no particular"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cpf",
+          "operator": "has",
+          "value": true,
+          "description": "Qualquer pessoa pode acessar o SUS gratuitamente",
+          "legalReference": "Decreto 11.908/2024; Lei 8.080/1990"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "11.908/2024",
+            "description": "Institui o Programa Brasil Saudável - Unir para Cuidar",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/D11908.htm"
+          },
+          {
+            "type": "lei",
+            "number": "8.080/1990",
+            "description": "Lei Orgânica da Saúde (SUS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+          }
+        ]
+      },
+      "whereToApply": "UBS (Unidade Básica de Saúde) mais próxima ou qualquer unidade do SUS",
+      "documentsRequired": [
+        "CPF ou Cartão SUS",
+        "Documento com foto",
+        "Comprovante de residência (para cadastro na UBS)"
+      ],
+      "howToApply": [
+        "Vá à UBS mais próxima da sua casa",
+        "Faça o cadastro com o agente comunitário de saúde",
+        "Informe seus sintomas e solicite atendimento",
+        "Use o app Meu SUS Digital para acompanhar"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/svsa/brasil-saudavel",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💚",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-programa-quilombola",
+      "name": "Aquilomba Brasil (Quilombola)",
+      "shortDescription": "Programa que garante direitos das comunidades quilombolas: terra, moradia, água, saúde e inclusão produtiva.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 600,
+        "max": 12000,
+        "description": "Variável: inclui acesso a Bolsa Família, cisternas, crédito produtivo e regularização fundiária",
+        "estimated": true,
+        "estimatedRationale": "Valor variável por família. Inclui benefícios como Bolsa Família (R$ 600+/mês), crédito de R$ 12 mil para produção, e infraestrutura comunitária"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser de comunidade quilombola certificada e estar no CadÚnico",
+          "legalReference": "Decreto 11.447/2023"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "11.447/2023",
+            "description": "Institui o Programa Aquilomba Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/D11447.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS, Fundação Cultural Palmares, INCRA ou Secretaria de Igualdade Racial",
+      "documentsRequired": [
+        "CPF",
+        "Certidão de autodeclaração quilombola (Fundação Palmares)",
+        "Inscrição no CadÚnico",
+        "Comprovante de residência na comunidade"
+      ],
+      "howToApply": [
+        "Procure a Fundação Cultural Palmares para certificação da comunidade",
+        "Faça ou atualize o CadÚnico no CRAS",
+        "Informe que é quilombola para ter prioridade nos programas",
+        "Procure a associação da sua comunidade para orientação"
+      ],
+      "sourceUrl": "https://www.gov.br/igualdaderacial/pt-br/assuntos/Aquilomba-Brasil",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏘️",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-bolsa-verde",
+      "name": "Bolsa Verde (Extrativistas)",
+      "shortDescription": "R$ 600 a cada 3 meses para famílias que vivem em áreas de conservação ambiental e ajudam a preservar a floresta.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 600 por trimestre (média R$ 200/mês)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no CadÚnico com renda per capita de até meio salário mínimo",
+          "legalReference": "Lei 12.512/2011"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Viver em unidade de conservação de uso sustentável ou assentamento diferenciado",
+          "legalReference": "Decreto 7.572/2011"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.512/2011",
+            "description": "Institui o Programa de Apoio à Conservação Ambiental (Bolsa Verde)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12512.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "7.572/2011",
+            "description": "Regulamenta o Bolsa Verde",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/decreto/d7572.htm"
+          }
+        ]
+      },
+      "whereToApply": "ICMBio, INCRA ou gestor da unidade de conservação",
+      "documentsRequired": [
+        "CPF",
+        "Inscrição no CadÚnico (NIS)",
+        "Comprovante de residência na área de conservação",
+        "Autorização do gestor da unidade"
+      ],
+      "howToApply": [
+        "Verifique se sua área é coberta pelo programa",
+        "Procure o gestor da unidade de conservação ou o INCRA",
+        "Mantenha o CadÚnico atualizado",
+        "O programa seleciona famílias que mantêm pelo menos 80% de cobertura vegetal"
+      ],
+      "sourceUrl": "https://www.gov.br/mma/pt-br/assuntos/biodiversidade/programa-bolsa-verde",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌳",
+      "category": "Meio Ambiente"
+    },
+    {
+      "id": "federal-agua-para-todos",
+      "name": "Água para Todos (Cisternas)",
+      "shortDescription": "Cisternas gratuitas para captar água da chuva, levando água potável para famílias rurais do semiárido.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 15000,
+        "description": "Cisterna de 16.000 litros (consumo) ou 52.000 litros (produção) instalada gratuitamente",
+        "estimated": true,
+        "estimatedRationale": "Custo unitário de cisterna de placas: R$ 3 mil a R$ 15 mil dependendo do modelo. Instalação gratuita pelo programa."
+      },
+      "eligibilityRules": [
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em área rural com acesso precário à água",
+          "legalReference": "Decreto 9.606/2018; Lei 12.873/2013"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no CadÚnico com renda per capita de até meio salário mínimo",
+          "legalReference": "Decreto 9.606/2018"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.873/2013, Arts. 11-16",
+            "description": "Programa Cisternas",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12873.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "9.606/2018",
+            "description": "Regulamenta o Programa Cisternas",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9606.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS ou Secretaria Municipal de Assistência Social",
+      "documentsRequired": [
+        "Inscrição no CadÚnico (NIS)",
+        "Comprovante de residência rural",
+        "A seleção é feita pelo município via dados do CadÚnico"
+      ],
+      "howToApply": [
+        "Faça ou atualize o CadÚnico no CRAS",
+        "Informe que mora em área rural sem acesso adequado à água",
+        "A prefeitura seleciona as famílias pelo CadÚnico",
+        "Aguarde o contato da equipe de instalação"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/acesso-a-alimentos-e-a-agua/programa-cisternas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💧",
+      "category": "Infraestrutura"
+    },
+    {
+      "id": "federal-carteira-idoso",
+      "name": "Carteira do Idoso (Transporte)",
+      "shortDescription": "Passagem de ônibus interestadual grátis ou com 50% de desconto para idosos de 60 anos ou mais com renda baixa.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 200,
+        "max": 3000,
+        "description": "Economia com passagens interestaduais (2 vagas grátis por ônibus + 50% desconto nas demais)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temIdoso65Mais",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 60 anos ou mais (para transporte interestadual)",
+          "legalReference": "Art. 40, Lei 10.741/2003 (Estatuto do Idoso)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda de até 2 salários mínimos (R$ 3.242 em 2026)",
+          "legalReference": "Art. 40, Lei 10.741/2003"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Decreto 5.934/2006"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.741/2003 (Estatuto do Idoso), Art. 40",
+            "description": "Gratuidade e desconto no transporte interestadual para idosos",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "5.934/2006",
+            "description": "Regulamenta o Art. 40 do Estatuto do Idoso",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/decreto/d5934.htm"
+          }
+        ]
+      },
+      "whereToApply": "Online (carteiraidoso.cidadania.gov.br) ou CRAS",
+      "documentsRequired": [
+        "CPF e documento com foto",
+        "Número do NIS (Cadastro Único)",
+        "Comprovante de renda de até 2 salários mínimos"
+      ],
+      "howToApply": [
+        "Faça ou atualize o CadÚnico no CRAS",
+        "Acesse carteiraidoso.cidadania.gov.br com conta Gov.br",
+        "Solicite a Carteira do Idoso online",
+        "Leve a carteira e RG ao embarcar no ônibus interestadual"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/adquirir-carteira-do-idoso",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "federal-id-jovem",
+      "name": "ID Jovem",
+      "shortDescription": "Meia-entrada em shows e cinema + passagem de ônibus interestadual grátis para jovens de 15 a 29 anos de baixa renda.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 200,
+        "max": 2000,
+        "description": "Economia com meia-entrada em eventos e passagens interestaduais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 29,
+          "description": "Ter entre 15 e 29 anos",
+          "legalReference": "Art. 2º, Decreto 8.537/2015"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos (R$ 3.242 em 2026)",
+          "legalReference": "Art. 2º, Decreto 8.537/2015"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no CadÚnico (atualizado nos últimos 24 meses)",
+          "legalReference": "Decreto 8.537/2015"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.852/2013",
+            "description": "Estatuto da Juventude",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12852.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "8.537/2015",
+            "description": "Regulamenta a ID Jovem",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8537.htm"
+          }
+        ]
+      },
+      "whereToApply": "Site idjovem.juventude.gov.br ou app ID Jovem 2.0",
+      "documentsRequired": [
+        "CPF regularizado",
+        "Número do NIS (Cadastro Único)",
+        "CadÚnico atualizado nos últimos 24 meses"
+      ],
+      "howToApply": [
+        "Verifique seu NIS no app Meu CadÚnico ou ligue 0800 707 2003",
+        "Acesse idjovem.juventude.gov.br ou baixe o app ID Jovem 2.0",
+        "Informe NIS, CPF, nome, data de nascimento e nome da mãe",
+        "A carteira digital é gerada na hora e vale por 1 ano"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-a-carteira-de-identidade-jovem",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎫",
+      "category": "Juventude"
     }
   ]
 }

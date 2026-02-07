@@ -13,6 +13,8 @@ class EstimatedValue(BaseModel):
     min: Optional[float] = None
     max: Optional[float] = None
     description: Optional[str] = None
+    estimated: Optional[bool] = None
+    estimated_rationale: Optional[str] = Field(None, alias="estimatedRationale")
 
 
 class EligibilityRule(BaseModel):
