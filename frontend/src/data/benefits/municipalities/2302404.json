@@ -1,0 +1,358 @@
+{
+  "municipality": "Boa Viagem",
+  "municipalityIbge": "2302404",
+  "state": "CE",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "ce-boaviagem-restaurante-popular",
+      "name": "Restaurante do Povo",
+      "shortDescription": "Refeições a R$ 1 em restaurantes populares de Boa Viagem",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 1"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Boa Viagem",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante do Povo da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ce-boaviagem-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Boa Viagem.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Boa Viagem",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "ce-boaviagem-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Boa Viagem.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Boa Viagem ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "ce-boaviagem-habitacao-municipal",
+      "name": "Programa Habitacional de Boa Viagem",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Boa Viagem.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Boa Viagem",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia"
+    },
+    {
+      "id": "ce-boaviagem-capacitacao-emprego",
+      "name": "Qualifica Boa Viagem",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Boa Viagem.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Boa Viagem",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ce-boaviagem-farmacia-municipal",
+      "name": "Farmácia Municipal",
+      "shortDescription": "Medicamentos gratuitos nas farmácias municipais e UBS de Boa Viagem",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        }
+      ],
+      "whereToApply": "UBS ou Farmácia Municipal de Boa Viagem",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Receita médica do SUS"
+      ],
+      "howToApply": [
+        "Vá à UBS ou Farmácia Municipal",
+        "Apresente receita médica",
+        "Retire os medicamentos disponíveis"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde"
+    },
+    {
+      "id": "ce-boaviagem-cesta-basica",
+      "name": "Cesta Básica Municipal",
+      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Boa Viagem",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2302404",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta básica mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2302404",
+          "description": "Morar em Boa Viagem"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Boa Viagem",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite a cesta básica",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.boaviagem.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação",
+      "metadata": {
+        "template": true
+      }
+    }
+  ]
+}

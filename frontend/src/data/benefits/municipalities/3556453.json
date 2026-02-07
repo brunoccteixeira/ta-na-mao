@@ -1,0 +1,358 @@
+{
+  "municipality": "Vargem Grande Paulista",
+  "municipalityIbge": "3556453",
+  "state": "SP",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "sp-vargemgrandepaulista-restaurante-popular",
+      "name": "Bom Prato",
+      "shortDescription": "Refeições a R$ 1 (café R$ 0,50) em restaurantes populares de Vargem Grande Paulista",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 1 (café R$ 0,50)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Vargem Grande Paulista",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Bom Prato da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Vargem Grande Paulista.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Vargem Grande Paulista",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Vargem Grande Paulista.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Vargem Grande Paulista ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-habitacao-municipal",
+      "name": "Programa Habitacional de Vargem Grande Paulista",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Vargem Grande Paulista.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Vargem Grande Paulista",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-capacitacao-emprego",
+      "name": "Qualifica Vargem Grande Paulista",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Vargem Grande Paulista.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Vargem Grande Paulista",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-farmacia-municipal",
+      "name": "Farmácia Municipal",
+      "shortDescription": "Medicamentos gratuitos nas farmácias municipais e UBS de Vargem Grande Paulista",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        }
+      ],
+      "whereToApply": "UBS ou Farmácia Municipal de Vargem Grande Paulista",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Receita médica do SUS"
+      ],
+      "howToApply": [
+        "Vá à UBS ou Farmácia Municipal",
+        "Apresente receita médica",
+        "Retire os medicamentos disponíveis"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde"
+    },
+    {
+      "id": "sp-vargemgrandepaulista-cesta-basica",
+      "name": "Cesta Básica Municipal",
+      "shortDescription": "Cesta básica para famílias em vulnerabilidade social de Vargem Grande Paulista",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3556453",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta básica mensal"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3556453",
+          "description": "Morar em Vargem Grande Paulista"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda por pessoa até R$ 218"
+        }
+      ],
+      "whereToApply": "CRAS de Vargem Grande Paulista",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite a cesta básica",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.vargemgrandepaulista.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🧺",
+      "category": "Alimentação",
+      "metadata": {
+        "template": true
+      }
+    }
+  ]
+}
