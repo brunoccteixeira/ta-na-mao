@@ -4,10 +4,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useBenefitDetail } from '../../../../src/hooks/useBenefitsAPI';
 import { formatBenefitValue, getStateName } from '../../../../src/engine/catalog';
+import journeysData from '../../../../src/data/journeys.json';
 
 export default function BenefitDetailClient({ id }: { id: string }) {
   const router = useRouter();
   const { data: benefit, isLoading, isError, error } = useBenefitDetail(id);
+  const hasJourney = journeysData.journeys.some((j: { benefitId: string }) => j.benefitId === id);
 
   if (isLoading) {
     return (
@@ -153,6 +155,18 @@ export default function BenefitDetailClient({ id }: { id: string }) {
                 </li>
               ))}
             </ul>
+            <Link
+              href={`/beneficios/${benefit.id}/documentos`}
+              className="mt-3 block p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-colors"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-xl">✅</span>
+                <div>
+                  <h3 className="font-semibold text-emerald-700 text-sm">Marcar documentos que ja tenho</h3>
+                  <p className="text-xs text-emerald-600/70">Lista interativa para se organizar antes de ir ao posto</p>
+                </div>
+              </div>
+            </Link>
           </section>
 
           {/* Como pedir */}
@@ -243,6 +257,24 @@ export default function BenefitDetailClient({ id }: { id: string }) {
               >
                 Fonte oficial: {benefit.sourceUrl}
               </a>
+            </div>
+          )}
+
+          {/* Journey CTA */}
+          {hasJourney && (
+            <div className="mt-6 mb-2">
+              <Link
+                href={`/beneficios/${benefit.id}/jornada`}
+                className="block p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🗺️</span>
+                  <div>
+                    <h3 className="font-semibold text-emerald-700">Ver passo a passo completo</h3>
+                    <p className="text-sm text-emerald-600/70">Guia com tudo que voce precisa fazer para conseguir esse beneficio</p>
+                  </div>
+                </div>
+              </Link>
             </div>
           )}
 
