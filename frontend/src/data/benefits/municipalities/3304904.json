@@ -2,7 +2,7 @@
   "municipality": "São Gonçalo",
   "municipalityIbge": "3304904",
   "state": "RJ",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rj-saogoncalo-cesta-basica",
@@ -38,14 +38,18 @@
         }
       ],
       "whereToApply": "CRAS de São Gonçalo",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite cadastro",
         "Retire a cesta mensalmente"
       ],
       "sourceUrl": "https://www.saogoncalo.rj.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
@@ -78,17 +82,290 @@
         }
       ],
       "whereToApply": "Secretaria de Transporte",
-      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
       "howToApply": [
         "Procure a Secretaria de Transporte",
         "Apresente documentos",
         "Retire o cartão"
       ],
       "sourceUrl": "https://www.saogoncalo.rj.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧓",
       "category": "Transporte"
+    },
+    {
+      "id": "rj-saogoncalo-restaurante-popular",
+      "name": "Restaurante Popular Carioca",
+      "shortDescription": "Refeições a R$ 2 em restaurantes populares de São Gonçalo. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de São Gonçalo",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular Carioca da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "rj-saogoncalo-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em São Gonçalo. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de São Gonçalo",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "rj-saogoncalo-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em São Gonçalo. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de São Gonçalo ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "rj-saogoncalo-habitacao-municipal",
+      "name": "Programa Habitacional de São Gonçalo",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em São Gonçalo. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de São Gonçalo",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "rj-saogoncalo-capacitacao-emprego",
+      "name": "Qualifica São Gonçalo",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em São Gonçalo. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304904",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304904",
+          "description": "Morar em São Gonçalo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de São Gonçalo",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.saogoncalo.rj.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

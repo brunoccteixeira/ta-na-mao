@@ -1,0 +1,6696 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-07",
+  "benefits": {
+    "ac-auxilio-renda-acre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-bolsa-educacao-acre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-cnh-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-cohab-acre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-cruzeirodosul-auxilio-ribeirinho": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-cruzeirodosul-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-paa-estadual": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-pro-acolher": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-qualifica-acre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ac-riobranco-auxilio-alimentar-rb": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-riobranco-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ac-saude-materno-infantil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-arapiraca-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-programa-fumo-zero": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-arapiraca-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-cartao-cria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-cnh-trabalhador": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-maceio-auxilio-moradia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-conta-em-dia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-maceio-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "al-passe-livre-intermunicipal": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-prepara-jovem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-programa-cria-gestante": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-qualifica-alagoas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "al-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-amazonas-meu-lar": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-auxilio-estadual-permanente": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-centros-convivencia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-cetam-qualificacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-cnh-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-itacoatiara-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-itacoatiara-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-bolsa-universidade": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-passa-facil-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-passe-livre-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-manaus-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-apoio-festival": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-parintins-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "am-prato-cheio": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "am-prosamin": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-amapa-sem-fome": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-bolsa-educacao-amapa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-habilita-amapa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-habitacao-amapa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-macapa-auxilio-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-macapa-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ap-novo-amapa-jovem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-qualifica-amapa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-renda-viver-melhor": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ap-saude-gestante-amapa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-agua-para-todos": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-bolsa-presenca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-feiradesantana-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-feiradesantana-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-ilheus-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-juazeiro-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-mae-bahia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-mais-futuro": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-primeiro-emprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-salvador-aluguel-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-primeiro-passo": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-salvador-vida-nova": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-transporte-estudantil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ba-vitoriadaconquista-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-primeira-infancia-vca": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ba-vitoriadaconquista-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-bolsa-universitaria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-cartao-mais-infancia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-caucaia-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-caucaia-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-ceara-sem-fome": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-cnh-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-crato-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-crato-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-entrada-moradia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-fortaleza-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-bolsa-nota-dez": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-locacao-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-fortaleza-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-romeiro-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-juazeirodonorte-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-jovem-aprendiz-maracanau": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-maracanau-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-sobral-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ce-vaivem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ce-vale-gas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-bolsa-maternidade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-brasilia-cartao-prato-cheio": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-cesta-trabalhador": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-df-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-brasilia-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "df-cartao-material-escolar": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-cartao-prato-cheio": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-df-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-morar-df": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-qualifica-df": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "df-restaurante-comunitario": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-bolsa-capixaba": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-cachoeirodeitapemirim-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-cesta-basica-cachoeiro": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cachoeirodeitapemirim-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-cariacica-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-linhares-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-nossa-bolsa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-nossa-casa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-qualificar-es": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-rede-bem-nascer": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-serra-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-serra-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vale-gas-capixaba": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "es-vilavelha-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vilavelha-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-bolsa-qualificacao-vt": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "es-vitoria-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "federal-abono-salarial": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-acessuas-trabalho": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-agua-para-todos": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-especial": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-hibrida": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-idade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-invalidez": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-professor": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-rural": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-aposentadoria-tempo": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-auxilio-acidente": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-auxilio-brasil-alimentacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-auxilio-doenca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-auxilio-gas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-auxilio-reclusao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-banco-alimentos": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-bolsa-familia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-bolsa-verde": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-bpc-idoso": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-bpc-pcd": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-brasil-saudavel": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-brasil-sorridente": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-caps": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-carteira-idoso": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-cozinha-solidaria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-crianca-feliz": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-dignidade-menstrual": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-eja": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-farmacia-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-fgts": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-fies": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-id-jovem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-internet-brasil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-isencao-ipva-pcd": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-isencao-taxa-concurso": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-jovem-aprendiz": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-mcmv": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-olhar-brasil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-passe-livre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-pe-de-meia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-pe-de-meia-licenciaturas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-pensao-morte": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-peti": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-pis-pasep": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-programa-quilombola": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-pronatec": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-prouni": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-registro-civil-gratuito": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-regularizacao-fundiaria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-salario-familia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-salario-maternidade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-seguro-desemprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-sine": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-sisu": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-svr": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-tarifa-social-agua": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-tratamento-fora-domicilio": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-tsee": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "federal-vale-cultura": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-aguaslindasdegoias-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aguaslindasdegoias-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-anapolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-aluguel-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aparecidadegoiania-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-aprendiz-do-futuro": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-bolsa-estudo": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-casas-custo-zero": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-goiania-aluguel-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goiania-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-goias-por-elas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-luziania-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-cesta-basica-luziania": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-luziania-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-maes-de-goias": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-renda-cidada": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-restaurante-do-bem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "go-rioverde-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "go-rioverde-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-bolsa-estudante-destaque": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-cheque-gestante": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-codo-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-codo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-cozinha-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-imperatriz-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-imperatriz-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-maranhao-livre-da-fome": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-qualifica-maranhao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-saoluis-auxilio-moradia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-mais-renda": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-saoluis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-cesta-basica-timon": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-timon-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ma-transporte-escolar-gratis": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ma-vale-gas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-belohorizonte-auxilio-bh": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-bolsa-moradia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-catraca-livre": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-belohorizonte-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-betim-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-bolsa-merenda": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-bolsa-reciclagem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-contagem-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-passe-livre-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-contagem-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-divinopolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-filhos-de-minas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-governadorvaladares-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-governadorvaladares-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ipatinga-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-juizdefora-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-minas-forma": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-montesclaros-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-montesclaros-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-piso-mineiro": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-pocosdecaldas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-pocosdecaldas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-ribeiraodsneves-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-ribeiraodsneves-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-leite-criancas-setelagoas": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-setelagoas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-travessia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mg-uberaba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberaba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-tarifa-social-dmae": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mg-uberlandia-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-mais-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-passe-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-campogrande-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-cuidar-de-quem-cuida": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-dourados-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-dourados-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-energia-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-mais-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-protecao-gestante": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-qualifica": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-supera": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ms-treslagoas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ms-treslagoas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-bolsa-estudantil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-cuiaba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-ser-familia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-cuiaba-vale-gas": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-peq-qualifica": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-rondonopolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-leite-bom-rondonopolis": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-rondonopolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-ser-familia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-ser-familia-capacita": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-ser-familia-crianca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-ser-familia-habitacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "mt-sinop-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-qualifica-sinop": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-sinop-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "mt-varzeagrande-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-abaetetuba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-abaetetuba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-abaetetuba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-abaetetuba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-abaetetuba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-agua-para": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-ananindeua-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-ananindeua-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-bora-belem": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-belem-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-bolsa-uepa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-castanhal-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-castanhal-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-auxilio-enchente-maraba": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-maraba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-primeiro-oficio": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-renda-para": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-santarem-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-santarem-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pa-saude-gestante-para": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-sua-casa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pa-vale-gas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-bolsa-permanencia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-campinagrande-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-campinagrande-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-cartao-alimentacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-cesta-basica": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-joaopessoa-auxilio-aluguel": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-bolsa-creche": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-joaopessoa-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-paraiba-primeira-infancia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-parceiros-habitacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-primeira-chance": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pb-santarita-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pb-santarita-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-cabodesantoagostinho-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-caruaru-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-chapeu-de-palha": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-garanhuns-apoio-agricultor-garanhuns": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-garanhuns-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-jaboataodosguararapes-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-mae-coruja": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-no-batente": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-olinda-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-olinda-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-cesta-basica-paulista": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-paulista-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-petrolina-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-qualifica-pe": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-recife-cnh-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-vem-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-recife-vem-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-todos-com-agua": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-vem-passe-livre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pe-vitoriadesantoantao-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pe-vitoriadesantoantao-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-agua-para-todos": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-alfabetiza-piaui": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-cnh-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-morar-bem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-parnaiba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-parnaiba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-primeira-infancia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-qualifica-piaui": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-saude-digital": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pi-teresina-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-cartao-prosocial": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-cartao-sasc": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pi-teresina-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cartao-comida-boa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-cartao-futuro": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-casa-facil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-cascavel-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-cascavel-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-colombo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-aluguel-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-armazem-familia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-fare-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-curitiba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-familia-paranaense": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-fozdoiguacu-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-fozdoiguacu-turismo-social-foz": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-guarapuava-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-leite-das-criancas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-londrina-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-passe-livre-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-londrina-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-mae-paranaense": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-maringa-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-maringa-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-nascer-bem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "pr-paranagua-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-paranagua-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-pontagrossa-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "pr-saojosedospinhais-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-aluguel-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-belfordroxo-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-belfordroxo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-pesca-artesanal-cabofrio": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cabofrio-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-camposdosgoytacazes-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-cartao-recomecar": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-duquedecaxias-cafe-trabalhador": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-primeira-chance": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-restaurante-povo": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-duquedecaxias-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-faetec-qualifica": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-niteroi-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-moeda-arariboia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-niteroi-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-novaiguacu-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-petropolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-renda-melhor-jovem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-riocard-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-riodejaneiro-auxilio-gas": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-auxilio-habitacional": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-jae-transporte": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-supera-rj": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-riodejaneiro-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saogoncalo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-saojoaodemeriti-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-supera-rj": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rj-teresopolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-teresopolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rj-voltaredonda-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-cnh-social": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-jovem-potiguar": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-leite-potiguar": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-meia-passagem-estudantil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-moradia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-mossoro-auxilio-seca-mossoro": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-mossoro-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-aluguel-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-natal-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-parnamirim-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rn-programa-materno-infantil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rn-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-ariquemes-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-ariquemes-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-educacao-profissional": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-idep-cursos-tecnicos": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-jiparana-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-jiparana-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-mamae-cheguei": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-meu-sonho": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-portovelho-auxilio-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-portovelho-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "ro-prato-facil": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-programa-vencer": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "ro-rondonia-cidada": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-boavista-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-kit-gestante-bv": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-boavista-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rr-censo-habitacional": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-cesta-da-familia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-colo-de-mae": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-escolegis-capacitacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-morar-melhor": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-potencializando-mulheres": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rr-sine-qualificacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-canoas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-canoas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-caxiasdosul-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-devolve-icms": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-familia-gaucha": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-gravatai-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-gravatai-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-mae-gaucha": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-novohamburgo-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-qualifica-couro-nh": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-novohamburgo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-pelotas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-porta-de-entrada": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-portoalegre-auxilio-estadia": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-inclusao-alimentar": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-todo-jovem-escola": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-portoalegre-tri-legal-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-qualifica-rs": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "rs-riogrande-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-riogrande-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-cesta-basica-santamaria": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-santamaria-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "rs-todo-jovem-na-escola": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-blumenau-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-blumenau-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-bolsa-estudante": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-casa-catarina": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-cesta-basica-paa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-chapeco-apoio-agroindustria-chapeco": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-chapeco-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-cnh-emprego-na-pista": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-criciuma-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-minerador-social-criciuma": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-criciuma-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-passe-social-floripa": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-florianopolis-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-itajai-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-joinville-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-proemprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sc-saojose-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-saojose-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sc-teste-mae-catarinense": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-aracaju-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-aracaju-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-cartao-mais-inclusao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-casa-sergipana": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-estudante-monitor": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-mae-sergipana": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-mao-amiga": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-nossasenhoradosocorro-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-kit-natalidade-socorro": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-nossasenhoradosocorro-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "se-qualifica-sergipe": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "se-restaurante-popular": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-app-mei": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-app-regulamentacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-autonomo-inss-normal": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-autonomo-inss-simplificado": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-autonomo-microcredito": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-autonomo-sebrae": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-auxilio-entregador": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-auxilio-inclusao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-bolsa-reciclagem": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-catador-circularidade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-catador-logistica-reversa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-cataforte": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-clt-13-ferias": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-clt-abono-pis": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-clt-fgts": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-clt-salario-familia": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-clt-seguro-desemprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-domestica-aposentadoria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-domestica-fgts": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-domestica-maternidade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-domestica-seguro-desemprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-domestica-vale-transporte": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-entregador-acidente": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-entregador-inss": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-entregador-qualificacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-garantia-safra": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-habitacao-rural": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei-aposentadoria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei-auxilio-doenca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei-credito": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei-das": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-mei-maternidade": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-motorista-cnh-gratuita": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-motorista-inss": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-motorista-mei": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-motorista-qualificacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-paa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pcd-aposentadoria": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pcd-cota-emprego": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pcd-isencao-ipi": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pcd-passe-livre": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pescador-diesel": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pescador-habitacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pnae": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pro-catador": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pronaf": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-pronaf-pesca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-registro-pesca": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sectoral-seguro-defeso": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-bauru-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bauru-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-bolsa-do-povo": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-bom-prato": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-campinas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-renda-campinas": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-campinas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-carapicuiba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-diadema-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-franca-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guaruja-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-passe-livre-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-superacao": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-guarulhos-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-indaiatuba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-itaquaquecetuba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-jundiai-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-bolsa-trabalho-limeira": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-limeira-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-maua-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-mogidascruzes-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-fundo-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-nosso-futuro": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-osasco-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-piracicaba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-praiagrande-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-renda-cidada": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-ribeiraopreto-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-crepd": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-ribeiraopreto-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-familia-andreense": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-locacao-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santoandre-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santos-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santos-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santos-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santos-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-santos-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saobernardo-passe-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saobernardo-tarifa-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoriopreto-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saojosedoscampos-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-bolsa-trabalho": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-bom-prato": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-passe-livre-estudantil": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-saopaulo-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-beneficios-eventuais": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-passe-livre-idoso": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sorocaba-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-sumare-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-superacao": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-taubate-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-cesta-basica": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-taubate-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "sp-vale-gas": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-via-rapida": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "sp-vivaleite": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-araguaina-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-cesta-basica-araguaina": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-araguaina-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-cartao-idoso": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-em-casa": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-jovem-trabalhador": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-maos-que-cuidam": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-palmas-auxilio-alimentar-palmas": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-capacitacao-emprego": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-farmacia-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-habitacao-municipal": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-iptu-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-restaurante-popular": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-palmas-transporte-social": {
+      "auditor": null,
+      "jornada": null,
+      "fonte": null
+    },
+    "to-presente-profe": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-profissao-estudante": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    },
+    "to-vale-gas-estadual": {
+      "auditor": "2026-02-07",
+      "jornada": "2026-02-07",
+      "fonte": "2026-02-07"
+    }
+  }
+}

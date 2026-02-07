@@ -4,156 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "ro-auxilio-renda-rondonia",
-      "name": "Auxílio Social Rondônia",
-      "shortDescription": "Ajuda mensal para famílias de baixa renda de Rondônia.",
-      "scope": "state",
-      "state": "RO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 150,
-        "description": "Valor mensal conforme a família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RO",
-          "description": "Morar em Rondônia"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "RG",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência em Rondônia"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Faça ou atualize o Cadastro Único",
-        "O governo seleciona as famílias",
-        "Aguarde a comunicação sobre o benefício"
-      ],
-      "sourceUrl": "https://www.rondonia.ro.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "ro-vale-gas-rondonia",
-      "name": "Vale Gás Rondônia",
-      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda em Rondônia.",
-      "scope": "state",
-      "state": "RO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 55,
-        "description": "4 a 6 recargas por ano via programa federal Gás do Povo"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RO",
-          "description": "Morar em Rondônia"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município ou revenda credenciada do Gás do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado no CRAS",
-        "A seleção é feita automaticamente pelo governo federal",
-        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
-    },
-    {
-      "id": "ro-cesta-solidaria",
-      "name": "Cesta Solidária RO",
-      "shortDescription": "Distribuição de cestas básicas para famílias em situação de necessidade.",
-      "scope": "state",
-      "state": "RO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 80,
-        "max": 120,
-        "description": "Cesta com alimentos básicos"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RO",
-          "description": "Morar em Rondônia"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize o Cadastro Único",
-        "Aguarde a convocação para retirar a cesta",
-        "Leve documento com foto na retirada"
-      ],
-      "sourceUrl": "https://www.rondonia.ro.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
-    },
-    {
       "id": "ro-idep-cursos-tecnicos",
       "name": "IDEP - Cursos Técnicos Gratuitos",
       "shortDescription": "Mais de 1.500 vagas em cursos técnicos gratuitos do governo de Rondônia para conseguir emprego.",
@@ -248,7 +98,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "ro-mamae-cheguei",
@@ -353,6 +203,145 @@
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
+    },
+    {
+      "id": "ro-prato-facil",
+      "name": "Prato Fácil",
+      "shortDescription": "Refeição saudável por apenas R$ 2 em restaurantes do governo de Rondônia para pessoas de baixa renda.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Economia de até R$ 300/mês (refeições a R$ 2 em vez de R$ 15-20)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810)"
+        }
+      ],
+      "whereToApply": "Restaurantes credenciados Prato Fácil em Rondônia",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Documento de identidade com foto"
+      ],
+      "howToApply": [
+        "Faça ou atualize seu Cadastro Único no CRAS",
+        "Cadastre-se no sistema Prato Fácil pelo aplicativo ou presencialmente",
+        "Procure um restaurante credenciado na sua cidade",
+        "Apresente seu documento e pague apenas R$ 2 pela refeição"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/seas/programas-e-projetos/pratofacil/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "ro-programa-vencer",
+      "name": "Programa Vencer",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com auxílio de R$ 200 por mês e kit de ferramentas em Rondônia.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200/mês por 12 meses + kit profissional ao concluir"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        }
+      ],
+      "whereToApply": "SEAS Rondônia ou pelo WhatsApp (69) 9 9966-3286",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em Rondônia"
+      ],
+      "howToApply": [
+        "Fique atento às inscrições no site rondonia.ro.gov.br",
+        "Faça a inscrição online no prazo do edital",
+        "Escolha o curso entre as áreas disponíveis",
+        "Frequente as aulas e receba R$ 200/mês + kit profissional"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/seas/programas-e-projetos/programa-vencer/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛠️",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ro-rondonia-cidada",
+      "name": "Rondônia Cidadã",
+      "shortDescription": "Programa itinerante que leva serviços gratuitos de saúde, documentos e assistência social para o interior de Rondônia.",
+      "scope": "state",
+      "state": "RO",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Serviços gratuitos de saúde, documentos e assistência social"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RO",
+          "description": "Morar em Rondônia"
+        }
+      ],
+      "whereToApply": "Evento Rondônia Cidadã quando chegar ao seu município",
+      "documentsRequired": [
+        "CPF (se tiver)",
+        "RG (se tiver)",
+        "Qualquer documento de identificação"
+      ],
+      "howToApply": [
+        "Acompanhe o calendário do programa no site do governo",
+        "Quando o Rondônia Cidadã vier à sua cidade, vá ao local do evento",
+        "Leve seus documentos e da família",
+        "Aproveite os serviços de saúde, documentação e assistência"
+      ],
+      "sourceUrl": "https://rondonia.ro.gov.br/calendario-2026-do-programa-estadual-rondonia-cidada-tem-inicio-em-tres-coqueiros-distrito-de-campo-novo/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏛️",
+      "category": "Assistência Social"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "municipality": "Campo Grande",
   "municipalityIbge": "5002704",
   "state": "MS",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ms-campogrande-mais-social",
@@ -38,14 +38,19 @@
         }
       ],
       "whereToApply": "CRAS de Campo Grande",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Atualize dados no CadÚnico",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.campogrande.ms.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -78,17 +83,289 @@
         }
       ],
       "whereToApply": "AGETRAN ou terminais",
-      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4"],
+      "documentsRequired": [
+        "RG",
+        "Declaração escolar",
+        "Foto 3x4"
+      ],
       "howToApply": [
         "Procure a AGETRAN",
         "Apresente documentos",
         "Retire o cartão"
       ],
       "sourceUrl": "https://www.campogrande.ms.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎒",
       "category": "Transporte"
+    },
+    {
+      "id": "ms-campogrande-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Programa de restaurante popular em Campo Grande não confirmado. Verifique com a prefeitura se há unidades disponíveis",
+      "scope": "municipal",
+      "state": "MS",
+      "municipalityIbge": "5002704",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5002704",
+          "description": "Morar em Campo Grande"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Campo Grande",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.campogrande.ms.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ms-campogrande-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Campo Grande. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MS",
+      "municipalityIbge": "5002704",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5002704",
+          "description": "Morar em Campo Grande"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Campo Grande",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.campogrande.ms.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ms-campogrande-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Campo Grande. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MS",
+      "municipalityIbge": "5002704",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5002704",
+          "description": "Morar em Campo Grande"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Campo Grande ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.campogrande.ms.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ms-campogrande-habitacao-municipal",
+      "name": "Programa de Locação Social",
+      "shortDescription": "Subsídio de até 50% do aluguel (máximo R$ 1.200/mês). 100% para idosos, vítimas de violência doméstica e PCD",
+      "scope": "municipal",
+      "state": "MS",
+      "municipalityIbge": "5002704",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 1200,
+        "description": "Até 50% do aluguel (máx R$ 1.200), 100% para idosos/PCD"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5002704",
+          "description": "Morar em Campo Grande"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Campo Grande",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.campogrande.ms.gov.br/cgnoticias/noticia/prefeita-assina-nova-regulamentacao-do-programa-locacao-social-e-concede-100-de-subsidio-de-aluguel-em-casos-especiais/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "ms-campogrande-capacitacao-emprego",
+      "name": "Qualifica Campo Grande",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Campo Grande. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MS",
+      "municipalityIbge": "5002704",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5002704",
+          "description": "Morar em Campo Grande"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Campo Grande",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.campogrande.ms.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

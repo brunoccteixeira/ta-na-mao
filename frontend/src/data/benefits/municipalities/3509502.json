@@ -2,7 +2,7 @@
   "municipality": "Campinas",
   "municipalityIbge": "3509502",
   "state": "SP",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "sp-campinas-renda-campinas",
@@ -38,22 +38,27 @@
         }
       ],
       "whereToApply": "CRAS de Campinas",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Atualize dados no CadÚnico",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.campinas.sp.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
     },
     {
       "id": "sp-campinas-restaurante-popular",
-      "name": "Restaurante Popular Campinas",
-      "shortDescription": "Refeições a preço acessível nos restaurantes populares",
+      "name": "Bom Prato",
+      "shortDescription": "Refeições a R$ 1 (café R$ 0,50) nos restaurantes Bom Prato. Programa do Governo do Estado de SP, disponível em Campinas",
       "scope": "municipal",
       "state": "SP",
       "municipalityIbge": "3509502",
@@ -77,11 +82,286 @@
         "Vá a qualquer restaurante popular",
         "Não precisa de cadastro"
       ],
-      "sourceUrl": "https://www.campinas.sp.gov.br",
-      "lastUpdated": "2026-01-29",
+      "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "sp-campinas-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Campinas. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Campinas",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "sp-campinas-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Campinas. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Campinas ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "sp-campinas-habitacao-municipal",
+      "name": "Programa Habitacional de Campinas",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Campinas. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Campinas",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "sp-campinas-capacitacao-emprego",
+      "name": "Qualifica Campinas",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Campinas. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Campinas",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "sp-campinas-farmacia-municipal",
+      "name": "Farmácia Municipal",
+      "shortDescription": "Medicamentos gratuitos nas farmácias municipais e UBS de Campinas. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3509502",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3509502",
+          "description": "Morar em Campinas"
+        }
+      ],
+      "whereToApply": "UBS ou Farmácia Municipal de Campinas",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Receita médica do SUS"
+      ],
+      "howToApply": [
+        "Vá à UBS ou Farmácia Municipal",
+        "Apresente receita médica",
+        "Retire os medicamentos disponíveis"
+      ],
+      "sourceUrl": "https://www.campinas.sp.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

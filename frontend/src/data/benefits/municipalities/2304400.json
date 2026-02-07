@@ -2,7 +2,7 @@
   "municipality": "Fortaleza",
   "municipalityIbge": "2304400",
   "state": "CE",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ce-fortaleza-locacao-social",
@@ -38,17 +38,23 @@
         }
       ],
       "whereToApply": "Secretaria de Direitos Humanos e Desenvolvimento Social",
-      "documentsRequired": ["CPF", "RG", "NIS", "Laudo de risco habitacional"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Laudo de risco habitacional"
+      ],
       "howToApply": [
         "Procure a Secretaria ou CRAS",
         "Solicite avaliação",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.fortaleza.ce.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Moradia"
+      "category": "Moradia",
+      "verified": true
     },
     {
       "id": "ce-fortaleza-bolsa-nota-dez",
@@ -84,17 +90,22 @@
         }
       ],
       "whereToApply": "Escola municipal",
-      "documentsRequired": ["RG", "CPF", "Comprovante de matrícula"],
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "Comprovante de matrícula"
+      ],
       "howToApply": [
         "Escola indica alunos elegíveis",
         "Mantenha bom desempenho",
         "Bolsa é depositada automaticamente"
       ],
       "sourceUrl": "https://www.fortaleza.ce.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
-      "category": "Educação"
+      "category": "Educação",
+      "verified": true
     },
     {
       "id": "ce-fortaleza-beneficios-eventuais",
@@ -124,17 +135,232 @@
         }
       ],
       "whereToApply": "CRAS do bairro",
-      "documentsRequired": ["CPF", "RG", "NIS", "Documentos da situação"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Documentos da situação"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Explique a situação",
         "Aguarde avaliação social"
       ],
       "sourceUrl": "https://www.fortaleza.ce.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🆘",
-      "category": "Assistência Emergencial"
+      "category": "Assistência Emergencial",
+      "verified": true
+    },
+    {
+      "id": "ce-fortaleza-restaurante-popular",
+      "name": "Restaurante do Povo",
+      "shortDescription": "Refeições a R$ 1 nos Restaurantes do Povo. Programa do Governo do Estado do Ceará, disponível em Fortaleza",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 1"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Fortaleza",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante do Povo da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.ceara.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "ce-fortaleza-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Fortaleza. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Fortaleza",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-fortaleza-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Fortaleza. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Fortaleza ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-fortaleza-habitacao-municipal",
+      "name": "Programa Habitacional de Fortaleza",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Fortaleza. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2304400",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2304400",
+          "description": "Morar em Fortaleza"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Fortaleza",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.fortaleza.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

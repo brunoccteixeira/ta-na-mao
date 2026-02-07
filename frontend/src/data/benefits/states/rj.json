@@ -80,7 +80,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4800,
+          "value": 4863,
           "description": "Renda familiar de até 3 salários mínimos ou renda per capita de até meio salário mínimo"
         }
       ],
@@ -100,7 +100,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏚️",
-      "category": "Emergência"
+      "category": "Assistência Emergencial"
     },
     {
       "id": "rj-restaurante-popular",
@@ -132,15 +132,15 @@
         "Pague o preço popular e faça a refeição"
       ],
       "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
       "id": "rj-riocard-social",
-      "name": "RioCard Social",
-      "shortDescription": "Desconto ou gratuidade no transporte público para pessoas de baixa renda.",
+      "name": "Tarifa Social (Metrô/Trem/BUI)",
+      "shortDescription": "Desconto na passagem do metrô, trem e ônibus intermunicipal no RJ para quem ganha pouco.",
       "scope": "state",
       "state": "RJ",
       "estimatedValue": {
@@ -165,8 +165,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3200,
-          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
+          "value": 3205,
+          "description": "Renda mensal declarada de até R$ 3.205,20"
         }
       ],
       "whereToApply": "Postos RioCard ou site",
@@ -183,61 +183,10 @@
         "Retire após aprovação"
       ],
       "sourceUrl": "https://www.riocard.com/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
-    },
-    {
-      "id": "rj-casa-fluminense",
-      "name": "Casa da Moeda Fluminense",
-      "shortDescription": "Programa habitacional do estado para famílias de baixa renda.",
-      "scope": "state",
-      "state": "RJ",
-      "estimatedValue": {
-        "type": "one_time",
-        "min": 50000,
-        "max": 150000,
-        "description": "Subsídio para moradia"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RJ",
-          "description": "Morar no Rio de Janeiro"
-        },
-        {
-          "field": "temCasaPropria",
-          "operator": "eq",
-          "value": false,
-          "description": "Não ter casa própria"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 4000,
-          "description": "Renda familiar de até R$ 4.000"
-        }
-      ],
-      "whereToApply": "Prefeitura ou CEHAB-RJ",
-      "documentsRequired": [
-        "CPF e RG de todos da família",
-        "Comprovante de renda",
-        "Comprovante de residência",
-        "Certidão negativa de propriedade"
-      ],
-      "howToApply": [
-        "Procure a prefeitura ou CEHAB",
-        "Faça o cadastro habitacional",
-        "Aguarde chamamento por sorteio",
-        "Compareça na data para seleção"
-      ],
-      "sourceUrl": "https://www.rj.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🏠",
-      "category": "Habitação"
     },
     {
       "id": "rj-faetec-qualifica",
@@ -285,16 +234,16 @@
       "category": "Qualificação Profissional"
     },
     {
-      "id": "rj-cegonha-carioca",
-      "name": "Cegonha Carioca",
-      "shortDescription": "Programa que acompanha a gestante do pre-natal ao parto, com enxoval gratis e transporte para a maternidade.",
+      "id": "rj-renda-melhor-jovem",
+      "name": "Renda Melhor Jovem",
+      "shortDescription": "Dinheiro para jovens de baixa renda que passam de ano no ensino médio. R$ 700 no 1º ano, R$ 900 no 2º e R$ 1.000 no 3º.",
       "scope": "state",
       "state": "RJ",
       "estimatedValue": {
         "type": "one_time",
-        "min": 200,
-        "max": 500,
-        "description": "Kit enxoval + transporte + acompanhamento gratuito"
+        "min": 700,
+        "max": 2600,
+        "description": "R$ 700 (1º ano) + R$ 900 (2º ano) + R$ 1.000 (3º ano) = até R$ 2.600"
       },
       "eligibilityRules": [
         {
@@ -304,29 +253,87 @@
           "description": "Morar no Rio de Janeiro"
         },
         {
-          "field": "temGestante",
+          "field": "estudante",
           "operator": "eq",
           "value": true,
-          "description": "Estar gravida"
+          "description": "Matriculado no Ensino Médio da rede estadual"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único"
         }
       ],
-      "whereToApply": "Unidade Basica de Saude (UBS) ou Clinica da Familia",
+      "whereToApply": "Escola estadual ou Secretaria de Educação do RJ",
       "documentsRequired": [
-        "Cartao do SUS",
-        "CPF ou RG",
-        "Comprovante de residencia"
+        "CPF",
+        "RG",
+        "Comprovante de matrícula na rede estadual",
+        "NIS (Número do Cadastro Único)"
       ],
       "howToApply": [
-        "Procure a UBS ou Clinica da Familia mais perto de casa",
-        "Faca o cadastro no pre-natal",
-        "Faca todas as consultas e exames pedidos",
-        "Receba o kit enxoval na visita a maternidade no 3o trimestre"
+        "Esteja matriculado no ensino médio da rede estadual do RJ",
+        "Tenha a família inscrita no Cadastro Único",
+        "Passe de ano com aprovação",
+        "O pagamento é depositado em conta após aprovação no ano letivo"
       ],
-      "sourceUrl": "https://saude.prefeitura.rio/cegonha-carioca/",
+      "sourceUrl": "https://www.rj.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤰",
-      "category": "Saúde Materno-Infantil"
+      "icon": "🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "rj-aluguel-social",
+      "name": "Aluguel Social RJ",
+      "shortDescription": "Auxílio para pagar aluguel para famílias que perderam a moradia por desastres ou vivem em área de risco no RJ.",
+      "scope": "state",
+      "state": "RJ",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1080,
+        "max": 1080,
+        "description": "R$ 1.080 por mês (valor fixo reajustado pelo Decreto 47.995/2022)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RJ",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Ter perdido moradia por desastre ou remoção de área de risco"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Defesa Civil ou Secretaria de Assistência Social do estado",
+      "documentsRequired": [
+        "CPF e RG de todos da família",
+        "Comprovante de residência anterior",
+        "Laudo da Defesa Civil ou relatório social",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure a Defesa Civil ou assistência social do município após o evento",
+        "Solicite avaliação da situação de moradia",
+        "Apresente os documentos pedidos",
+        "Se aprovado, receba o auxílio mensal até conseguir moradia definitiva"
+      ],
+      "sourceUrl": "https://www.portalaluguelsocial.rj.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏘️",
+      "category": "Moradia"
     }
   ]
 }

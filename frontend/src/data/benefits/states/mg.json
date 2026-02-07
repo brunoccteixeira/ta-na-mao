@@ -61,8 +61,8 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 50,
-        "max": 100,
-        "description": "R$ 50 por estudante"
+        "max": 50,
+        "description": "R$ 50 por aluno por período (recesso escolar)"
       },
       "eligibilityRules": [
         {
@@ -286,9 +286,9 @@
       "state": "MG",
       "estimatedValue": {
         "type": "one_time",
-        "min": 200,
-        "max": 400,
-        "description": "Kit com 14 itens para o bebe"
+        "min": 324,
+        "max": 324,
+        "description": "Kit com 14 itens de enxoval (valor estimado R$ 324)"
       },
       "eligibilityRules": [
         {

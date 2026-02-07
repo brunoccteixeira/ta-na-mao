@@ -4,56 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "sc-santa-renda",
-      "name": "Santa Renda",
-      "shortDescription": "Ajuda de dinheiro para familias de baixa renda de Santa Catarina.",
-      "scope": "state",
-      "state": "SC",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 200,
-        "description": "Valor varia conforme a situacao da familia"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "SC",
-          "description": "Morar em Santa Catarina"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio",
-      "documentsRequired": [
-        "CPF de todos da familia",
-        "Comprovante de residencia em SC",
-        "Comprovante de renda"
-      ],
-      "howToApply": [
-        "Va ao CRAS mais perto de voce",
-        "Faca ou atualize o Cadastro Unico",
-        "Quem se encaixa nas regras entra automaticamente",
-        "O dinheiro vai para conta bancaria"
-      ],
-      "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
       "id": "sc-cesta-basica-paa",
       "name": "Cesta Basica PAA - Santa Catarina",
       "shortDescription": "Cestas de alimentos da agricultura familiar distribuidas para familias em situacao de inseguranca alimentar.",
@@ -136,22 +86,22 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
-      "id": "sc-programa-catarinense-de-inclusao-social",
-      "name": "SC Mais Inclusao",
-      "shortDescription": "Programa que ajuda familias muito pobres com cursos e encaminhamento para emprego.",
+      "id": "sc-proemprego",
+      "name": "ProEmprego SC - Qualificação Profissional",
+      "shortDescription": "Cursos gratuitos de qualificação profissional pelo governo de Santa Catarina para quem busca emprego.",
       "scope": "state",
       "state": "SC",
       "estimatedValue": {
         "type": "monthly",
         "min": 0,
         "max": 200,
-        "description": "Cursos gratuitos e auxilio em alguns casos"
+        "description": "Cursos gratuitos de qualificação profissional"
       },
       "eligibilityRules": [
         {
@@ -186,60 +136,11 @@
         "Escolha um curso de qualificacao",
         "Receba encaminhamento para emprego"
       ],
-      "sourceUrl": "https://www.sds.sc.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.sas.sc.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
       "category": "Qualificação Profissional"
-    },
-    {
-      "id": "sc-vale-gas-sc",
-      "name": "Vale Gas SC",
-      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda em SC.",
-      "scope": "state",
-      "state": "SC",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 50,
-        "description": "4 a 6 recargas por ano via programa federal Gas do Povo"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "SC",
-          "description": "Morar em Santa Catarina"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Numero do Cadastro Unico)",
-        "Comprovante de residencia"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Unico atualizado no CRAS",
-        "A selecao e feita automaticamente pelo governo federal",
-        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
     },
     {
       "id": "sc-teste-mae-catarinense",
@@ -313,8 +214,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 5648,
-          "description": "Renda familiar de ate 4 salarios minimos"
+          "value": 6484,
+          "description": "Renda familiar de até 4 salários mínimos (R$ 6.484)"
         }
       ],
       "whereToApply": "Prefeitura do seu municipio",
@@ -334,7 +235,114 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
+    },
+    {
+      "id": "sc-cnh-emprego-na-pista",
+      "name": "CNH Emprego na Pista",
+      "shortDescription": "Habilitação de graça para pessoas de baixa renda em Santa Catarina. São 30 mil vagas.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1500,
+        "max": 3000,
+        "description": "CNH gratuita (economia de R$ 1.500 a R$ 3.000 em taxas e aulas)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina há pelo menos 2 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site empregonapista.detran.sc.gov.br",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência em SC (mínimo 2 anos)",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Acesse empregonapista.detran.sc.gov.br",
+        "Faça sua inscrição no período de vagas",
+        "Aguarde o resultado da seleção",
+        "Faça as aulas, exames e provas gratuitamente"
+      ],
+      "sourceUrl": "https://empregonapista.detran.sc.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "sc-bolsa-estudante",
+      "name": "Bolsa Estudante SC",
+      "shortDescription": "Até R$ 568 por mês para estudantes do ensino médio da rede estadual que têm Cadastro Único.",
+      "scope": "state",
+      "state": "SC",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 568,
+        "max": 568,
+        "description": "R$ 568,18 por mês (até R$ 6.250 por ano)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "SC",
+          "description": "Morar em Santa Catarina"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado no Ensino Médio ou EJA da rede estadual"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estudar em escola pública estadual de SC"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Escola estadual onde estuda ou site da SED-SC",
+      "documentsRequired": [
+        "CPF do estudante",
+        "Comprovante de matrícula na rede estadual",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Esteja matriculado no Ensino Médio ou EJA da rede estadual",
+        "Tenha o Cadastro Único atualizado no CRAS",
+        "Mantenha frequência mínima de 75% na escola",
+        "O pagamento é automático se cumprir os requisitos"
+      ],
+      "sourceUrl": "https://www.sed.sc.gov.br/programas-e-projetos/bolsa-estudante/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Educação"
     }
   ]
 }

@@ -397,8 +397,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 8600,
-          "description": "Renda familiar de até R$ 8.600 por mês (Faixa 3)",
+          "value": 12000,
+          "description": "Renda familiar de até R$ 12.000 por mês (Faixa 4, Portaria MCid 399/2025)",
           "legalReference": "Art. 4º, Lei 14.620/2023; Portaria MCid 399/2025"
         },
         {
@@ -438,7 +438,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏡",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "federal-pis-pasep",
@@ -456,7 +456,8 @@
           "field": "trabalhou1971_1988",
           "operator": "eq",
           "value": true,
-          "description": "Trabalhou com carteira assinada entre 1971 e 1988"
+          "description": "Trabalhou com carteira assinada entre 1971 e 1988",
+          "legalReference": "Art. 1º, LC 26/1975; MP 946/2020"
         }
       ],
       "whereToApply": "Caixa Econômica Federal (PIS) ou Banco do Brasil (PASEP)",
@@ -475,7 +476,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
-      "category": "Trabalho",
+      "category": "Emprego e Renda",
       "legalBasis": {
         "laws": [
           {
@@ -509,7 +510,8 @@
           "field": "cpf",
           "operator": "has",
           "value": true,
-          "description": "Ter CPF"
+          "description": "Ter CPF",
+          "legalReference": "Resolução BCB 195/2022"
         }
       ],
       "whereToApply": "Site oficial do Banco Central",
@@ -523,11 +525,11 @@
         "Veja se tem valores disponíveis",
         "Se tiver, solicite o saque pelo site"
       ],
-      "sourceUrl": "https://valoresareceber.bcb.gov.br/",
+      "sourceUrl": "https://valoresareceber.bcb.gov.br/publico",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏦",
-      "category": "Financeiro",
+      "category": "Empreendedorismo",
       "legalBasis": {
         "laws": [
           {
@@ -555,7 +557,8 @@
           "field": "temCarteiraAssinada",
           "operator": "eq",
           "value": true,
-          "description": "Já trabalhou com carteira assinada"
+          "description": "Já trabalhou com carteira assinada",
+          "legalReference": "Art. 20, Lei 8.036/1990"
         }
       ],
       "whereToApply": "App FGTS da Caixa ou agência da Caixa",
@@ -574,7 +577,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📋",
-      "category": "Trabalho",
+      "category": "Emprego e Renda",
       "legalBasis": {
         "laws": [
           {
@@ -640,7 +643,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🛡️",
-      "category": "Trabalho"
+      "category": "Emprego e Renda"
     },
     {
       "id": "federal-abono-salarial",
@@ -649,7 +652,7 @@
       "scope": "federal",
       "estimatedValue": {
         "type": "annual",
-        "min": 135,
+        "min": 136,
         "max": 1621,
         "description": "Proporcional aos meses trabalhados (1/12 a 12/12 do SM)"
       },
@@ -689,7 +692,23 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💵",
-      "category": "Trabalho"
+      "category": "Emprego e Renda",
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "7.998/1990",
+            "description": "Regula o Programa do Seguro-Desemprego e o Abono Salarial",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l7998.htm"
+          },
+          {
+            "type": "lei",
+            "number": "13.134/2015",
+            "description": "Altera regras do Abono Salarial",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13134.htm"
+          }
+        ]
+      }
     },
     {
       "id": "federal-dignidade-menstrual",
@@ -827,7 +846,8 @@
           "field": "temPcd",
           "operator": "eq",
           "value": true,
-          "description": "Ter deficiência física, visual, mental severa ou autismo"
+          "description": "Ter deficiência física, visual, mental severa ou autismo",
+          "legalReference": "Art. 1º, Lei 8.989/1995"
         }
       ],
       "whereToApply": "Receita Federal (isenção de IPI) e Detran do seu estado (isenção de IPVA)",
@@ -849,7 +869,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚗",
-      "category": "Veículos",
+      "category": "Utilidades",
       "legalBasis": {
         "laws": [
           {
@@ -1010,7 +1030,7 @@
           "field": "rendaPerCapita",
           "operator": "lte",
           "value": 4863,
-          "description": "Bolsa integral: renda per capita até 1,5 SM (R$ 2.431). Bolsa parcial: até 3 SM (R$ 4.863)",
+          "description": "Bolsa integral: renda per capita até 1,5 SM (R$ 2.431,50). Bolsa parcial: até 3 SM (R$ 4.863)",
           "legalReference": "Art. 1º, Lei 11.096/2005"
         }
       ],
@@ -1150,7 +1170,7 @@
     {
       "id": "federal-cozinha-solidaria",
       "name": "Cozinha Solidária",
-      "shortDescription": "Refeições gratuitas ou a preço baixo (R$ 1) em restaurantes populares para pessoas em vulnerabilidade.",
+      "shortDescription": "Refeições gratuitas em cozinhas comunitárias mantidas por organizações da sociedade civil para pessoas em vulnerabilidade.",
       "scope": "federal",
       "estimatedValue": {
         "type": "monthly",
@@ -1163,7 +1183,8 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Preferencialmente inscrito no Cadastro Único"
+          "description": "Preferencialmente inscrito no Cadastro Único",
+          "legalReference": "Art. 55, Lei 14.628/2023"
         }
       ],
       "whereToApply": "Restaurante Popular ou Cozinha Solidária mais próxima",
@@ -1187,7 +1208,7 @@
           {
             "type": "lei",
             "number": "14.628/2023",
-            "description": "Lei do SISAN (inclui Cozinhas Solidárias, Arts. 54-60)",
+            "description": "Art. 14 da Lei 14.628/2023 — institui o Programa Cozinha Solidária",
             "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14628.htm"
           },
           {
@@ -1263,7 +1284,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 SM (R$ 1.621) ao teto INSS (R$ 8.475,55)"
       },
       "eligibilityRules": [
@@ -1360,7 +1381,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "50% + 10% por dependente do que o falecido recebia (EC 103/2019)"
       },
       "eligibilityRules": [
@@ -1410,7 +1431,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -1474,7 +1495,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -1531,7 +1552,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS. Pode ter acréscimo de 25% se precisar de cuidador.",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -1595,7 +1616,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -1652,7 +1673,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -1710,7 +1731,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 1621,
-        "max": 8476,
+        "max": 8475.55,
         "description": "De 1 salário mínimo ao teto do INSS (R$ 8.475,55)",
         "estimated": true,
         "estimatedRationale": "Valores de 2026: SM R$ 1.621 e teto INSS R$ 8.475,55 conforme Portaria Interministerial MPS/MF nº 13/2026"
@@ -2207,7 +2228,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌳",
-      "category": "Meio Ambiente"
+      "category": "Utilidades"
     },
     {
       "id": "federal-agua-para-todos",
@@ -2270,7 +2291,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "federal-carteira-idoso",
@@ -2407,6 +2428,1739 @@
       "status": "active",
       "icon": "🎫",
       "category": "Juventude"
+    },
+    {
+      "id": "federal-olhar-brasil",
+      "name": "Olhar Brasil",
+      "shortDescription": "Programa que oferece consulta oftalmológica e óculos gratuitos para estudantes da rede pública e pessoas com deficiência visual.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 150,
+        "max": 500,
+        "description": "Valor estimado da consulta + óculos gratuitos",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante da rede pública de ensino",
+          "legalReference": "Art. 1º, Portaria Interministerial MEC/MS 15/2007"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em escola pública",
+          "legalReference": "Art. 1º, Portaria Interministerial MEC/MS 15/2007"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "portaria",
+            "number": "Interministerial MEC/MS 15/2007",
+            "description": "Institui o Projeto Olhar Brasil",
+            "url": "https://www.gov.br/saude/pt-br"
+          }
+        ]
+      },
+      "whereToApply": "Escola pública onde está matriculado ou Unidade Básica de Saúde (UBS)",
+      "documentsRequired": [
+        "Documento de identidade do aluno",
+        "Comprovante de matrícula na rede pública",
+        "Cartão SUS"
+      ],
+      "howToApply": [
+        "O programa funciona nas escolas públicas — procure a direção da escola",
+        "A triagem visual é feita na própria escola",
+        "Se precisar de óculos, será encaminhado para consulta oftalmológica no SUS",
+        "Os óculos são entregues gratuitamente na escola ou na unidade de saúde",
+        "Idosos e pessoas com deficiência visual também podem procurar a UBS"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/saes/dahu/olhar-brasil",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👓",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-brasil-sorridente",
+      "name": "Brasil Sorridente",
+      "shortDescription": "Tratamento dentário gratuito no SUS: limpeza, restauração, canal, prótese dentária e até cirurgias bucais.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 5000,
+        "description": "Valor estimado dos procedimentos odontológicos no SUS",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 0,
+          "description": "Qualquer pessoa pode usar o SUS (direito universal)",
+          "legalReference": "Art. 196, Constituição Federal"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.080/1990",
+            "description": "Lei Orgânica do SUS",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+          },
+          {
+            "type": "portaria",
+            "number": "GM/MS 599/2006",
+            "description": "Define a implantação dos Centros de Especialidades Odontológicas (CEOs)",
+            "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2006/prt0599_23_03_2006.html"
+          }
+        ]
+      },
+      "whereToApply": "Unidade Básica de Saúde (UBS) ou Centro de Especialidades Odontológicas (CEO)",
+      "documentsRequired": [
+        "Cartão SUS (pode fazer na hora na UBS)",
+        "Documento de identidade",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá à Unidade Básica de Saúde (UBS) mais próxima",
+        "Agende uma consulta odontológica com o dentista do SUS",
+        "Se precisar de tratamento especializado, será encaminhado ao CEO",
+        "Próteses dentárias são feitas nos Laboratórios Regionais de Próteses",
+        "Todo o atendimento é gratuito pelo SUS"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/saps/brasil-sorridente",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "😁",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-caps",
+      "name": "CAPS — Centro de Atenção Psicossocial",
+      "shortDescription": "Atendimento gratuito em saúde mental: psicólogos, psiquiatras, terapias em grupo e acompanhamento contínuo pelo SUS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 1000,
+        "max": 10000,
+        "description": "Valor estimado do tratamento em saúde mental no SUS",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 0,
+          "description": "Qualquer pessoa pode usar o SUS (direito universal)",
+          "legalReference": "Art. 196, Constituição Federal"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.216/2001",
+            "description": "Lei da Reforma Psiquiátrica",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10216.htm"
+          },
+          {
+            "type": "portaria",
+            "number": "3.088/2011",
+            "description": "Institui a Rede de Atenção Psicossocial (RAPS)",
+            "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011.html"
+          }
+        ]
+      },
+      "whereToApply": "CAPS (Centro de Atenção Psicossocial) mais próximo ou UBS",
+      "documentsRequired": [
+        "Cartão SUS",
+        "Documento de identidade",
+        "Não é necessário encaminhamento médico para o primeiro atendimento"
+      ],
+      "howToApply": [
+        "Procure o CAPS mais próximo da sua casa (CAPS I, II, III, AD ou Infantil)",
+        "Vá pessoalmente ou peça encaminhamento pela UBS",
+        "O acolhimento é feito no mesmo dia, sem agendamento",
+        "A equipe vai definir o plano de tratamento (consultas, terapias, oficinas)",
+        "O atendimento é contínuo e gratuito — pode ir quantas vezes precisar"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/saes/dahu/caps",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🧠",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-tratamento-fora-domicilio",
+      "name": "TFD — Tratamento Fora de Domicílio",
+      "shortDescription": "Ajuda com passagem e hospedagem para quem precisa viajar para fazer tratamento de saúde em outra cidade pelo SUS.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 2000,
+        "description": "Valor estimado para passagem e diárias (varia por distância)",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Preferencialmente inscrito no CadÚnico (prioridade)",
+          "legalReference": "Portaria SAS/MS 55/1999"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "portaria",
+            "number": "SAS/MS 55/1999",
+            "description": "Dispõe sobre o Tratamento Fora de Domicílio no SUS",
+            "url": "https://bvsms.saude.gov.br/bvs/saudelegis/sas/1999/prt0055_24_02_1999.html"
+          }
+        ]
+      },
+      "whereToApply": "Unidade de saúde que fez o encaminhamento ou Secretaria Municipal de Saúde",
+      "documentsRequired": [
+        "Laudo médico solicitando tratamento em outra cidade",
+        "Cartão SUS",
+        "Documento de identidade",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "O médico do SUS que te atende deve solicitar o TFD por escrito",
+        "Leve o laudo à Secretaria Municipal de Saúde",
+        "A secretaria avalia e autoriza a passagem e diárias",
+        "Você recebe ajuda para transporte (passagem) e hospedagem se precisar dormir",
+        "Um acompanhante também pode ser coberto se o paciente precisar"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Saúde"
+    },
+    {
+      "id": "federal-internet-brasil",
+      "name": "Internet Brasil",
+      "shortDescription": "Chip de celular com internet grátis para estudantes da rede pública inscritos no CadÚnico. Ajuda a estudar online.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 30,
+        "max": 50,
+        "description": "Valor estimado do plano de dados móveis fornecido"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante da rede pública de ensino",
+          "legalReference": "Art. 2º, Decreto 11.848/2023"
+        },
+        {
+          "field": "redePublica",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar matriculado em escola pública",
+          "legalReference": "Art. 2º, Decreto 11.848/2023"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único",
+          "legalReference": "Art. 2º, II, Decreto 11.848/2023"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "11.848/2023",
+            "description": "Institui o Programa Internet Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11848.htm"
+          }
+        ]
+      },
+      "whereToApply": "Escola pública onde está matriculado",
+      "documentsRequired": [
+        "Documento de identidade do estudante",
+        "Comprovante de matrícula na rede pública",
+        "NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "O programa é implementado nas escolas — procure a direção",
+        "A escola verifica se o aluno está no CadÚnico e se há chips disponíveis",
+        "O chip é entregue na própria escola com plano de dados ativo",
+        "O plano é renovado automaticamente enquanto o aluno estiver matriculado",
+        "Consulte também pelo app Meu CadÚnico ou ligue 0800 707 2003"
+      ],
+      "sourceUrl": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/internet-brasil",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📱",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-pronatec",
+      "name": "Pronatec — Programa Nacional de Acesso ao Ensino Técnico",
+      "shortDescription": "Cursos técnicos e profissionalizantes gratuitos para quem quer aprender uma profissão e conseguir emprego melhor.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 1000,
+        "max": 8000,
+        "description": "Valor estimado do curso técnico (gratuito para o aluno)",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Preferencialmente inscrito no CadÚnico (prioridade na seleção)",
+          "legalReference": "Art. 2º, Lei 12.513/2011"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.513/2011",
+            "description": "Institui o Programa Nacional de Acesso ao Ensino Técnico e Emprego (Pronatec)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12513.htm"
+          }
+        ]
+      },
+      "whereToApply": "SENAI, SENAC, SENAT, SENAR, Institutos Federais ou escolas técnicas estaduais",
+      "documentsRequired": [
+        "Documento de identidade (RG ou CNH)",
+        "CPF",
+        "Comprovante de escolaridade",
+        "NIS do Cadastro Único (se tiver)"
+      ],
+      "howToApply": [
+        "Acesse o portal do Pronatec ou procure o SENAI/SENAC da sua cidade",
+        "Escolha o curso técnico ou de qualificação profissional (FIC)",
+        "Faça a inscrição no período de matrículas",
+        "Beneficiários do CadÚnico e Bolsa Família têm prioridade",
+        "O curso é 100% gratuito, incluindo material didático"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/pronatec",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔧",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-eja",
+      "name": "EJA — Educação de Jovens e Adultos",
+      "shortDescription": "Ensino fundamental e médio gratuito para quem não terminou os estudos na idade certa. Aulas adaptadas para adultos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 3000,
+        "description": "Valor estimado do ensino gratuito + material didático",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter 15 anos ou mais (fundamental) ou 18 anos (médio)",
+          "legalReference": "Art. 38, Lei 9.394/1996 (LDB)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "9.394/1996",
+            "description": "Lei de Diretrizes e Bases da Educação Nacional (LDB)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l9394.htm"
+          }
+        ]
+      },
+      "whereToApply": "Escola pública mais próxima que ofereça EJA ou Secretaria Municipal de Educação",
+      "documentsRequired": [
+        "Documento de identidade (RG ou certidão de nascimento)",
+        "CPF",
+        "Comprovante de residência",
+        "Histórico escolar (se tiver — não é obrigatório)"
+      ],
+      "howToApply": [
+        "Procure a Secretaria Municipal de Educação ou uma escola pública que ofereça EJA",
+        "As matrículas geralmente abrem em janeiro/fevereiro e julho",
+        "As aulas são no período noturno na maioria das escolas",
+        "O ensino é gratuito e pode incluir merenda escolar",
+        "Ao concluir, você recebe certificado de conclusão válido em todo o Brasil"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/eja",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📖",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-crianca-feliz",
+      "name": "Criança Feliz — Primeira Infância",
+      "shortDescription": "Visitas semanais de profissionais que orientam famílias sobre cuidados, brincadeiras e estímulos para crianças de 0 a 6 anos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 500,
+        "description": "Valor estimado dos serviços de acompanhamento familiar",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "temCrianca0a6",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 6 anos na família",
+          "legalReference": "Art. 1º, Decreto 8.869/2016"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único",
+          "legalReference": "Art. 3º, Decreto 8.869/2016"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "8.869/2016",
+            "description": "Institui o Programa Criança Feliz",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/d8869.htm"
+          },
+          {
+            "type": "lei",
+            "number": "13.257/2016",
+            "description": "Marco Legal da Primeira Infância",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13257.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
+      "documentsRequired": [
+        "Documento de identidade dos pais/responsáveis",
+        "Certidão de nascimento da criança",
+        "NIS (Cadastro Único)",
+        "Cartão do Bolsa Família (se receber)"
+      ],
+      "howToApply": [
+        "Procure o CRAS da sua cidade e pergunte sobre o Programa Criança Feliz",
+        "A equipe verifica se sua família se encaixa nos critérios",
+        "Um visitador vai até sua casa semanalmente",
+        "Ele orienta sobre brincadeiras, cuidados e estímulos para o desenvolvimento da criança",
+        "O programa é gratuito e voluntário"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/crianca-feliz",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-peti",
+      "name": "PETI — Combate ao Trabalho Infantil",
+      "shortDescription": "Programa que protege crianças e adolescentes do trabalho infantil com atividades no contraturno escolar e apoio à família.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor estimado dos serviços de convivência e fortalecimento de vínculos",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter crianças ou adolescentes em situação de trabalho infantil ou risco",
+          "legalReference": "Art. 24-C, Lei 8.742/1993 (LOAS)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único",
+          "legalReference": "Decreto 9.579/2018"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.742/1993",
+            "description": "Lei Orgânica da Assistência Social (LOAS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8742.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "9.579/2018",
+            "description": "Consolida normas sobre direitos da criança e do adolescente",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9579.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS ou CREAS (Centro de Referência Especializado de Assistência Social)",
+      "documentsRequired": [
+        "Documento de identidade dos pais/responsáveis",
+        "Certidão de nascimento das crianças",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou CREAS da sua cidade",
+        "Relate a situação da criança ou adolescente",
+        "A equipe fará uma avaliação e incluirá a família no programa",
+        "As crianças participam de atividades educativas e culturais no contraturno escolar",
+        "A família recebe acompanhamento e orientação"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/peti",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-acessuas-trabalho",
+      "name": "ACESSUAS Trabalho — Inclusão Produtiva",
+      "shortDescription": "Programa que ajuda pessoas do CadÚnico a conseguir emprego ou fazer cursos de qualificação profissional gratuitos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 500,
+        "max": 3000,
+        "description": "Valor estimado de cursos e encaminhamentos para o mercado de trabalho",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único",
+          "legalReference": "Resolução CNAS 18/2012"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda por pessoa de até R$ 810,50 (meio salário mínimo)",
+          "legalReference": "Resolução CNAS 18/2012"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.742/1993",
+            "description": "Lei Orgânica da Assistência Social (LOAS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8742.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
+      "documentsRequired": [
+        "Documento de identidade (RG ou CNH)",
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS da sua cidade e pergunte sobre o ACESSUAS Trabalho",
+        "Participe das oficinas de orientação profissional",
+        "A equipe vai encaminhar para cursos de qualificação (Pronatec, SENAI, etc.)",
+        "Também pode ser encaminhado para vagas de emprego no SINE",
+        "O programa é gratuito e contínuo"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💼",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-sine",
+      "name": "SINE — Sistema Nacional de Emprego",
+      "shortDescription": "Serviço público e gratuito que ajuda a encontrar vagas de emprego, fazer currículo e se preparar para entrevistas.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 3000,
+        "description": "Valor estimado do salário das vagas intermediadas",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Estar desempregado ou buscando recolocação",
+          "legalReference": "Art. 2º, Lei 13.667/2018"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "13.667/2018",
+            "description": "Dispõe sobre o Sistema Nacional de Emprego (SINE)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13667.htm"
+          }
+        ]
+      },
+      "whereToApply": "Posto do SINE / Agência do Trabalhador da sua cidade ou app Carteira de Trabalho Digital",
+      "documentsRequired": [
+        "Carteira de trabalho (física ou digital)",
+        "Documento de identidade (RG ou CNH)",
+        "CPF",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá ao posto do SINE ou Agência do Trabalhador mais próximo",
+        "Faça seu cadastro e informe sua área de interesse",
+        "Consulte as vagas disponíveis no painel ou pelo app Carteira de Trabalho Digital",
+        "A equipe do SINE pode encaminhar você diretamente para entrevistas",
+        "O serviço é totalmente gratuito"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/sine",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔍",
+      "category": "Emprego e Renda"
+    },
+    {
+      "id": "federal-jovem-aprendiz",
+      "name": "Jovem Aprendiz",
+      "shortDescription": "Primeiro emprego com carteira assinada para jovens de 14 a 24 anos, com curso profissionalizante incluso.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 700,
+        "max": 1200,
+        "description": "Salário do aprendiz (proporcional ao mínimo/hora)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter no mínimo 14 anos",
+          "legalReference": "Art. 428, CLT (Lei 10.097/2000)"
+        },
+        {
+          "field": "idade",
+          "operator": "lte",
+          "value": 24,
+          "description": "Ter no máximo 24 anos (sem limite para PcD)",
+          "legalReference": "Art. 428, CLT (Lei 10.097/2000)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.097/2000",
+            "description": "Lei da Aprendizagem",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l10097.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.479/2023",
+            "description": "Regulamenta o contrato de aprendizagem profissional",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11479.htm"
+          }
+        ]
+      },
+      "whereToApply": "SENAI, SENAC, CIEE, Nube ou empresas com programa de aprendizagem",
+      "documentsRequired": [
+        "Documento de identidade (RG)",
+        "CPF",
+        "Carteira de trabalho (pode ser digital)",
+        "Comprovante de matrícula escolar (se menor de 18)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Cadastre-se em sites como CIEE (ciee.org.br), Nube (nube.com.br) ou SENAI/SENAC",
+        "Procure vagas de Jovem Aprendiz em empresas da sua cidade",
+        "O contrato inclui trabalho na empresa + curso profissionalizante",
+        "A carga horária é de 4 a 6 horas por dia",
+        "Você recebe salário, FGTS, vale-transporte e 13º"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/acoes-e-programas/aprendizagem-profissional",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Emprego e Renda"
+    },
+    {
+      "id": "federal-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Almoço completo e nutritivo por apenas R$ 1 em restaurantes mantidos pelo governo. Aberto a qualquer pessoa.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Economia mensal almoçando por R$ 1 ao invés de R$ 15-25"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 0,
+          "description": "Aberto a qualquer pessoa (público universal)",
+          "legalReference": "Art. 2º, Lei 11.346/2006 (LOSAN)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "11.346/2006",
+            "description": "Lei Orgânica de Segurança Alimentar e Nutricional (LOSAN)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11346.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.937/2024",
+            "description": "Regulamenta equipamentos públicos de alimentação e nutrição",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/D11937.htm"
+          }
+        ]
+      },
+      "whereToApply": "Restaurante Popular mais próximo (geralmente no centro da cidade)",
+      "documentsRequired": [
+        "Documento de identificação com foto (RG, CNH ou carteira de trabalho)",
+        "Não é necessário cadastro prévio"
+      ],
+      "howToApply": [
+        "Procure o Restaurante Popular da sua cidade (nem todas as cidades têm)",
+        "Vá no horário do almoço (geralmente 11h às 14h)",
+        "Apresente documento de identificação",
+        "Pague R$ 1 pela refeição completa (arroz, feijão, proteína, salada e suco)",
+        "Pode almoçar todos os dias úteis"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/restaurantes-populares",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍛",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-banco-alimentos",
+      "name": "Banco de Alimentos",
+      "shortDescription": "Distribuição gratuita de alimentos para famílias em situação de insegurança alimentar, via rede de entidades sociais.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 300,
+        "description": "Valor estimado da cesta de alimentos distribuída",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Preferencialmente inscrito no Cadastro Único",
+          "legalReference": "Lei 14.016/2020"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda por pessoa de até meio salário mínimo",
+          "legalReference": "Lei 14.016/2020"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.016/2020",
+            "description": "Dispõe sobre combate ao desperdício e doação de alimentos",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l14016.htm"
+          },
+          {
+            "type": "lei",
+            "number": "11.346/2006",
+            "description": "Lei Orgânica de Segurança Alimentar e Nutricional (LOSAN)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11346.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS, igrejas, associações comunitárias ou Banco de Alimentos do município",
+      "documentsRequired": [
+        "Documento de identidade",
+        "NIS do Cadastro Único (se tiver)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS ou uma entidade social da sua comunidade",
+        "Informe que sua família precisa de ajuda com alimentação",
+        "Apresente seus documentos e NIS se tiver",
+        "A distribuição de cestas/alimentos é feita periodicamente (semanal ou mensal)",
+        "Também pode se cadastrar diretamente no Banco de Alimentos do seu município"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bancos-de-alimentos",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🥫",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-isencao-taxa-concurso",
+      "name": "Isenção de Taxa de Concurso Público",
+      "shortDescription": "Direito de se inscrever em concursos públicos federais sem pagar a taxa de inscrição. Para quem está no CadÚnico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 50,
+        "max": 300,
+        "description": "Economia com taxas de inscrição em concursos públicos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único com renda familiar de até meio SM per capita",
+          "legalReference": "Art. 1º, Lei 13.656/2018"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda por pessoa de até meio salário mínimo (R$ 810,50)",
+          "legalReference": "Art. 1º, Lei 13.656/2018"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "13.656/2018",
+            "description": "Assegura isenção de taxa de inscrição em concursos públicos federais",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13656.htm"
+          }
+        ]
+      },
+      "whereToApply": "No próprio site do concurso público, durante o período de inscrição",
+      "documentsRequired": [
+        "NIS (Número de Inscrição Social) do Cadastro Único",
+        "CPF",
+        "Declaração de que é membro de família de baixa renda"
+      ],
+      "howToApply": [
+        "Quando abrir um concurso público federal, acesse o site da banca organizadora",
+        "Na ficha de inscrição, marque a opção 'Solicitar isenção de taxa'",
+        "Informe seu NIS do CadÚnico",
+        "O sistema verifica automaticamente se você tem direito",
+        "Se aprovada a isenção, você faz a prova sem pagar nada"
+      ],
+      "sourceUrl": "https://www.gov.br/gestao/pt-br/concursonacional/isencao-taxa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Documentação"
+    },
+    {
+      "id": "federal-registro-civil-gratuito",
+      "name": "Registro Civil Gratuito",
+      "shortDescription": "Certidão de nascimento e certidão de óbito gratuitas para quem não pode pagar. Direito garantido pela Constituição.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 150,
+        "description": "Economia com certidões de nascimento e óbito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 0,
+          "description": "Direito constitucional universal para quem não puder pagar",
+          "legalReference": "Art. 5º, LXXVI, Constituição Federal"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "9.534/1997",
+            "description": "Gratuidade do registro civil de nascimento e da certidão de óbito",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l9534.htm"
+          }
+        ]
+      },
+      "whereToApply": "Cartório de Registro Civil mais próximo",
+      "documentsRequired": [
+        "Para nascimento: declaração de nascido vivo (DNV) do hospital",
+        "Para segunda via: documento de identificação ou dados do registro anterior",
+        "Declaração de pobreza (pode ser feita no próprio cartório)"
+      ],
+      "howToApply": [
+        "Vá ao cartório de Registro Civil mais próximo",
+        "Informe que não pode pagar e solicite a gratuidade",
+        "Assine a declaração de pobreza (é um formulário simples)",
+        "A primeira certidão de nascimento é sempre gratuita para todos",
+        "A segunda via também é gratuita para quem declara não poder pagar"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/registrar-nascimento",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📄",
+      "category": "Documentação"
+    },
+    {
+      "id": "federal-vale-cultura",
+      "name": "Vale-Cultura",
+      "shortDescription": "R$ 50 por mês em cartão para comprar livros, ingressos de cinema, teatro, shows e outros produtos culturais.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 50,
+        "description": "R$ 50 mensais em cartão magnético para produtos e serviços culturais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter vínculo formal de trabalho (CLT)",
+          "legalReference": "Art. 2º, Lei 12.761/2012"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8105,
+          "description": "Receber até 5 salários mínimos por mês (R$ 8.105)",
+          "legalReference": "Art. 8º, Lei 12.761/2012"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.761/2012",
+            "description": "Institui o Programa de Cultura do Trabalhador e o Vale-Cultura",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12761.htm"
+          }
+        ]
+      },
+      "whereToApply": "Empresa onde trabalha (o empregador deve aderir ao programa)",
+      "documentsRequired": [
+        "Nenhum documento adicional — a empresa cadastra automaticamente",
+        "Contracheque pode ser solicitado para confirmar faixa salarial"
+      ],
+      "howToApply": [
+        "Pergunte ao RH da sua empresa se ela participa do Programa de Cultura do Trabalhador",
+        "Se a empresa aderiu, trabalhadores com salário até 5 SM recebem o cartão",
+        "O crédito de R$ 50 é carregado mensalmente e é cumulativo",
+        "Use em livrarias, cinemas, teatros, shows, museus e plataformas digitais",
+        "O vale não é descontado do salário para quem ganha até 5 SM"
+      ],
+      "sourceUrl": "https://www.gov.br/cultura/pt-br/assuntos/vale-cultura",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎭",
+      "category": "Cultura"
+    },
+    {
+      "id": "federal-regularizacao-fundiaria",
+      "name": "Reurb-S — Regularização Fundiária Urbana",
+      "shortDescription": "Título de propriedade gratuito para quem mora em terreno ou casa sem escritura. Garante o direito legal à sua moradia.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5000,
+        "max": 50000,
+        "description": "Valor estimado da regularização e valorização do imóvel",
+        "estimated": true
+      },
+      "eligibilityRules": [
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda familiar de até meio salário mínimo per capita (interesse social)",
+          "legalReference": "Art. 13, I, Lei 13.465/2017"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "13.465/2017",
+            "description": "Dispõe sobre a regularização fundiária rural e urbana (Reurb)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13465.htm"
+          }
+        ]
+      },
+      "whereToApply": "Prefeitura do município (Secretaria de Habitação ou Urbanismo)",
+      "documentsRequired": [
+        "Documento de identidade (RG ou CNH)",
+        "CPF",
+        "Comprovante de residência no local",
+        "Conta de luz ou água em seu nome (se tiver)",
+        "Declaração de ocupação do imóvel"
+      ],
+      "howToApply": [
+        "Procure a Prefeitura da sua cidade (Secretaria de Habitação ou Urbanismo)",
+        "Informe que mora em terreno/casa sem escritura e quer regularizar",
+        "A Prefeitura deve abrir um processo de Reurb-S (interesse social)",
+        "Todo o processo é gratuito para famílias de baixa renda",
+        "Ao final, você recebe o título de propriedade registrado em cartório sem custos"
+      ],
+      "sourceUrl": "https://www.gov.br/mdr/pt-br/assuntos/habitacao/regularizacao-fundiaria",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia"
+    },
+    {
+      "id": "federal-brasil-carinhoso",
+      "name": "Brasil Carinhoso",
+      "shortDescription": "Complemento do Bolsa Família para famílias com crianças de 0 a 6 anos que estejam em creche.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 150,
+        "description": "Complemento para superar a extrema pobreza — valor variável por família"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda per capita de até R$ 218"
+        },
+        {
+          "field": "temFilhosMenores",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 6 anos"
+        }
+      ],
+      "whereToApply": "CRAS — benefício automático vinculado ao Bolsa Família",
+      "documentsRequired": [
+        "Cadastro Único atualizado"
+      ],
+      "howToApply": [
+        "O benefício é calculado automaticamente para famílias do Bolsa Família",
+        "Mantenha o Cadastro Único atualizado com dados das crianças",
+        "Garanta que a criança esteja em creche ou pré-escola"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "federal-pnae",
+      "name": "PNAE — Merenda Escolar",
+      "shortDescription": "Alimentação gratuita para todos os alunos da rede pública de ensino, da creche ao ensino médio.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições gratuitas nos dias letivos — atende 40 milhões de alunos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em escola pública"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "11.947/2009",
+            "description": "Lei do PNAE",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11947.htm"
+          }
+        ]
+      },
+      "whereToApply": "Escola pública — benefício automático para alunos matriculados",
+      "documentsRequired": [
+        "Matrícula em escola pública"
+      ],
+      "howToApply": [
+        "Basta estar matriculado em escola da rede pública",
+        "A merenda é servida gratuitamente nos dias letivos",
+        "Mínimo 30% dos alimentos vêm da agricultura familiar local"
+      ],
+      "sourceUrl": "https://www.gov.br/fnde/pt-br/acoes/pnae",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-acredita",
+      "name": "Acredita no Primeiro Passo",
+      "shortDescription": "Microcrédito de até R$ 6.000 para inscritos no CadÚnico iniciarem um pequeno negócio.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 100,
+        "max": 6000,
+        "description": "Empréstimo de R$ 100 a R$ 6.000 com juros de 0% a 3,5% ao mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.690/2023",
+            "description": "Programa Acredita",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14690.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS ou instituições de microcrédito credenciadas",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência",
+        "Plano simplificado do negócio"
+      ],
+      "howToApply": [
+        "Tenha o Cadastro Único atualizado",
+        "Procure o CRAS ou agente de microcrédito da sua região",
+        "Apresente uma ideia de negócio (pode ser informal)",
+        "O crédito é liberado em conta após aprovação"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/acredita",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "Microcrédito"
+    },
+    {
+      "id": "federal-desenrola",
+      "name": "Desenrola Brasil",
+      "shortDescription": "Programa de renegociação de dívidas para brasileiros com nome negativado, com descontos de até 96%.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Descontos de até 96% nas dívidas — parcelas a partir de R$ 50/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "nomeNegativado",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter dívidas negativadas (SPC/Serasa)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Faixa 1: renda de até 2 SM. Faixa 2: dívidas de até R$ 20 mil"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.690/2023",
+            "description": "Programa Desenrola Brasil",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14690.htm"
+          }
+        ]
+      },
+      "whereToApply": "Plataforma digital desenrola.gov.br ou bancos parceiros",
+      "documentsRequired": [
+        "CPF",
+        "Acesso ao Gov.br (conta nível prata ou ouro)"
+      ],
+      "howToApply": [
+        "Acesse desenrola.gov.br com sua conta Gov.br",
+        "Consulte suas dívidas disponíveis para renegociação",
+        "Escolha a proposta com melhor desconto",
+        "Pague a entrada e siga o plano de parcelas"
+      ],
+      "sourceUrl": "https://www.gov.br/fazenda/pt-br/assuntos/desenrola",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔓",
+      "category": "Inclusão Financeira"
+    },
+    {
+      "id": "federal-pnmpo",
+      "name": "PNMPO — Microcrédito Produtivo",
+      "shortDescription": "Microcrédito orientado para pequenos empreendedores informais e MEIs, com juros reduzidos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 300,
+        "max": 21000,
+        "description": "Empréstimo de R$ 300 a R$ 21.000 com juros de até 4% ao mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "empreendedor",
+          "operator": "eq",
+          "value": true,
+          "description": "Empreendedor de atividade produtiva de pequeno porte"
+        },
+        {
+          "field": "rendaBruta",
+          "operator": "lte",
+          "value": 360000,
+          "description": "Receita bruta anual de até R$ 360 mil"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "13.636/2018",
+            "description": "PNMPO reformulado",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13636.htm"
+          }
+        ]
+      },
+      "whereToApply": "Bancos públicos (BB, Caixa), cooperativas de crédito, OSCIPs de microcrédito",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de atividade econômica"
+      ],
+      "howToApply": [
+        "Procure uma instituição de microcrédito credenciada",
+        "Um agente de crédito visitará seu negócio",
+        "Apresente informações sobre sua atividade",
+        "Após análise, o crédito é liberado em conta"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/pnmpo",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏪",
+      "category": "Microcrédito"
+    },
+    {
+      "id": "federal-bolsa-atleta",
+      "name": "Bolsa Atleta",
+      "shortDescription": "Auxílio mensal para atletas de alto rendimento em diversas categorias, do estudantil ao olímpico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 410,
+        "max": 16629,
+        "description": "R$ 410 (Estudantil) a R$ 16.629 (Olímpico/Paralímpico) por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "atleta",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser atleta de rendimento em modalidade olímpica ou paralímpica"
+        },
+        {
+          "field": "resultadosEsportivos",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter obtido resultados em competições oficiais"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.891/2004",
+            "description": "Lei do Bolsa Atleta",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.891.htm"
+          }
+        ]
+      },
+      "whereToApply": "Ministério do Esporte — sistema online",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de resultados esportivos",
+        "Indicação da confederação esportiva"
+      ],
+      "howToApply": [
+        "Obtenha resultados em competições oficiais reconhecidas",
+        "Seja indicado pela confederação ou federação da modalidade",
+        "Inscreva-se no sistema do Bolsa Atleta do Ministério do Esporte",
+        "Aguarde classificação na categoria (Estudantil, Nacional, Internacional, Olímpico)"
+      ],
+      "sourceUrl": "https://www.gov.br/esporte/pt-br/acoes-e-programas/bolsa-atleta",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏅",
+      "category": "Esporte"
+    },
+    {
+      "id": "federal-auxilio-reconstrucao",
+      "name": "Auxílio Reconstrução",
+      "shortDescription": "Pagamento único de R$ 5.100 para famílias desalojadas por desastres naturais reconhecidos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 5100,
+        "max": 5100,
+        "description": "R$ 5.100 em parcela única para famílias atingidas por desastres"
+      },
+      "eligibilityRules": [
+        {
+          "field": "atingidoDesastre",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter sido atingido por desastre natural reconhecido pelo governo federal"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único ou cadastrado em abrigo"
+        }
+      ],
+      "whereToApply": "Prefeitura ou Defesa Civil do município atingido",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência na área atingida",
+        "Laudo da Defesa Civil (se disponível)"
+      ],
+      "howToApply": [
+        "Após o desastre, procure a Defesa Civil ou prefeitura",
+        "Registre-se como família atingida",
+        "O governo federal reconhece o estado de calamidade",
+        "O pagamento é feito via Caixa Econômica Federal"
+      ],
+      "sourceUrl": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/auxilio-reconstrucao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏚️",
+      "category": "Proteção Social"
+    },
+    {
+      "id": "federal-casa-mulher",
+      "name": "Casa da Mulher Brasileira",
+      "shortDescription": "Atendimento integrado para mulheres em situação de violência: acolhimento, jurídico, psicológico e emprego.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito integrado — jurídico, psicológico, acolhimento e encaminhamento ao trabalho"
+      },
+      "eligibilityRules": [
+        {
+          "field": "genero",
+          "operator": "eq",
+          "value": "feminino",
+          "description": "Ser mulher"
+        },
+        {
+          "field": "situacaoViolencia",
+          "operator": "eq",
+          "value": true,
+          "description": "Em situação de violência doméstica ou familiar"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "11.340/2006",
+            "description": "Lei Maria da Penha",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+          }
+        ]
+      },
+      "whereToApply": "Casa da Mulher Brasileira mais próxima ou Ligue 180",
+      "documentsRequired": [
+        "Documento de identidade (se disponível)",
+        "Nenhum documento é obrigatório para atendimento de emergência"
+      ],
+      "howToApply": [
+        "Ligue 180 (Central de Atendimento à Mulher) — 24h, gratuito",
+        "Procure a Casa da Mulher Brasileira da sua cidade",
+        "O atendimento é imediato e não precisa de documentos para emergência",
+        "Serviços incluem: delegacia, defensoria, psicólogo, assistente social"
+      ],
+      "sourceUrl": "https://www.gov.br/mulheres/pt-br/acesso-a-informacao/acoes-e-programas/casa-da-mulher-brasileira",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Proteção Social"
+    },
+    {
+      "id": "federal-cisternas",
+      "name": "Programa Cisternas",
+      "shortDescription": "Instalação gratuita de cisternas de 16.000 litros para captação de água da chuva no semiárido brasileiro.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cisterna de 16.000L gratuita — Primeira Água (consumo) ou Segunda Água (produção)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "areaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em área rural do semiárido"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda per capita de até R$ 218 (extrema pobreza)"
+        }
+      ],
+      "whereToApply": "Prefeitura, CRAS ou entidade parceira (ASA)",
+      "documentsRequired": [
+        "NIS (Cadastro Único)",
+        "CPF e RG",
+        "Comprovante de residência rural"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado",
+        "Procure a prefeitura ou CRAS sobre o programa",
+        "Prioridade para famílias com idosos, PcD e crianças",
+        "Inclui capacitação em gestão da água"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/acesso-a-agua",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💧",
+      "category": "Infraestrutura"
+    },
+    {
+      "id": "federal-tarifa-social-telecom",
+      "name": "Telefone Popular (Tarifa Social)",
+      "shortDescription": "Desconto na assinatura de telefone fixo para famílias de baixa renda inscritas no CadÚnico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 15,
+        "description": "Assinatura reduzida de R$ 15/mês (tarifa social) + 90 minutos locais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos"
+        }
+      ],
+      "whereToApply": "Operadora de telefonia fixa local",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Tenha o Cadastro Único atualizado",
+        "Ligue para a operadora de telefonia fixa da sua região",
+        "Solicite o plano de Tarifa Social (AICE)",
+        "Informe seu NIS para comprovação"
+      ],
+      "sourceUrl": "https://www.gov.br/anatel/pt-br/assuntos/telefone-popular",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📞",
+      "category": "Infraestrutura"
+    },
+    {
+      "id": "federal-credito-instalacao",
+      "name": "Crédito Instalação (Reforma Agrária)",
+      "shortDescription": "Crédito de R$ 6.400 a R$ 30.000 para famílias assentadas pela reforma agrária construírem moradia e produzirem.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 6400,
+        "max": 30000,
+        "description": "R$ 6.400 (moradia básica) a R$ 30.000 (produção), não reembolsável"
+      },
+      "eligibilityRules": [
+        {
+          "field": "assentado",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser beneficiário da reforma agrária (assentado INCRA)"
+        }
+      ],
+      "whereToApply": "INCRA (superintendência regional)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Relação de Beneficiários (RB) do INCRA",
+        "Comprovante de residência no assentamento"
+      ],
+      "howToApply": [
+        "Seja incluído na Relação de Beneficiários do assentamento",
+        "Solicite o crédito no escritório do INCRA da região",
+        "Escolha a modalidade: moradia, alimentação, fomento ou produção",
+        "O recurso é liberado conforme o cronograma do INCRA"
+      ],
+      "sourceUrl": "https://www.gov.br/incra/pt-br/assuntos/reforma-agraria/credito-instalacao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🌾",
+      "category": "Reforma Agrária"
+    },
+    {
+      "id": "federal-paa",
+      "name": "PAA — Aquisição de Alimentos",
+      "shortDescription": "Governo compra alimentos de agricultores familiares e doa para pessoas em insegurança alimentar.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 12000,
+        "description": "Até R$ 12.000/ano por agricultor familiar (compra institucional)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "agricultor",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser agricultor familiar com DAP/CAF ativa"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único (preferencialmente)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.628/2023",
+            "description": "Nova Lei do PAA",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14628.htm"
+          }
+        ]
+      },
+      "whereToApply": "CONAB, prefeitura ou MDS (dependendo da modalidade)",
+      "documentsRequired": [
+        "DAP ou CAF (Cadastro da Agricultura Familiar)",
+        "CPF e RG",
+        "Nota fiscal ou documento fiscal de venda"
+      ],
+      "howToApply": [
+        "Tenha a DAP ou CAF ativa",
+        "Procure a CONAB ou prefeitura sobre editais do PAA",
+        "Inscreva-se na modalidade disponível (doação simultânea, compra institucional)",
+        "Entregue os alimentos e receba o pagamento"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/paa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🥕",
+      "category": "Alimentação"
+    },
+    {
+      "id": "federal-cras-paif",
+      "name": "PAIF — Acompanhamento Familiar (CRAS)",
+      "shortDescription": "Acompanhamento familiar gratuito no CRAS: orientação, encaminhamentos e fortalecimento de vínculos.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Serviço gratuito — atendimento social, grupos, oficinas e encaminhamentos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "vulnerabilidadeSocial",
+          "operator": "eq",
+          "value": true,
+          "description": "Família em situação de vulnerabilidade social"
+        }
+      ],
+      "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
+      "documentsRequired": [
+        "CPF ou RG (desejável, mas não obrigatório)",
+        "Comprovante de residência (se disponível)"
+      ],
+      "howToApply": [
+        "Procure o CRAS mais próximo da sua casa",
+        "Não precisa de agendamento para o primeiro atendimento",
+        "A equipe fará acolhida e identificará suas necessidades",
+        "Você será encaminhado para benefícios e serviços adequados"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/servicos-e-programas/paif",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤝",
+      "category": "Assistência Social"
+    },
+    {
+      "id": "federal-programa-caminho-escola",
+      "name": "Caminho da Escola",
+      "shortDescription": "Transporte escolar gratuito para alunos da zona rural com ônibus e lanchas escolares padronizados.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "Transporte escolar gratuito — ônibus, lanchas e bicicletas para alunos rurais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em escola pública"
+        },
+        {
+          "field": "areaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em área rural ou ribeirinha"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "6.768/2009",
+            "description": "Programa Caminho da Escola",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/decreto/d6768.htm"
+          }
+        ]
+      },
+      "whereToApply": "Escola — transporte é oferecido pela prefeitura/estado",
+      "documentsRequired": [
+        "Matrícula em escola pública",
+        "Comprovante de residência em área rural"
+      ],
+      "howToApply": [
+        "Matricule-se em escola pública da rede municipal ou estadual",
+        "Informe à escola que precisa de transporte escolar",
+        "A prefeitura ou estado organiza as rotas com ônibus do programa",
+        "Em áreas ribeirinhas, lanchas escolares fazem o transporte"
+      ],
+      "sourceUrl": "https://www.gov.br/fnde/pt-br/acoes/caminho-da-escola",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Educação"
+    },
+    {
+      "id": "federal-auxilio-gas-nacional",
+      "name": "Auxílio Gás dos Brasileiros",
+      "shortDescription": "Auxílio bimestral de R$ 104 para compra de gás de cozinha, pago a famílias de baixa renda via CadÚnico.",
+      "scope": "federal",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 52,
+        "max": 52,
+        "description": "R$ 104 a cada 2 meses (equivalente a R$ 52/mês) — 50% do preço médio do botijão de 13kg"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.237/2021",
+            "description": "Programa Auxílio Gás dos Brasileiros",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14237.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS — benefício automático para famílias do CadÚnico selecionadas",
+      "documentsRequired": [
+        "Cadastro Único atualizado"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é automática com base nos dados do CadÚnico",
+        "Prioridade para famílias com renda per capita até meio SM",
+        "O pagamento é feito junto com o Bolsa Família pela Caixa"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/auxilio-gas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Transferência de Renda"
     }
   ]
 }

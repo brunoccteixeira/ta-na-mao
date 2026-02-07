@@ -2,7 +2,7 @@
   "municipality": "Rio de Janeiro",
   "municipalityIbge": "3304557",
   "state": "RJ",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rj-riodejaneiro-supera-rj",
@@ -38,14 +38,19 @@
         }
       ],
       "whereToApply": "CRAS do bairro",
-      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS do seu bairro",
         "Verifique se está elegível",
         "Aguarde contato"
       ],
       "sourceUrl": "https://prefeitura.rio",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -84,14 +89,19 @@
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Assistência Social",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de situação habitacional"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de situação habitacional"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Apresente documentos",
         "Aguarde avaliação social"
       ],
       "sourceUrl": "https://prefeitura.rio",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
       "category": "Moradia"
@@ -125,19 +135,23 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 810.5,
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
       "whereToApply": "Portal Jaé ou postos de atendimento",
-      "documentsRequired": ["CPF", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Acesse jae.rio",
         "Faça cadastro",
         "Retire o cartão no local indicado"
       ],
       "sourceUrl": "https://jae.rio",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
@@ -171,22 +185,154 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 810.5,
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
       "whereToApply": "CRAS do bairro",
-      "documentsRequired": ["CPF", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Verifique elegibilidade",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://prefeitura.rio",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
+    },
+    {
+      "id": "rj-riodejaneiro-restaurante-popular",
+      "name": "Prato Feito Carioca",
+      "shortDescription": "Refeições gratuitas em 52 cozinhas comunitárias do Rio de Janeiro",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição gratuita (280 por dia por unidade)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro"
+        }
+      ],
+      "whereToApply": "Cozinhas Comunitárias do Prato Feito Carioca",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Cozinha Comunitária",
+        "Refeições de segunda a sexta",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://trabalho.prefeitura.rio/prato-feito/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "rj-riodejaneiro-iptu-social",
+      "name": "Isenção IPTU Carioca",
+      "shortDescription": "Isenção automática para imóveis de baixo valor venal. Aposentados/pensionistas podem pedir até 50% de desconto",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        }
+      ],
+      "whereToApply": "Portal Carioca Digital (carioca.rio)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Isenção automática para imóveis de baixo valor venal",
+        "Aposentados: solicite pelo Portal Carioca Digital",
+        "Apresente documentação no período de cadastro"
+      ],
+      "sourceUrl": "https://carioca.rio/servicos/iptu-reconhecimento-de-imunidade-isencao-e-nao-incidencia/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "rj-riodejaneiro-empreenda-rio",
+      "name": "Empreenda.Rio",
+      "shortDescription": "Curso gratuito de empreendedorismo com mentoria de 90 dias",
+      "scope": "municipal",
+      "state": "RJ",
+      "municipalityIbge": "3304557",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Curso gratuito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3304557",
+          "description": "Morar no Rio de Janeiro"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "Naves do Conhecimento ou site projetoempreendario.com.br",
+      "documentsRequired": [
+        "CPF",
+        "RG"
+      ],
+      "howToApply": [
+        "Acesse projetoempreendario.com.br",
+        "Faça inscrição online",
+        "Participe das aulas nas Naves do Conhecimento"
+      ],
+      "sourceUrl": "https://trabalho.prefeitura.rio/empreenda-rio/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💼",
+      "category": "Qualificação Profissional",
+      "verified": true
     }
   ]
 }

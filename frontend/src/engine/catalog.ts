@@ -68,89 +68,318 @@ const stateModules: Record<string, { benefits: Benefit[] }> = {
   TO: stateTO as unknown as { benefits: Benefit[] },
 };
 
-// Import municipal benefits - explicit imports
+// Import municipal benefits - explicit imports (98 municipalities)
 import mun1100205 from '../data/benefits/municipalities/1100205.json';
+import mun1200401 from '../data/benefits/municipalities/1200401.json';
 import mun1302603 from '../data/benefits/municipalities/1302603.json';
+import mun1400100 from '../data/benefits/municipalities/1400100.json';
 import mun1500800 from '../data/benefits/municipalities/1500800.json';
 import mun1501402 from '../data/benefits/municipalities/1501402.json';
+import mun1506807 from '../data/benefits/municipalities/1506807.json';
 import mun1600303 from '../data/benefits/municipalities/1600303.json';
+import mun1721000 from '../data/benefits/municipalities/1721000.json';
+import mun2105302 from '../data/benefits/municipalities/2105302.json';
 import mun2111300 from '../data/benefits/municipalities/2111300.json';
 import mun2211001 from '../data/benefits/municipalities/2211001.json';
+import mun2303709 from '../data/benefits/municipalities/2303709.json';
 import mun2304400 from '../data/benefits/municipalities/2304400.json';
+import mun2312908 from '../data/benefits/municipalities/2312908.json';
 import mun2408102 from '../data/benefits/municipalities/2408102.json';
+import mun2504009 from '../data/benefits/municipalities/2504009.json';
 import mun2507507 from '../data/benefits/municipalities/2507507.json';
+import mun2604106 from '../data/benefits/municipalities/2604106.json';
+import mun2607901 from '../data/benefits/municipalities/2607901.json';
+import mun2609600 from '../data/benefits/municipalities/2609600.json';
+import mun2611101 from '../data/benefits/municipalities/2611101.json';
 import mun2611606 from '../data/benefits/municipalities/2611606.json';
 import mun2704302 from '../data/benefits/municipalities/2704302.json';
 import mun2800308 from '../data/benefits/municipalities/2800308.json';
 import mun2910800 from '../data/benefits/municipalities/2910800.json';
 import mun2927408 from '../data/benefits/municipalities/2927408.json';
 import mun3106200 from '../data/benefits/municipalities/3106200.json';
+import mun3106705 from '../data/benefits/municipalities/3106705.json';
 import mun3118601 from '../data/benefits/municipalities/3118601.json';
+import mun3127701 from '../data/benefits/municipalities/3127701.json';
+import mun3131307 from '../data/benefits/municipalities/3131307.json';
 import mun3136702 from '../data/benefits/municipalities/3136702.json';
+import mun3143302 from '../data/benefits/municipalities/3143302.json';
+import mun3153905 from '../data/benefits/municipalities/3153905.json';
+import mun3170107 from '../data/benefits/municipalities/3170107.json';
 import mun3170206 from '../data/benefits/municipalities/3170206.json';
+import mun3201308 from '../data/benefits/municipalities/3201308.json';
+import mun3205002 from '../data/benefits/municipalities/3205002.json';
+import mun3205200 from '../data/benefits/municipalities/3205200.json';
+import mun3205309 from '../data/benefits/municipalities/3205309.json';
+import mun3300456 from '../data/benefits/municipalities/3300456.json';
+import mun3301009 from '../data/benefits/municipalities/3301009.json';
 import mun3301702 from '../data/benefits/municipalities/3301702.json';
 import mun3303302 from '../data/benefits/municipalities/3303302.json';
+import mun3303500 from '../data/benefits/municipalities/3303500.json';
+import mun3303906 from '../data/benefits/municipalities/3303906.json';
 import mun3304557 from '../data/benefits/municipalities/3304557.json';
 import mun3304904 from '../data/benefits/municipalities/3304904.json';
+import mun3305109 from '../data/benefits/municipalities/3305109.json';
+import mun3306305 from '../data/benefits/municipalities/3306305.json';
+import mun3506003 from '../data/benefits/municipalities/3506003.json';
 import mun3509502 from '../data/benefits/municipalities/3509502.json';
+import mun3510609 from '../data/benefits/municipalities/3510609.json';
+import mun3513801 from '../data/benefits/municipalities/3513801.json';
+import mun3516200 from '../data/benefits/municipalities/3516200.json';
+import mun3518701 from '../data/benefits/municipalities/3518701.json';
 import mun3518800 from '../data/benefits/municipalities/3518800.json';
+import mun3523107 from '../data/benefits/municipalities/3523107.json';
+import mun3525904 from '../data/benefits/municipalities/3525904.json';
+import mun3529401 from '../data/benefits/municipalities/3529401.json';
+import mun3530607 from '../data/benefits/municipalities/3530607.json';
 import mun3534401 from '../data/benefits/municipalities/3534401.json';
+import mun3538709 from '../data/benefits/municipalities/3538709.json';
+import mun3541000 from '../data/benefits/municipalities/3541000.json';
 import mun3543402 from '../data/benefits/municipalities/3543402.json';
 import mun3547809 from '../data/benefits/municipalities/3547809.json';
 import mun3548708 from '../data/benefits/municipalities/3548708.json';
+import mun3549805 from '../data/benefits/municipalities/3549805.json';
+import mun3549904 from '../data/benefits/municipalities/3549904.json';
 import mun3550308 from '../data/benefits/municipalities/3550308.json';
 import mun3552205 from '../data/benefits/municipalities/3552205.json';
+import mun3554102 from '../data/benefits/municipalities/3554102.json';
+import mun4104808 from '../data/benefits/municipalities/4104808.json';
+import mun4105805 from '../data/benefits/municipalities/4105805.json';
 import mun4106902 from '../data/benefits/municipalities/4106902.json';
 import mun4113700 from '../data/benefits/municipalities/4113700.json';
+import mun4115200 from '../data/benefits/municipalities/4115200.json';
+import mun4119905 from '../data/benefits/municipalities/4119905.json';
+import mun4125506 from '../data/benefits/municipalities/4125506.json';
+import mun4202404 from '../data/benefits/municipalities/4202404.json';
+import mun4205407 from '../data/benefits/municipalities/4205407.json';
+import mun4208203 from '../data/benefits/municipalities/4208203.json';
 import mun4209102 from '../data/benefits/municipalities/4209102.json';
+import mun4209300 from '../data/benefits/municipalities/4209300.json';
+import mun4304606 from '../data/benefits/municipalities/4304606.json';
+import mun4305108 from '../data/benefits/municipalities/4305108.json';
+import mun4309209 from '../data/benefits/municipalities/4309209.json';
+import mun4314407 from '../data/benefits/municipalities/4314407.json';
 import mun4314902 from '../data/benefits/municipalities/4314902.json';
 import mun5002704 from '../data/benefits/municipalities/5002704.json';
+import mun5003702 from '../data/benefits/municipalities/5003702.json';
 import mun5103403 from '../data/benefits/municipalities/5103403.json';
+import mun5108402 from '../data/benefits/municipalities/5108402.json';
+import mun5201108 from '../data/benefits/municipalities/5201108.json';
 import mun5201405 from '../data/benefits/municipalities/5201405.json';
 import mun5208707 from '../data/benefits/municipalities/5208707.json';
 import mun5300108 from '../data/benefits/municipalities/5300108.json';
 
+// Phase E — 50 new cities for regional balance
+// Norte (8)
+import mun1504208 from '../data/benefits/municipalities/1504208.json';
+import mun1502400 from '../data/benefits/municipalities/1502400.json';
+import mun1303403 from '../data/benefits/municipalities/1303403.json';
+import mun1301902 from '../data/benefits/municipalities/1301902.json';
+import mun1100122 from '../data/benefits/municipalities/1100122.json';
+import mun1100023 from '../data/benefits/municipalities/1100023.json';
+import mun1702109 from '../data/benefits/municipalities/1702109.json';
+import mun1200203 from '../data/benefits/municipalities/1200203.json';
+// Nordeste (18)
+import mun2700300 from '../data/benefits/municipalities/2700300.json';
+import mun2408003 from '../data/benefits/municipalities/2408003.json';
+import mun2403251 from '../data/benefits/municipalities/2403251.json';
+import mun2933307 from '../data/benefits/municipalities/2933307.json';
+import mun2913606 from '../data/benefits/municipalities/2913606.json';
+import mun2918407 from '../data/benefits/municipalities/2918407.json';
+import mun2207702 from '../data/benefits/municipalities/2207702.json';
+import mun2304202 from '../data/benefits/municipalities/2304202.json';
+import mun2307304 from '../data/benefits/municipalities/2307304.json';
+import mun2307650 from '../data/benefits/municipalities/2307650.json';
+import mun2112209 from '../data/benefits/municipalities/2112209.json';
+import mun2103307 from '../data/benefits/municipalities/2103307.json';
+import mun2513703 from '../data/benefits/municipalities/2513703.json';
+import mun2804805 from '../data/benefits/municipalities/2804805.json';
+import mun2606002 from '../data/benefits/municipalities/2606002.json';
+import mun2616407 from '../data/benefits/municipalities/2616407.json';
+import mun2610707 from '../data/benefits/municipalities/2610707.json';
+import mun2602902 from '../data/benefits/municipalities/2602902.json';
+// Centro-Oeste (6)
+import mun5212501 from '../data/benefits/municipalities/5212501.json';
+import mun5218805 from '../data/benefits/municipalities/5218805.json';
+import mun5200258 from '../data/benefits/municipalities/5200258.json';
+import mun5107602 from '../data/benefits/municipalities/5107602.json';
+import mun5107909 from '../data/benefits/municipalities/5107909.json';
+import mun5008305 from '../data/benefits/municipalities/5008305.json';
+// Sudeste (10)
+import mun3201209 from '../data/benefits/municipalities/3201209.json';
+import mun3203205 from '../data/benefits/municipalities/3203205.json';
+import mun3167202 from '../data/benefits/municipalities/3167202.json';
+import mun3122306 from '../data/benefits/municipalities/3122306.json';
+import mun3151800 from '../data/benefits/municipalities/3151800.json';
+import mun3305802 from '../data/benefits/municipalities/3305802.json';
+import mun3300704 from '../data/benefits/municipalities/3300704.json';
+import mun3526902 from '../data/benefits/municipalities/3526902.json';
+import mun3552403 from '../data/benefits/municipalities/3552403.json';
+import mun3520509 from '../data/benefits/municipalities/3520509.json';
+// Sul (8)
+import mun4108304 from '../data/benefits/municipalities/4108304.json';
+import mun4109401 from '../data/benefits/municipalities/4109401.json';
+import mun4118204 from '../data/benefits/municipalities/4118204.json';
+import mun4316907 from '../data/benefits/municipalities/4316907.json';
+import mun4315602 from '../data/benefits/municipalities/4315602.json';
+import mun4313409 from '../data/benefits/municipalities/4313409.json';
+import mun4204202 from '../data/benefits/municipalities/4204202.json';
+import mun4204608 from '../data/benefits/municipalities/4204608.json';
+
 const municipalModules: Record<string, { benefits: Benefit[] }> = {
   '1100205': mun1100205 as unknown as { benefits: Benefit[] },
+  '1200401': mun1200401 as unknown as { benefits: Benefit[] },
   '1302603': mun1302603 as unknown as { benefits: Benefit[] },
+  '1400100': mun1400100 as unknown as { benefits: Benefit[] },
   '1500800': mun1500800 as unknown as { benefits: Benefit[] },
   '1501402': mun1501402 as unknown as { benefits: Benefit[] },
+  '1506807': mun1506807 as unknown as { benefits: Benefit[] },
   '1600303': mun1600303 as unknown as { benefits: Benefit[] },
+  '1721000': mun1721000 as unknown as { benefits: Benefit[] },
+  '2105302': mun2105302 as unknown as { benefits: Benefit[] },
   '2111300': mun2111300 as unknown as { benefits: Benefit[] },
   '2211001': mun2211001 as unknown as { benefits: Benefit[] },
+  '2303709': mun2303709 as unknown as { benefits: Benefit[] },
   '2304400': mun2304400 as unknown as { benefits: Benefit[] },
+  '2312908': mun2312908 as unknown as { benefits: Benefit[] },
   '2408102': mun2408102 as unknown as { benefits: Benefit[] },
+  '2504009': mun2504009 as unknown as { benefits: Benefit[] },
   '2507507': mun2507507 as unknown as { benefits: Benefit[] },
+  '2604106': mun2604106 as unknown as { benefits: Benefit[] },
+  '2607901': mun2607901 as unknown as { benefits: Benefit[] },
+  '2609600': mun2609600 as unknown as { benefits: Benefit[] },
+  '2611101': mun2611101 as unknown as { benefits: Benefit[] },
   '2611606': mun2611606 as unknown as { benefits: Benefit[] },
   '2704302': mun2704302 as unknown as { benefits: Benefit[] },
   '2800308': mun2800308 as unknown as { benefits: Benefit[] },
   '2910800': mun2910800 as unknown as { benefits: Benefit[] },
   '2927408': mun2927408 as unknown as { benefits: Benefit[] },
   '3106200': mun3106200 as unknown as { benefits: Benefit[] },
+  '3106705': mun3106705 as unknown as { benefits: Benefit[] },
   '3118601': mun3118601 as unknown as { benefits: Benefit[] },
+  '3127701': mun3127701 as unknown as { benefits: Benefit[] },
+  '3131307': mun3131307 as unknown as { benefits: Benefit[] },
   '3136702': mun3136702 as unknown as { benefits: Benefit[] },
+  '3143302': mun3143302 as unknown as { benefits: Benefit[] },
+  '3153905': mun3153905 as unknown as { benefits: Benefit[] },
+  '3170107': mun3170107 as unknown as { benefits: Benefit[] },
   '3170206': mun3170206 as unknown as { benefits: Benefit[] },
+  '3201308': mun3201308 as unknown as { benefits: Benefit[] },
+  '3205002': mun3205002 as unknown as { benefits: Benefit[] },
+  '3205200': mun3205200 as unknown as { benefits: Benefit[] },
+  '3205309': mun3205309 as unknown as { benefits: Benefit[] },
+  '3300456': mun3300456 as unknown as { benefits: Benefit[] },
+  '3301009': mun3301009 as unknown as { benefits: Benefit[] },
   '3301702': mun3301702 as unknown as { benefits: Benefit[] },
   '3303302': mun3303302 as unknown as { benefits: Benefit[] },
+  '3303500': mun3303500 as unknown as { benefits: Benefit[] },
+  '3303906': mun3303906 as unknown as { benefits: Benefit[] },
   '3304557': mun3304557 as unknown as { benefits: Benefit[] },
   '3304904': mun3304904 as unknown as { benefits: Benefit[] },
+  '3305109': mun3305109 as unknown as { benefits: Benefit[] },
+  '3306305': mun3306305 as unknown as { benefits: Benefit[] },
+  '3506003': mun3506003 as unknown as { benefits: Benefit[] },
   '3509502': mun3509502 as unknown as { benefits: Benefit[] },
+  '3510609': mun3510609 as unknown as { benefits: Benefit[] },
+  '3513801': mun3513801 as unknown as { benefits: Benefit[] },
+  '3516200': mun3516200 as unknown as { benefits: Benefit[] },
+  '3518701': mun3518701 as unknown as { benefits: Benefit[] },
   '3518800': mun3518800 as unknown as { benefits: Benefit[] },
+  '3523107': mun3523107 as unknown as { benefits: Benefit[] },
+  '3525904': mun3525904 as unknown as { benefits: Benefit[] },
+  '3529401': mun3529401 as unknown as { benefits: Benefit[] },
+  '3530607': mun3530607 as unknown as { benefits: Benefit[] },
   '3534401': mun3534401 as unknown as { benefits: Benefit[] },
+  '3538709': mun3538709 as unknown as { benefits: Benefit[] },
+  '3541000': mun3541000 as unknown as { benefits: Benefit[] },
   '3543402': mun3543402 as unknown as { benefits: Benefit[] },
   '3547809': mun3547809 as unknown as { benefits: Benefit[] },
   '3548708': mun3548708 as unknown as { benefits: Benefit[] },
+  '3549805': mun3549805 as unknown as { benefits: Benefit[] },
+  '3549904': mun3549904 as unknown as { benefits: Benefit[] },
   '3550308': mun3550308 as unknown as { benefits: Benefit[] },
   '3552205': mun3552205 as unknown as { benefits: Benefit[] },
+  '3554102': mun3554102 as unknown as { benefits: Benefit[] },
+  '4104808': mun4104808 as unknown as { benefits: Benefit[] },
+  '4105805': mun4105805 as unknown as { benefits: Benefit[] },
   '4106902': mun4106902 as unknown as { benefits: Benefit[] },
   '4113700': mun4113700 as unknown as { benefits: Benefit[] },
+  '4115200': mun4115200 as unknown as { benefits: Benefit[] },
+  '4119905': mun4119905 as unknown as { benefits: Benefit[] },
+  '4125506': mun4125506 as unknown as { benefits: Benefit[] },
+  '4202404': mun4202404 as unknown as { benefits: Benefit[] },
+  '4205407': mun4205407 as unknown as { benefits: Benefit[] },
+  '4208203': mun4208203 as unknown as { benefits: Benefit[] },
   '4209102': mun4209102 as unknown as { benefits: Benefit[] },
+  '4209300': mun4209300 as unknown as { benefits: Benefit[] },
+  '4304606': mun4304606 as unknown as { benefits: Benefit[] },
+  '4305108': mun4305108 as unknown as { benefits: Benefit[] },
+  '4309209': mun4309209 as unknown as { benefits: Benefit[] },
+  '4314407': mun4314407 as unknown as { benefits: Benefit[] },
   '4314902': mun4314902 as unknown as { benefits: Benefit[] },
   '5002704': mun5002704 as unknown as { benefits: Benefit[] },
+  '5003702': mun5003702 as unknown as { benefits: Benefit[] },
   '5103403': mun5103403 as unknown as { benefits: Benefit[] },
+  '5108402': mun5108402 as unknown as { benefits: Benefit[] },
+  '5201108': mun5201108 as unknown as { benefits: Benefit[] },
   '5201405': mun5201405 as unknown as { benefits: Benefit[] },
   '5208707': mun5208707 as unknown as { benefits: Benefit[] },
   '5300108': mun5300108 as unknown as { benefits: Benefit[] },
+  // Phase E — 50 new cities
+  // Norte (8)
+  '1504208': mun1504208 as unknown as { benefits: Benefit[] },
+  '1502400': mun1502400 as unknown as { benefits: Benefit[] },
+  '1303403': mun1303403 as unknown as { benefits: Benefit[] },
+  '1301902': mun1301902 as unknown as { benefits: Benefit[] },
+  '1100122': mun1100122 as unknown as { benefits: Benefit[] },
+  '1100023': mun1100023 as unknown as { benefits: Benefit[] },
+  '1702109': mun1702109 as unknown as { benefits: Benefit[] },
+  '1200203': mun1200203 as unknown as { benefits: Benefit[] },
+  // Nordeste (18)
+  '2700300': mun2700300 as unknown as { benefits: Benefit[] },
+  '2408003': mun2408003 as unknown as { benefits: Benefit[] },
+  '2403251': mun2403251 as unknown as { benefits: Benefit[] },
+  '2933307': mun2933307 as unknown as { benefits: Benefit[] },
+  '2913606': mun2913606 as unknown as { benefits: Benefit[] },
+  '2918407': mun2918407 as unknown as { benefits: Benefit[] },
+  '2207702': mun2207702 as unknown as { benefits: Benefit[] },
+  '2304202': mun2304202 as unknown as { benefits: Benefit[] },
+  '2307304': mun2307304 as unknown as { benefits: Benefit[] },
+  '2307650': mun2307650 as unknown as { benefits: Benefit[] },
+  '2112209': mun2112209 as unknown as { benefits: Benefit[] },
+  '2103307': mun2103307 as unknown as { benefits: Benefit[] },
+  '2513703': mun2513703 as unknown as { benefits: Benefit[] },
+  '2804805': mun2804805 as unknown as { benefits: Benefit[] },
+  '2606002': mun2606002 as unknown as { benefits: Benefit[] },
+  '2616407': mun2616407 as unknown as { benefits: Benefit[] },
+  '2610707': mun2610707 as unknown as { benefits: Benefit[] },
+  '2602902': mun2602902 as unknown as { benefits: Benefit[] },
+  // Centro-Oeste (6)
+  '5212501': mun5212501 as unknown as { benefits: Benefit[] },
+  '5218805': mun5218805 as unknown as { benefits: Benefit[] },
+  '5200258': mun5200258 as unknown as { benefits: Benefit[] },
+  '5107602': mun5107602 as unknown as { benefits: Benefit[] },
+  '5107909': mun5107909 as unknown as { benefits: Benefit[] },
+  '5008305': mun5008305 as unknown as { benefits: Benefit[] },
+  // Sudeste (10)
+  '3201209': mun3201209 as unknown as { benefits: Benefit[] },
+  '3203205': mun3203205 as unknown as { benefits: Benefit[] },
+  '3167202': mun3167202 as unknown as { benefits: Benefit[] },
+  '3122306': mun3122306 as unknown as { benefits: Benefit[] },
+  '3151800': mun3151800 as unknown as { benefits: Benefit[] },
+  '3305802': mun3305802 as unknown as { benefits: Benefit[] },
+  '3300704': mun3300704 as unknown as { benefits: Benefit[] },
+  '3526902': mun3526902 as unknown as { benefits: Benefit[] },
+  '3552403': mun3552403 as unknown as { benefits: Benefit[] },
+  '3520509': mun3520509 as unknown as { benefits: Benefit[] },
+  // Sul (8)
+  '4108304': mun4108304 as unknown as { benefits: Benefit[] },
+  '4109401': mun4109401 as unknown as { benefits: Benefit[] },
+  '4118204': mun4118204 as unknown as { benefits: Benefit[] },
+  '4316907': mun4316907 as unknown as { benefits: Benefit[] },
+  '4315602': mun4315602 as unknown as { benefits: Benefit[] },
+  '4313409': mun4313409 as unknown as { benefits: Benefit[] },
+  '4204202': mun4204202 as unknown as { benefits: Benefit[] },
+  '4204608': mun4204608 as unknown as { benefits: Benefit[] },
 };
 
 /**

@@ -55,7 +55,7 @@
         "Receba o cartão e saque o benefício"
       ],
       "sourceUrl": "https://www.sps.ce.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
       "category": "Primeira Infância"
@@ -160,118 +160,119 @@
         "Não precisa de cadastro para comer no restaurante"
       ],
       "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
-      "id": "ce-cartao-superacao",
-      "name": "Cartão Superação",
-      "shortDescription": "Complemento de renda de até R$ 300 para famílias em extrema pobreza inscritas no Bolsa Família.",
-      "scope": "state",
-      "state": "CE",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Até R$ 300 por mês como complemento"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "CE",
-          "description": "Morar no Ceará"
-        },
-        {
-          "field": "recebeBolsaFamilia",
-          "operator": "eq",
-          "value": true,
-          "description": "Receber Bolsa Família"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 356,
-          "description": "Renda familiar de até R$ 356 (extrema pobreza, ~R$ 89 por pessoa para família de 4)"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF do responsável familiar",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Continue recebendo o Bolsa Família",
-        "O governo seleciona automaticamente as famílias",
-        "O valor é depositado junto com o Bolsa Família"
-      ],
-      "sourceUrl": "https://www.sps.ce.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💪",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "ce-programa-hora-de-construir",
-      "name": "Hora de Construir",
-      "shortDescription": "Material de construção subsidiado para reformar ou ampliar sua casa.",
+      "id": "ce-cnh-popular",
+      "name": "CNH Popular",
+      "shortDescription": "Primeira habilitação gratuita (categorias A ou B) para pessoas de baixa renda inscritas no CadÚnico.",
       "scope": "state",
       "state": "CE",
       "estimatedValue": {
         "type": "one_time",
-        "min": 5000,
-        "max": 15000,
-        "description": "Crédito de até R$ 15.000 em material de construção"
+        "min": 1500,
+        "max": 2500,
+        "description": "Economia de R$ 1.500 a R$ 2.500 (custo total da habilitação coberto pelo Estado)",
+        "estimated": true,
+        "estimatedRationale": "Custo médio de CNH no Ceará entre auto-escola, exames e taxas do Detran"
       },
       "eligibilityRules": [
         {
           "field": "estado",
           "operator": "eq",
           "value": "CE",
-          "description": "Morar no Ceará"
+          "description": "Morar no Ceará (comprovar domicílio no estado)"
         },
         {
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Inscrito no Cadastro Único"
+          "description": "Inscrito no Cadastro Único (CadÚnico)"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "Site do Detran-CE (detran.ce.gov.br) ou postos do Detran nos municípios",
+      "documentsRequired": [
+        "CPF",
+        "Documento de identidade (RG)",
+        "Comprovante de domicílio no Ceará",
+        "Comprovante de inscrição no CadÚnico",
+        "Comprovante de escolaridade ou declaração de alfabetização"
+      ],
+      "howToApply": [
+        "Acesse o site detran.ce.gov.br quando abrirem as inscrições",
+        "Preencha o formulário online com seus dados",
+        "Apresente os documentos no posto do Detran",
+        "Realize aulas teóricas e práticas gratuitamente",
+        "Faça os exames (médico, psicológico, teórico e prático)"
+      ],
+      "sourceUrl": "https://www.detran.ce.gov.br/carteira-de-motorista-popular/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "ce-entrada-moradia",
+      "name": "Entrada Moradia Ceará",
+      "shortDescription": "Subsídio de R$ 20.000 para entrada do financiamento da casa própria pelo Minha Casa, Minha Vida.",
+      "scope": "state",
+      "state": "CE",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 20000,
+        "max": 20000,
+        "description": "R$ 20.000 de subsídio estadual para entrada do imóvel"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "CE",
+          "description": "Morar no Ceará há pelo menos 1 ano"
         },
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4800,
-          "description": "Renda familiar de até 3 salários mínimos"
+          "value": 4700,
+          "description": "Renda familiar bruta de até R$ 4.700 por mês"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais (ou ser emancipado)"
         }
       ],
-      "whereToApply": "Lojas credenciadas ou site do programa",
+      "whereToApply": "Site oficial entradamoradia.ce.gov.br ou correspondentes da Caixa Econômica Federal",
       "documentsRequired": [
-        "CPF e RG",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de propriedade do imóvel",
-        "Comprovante de residência",
-        "Comprovante de renda"
+        "Documento de identidade com foto",
+        "CPF",
+        "Dois comprovantes de residência (atual e de 12 meses atrás)",
+        "Certidão negativa municipal (do município do imóvel e do seu)",
+        "Certidão negativa estadual",
+        "Número da avaliação de crédito da Caixa (pré-aprovação)"
       ],
       "howToApply": [
-        "Procure uma loja credenciada do programa",
-        "Apresente os documentos para análise",
-        "Se aprovado, escolha os materiais",
-        "Pague em parcelas com juros baixos"
+        "Escolha um imóvel em empreendimento aprovado pelo programa",
+        "Faça a pré-aprovação de crédito em um correspondente da Caixa",
+        "Cadastre-se no site entradamoradia.ce.gov.br com os documentos",
+        "Receba o Certificado de Cadastro de Interesse (CCI) do Estado",
+        "Finalize o financiamento pela Caixa com o subsídio de R$ 20.000 na entrada"
       ],
-      "sourceUrl": "https://www.ceara.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.entradamoradia.ce.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "ce-bolsa-universitaria",

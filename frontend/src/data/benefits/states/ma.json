@@ -6,14 +6,14 @@
     {
       "id": "ma-maranhao-livre-da-fome",
       "name": "Maranhao Livre da Fome",
-      "shortDescription": "R$ 200 por mes + R$ 50 por crianca de 0 a 6 anos para familias em extrema pobreza. Atende 95 mil familias.",
+      "shortDescription": "R$ 300 por mês + R$ 50 por criança de 0 a 6 anos para famílias em extrema pobreza. Atende 95 mil famílias.",
       "scope": "state",
       "state": "MA",
       "estimatedValue": {
         "type": "monthly",
-        "min": 200,
-        "max": 350,
-        "description": "R$ 200 base + R$ 50 por crianca de 0 a 6 anos"
+        "min": 300,
+        "max": 500,
+        "description": "R$ 300 base + R$ 50 por criança de 0 a 6 anos + R$ 100 por membro PcD"
       },
       "eligibilityRules": [
         {
@@ -261,8 +261,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 1600,
-          "description": "Renda da família de até 1 salário mínimo"
+          "value": 1621,
+          "description": "Renda da família de até 1 salário mínimo (R$ 1.621)"
         }
       ],
       "whereToApply": "Unidade Básica de Saúde do seu município",

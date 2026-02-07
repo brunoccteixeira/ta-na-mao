@@ -4,156 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "rr-auxilio-social-roraima",
-      "name": "Auxílio Social Roraima",
-      "shortDescription": "Ajuda mensal para famílias de baixa renda de Roraima.",
-      "scope": "state",
-      "state": "RR",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 150,
-        "description": "Valor mensal conforme a família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RR",
-          "description": "Morar em Roraima"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "RG",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência em Roraima"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Faça ou atualize o Cadastro Único",
-        "O governo seleciona as famílias",
-        "Aguarde a comunicação sobre o benefício"
-      ],
-      "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "rr-vale-gas-roraima",
-      "name": "Vale Gás Roraima",
-      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda em Roraima.",
-      "scope": "state",
-      "state": "RR",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 45,
-        "max": 55,
-        "description": "4 a 6 recargas por ano via programa federal Gás do Povo (botijão ~R$ 113 em RR)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RR",
-          "description": "Morar em Roraima"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município ou revenda credenciada do Gás do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado no CRAS",
-        "A seleção é feita automaticamente pelo governo federal",
-        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
-    },
-    {
-      "id": "rr-cesta-basica-roraima",
-      "name": "Cesta Básica Roraima",
-      "shortDescription": "Distribuição de cestas básicas para famílias em situação de pobreza.",
-      "scope": "state",
-      "state": "RR",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 80,
-        "max": 120,
-        "description": "Cesta com alimentos básicos"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RR",
-          "description": "Morar em Roraima"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize o Cadastro Único",
-        "Aguarde a convocação para retirar a cesta",
-        "Leve documento com foto na retirada"
-      ],
-      "sourceUrl": "https://www.roraima.rr.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
-    },
-    {
       "id": "rr-sine-qualificacao",
       "name": "SINE Roraima - Qualificação e Emprego",
       "shortDescription": "Cursos gratuitos e vagas de emprego pelo SINE de Roraima, com vale-transporte e lanche.",
@@ -226,8 +76,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640"
+          "value": 3242,
+          "description": "Renda da família de até 2 salários mínimos (R$ 3.242)"
         },
         {
           "field": "cadastradoCadunico",
@@ -254,7 +104,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "rr-colo-de-mae",
@@ -284,8 +134,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda familiar de até R$ 2.640 (meio salário mínimo por pessoa para família de 4)"
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos (R$ 3.242)"
         }
       ],
       "whereToApply": "SETRABES Roraima ou CRAS do seu município",
@@ -352,6 +202,154 @@
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
+    },
+    {
+      "id": "rr-cesta-da-familia",
+      "name": "Cesta da Família",
+      "shortDescription": "Cesta básica ou cartão de R$ 200 por mês do governo de Roraima para famílias de baixa renda.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 200,
+        "description": "R$ 200 por mês no Cartão Alimentação ou cesta básica"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810)"
+        }
+      ],
+      "whereToApply": "SETRABES Roraima ou CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "RG ou documento com foto",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em Roraima"
+      ],
+      "howToApply": [
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "O governo seleciona as famílias pelo CadÚnico",
+        "Se selecionada, a família recebe o cartão ou cesta",
+        "Apresente documento com foto para retirar o benefício"
+      ],
+      "sourceUrl": "https://setrabes.rr.gov.br/programa-cesta-da-familia/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentação"
+    },
+    {
+      "id": "rr-morar-melhor",
+      "name": "Aqui Tem Morar Melhor",
+      "shortDescription": "Reforma gratuita de até R$ 7 mil na casa de famílias de baixa renda em Roraima.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 3000,
+        "max": 7000,
+        "description": "Reforma de até R$ 7 mil (banheiro, telhado, portas, pintura, etc.)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos (R$ 4.863)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CODESAIMA (Companhia de Desenvolvimento de Roraima) em Boa Vista",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência em Roraima",
+        "Comprovante de renda",
+        "NIS (Número do Cadastro Único)"
+      ],
+      "howToApply": [
+        "Procure a CODESAIMA em Boa Vista",
+        "Faça a inscrição no programa Aqui Tem Morar Melhor",
+        "Informe quais melhorias a casa precisa",
+        "Aguarde a visita da equipe técnica e aprovação"
+      ],
+      "sourceUrl": "https://codesaima.rr.gov.br/morar-melhor-programa-de-reformas-do-governo-de/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔨",
+      "category": "Moradia"
+    },
+    {
+      "id": "rr-potencializando-mulheres",
+      "name": "Potencializando Mulheres",
+      "shortDescription": "Capacitação e microcrédito de até R$ 10 mil para mulheres empreendedoras de baixa renda em Roraima.",
+      "scope": "state",
+      "state": "RR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1000,
+        "max": 10000,
+        "description": "Microcrédito de até R$ 10 mil com juros de 0,99% ao mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RR",
+          "description": "Morar em Roraima"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter pelo menos 18 anos"
+        }
+      ],
+      "whereToApply": "Desenvolve Roraima ou SETRABES",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência em Roraima",
+        "Comprovante de atividade empreendedora ou MEI"
+      ],
+      "howToApply": [
+        "Procure a Desenvolve Roraima ou a SETRABES",
+        "Participe da capacitação em empreendedorismo",
+        "Apresente seu plano de negócio",
+        "Se aprovada, receba o microcrédito com condições facilitadas"
+      ],
+      "sourceUrl": "https://portal.rr.gov.br/programa-do-governo-de-roraima-e-finalista-do-premio-excelencia-em-gestao-2025/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👩‍💼",
+      "category": "Qualificação Profissional"
     }
   ]
 }

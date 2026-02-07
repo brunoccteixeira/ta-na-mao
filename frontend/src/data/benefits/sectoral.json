@@ -40,7 +40,7 @@
         "Aguarde análise e liberação das parcelas"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/seguro-desemprego-do-pescador-artesanal",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🐟",
       "category": "Pescadores"
@@ -85,7 +85,7 @@
         "Aguarde análise e liberação do crédito"
       ],
       "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
       "category": "Agricultores"
@@ -118,8 +118,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2400,
-          "description": "Renda familiar de até 1,5 salário mínimo"
+          "value": 2432,
+          "description": "Renda familiar bruta mensal de até 1,5 salário mínimo (R$ 2.431,50)"
         }
       ],
       "whereToApply": "Sindicato Rural ou Secretaria de Agricultura do município",
@@ -136,7 +136,7 @@
         "Receba o benefício após confirmação"
       ],
       "sourceUrl": "https://www.gov.br/mda/pt-br/assuntos/agricultura-familiar/garantia-safra",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌧️",
       "category": "Agricultores"
@@ -175,7 +175,7 @@
         "Receba o pagamento direto na conta"
       ],
       "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/paa",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🥕",
       "category": "Agricultores"
@@ -232,7 +232,7 @@
         "Aguarde seleção e início da obra"
       ],
       "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/pnhr",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
       "category": "Agricultores"
@@ -247,7 +247,7 @@
         "type": "monthly",
         "min": 0,
         "max": 0,
-        "description": "Contribuição de R$ 81-87/mês dá direito a benefícios INSS"
+        "description": "Contribuição de R$ 82-87/mês dá direito a benefícios INSS"
       },
       "eligibilityRules": [
         {
@@ -277,7 +277,7 @@
         "Pronto! Você já é MEI"
       ],
       "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💼",
       "category": "Empreendedorismo"
@@ -314,8 +314,8 @@
         "Entregue o material reciclável coletado",
         "Receba o pagamento por quilo"
       ],
-      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/promocao-e-inclusao-produtiva",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.mg.gov.br/servico/aderir-ao-bolsa-reciclagem",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "♻️",
       "category": "Catadores"
@@ -353,7 +353,7 @@
         "Acesse Bolsa Família e outros programas se elegível"
       ],
       "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🛵",
       "category": "Entregadores"
@@ -392,7 +392,7 @@
         "Aguarde aprovação do crédito"
       ],
       "sourceUrl": "https://www.gov.br/agricultura/pt-br/assuntos/agricultura-familiar/pronaf",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚤",
       "category": "Pescadores"
@@ -405,8 +405,8 @@
       "sector": "pcd",
       "estimatedValue": {
         "type": "monthly",
-        "min": 811,
-        "max": 811,
+        "min": 810.5,
+        "max": 810.5,
         "description": "50% do salário mínimo (R$ 810,50 em 2026)"
       },
       "eligibilityRules": [
@@ -443,7 +443,7 @@
         "Se perder o emprego, pode voltar ao BPC"
       ],
       "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/beneficios-assistenciais/auxilio-inclusao",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "♿",
       "category": "PCD"
@@ -858,7 +858,7 @@
     {
       "id": "sectoral-app-mei",
       "name": "MEI para Entregadores e Motoristas",
-      "shortDescription": "Motoristas e entregadores de app podem se formalizar como MEI, pagando R$ 76/mês e tendo INSS.",
+      "shortDescription": "Motoristas e entregadores de app podem se formalizar como MEI, pagando R$ 86/mês e tendo INSS.",
       "scope": "sectoral",
       "sector": "entregador",
       "estimatedValue": {
@@ -934,7 +934,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "⚖️",
-      "category": "Entregadores"
+      "category": "Motoristas de App"
     },
     {
       "id": "sectoral-pnae",
@@ -1052,6 +1052,2199 @@
       "status": "active",
       "icon": "💳",
       "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-pcd-aposentadoria",
+      "name": "Aposentadoria da Pessoa com Deficiência",
+      "shortDescription": "Aposentadoria com idade reduzida (55/60 anos) ou tempo de contribuição menor para pessoas com deficiência.",
+      "scope": "sectoral",
+      "sector": "pcd",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8475.55,
+        "description": "De 1 salário mínimo (R$ 1.621) até o teto do INSS (R$ 8.475,55)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter deficiência comprovada por avaliação biopsicossocial"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS)",
+        "Laudos médicos comprovando a deficiência e grau",
+        "Comprovantes de contribuição ao INSS"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'aposentadoria pessoa com deficiência'",
+        "Anexe laudos médicos e documentos",
+        "Aguarde convocação para perícia biopsicossocial do INSS"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-da-pessoa-com-deficiencia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏆",
+      "category": "PCD"
+    },
+    {
+      "id": "sectoral-domestica-maternidade",
+      "name": "Salário-Maternidade Doméstica",
+      "shortDescription": "Licença de 120 dias com salário pago pelo INSS para empregada doméstica gestante ou que adotou.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 6484,
+        "max": 6484,
+        "description": "4 meses × R$ 1.621 (salário mínimo) = R$ 6.484. Valor pode ser maior conforme último salário."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadoraDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser empregada doméstica registrada"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS)",
+        "Certidão de nascimento da criança ou termo de guarda/adoção",
+        "Atestado médico (se afastamento antes do parto)"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'salário-maternidade urbano'",
+        "Anexe a certidão de nascimento ou atestado médico",
+        "Aguarde análise — duração: 120 dias de licença"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade/salario-maternidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤱",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-domestica-aposentadoria",
+      "name": "Aposentadoria Doméstica",
+      "shortDescription": "Empregada doméstica se aposenta pelo INSS: mulheres com 62 anos e 15 anos de contribuição.",
+      "scope": "sectoral",
+      "sector": "domestica",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 8475.55,
+        "description": "Mínimo 1 salário mínimo (R$ 1.621). Valor depende do tempo de contribuição."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhadoraDomestica",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser ou ter sido empregada doméstica com contribuições ao INSS"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS) com todos os registros",
+        "Comprovantes de contribuição (carnês, extratos eSocial)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Verifique se tem 62 anos (mulher) ou 65 (homem) e 15 anos de contribuição",
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'aposentadoria por idade'",
+        "Anexe documentos e aguarde análise (prazo médio: 45 dias)"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👵",
+      "category": "Domésticas"
+    },
+    {
+      "id": "sectoral-clt-seguro-desemprego",
+      "name": "Seguro-Desemprego CLT",
+      "shortDescription": "De 3 a 5 parcelas para quem foi demitido sem justa causa. Valor varia de R$ 1.621 a R$ 2.518.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 4863,
+        "max": 12593,
+        "description": "3 a 5 parcelas de R$ 1.621 a R$ 2.518,65 conforme salário anterior"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Ter sido demitido sem justa causa"
+        }
+      ],
+      "whereToApply": "App Carteira de Trabalho Digital, portal Gov.br ou unidades SINE",
+      "documentsRequired": [
+        "CPF e RG",
+        "Carteira de Trabalho (CTPS)",
+        "Termo de Rescisão do Contrato de Trabalho",
+        "Comprovantes de salário dos últimos 3 meses"
+      ],
+      "howToApply": [
+        "Solicite entre o 7º e 120º dia após a demissão",
+        "Acesse o app Carteira de Trabalho Digital ou portal Gov.br",
+        "Preencha os dados e anexe documentos",
+        "Receba as parcelas mensalmente na conta ou Caixa Tem"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛡️",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-clt-abono-pis",
+      "name": "Abono Salarial PIS",
+      "shortDescription": "Pagamento anual de até 1 salário mínimo para trabalhadores CLT que ganham até 2 salários mínimos.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 136,
+        "max": 1621,
+        "description": "Proporcional aos meses trabalhados: R$ 136 (1 mês) a R$ 1.621 (12 meses)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter trabalhado com carteira assinada no ano-base"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2766,
+          "description": "Remuneração média mensal de até R$ 2.765,93 no ano-base (limite corrigido pelo INPC, EC 135/2024)"
+        }
+      ],
+      "whereToApply": "Pagamento automático — consulte no app Carteira de Trabalho Digital ou Caixa",
+      "documentsRequired": [
+        "Nenhum — pagamento é automático com base nos dados do empregador",
+        "Para saque: documento de identidade com foto e número do PIS"
+      ],
+      "howToApply": [
+        "Consulte se tem direito no app Carteira de Trabalho Digital",
+        "O pagamento segue calendário por mês de nascimento (fev a ago)",
+        "Saque na Caixa, Banco do Brasil ou via Caixa Tem",
+        "Prazo para saque: até dezembro do ano de pagamento"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/receber-o-abono-salarial",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💵",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-clt-salario-familia",
+      "name": "Salário-Família",
+      "shortDescription": "R$ 67,54 por filho de até 14 anos para trabalhadores CLT que ganham até R$ 1.980 por mês.",
+      "scope": "sectoral",
+      "sector": "clt",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 68,
+        "max": 270,
+        "description": "R$ 67,54 por filho (até 14 anos). Exemplo: 2 filhos = R$ 135,08/mês."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter carteira assinada (CLT)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 1980,
+          "description": "Salário de até R$ 1.980,38 por mês"
+        }
+      ],
+      "whereToApply": "Solicitar ao RH da empresa (trabalhador ativo) ou Meu INSS (aposentado)",
+      "documentsRequired": [
+        "Certidão de nascimento dos filhos",
+        "Caderneta de vacinação (filhos até 6 anos)",
+        "Comprovante de matrícula escolar (filhos de 7 a 14 anos)",
+        "CPF e RG do trabalhador"
+      ],
+      "howToApply": [
+        "Solicite ao setor de RH da empresa com os documentos dos filhos",
+        "O valor aparece no contracheque todo mês",
+        "Renove semestralmente com comprovante escolar (maio e novembro)",
+        "Pai e mãe podem receber, se ambos atenderem aos critérios"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "CLT"
+    },
+    {
+      "id": "sectoral-pescador-diesel",
+      "name": "Subvenção ao Óleo Diesel",
+      "shortDescription": "Desconto de 12-17% no diesel para embarcações pesqueiras, mais subsídio federal de R$ 1,20/litro.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 2000,
+        "max": 15000,
+        "description": "Economia anual varia conforme consumo da embarcação",
+        "estimated": true,
+        "estimatedRationale": "Depende do tamanho da embarcação e frequência de pesca"
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Possuir embarcação pesqueira registrada no RGP"
+        }
+      ],
+      "whereToApply": "Ministério da Pesca e Aquicultura (MPA)",
+      "documentsRequired": [
+        "Registro Geral da Pesca (RGP) ativo",
+        "CPF ou CNPJ",
+        "Documentação da embarcação",
+        "Comprovante de compra de diesel"
+      ],
+      "howToApply": [
+        "Registre a embarcação no RGP junto ao MPA",
+        "Verifique se está na lista de embarcações aprovadas (Portaria MPA 597/2025)",
+        "Compre diesel em postos autorizados nos 14 estados participantes",
+        "Solicite reembolso em até 3 meses após a compra"
+      ],
+      "sourceUrl": "https://www.gov.br/mpa/pt-br/assuntos/oleo-diesel",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⛽",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-pescador-habitacao",
+      "name": "Habitação Rural para Pescadores",
+      "shortDescription": "Subsídio de até R$ 75 mil para construção ou R$ 40 mil para reforma de casa para pescadores artesanais.",
+      "scope": "sectoral",
+      "sector": "pescador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 40000,
+        "max": 75000,
+        "description": "Construção: R$ 75 mil. Reforma: R$ 40 mil. Adicional para região Norte."
+      },
+      "eligibilityRules": [
+        {
+          "field": "pescadorArtesanal",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser pescador artesanal em comunidade pesqueira"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria adequada"
+        }
+      ],
+      "whereToApply": "Caixa Econômica Federal ou Secretaria Municipal de Habitação",
+      "documentsRequired": [
+        "CPF e RG",
+        "Registro Geral da Pesca (RGP) ou declaração da comunidade",
+        "Comprovante de renda familiar",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Verifique se há projetos PNHR ativos no seu município",
+        "Cadastre-se na secretaria municipal de habitação",
+        "Junte-se a grupo organizado (associação, cooperativa ou sindicato)",
+        "Aguarde seleção — prioridade para menor renda e famílias vulneráveis"
+      ],
+      "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/pnhr",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Pescadores"
+    },
+    {
+      "id": "sectoral-catador-circularidade",
+      "name": "Tudo na Circularidade (BNDES)",
+      "shortDescription": "Programa do BNDES para fortalecer cooperativas de catadores com recursos de R$ 20 a R$ 100 milhões e acesso ao mercado de créditos de reciclagem.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 50000,
+        "max": 500000,
+        "description": "Valor por cooperativa varia conforme projeto (fundo total de R$ 20-100 milhões)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador organizado em cooperativa ou associação"
+        }
+      ],
+      "whereToApply": "BNDES Portal do Cliente ou organizações parceiras selecionadas",
+      "documentsRequired": [
+        "CNPJ da cooperativa ou associação",
+        "Estatuto social da cooperativa",
+        "Lista de cooperados com CPF",
+        "Projeto de fortalecimento e modernização"
+      ],
+      "howToApply": [
+        "Organize-se em cooperativa formalizada com CNPJ",
+        "Acompanhe editais no portal do BNDES",
+        "A cooperativa é apoiada por organização parceira selecionada",
+        "Receba capacitação, modernização e acesso ao mercado de Créditos de Logística Reversa"
+      ],
+      "sourceUrl": "https://www.bndes.gov.br/wps/portal/site/home/onde-atuamos/social/tudo-na-circularidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔄",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-catador-logistica-reversa",
+      "name": "Logística Reversa – PNRS",
+      "shortDescription": "Empresas são obrigadas por lei a incluir cooperativas de catadores na cadeia de reciclagem, gerando renda e contratos.",
+      "scope": "sectoral",
+      "sector": "catador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 500,
+        "max": 3000,
+        "description": "Renda varia conforme contratos com empresas e volume coletado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "catadorReciclavel",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser catador organizado em cooperativa ou associação formalizada"
+        }
+      ],
+      "whereToApply": "Sistemas setoriais de logística reversa ou diretamente com empresas obrigadas",
+      "documentsRequired": [
+        "CNPJ da cooperativa",
+        "Alvará de funcionamento",
+        "Cadastro no Cadastro Nacional de Operadores de Resíduos",
+        "Licença ambiental (se exigida pelo município)"
+      ],
+      "howToApply": [
+        "Formalize a cooperativa com CNPJ e alvará",
+        "Cadastre-se no sistema de logística reversa do setor (embalagens, eletrônicos, etc.)",
+        "Negocie contratos com empresas obrigadas pela PNRS",
+        "Receba pagamento por material coletado e triado"
+      ],
+      "sourceUrl": "https://www.gov.br/mma/pt-br/assuntos/agendaambientalurbana/lixao-zero/politica-nacional-de-residuos-solidos",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📦",
+      "category": "Catadores"
+    },
+    {
+      "id": "sectoral-entregador-inss",
+      "name": "INSS para Entregador (Código 1163)",
+      "shortDescription": "Entregador pode contribuir ao INSS como autônomo por R$ 178/mês e ter aposentadoria, auxílio-doença e salário-maternidade.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 178,31/mês (11% do SM) dá acesso a benefícios do INSS"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como entregador por conta própria"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter carteira assinada em outro emprego"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app)",
+      "documentsRequired": [
+        "CPF",
+        "Número do NIT/PIS/PASEP",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e gere a Guia de Pagamento (GPS)",
+        "Informe o código 1163 (plano simplificado 11%)",
+        "Pague R$ 178,31 até o dia 15 de cada mês",
+        "Após 12 meses, já tem direito a auxílio-doença e outros benefícios"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔒",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-entregador-acidente",
+      "name": "Auxílio-Acidente de Trabalho",
+      "shortDescription": "Se sofrer acidente trabalhando e ficar com sequela, o INSS paga 50% do salário como indenização mensal.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 810.5,
+        "max": 4238,
+        "description": "50% do salário de benefício. Mínimo R$ 810,50 (sobre SM), máximo R$ 4.237,78 (sobre teto INSS). Acumulável com salário."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser segurado do INSS (contribuinte individual ou MEI)"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "Laudos médicos comprovando sequela do acidente",
+        "CAT (Comunicação de Acidente de Trabalho)",
+        "Comprovante de contribuição ao INSS"
+      ],
+      "howToApply": [
+        "Registre o acidente: faça a CAT pelo site gov.br",
+        "Após 15 dias afastado, solicite auxílio por incapacidade no Meu INSS",
+        "Passe pela perícia médica do INSS",
+        "Se ficar com sequela permanente, receba o auxílio-acidente (B94) mensalmente"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-auxilio-acidente",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚑",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-entregador-qualificacao",
+      "name": "PRONATEC – Cursos Gratuitos",
+      "shortDescription": "Cursos profissionalizantes gratuitos em transporte, logística e segurança para entregadores e motoristas.",
+      "scope": "sectoral",
+      "sector": "entregador",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "100% gratuito — governo federal cobre matrícula, material e certificado"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 16 anos ou mais e ensino fundamental completo"
+        }
+      ],
+      "whereToApply": "Portal PRONATEC (pronatec.mec.gov.br), SENAI, SENAC ou SEST SENAT",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de escolaridade",
+        "Comprovante de residência",
+        "Inscrição no CadÚnico (para prioridade)"
+      ],
+      "howToApply": [
+        "Acesse pronatec.mec.gov.br e pesquise cursos na sua cidade",
+        "Escolha cursos em Transporte e Logística ou Segurança no Trânsito",
+        "Faça inscrição online ou na instituição parceira (SENAI, SEST SENAT)",
+        "Complete o curso e receba certificado gratuito"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/pronatec",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Entregadores"
+    },
+    {
+      "id": "sectoral-autonomo-inss-normal",
+      "name": "INSS Contribuinte Individual (Plano Normal)",
+      "shortDescription": "Autônomo contribui com 20% da renda ao INSS e garante aposentadoria por tempo de contribuição com valor acima do mínimo.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 324,20 a R$ 1.695,11/mês (20% sobre renda escolhida)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Ser trabalhador autônomo sem carteira assinada"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app)",
+      "documentsRequired": [
+        "CPF",
+        "Número do NIT/PIS/PASEP (solicite no Meu INSS se não tiver)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e gere a Guia de Pagamento (GPS)",
+        "Informe o código 1007 (plano normal 20%)",
+        "Escolha o valor de contribuição (entre R$ 1.621 e R$ 8.475,55)",
+        "Pague até o dia 15 do mês seguinte — garante aposentadoria por tempo e valor acima do mínimo"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📋",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-autonomo-inss-simplificado",
+      "name": "INSS Plano Simplificado (11%)",
+      "shortDescription": "Autônomo paga R$ 178/mês (11% do SM) e garante aposentadoria por idade, auxílio-doença e salário-maternidade.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição fixa de R$ 178,31/mês. Benefícios limitados a 1 salário mínimo."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Ser trabalhador autônomo que presta serviço a pessoas físicas"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app)",
+      "documentsRequired": [
+        "CPF",
+        "Número do NIT/PIS/PASEP",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e gere a Guia de Pagamento (GPS)",
+        "Informe o código 1163 (plano simplificado 11%)",
+        "Pague R$ 178,31 fixo todo mês até dia 15",
+        "Dá direito a aposentadoria por idade, auxílio-doença, salário-maternidade e pensão por morte"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💳",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-autonomo-microcredito",
+      "name": "PNMPO – Microcrédito Produtivo",
+      "shortDescription": "Empréstimo de R$ 300 a R$ 80 mil com juros baixos para autônomos e informais investirem no negócio.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 300,
+        "max": 80000,
+        "description": "Pessoa física: R$ 300-1.000. MEI: R$ 1.500-3.000. Limite máximo: R$ 80 mil."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Ser empreendedor informal ou autônomo com renda anual até R$ 200 mil"
+        }
+      ],
+      "whereToApply": "Caixa (Caixa Tem – SIM Digital), Banco do Brasil, Banco do Nordeste ou cooperativas de crédito",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Comprovante de atividade (informal aceito)",
+        "Descrição do uso produtivo do crédito"
+      ],
+      "howToApply": [
+        "Baixe o app Caixa Tem para a linha SIM Digital (mais rápido)",
+        "Ou procure banco parceiro do PNMPO na sua cidade",
+        "Passe por orientação sobre uso produtivo do crédito",
+        "Receba o empréstimo e pague em parcelas mensais"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/emprego-e-renda/pnmpo",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏦",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-autonomo-sebrae",
+      "name": "SEBRAE – Cursos Gratuitos Online",
+      "shortDescription": "Mais de 100 cursos online gratuitos do SEBRAE para quem quer empreender: finanças, marketing, vendas e gestão.",
+      "scope": "sectoral",
+      "sector": "autonomo",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "100% gratuito com certificado digital"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Qualquer pessoa interessada em empreender (sem restrições)"
+        }
+      ],
+      "whereToApply": "Portal SEBRAE EaD (sebrae.com.br/sites/PortalSebrae/cursosonline)",
+      "documentsRequired": [
+        "CPF",
+        "E-mail válido",
+        "Nenhum documento físico necessário"
+      ],
+      "howToApply": [
+        "Acesse sebrae.com.br e crie uma conta gratuita",
+        "Navegue pelo catálogo de cursos (finanças, marketing, vendas, gestão)",
+        "Matricule-se e estude no seu ritmo (cursos de 2h a 40h)",
+        "Receba certificado digital gratuito ao concluir"
+      ],
+      "sourceUrl": "https://sebrae.com.br/sites/PortalSebrae/cursosonline",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Autônomos"
+    },
+    {
+      "id": "sectoral-mei-das",
+      "name": "DAS-MEI – Contribuição Mensal",
+      "shortDescription": "Pague R$ 82 a R$ 87/mês como MEI e tenha direito a aposentadoria, auxílio-doença, salário-maternidade e pensão por morte.",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "DAS: R$ 82,05 (comércio), R$ 86,05 (serviços) ou R$ 87,05 (ambos). Inclui INSS + impostos."
+      },
+      "eligibilityRules": [
+        {
+          "field": "temMei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter MEI ativo com faturamento até R$ 81.000/ano"
+        }
+      ],
+      "whereToApply": "Portal do Empreendedor (gov.br/empresas) ou App MEI",
+      "documentsRequired": [
+        "CNPJ do MEI",
+        "CPF do titular",
+        "Nenhum documento físico para emitir a guia"
+      ],
+      "howToApply": [
+        "Acesse o Portal do Empreendedor ou app MEI",
+        "Clique em 'Já sou MEI' → 'Pague sua contribuição mensal'",
+        "Gere o boleto DAS com código de barras",
+        "Pague até dia 20 de cada mês — garante todos os benefícios do INSS"
+      ],
+      "sourceUrl": "https://www8.receita.fazenda.gov.br/simplesnacional/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📄",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-mei-aposentadoria",
+      "name": "Aposentadoria por Idade MEI",
+      "shortDescription": "MEI que paga o DAS por 15 anos se aposenta com 1 salário mínimo aos 62 anos (mulher) ou 65 (homem).",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621) para quem contribuiu apenas com DAS 5%"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temMei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter MEI com DAS pago por no mínimo 180 meses (15 anos)"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "CCMEI (Certificado de Condição de MEI)",
+        "Comprovantes de pagamento do DAS",
+        "Dados bancários para recebimento"
+      ],
+      "howToApply": [
+        "Verifique se tem 62 anos (mulher) ou 65 (homem) e 180 DAS pagos",
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'aposentadoria por idade'",
+        "Anexe documentos e aguarde análise (45-90 dias)"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/noticias/o-que-voce-precisa-saber-sobre-a-aposentadoria-do-mei",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏖️",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-mei-maternidade",
+      "name": "Salário-Maternidade MEI",
+      "shortDescription": "MEI gestante recebe R$ 1.621/mês por 4 meses. Basta 1 DAS pago antes do parto (decisão STF 2024).",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 6484,
+        "max": 6484,
+        "description": "4 parcelas de R$ 1.621 (salário mínimo) = R$ 6.484 total"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temMei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter MEI ativa com pelo menos 1 DAS pago antes do parto"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "CCMEI",
+        "Certidão de nascimento da criança ou termo de guarda/adoção",
+        "Comprovantes de pagamento do DAS"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'salário-maternidade'",
+        "Anexe certidão de nascimento e comprovantes DAS",
+        "Aguarde análise — receba 4 parcelas de R$ 1.621 diretamente do INSS"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-maternidade/salario-maternidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤱",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-mei-auxilio-doenca",
+      "name": "Auxílio por Incapacidade Temporária MEI",
+      "shortDescription": "MEI que não pode trabalhar por doença recebe R$ 1.621/mês do INSS após 12 meses de contribuição.",
+      "scope": "sectoral",
+      "sector": "mei",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salário mínimo (R$ 1.621) enquanto durar a incapacidade"
+      },
+      "eligibilityRules": [
+        {
+          "field": "temMei",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter MEI com 12 DAS pagos (carência dispensada para acidentes e doenças graves)"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app) ou Central 135",
+      "documentsRequired": [
+        "CPF e RG",
+        "CCMEI e comprovantes de pagamento do DAS",
+        "Laudos e atestados médicos atualizados",
+        "Exames complementares que comprovem a doença"
+      ],
+      "howToApply": [
+        "Reúna toda documentação médica (laudos, atestados, exames)",
+        "Acesse o Meu INSS e clique em Novo Pedido",
+        "Busque 'auxílio por incapacidade temporária'",
+        "Anexe documentos médicos — INSS pode aprovar sem perícia se documentação for suficiente"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/solicitar-beneficio-por-incapacidade-temporaria-auxilio-doenca",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏥",
+      "category": "Empreendedorismo"
+    },
+    {
+      "id": "sectoral-motorista-inss",
+      "name": "INSS para Motorista de App (Código 1163)",
+      "shortDescription": "Motorista de app contribui com R$ 178/mês ao INSS e garante aposentadoria, auxílio-doença e salário-maternidade.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Contribuição de R$ 178,31/mês (11% do SM). Benefícios limitados a 1 salário mínimo."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como motorista de aplicativo por conta própria"
+        }
+      ],
+      "whereToApply": "Meu INSS (site meu.inss.gov.br ou app)",
+      "documentsRequired": [
+        "CPF",
+        "Número do NIT/PIS/PASEP",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse o Meu INSS e gere a Guia de Pagamento (GPS)",
+        "Informe o código 1163 (plano simplificado 11%)",
+        "Pague R$ 178,31 até o dia 15 de cada mês",
+        "Garante aposentadoria por idade, auxílio-doença, salário-maternidade e pensão por morte"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/noticias/como-motoristas-de-aplicativo-e-mototaxistas-podem-contribuir-para-o-inss",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔒",
+      "category": "Motoristas de App"
+    },
+    {
+      "id": "sectoral-motorista-mei",
+      "name": "MEI para Motorista de App",
+      "shortDescription": "Motorista de app se formaliza como MEI pagando R$ 86/mês, ganha CNPJ, nota fiscal e cobertura do INSS.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "DAS de R$ 86,05/mês (5% INSS + ISS). Limite de faturamento: R$ 81.000/ano."
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Trabalhar como motorista de aplicativo"
+        },
+        {
+          "field": "trabalhoFormal",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter carteira assinada em outro emprego"
+        }
+      ],
+      "whereToApply": "Portal do Empreendedor (gov.br/empresas) — 100% online",
+      "documentsRequired": [
+        "CPF",
+        "Título de eleitor ou recibo do IR",
+        "Dados de contato e endereço",
+        "CNH válida"
+      ],
+      "howToApply": [
+        "Acesse gov.br/empresas e clique em 'Quero ser MEI'",
+        "Faça login com conta Gov.br",
+        "Escolha o CNAE 5229-0/99 (motorista de app) ou equivalente",
+        "Receba CNPJ na hora e pague DAS mensal de R$ 86,05"
+      ],
+      "sourceUrl": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📱",
+      "category": "Motoristas de App"
+    },
+    {
+      "id": "sectoral-motorista-cnh-gratuita",
+      "name": "CNH do Brasil – Curso Teórico Gratuito",
+      "shortDescription": "Curso teórico para tirar CNH 100% gratuito pelo app CNH do Brasil. Economia de até 80% no custo total da habilitação.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1500,
+        "max": 4000,
+        "description": "Economia estimada de R$ 1.500 a R$ 4.000 no custo da CNH",
+        "estimated": true,
+        "estimatedRationale": "Curso teórico + redução de aulas práticas de 20h para 2h"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 18 anos, saber ler e escrever (qualquer pessoa pode acessar)"
+        }
+      ],
+      "whereToApply": "App CNH do Brasil (Android/iOS) e Detran do estado",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de residência",
+        "Foto 3x4 recente",
+        "Aprovação em exame médico e psicológico (clínica credenciada pelo Detran)"
+      ],
+      "howToApply": [
+        "Baixe o app CNH do Brasil e crie sua conta",
+        "Faça exame médico/psicológico em clínica credenciada pelo Detran",
+        "Assista as videoaulas gratuitas no app e faça simulados",
+        "Ao concluir, agende prova teórica no Detran e depois prova prática"
+      ],
+      "sourceUrl": "https://www.gov.br/secom/pt-br/assuntos/noticias/2025/12/governo-do-brasil-simplifica-acesso-a-cnh-com-novo-aplicativo-e-medidas-que-modernizam-o-processo-de-habilitacao-no-pais",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Motoristas de App"
+    },
+    {
+      "id": "sectoral-motorista-qualificacao",
+      "name": "Escola do Trabalhador – Cursos Gratuitos",
+      "shortDescription": "Cursos online gratuitos de qualificação profissional para motoristas: direção defensiva, primeiros socorros e gestão financeira.",
+      "scope": "sectoral",
+      "sector": "motorista_app",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "100% gratuito com certificado reconhecido pelo MEC"
+      },
+      "eligibilityRules": [
+        {
+          "field": "trabalhaAplicativo",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter 16 anos ou mais (sem restrições de renda)"
+        }
+      ],
+      "whereToApply": "Portal Escola do Trabalhador (escoladotrabalhador.gov.br) ou PRONATEC",
+      "documentsRequired": [
+        "CPF",
+        "E-mail válido",
+        "Nenhum documento físico necessário para inscrição"
+      ],
+      "howToApply": [
+        "Acesse escoladotrabalhador.gov.br e crie uma conta",
+        "Escolha cursos em Transporte, Logística ou Empreendedorismo",
+        "Estude online no seu ritmo (cursos de 10h a 60h)",
+        "Receba certificado digital gratuito ao concluir"
+      ],
+      "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Motoristas de App"
+    },
+    {
+      "id": "sectoral-servidor-auxilio-alimentacao",
+      "name": "Auxílio Alimentação (Servidor Federal)",
+      "shortDescription": "Benefício mensal de R$ 1.000 para alimentação, pago a servidores públicos federais ativos.",
+      "scope": "sectoral",
+      "sector": "servidor_publico",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 1000,
+        "max": 1000,
+        "description": "R$ 1.000/mês (valor reajustado em 2023, Decreto 11.678)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal ativo"
+        },
+        {
+          "field": "jornadaTrabalho",
+          "operator": "gte",
+          "value": 30,
+          "description": "Jornada mínima de 30 horas semanais"
+        }
+      ],
+      "whereToApply": "Órgão de lotação (RH do órgão federal)",
+      "documentsRequired": [
+        "Contracheque",
+        "Comprovante de exercício"
+      ],
+      "howToApply": [
+        "O benefício é concedido automaticamente ao servidor ativo",
+        "Verifique no contracheque se o auxílio está sendo pago",
+        "Em caso de problema, procure o RH do seu órgão"
+      ],
+      "sourceUrl": "https://www.gov.br/servidor/pt-br/assuntos/remuneracao/auxilio-alimentacao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Servidores Públicos"
+    },
+    {
+      "id": "sectoral-servidor-auxilio-saude",
+      "name": "Auxílio Saúde (Per Capita Saúde)",
+      "shortDescription": "Subsídio mensal para plano de saúde do servidor federal e dependentes. Valor varia por faixa etária.",
+      "scope": "sectoral",
+      "sector": "servidor_publico",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 148,
+        "max": 442,
+        "description": "R$ 148 a R$ 442/mês por beneficiário, conforme faixa etária (Portaria SGP/SEDGG/ME 10/2023)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal ativo ou aposentado"
+        },
+        {
+          "field": "planoSaude",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar inscrito em plano de saúde"
+        }
+      ],
+      "whereToApply": "Órgão de lotação (RH) ou pelo SIAPE Saúde",
+      "documentsRequired": [
+        "Comprovante do plano de saúde",
+        "Boleto ou fatura pago",
+        "Dados dos dependentes"
+      ],
+      "howToApply": [
+        "Contrate um plano de saúde em operadora credenciada",
+        "Solicite o auxílio saúde pelo SIAPE ou RH do órgão",
+        "Apresente comprovante mensal de pagamento do plano"
+      ],
+      "sourceUrl": "https://www.gov.br/servidor/pt-br/assuntos/remuneracao/auxilio-saude",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏥",
+      "category": "Servidores Públicos"
+    },
+    {
+      "id": "sectoral-servidor-auxilio-transporte",
+      "name": "Auxílio Transporte (Servidor Federal)",
+      "shortDescription": "Ressarcimento de despesas com transporte entre residência e trabalho do servidor público federal.",
+      "scope": "sectoral",
+      "sector": "servidor_publico",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 600,
+        "description": "Valor variável: diferença entre gastos com transporte e 6% do vencimento básico"
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal ativo"
+        },
+        {
+          "field": "usaTransportePublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Utilizar transporte público regular"
+        }
+      ],
+      "whereToApply": "Órgão de lotação (RH do órgão federal)",
+      "documentsRequired": [
+        "Declaração de endereço residencial",
+        "Informação do itinerário de transporte",
+        "Comprovante de valores das passagens"
+      ],
+      "howToApply": [
+        "Solicite o auxílio transporte ao RH do órgão",
+        "Informe o itinerário casa-trabalho-casa",
+        "O desconto de 6% do vencimento básico é automático"
+      ],
+      "sourceUrl": "https://www.gov.br/servidor/pt-br/assuntos/remuneracao/auxilio-transporte",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Servidores Públicos"
+    },
+    {
+      "id": "sectoral-servidor-auxilio-creche",
+      "name": "Auxílio Pré-Escolar (Creche)",
+      "shortDescription": "Auxílio mensal para custear creche ou pré-escola de filhos de servidores federais até 5 anos.",
+      "scope": "sectoral",
+      "sector": "servidor_publico",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 321,
+        "max": 321,
+        "description": "R$ 321/mês por dependente de até 5 anos (Decreto 977/1993, atualizado)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal ativo"
+        },
+        {
+          "field": "temFilhosMenores",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter filho(s) de até 5 anos de idade"
+        }
+      ],
+      "whereToApply": "Órgão de lotação (RH do órgão federal)",
+      "documentsRequired": [
+        "Certidão de nascimento do dependente",
+        "Comprovante de matrícula em creche/pré-escola",
+        "Declaração de que o cônjuge não recebe o mesmo benefício"
+      ],
+      "howToApply": [
+        "Solicite ao RH com certidão de nascimento do filho",
+        "Apresente comprovante de matrícula na creche/pré-escola",
+        "Declare que o cônjuge não recebe benefício igual"
+      ],
+      "sourceUrl": "https://www.gov.br/servidor/pt-br/assuntos/remuneracao/auxilio-pre-escolar",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Servidores Públicos"
+    },
+    {
+      "id": "sectoral-servidor-licenca-capacitacao",
+      "name": "Licença para Capacitação",
+      "shortDescription": "Afastamento remunerado de até 3 meses para cursos de capacitação, a cada 5 anos de serviço público.",
+      "scope": "sectoral",
+      "sector": "servidor_publico",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Licença remunerada de até 90 dias (mantém salário integral)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal efetivo"
+        },
+        {
+          "field": "tempoServico",
+          "operator": "gte",
+          "value": 5,
+          "description": "Ter completado 5 anos de efetivo exercício (quinquênio)"
+        }
+      ],
+      "whereToApply": "Órgão de lotação (RH ou unidade de gestão de pessoas)",
+      "documentsRequired": [
+        "Plano de desenvolvimento individual",
+        "Comprovante de matrícula no curso",
+        "Justificativa de interesse da Administração"
+      ],
+      "howToApply": [
+        "Complete 5 anos de efetivo exercício no serviço público federal",
+        "Escolha um curso alinhado ao seu plano de desenvolvimento",
+        "Solicite a licença ao RH com antecedência mínima de 30 dias",
+        "Aguarde autorização da chefia e do órgão"
+      ],
+      "sourceUrl": "https://www.gov.br/servidor/pt-br/assuntos/servidor-governanca/capacitacao/licenca-para-capacitacao",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Servidores Públicos"
+    },
+    {
+      "id": "sectoral-estudante-bolsa-permanencia",
+      "name": "Bolsa Permanência MEC",
+      "shortDescription": "Auxílio mensal de R$ 400 a R$ 900 para estudantes de baixa renda em universidades federais.",
+      "scope": "sectoral",
+      "sector": "estudante",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 900,
+        "description": "R$ 400/mês (geral) ou R$ 900/mês (indígenas e quilombolas)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em instituição federal de ensino superior"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita familiar de até meio salário mínimo"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        }
+      ],
+      "whereToApply": "Coordenação de assistência estudantil da universidade",
+      "documentsRequired": [
+        "Documento de identidade e CPF",
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "Verifique o edital de seleção da sua universidade",
+        "Inscreva-se no sistema da assistência estudantil",
+        "Apresente documentos comprobatórios de renda",
+        "Aguarde resultado da seleção"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/bolsa-permanencia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Estudantes"
+    },
+    {
+      "id": "sectoral-estudante-auxilio-moradia",
+      "name": "Auxílio Moradia Universitário",
+      "shortDescription": "Apoio para moradia de estudantes de baixa renda em universidades federais, via PNAES.",
+      "scope": "sectoral",
+      "sector": "estudante",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "R$ 300 a R$ 600/mês (varia por universidade, via PNAES)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em universidade federal"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita familiar de até meio salário mínimo"
+        },
+        {
+          "field": "resideFora",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir fora do município de origem"
+        }
+      ],
+      "whereToApply": "Pró-Reitoria de Assuntos Estudantis (PRAE) da universidade",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda",
+        "Declaração de que não possui moradia no município"
+      ],
+      "howToApply": [
+        "Procure a assistência estudantil da sua universidade",
+        "Inscreva-se no edital de auxílio moradia",
+        "Comprove situação de vulnerabilidade socioeconômica",
+        "Pode ser moradia estudantil (vaga) ou auxílio em dinheiro"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/pnaes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Estudantes"
+    },
+    {
+      "id": "sectoral-estudante-restaurante-universitario",
+      "name": "Restaurante Universitário Subsidiado",
+      "shortDescription": "Refeições a preço reduzido ou gratuitas para estudantes de baixa renda em universidades federais.",
+      "scope": "sectoral",
+      "sector": "estudante",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeições de R$ 0 (gratuitas) a R$ 2,50 para alunos vulneráveis — economia de até R$ 400/mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em universidade federal"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo (para gratuidade)"
+        }
+      ],
+      "whereToApply": "Restaurante Universitário da instituição ou PRAE",
+      "documentsRequired": [
+        "Carteira de estudante",
+        "Comprovante de renda (para subsídio total)"
+      ],
+      "howToApply": [
+        "Com a matrícula ativa, já pode usar o RU com preço reduzido",
+        "Para isenção total, solicite na assistência estudantil",
+        "Comprove renda per capita de até meio salário mínimo"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/pnaes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍛",
+      "category": "Estudantes"
+    },
+    {
+      "id": "sectoral-estudante-auxilio-transporte",
+      "name": "Auxílio Transporte Estudantil",
+      "shortDescription": "Apoio financeiro para deslocamento de estudantes de baixa renda até a universidade, via PNAES.",
+      "scope": "sectoral",
+      "sector": "estudante",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 300,
+        "description": "R$ 150 a R$ 300/mês (varia por universidade e distância)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em universidade federal"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita familiar de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Pró-Reitoria de Assuntos Estudantis (PRAE)",
+      "documentsRequired": [
+        "CPF e RG",
+        "Comprovante de matrícula",
+        "Comprovante de renda",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Consulte o edital de assistência estudantil da sua universidade",
+        "Inscreva-se no programa de auxílio transporte",
+        "Comprove necessidade de deslocamento e vulnerabilidade econômica"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/pnaes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚍",
+      "category": "Estudantes"
+    },
+    {
+      "id": "sectoral-estudante-auxilio-material",
+      "name": "Auxílio Material Didático",
+      "shortDescription": "Apoio financeiro para compra de material de estudo para alunos de baixa renda em universidades federais.",
+      "scope": "sectoral",
+      "sector": "estudante",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 300,
+        "max": 600,
+        "description": "R$ 300 a R$ 600/ano (varia por universidade, via PNAES)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em universidade federal"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita familiar de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Pró-Reitoria de Assuntos Estudantis (PRAE)",
+      "documentsRequired": [
+        "Comprovante de matrícula",
+        "Comprovante de renda familiar",
+        "Lista de materiais necessários"
+      ],
+      "howToApply": [
+        "Inscreva-se no programa de auxílio da assistência estudantil",
+        "Apresente lista de materiais do curso",
+        "Comprove situação de vulnerabilidade socioeconômica"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/pnaes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📖",
+      "category": "Estudantes"
+    },
+    {
+      "id": "sectoral-idoso-gratuidade-transporte",
+      "name": "Gratuidade no Transporte Público (65+)",
+      "shortDescription": "Pessoas com 65 anos ou mais têm direito a transporte público gratuito em todo o Brasil.",
+      "scope": "sectoral",
+      "sector": "idoso",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Gratuidade total — economia de até R$ 300/mês em passagens"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 65,
+          "description": "Ter 65 anos ou mais"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "Art. 230, §2º, CF/88",
+            "description": "Gratuidade aos maiores de 65 anos nos transportes coletivos urbanos",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          }
+        ]
+      },
+      "whereToApply": "Empresa de transporte público local ou secretaria de transportes",
+      "documentsRequired": [
+        "RG ou documento com foto e data de nascimento",
+        "Comprovante de residência",
+        "Foto 3x4 (para cartão)"
+      ],
+      "howToApply": [
+        "Dirija-se à empresa de transporte ou posto de atendimento",
+        "Apresente documento com foto e comprovante de idade",
+        "Solicite o cartão de gratuidade do idoso",
+        "Em muitas cidades, basta apresentar o RG no embarque"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-direito-a-transporte-gratuito-para-idosos",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Idosos"
+    },
+    {
+      "id": "sectoral-idoso-meia-entrada",
+      "name": "Meia-Entrada para Idosos (60+)",
+      "shortDescription": "Idosos com 60 anos ou mais pagam meia-entrada em eventos culturais, esportivos e de lazer.",
+      "scope": "sectoral",
+      "sector": "idoso",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "50% de desconto em ingressos de eventos, cinema, teatro, shows e esportes"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.741/2003",
+            "description": "Estatuto do Idoso, Art. 23",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+          }
+        ]
+      },
+      "whereToApply": "Diretamente na bilheteria do evento",
+      "documentsRequired": [
+        "Documento de identidade com foto"
+      ],
+      "howToApply": [
+        "Apresente documento de identidade na bilheteria",
+        "Solicite o ingresso com desconto de 50%",
+        "O direito é garantido por lei — não é necessário cadastro prévio"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎭",
+      "category": "Idosos"
+    },
+    {
+      "id": "sectoral-idoso-centro-convivencia",
+      "name": "Centro de Convivência do Idoso (CRAS)",
+      "shortDescription": "Atividades socioeducativas, culturais e de convivência para idosos nos CRAS, gratuitas.",
+      "scope": "sectoral",
+      "sector": "idoso",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Serviço gratuito — atividades de convivência, oficinas, grupos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        }
+      ],
+      "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
+      "documentsRequired": [
+        "RG e CPF",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS mais próximo da sua casa",
+        "Solicite inscrição no Serviço de Convivência e Fortalecimento de Vínculos",
+        "Participe das atividades regulares oferecidas"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/suas/servicos-e-programas/servico-de-convivencia-e-fortalecimento-de-vinculos",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤝",
+      "category": "Idosos"
+    },
+    {
+      "id": "sectoral-idoso-prioridade-habitacao",
+      "name": "Prioridade na Habitação (MCMV)",
+      "shortDescription": "Idosos têm prioridade de 3% das unidades no Minha Casa Minha Vida e acessibilidade garantida.",
+      "scope": "sectoral",
+      "sector": "idoso",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Prioridade no sorteio — 3% das unidades habitacionais reservadas para idosos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 2850,
+          "description": "Renda familiar de até R$ 2.850 (Faixa 1 MCMV)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.418/2011",
+            "description": "Reserva de 3% das unidades habitacionais para idosos",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12418.htm"
+          },
+          {
+            "type": "lei",
+            "number": "10.741/2003",
+            "description": "Estatuto do Idoso, Art. 38",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+          }
+        ]
+      },
+      "whereToApply": "Prefeitura ou CRAS do município",
+      "documentsRequired": [
+        "RG e CPF",
+        "Comprovante de renda",
+        "Comprovante de residência",
+        "NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "Inscreva-se no Cadastro Único (CRAS)",
+        "Inscreva-se no programa habitacional da prefeitura",
+        "Informe que tem 60+ anos para garantir prioridade",
+        "Aguarde o sorteio — idosos têm cota reservada"
+      ],
+      "sourceUrl": "https://www.gov.br/cidades/pt-br/acoes-e-programas/habitacao/minha-casa-minha-vida",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Idosos"
+    },
+    {
+      "id": "sectoral-idoso-carteira-idoso",
+      "name": "Carteira do Idoso",
+      "shortDescription": "Documento que garante viagem interestadual gratuita ou com 50% de desconto para idosos de baixa renda.",
+      "scope": "sectoral",
+      "sector": "idoso",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "2 vagas gratuitas por ônibus interestadual (ou 50% de desconto nas demais)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "10.741/2003",
+            "description": "Estatuto do Idoso, Art. 40",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS ou online pelo Gov.br",
+      "documentsRequired": [
+        "RG e CPF",
+        "NIS (Cadastro Único)",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Tenha o Cadastro Único atualizado com renda de até 2 SM",
+        "Solicite a Carteira do Idoso no CRAS ou pelo Gov.br",
+        "Com a carteira, reserve passagem gratuita na rodoviária",
+        "São 2 vagas gratuitas por ônibus — demais com 50% de desconto"
+      ],
+      "sourceUrl": "https://www.gov.br/pt-br/servicos/obter-carteira-do-idoso",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🪪",
+      "category": "Idosos"
+    },
+    {
+      "id": "sectoral-gestante-rede-cegonha",
+      "name": "Rede Cegonha (Pré-Natal + Parto SUS)",
+      "shortDescription": "Atendimento integral à gestante pelo SUS: pré-natal, parto, pós-parto e atenção ao bebê até 2 anos.",
+      "scope": "sectoral",
+      "sector": "gestante",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito pelo SUS — pré-natal completo, exames, parto e pós-parto"
+      },
+      "eligibilityRules": [
+        {
+          "field": "gestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gestante ou em pós-parto (até 2 anos do bebê)"
+        }
+      ],
+      "whereToApply": "UBS (Unidade Básica de Saúde) mais próxima",
+      "documentsRequired": [
+        "Cartão SUS",
+        "RG e CPF",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure a UBS assim que souber da gravidez",
+        "Inicie o pré-natal (mínimo 6 consultas)",
+        "Realize todos os exames oferecidos gratuitamente",
+        "O parto será agendado em maternidade SUS vinculada"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/r/rede-cegonha",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤰",
+      "category": "Gestantes"
+    },
+    {
+      "id": "sectoral-gestante-kit-maternidade",
+      "name": "Kit Maternidade (Enxoval do Bebê)",
+      "shortDescription": "Kit com itens essenciais para o recém-nascido, distribuído em maternidades SUS para mães de baixa renda.",
+      "scope": "sectoral",
+      "sector": "gestante",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 200,
+        "description": "Kit gratuito com enxoval básico (varia por município/estado)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "gestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gestante com pré-natal no SUS"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo (critério varia por município)"
+        }
+      ],
+      "whereToApply": "UBS durante o pré-natal ou maternidade SUS no parto",
+      "documentsRequired": [
+        "Cartão de pré-natal atualizado",
+        "Cartão SUS",
+        "RG e CPF"
+      ],
+      "howToApply": [
+        "Faça o pré-natal completo no SUS",
+        "Informe-se na UBS sobre o kit maternidade do seu município",
+        "O kit geralmente é entregue na maternidade no momento do parto",
+        "Disponibilidade varia conforme o estado/município"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/r/rede-cegonha",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎁",
+      "category": "Gestantes",
+      "metadata": {
+        "disclaimer": "Disponibilidade do kit varia por município e estado. Consulte sua UBS."
+      }
+    },
+    {
+      "id": "sectoral-gestante-auxilio-natalidade",
+      "name": "Auxílio Natalidade (Servidor Público)",
+      "shortDescription": "Pagamento único de 1 salário mínimo ao servidor público federal por ocasião do nascimento de filho.",
+      "scope": "sectoral",
+      "sector": "gestante",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1621,
+        "max": 1621,
+        "description": "R$ 1.621 por nascimento (1 salário mínimo). Para gêmeos: valor em dobro."
+      },
+      "eligibilityRules": [
+        {
+          "field": "servidorPublico",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser servidor público federal ativo ou dependente de servidor"
+        },
+        {
+          "field": "nascimentoFilho",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter tido filho recentemente"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.112/1990",
+            "description": "Regime Jurídico dos Servidores Federais, Art. 196",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8112cons.htm"
+          }
+        ]
+      },
+      "whereToApply": "RH do órgão de lotação",
+      "documentsRequired": [
+        "Certidão de nascimento do filho",
+        "Requerimento ao RH"
+      ],
+      "howToApply": [
+        "Após o nascimento, obtenha a certidão de nascimento",
+        "Protocole o requerimento no RH do órgão",
+        "O pagamento é feito em parcela única no contracheque"
+      ],
+      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l8112cons.htm",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👼",
+      "category": "Gestantes"
+    },
+    {
+      "id": "sectoral-gestante-primeira-infancia-bf",
+      "name": "Benefício Primeira Infância (Bolsa Família)",
+      "shortDescription": "Adicional de R$ 150 por criança de 0 a 6 anos no Bolsa Família, além do piso de R$ 600.",
+      "scope": "sectoral",
+      "sector": "gestante",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150/mês por criança de 0 a 6 anos (adicional ao piso de R$ 600)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda per capita de até R$ 218"
+        },
+        {
+          "field": "temFilhosMenores",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter criança de 0 a 6 anos na família"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "14.601/2023",
+            "description": "Lei do Bolsa Família, Art. 7º",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm"
+          }
+        ]
+      },
+      "whereToApply": "CRAS — benefício automático para quem já recebe Bolsa Família",
+      "documentsRequired": [
+        "Cadastro Único atualizado com dados das crianças"
+      ],
+      "howToApply": [
+        "Se já recebe Bolsa Família, o adicional é automático",
+        "Certifique-se de que as crianças estão no Cadastro Único",
+        "Mantenha o cadastro atualizado com datas de nascimento corretas"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Gestantes"
+    },
+    {
+      "id": "sectoral-gestante-licenca-maternidade",
+      "name": "Licença-Maternidade",
+      "shortDescription": "Afastamento remunerado de 120 a 180 dias para gestantes com vínculo CLT ou contribuintes do INSS.",
+      "scope": "sectoral",
+      "sector": "gestante",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1621,
+        "max": 0,
+        "description": "Salário integral por 120 dias (CLT) ou 180 dias (Empresa Cidadã/servidor). Mínimo = salário mínimo."
+      },
+      "eligibilityRules": [
+        {
+          "field": "gestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar gestante ou ter dado à luz recentemente"
+        },
+        {
+          "field": "contribuinteINSS",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter contribuído ao INSS (carência de 10 meses para contribuinte individual)"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "Art. 7º, XVIII, CF/88",
+            "description": "Licença à gestante de 120 dias",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "lei",
+            "number": "11.770/2008",
+            "description": "Programa Empresa Cidadã — extensão para 180 dias",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11770.htm"
+          }
+        ]
+      },
+      "whereToApply": "Empregador (CLT) ou Meu INSS (contribuinte individual/MEI)",
+      "documentsRequired": [
+        "Atestado médico ou certidão de nascimento",
+        "Carteira de trabalho ou carnê INSS",
+        "CPF"
+      ],
+      "howToApply": [
+        "CLT: comunique o empregador com atestado médico a partir de 28 dias antes do parto",
+        "Contribuinte individual/MEI: solicite pelo Meu INSS (app ou site)",
+        "O salário-maternidade é pago pelo empregador (CLT) ou INSS (individual)"
+      ],
+      "sourceUrl": "https://www.gov.br/inss/pt-br/saiba-mais/seus-direitos/salario-maternidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤱",
+      "category": "Gestantes"
+    },
+    {
+      "id": "sectoral-indigena-bolsa-permanencia",
+      "name": "Bolsa Permanência Indígena/Quilombola",
+      "shortDescription": "Auxílio mensal de R$ 900 para estudantes indígenas e quilombolas em universidades federais.",
+      "scope": "sectoral",
+      "sector": "indigena_quilombola",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 900,
+        "max": 900,
+        "description": "R$ 900/mês (valor diferenciado, o dobro da bolsa regular de R$ 400)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em universidade federal"
+        },
+        {
+          "field": "indigenaOuQuilombola",
+          "operator": "eq",
+          "value": true,
+          "description": "Autodeclarado indígena ou quilombola"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Coordenação de assistência estudantil da universidade",
+      "documentsRequired": [
+        "Documento de identidade",
+        "Comprovante de matrícula",
+        "Declaração de pertencimento étnico (FUNAI ou comunidade quilombola)",
+        "NIS (Cadastro Único)"
+      ],
+      "howToApply": [
+        "Inscreva-se no edital de Bolsa Permanência da universidade",
+        "Apresente declaração de pertencimento étnico",
+        "Comprove renda per capita de até meio SM",
+        "O valor diferenciado (R$ 900) é automático para indígenas/quilombolas"
+      ],
+      "sourceUrl": "https://www.gov.br/mec/pt-br/assuntos/bolsa-permanencia",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🎓",
+      "category": "Povos Tradicionais"
+    },
+    {
+      "id": "sectoral-indigena-cisternas",
+      "name": "Programa Cisternas (Água para Todos)",
+      "shortDescription": "Instalação gratuita de cisternas para captação de água da chuva em comunidades rurais e tradicionais.",
+      "scope": "sectoral",
+      "sector": "indigena_quilombola",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Cisterna de 16.000 litros gratuita — Primeira Água (consumo) ou Segunda Água (produção)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "areaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em área rural do semiárido ou região com escassez hídrica"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 218,
+          "description": "Renda per capita de até R$ 218 (extrema pobreza)"
+        }
+      ],
+      "whereToApply": "Prefeitura, CRAS ou entidade parceira (ASA, Cáritas)",
+      "documentsRequired": [
+        "NIS (Cadastro Único)",
+        "CPF e RG",
+        "Comprovante de residência rural"
+      ],
+      "howToApply": [
+        "Tenha o Cadastro Único atualizado",
+        "Procure a prefeitura ou CRAS sobre o programa",
+        "A seleção prioriza famílias em extrema pobreza no semiárido",
+        "Capacitação em gestão da água faz parte do programa"
+      ],
+      "sourceUrl": "https://www.gov.br/mds/pt-br/acoes-e-programas/acesso-a-agua",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💧",
+      "category": "Povos Tradicionais"
+    },
+    {
+      "id": "sectoral-indigena-sesai",
+      "name": "SESAI — Saúde Indígena",
+      "shortDescription": "Atendimento de saúde gratuito e diferenciado para povos indígenas, nos Distritos Sanitários Especiais (DSEI).",
+      "scope": "sectoral",
+      "sector": "indigena_quilombola",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Atendimento gratuito integral — equipes multidisciplinares nas aldeias"
+      },
+      "eligibilityRules": [
+        {
+          "field": "indigena",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser indígena (aldeado ou em contexto urbano, cadastrado na SESAI)"
+        }
+      ],
+      "whereToApply": "Polo Base ou Casa de Saúde Indígena (CASAI) mais próxima",
+      "documentsRequired": [
+        "Registro de nascimento indígena (RANI) ou documento de identificação",
+        "Cartão SUS"
+      ],
+      "howToApply": [
+        "Procure o polo base de saúde mais próximo da sua aldeia/comunidade",
+        "Solicite cadastro no DSEI (Distrito Sanitário Especial Indígena) da sua região",
+        "Atendimento inclui vacinação, pré-natal, odontologia e remoções",
+        "Em contexto urbano, procure a CASAI (Casa de Saúde Indígena)"
+      ],
+      "sourceUrl": "https://www.gov.br/saude/pt-br/composicao/sesai",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏥",
+      "category": "Povos Tradicionais"
+    },
+    {
+      "id": "sectoral-indigena-pnae-diferenciado",
+      "name": "PNAE Indígena e Quilombola",
+      "shortDescription": "Merenda escolar diferenciada com valor 60% maior para escolas indígenas e quilombolas.",
+      "scope": "sectoral",
+      "sector": "indigena_quilombola",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 0,
+        "description": "R$ 0,64/aluno/dia (60% acima do PNAE regular de R$ 0,40) — gratuito para o estudante"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em escola pública em área indígena ou quilombola"
+        },
+        {
+          "field": "indigenaOuQuilombola",
+          "operator": "eq",
+          "value": true,
+          "description": "Pertencer a comunidade indígena ou quilombola"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "11.947/2009",
+            "description": "Lei do PNAE",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11947.htm"
+          }
+        ]
+      },
+      "whereToApply": "Escola — o benefício é automático para escolas em áreas indígenas/quilombolas",
+      "documentsRequired": [
+        "Matrícula em escola da comunidade"
+      ],
+      "howToApply": [
+        "O PNAE diferenciado é automático para escolas indígenas e quilombolas",
+        "Basta estar matriculado em escola pública da comunidade",
+        "O cardápio deve respeitar hábitos alimentares tradicionais",
+        "Mínimo 30% dos alimentos devem vir da agricultura familiar local"
+      ],
+      "sourceUrl": "https://www.gov.br/fnde/pt-br/acoes/pnae",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Povos Tradicionais"
+    },
+    {
+      "id": "sectoral-indigena-titulacao-terras",
+      "name": "Titulação de Territórios Quilombolas",
+      "shortDescription": "Regularização fundiária e titulação de terras para comunidades quilombolas pelo INCRA.",
+      "scope": "sectoral",
+      "sector": "indigena_quilombola",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Título coletivo de propriedade da terra — processo gratuito"
+      },
+      "eligibilityRules": [
+        {
+          "field": "quilombola",
+          "operator": "eq",
+          "value": true,
+          "description": "Pertencer a comunidade remanescente de quilombo"
+        },
+        {
+          "field": "certidaoPalmares",
+          "operator": "eq",
+          "value": true,
+          "description": "Comunidade certificada pela Fundação Cultural Palmares"
+        }
+      ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "constituicao",
+            "number": "Art. 68, ADCT, CF/88",
+            "description": "Reconhecimento de terras quilombolas",
+            "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "4.887/2003",
+            "description": "Regulamenta a titulação de terras quilombolas",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/decreto/d4887.htm"
+          }
+        ]
+      },
+      "whereToApply": "INCRA (Instituto Nacional de Colonização e Reforma Agrária)",
+      "documentsRequired": [
+        "Certidão de autodefinição (Fundação Palmares)",
+        "Relatório Técnico de Identificação e Delimitação (RTID)",
+        "Documentação histórica da comunidade"
+      ],
+      "howToApply": [
+        "A comunidade deve obter certificação da Fundação Cultural Palmares",
+        "Solicitar ao INCRA a abertura de processo de titulação",
+        "O INCRA realiza estudo técnico (RTID) na área",
+        "Após publicação e eventuais contestações, o título é emitido coletivamente"
+      ],
+      "sourceUrl": "https://www.gov.br/incra/pt-br/assuntos/quilombolas",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏞️",
+      "category": "Povos Tradicionais"
     }
   ]
 }

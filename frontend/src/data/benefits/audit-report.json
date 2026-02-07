@@ -1,0 +1,834 @@
+{
+  "total_benefits": 299,
+  "total_findings": 117,
+  "severity_counts": {
+    "LOW": 115,
+    "INFO": 2
+  },
+  "category_counts": {
+    "urls": 92,
+    "content": 23,
+    "crossref": 2
+  },
+  "findings": [
+    {
+      "benefit_id": "federal-svr",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://valoresareceber.bcb.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "federal-prouni",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://prouniportal.mec.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "federal-fies",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://fies.mec.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sectoral-clt-13-ferias",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "sectoral-app-regulamentacao",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "ac-auxilio-renda-acre",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ac.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ac-qualifica-acre",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://sine.ac.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ac-cohab-acre",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://cohab.acre.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ac-bolsa-educacao-acre",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://see.ac.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "al-cartao-cria",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.al.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "al-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.al.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "al-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "al-prepara-jovem",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.al.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "am-auxilio-estadual-permanente",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seas.am.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "am-prato-cheio",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seas.am.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "am-prato-cheio",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "ap-bolsa-educacao-amapa",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.amapa.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ba-bolsa-presenca",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://bolsapresenca.educacao.ba.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ba-mais-futuro",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ba.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ba-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sjdhds.ba.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ba-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "ba-agua-para-todos",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://aguaparatodos.ba.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ba-mae-bahia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.saude.ba.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ce-cartao-mais-infancia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sps.ce.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ce-ceara-sem-fome",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ceara.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ce-entrada-moradia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.entradamoradia.ce.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ce-bolsa-universitaria",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seduc.ce.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ce-vaivem",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.vaivem.ce.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "df-cartao-prato-cheio",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sedes.df.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "df-df-social",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sedes.df.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "df-cartao-material-escolar",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sedes.df.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "df-restaurante-comunitario",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sedes.df.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "df-restaurante-comunitario",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "es-nossa-bolsa",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://nossabolsa.es.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "es-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "es-qualificar-es",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://qualificar.es.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "go-restaurante-do-bem",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.goias.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "go-restaurante-do-bem",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "go-goias-por-elas",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.goias.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "go-aprendiz-do-futuro",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://aprendizdofuturo.org.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ma-maranhao-livre-da-fome",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://maranhaolivredafome.ma.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ma-cozinha-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ma.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ma-cozinha-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "ma-qualifica-maranhao",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.educacao.ma.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ma-bolsa-estudante-destaque",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ma.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mg-piso-mineiro",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.social.mg.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mg-piso-mineiro",
+      "category": "content",
+      "severity": "LOW",
+      "message": "shortDescription too long (203 chars, max 200)",
+      "field": "shortDescription"
+    },
+    {
+      "benefit_id": "mg-piso-mineiro",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "mg-bolsa-merenda",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.educacao.mg.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mg-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.social.mg.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mg-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "ms-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.ms.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "ms-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "mt-ser-familia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.mt.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mt-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.mt.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mt-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "mt-peq-qualifica",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.secitec.mt.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "mt-bolsa-estudantil",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seduc.mt.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pa-vale-gas",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seaster.pa.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pa-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seaster.pa.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pa-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "pa-primeiro-oficio",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seaster.pa.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pb-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.paraiba.pb.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pb-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "pb-cesta-basica",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.paraiba.pb.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pb-bolsa-permanencia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://fapesq.rpp.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pe-mae-coruja",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.maecoruja.pe.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pe-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.pe.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pe-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "pe-todos-com-agua",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.pe.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pe-qualifica-pe",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sedepe.pe.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-agua-para-todos",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-qualifica-piaui",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-alfabetiza-piaui",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.seduc.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-primeira-infancia",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://primeirainfancia.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-saude-digital",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.saude.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pi-cnh-social",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.detran.pi.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pr-cartao-futuro",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.cartaofuturo.pr.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pr-familia-paranaense",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.desenvolvimentosocial.pr.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pr-leite-das-criancas",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.leitedascriancas.pr.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pr-nascer-bem",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.parana.pr.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-cartao-recomecar",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.rj.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.rj.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "rj-riocard-social",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.riocard.com/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-faetec-qualifica",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.faetec.rj.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-renda-melhor-jovem",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.rj.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rj-aluguel-social",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.alerj.rj.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rn-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.rn.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rn-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "rn-jovem-potiguar",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://portal.ifrn.edu.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rn-programa-materno-infantil",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.rn.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rn-cnh-social",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.detran.rn.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rn-leite-potiguar",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://distribuicao.plp.sethas.rn.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "rs-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "sc-cesta-basica-paa",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sas.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sc-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sds.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sc-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "sc-proemprego",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.sas.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sc-teste-mae-catarinense",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.saude.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sc-casa-catarina",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.casacatarina.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sc-cnh-emprego-na-pista",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://empregonapista.detran.sc.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "se-restaurante-popular",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.se.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "se-restaurante-popular",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "se-qualifica-sergipe",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.se.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "se-estudante-monitor",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://seduc.se.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "se-mae-sergipana",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://assistenciasocial.se.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "se-casa-sergipana",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://assistenciasocial.se.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sp-bolsa-do-povo",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.bolsadopovo.sp.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sp-bom-prato",
+      "category": "content",
+      "severity": "LOW",
+      "message": "Only 1 document(s) required (expected 2+)",
+      "field": "documentsRequired"
+    },
+    {
+      "benefit_id": "sp-vivaleite",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.vivaleite.sp.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sp-via-rapida",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.viarapida.sp.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "sp-superacao",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://www.superacaosp.sp.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "to-vale-gas-estadual",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://valegas.to.gov.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "to-jovem-trabalhador",
+      "category": "urls",
+      "severity": "LOW",
+      "message": "Shallow sourceUrl (just domain): https://jovemtrabalhadorto.org.br/",
+      "field": "sourceUrl"
+    },
+    {
+      "benefit_id": "pa-renda-para",
+      "category": "crossref",
+      "severity": "INFO",
+      "message": "Program has status 'suspended'",
+      "field": "status"
+    },
+    {
+      "benefit_id": "rj-supera-rj",
+      "category": "crossref",
+      "severity": "INFO",
+      "message": "Program has status 'ended' — kept for user redirect",
+      "field": "status"
+    }
+  ]
+}

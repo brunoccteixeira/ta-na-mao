@@ -48,8 +48,8 @@
         "Aguarde a seleção pelo governo",
         "Se selecionado, receba pelo cartão do programa"
       ],
-      "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://auxilio.am.gov.br/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -85,59 +85,10 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.seas.am.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
-    },
-    {
-      "id": "am-vale-gas-amazonas",
-      "name": "Vale Gás Amazonas",
-      "shortDescription": "Botijão de gás grátis pelo programa federal Gás do Povo para famílias de baixa renda no Amazonas.",
-      "scope": "state",
-      "state": "AM",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 60,
-        "description": "4 a 6 recargas por ano via programa federal Gás do Povo"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "AM",
-          "description": "Morar no Amazonas"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de até meio salário mínimo (~R$ 759, equivale a ~R$ 3.036 para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS ou revenda credenciada do Gás do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado no CRAS",
-        "A seleção é feita automaticamente pelo governo federal",
-        "Receba o botijão grátis em revenda credenciada do Gás do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
     },
     {
       "id": "am-cetam-qualificacao",
@@ -234,19 +185,19 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
-      "id": "am-rede-alyne-amazonas",
-      "name": "Rede Alyne Amazonas - Saúde da Gestante",
-      "shortDescription": "Pré-natal completo e parto seguro para gestantes do Amazonas pelo SUS.",
+      "id": "am-cnh-social",
+      "name": "CNH Social Amazonas",
+      "shortDescription": "Habilitação gratuita para pessoas de baixa renda no Amazonas. Categorias A e B sem custo nenhum.",
       "scope": "state",
       "state": "AM",
       "estimatedValue": {
         "type": "one_time",
-        "min": 0,
-        "max": 0,
-        "description": "Atendimento gratuito pelo SUS"
+        "min": 1500,
+        "max": 3000,
+        "description": "CNH gratuita (economia de R$ 1.500 a R$ 3.000)"
       },
       "eligibilityRules": [
         {
@@ -256,42 +207,48 @@
           "description": "Morar no Amazonas"
         },
         {
-          "field": "temGestante",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter gestante na família"
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
         }
       ],
-      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "whereToApply": "Detran-AM ou site detran.am.gov.br",
       "documentsRequired": [
         "CPF",
-        "Cartão SUS",
-        "Comprovante de residência",
-        "Documento de identidade"
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Amazonas"
       ],
       "howToApply": [
-        "Vá ao posto de saúde mais perto da sua casa",
-        "Peça para iniciar o acompanhamento pré-natal",
-        "Receba a caderneta da gestante",
-        "Faça todas as consultas e exames no prazo"
+        "Acesse o site do Detran-AM no período de inscrições",
+        "Faça o cadastro com seus dados",
+        "Aguarde o resultado da seleção",
+        "Se aprovado, faça as aulas e provas sem custo"
       ],
-      "sourceUrl": "https://www.gov.br/saude/pt-br/assuntos/noticias-para-os-estados/amazonas/2024/setembro/nova-estrategia-para-reduzir-mortalidade-materna-chega-no-amazonas",
+      "sourceUrl": "https://www.detran.am.gov.br/inscricoes-para-cnh-social/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤰",
-      "category": "Saúde Materno-Infantil"
+      "icon": "🚗",
+      "category": "Qualificação Profissional"
     },
     {
-      "id": "am-bolsa-universidade-manaus",
-      "name": "Bolsa Universidade Manaus",
-      "shortDescription": "Bolsas de até 100% em faculdades particulares para estudantes de baixa renda em Manaus.",
+      "id": "am-prosamin",
+      "name": "Prosamin+",
+      "shortDescription": "Programa de habitação do Amazonas que constrói casas e melhora a infraestrutura de bairros para famílias de baixa renda.",
       "scope": "state",
       "state": "AM",
       "estimatedValue": {
-        "type": "monthly",
-        "min": 300,
-        "max": 1500,
-        "description": "Bolsa de 50% a 100% da mensalidade"
+        "type": "one_time",
+        "min": 40000,
+        "max": 80000,
+        "description": "Moradia nova ou reassentamento para famílias em áreas de risco"
       },
       "eligibilityRules": [
         {
@@ -299,39 +256,75 @@
           "operator": "eq",
           "value": "AM",
           "description": "Morar no Amazonas"
-        },
-        {
-          "field": "estudante",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser estudante"
         },
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3000,
-          "description": "Renda da familia de ate R$ 3000 (~R$ 600 por pessoa)"
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos (R$ 4.863)"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Morar em área de risco ou alagamento"
         }
       ],
-      "whereToApply": "Site da Prefeitura de Manaus ou presencial no Sine Manaus",
+      "whereToApply": "UGPI ou Secretaria de Infraestrutura do Amazonas",
       "documentsRequired": [
         "CPF",
         "RG",
-        "Comprovante de matrícula em faculdade particular de Manaus",
-        "Comprovante de renda familiar",
-        "Comprovante de residência em Manaus"
+        "Comprovante de residência no Amazonas",
+        "Comprovante de renda"
       ],
       "howToApply": [
-        "Acesse o site da Prefeitura de Manaus no período de inscrição",
-        "Faça a inscrição no Programa Bolsa Universidade",
-        "Apresente os documentos pedidos",
-        "Se aprovado, a bolsa é paga direto para a faculdade"
+        "A seleção é feita por levantamento do governo nas áreas de risco",
+        "Equipes visitam as famílias para avaliar a situação",
+        "Se aprovada, a família recebe nova moradia",
+        "O reassentamento inclui casa, água, esgoto e energia"
       ],
-      "sourceUrl": "https://www.manaus.am.gov.br/noticia/socioinclusao/programa-bolsa-universidade2025/",
+      "sourceUrl": "https://www.amazonasmeular.am.gov.br/programa",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🎓",
-      "category": "Educação"
+      "icon": "🏗️",
+      "category": "Moradia"
+    },
+    {
+      "id": "am-centros-convivencia",
+      "name": "Centros de Convivência da Família",
+      "shortDescription": "Espaços do governo do Amazonas com atividades gratuitas de esporte, educação, saúde e lazer para famílias.",
+      "scope": "state",
+      "state": "AM",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Atividades e serviços gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AM",
+          "description": "Morar no Amazonas"
+        }
+      ],
+      "whereToApply": "Centro Estadual de Convivência da Família (CECF) mais perto de você",
+      "documentsRequired": [
+        "CPF ou RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o Centro de Convivência mais perto da sua casa",
+        "Faça o cadastro presencial com documento de identidade",
+        "Escolha as atividades que deseja participar",
+        "Frequente as atividades gratuitamente"
+      ],
+      "sourceUrl": "https://www.agenciaamazonas.am.gov.br/noticias/centros-de-convivencia-realizam-mais-de-14-milhao-de-atendimentos-para-pessoas-em-situacao-de-vulnerabilidade-em-2025/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏫",
+      "category": "Assistência Social"
     }
   ]
 }

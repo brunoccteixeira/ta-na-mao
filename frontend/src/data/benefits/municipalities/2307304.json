@@ -1,0 +1,361 @@
+{
+  "municipality": "Juazeiro do Norte",
+  "municipalityIbge": "2307304",
+  "state": "CE",
+  "lastUpdated": "2026-02-07",
+  "benefits": [
+    {
+      "id": "ce-juazeirodonorte-restaurante-popular",
+      "name": "Restaurante do Povo",
+      "shortDescription": "Refeições a R$ 1 nos Restaurantes do Povo. Programa do Governo do Estado do Ceará, disponível em Juazeiro do Norte",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 1"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Juazeiro do Norte",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante do Povo da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.ceara.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Juazeiro do Norte. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Juazeiro do Norte",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Juazeiro do Norte. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Juazeiro do Norte ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-habitacao-municipal",
+      "name": "Programa Habitacional de Juazeiro do Norte",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Juazeiro do Norte. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Juazeiro do Norte",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-capacitacao-emprego",
+      "name": "Qualifica Juazeiro do Norte",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Juazeiro do Norte. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Juazeiro do Norte",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-farmacia-municipal",
+      "name": "Farmácia Municipal",
+      "shortDescription": "Medicamentos gratuitos nas farmácias municipais e UBS de Juazeiro do Norte. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Medicamentos gratuitos"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        }
+      ],
+      "whereToApply": "UBS ou Farmácia Municipal de Juazeiro do Norte",
+      "documentsRequired": [
+        "CPF",
+        "Cartão SUS",
+        "Receita médica do SUS"
+      ],
+      "howToApply": [
+        "Vá à UBS ou Farmácia Municipal",
+        "Apresente receita médica",
+        "Retire os medicamentos disponíveis"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💊",
+      "category": "Saúde",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ce-juazeirodonorte-romeiro-social",
+      "name": "Apoio ao Romeiro",
+      "shortDescription": "Alimentação e abrigo temporário para romeiros em vulnerabilidade em Juazeiro do Norte",
+      "scope": "municipal",
+      "state": "CE",
+      "municipalityIbge": "2307304",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Alimentação e abrigo temporário"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2307304",
+          "description": "Morar em Juazeiro do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social de Juazeiro do Norte",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Apresente documentos",
+        "Aguarde avaliação"
+      ],
+      "sourceUrl": "https://www.juazeiro.ce.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "⛪",
+      "category": "Assistência Social"
+    }
+  ]
+}

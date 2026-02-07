@@ -75,8 +75,8 @@
         {
           "field": "idade",
           "operator": "gte",
-          "value": 15,
-          "description": "Ter entre 15 e 24 anos"
+          "value": 14,
+          "description": "Estudante do ensino médio estadual (até 21 anos regular, até 29 anos EJA)"
         },
         {
           "field": "cadastradoCadunico",
@@ -107,14 +107,14 @@
     {
       "id": "rs-devolve-icms",
       "name": "Devolve ICMS",
-      "shortDescription": "Devolucao de ate R$ 100 por trimestre de imposto para familias de baixa renda.",
+      "shortDescription": "Devolução de ICMS para famílias de baixa renda: parcela fixa de R$ 100 + variável de até R$ 473 por trimestre.",
       "scope": "state",
       "state": "RS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 30,
-        "max": 33,
-        "description": "Ate R$ 100 a cada 3 meses"
+        "min": 33,
+        "max": 191,
+        "description": "R$ 100 fixo + até R$ 473,82 variável por trimestre (até R$ 2.295/ano)"
       },
       "eligibilityRules": [
         {
@@ -132,8 +132,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3200,
-          "description": "Renda familiar de até R$ 3.200 (equivale a ~R$ 800 por pessoa para família de 4)"
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos (R$ 4.863) OU receber Bolsa Família"
         }
       ],
       "whereToApply": "Automatico pelo Cadastro Unico",
@@ -191,15 +191,15 @@
     },
     {
       "id": "rs-qualifica-rs",
-      "name": "Qualifica RS",
-      "shortDescription": "Cursos de graca para aprender uma profissao e conseguir emprego.",
+      "name": "RS Qualificação Recomeçar",
+      "shortDescription": "Cursos de qualificação com bolsa de até R$ 1.500 para trabalhadores desempregados ou informais no RS.",
       "scope": "state",
       "state": "RS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 0,
-        "max": 200,
-        "description": "Curso gratuito, alguns com bolsa-auxilio"
+        "min": 750,
+        "max": 1500,
+        "description": "Bolsa permanência de R$ 750 por 40h de qualificação, até R$ 1.500 total"
       },
       "eligibilityRules": [
         {
@@ -319,8 +319,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 7060,
-          "description": "Renda familiar de ate 5 salarios minimos"
+          "value": 8105,
+          "description": "Renda familiar de até 5 salários mínimos (R$ 8.105)"
         }
       ],
       "whereToApply": "Site portadeentrada.rs.gov.br",
@@ -340,7 +340,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     }
   ]
 }

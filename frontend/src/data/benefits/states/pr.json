@@ -6,14 +6,14 @@
     {
       "id": "pr-cartao-futuro",
       "name": "Cartao Futuro",
-      "shortDescription": "Auxilio de R$ 900 para jovens de baixa renda que estao estudando ou fazendo curso.",
+      "shortDescription": "Subsídio de R$ 300/mês ao empregador que contratar jovem aprendiz de baixa renda no Paraná.",
       "scope": "state",
       "state": "PR",
       "estimatedValue": {
         "type": "monthly",
-        "min": 900,
-        "max": 900,
-        "description": "R$ 900 por mes durante o programa"
+        "min": 0,
+        "max": 0,
+        "description": "Subsídio de R$ 300/mês ao empregador (R$ 450 para PcD). Jovem recebe salário de aprendiz pago pela empresa."
       },
       "eligibilityRules": [
         {
@@ -49,10 +49,10 @@
         "Aguarde a selecao e comece a receber"
       ],
       "sourceUrl": "https://www.cartaofuturo.pr.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎯",
-      "category": "Qualificação Profissional"
+      "category": "Emprego e Renda"
     },
     {
       "id": "pr-familia-paranaense",
@@ -99,55 +99,10 @@
         "Se aprovado, comeca a receber o beneficio"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👨‍👩‍👧‍👦",
       "category": "Transferência de Renda"
-    },
-    {
-      "id": "pr-armazem-da-familia",
-      "name": "Armazem da Familia",
-      "shortDescription": "Supermercado com produtos ate 30% mais baratos para familias de baixa renda em Curitiba e regiao.",
-      "scope": "state",
-      "state": "PR",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 200,
-        "description": "Economia de ate R$ 200 por mes nas compras"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "PR",
-          "description": "Morar no Parana"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 7590,
-          "description": "Renda familiar de ate 5 salarios minimos (R$ 7.590)"
-        }
-      ],
-      "whereToApply": "Unidade do Armazem da Familia em Curitiba (programa municipal)",
-      "documentsRequired": [
-        "CPF",
-        "RG",
-        "Comprovante de residencia",
-        "Comprovante de renda"
-      ],
-      "howToApply": [
-        "Va a uma unidade do Armazem da Familia",
-        "Faca o cadastro com seus documentos",
-        "Receba o cartao do programa",
-        "Faca compras com desconto"
-      ],
-      "sourceUrl": "https://www.curitiba.pr.gov.br/servicos/armazem-da-familia/",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🛒",
-      "category": "Alimentação"
     },
     {
       "id": "pr-leite-das-criancas",
@@ -166,19 +121,19 @@
           "field": "estado",
           "operator": "eq",
           "value": "PR",
-          "description": "Morar no Parana"
+          "description": "Morar no Paraná"
         },
         {
           "field": "temCrianca0a6",
           "operator": "eq",
           "value": true,
-          "description": "Ter crianca de 6 meses a 3 anos"
+          "description": "Ter criança de 6 meses a 3 anos"
         },
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (R$ 759, ou ~R$ 3.036 para familia de 4)"
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50, ou R$ 3.242 para família de 4)"
         }
       ],
       "whereToApply": "Postos de saude ou locais de distribuicao",
@@ -199,55 +154,6 @@
       "status": "active",
       "icon": "🥛",
       "category": "Alimentação"
-    },
-    {
-      "id": "pr-vale-gas-social",
-      "name": "Vale Gas Social PR",
-      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda no Parana.",
-      "scope": "state",
-      "state": "PR",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 50,
-        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 96 no PR)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "PR",
-          "description": "Morar no Parana"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Numero do Cadastro Unico)",
-        "Comprovante de residencia"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Unico atualizado no CRAS",
-        "A selecao e feita automaticamente pelo governo federal",
-        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
     },
     {
       "id": "pr-mae-paranaense",
@@ -321,8 +227,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 6000,
-          "description": "Renda familiar de ate 4 salarios minimos"
+          "value": 6484,
+          "description": "Renda familiar de até 4 salários mínimos (R$ 6.484)"
         }
       ],
       "whereToApply": "Site da COHAPAR (cohapar.pr.gov.br/cadastro)",
@@ -342,7 +248,109 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
+    },
+    {
+      "id": "pr-cartao-comida-boa",
+      "name": "Cartão Comida Boa",
+      "shortDescription": "Cartão de R$ 80 por mês para comprar comida no mercado. Atende famílias de baixa renda do Paraná.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 80,
+        "max": 80,
+        "description": "R$ 80 por mês no cartão para compras em supermercados credenciados"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Paraná"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 800,
+          "description": "Renda per capita de até R$ 200"
+        }
+      ],
+      "whereToApply": "CRAS do seu município",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá ao CRAS e mantenha o Cadastro Único atualizado",
+        "A seleção é feita pela base do CadÚnico",
+        "Se aprovado, receba o cartão Comida Boa",
+        "Use o cartão em supermercados credenciados (não permite saque)"
+      ],
+      "sourceUrl": "https://www.desenvolvimentosocial.pr.gov.br/ComidaBoa",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🛒",
+      "category": "Alimentação"
+    },
+    {
+      "id": "pr-nascer-bem",
+      "name": "Nascer Bem Paraná",
+      "shortDescription": "Kit grátis com carrinho de bebê, roupinhas e produtos de higiene para gestantes de baixa renda.",
+      "scope": "state",
+      "state": "PR",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 500,
+        "max": 1000,
+        "description": "Kit com carrinho de bebê, roupas, produtos de higiene e acessórios"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PR",
+          "description": "Morar no Paraná"
+        },
+        {
+          "field": "temGestante",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar grávida (a partir da 28ª semana)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrita no Cadastro Único"
+        }
+      ],
+      "whereToApply": "CRAS ou unidade de saúde do município",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Cartão do pré-natal",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Paraná"
+      ],
+      "howToApply": [
+        "Faça o pré-natal na rede pública de saúde",
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "Após a 28ª semana de gestação, solicite o kit",
+        "Retire o kit no local indicado com seus documentos"
+      ],
+      "sourceUrl": "https://www.parana.pr.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👶",
+      "category": "Saúde Materno-Infantil"
     }
   ]
 }

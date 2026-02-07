@@ -31,8 +31,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3200,
-          "description": "Renda familiar de ate meio salario minimo por pessoa (aprox. R$ 800 x 4 pessoas)"
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50 por pessoa)"
         }
       ],
       "whereToApply": "CRAS ou site da Secretaria de Desenvolvimento Social",
@@ -81,8 +81,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2424,
-          "description": "Renda per capita de ate R$ 606 (equivale a R$ 2.424 para familia de 4)"
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50 por pessoa)"
         }
       ],
       "whereToApply": "CRAS da sua regiao administrativa",
@@ -112,9 +112,9 @@
       "state": "DF",
       "estimatedValue": {
         "type": "one_time",
-        "min": 320,
+        "min": 240,
         "max": 320,
-        "description": "R$ 320 por aluno por ano"
+        "description": "R$ 240 a R$ 320 por aluno por ano, conforme nível de ensino"
       },
       "eligibilityRules": [
         {
@@ -268,8 +268,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3200,
-          "description": "Renda familiar de ate meio salario minimo por pessoa (aprox. R$ 800 x 4 pessoas)"
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50 por pessoa)"
         }
       ],
       "whereToApply": "CRAS mais perto da sua casa",
@@ -295,14 +295,14 @@
     {
       "id": "df-morar-df",
       "name": "Morar DF",
-      "shortDescription": "Subsidio de ate R$ 16 mil para ajudar na entrada da casa propria. O governo paga parte do valor.",
+      "shortDescription": "Subsidio de ate R$ 15 mil para ajudar na entrada da casa propria. O governo paga parte do valor.",
       "scope": "state",
       "state": "DF",
       "estimatedValue": {
         "type": "one_time",
         "min": 15000,
-        "max": 16079,
-        "description": "Subsidio de ate R$ 16 mil para entrada do imovel"
+        "max": 15000,
+        "description": "Subsídio 'passaporte' de até R$ 15 mil para entrada do imóvel via CODHAB"
       },
       "eligibilityRules": [
         {
@@ -322,6 +322,12 @@
           "operator": "eq",
           "value": true,
           "description": "Estar inscrito na CODHAB"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 8105,
+          "description": "Renda familiar bruta de até 5 salários mínimos (R$ 8.105)"
         }
       ],
       "whereToApply": "Site da CODHAB (codhab.df.gov.br)",
@@ -341,7 +347,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     }
   ]
 }

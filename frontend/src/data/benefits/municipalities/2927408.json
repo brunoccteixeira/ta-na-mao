@@ -2,7 +2,7 @@
   "municipality": "Salvador",
   "municipalityIbge": "2927408",
   "state": "BA",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "ba-salvador-primeiro-passo",
@@ -13,8 +13,8 @@
       "municipalityIbge": "2927408",
       "estimatedValue": {
         "type": "monthly",
-        "min": 81.50,
-        "max": 81.50,
+        "min": 81.5,
+        "max": 81.5,
         "description": "R$ 81,50 por criança"
       },
       "eligibilityRules": [
@@ -44,17 +44,23 @@
         }
       ],
       "whereToApply": "CRAS ou Prefeitura-Bairro",
-      "documentsRequired": ["CPF", "RG", "Certidão de nascimento da criança", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Certidão de nascimento da criança",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS do bairro",
         "Apresente documentos",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.salvador.ba.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
-      "category": "Primeira Infância"
+      "category": "Primeira Infância",
+      "verified": true
     },
     {
       "id": "ba-salvador-aluguel-social",
@@ -90,17 +96,23 @@
         }
       ],
       "whereToApply": "Secretaria de Promoção Social (SEMPRE)",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite avaliação social",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.salvador.ba.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Moradia"
+      "category": "Moradia",
+      "verified": true
     },
     {
       "id": "ba-salvador-restaurante-popular",
@@ -130,10 +142,12 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.salvador.ba.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
     },
     {
       "id": "ba-salvador-vida-nova",
@@ -175,17 +189,196 @@
         }
       ],
       "whereToApply": "CRAS ou Secretaria de Trabalho",
-      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Faça inscrição no programa",
         "Aguarde seleção"
       ],
       "sourceUrl": "https://www.salvador.ba.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
       "category": "Transferência de Renda"
+    },
+    {
+      "id": "ba-salvador-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Salvador. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Salvador",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ba-salvador-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Salvador. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Salvador ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "ba-salvador-habitacao-municipal",
+      "name": "Programa Habitacional de Salvador",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Salvador. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "BA",
+      "municipalityIbge": "2927408",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2927408",
+          "description": "Morar em Salvador"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Salvador",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.salvador.ba.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

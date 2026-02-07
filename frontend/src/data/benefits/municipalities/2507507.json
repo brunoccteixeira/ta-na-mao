@@ -2,7 +2,7 @@
   "municipality": "João Pessoa",
   "municipalityIbge": "2507507",
   "state": "PB",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pb-joaopessoa-cesta-basica",
@@ -38,14 +38,18 @@
         }
       ],
       "whereToApply": "CRAS de João Pessoa",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite cadastro",
         "Retire a cesta mensalmente"
       ],
       "sourceUrl": "https://www.joaopessoa.pb.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
@@ -84,14 +88,19 @@
         }
       ],
       "whereToApply": "Secretaria de Educação ou CRAS",
-      "documentsRequired": ["CPF", "RG", "NIS", "Certidão de nascimento"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Certidão de nascimento"
+      ],
       "howToApply": [
         "Solicite vaga em creche",
         "Se não houver vaga, peça a bolsa",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.joaopessoa.pb.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
       "category": "Primeira Infância"
@@ -130,17 +139,231 @@
         }
       ],
       "whereToApply": "CRAS ou Sedes",
-      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Laudo habitacional"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite avaliação",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.joaopessoa.pb.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
       "category": "Moradia"
+    },
+    {
+      "id": "pb-joaopessoa-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Refeições a R$ 1 nos 2 restaurantes populares de João Pessoa (Varadouro e Mangabeira) + 6 cozinhas comunitárias",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de João Pessoa",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br/noticias/prefeitura-de-joao-pessoa-chega-a-quase-15-milhao-de-refeicoes-distribuidas-em-2024/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "pb-joaopessoa-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em João Pessoa. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de João Pessoa",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "pb-joaopessoa-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em João Pessoa. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de João Pessoa ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "pb-joaopessoa-habitacao-municipal",
+      "name": "Programa Habitacional de João Pessoa",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em João Pessoa. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PB",
+      "municipalityIbge": "2507507",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2507507",
+          "description": "Morar em João Pessoa"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de João Pessoa",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.joaopessoa.pb.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

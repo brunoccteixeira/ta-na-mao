@@ -4,163 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "to-auxilio-social-tocantins",
-      "name": "Auxílio Social Tocantins",
-      "shortDescription": "Ajuda mensal para famílias de baixa renda do Tocantins.",
-      "scope": "state",
-      "state": "TO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 150,
-        "description": "Valor mensal conforme a família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "TO",
-          "description": "Morar no Tocantins"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "RG",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência no Tocantins"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Faça ou atualize o Cadastro Único",
-        "O governo seleciona as famílias",
-        "Aguarde a comunicação sobre o benefício"
-      ],
-      "sourceUrl": "https://www.to.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "to-vale-gas-tocantins",
-      "name": "Vale Gás Tocantins",
-      "shortDescription": "3 recargas grátis de botijão de gás para famílias em extrema pobreza que NÃO recebem Bolsa Família.",
-      "scope": "state",
-      "state": "TO",
-      "estimatedValue": {
-        "type": "one_time",
-        "min": 300,
-        "max": 360,
-        "description": "3 recargas de botijão de 13 kg (total ~R$ 300 a R$ 360)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "TO",
-          "description": "Morar no Tocantins"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 712,
-          "description": "Renda per capita de até R$ 178 (equivale a ~R$ 712 para família de 4)"
-        },
-        {
-          "field": "recebeBolsaFamilia",
-          "operator": "eq",
-          "value": false,
-          "description": "NÃO receber Bolsa Família"
-        }
-      ],
-      "whereToApply": "Site valegas.to.gov.br ou CRAS do seu município",
-      "documentsRequired": [
-        "NIS (Número do Cadastro Único)",
-        "CPF",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Acesse valegas.to.gov.br e informe seu NIS para verificar se tem direito",
-        "Mantenha o Cadastro Único atualizado",
-        "A seleção é feita pela SETAS automaticamente",
-        "Retire o botijão no ponto de distribuição indicado"
-      ],
-      "sourceUrl": "https://valegas.to.gov.br/",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
-    },
-    {
-      "id": "to-cesta-basica-tocantins",
-      "name": "Cesta Básica Tocantins",
-      "shortDescription": "Distribuição de cestas básicas para famílias em situação de pobreza.",
-      "scope": "state",
-      "state": "TO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 80,
-        "max": 120,
-        "description": "Cesta com alimentos básicos"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "TO",
-          "description": "Morar no Tocantins"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize o Cadastro Único",
-        "Aguarde a convocação para retirar a cesta",
-        "Leve documento com foto na retirada"
-      ],
-      "sourceUrl": "https://www.to.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
-    },
-    {
       "id": "to-profissao-estudante",
       "name": "Profissão Estudante Tocantins",
       "shortDescription": "Programa do governo do Tocantins que oferece educação profissional e tecnológica nas escolas estaduais.",
@@ -239,8 +82,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640"
+          "value": 2850,
+          "description": "Renda da família de até R$ 2.850 (Faixa 1 do MCMV)"
         },
         {
           "field": "cadastradoCadunico",
@@ -267,7 +110,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "to-maos-que-cuidam",
@@ -371,6 +214,174 @@
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
+    },
+    {
+      "id": "to-vale-gas-estadual",
+      "name": "Vale-Gás Tocantins",
+      "shortDescription": "Botijão de gás de cozinha gratuito a cada trimestre para famílias de baixa renda do Tocantins.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 100,
+        "max": 120,
+        "description": "Economia de ~R$ 100-120/mês (1 botijão de 13kg grátis por trimestre)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 712,
+          "description": "Renda per capita de até R$ 178 (situação de pobreza)"
+        }
+      ],
+      "whereToApply": "Consulte pelo NIS no site valegas.to.gov.br ou CRAS",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Documento de identidade com foto"
+      ],
+      "howToApply": [
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "A seleção é feita automaticamente pelo CadÚnico",
+        "Consulte se foi selecionado em valegas.to.gov.br pelo NIS",
+        "Retire o botijão na revendedora indicada com o cupom"
+      ],
+      "sourceUrl": "https://valegas.to.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🔥",
+      "category": "Alimentação"
+    },
+    {
+      "id": "to-jovem-trabalhador",
+      "name": "Jovem Trabalhador Tocantins",
+      "shortDescription": "Primeiro emprego para jovens de 16 a 21 anos no Tocantins, com salário de R$ 663 e qualificação profissional. Valor histórico, pode estar desatualizado.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 663,
+        "max": 663,
+        "description": "Salário de R$ 663,39 por mês (4 horas diárias). Valor histórico, confirme no site do programa.",
+        "estimated": true,
+        "estimatedRationale": "Valor referente ao último edital divulgado. O salário proporcional pode variar com o reajuste do SM."
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter entre 16 e 21 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Família inscrita no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos (R$ 3.242)"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Cursando ou concluído ensino fundamental/médio na rede pública"
+        }
+      ],
+      "whereToApply": "Site jovemtrabalhadorto.org.br ou SETAS Tocantins",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula escolar (rede pública)",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Tocantins"
+      ],
+      "howToApply": [
+        "Acesse o site jovemtrabalhadorto.org.br",
+        "Faça a inscrição no período indicado",
+        "Aguarde a seleção e convocação",
+        "Se aprovado, trabalhe 4 horas/dia e receba qualificação profissional"
+      ],
+      "sourceUrl": "https://jovemtrabalhadorto.org.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💼",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "to-cartao-idoso",
+      "name": "Cartão do Idoso - Transporte Gratuito",
+      "shortDescription": "Transporte intermunicipal gratuito para idosos de baixa renda no Tocantins.",
+      "scope": "state",
+      "state": "TO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 200,
+        "description": "Economia de até R$ 200/mês em passagens intermunicipais"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "TO",
+          "description": "Morar no Tocantins"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 60,
+          "description": "Ter 60 anos ou mais"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda de até 2 salários mínimos (R$ 3.242)"
+        }
+      ],
+      "whereToApply": "CRAS do seu município ou Secretaria de Assistência Social local",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência no Tocantins",
+        "Comprovante de renda",
+        "2 fotos 3x4 coloridas recentes"
+      ],
+      "howToApply": [
+        "Vá ao CRAS ou Secretaria de Assistência Social",
+        "Leve os documentos e fotos pedidos",
+        "Solicite o Cartão do Idoso para transporte intermunicipal",
+        "Receba o cartão e use nos ônibus e barcos do Tocantins"
+      ],
+      "sourceUrl": "https://www.to.gov.br/setas/cartao-do-idoso-transporte-intermunicipal-para-idosos/15avva924vxx",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte"
     }
   ]
 }

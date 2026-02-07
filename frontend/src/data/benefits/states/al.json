@@ -11,9 +11,9 @@
       "state": "AL",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Valor depende dos filhos"
+        "min": 150,
+        "max": 150,
+        "description": "R$ 150 por mês por família com crianças de 0 a 6 anos"
       },
       "eligibilityRules": [
         {
@@ -55,7 +55,7 @@
         "Espere ser chamado"
       ],
       "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👶",
       "category": "Transferência de Renda"
@@ -97,16 +97,16 @@
       "category": "Alimentação"
     },
     {
-      "id": "al-nossa-casa",
-      "name": "Nossa Casa AL",
-      "shortDescription": "Programa para ajudar famílias pobres a ter casa própria.",
+      "id": "al-cnh-trabalhador",
+      "name": "CNH do Trabalhador",
+      "shortDescription": "Primeira habilitação de graça (carro ou moto) para quem é de baixa renda em Alagoas. O governo paga taxas, exames e aulas.",
       "scope": "state",
       "state": "AL",
       "estimatedValue": {
         "type": "one_time",
-        "min": 30000,
-        "max": 80000,
-        "description": "Ajuda para moradia"
+        "min": 2000,
+        "max": 2000,
+        "description": "Economia de ~R$ 2.000 (custo total da CNH coberto pelo governo)"
       },
       "eligibilityRules": [
         {
@@ -116,36 +116,37 @@
           "description": "Morar em Alagoas"
         },
         {
-          "field": "temCasaPropria",
+          "field": "cadastradoCadunico",
           "operator": "eq",
-          "value": false,
-          "description": "Não ter casa própria"
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
         },
         {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 4000,
-          "description": "Renda da família até R$ 4.000"
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
         }
       ],
-      "whereToApply": "Prefeitura ou CRAS",
+      "whereToApply": "Site do Detran-AL (www.detran.al.gov.br) quando abrir inscrição",
       "documentsRequired": [
-        "CPF e RG de todos da família",
-        "Comprovante de renda",
-        "Comprovante de endereço",
-        "Documento que não tem casa"
+        "CPF",
+        "RG ou documento com foto",
+        "NIS do Cadastro Único",
+        "Comprovante de residência em Alagoas",
+        "Comprovante de escolaridade (ensino fundamental completo)"
       ],
       "howToApply": [
-        "Vá à prefeitura ou CRAS",
-        "Faça inscrição no programa",
-        "Espere o sorteio",
-        "Leve documentos quando chamado"
+        "Atualize seu Cadastro Único no CRAS",
+        "Fique atento ao edital no site do Detran-AL",
+        "Quando abrir inscrição, cadastre-se online em www.detran.al.gov.br",
+        "Se selecionado, faça matrícula no CFC indicado e inicie as aulas"
       ],
-      "sourceUrl": "https://www.al.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://www.detran.al.gov.br/habilitacao/cnh-trabalhador/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🏠",
-      "category": "Habitação"
+      "icon": "🚗",
+      "category": "Transporte"
     },
     {
       "id": "al-qualifica-alagoas",
@@ -341,7 +342,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4800,
+          "value": 4863,
           "description": "Renda familiar de até 3 salários mínimos (R$ 4.800)"
         }
       ],

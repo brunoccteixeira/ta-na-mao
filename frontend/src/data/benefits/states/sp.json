@@ -48,7 +48,7 @@
         "Aguarde análise e chamamento"
       ],
       "sourceUrl": "https://www.bolsadopovo.sp.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎯",
       "category": "Transferência de Renda"
@@ -112,7 +112,7 @@
     {
       "id": "sp-bom-prato",
       "name": "Bom Prato",
-      "shortDescription": "Refeições a R$ 0,50 (café da manhã) e R$ 1,00 (almoço e jantar) em restaurantes populares.",
+      "shortDescription": "Restaurante do governo com café da manhã a R$ 0,50 e almoço/jantar a R$ 1,00 em São Paulo.",
       "scope": "state",
       "state": "SP",
       "estimatedValue": {
@@ -154,8 +154,8 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 80,
-        "max": 115,
-        "description": "Até R$ 115 por mês"
+        "max": 80,
+        "description": "R$ 80 por mês por família"
       },
       "eligibilityRules": [
         {
@@ -189,7 +189,7 @@
         "Aguarde comunicação do CRAS"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/renda-cidada/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -222,8 +222,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3036,
-          "description": "Renda familiar de até 2 salários mínimos (R$ 3.036)"
+          "value": 3242,
+          "description": "Renda familiar de até 2 salários mínimos (R$ 3.242)"
         }
       ],
       "whereToApply": "Prefeitura ou entidades conveniadas",
@@ -284,54 +284,60 @@
         "Compareça no local e data indicados"
       ],
       "sourceUrl": "https://www.viarapida.sp.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
       "category": "Qualificação Profissional"
     },
     {
-      "id": "sp-mae-paulistana",
-      "name": "Mae Paulistana",
-      "shortDescription": "Programa que cuida da gestante do pre-natal ao parto, com enxoval de 24 itens, transporte gratis e vaga na creche.",
+      "id": "sp-superacao",
+      "name": "SuperAção SP",
+      "shortDescription": "Maior programa social de SP. Paga R$ 150 por pessoa da família por mês, mais cursos e emprego.",
       "scope": "state",
       "state": "SP",
       "estimatedValue": {
-        "type": "one_time",
-        "min": 300,
-        "max": 600,
-        "description": "Kit enxoval 24 itens + transporte gratis + vaga creche"
+        "type": "monthly",
+        "min": 150,
+        "max": 750,
+        "description": "R$ 150 por pessoa/mês. Família de 5 recebe até R$ 750."
       },
       "eligibilityRules": [
         {
           "field": "estado",
           "operator": "eq",
           "value": "SP",
-          "description": "Morar em Sao Paulo"
+          "description": "Morar em São Paulo"
         },
         {
-          "field": "temGestante",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Estar gravida"
+          "description": "Inscrito no Cadastro Único (atualizado nos últimos 24 meses)"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50)"
         }
       ],
-      "whereToApply": "Unidade Basica de Saude (UBS) mais perto de casa",
+      "whereToApply": "Site superacaosp.sp.gov.br ou CRAS do município",
       "documentsRequired": [
-        "Cartao do SUS (ou RG e comprovante de residencia para fazer o cartao)",
-        "CPF ou RG",
-        "Comprovante de residencia"
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência em SP"
       ],
       "howToApply": [
-        "Va a UBS mais perto da sua casa assim que souber que esta gravida",
-        "Faca o cadastro no pre-natal ate a 12a semana",
-        "Faca todas as consultas (minimo 7) e exames pedidos",
-        "Receba o kit enxoval na maternidade apos o parto"
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "A seleção é feita pela base do CadÚnico nos municípios participantes",
+        "Se selecionado, receba acompanhamento social e cursos",
+        "O benefício inclui trilha de proteção social e superação da pobreza"
       ],
-      "sourceUrl": "https://prefeitura.sp.gov.br/web/saude/w/atencao_basica/5657",
+      "sourceUrl": "https://www.superacaosp.sp.gov.br/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤰",
-      "category": "Saúde Materno-Infantil"
+      "icon": "🚀",
+      "category": "Transferência de Renda"
     }
   ]
 }

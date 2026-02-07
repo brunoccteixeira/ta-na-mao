@@ -31,8 +31,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (equivale a R$ 3.036 para familia de 4)"
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo (equivale a R$ 3.242 para família de 4)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -53,105 +53,6 @@
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
-    },
-    {
-      "id": "ms-vale-renda",
-      "name": "Vale Renda",
-      "shortDescription": "Cesta basica de alimentos entregue todo mes para familias que precisam.",
-      "scope": "state",
-      "state": "MS",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 150,
-        "description": "Cesta com alimentos basicos todo mes"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "MS",
-          "description": "Morar em Mato Grosso do Sul"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio",
-      "documentsRequired": [
-        "CPF",
-        "NIS (numero do Cadastro Unico)",
-        "Comprovante de onde mora"
-      ],
-      "howToApply": [
-        "Va ao CRAS e atualize seu cadastro",
-        "Informe que quer receber o Vale Renda",
-        "Aguarde a analise",
-        "Retire a cesta no local indicado"
-      ],
-      "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🛒",
-      "category": "Alimentação"
-    },
-    {
-      "id": "ms-vale-gas",
-      "name": "Vale Gas MS",
-      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda em MS.",
-      "scope": "state",
-      "state": "MS",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 50,
-        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 99 em MS)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "MS",
-          "description": "Morar em Mato Grosso do Sul"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (numero do Cadastro Unico)",
-        "Comprovante de onde mora"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Unico atualizado no CRAS",
-        "A selecao e feita automaticamente pelo governo federal",
-        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
     },
     {
       "id": "ms-restaurante-popular",
@@ -183,7 +84,7 @@
         "Pague R$ 2,00 e faca sua refeicao"
       ],
       "sourceUrl": "https://www.ms.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -240,9 +141,9 @@
       "state": "MS",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1518,
-        "max": 1518,
-        "description": "1 salario minimo por mes (R$ 1.518)"
+        "min": 1621,
+        "max": 1621,
+        "description": "1 salario minimo por mes (R$ 1.621)"
       },
       "eligibilityRules": [
         {
@@ -266,8 +167,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 7590,
-          "description": "Renda da familia de ate R$ 7590 (~R$ 1518 por pessoa)"
+          "value": 8105,
+          "description": "Renda da familia de ate R$ 8105 (~R$ 1518 por pessoa)"
         }
       ],
       "whereToApply": "Site da SEAD (sead.ms.gov.br)",
@@ -293,8 +194,8 @@
     },
     {
       "id": "ms-protecao-gestante",
-      "name": "Protecao a Gestante MS",
-      "shortDescription": "Acompanhamento gratuito da gravidez com pre-natal completo, exames e cuidados para mae e bebe.",
+      "name": "Atenção à Gestante MS",
+      "shortDescription": "Pré-natal completo e parto seguro pelo SUS para gestantes do Mato Grosso do Sul.",
       "scope": "state",
       "state": "MS",
       "estimatedValue": {
@@ -334,6 +235,115 @@
       "status": "active",
       "icon": "🤰",
       "category": "Saúde Materno-Infantil"
+    },
+    {
+      "id": "ms-energia-social",
+      "name": "Energia Social: Conta de Luz Zero",
+      "shortDescription": "O governo de MS paga a conta de luz de famílias de baixa renda. Você não paga nada de energia.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 200,
+        "description": "Pagamento integral da conta de luz para famílias elegíveis"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Site energiasocial.ms.gov.br ou CRAS do município",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Conta de luz recente",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Mantenha o Cadastro Único atualizado no CRAS",
+        "Acesse energiasocial.ms.gov.br para verificar elegibilidade",
+        "Se elegível, o pagamento é feito diretamente à concessionária",
+        "Você continua usando a energia normalmente sem pagar"
+      ],
+      "sourceUrl": "https://www.sead.ms.gov.br/programa-energia-social/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💡",
+      "category": "Utilidades"
+    },
+    {
+      "id": "ms-cuidar-de-quem-cuida",
+      "name": "Cuidar de Quem Cuida",
+      "shortDescription": "Benefício mensal para quem cuida de pessoa com deficiência sem receber salário.",
+      "scope": "state",
+      "state": "MS",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 400,
+        "max": 400,
+        "description": "Benefício social mensal para cuidadores não remunerados"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "MS",
+          "description": "Morar em Mato Grosso do Sul"
+        },
+        {
+          "field": "temPcd",
+          "operator": "eq",
+          "value": true,
+          "description": "Cuidar de pessoa com deficiência (familiar não remunerado)"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 3242,
+          "description": "Renda per capita de até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS do seu município ou SEAD (sead.ms.gov.br)",
+      "documentsRequired": [
+        "CPF e RG do cuidador",
+        "CPF e RG da pessoa com deficiência",
+        "Laudo médico da deficiência",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá ao CRAS do seu município",
+        "Informe que cuida de pessoa com deficiência sem remuneração",
+        "Apresente os documentos e o laudo médico",
+        "Aguarde avaliação e inclusão no programa"
+      ],
+      "sourceUrl": "https://www.sead.ms.gov.br/programas/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🤝",
+      "category": "Assistência Social"
     }
   ]
 }

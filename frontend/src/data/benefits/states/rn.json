@@ -4,56 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "rn-rn-mais-igual",
-      "name": "RN Mais Igual",
-      "shortDescription": "Dinheiro todo mês para famílias pobres do Rio Grande do Norte.",
-      "scope": "state",
-      "state": "RN",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Valor depende da família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RN",
-          "description": "Morar no Rio Grande do Norte"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF de todos da família",
-        "NIS do Cadastro Único",
-        "Comprovante de endereço"
-      ],
-      "howToApply": [
-        "Vá ao CRAS mais perto",
-        "Atualize seu Cadastro Único",
-        "O governo escolhe quem pode entrar",
-        "Aguarde contato"
-      ],
-      "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
       "id": "rn-restaurante-popular",
       "name": "Restaurante Popular RN",
       "shortDescription": "Almoço barato em restaurantes do governo.",
@@ -84,15 +34,15 @@
         "Aberto para todos"
       ],
       "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
-      "id": "rn-minha-casa-rn",
-      "name": "Minha Casa RN",
-      "shortDescription": "Ajuda para ter casa própria para famílias de baixa renda.",
+      "id": "rn-moradia",
+      "name": "RN+ Moradia",
+      "shortDescription": "Programa habitacional do governo do RN que facilita o acesso à casa própria para famílias de baixa renda.",
       "scope": "state",
       "state": "RN",
       "estimatedValue": {
@@ -117,8 +67,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4000,
-          "description": "Renda da família até R$ 4.000"
+          "value": 2850,
+          "description": "Renda familiar de até R$ 2.850 (Faixa 1 alinhada ao MCMV)"
         }
       ],
       "whereToApply": "Prefeitura ou CRAS",
@@ -134,11 +84,11 @@
         "Espere o sorteio ou chamamento",
         "Leve documentos quando for chamado"
       ],
-      "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://opoti.com.br/governo-do-rn-lanca-programa-habitacional-rn-moradia-para-ampliar-acesso-a-casa-propria/",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
       "id": "rn-jovem-potiguar",
@@ -149,8 +99,10 @@
       "estimatedValue": {
         "type": "one_time",
         "min": 0,
-        "max": 0,
-        "description": "Cursos gratuitos de qualificação profissional"
+        "max": 900,
+        "description": "Auxílio financeiro de até R$ 900/mês durante a formação (condicional à frequência) + curso gratuito",
+        "estimated": true,
+        "estimatedRationale": "Valor do auxílio depende do edital e do curso escolhido. Confirme o valor atual no IFRN ou SINE."
       },
       "eligibilityRules": [
         {
@@ -162,8 +114,8 @@
         {
           "field": "idade",
           "operator": "gte",
-          "value": 15,
-          "description": "Ter entre 15 e 29 anos"
+          "value": 16,
+          "description": "Ter entre 16 e 35 anos"
         }
       ],
       "whereToApply": "IFRN (Instituto Federal do RN) ou SINE da sua cidade",
@@ -186,8 +138,8 @@
     },
     {
       "id": "rn-programa-materno-infantil",
-      "name": "Rede Materno-Infantil RN",
-      "shortDescription": "Atendimento de saúde para grávidas e bebês com pré-natal, parto e acompanhamento.",
+      "name": "Pré-natal e Parto Seguro RN",
+      "shortDescription": "Acompanhamento pré-natal completo e parto pelo SUS nas maternidades estaduais do RN.",
       "scope": "state",
       "state": "RN",
       "estimatedValue": {
@@ -227,57 +179,6 @@
       "status": "active",
       "icon": "🤰",
       "category": "Saúde Materno-Infantil"
-    },
-    {
-      "id": "rn-bolsa-estudante",
-      "name": "Bolsa Estudante RN",
-      "shortDescription": "Bolsa para estudantes de baixa renda de universidades públicas do Rio Grande do Norte.",
-      "scope": "state",
-      "state": "RN",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 400,
-        "max": 700,
-        "description": "Bolsa mensal para ajudar com gastos da faculdade"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "RN",
-          "description": "Morar no Rio Grande do Norte"
-        },
-        {
-          "field": "estudante",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar matriculado em universidade pública do RN"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 4000,
-          "description": "Renda da familia de ate R$ 4000 (~R$ 800 por pessoa)"
-        }
-      ],
-      "whereToApply": "Universidade onde estuda (UERN, UFRN)",
-      "documentsRequired": [
-        "CPF e RG",
-        "Comprovante de matrícula",
-        "Comprovante de renda familiar",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Fique atento aos editais da sua universidade",
-        "Reúna os documentos de renda e matrícula",
-        "Faça inscrição no prazo do edital",
-        "Aguarde o resultado da seleção"
-      ],
-      "sourceUrl": "https://www.rn.gov.br/",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🎓",
-      "category": "Educação"
     },
     {
       "id": "rn-meia-passagem-estudantil",
@@ -325,6 +226,107 @@
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
+    },
+    {
+      "id": "rn-cnh-social",
+      "name": "CNH Social RN",
+      "shortDescription": "Habilitação gratuita para pessoas de baixa renda no Rio Grande do Norte.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1500,
+        "max": 2500,
+        "description": "CNH gratuita (economia de R$ 1.500 a R$ 2.500)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        }
+      ],
+      "whereToApply": "Detran-RN ou site detran.rn.gov.br",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no RN"
+      ],
+      "howToApply": [
+        "Acompanhe os editais no site do Detran-RN",
+        "Faça a inscrição no período do edital",
+        "Apresente os documentos e comprove baixa renda",
+        "Se aprovado, faça as aulas e provas gratuitamente"
+      ],
+      "sourceUrl": "https://www.detran.rn.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚗",
+      "category": "Qualificação Profissional"
+    },
+    {
+      "id": "rn-leite-potiguar",
+      "name": "Leite Potiguar",
+      "shortDescription": "5 litros de leite de graça por semana para famílias de baixa renda em todo o Rio Grande do Norte.",
+      "scope": "state",
+      "state": "RN",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 50,
+        "max": 80,
+        "description": "Economia de R$ 50-80/mês (5 litros de leite grátis por semana)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "RN",
+          "description": "Morar no Rio Grande do Norte"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50)"
+        }
+      ],
+      "whereToApply": "CRAS do seu município ou Secretaria de Assistência Social (SETHAS)",
+      "documentsRequired": [
+        "CPF",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no RN"
+      ],
+      "howToApply": [
+        "Faça ou atualize o Cadastro Único no CRAS",
+        "A seleção é feita pela base do CadÚnico",
+        "Se selecionada, a família retira o leite no ponto de distribuição da sua cidade",
+        "Consulte o ponto de entrega em distribuicao.plp.sethas.rn.gov.br"
+      ],
+      "sourceUrl": "https://distribuicao.plp.sethas.rn.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🥛",
+      "category": "Alimentação"
     }
   ]
 }

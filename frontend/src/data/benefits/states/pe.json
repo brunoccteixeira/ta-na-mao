@@ -64,7 +64,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔨",
-      "category": "Emprego"
+      "category": "Emprego e Renda"
     },
     {
       "id": "pe-chapeu-de-palha",
@@ -117,11 +117,11 @@
         "Faça a inscrição no período de cadastramento",
         "Aguarde o pagamento durante a entressafra"
       ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/chapeu-de-palha/Paginas/default.aspx",
+      "sourceUrl": "https://www.sas.pe.gov.br/programas-e-projetos-2/chapeu-de-palha/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
-      "category": "Trabalho Rural"
+      "category": "Emprego e Renda"
     },
     {
       "id": "pe-mae-coruja",
@@ -131,9 +131,9 @@
       "state": "PE",
       "estimatedValue": {
         "type": "one_time",
-        "min": 200,
-        "max": 400,
-        "description": "Enxoval do bebê + acompanhamento de saúde"
+        "min": 0,
+        "max": 0,
+        "description": "Kit bebê com 14 itens de higiene e enxoval (sem valor monetário direto)"
       },
       "eligibilityRules": [
         {
@@ -270,7 +270,7 @@
       "lastUpdated": "2026-02-04",
       "status": "active",
       "icon": "💧",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "pe-qualifica-pe",
@@ -294,8 +294,8 @@
         {
           "field": "idade",
           "operator": "gte",
-          "value": 16,
-          "description": "Ter 16 anos ou mais"
+          "value": 18,
+          "description": "Ter pelo menos 18 anos"
         }
       ],
       "whereToApply": "Site da SEDEPE (sedepe.pe.gov.br) ou Agência do Trabalho",

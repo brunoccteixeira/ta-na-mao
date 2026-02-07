@@ -2,7 +2,7 @@
   "municipality": "Maceió",
   "municipalityIbge": "2704302",
   "state": "AL",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "al-maceio-auxilio-moradia",
@@ -38,17 +38,23 @@
         }
       ],
       "whereToApply": "CRAS ou Semas",
-      "documentsRequired": ["CPF", "RG", "NIS", "Laudo habitacional"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Laudo habitacional"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite avaliação",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.maceio.al.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Moradia"
+      "category": "Moradia",
+      "verified": true
     },
     {
       "id": "al-maceio-conta-em-dia",
@@ -84,17 +90,278 @@
         }
       ],
       "whereToApply": "CRAS de Maceió",
-      "documentsRequired": ["CPF", "RG", "NIS", "Contas de água/luz"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Contas de água/luz"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Apresente documentos",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.maceio.al.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💡",
       "category": "Utilidades"
+    },
+    {
+      "id": "al-maceio-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Almoço a R$ 3 e café a R$ 1 nas 11 unidades do Restaurante Popular de Maceió",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Almoço R$ 3, café R$ 1"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Maceió",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://maceio.al.gov.br/noticias/semdes/unidades-do-restaurante-popular-oferecem-refeicoes-de-qualidade-com-precos-acessiveis",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "al-maceio-transporte-social",
+      "name": "Domingo é Livre + Passe Livre Estudantil",
+      "shortDescription": "Ônibus gratuito todo domingo para todos. Estudantes: 44 passes gratuitos/mês",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        }
+      ],
+      "whereToApply": "Postos DMTT ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Domingo: basta embarcar (gratuito para todos)",
+        "Estudantes: solicite Passe Livre no DMTT",
+        "Necessário Cartão Vamu"
+      ],
+      "sourceUrl": "https://maceio.al.gov.br/noticias/dmtt/passe-livre-impulsiona-crescimento-de-mais-de-110-no-uso-do-transporte-publico-por-estudantes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "al-maceio-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Maceió. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Maceió ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.maceio.al.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "al-maceio-habitacao-municipal",
+      "name": "Programa Habitacional de Maceió",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Maceió. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Maceió",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.maceio.al.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "al-maceio-capacitacao-emprego",
+      "name": "Qualifica Maceió",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Maceió. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "AL",
+      "municipalityIbge": "2704302",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2704302",
+          "description": "Morar em Maceió"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Maceió",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.maceio.al.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

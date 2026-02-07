@@ -68,8 +68,8 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 300,
-        "max": 800,
-        "description": "Bolsa de estudos parcial ou total"
+        "max": 810.5,
+        "description": "Bolsa integral (100% da mensalidade) em faculdade particular do ES"
       },
       "eligibilityRules": [
         {
@@ -105,7 +105,7 @@
         "Aguarde o resultado da selecao"
       ],
       "sourceUrl": "https://nossabolsa.es.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
       "category": "Educação"
@@ -203,7 +203,7 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://setades.es.gov.br/restaurante-popular",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -248,7 +248,7 @@
         "Aguarde o inicio das aulas"
       ],
       "sourceUrl": "https://qualificar.es.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🎓",
       "category": "Qualificação Profissional"
@@ -331,8 +331,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4000,
-          "description": "Renda familiar de ate 3 salarios minimos"
+          "value": 4863,
+          "description": "Renda familiar de até 3 salários mínimos (R$ 4.863)"
         }
       ],
       "whereToApply": "Site Conecta Cidadao ou SEDURB",
@@ -352,7 +352,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     }
   ]
 }

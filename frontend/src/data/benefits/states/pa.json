@@ -90,7 +90,7 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.seaster.pa.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -157,7 +157,7 @@
       "estimatedValue": {
         "type": "monthly",
         "min": 500,
-        "max": 800,
+        "max": 810.5,
         "description": "Bolsa-auxílio durante o período do programa"
       },
       "eligibilityRules": [
@@ -228,8 +228,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 4236,
-          "description": "Renda da família de até 3 salários mínimos (R$ 4.236)"
+          "value": 4863,
+          "description": "Renda da família de até 3 salários mínimos (R$ 4.863)"
         },
         {
           "field": "cadastradoCadunico",
@@ -252,23 +252,23 @@
         "Apresente os documentos do imóvel",
         "Aguarde a vistoria e aprovação para receber o auxílio"
       ],
-      "sourceUrl": "http://www.cohab.pa.gov.br/sua-casa",
+      "sourceUrl": "https://www.cohab.pa.gov.br/sua-casa",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
-      "id": "pa-saude-gestante-para",
-      "name": "Rede Alyne Pará - Saúde da Gestante",
-      "shortDescription": "Pré-natal completo e parto seguro para gestantes do Pará pelo SUS.",
+      "id": "pa-agua-para",
+      "name": "Água Pará",
+      "shortDescription": "Conta de água de graça para famílias de baixa renda que consomem até 20 mil litros por mês. Já atendeu 1 milhão de paraenses.",
       "scope": "state",
       "state": "PA",
       "estimatedValue": {
-        "type": "one_time",
-        "min": 0,
-        "max": 0,
-        "description": "Atendimento gratuito pelo SUS"
+        "type": "monthly",
+        "min": 50,
+        "max": 120,
+        "description": "Pagamento integral da conta de água (economia de R$ 50 a R$ 120/mês)"
       },
       "eligibilityRules": [
         {
@@ -278,30 +278,36 @@
           "description": "Morar no Pará"
         },
         {
-          "field": "temGestante",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter gestante na família"
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50)"
         }
       ],
-      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "whereToApply": "Lojas de Atendimento da COSANPA ou Caravanas do programa",
       "documentsRequired": [
-        "CPF",
-        "Cartão SUS",
-        "Comprovante de residência",
-        "Documento de identidade"
+        "CPF (mesmo do CadÚnico)",
+        "RG ou documento com foto",
+        "Comprovante de cadastro no CadÚnico",
+        "Comprovante de vínculo com a COSANPA (conta de água)"
       ],
       "howToApply": [
-        "Vá ao posto de saúde mais perto da sua casa",
-        "Peça para iniciar o acompanhamento pré-natal",
-        "Receba a caderneta da gestante",
-        "Faça todas as consultas e exames no prazo"
+        "Vá a uma loja da COSANPA com seus documentos",
+        "Comprove que está no Cadastro Único",
+        "O CPF do CadÚnico deve ser o mesmo da conta de água",
+        "Se aprovado, a conta de água até 20m³ será paga pelo governo"
       ],
-      "sourceUrl": "http://www.saude.pa.gov.br/",
+      "sourceUrl": "https://agenciapara.com.br/noticia/53232/programa-agua-para-ja-beneficiou-cerca-de-1-milhao-de-paraenses",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤰",
-      "category": "Saúde Materno-Infantil"
+      "icon": "💧",
+      "category": "Utilidades"
     },
     {
       "id": "pa-bolsa-uepa",

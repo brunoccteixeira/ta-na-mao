@@ -2,7 +2,7 @@
   "municipality": "Porto Alegre",
   "municipalityIbge": "4314902",
   "state": "RS",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "rs-portoalegre-todo-jovem-escola",
@@ -50,17 +50,23 @@
         }
       ],
       "whereToApply": "Escola ou CRAS",
-      "documentsRequired": ["RG", "CPF", "NIS", "Comprovante de matrícula"],
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "NIS",
+        "Comprovante de matrícula"
+      ],
       "howToApply": [
         "Escola indica alunos elegíveis",
         "Mantenha frequência acima de 75%",
         "Bolsa é depositada automaticamente"
       ],
       "sourceUrl": "https://prefeitura.poa.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
-      "category": "Educação"
+      "category": "Educação",
+      "verified": true
     },
     {
       "id": "rs-portoalegre-auxilio-estadia",
@@ -90,14 +96,19 @@
         }
       ],
       "whereToApply": "FASC ou centros de acolhimento",
-      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "Laudo de danos"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Laudo de danos"
+      ],
       "howToApply": [
         "Procure a FASC",
         "Apresente documentação",
         "Aguarde avaliação"
       ],
       "sourceUrl": "https://prefeitura.poa.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
       "category": "Moradia"
@@ -136,14 +147,18 @@
         }
       ],
       "whereToApply": "CRAS ou FASC",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite cadastro",
         "Retire a cesta no local indicado"
       ],
       "sourceUrl": "https://prefeitura.poa.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
@@ -176,17 +191,171 @@
         }
       ],
       "whereToApply": "Postos TRI ou EPTC",
-      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
       "howToApply": [
         "Procure um posto TRI",
         "Apresente documentos",
         "Retire o cartão"
       ],
       "sourceUrl": "https://prefeitura.poa.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧓",
       "category": "Transporte"
+    },
+    {
+      "id": "rs-portoalegre-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Refeições GRATUITAS nos 6 restaurantes populares de Porto Alegre. Almoço de segunda a sexta (Centro funciona 7 dias)",
+      "scope": "municipal",
+      "state": "RS",
+      "municipalityIbge": "4314902",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição gratuita"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4314902",
+          "description": "Morar em Porto Alegre"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Porto Alegre",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://prefeitura.poa.br/carta-de-servicos/restaurantes-populares",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "rs-portoalegre-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Porto Alegre. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RS",
+      "municipalityIbge": "4314902",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4314902",
+          "description": "Morar em Porto Alegre"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Porto Alegre",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://prefeitura.poa.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "rs-portoalegre-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Porto Alegre. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "RS",
+      "municipalityIbge": "4314902",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "4314902",
+          "description": "Morar em Porto Alegre"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Porto Alegre ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://prefeitura.poa.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

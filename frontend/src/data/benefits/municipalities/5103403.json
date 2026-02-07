@@ -2,7 +2,7 @@
   "municipality": "Cuiabá",
   "municipalityIbge": "5103403",
   "state": "MT",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "mt-cuiaba-ser-familia",
@@ -38,14 +38,19 @@
         }
       ],
       "whereToApply": "CRAS de Cuiabá",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Atualize dados no CadÚnico",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.cuiaba.mt.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👨‍👩‍👧",
       "category": "Transferência de Renda"
@@ -79,22 +84,282 @@
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 810.5,
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
       "whereToApply": "CRAS de Cuiabá",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Verifique elegibilidade",
         "Aguarde liberação"
       ],
       "sourceUrl": "https://www.cuiaba.mt.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🔥",
       "category": "Utilidades"
+    },
+    {
+      "id": "mt-cuiaba-restaurante-popular",
+      "name": "Restaurante Popular Elza Fortunato",
+      "shortDescription": "Refeições a R$ 2 no Restaurante Popular de Cuiabá (Rua Barão de Melgaço, Centro). Segunda a sexta, 11h-14h",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Cuiabá",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br/noticias/restaurante-popular-de-cuiaba-conquista-a-populacao-com-refeicoes-acessiveis-e-de-qualidade",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "mt-cuiaba-transporte-social",
+      "name": "Transporte Social",
+      "shortDescription": "Meia-passagem ou gratuidade no transporte para baixa renda em Cuiabá. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Terminal de ônibus ou secretaria de transporte de Cuiabá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
+      "howToApply": [
+        "Procure o terminal de ônibus ou CRAS",
+        "Apresente documentos",
+        "Aguarde emissão do cartão"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "mt-cuiaba-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Cuiabá. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Cuiabá ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "mt-cuiaba-habitacao-municipal",
+      "name": "Casa Cuiabana",
+      "shortDescription": "Programa habitacional com subsídio de até R$ 25 mil para famílias com renda até R$ 12 mil/mês",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 25000,
+        "description": "Subsídio de até R$ 25.000"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Cuiabá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br/noticias/prefeitura-lanca-programa-habitacional-casa-cuiabana-e-abre-inscricoes",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "mt-cuiaba-capacitacao-emprego",
+      "name": "Qualifica Cuiabá",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Cuiabá. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "MT",
+      "municipalityIbge": "5103403",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5103403",
+          "description": "Morar em Cuiabá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Cuiabá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.cuiaba.mt.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

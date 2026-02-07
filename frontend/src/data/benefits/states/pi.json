@@ -4,106 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "pi-cartao-mais-renda",
-      "name": "Cartão Mais Renda",
-      "shortDescription": "Cartão com dinheiro todo mês para famílias pobres do Piauí.",
-      "scope": "state",
-      "state": "PI",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Valor varia por família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "PI",
-          "description": "Morar no Piauí"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF de toda a família",
-        "NIS do Cadastro Único",
-        "Comprovante de endereço"
-      ],
-      "howToApply": [
-        "Atualize seu Cadastro Único no CRAS",
-        "O governo escolhe quem pode participar",
-        "Espere ser chamado",
-        "Pegue seu cartão no local indicado"
-      ],
-      "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💳",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "pi-comida-na-mesa",
-      "name": "Comida na Mesa",
-      "shortDescription": "Programa para garantir comida para quem mais precisa.",
-      "scope": "state",
-      "state": "PI",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 80,
-        "max": 200,
-        "description": "Ajuda mensal em alimentos"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "PI",
-          "description": "Morar no Piauí"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 436,
-          "description": "Renda familiar de até R$ 436 (equivale a ~R$ 109 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "NIS",
-        "Comprovante de endereço"
-      ],
-      "howToApply": [
-        "Procure o CRAS da sua cidade",
-        "Fale que precisa de ajuda com comida",
-        "Traga seus documentos",
-        "Espere a avaliação"
-      ],
-      "sourceUrl": "https://www.pi.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🍚",
-      "category": "Alimentação"
-    },
-    {
       "id": "pi-agua-para-todos",
       "name": "Água para Todos PI",
       "shortDescription": "Cisternas e poços para famílias da zona rural sem água.",
@@ -157,7 +57,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "pi-qualifica-piaui",
@@ -217,10 +117,10 @@
       "scope": "state",
       "state": "PI",
       "estimatedValue": {
-        "type": "monthly",
+        "type": "one_time",
         "min": 600,
         "max": 600,
-        "description": "R$ 600 por mês durante o curso"
+        "description": "R$ 600 total em 3 parcelas de R$ 200 (matrícula, após 3 meses, após certificação)"
       },
       "eligibilityRules": [
         {
@@ -301,14 +201,14 @@
     {
       "id": "pi-morar-bem",
       "name": "Morar Bem Piauí",
-      "shortDescription": "Casas populares para famílias de baixa renda no Piauí, especialmente na zona rural.",
+      "shortDescription": "Cheque-moradia de até R$ 10 mil para entrada do financiamento habitacional no Piauí.",
       "scope": "state",
       "state": "PI",
       "estimatedValue": {
         "type": "one_time",
-        "min": 30000,
-        "max": 80000,
-        "description": "Casa popular com subsídio do governo"
+        "min": 7000,
+        "max": 10000,
+        "description": "Cheque-moradia de R$ 7 mil (Faixa B) a R$ 10 mil (Faixa A) para entrada do financiamento"
       },
       "eligibilityRules": [
         {
@@ -326,8 +226,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640"
+          "value": 8000,
+          "description": "Renda familiar de até R$ 4.400 (Faixa A) ou R$ 8.000 (Faixa B)"
         },
         {
           "field": "cadastradoCadunico",
@@ -336,7 +236,7 @@
           "description": "Inscrito no Cadastro Único"
         }
       ],
-      "whereToApply": "Prefeitura ou CRAS do seu município",
+      "whereToApply": "App Gov.Pi Cidadão ou site da ADH-PI (Agência de Desenvolvimento Habitacional)",
       "documentsRequired": [
         "CPF e RG de todos da família",
         "Comprovante de renda",
@@ -353,7 +253,96 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
+    },
+    {
+      "id": "pi-saude-digital",
+      "name": "Piauí Saúde Digital",
+      "shortDescription": "Consultas médicas de graça por vídeo ou telefone, sem sair de casa. Já atendeu mais de 1 milhão de pessoas.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 0,
+        "description": "Consultas médicas gratuitas por telemedicina"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        }
+      ],
+      "whereToApply": "Unidade Básica de Saúde (UBS) do seu município",
+      "documentsRequired": [
+        "Cartão do SUS",
+        "CPF ou RG",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Vá à UBS mais perto da sua casa",
+        "Peça para marcar uma consulta pelo Piauí Saúde Digital",
+        "A consulta é feita por vídeo ou telefone com médico especialista",
+        "Se precisar de exames ou cirurgia, já sai com o encaminhamento"
+      ],
+      "sourceUrl": "https://www.saude.pi.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📱",
+      "category": "Saúde"
+    },
+    {
+      "id": "pi-cnh-social",
+      "name": "CNH Social Piauí",
+      "shortDescription": "Habilitação de moto (categoria A) de graça para estudantes da rede pública do Piauí.",
+      "scope": "state",
+      "state": "PI",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 1200,
+        "max": 2000,
+        "description": "CNH gratuita categoria A (economia de R$ 1.200 a R$ 2.000)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "PI",
+          "description": "Morar no Piauí"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante ou egresso da rede pública"
+        }
+      ],
+      "whereToApply": "Detran-PI ou site detran.pi.gov.br",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula ou conclusão (rede pública)",
+        "Comprovante de residência no Piauí"
+      ],
+      "howToApply": [
+        "Acompanhe os editais no site do Detran-PI",
+        "Faça a inscrição no período indicado",
+        "Apresente os documentos e comprove vínculo com rede pública",
+        "Se aprovado, faça as aulas e provas sem custo"
+      ],
+      "sourceUrl": "https://www.detran.pi.gov.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏍️",
+      "category": "Qualificação Profissional"
     }
   ]
 }

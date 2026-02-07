@@ -4,157 +4,6 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "ap-auxilio-social-amapa",
-      "name": "Auxílio Social Amapá",
-      "shortDescription": "Ajuda mensal para famílias de baixa renda do Amapá.",
-      "scope": "state",
-      "state": "AP",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 100,
-        "max": 150,
-        "description": "Valor mensal conforme a família"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "AP",
-          "description": "Morar no Amapá"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "RG",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência no Amapá"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Faça ou atualize o Cadastro Único",
-        "O governo seleciona as famílias",
-        "Aguarde a comunicação sobre o benefício"
-      ],
-      "sourceUrl": "https://www.amapa.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
-    },
-    {
-      "id": "ap-vale-gas-amapa",
-      "name": "Vale Gás Amapá",
-      "shortDescription": "Vale Gás Social do Amapá para famílias vulneráveis, com gás de cozinha gratuito.",
-      "scope": "state",
-      "state": "AP",
-      "estimatedValue": {
-        "type": "one_time",
-        "min": 100,
-        "max": 300,
-        "description": "Recargas de botijão de gás (programa estadual com emenda parlamentar)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "AP",
-          "description": "Morar no Amapá"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu município",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Único atualizado",
-        "Vá ao CRAS se precisar atualizar dados",
-        "O governo faz a seleção automática",
-        "Se selecionado, receba o benefício"
-      ],
-      "sourceUrl": "https://www.amapa.gov.br/",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
-    },
-    {
-      "id": "ap-cesta-basica-amapa",
-      "name": "Cesta Básica Amapá",
-      "shortDescription": "Distribuição de cestas básicas para famílias em situação de pobreza.",
-      "scope": "state",
-      "state": "AP",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 80,
-        "max": 120,
-        "description": "Cesta com alimentos básicos"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "AP",
-          "description": "Morar no Amapá"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Inscrito no Cadastro Único"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 872,
-          "description": "Renda familiar de até R$ 872 (equivale a ~R$ 218 por pessoa para família de 4)"
-        }
-      ],
-      "whereToApply": "CRAS ou Secretaria de Assistência Social",
-      "documentsRequired": [
-        "CPF",
-        "NIS (Número do Cadastro Único)",
-        "Comprovante de residência"
-      ],
-      "howToApply": [
-        "Vá ao CRAS da sua cidade",
-        "Atualize o Cadastro Único",
-        "Aguarde a convocação para retirar a cesta",
-        "Leve documento com foto na retirada"
-      ],
-      "sourceUrl": "https://www.amapa.gov.br/",
-      "lastUpdated": "2026-02-04",
-      "status": "active",
-      "icon": "🧺",
-      "category": "Alimentação"
-    },
-    {
       "id": "ap-qualifica-amapa",
       "name": "Qualifica Amapá",
       "shortDescription": "Cursos gratuitos para aprender uma profissão e conseguir emprego no Amapá.",
@@ -227,8 +76,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640"
+          "value": 2850,
+          "description": "Renda da família de até R$ 2.850 (Faixa 1 do MCMV)"
         },
         {
           "field": "cadastradoCadunico",
@@ -255,19 +104,19 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     },
     {
-      "id": "ap-saude-gestante-amapa",
-      "name": "Rede Alyne Amapá - Saúde da Gestante",
-      "shortDescription": "Acompanhamento gratuito de pré-natal e parto para gestantes do Amapá pelo SUS.",
+      "id": "ap-habilita-amapa",
+      "name": "Habilita Amapá",
+      "shortDescription": "Primeira habilitação de graça para 10 mil pessoas de baixa renda nos 16 municípios do Amapá. Inclui aulas, exames e até 2 tentativas de reexame.",
       "scope": "state",
       "state": "AP",
       "estimatedValue": {
         "type": "one_time",
-        "min": 0,
-        "max": 0,
-        "description": "Atendimento gratuito pelo SUS"
+        "min": 2500,
+        "max": 3500,
+        "description": "CNH gratuita (economia de R$ 2.500 a R$ 3.500 em taxas, aulas e exames)"
       },
       "eligibilityRules": [
         {
@@ -277,30 +126,36 @@
           "description": "Morar no Amapá"
         },
         {
-          "field": "temGestante",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter gestante na família"
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
         }
       ],
-      "whereToApply": "UBS (Posto de Saúde) mais perto da sua casa",
+      "whereToApply": "Detran-AP (detran.ap.gov.br) durante período de inscrições",
       "documentsRequired": [
         "CPF",
-        "Cartão SUS",
-        "Comprovante de residência",
-        "Documento de identidade"
+        "RG ou documento com foto",
+        "Comprovante de inscrição no CadÚnico",
+        "Comprovante de residência no Amapá"
       ],
       "howToApply": [
-        "Vá ao posto de saúde mais perto da sua casa",
-        "Peça para iniciar o pré-natal",
-        "Receba a caderneta da gestante",
-        "Faça todas as consultas e exames marcados"
+        "Acompanhe os editais no site do Detran-AP",
+        "Faça a inscrição no período indicado",
+        "A seleção é feita pela base do CadÚnico (5% das vagas para mulheres vítimas de violência, indígenas, PcD)",
+        "Se aprovado, faça as aulas e provas gratuitamente no CFC indicado"
       ],
-      "sourceUrl": "https://www.amapa.gov.br/",
+      "sourceUrl": "https://www.detran.ap.gov.br/detranap/programa-habilita-amapa-saiba-os-criterios-de-participacao/",
       "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "🤰",
-      "category": "Saúde Materno-Infantil"
+      "icon": "🚗",
+      "category": "Qualificação Profissional"
     },
     {
       "id": "ap-bolsa-educacao-amapa",
@@ -353,6 +208,173 @@
       "status": "active",
       "icon": "🎓",
       "category": "Educação"
+    },
+    {
+      "id": "ap-renda-viver-melhor",
+      "name": "Renda Para Viver Melhor",
+      "shortDescription": "Benefício mensal de R$ 311 do governo do Amapá para famílias com crianças em situação de pobreza.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 311,
+        "max": 311,
+        "description": "R$ 311 por mês"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 405,
+          "description": "Renda per capita de até 1/4 do salário mínimo (R$ 405)"
+        },
+        {
+          "field": "quantidadeFilhos",
+          "operator": "gte",
+          "value": 1,
+          "description": "Ter filhos de 0 a 15 anos"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Assistência Social do Amapá (SEAS)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Certidão de nascimento dos filhos",
+        "Comprovante de residência no Amapá"
+      ],
+      "howToApply": [
+        "Vá ao CRAS e faça ou atualize o Cadastro Único",
+        "A seleção é feita automaticamente pelo governo",
+        "Se selecionada, a família é comunicada pela SEAS",
+        "Mantenha a vacinação e frequência escolar dos filhos em dia"
+      ],
+      "sourceUrl": "https://seas.portal.ap.gov.br/conteudo/servicos/renda-para-viver-melhor",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "💰",
+      "category": "Transferência de Renda"
+    },
+    {
+      "id": "ap-novo-amapa-jovem",
+      "name": "Novo Amapá Jovem",
+      "shortDescription": "Bolsa de R$ 250 a R$ 1.400 para jovens de 15 a 29 anos do Amapá, com capacitação profissional e estágio.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 250,
+        "max": 1400,
+        "description": "Bolsa de R$ 250 a R$ 1.400 conforme o eixo do programa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 15,
+          "description": "Ter entre 15 e 29 anos"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante ou jovem em situação de vulnerabilidade"
+        }
+      ],
+      "whereToApply": "Secretaria da Juventude do Amapá ou site do programa",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de matrícula escolar",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Amapá"
+      ],
+      "howToApply": [
+        "Fique atento aos editais do Novo Amapá Jovem",
+        "Escolha o eixo que mais combina com você",
+        "Faça a inscrição no prazo indicado",
+        "Mantenha a frequência escolar mínima de 75%"
+      ],
+      "sourceUrl": "https://www.portal.ap.gov.br/noticia/1204/novo-amapa-jovem-confira-os-beneficios-dos-eixos-cidadao-e-protagonista",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🧑‍🎓",
+      "category": "Educação"
+    },
+    {
+      "id": "ap-amapa-sem-fome",
+      "name": "Amapá Sem Fome",
+      "shortDescription": "Programa do governo do Amapá que distribui cestas de alimentos e proteínas para famílias com fome.",
+      "scope": "state",
+      "state": "AP",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Cesta de alimentos com proteínas (carne, frango, peixe, ovos) gratuita"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "AP",
+          "description": "Morar no Amapá"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Inscrito no Cadastro Único"
+        },
+        {
+          "field": "rendaFamiliarMensal",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda per capita de até meio salário mínimo (R$ 810,50)"
+        }
+      ],
+      "whereToApply": "CRAS do seu município ou SEAS do Amapá",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS (Número do Cadastro Único)",
+        "Comprovante de residência no Amapá"
+      ],
+      "howToApply": [
+        "Vá ao CRAS e faça ou atualize o Cadastro Único",
+        "O governo seleciona as famílias com maior vulnerabilidade",
+        "Se selecionada, a família recebe as cestas nos pontos de entrega",
+        "Acompanhe no site da SEAS se foi contemplado"
+      ],
+      "sourceUrl": "https://www.portal.ap.gov.br/noticia/1701/amapa-sem-fome-governador-clecio-luis-institui-programa-para-combater-a-inseguranca-alimentar-em-todo-estado",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🥩",
+      "category": "Alimentação"
     }
   ]
 }

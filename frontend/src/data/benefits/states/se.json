@@ -6,14 +6,14 @@
     {
       "id": "se-cartao-mais-inclusao",
       "name": "Cartão Mais Inclusão",
-      "shortDescription": "Cartao mensal para comprar alimentos para familias vulneraveis de Sergipe. Programa permanente com inscricoes abertas.",
+      "shortDescription": "Cartão mensal para comprar alimentos para famílias vulneráveis de Sergipe. Programa permanente com inscrições abertas.",
       "scope": "state",
       "state": "SE",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Valor mensal no cartao para compra de alimentos"
+        "min": 130,
+        "max": 130,
+        "description": "R$ 130 por mês (modalidade CMais Cidadania)"
       },
       "eligibilityRules": [
         {
@@ -42,10 +42,10 @@
         "Comprovante de endereço"
       ],
       "howToApply": [
-        "Inscricoes no site cmaisinscricoes.assistenciasocial.se.gov.br",
-        "Ou va ao CRAS da sua cidade",
-        "Atualize seu Cadastro Unico",
-        "Aguarde a analise e entrega do cartao nas agencias do Banese"
+        "Inscrições no site cmaisinscricoes.assistenciasocial.se.gov.br",
+        "Ou vá ao CRAS da sua cidade",
+        "Atualize seu Cadastro Único",
+        "Aguarde a análise e entrega do cartão nas agências do Banese"
       ],
       "sourceUrl": "https://assistenciasocial.se.gov.br/seasic-divulga-lista-dos-contemplados-com-o-cartao-cmais/",
       "lastUpdated": "2026-02-07",
@@ -138,7 +138,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌾",
-      "category": "Trabalho Rural"
+      "category": "Emprego e Renda"
     },
     {
       "id": "se-qualifica-sergipe",
@@ -295,9 +295,9 @@
       "state": "SE",
       "estimatedValue": {
         "type": "one_time",
-        "min": 20000,
-        "max": 80000,
-        "description": "Subsídio de até R$ 20 mil ou casa popular"
+        "min": 15000,
+        "max": 20000,
+        "description": "Subsídio estadual de R$ 15 mil (Faixa 2) a R$ 20 mil (Faixa 1) para entrada do financiamento"
       },
       "eligibilityRules": [
         {
@@ -315,8 +315,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640 (Faixa 1)"
+          "value": 2850,
+          "description": "Renda familiar de até R$ 2.850 (Faixa 1 alinhada ao MCMV)"
         },
         {
           "field": "cadastradoCadunico",
@@ -325,7 +325,7 @@
           "description": "Inscrito no Cadastro Único"
         }
       ],
-      "whereToApply": "SEASIC ou Prefeitura do seu município",
+      "whereToApply": "Site casasergipana.se.gov.br",
       "documentsRequired": [
         "CPF e RG de todos da família",
         "Comprovante de renda",
@@ -343,7 +343,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     }
   ]
 }

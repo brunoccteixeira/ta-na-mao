@@ -2,53 +2,59 @@
   "municipality": "São Paulo",
   "municipalityIbge": "3550308",
   "state": "SP",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "sp-saopaulo-bolsa-trabalho",
-      "name": "Bolsa Trabalho",
-      "shortDescription": "Ajuda mensal para quem está desempregado e faz cursos de qualificação",
+      "name": "Operação Trabalho (POT)",
+      "shortDescription": "Programa municipal de trabalho com bolsa de R$ 1.062 a R$ 1.593 por mês",
       "scope": "municipal",
       "state": "SP",
       "municipalityIbge": "3550308",
       "estimatedValue": {
         "type": "monthly",
-        "min": 540,
-        "max": 540,
-        "description": "R$ 540 por mês durante o programa"
+        "min": 1062,
+        "max": 1593,
+        "description": "R$ 1.062 (20h/sem) a R$ 1.593 (30h/sem)"
       },
       "eligibilityRules": [
         {
           "field": "municipioIbge",
           "operator": "eq",
           "value": "3550308",
-          "description": "Morar em São Paulo capital"
+          "description": "Morar em São Paulo"
         },
         {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar no CadÚnico"
+          "field": "idade",
+          "operator": "gte",
+          "value": 18,
+          "description": "Ter 18 anos ou mais"
         },
         {
           "field": "rendaPerCapita",
           "operator": "lte",
-          "value": 706,
+          "value": 810.5,
           "description": "Renda por pessoa até meio salário mínimo"
         }
       ],
-      "whereToApply": "CRAS ou site bolsadopovo.sp.gov.br",
-      "documentsRequired": ["CPF", "RG", "Comprovante de residência", "NIS"],
-      "howToApply": [
-        "Acesse bolsadopovo.sp.gov.br",
-        "Faça cadastro com CPF",
-        "Aguarde seleção"
+      "whereToApply": "CATe (Centro de Apoio ao Trabalho e Empreendedorismo)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "NIS"
       ],
-      "sourceUrl": "https://bolsadopovo.sp.gov.br",
-      "lastUpdated": "2026-01-29",
+      "howToApply": [
+        "Procure um CATe da sua região",
+        "Faça inscrição com documentos",
+        "Aguarde seleção para projetos"
+      ],
+      "sourceUrl": "https://prefeitura.sp.gov.br/web/desenvolvimento/w/cursos/operacao_trabalho/610",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💼",
-      "category": "Transferência de Renda"
+      "category": "Transferência de Renda",
+      "verified": true
     },
     {
       "id": "sp-saopaulo-passe-livre-estudantil",
@@ -84,14 +90,19 @@
         }
       ],
       "whereToApply": "Portal SPTrans ou escola",
-      "documentsRequired": ["RG", "Declaração escolar", "Foto 3x4", "Comprovante de residência"],
+      "documentsRequired": [
+        "RG",
+        "Declaração escolar",
+        "Foto 3x4",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Escola solicita via portal SPTrans",
         "Aguarde aprovação",
         "Retire o cartão na escola"
       ],
       "sourceUrl": "https://bilheteunico.sptrans.com.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
       "category": "Transporte"
@@ -124,14 +135,19 @@
         }
       ],
       "whereToApply": "Postos SPTrans ou online",
-      "documentsRequired": ["RG", "CPF", "Comprovante de residência", "Foto 3x4"],
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "Comprovante de residência",
+        "Foto 3x4"
+      ],
       "howToApply": [
         "Acesse bilheteunico.sptrans.com.br",
         "Preencha o cadastro",
         "Retire o cartão no posto indicado"
       ],
       "sourceUrl": "https://bilheteunico.sptrans.com.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧓",
       "category": "Transporte"
@@ -139,7 +155,7 @@
     {
       "id": "sp-saopaulo-bom-prato",
       "name": "Bom Prato",
-      "shortDescription": "Refeições a R$ 1 em restaurantes populares do governo",
+      "shortDescription": "Refeições a R$ 1 (café R$ 0,50) nos restaurantes Bom Prato. Programa do Governo do Estado de SP, disponível na capital",
       "scope": "municipal",
       "state": "SP",
       "municipalityIbge": "3550308",
@@ -164,10 +180,113 @@
         "Não precisa de cadastro"
       ],
       "sourceUrl": "https://www.desenvolvimentosocial.sp.gov.br/bom-prato/",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Alimentação"
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "sp-saopaulo-iptu-social",
+      "name": "Isenção de IPTU",
+      "shortDescription": "Isenção automática para imóveis residenciais de baixo valor venal. Aposentados com renda até 3 SM também podem solicitar",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        }
+      ],
+      "whereToApply": "Site da Prefeitura (SP Faz) ou presencial na Secretaria da Fazenda",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Isenção automática para imóveis até ~R$ 150 mil de valor venal",
+        "Aposentados: solicite pelo sistema SIIA online",
+        "Verifique sua situação no site da prefeitura"
+      ],
+      "sourceUrl": "https://prefeitura.sp.gov.br/web/fazenda/w/servicos/iptu/29310",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "sp-saopaulo-pode-entrar",
+      "name": "Pode Entrar",
+      "shortDescription": "Programa habitacional com subsídio de até R$ 40 mil para moradia ou aluguel social",
+      "scope": "municipal",
+      "state": "SP",
+      "municipalityIbge": "3550308",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 150,
+        "max": 594,
+        "description": "Aluguel social de R$ 150 a R$ 594 ou carta de crédito até R$ 40 mil"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "3550308",
+          "description": "Morar em São Paulo"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda familiar até 3 SM (R$ 4.863)"
+        }
+      ],
+      "whereToApply": "COHAB-SP ou site podeentrar.cohab.sp.gov.br",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de renda",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse podeentrar.cohab.sp.gov.br",
+        "Faça cadastro online",
+        "Aguarde chamamento"
+      ],
+      "sourceUrl": "https://podeentrar.cohab.sp.gov.br/programa-pode-entrar",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": true
     }
   ]
 }

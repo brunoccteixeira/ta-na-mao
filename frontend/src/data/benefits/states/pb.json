@@ -4,16 +4,16 @@
   "lastUpdated": "2026-02-07",
   "benefits": [
     {
-      "id": "pb-pbsocial",
-      "name": "PB Social",
-      "shortDescription": "Dinheiro todo mês para famílias pobres da Paraíba.",
+      "id": "pb-cartao-alimentacao",
+      "name": "Cartão Alimentação PB",
+      "shortDescription": "Cartão com R$ 50 por mês para comprar comida em mercados credenciados da Paraíba. Atende 52 mil famílias.",
       "scope": "state",
       "state": "PB",
       "estimatedValue": {
         "type": "monthly",
-        "min": 100,
-        "max": 300,
-        "description": "Valor depende do tamanho da família"
+        "min": 50,
+        "max": 50,
+        "description": "R$ 50 por mês no cartão, só para comprar alimentos"
       },
       "eligibilityRules": [
         {
@@ -26,7 +26,7 @@
           "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Ter Cadastro Único"
+          "description": "Inscrito no Cadastro Único"
         },
         {
           "field": "rendaFamiliarMensal",
@@ -44,14 +44,14 @@
       "howToApply": [
         "Vá ao CRAS da sua cidade",
         "Atualize seu Cadastro Único",
-        "O programa escolhe quem entra",
-        "Espere o contato do CRAS"
+        "A seleção é feita pelo mapa de insegurança alimentar",
+        "Se selecionado, receba o cartão e use em mercados credenciados"
       ],
-      "sourceUrl": "https://www.paraiba.pb.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "sourceUrl": "https://paraiba.pb.gov.br/diretas/secretaria-de-desenvolvimento-humano/programas/cartao-alimentacao",
+      "lastUpdated": "2026-02-07",
       "status": "active",
-      "icon": "💰",
-      "category": "Transferência de Renda"
+      "icon": "🛒",
+      "category": "Alimentação"
     },
     {
       "id": "pb-restaurante-popular",
@@ -328,8 +328,8 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2640,
-          "description": "Renda da família de até R$ 2.640"
+          "value": 2850,
+          "description": "Renda da família de até R$ 2.850 (Faixa 1 do MCMV)"
         },
         {
           "field": "cadastradoCadunico",
@@ -352,11 +352,11 @@
         "Apresente todos os documentos",
         "Aguarde o sorteio ou chamamento"
       ],
-      "sourceUrl": "http://cehap.pb.gov.br/sitecehap/",
+      "sourceUrl": "https://cehap.pb.gov.br/sitecehap/",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
     }
   ]
 }

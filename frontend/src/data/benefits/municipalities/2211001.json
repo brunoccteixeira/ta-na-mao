@@ -2,7 +2,7 @@
   "municipality": "Teresina",
   "municipalityIbge": "2211001",
   "state": "PI",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "pi-teresina-cartao-sasc",
@@ -38,14 +38,19 @@
         }
       ],
       "whereToApply": "CRAS ou SASC",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Atualize dados no CadÚnico",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.teresina.pi.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -84,17 +89,271 @@
         }
       ],
       "whereToApply": "CRAS ou SASC",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Verifique elegibilidade",
         "Aguarde análise"
       ],
       "sourceUrl": "https://www.teresina.pi.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💳",
       "category": "Transferência de Renda"
+    },
+    {
+      "id": "pi-teresina-restaurante-popular",
+      "name": "Restaurante Popular",
+      "shortDescription": "Refeições a R$ 2 no Restaurante Popular do Mercado Central de Teresina (reinaugurado 2025)",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Refeição por R$ 2"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Teresina",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Popular da cidade",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://pmt.pi.gov.br/2025/04/14/com-comida-de-qualidade-a-preco-acessivel-restaurante-popular-de-teresina-e-reinaugurado/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "pi-teresina-transporte-social",
+      "name": "Metrô Tarifa Zero",
+      "shortDescription": "Metrô de Teresina é totalmente gratuito desde janeiro de 2025. Única capital do Brasil com metrô tarifa zero",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Tarifa zero (gratuito)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        }
+      ],
+      "whereToApply": "Estações do Metrô de Teresina",
+      "documentsRequired": [],
+      "howToApply": [
+        "Basta embarcar no metrô",
+        "Gratuito para todos desde jan/2025",
+        "Funciona de segunda a sábado"
+      ],
+      "sourceUrl": "https://www.pi.gov.br/noticia/metro-de-teresina-tera-tarifa-zero-a-partir-de-janeiro-de-2025",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "pi-teresina-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Teresina. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Teresina ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.teresina.pi.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "pi-teresina-habitacao-municipal",
+      "name": "Programa Habitacional de Teresina",
+      "shortDescription": "Moradia popular ou aluguel social para famílias em vulnerabilidade em Teresina. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 300,
+        "max": 600,
+        "description": "Aluguel social de R$ 300 a R$ 600"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter casa própria"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS ou Secretaria de Habitação de Teresina",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência",
+        "Comprovante de renda"
+      ],
+      "howToApply": [
+        "Procure o CRAS do seu bairro",
+        "Solicite inclusão no programa habitacional",
+        "Aguarde avaliação social"
+      ],
+      "sourceUrl": "https://www.teresina.pi.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "pi-teresina-capacitacao-emprego",
+      "name": "Qualifica Teresina",
+      "shortDescription": "Cursos gratuitos de qualificação profissional com bolsa-auxílio em Teresina. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "PI",
+      "municipalityIbge": "2211001",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 200,
+        "max": 500,
+        "description": "Bolsa de R$ 200 a R$ 500 durante o curso"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "2211001",
+          "description": "Morar em Teresina"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 16,
+          "description": "Ter pelo menos 16 anos"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "CRAS, SINE ou Secretaria de Trabalho de Teresina",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Comprovante de escolaridade"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura ou procure o SINE",
+        "Inscreva-se nos cursos disponíveis",
+        "Aguarde início das turmas"
+      ],
+      "sourceUrl": "https://www.teresina.pi.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "📚",
+      "category": "Qualificação Profissional",
+      "verified": false,
+      "templateGenerated": true
     }
   ]
 }

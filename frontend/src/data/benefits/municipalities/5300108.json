@@ -2,7 +2,7 @@
   "municipality": "Brasília",
   "municipalityIbge": "5300108",
   "state": "DF",
-  "lastUpdated": "2026-01-29",
+  "lastUpdated": "2026-02-07",
   "benefits": [
     {
       "id": "df-brasilia-cartao-prato-cheio",
@@ -38,14 +38,19 @@
         }
       ],
       "whereToApply": "CRAS ou site da SEDES-DF",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS da sua região",
         "Verifique se está elegível",
         "Aguarde o cartão"
       ],
       "sourceUrl": "https://sedes.df.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
@@ -84,14 +89,19 @@
         }
       ],
       "whereToApply": "CRAS ou site da SEDES-DF",
-      "documentsRequired": ["CPF", "RG", "NIS", "Comprovante de residência"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS",
+        "Comprovante de residência"
+      ],
       "howToApply": [
         "Procure o CRAS da sua região",
         "Atualize dados no CadÚnico",
         "Aguarde análise"
       ],
       "sourceUrl": "https://sedes.df.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💰",
       "category": "Transferência de Renda"
@@ -130,17 +140,218 @@
         }
       ],
       "whereToApply": "CRAS da região",
-      "documentsRequired": ["CPF", "RG", "NIS"],
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "NIS"
+      ],
       "howToApply": [
         "Procure o CRAS",
         "Solicite a cesta",
         "Retire no local indicado"
       ],
       "sourceUrl": "https://sedes.df.gov.br",
-      "lastUpdated": "2026-01-29",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🧺",
       "category": "Alimentação"
+    },
+    {
+      "id": "df-brasilia-restaurante-popular",
+      "name": "Restaurante Comunitário",
+      "shortDescription": "Almoço a R$ 1 e café/jantar a R$ 0,50 em 18 restaurantes comunitários do DF",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Almoço R$ 1, café R$ 0,50, jantar R$ 0,50"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar em Brasília"
+        }
+      ],
+      "whereToApply": "Restaurantes Populares de Brasília",
+      "documentsRequired": [],
+      "howToApply": [
+        "Vá a qualquer Restaurante Comunitário do DF",
+        "Almoço: 11h às 14h | Café: 7h às 9h | Jantar: 17h às 19h",
+        "Não precisa de cadastro"
+      ],
+      "sourceUrl": "https://www.sedes.df.gov.br/restaurantes-comunitarios",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🍽️",
+      "category": "Alimentação",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "df-brasilia-transporte-social",
+      "name": "Passe Livre Estudantil",
+      "shortDescription": "Transporte gratuito para estudantes do DF (54 acessos/mês em ônibus e metrô)",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 0,
+        "max": 0,
+        "description": "Desconto de 50% a 100% na tarifa"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar no DF"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Ser estudante"
+        }
+      ],
+      "whereToApply": "Portal semob.df.gov.br ou pontos de atendimento",
+      "documentsRequired": [
+        "RG",
+        "CPF",
+        "Comprovante de matrícula",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse semob.df.gov.br",
+        "Faça cadastro com documentos",
+        "Retire o cartão no ponto indicado"
+      ],
+      "sourceUrl": "https://semob.df.gov.br/passe-livre-estudantil-cadastros/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🚌",
+      "category": "Transporte",
+      "verified": true,
+      "templateGenerated": false
+    },
+    {
+      "id": "df-brasilia-iptu-social",
+      "name": "IPTU Social",
+      "shortDescription": "Isenção ou desconto no IPTU para famílias de baixa renda em Brasília. Verifique disponibilidade na prefeitura da sua cidade.",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "annual",
+        "min": 0,
+        "max": 2000,
+        "description": "Isenção de até 100% do IPTU"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar em Brasília"
+        },
+        {
+          "field": "cadastradoCadunico",
+          "operator": "eq",
+          "value": true,
+          "description": "Estar no CadÚnico"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": true,
+          "description": "Ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda por pessoa até meio salário mínimo"
+        }
+      ],
+      "whereToApply": "Secretaria da Fazenda de Brasília ou site da prefeitura",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência",
+        "Carnê do IPTU",
+        "NIS"
+      ],
+      "howToApply": [
+        "Acesse o site da prefeitura",
+        "Solicite isenção no período de cadastro",
+        "Aguarde análise"
+      ],
+      "sourceUrl": "https://www.df.gov.br",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏠",
+      "category": "Moradia",
+      "verified": false,
+      "templateGenerated": true
+    },
+    {
+      "id": "df-brasilia-habitacao-municipal",
+      "name": "Morar DF",
+      "shortDescription": "Subsídio de até R$ 16 mil para compra da casa própria via CODHAB",
+      "scope": "municipal",
+      "state": "DF",
+      "municipalityIbge": "5300108",
+      "estimatedValue": {
+        "type": "one_time",
+        "min": 0,
+        "max": 16079,
+        "description": "Subsídio de até R$ 16.079 (Cheque Moradia)"
+      },
+      "eligibilityRules": [
+        {
+          "field": "municipioIbge",
+          "operator": "eq",
+          "value": "5300108",
+          "description": "Morar no DF há 5+ anos"
+        },
+        {
+          "field": "temCasaPropria",
+          "operator": "eq",
+          "value": false,
+          "description": "Não ter imóvel próprio"
+        },
+        {
+          "field": "rendaPerCapita",
+          "operator": "lte",
+          "value": 810.5,
+          "description": "Renda familiar até 5 SM (R$ 8.105)"
+        }
+      ],
+      "whereToApply": "CODHAB (codhab.df.gov.br)",
+      "documentsRequired": [
+        "CPF",
+        "RG",
+        "Comprovante de residência (5 anos DF)",
+        "Comprovante de renda",
+        "Certidões"
+      ],
+      "howToApply": [
+        "Acesse codhab.df.gov.br",
+        "Faça cadastro no Morar Bem",
+        "Envie documentos e aguarde habilitação"
+      ],
+      "sourceUrl": "https://www.codhab.df.gov.br/postagem/2074",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "🏡",
+      "category": "Moradia",
+      "verified": true,
+      "templateGenerated": false
     }
   ]
 }

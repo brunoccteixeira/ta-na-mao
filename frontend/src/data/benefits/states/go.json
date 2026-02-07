@@ -11,9 +11,9 @@
       "state": "GO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 80,
+        "min": 100,
         "max": 160,
-        "description": "De R$ 80 a R$ 160 por mes durante 24 meses (renovavel)"
+        "description": "R$ 100 base + R$ 10/dependente (até 4) + R$ 40 para doenças crônicas/gestantes"
       },
       "eligibilityRules": [
         {
@@ -85,71 +85,22 @@
         "Nao precisa de cadastro"
       ],
       "sourceUrl": "https://www.goias.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
       "category": "Alimentação"
     },
     {
-      "id": "go-vale-gas",
-      "name": "Vale Gas Goias",
-      "shortDescription": "Botijao de gas gratis pelo programa federal Gas do Povo para familias de baixa renda em Goias.",
-      "scope": "state",
-      "state": "GO",
-      "estimatedValue": {
-        "type": "monthly",
-        "min": 40,
-        "max": 50,
-        "description": "4 a 6 recargas por ano via programa federal Gas do Povo (botijao ~R$ 98 em GO)"
-      },
-      "eligibilityRules": [
-        {
-          "field": "estado",
-          "operator": "eq",
-          "value": "GO",
-          "description": "Morar em Goias"
-        },
-        {
-          "field": "cadastradoCadunico",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar no Cadastro Unico"
-        },
-        {
-          "field": "rendaFamiliarMensal",
-          "operator": "lte",
-          "value": 3036,
-          "description": "Renda per capita de ate meio salario minimo (~R$ 759, equivale a ~R$ 3.036 para familia de 4)"
-        }
-      ],
-      "whereToApply": "CRAS do seu municipio ou revenda credenciada do Gas do Povo",
-      "documentsRequired": [
-        "CPF",
-        "NIS (numero do Cadastro Unico)",
-        "Comprovante de onde mora"
-      ],
-      "howToApply": [
-        "Mantenha o Cadastro Unico atualizado no CRAS",
-        "A selecao e feita automaticamente pelo governo federal",
-        "Receba o botijao gratis em revenda credenciada do Gas do Povo"
-      ],
-      "sourceUrl": "https://www.caixa.gov.br/programas-sociais/programa-gas-do-povo/Paginas/default.aspx",
-      "lastUpdated": "2026-02-07",
-      "status": "active",
-      "icon": "🔥",
-      "category": "Utilidades"
-    },
-    {
       "id": "go-goias-por-elas",
       "name": "Goias por Elas",
-      "shortDescription": "Programa para mulheres em situacao dificil. Oferece cursos, ajuda financeira e apoio.",
+      "shortDescription": "R$ 300/mês para mulheres vítimas de violência doméstica com medida protetiva ativa em Goiás.",
       "scope": "state",
       "state": "GO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 200,
-        "max": 400,
-        "description": "Bolsa de ate R$ 400 durante capacitacao"
+        "min": 300,
+        "max": 300,
+        "description": "R$ 300/mês + Bolsa Qualificação de R$ 250/mês (3 parcelas)"
       },
       "eligibilityRules": [
         {
@@ -179,7 +130,7 @@
         "Receba a bolsa enquanto faz o curso"
       ],
       "sourceUrl": "https://www.goias.gov.br/",
-      "lastUpdated": "2026-02-04",
+      "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👩",
       "category": "Qualificação Profissional"
@@ -192,9 +143,9 @@
       "state": "GO",
       "estimatedValue": {
         "type": "monthly",
-        "min": 130,
-        "max": 150,
-        "description": "R$ 130 por mes (regular) ou R$ 150 (integral), em 10 parcelas por ano. Disclaimer: valores reajustados em dez/2025, confirme na escola."
+        "min": 112,
+        "max": 112,
+        "description": "R$ 111,92 por mês em 10 parcelas para alunos da rede estadual (9º ano e EM)"
       },
       "eligibilityRules": [
         {
@@ -278,7 +229,7 @@
           "field": "rendaFamiliarMensal",
           "operator": "lte",
           "value": 545,
-          "description": "Renda da familia de ate R$ 545 (extrema pobreza, ~R$ 109 por pessoa)"
+          "description": "Renda per capita de até R$ 109 (extrema pobreza)"
         }
       ],
       "whereToApply": "CRAS do seu municipio",
@@ -334,7 +285,7 @@
         {
           "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 2277,
+          "value": 2432,
           "description": "Renda familiar de ate 1,5 salario minimo"
         }
       ],
@@ -356,7 +307,58 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Habitação"
+      "category": "Moradia"
+    },
+    {
+      "id": "go-aprendiz-do-futuro",
+      "name": "Aprendiz do Futuro",
+      "shortDescription": "Programa que emprega jovens de 14 a 15 anos em órgãos públicos de Goiás com salário e benefícios.",
+      "scope": "state",
+      "state": "GO",
+      "estimatedValue": {
+        "type": "monthly",
+        "min": 761.55,
+        "max": 911.55,
+        "description": "R$ 761,55 de salário proporcional (4h/dia) + R$ 150 de vale alimentação + vale transporte"
+      },
+      "eligibilityRules": [
+        {
+          "field": "estado",
+          "operator": "eq",
+          "value": "GO",
+          "description": "Morar em Goiás"
+        },
+        {
+          "field": "idade",
+          "operator": "gte",
+          "value": 14,
+          "description": "Ter entre 14 e 15 anos"
+        },
+        {
+          "field": "estudante",
+          "operator": "eq",
+          "value": true,
+          "description": "Matriculado em escola pública ou bolsista"
+        }
+      ],
+      "whereToApply": "Site aprendizdofuturo.org.br",
+      "documentsRequired": [
+        "CPF",
+        "RG ou certidão de nascimento",
+        "Comprovante de matrícula escolar",
+        "Comprovante de residência"
+      ],
+      "howToApply": [
+        "Acesse aprendizdofuturo.org.br no período de inscrições",
+        "Faça o cadastro com seus dados",
+        "Aguarde o resultado da seleção",
+        "Se aprovado, compareça com os documentos para iniciar"
+      ],
+      "sourceUrl": "https://aprendizdofuturo.org.br/",
+      "lastUpdated": "2026-02-07",
+      "status": "active",
+      "icon": "👦",
+      "category": "Qualificação Profissional"
     }
   ]
 }

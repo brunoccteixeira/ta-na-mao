@@ -155,9 +155,9 @@
       "state": "BA",
       "estimatedValue": {
         "type": "monthly",
-        "min": 1600,
-        "max": 1600,
-        "description": "Salário CLT (valor varia conforme função e órgão contratante)"
+        "min": 1621,
+        "max": 1621,
+        "description": "Salário CLT (valor varia conforme função, mínimo R$ 1.621)"
       },
       "eligibilityRules": [
         {
@@ -196,7 +196,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💼",
-      "category": "Emprego"
+      "category": "Emprego e Renda"
     },
     {
       "id": "ba-agua-para-todos",
@@ -248,11 +248,11 @@
         "Solicite inclusão no programa",
         "Aguarde visita técnica e instalação"
       ],
-      "sourceUrl": "http://aguaparatodos.ba.gov.br/",
+      "sourceUrl": "https://www.sdr.ba.gov.br/servicos/programa-agua-para-todos",
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💧",
-      "category": "Infraestrutura"
+      "category": "Utilidades"
     },
     {
       "id": "ba-mae-bahia",
