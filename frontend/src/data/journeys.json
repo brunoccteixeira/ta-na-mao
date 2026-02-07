@@ -1,0 +1,213 @@
+{
+  "journeys": [
+    {
+      "benefitId": "federal-bolsa-familia",
+      "benefitName": "Bolsa Familia",
+      "totalTimeEstimate": "30-90 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Verifique no CRAS, app Caixa Tem ou site gov.br/bolsafamilia", "actions": ["Verificar se renda per capita e <= R$218"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Reunir CPF, certidao de nascimento/casamento, comprovante de residencia de toda a familia", "actions": ["Reunir documentos de toda familia"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "CadUnico", "description": "Ir ao CRAS para fazer ou atualizar o Cadastro Unico", "actions": ["Agendar no CRAS", "Levar todos os documentos"], "timeEstimate": "1-30 dias" },
+        { "stage": 4, "name": "Aguarda", "description": "Governo analisa perfil e renda. Pode levar ate 45 dias.", "actions": ["Acompanhar pelo app Caixa Tem"], "timeEstimate": "15-45 dias" },
+        { "stage": 5, "name": "Recebe", "description": "Pagamento pelo Caixa Tem, calendario pelo final do NIS", "actions": ["Baixar app Caixa Tem", "Consultar calendario de pagamento"], "timeEstimate": "Mensal" },
+        { "stage": 6, "name": "Mantem", "description": "Cumprir condicionalidades: escola 85%+, vacinas em dia, pre-natal", "actions": ["Manter frequencia escolar", "Atualizar CadUnico a cada 2 anos"], "timeEstimate": "Continuo" },
+        { "stage": 7, "name": "Renova", "description": "CadUnico deve ser atualizado a cada 2 anos ou quando mudar dados da familia", "actions": ["Ir ao CRAS se mudar de endereco ou composicao familiar"], "timeEstimate": "A cada 2 anos" }
+      ],
+      "pitfalls": ["CadUnico desatualizado pode causar bloqueio", "Faltar na escola pode suspender o beneficio", "Renda acima do limite cancela o beneficio"],
+      "supportChannels": [
+        { "type": "phone", "name": "Disque Social", "contact": "121" },
+        { "type": "app", "name": "Caixa Tem", "contact": "caixa.gov.br/caixatem" }
+      ]
+    },
+    {
+      "benefitId": "federal-bpc-idoso",
+      "benefitName": "BPC Idoso (65+)",
+      "totalTimeEstimate": "60-120 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Idoso 65+ com renda familiar per capita <= 1/4 do SM (R$405,25)", "actions": ["Verificar renda familiar per capita"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos: RG, CPF, comprovante de residencia, certidao de nascimento/casamento", "actions": ["Reunir documentos pessoais e de renda"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "CadUnico", "description": "Ir ao CRAS para inscricao ou atualizacao no CadUnico (obrigatorio)", "actions": ["Agendar no CRAS", "Atualizar CadUnico"], "timeEstimate": "1-30 dias" },
+        { "stage": 4, "name": "Solicita", "description": "Agendar pelo Meu INSS (app ou 135) para requerer o BPC", "actions": ["Acessar Meu INSS ou ligar 135", "Agendar requerimento"], "timeEstimate": "1-15 dias" },
+        { "stage": 5, "name": "Aguarda", "description": "INSS analisa documentos e verifica renda. Nao precisa de pericia medica.", "actions": ["Acompanhar pelo Meu INSS"], "timeEstimate": "30-90 dias" },
+        { "stage": 6, "name": "Recebe", "description": "Pagamento de 1 SM (R$1.621) via conta Caixa ou Caixa Tem", "actions": ["Abrir conta na Caixa se nao tiver"], "timeEstimate": "Mensal" },
+        { "stage": 7, "name": "Renova", "description": "Revisao a cada 2 anos. CadUnico deve estar atualizado.", "actions": ["Manter CadUnico atualizado", "Atender convocacoes do INSS"], "timeEstimate": "A cada 2 anos" }
+      ],
+      "pitfalls": ["CadUnico e obrigatorio desde 2022", "Renda per capita acima de 1/4 SM nega o pedido", "BPC nao deixa pensao por morte"],
+      "supportChannels": [
+        { "type": "phone", "name": "INSS", "contact": "135" },
+        { "type": "app", "name": "Meu INSS", "contact": "meu.inss.gov.br" }
+      ]
+    },
+    {
+      "benefitId": "federal-bpc-pcd",
+      "benefitName": "BPC Pessoa com Deficiencia",
+      "totalTimeEstimate": "60-120 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "PCD de qualquer idade com renda per capita <= 1/4 SM (R$405,25)", "actions": ["Verificar renda familiar per capita"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos: RG, CPF, laudos medicos, comprovante de residencia", "actions": ["Reunir documentos pessoais", "Reunir laudos e exames medicos"], "timeEstimate": "1-14 dias" },
+        { "stage": 3, "name": "CadUnico", "description": "Inscricao obrigatoria no CadUnico via CRAS", "actions": ["Agendar no CRAS", "Levar todos os documentos"], "timeEstimate": "1-30 dias" },
+        { "stage": 4, "name": "Solicita", "description": "Agendar pericia medica e avaliacao social pelo Meu INSS ou 135", "actions": ["Acessar Meu INSS", "Agendar pericia medica"], "timeEstimate": "1-15 dias" },
+        { "stage": 5, "name": "Pericia", "description": "Comparecer a pericia medica e avaliacao social no INSS", "actions": ["Levar todos os laudos e exames", "Chegar com antecedencia"], "timeEstimate": "15-60 dias" },
+        { "stage": 6, "name": "Recebe", "description": "Se aprovado, pagamento de 1 SM (R$1.621) via Caixa", "actions": ["Abrir conta na Caixa", "Acompanhar resultado pelo Meu INSS"], "timeEstimate": "Mensal" },
+        { "stage": 7, "name": "Renova", "description": "Revisao a cada 2 anos. Nova pericia pode ser solicitada.", "actions": ["Manter CadUnico atualizado", "Manter laudos em dia"], "timeEstimate": "A cada 2 anos" }
+      ],
+      "pitfalls": ["Pericia pode negar se laudos forem insuficientes", "CadUnico obrigatorio desde 2022", "Se comecar a trabalhar, BPC e suspenso (nao cancelado)"],
+      "supportChannels": [
+        { "type": "phone", "name": "INSS", "contact": "135" },
+        { "type": "app", "name": "Meu INSS", "contact": "meu.inss.gov.br" }
+      ]
+    },
+    {
+      "benefitId": "federal-farmacia-popular",
+      "benefitName": "Farmacia Popular",
+      "totalTimeEstimate": "Imediato",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Medicamentos gratuitos para hipertensao, diabetes e asma", "actions": ["Consultar lista de medicamentos em saude.gov.br/farmaciapopular"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Obter receita medica valida (SUS ou particular)", "actions": ["Ir ao medico e pegar receita"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "Localiza", "description": "Encontrar farmacia credenciada perto de voce", "actions": ["Consultar farmacias no app ou site Farmacia Popular"], "timeEstimate": "Imediato" },
+        { "stage": 4, "name": "Retira", "description": "Apresentar receita medica + CPF + documento com foto na farmacia", "actions": ["Levar receita, CPF e RG"], "timeEstimate": "Imediato" },
+        { "stage": 5, "name": "Recebe", "description": "Medicamento gratuito (hipertensao, diabetes, asma) ou com desconto (outros)", "actions": ["Conferir a quantidade e validade do medicamento"], "timeEstimate": "Imediato" },
+        { "stage": 6, "name": "Mantem", "description": "Renovar receita antes do vencimento (120 dias)", "actions": ["Agendar retorno medico antes de 120 dias"], "timeEstimate": "A cada 120 dias" },
+        { "stage": 7, "name": "Renova", "description": "Nova receita a cada 120 dias para continuar retirando", "actions": ["Manter acompanhamento medico regular"], "timeEstimate": "A cada 120 dias" }
+      ],
+      "pitfalls": ["Receita vence em 120 dias", "Nem toda farmacia participa do programa", "Medicamentos fora da lista tem apenas desconto, nao sao gratuitos"],
+      "supportChannels": [
+        { "type": "phone", "name": "Disque Saude", "contact": "136" },
+        { "type": "website", "name": "Farmacia Popular", "contact": "saude.gov.br/farmaciapopular" }
+      ]
+    },
+    {
+      "benefitId": "federal-tsee",
+      "benefitName": "Tarifa Social de Energia Eletrica",
+      "totalTimeEstimate": "30-60 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Desconto de 10% a 100% na conta de luz para familias de baixa renda", "actions": ["Verificar se esta inscrito no CadUnico"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Estar inscrito no CadUnico com dados atualizados", "actions": ["Verificar CadUnico no CRAS"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "CadUnico", "description": "Se nao estiver inscrito, procurar o CRAS para cadastro", "actions": ["Agendar no CRAS", "Levar documentos da familia"], "timeEstimate": "1-30 dias" },
+        { "stage": 4, "name": "Solicita", "description": "Ir a distribuidora de energia ou ligar pedindo a Tarifa Social", "actions": ["Entrar em contato com a distribuidora local", "Informar NIS do CadUnico"], "timeEstimate": "1-7 dias" },
+        { "stage": 5, "name": "Aguarda", "description": "Distribuidora verifica CadUnico e aplica desconto automaticamente", "actions": ["Acompanhar na proxima conta de luz"], "timeEstimate": "15-45 dias" },
+        { "stage": 6, "name": "Recebe", "description": "Desconto aplicado: ate 30 kWh=100%, 31-100=40%, 101-220=10%", "actions": ["Conferir desconto na conta de luz"], "timeEstimate": "Mensal" },
+        { "stage": 7, "name": "Renova", "description": "Automatico enquanto CadUnico estiver atualizado", "actions": ["Manter CadUnico atualizado a cada 2 anos"], "timeEstimate": "Continuo" }
+      ],
+      "pitfalls": ["Consumo acima de 220 kWh perde o desconto", "CadUnico desatualizado cancela o beneficio", "Conta deve estar no nome de membro da familia"],
+      "supportChannels": [
+        { "type": "phone", "name": "Disque Social", "contact": "121" },
+        { "type": "website", "name": "Distribuidora local", "contact": "Varia por estado" }
+      ]
+    },
+    {
+      "benefitId": "federal-mcmv",
+      "benefitName": "Minha Casa Minha Vida",
+      "totalTimeEstimate": "12-36 meses",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Faixa 1: renda ate R$2.850, subsidio ate R$170 mil", "actions": ["Verificar faixa de renda familiar"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos: RG, CPF, comprovante de renda, certidao de nascimento/casamento", "actions": ["Reunir documentos de renda de toda familia"], "timeEstimate": "1-14 dias" },
+        { "stage": 3, "name": "CadUnico", "description": "Inscricao no CadUnico via CRAS (obrigatorio para Faixa 1)", "actions": ["Agendar no CRAS", "Atualizar CadUnico"], "timeEstimate": "1-30 dias" },
+        { "stage": 4, "name": "Inscreve", "description": "Inscrever-se na prefeitura ou entidade organizadora do municipio", "actions": ["Procurar a Secretaria de Habitacao", "Fazer inscricao no programa"], "timeEstimate": "1-30 dias" },
+        { "stage": 5, "name": "Selecao", "description": "Sorteio ou selecao pela prefeitura. Prioridade: mulher chefe de familia, PCD, idoso", "actions": ["Acompanhar resultado do sorteio", "Manter telefone atualizado"], "timeEstimate": "3-18 meses" },
+        { "stage": 6, "name": "Contrato", "description": "Entrevista na Caixa, analise de credito, assinatura do contrato", "actions": ["Comparecer na Caixa com documentos", "Assinar contrato"], "timeEstimate": "1-3 meses" },
+        { "stage": 7, "name": "Recebe", "description": "Recebimento das chaves. Prestacoes ate R$80/mes para Faixa 1.", "actions": ["Pagar prestacoes em dia", "Nao vender o imovel por 5 anos"], "timeEstimate": "Apos entrega da obra" }
+      ],
+      "pitfalls": ["Nao pode ter imovel em seu nome", "Vender antes de 5 anos perde o subsidio", "Lista de espera pode ser longa"],
+      "supportChannels": [
+        { "type": "phone", "name": "Caixa", "contact": "0800 726 0101" },
+        { "type": "website", "name": "Minha Casa Minha Vida", "contact": "caixa.gov.br/mcmv" }
+      ]
+    },
+    {
+      "benefitId": "federal-seguro-desemprego",
+      "benefitName": "Seguro-Desemprego",
+      "totalTimeEstimate": "7-45 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Demitido sem justa causa com minimo de meses trabalhados (12/9/6 conforme solicitacao)", "actions": ["Verificar se tem direito (CLT, demissao sem justa causa)"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Ter em maos: TRCT, carteira de trabalho, CPF, requerimento do empregador", "actions": ["Pegar guias de rescisao com o empregador"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "Prazo", "description": "Solicitar entre 7 e 120 dias apos a demissao (prazo legal)", "actions": ["Nao perder o prazo de 120 dias"], "timeEstimate": "7-120 dias" },
+        { "stage": 4, "name": "Solicita", "description": "Portal gov.br, app Carteira de Trabalho Digital ou posto do Sine", "actions": ["Acessar gov.br/segurodesemprego", "Ou ir ao Sine com documentos"], "timeEstimate": "1 dia" },
+        { "stage": 5, "name": "Aguarda", "description": "Analise automatica. Primeira parcela em ate 30 dias.", "actions": ["Acompanhar pelo app Carteira de Trabalho Digital"], "timeEstimate": "15-30 dias" },
+        { "stage": 6, "name": "Recebe", "description": "3 a 5 parcelas (SM R$1.621 a R$2.518,63) conforme tempo trabalhado", "actions": ["Sacar nas agencias Caixa ou Caixa Tem"], "timeEstimate": "Mensal (3-5 meses)" },
+        { "stage": 7, "name": "Encerra", "description": "Beneficio encerra ao conseguir novo emprego ou ao fim das parcelas", "actions": ["Buscar recolocacao pelo Sine", "Fazer cursos de qualificacao"], "timeEstimate": "Ao fim das parcelas" }
+      ],
+      "pitfalls": ["Prazo de 7-120 dias e improrrogavel", "Novo emprego formal cancela as parcelas restantes", "Recusar emprego oferecido pelo Sine pode cancelar"],
+      "supportChannels": [
+        { "type": "phone", "name": "Alô Trabalho", "contact": "158" },
+        { "type": "website", "name": "Gov.br", "contact": "gov.br/segurodesemprego" }
+      ]
+    },
+    {
+      "benefitId": "sectoral-pcd-bpc-trabalho",
+      "benefitName": "BPC Trabalho (PCD)",
+      "totalTimeEstimate": "Imediato ao conseguir emprego",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Quem recebe BPC-PCD pode trabalhar sem perder o beneficio definitivamente (Lei 12.470/2011)", "actions": ["Conhecer a Lei 12.470/2011"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Conseguir oferta de emprego formal (CLT ou aprendiz)", "actions": ["Buscar vagas em programas de inclusao", "Verificar cotas PCD nas empresas"], "timeEstimate": "Variavel" },
+        { "stage": 3, "name": "Comunica", "description": "Informar ao INSS que conseguiu emprego", "actions": ["Ligar 135 ou acessar Meu INSS", "Comunicar inicio do trabalho"], "timeEstimate": "Imediato" },
+        { "stage": 4, "name": "Suspende", "description": "BPC e suspenso (NAO cancelado) enquanto estiver empregado", "actions": ["Guardar o numero do beneficio"], "timeEstimate": "Imediato" },
+        { "stage": 5, "name": "Trabalha", "description": "Trabalhar normalmente recebendo salario. BPC fica guardado.", "actions": ["Manter comunicacao com INSS atualizada"], "timeEstimate": "Durante o emprego" },
+        { "stage": 6, "name": "Retorna", "description": "Se perder o emprego, BPC volta automaticamente sem nova pericia", "actions": ["Solicitar reativacao pelo 135 ou Meu INSS"], "timeEstimate": "Imediato" },
+        { "stage": 7, "name": "Mantem", "description": "Manter CadUnico atualizado e informar mudancas ao INSS", "actions": ["Atualizar CadUnico", "Informar qualquer mudanca de situacao"], "timeEstimate": "Continuo" }
+      ],
+      "pitfalls": ["Nao comunicar emprego ao INSS pode gerar cobranca", "BPC volta sem pericia somente se a deficiencia persiste", "Emprego informal nao tem a mesma protecao"],
+      "supportChannels": [
+        { "type": "phone", "name": "INSS", "contact": "135" },
+        { "type": "app", "name": "Meu INSS", "contact": "meu.inss.gov.br" }
+      ]
+    },
+    {
+      "benefitId": "sectoral-gestante-licenca-maternidade",
+      "benefitName": "Licenca-Maternidade / Salario-Maternidade",
+      "totalTimeEstimate": "28 dias antes do parto",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "CLT: empregador paga. MEI/individual/facultativa: solicitar no INSS. 120 dias de afastamento.", "actions": ["Verificar tipo de vinculo (CLT, MEI, individual)"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos: atestado medico, certidao de nascimento (apos parto), CPF", "actions": ["Obter atestado medico com data provavel do parto"], "timeEstimate": "1-7 dias" },
+        { "stage": 3, "name": "Comunica", "description": "CLT: entregar atestado ao RH a partir de 28 dias antes do parto", "actions": ["Entregar atestado ao empregador (CLT)", "Ou agendar no Meu INSS (MEI/individual)"], "timeEstimate": "28 dias antes do parto" },
+        { "stage": 4, "name": "Solicita", "description": "MEI/individual: agendar pelo Meu INSS ou 135. Carencia de 10 meses.", "actions": ["Acessar Meu INSS", "Verificar carencia de contribuicoes"], "timeEstimate": "1-15 dias" },
+        { "stage": 5, "name": "Recebe", "description": "Salario integral por 120 dias (CLT) ou valor calculado pelo INSS", "actions": ["Acompanhar pagamento na folha (CLT) ou pelo Meu INSS"], "timeEstimate": "120 dias" },
+        { "stage": 6, "name": "Estabilidade", "description": "CLT tem estabilidade de 5 meses apos o parto (nao pode ser demitida)", "actions": ["Conhecer seus direitos de estabilidade"], "timeEstimate": "5 meses apos parto" },
+        { "stage": 7, "name": "Retorno", "description": "Retorno ao trabalho apos 120 dias (ou 180 em empresas Cidada)", "actions": ["Planejar retorno com empregador", "Verificar se empresa e Cidada (180 dias)"], "timeEstimate": "Apos licenca" }
+      ],
+      "pitfalls": ["MEI precisa de 10 meses de contribuicao", "Prazo para solicitar: ate 5 anos apos o parto", "Adocao tambem da direito a licenca"],
+      "supportChannels": [
+        { "type": "phone", "name": "INSS", "contact": "135" },
+        { "type": "app", "name": "Meu INSS", "contact": "meu.inss.gov.br" }
+      ]
+    },
+    {
+      "benefitId": "sectoral-estudante-bolsa-permanencia",
+      "benefitName": "Bolsa Permanencia (PNAES)",
+      "totalTimeEstimate": "30-90 dias (conforme edital)",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Bolsa para estudantes de baixa renda em universidades federais. R$400 ou R$1.400 (indigena/quilombola).", "actions": ["Verificar se sua universidade participa do PNAES"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos de renda familiar (per capita <= 1,5 SM), comprovante de matricula", "actions": ["Reunir comprovantes de renda da familia", "Obter historico escolar"], "timeEstimate": "1-14 dias" },
+        { "stage": 3, "name": "Edital", "description": "Aguardar abertura do edital PNAES da sua universidade (semestral)", "actions": ["Acompanhar editais no site da universidade", "Verificar prazos de inscricao"], "timeEstimate": "Semestral" },
+        { "stage": 4, "name": "Inscreve", "description": "Preencher formulario e enviar documentacao conforme edital", "actions": ["Inscrever-se no prazo do edital", "Enviar todos os documentos solicitados"], "timeEstimate": "1-7 dias" },
+        { "stage": 5, "name": "Analise", "description": "Assistencia estudantil da universidade analisa documentacao e renda", "actions": ["Acompanhar resultado no site da universidade"], "timeEstimate": "15-45 dias" },
+        { "stage": 6, "name": "Recebe", "description": "R$400/mes (geral) ou R$1.400/mes (indigena/quilombola) via conta bancaria", "actions": ["Manter conta bancaria ativa", "Manter matricula regular"], "timeEstimate": "Mensal" },
+        { "stage": 7, "name": "Renova", "description": "Renovar a cada semestre conforme edital. Manter frequencia e rendimento.", "actions": ["Renovar inscricao a cada semestre", "Nao reprovar por falta"], "timeEstimate": "Semestral" }
+      ],
+      "pitfalls": ["Perder prazo do edital significa esperar proximo semestre", "Reprovacao por falta pode cancelar a bolsa", "Renda acima de 1,5 SM per capita desclassifica"],
+      "supportChannels": [
+        { "type": "website", "name": "Assistencia Estudantil", "contact": "Site da sua universidade" },
+        { "type": "phone", "name": "MEC", "contact": "0800 616 161" }
+      ]
+    },
+    {
+      "benefitId": "sectoral-idoso-gratuidade-transporte",
+      "benefitName": "Gratuidade no Transporte Urbano (65+)",
+      "totalTimeEstimate": "7-30 dias",
+      "stages": [
+        { "stage": 1, "name": "Descobre", "description": "Idosos 65+ tem gratuidade em transporte coletivo urbano (CF Art. 230, paragrafo 2)", "actions": ["Verificar se tem 65 anos ou mais"], "timeEstimate": "Imediato" },
+        { "stage": 2, "name": "Prepara", "description": "Documentos: RG (com data de nascimento), CPF, comprovante de residencia, foto 3x4", "actions": ["Tirar foto 3x4 recente", "Separar RG e comprovante"], "timeEstimate": "1-3 dias" },
+        { "stage": 3, "name": "Solicita", "description": "Ir a empresa de transporte ou secretaria municipal de transporte", "actions": ["Procurar posto de atendimento da empresa de onibus", "Ou ir a Secretaria de Transporte"], "timeEstimate": "1 dia" },
+        { "stage": 4, "name": "Cadastro", "description": "Preencher formulario e entregar documentos. Algumas cidades fazem na hora.", "actions": ["Preencher cadastro", "Entregar documentos e foto"], "timeEstimate": "1 dia" },
+        { "stage": 5, "name": "Aguarda", "description": "Cartao de gratuidade e emitido em ate 30 dias (varia por cidade)", "actions": ["Aguardar contato ou retirar no local indicado"], "timeEstimate": "7-30 dias" },
+        { "stage": 6, "name": "Recebe", "description": "Cartao de gratuidade para uso em onibus, metro e trens urbanos", "actions": ["Retirar cartao no local indicado", "Testar no primeiro uso"], "timeEstimate": "Imediato" },
+        { "stage": 7, "name": "Usa", "description": "Uso ilimitado em transporte coletivo urbano. Direito constitucional.", "actions": ["Apresentar cartao ao embarcar", "Renovar se cartao tiver validade"], "timeEstimate": "Permanente" }
+      ],
+      "pitfalls": ["Nao vale para transporte intermunicipal em todas as cidades", "Algumas cidades exigem recadastramento anual", "Cartao e pessoal e intransferivel"],
+      "supportChannels": [
+        { "type": "phone", "name": "Prefeitura", "contact": "Varia por cidade" },
+        { "type": "website", "name": "Secretaria de Transporte", "contact": "Site da prefeitura local" }
+      ]
+    }
+  ]
+}

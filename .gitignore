@@ -49,3 +49,6 @@ releases/
 
 # TypeScript build cache
 *.tsbuildinfo
+
+# Generated data (IBGE lookups, etc.)
+scripts/data/
