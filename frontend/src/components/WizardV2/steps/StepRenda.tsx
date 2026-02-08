@@ -158,7 +158,7 @@ export default function StepRenda() {
         disabled={!hasInteracted}
         className={`
           w-full py-4 rounded-xl font-semibold text-white flex items-center justify-center gap-2 transition-all
-          ${hasInteracted ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-gray-300 cursor-not-allowed'}
+          ${hasInteracted ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-emerald-100 text-emerald-300 cursor-not-allowed'}
         `}
       >
         Continuar

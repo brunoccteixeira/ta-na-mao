@@ -406,10 +406,10 @@
           "description": "Morar em CE"
         },
         {
-          "field": "empreendedor",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
-          "description": "Ser empreendedor (formal ou informal)"
+          "description": "Ser microempreendedor individual (MEI) ou autônomo"
         },
         {
           "field": "rendaFamiliarMensal",
@@ -456,12 +456,6 @@
           "operator": "eq",
           "value": "CE",
           "description": "Morar em CE"
-        },
-        {
-          "field": "projetoCultural",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter projeto cultural inscrito em edital estadual"
         }
       ],
       "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
@@ -481,7 +475,7 @@
       "icon": "🎭",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Benefício de nicho cultural — elegibilidade depende de inscrição em edital estadual. Consulte a Secretaria de Cultura do seu estado."
       }
     },
     {
@@ -502,12 +496,6 @@
           "operator": "eq",
           "value": "CE",
           "description": "Morar em CE"
-        },
-        {
-          "field": "atleta",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser atleta de rendimento em modalidade reconhecida"
         }
       ],
       "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
@@ -527,7 +515,7 @@
       "icon": "🏅",
       "category": "Esporte",
       "metadata": {
-        "disclaimer": "Disponibilidade sujeita a editais e dotação orçamentária. Consulte o site do governo estadual."
+        "disclaimer": "Benefício de nicho esportivo — elegibilidade depende de vínculo com federação ou confederação esportiva. Consulte a Secretaria de Esportes do seu estado."
       }
     }
   ]

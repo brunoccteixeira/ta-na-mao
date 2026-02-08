@@ -176,7 +176,7 @@ export default function SelectWithSearch({
                 className="
                   w-full py-2.5 pl-9 pr-4 text-sm text-[var(--text-primary)]
                   bg-[var(--input-bg)] border border-[var(--input-border)] rounded-lg
-                  focus:border-emerald-500 focus:outline-none
+                  focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none
                   placeholder:text-[var(--text-tertiary)]
                 "
               />

@@ -62,13 +62,13 @@ export default function YesNo({
 
         const selectedStyles = {
           emerald: 'border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
-          slate: 'border-slate-400 bg-slate-50 dark:bg-slate-500/10 text-slate-700 dark:text-slate-300',
+          slate: 'border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
           amber: 'border-amber-500 bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400',
         };
 
         const iconStyles = {
           emerald: 'text-emerald-600',
-          slate: 'text-slate-500',
+          slate: 'text-emerald-600',
           amber: 'text-amber-600',
         };
 
@@ -82,7 +82,7 @@ export default function YesNo({
               ${
                 isSelected
                   ? selectedStyles[option.color as keyof typeof selectedStyles]
-                  : 'border-[var(--border-color)] hover:border-emerald-300 bg-[var(--bg-card)] text-[var(--text-primary)]'
+                  : 'border-[var(--border-color)] hover:border-emerald-300 hover:shadow-sm active:scale-[0.98] bg-[var(--bg-card)] text-[var(--text-primary)]'
               }
             `}
           >

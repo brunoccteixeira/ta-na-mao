@@ -1209,6 +1209,22 @@
         "Preencha os dados e anexe documentos",
         "Receba as parcelas mensalmente na conta ou Caixa Tem"
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "7.998/1990",
+            "description": "Lei do Seguro-Desemprego",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l7998.htm"
+          },
+          {
+            "type": "lei",
+            "number": "13.134/2015",
+            "description": "Altera regras de concessão do Seguro-Desemprego",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13134.htm"
+          }
+        ]
+      },
       "sourceUrl": "https://www.gov.br/trabalho-e-emprego/pt-br/servicos/trabalhador/seguro-desemprego",
       "lastUpdated": "2026-02-07",
       "status": "active",
@@ -1297,6 +1313,16 @@
         "Renove semestralmente com comprovante escolar (maio e novembro)",
         "Pai e mãe podem receber, se ambos atenderem aos critérios"
       ],
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "8.213/1991",
+            "description": "Lei dos Benefícios da Previdência Social",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+          }
+        ]
+      },
       "sourceUrl": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia",
       "lastUpdated": "2026-02-07",
       "status": "active",
@@ -2077,12 +2103,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser servidor público federal ativo"
-        },
-        {
-          "field": "jornadaTrabalho",
-          "operator": "gte",
-          "value": 30,
-          "description": "Jornada mínima de 30 horas semanais"
         }
       ],
       "whereToApply": "Órgão de lotação (RH do órgão federal)",
@@ -2099,7 +2119,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🍽️",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Exige jornada mínima de 30 horas semanais. Verifique com o RH do seu órgão."
+      }
     },
     {
       "id": "sectoral-servidor-auxilio-saude",
@@ -2119,12 +2142,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser servidor público federal ativo ou aposentado"
-        },
-        {
-          "field": "planoSaude",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar inscrito em plano de saúde"
         }
       ],
       "whereToApply": "Órgão de lotação (RH) ou pelo SIAPE Saúde",
@@ -2142,7 +2159,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏥",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Necessário estar inscrito em plano de saúde para receber o auxílio."
+      }
     },
     {
       "id": "sectoral-servidor-auxilio-transporte",
@@ -2162,12 +2182,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser servidor público federal ativo"
-        },
-        {
-          "field": "usaTransportePublico",
-          "operator": "eq",
-          "value": true,
-          "description": "Utilizar transporte público regular"
         }
       ],
       "whereToApply": "Órgão de lotação (RH do órgão federal)",
@@ -2185,7 +2199,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚌",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Destinado a servidores que utilizam transporte público no deslocamento residência-trabalho."
+      }
     },
     {
       "id": "sectoral-servidor-auxilio-creche",
@@ -2248,12 +2265,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser servidor público federal efetivo"
-        },
-        {
-          "field": "tempoServico",
-          "operator": "gte",
-          "value": 5,
-          "description": "Ter completado 5 anos de efetivo exercício (quinquênio)"
         }
       ],
       "whereToApply": "Órgão de lotação (RH ou unidade de gestão de pessoas)",
@@ -2272,7 +2283,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "📚",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Exige pelo menos 5 anos de efetivo exercício no serviço público federal."
+      }
     },
     {
       "id": "sectoral-estudante-bolsa-permanencia",
@@ -2343,12 +2357,6 @@
           "operator": "lte",
           "value": 810.5,
           "description": "Renda per capita familiar de até meio salário mínimo"
-        },
-        {
-          "field": "resideFora",
-          "operator": "eq",
-          "value": true,
-          "description": "Residir fora do município de origem"
         }
       ],
       "whereToApply": "Pró-Reitoria de Assuntos Estudantis (PRAE) da universidade",
@@ -2368,7 +2376,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏠",
-      "category": "Educação"
+      "category": "Educação",
+      "metadata": {
+        "disclaimer": "Destinado a estudantes que residem fora do município de origem. Cada universidade tem edital próprio."
+      }
     },
     {
       "id": "sectoral-estudante-restaurante-universitario",
@@ -2854,10 +2865,11 @@
           "description": "Ser servidor público federal ativo ou dependente de servidor"
         },
         {
-          "field": "nascimentoFilho",
+          "field": "temGestante",
           "operator": "eq",
           "value": true,
-          "description": "Ter tido filho recentemente"
+          "description": "Gestante ou ter tido filho recentemente",
+          "legalReference": "Art. 196, Lei 8.112/1990"
         }
       ],
       "legalBasis": {
@@ -2884,7 +2896,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "👼",
-      "category": "Saúde Materno-Infantil"
+      "category": "Saúde Materno-Infantil",
+      "metadata": {
+        "disclaimer": "Pago por ocasião do nascimento de filho. Servidora ou cônjuge de servidor."
+      }
     },
     {
       "id": "sectoral-gestante-primeira-infancia-bf",
@@ -2966,10 +2981,11 @@
           "description": "Estar gestante ou ter dado à luz recentemente"
         },
         {
-          "field": "contribuinteINSS",
+          "field": "trabalhoFormal",
           "operator": "eq",
           "value": true,
-          "description": "Ter contribuído ao INSS (CLT: sem carência; contribuinte individual/MEI: 1 contribuição — STF/IN 188/2025)"
+          "description": "Contribuinte do INSS (CLT, MEI ou contribuinte individual)",
+          "legalReference": "Art. 71, Lei 8.213/1991"
         }
       ],
       "legalBasis": {
@@ -3003,7 +3019,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🤱",
-      "category": "Saúde Materno-Infantil"
+      "category": "Saúde Materno-Infantil",
+      "metadata": {
+        "disclaimer": "Exige contribuição ao INSS. MEIs e contribuintes individuais também têm direito."
+      }
     },
     {
       "id": "sectoral-indigena-bolsa-permanencia",
@@ -3123,10 +3142,10 @@
       },
       "eligibilityRules": [
         {
-          "field": "indigena",
+          "field": "indigenaOuQuilombola",
           "operator": "eq",
           "value": true,
-          "description": "Ser indígena (aldeado ou em contexto urbano, cadastrado na SESAI)"
+          "description": "Ser indígena (aldeado ou em contexto urbano)"
         }
       ],
       "whereToApply": "Polo Base ou Casa de Saúde Indígena (CASAI) mais próxima",
@@ -3144,7 +3163,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏥",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Exclusivo para indígenas. Quilombolas acessam o SUS regular."
+      }
     },
     {
       "id": "sectoral-indigena-pnae-diferenciado",
@@ -3215,16 +3237,11 @@
       },
       "eligibilityRules": [
         {
-          "field": "quilombola",
+          "field": "indigenaOuQuilombola",
           "operator": "eq",
           "value": true,
-          "description": "Pertencer a comunidade remanescente de quilombo"
-        },
-        {
-          "field": "certidaoPalmares",
-          "operator": "eq",
-          "value": true,
-          "description": "Comunidade certificada pela Fundação Cultural Palmares"
+          "description": "Pertencer a comunidade remanescente de quilombo",
+          "legalReference": "Art. 68, ADCT, CF/88"
         }
       ],
       "legalBasis": {
@@ -3259,7 +3276,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏞️",
-      "category": "Assistência Social"
+      "category": "Assistência Social",
+      "metadata": {
+        "disclaimer": "Exige certificação da Fundação Cultural Palmares. Processo coletivo da comunidade."
+      }
     },
     {
       "id": "sectoral-agricultor-dap-caf",
@@ -3281,10 +3301,11 @@
           "description": "Ser agricultor familiar (até 4 módulos fiscais)"
         },
         {
-          "field": "rendaBrutaAgro",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 500000,
-          "description": "Renda bruta anual de até R$ 500 mil"
+          "value": 41666,
+          "description": "Renda bruta anual de até R$ 500 mil (≈ R$ 41.666/mês)",
+          "legalReference": "Lei 11.326/2006, Art. 3º"
         }
       ],
       "whereToApply": "Sindicato rural, EMATER ou entidade credenciada",
@@ -3322,12 +3343,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ocupar terra pública federal na Amazônia Legal"
-        },
-        {
-          "field": "tempoOcupacao",
-          "operator": "gte",
-          "value": 5,
-          "description": "Ocupar a terra há pelo menos 5 anos"
         }
       ],
       "whereToApply": "INCRA ou mutirão Terra Legal na sua região",
@@ -3347,7 +3362,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🌍",
-      "category": "Agricultores"
+      "category": "Agricultores",
+      "metadata": {
+        "disclaimer": "Exige ocupação mansa e pacífica da terra por pelo menos 5 anos na Amazônia Legal."
+      }
     },
     {
       "id": "sectoral-autonomo-inss-facultativo",
@@ -3459,12 +3477,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser catador de material reciclável"
-        },
-        {
-          "field": "cooperativa",
-          "operator": "eq",
-          "value": true,
-          "description": "Estar organizado em cooperativa ou associação"
         }
       ],
       "whereToApply": "Secretaria Municipal de Meio Ambiente ou MDS",
@@ -3484,7 +3496,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏗️",
-      "category": "Catadores"
+      "category": "Catadores",
+      "metadata": {
+        "disclaimer": "Prioridade para catadores organizados em cooperativas ou associações."
+      }
     },
     {
       "id": "sectoral-clt-plr",
@@ -3506,10 +3521,11 @@
           "description": "Ter vínculo CLT com empresa que paga PLR"
         },
         {
-          "field": "acordoColetivo",
+          "field": "temCarteiraAssinada",
           "operator": "eq",
           "value": true,
-          "description": "PLR prevista em acordo/convenção coletiva"
+          "description": "Ter carteira assinada (CLT) com acordo de PLR",
+          "legalReference": "Lei 10.101/2000"
         }
       ],
       "whereToApply": "Empregador — pagamento automático conforme acordo coletivo",
@@ -3525,7 +3541,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "💵",
-      "category": "CLT"
+      "category": "CLT",
+      "metadata": {
+        "disclaimer": "Exige acordo coletivo ou convenção prevendo PLR. Nem todas as empresas oferecem."
+      }
     },
     {
       "id": "sectoral-clt-vale-cultura",
@@ -3637,10 +3656,10 @@
           "description": "Trabalhar como entregador de plataforma digital"
         },
         {
-          "field": "cadastradoPlataforma",
+          "field": "trabalhaAplicativo",
           "operator": "eq",
           "value": true,
-          "description": "Estar cadastrado em plataforma (iFood, Rappi, etc.)"
+          "description": "Cadastrado em plataforma de entrega/transporte por aplicativo"
         }
       ],
       "whereToApply": "Plataforma digital em que está cadastrado",
@@ -3807,12 +3826,6 @@
           "operator": "eq",
           "value": true,
           "description": "Ser motorista de aplicativo"
-        },
-        {
-          "field": "veiculoRegularizado",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter veículo com DPVAT/Seguro SPVAT pago"
         }
       ],
       "whereToApply": "Seguradora credenciada pelo DPVAT ou online",
@@ -3834,7 +3847,7 @@
       "icon": "🛡️",
       "category": "Motoristas de App",
       "metadata": {
-        "disclaimer": "DPVAT foi reestruturado como SPVAT (Seguro Obrigatório para Proteção de Vítimas de Acidentes de Trânsito) pela Lei 14.867/2024. Cobrança retomada em 2025."
+        "disclaimer": "DPVAT foi reestruturado como SPVAT (Seguro Obrigatório para Proteção de Vítimas de Acidentes de Trânsito) pela Lei 14.867/2024. Cobrança retomada em 2025. Exige veículo com documentação regularizada (CRLV em dia)."
       }
     },
     {
@@ -3941,10 +3954,10 @@
           "description": "Ser pescador artesanal com RGP ativo"
         },
         {
-          "field": "dap",
+          "field": "pescadorArtesanal",
           "operator": "eq",
           "value": true,
-          "description": "Ter DAP ou CAF da pesca"
+          "description": "Pescador artesanal com RGP (Registro Geral de Pesca) ativo"
         }
       ],
       "whereToApply": "Banco do Brasil, Banco do Nordeste ou cooperativa de crédito",
@@ -3964,7 +3977,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🚤",
-      "category": "Pescadores"
+      "category": "Pescadores",
+      "metadata": {
+        "disclaimer": "Exige DAP Pescador Artesanal ou CAF ativa. Procure a colônia de pesca."
+      }
     },
     {
       "id": "sectoral-pescador-seguro-artesanal",
@@ -3986,10 +4002,11 @@
           "description": "Ser pescador artesanal com RGP ativo"
         },
         {
-          "field": "contribuinteINSS",
+          "field": "trabalhoFormal",
           "operator": "eq",
           "value": true,
-          "description": "Contribuir como segurado especial do INSS"
+          "description": "Contribuinte do INSS como segurado especial (pescador artesanal)",
+          "legalReference": "Art. 12, VII, Lei 8.212/1991"
         }
       ],
       "whereToApply": "INSS (Meu INSS ou agência)",
@@ -4009,7 +4026,10 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🛡️",
-      "category": "Pescadores"
+      "category": "Pescadores",
+      "metadata": {
+        "disclaimer": "Exige contribuição ao INSS como segurado especial. Pescador artesanal com RGP ativo."
+      }
     }
   ]
 }

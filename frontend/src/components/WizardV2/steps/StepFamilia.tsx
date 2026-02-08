@@ -91,7 +91,7 @@ export default function StepFamilia() {
           ${
             profile.pessoasNaCasa >= 1
               ? 'bg-emerald-500 hover:bg-emerald-600'
-              : 'bg-gray-300 cursor-not-allowed'
+              : 'bg-emerald-100 text-emerald-300 cursor-not-allowed'
           }
         `}
       >

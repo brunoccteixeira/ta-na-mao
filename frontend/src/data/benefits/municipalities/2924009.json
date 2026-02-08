@@ -274,12 +274,6 @@
           "operator": "eq",
           "value": "2924009",
           "description": "Morar em Paulo Afonso"
-        },
-        {
-          "field": "cartaoSUS",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cartão SUS"
         }
       ],
       "whereToApply": "Farmácia Municipal ou UBS de Paulo Afonso",
@@ -301,7 +295,7 @@
       "category": "Saúde",
       "metadata": {
         "template": true,
-        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+        "disclaimer": "Necessário Cartão SUS — solicite na UBS mais próxima com RG e comprovante de residência."
       }
     },
     {

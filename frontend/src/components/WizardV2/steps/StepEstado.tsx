@@ -71,7 +71,7 @@ export default function StepEstado() {
           ${
             profile.estado
               ? 'bg-emerald-500 hover:bg-emerald-600'
-              : 'bg-gray-300 cursor-not-allowed'
+              : 'bg-emerald-100 text-emerald-300 cursor-not-allowed'
           }
         `}
       >

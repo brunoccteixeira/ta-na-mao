@@ -71,6 +71,14 @@ export interface Benefit {
   // UI
   icon?: string;
   category?: string;
+
+  // Metadata (audit flags, disclaimers)
+  metadata?: {
+    disclaimer?: string;
+    armadilha?: string;
+    template?: boolean;
+    [key: string]: unknown;
+  };
 }
 
 // ========== CITIZEN PROFILE (EXPANDED) ==========
@@ -130,6 +138,7 @@ export interface CitizenProfile {
   // Special conditions
   mulherMenstruante?: boolean;
   idadeMulher?: number;
+  vitimaViolenciaDomestica?: boolean;
 
   // Education
   estudante: boolean;

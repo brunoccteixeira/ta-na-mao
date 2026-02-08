@@ -146,10 +146,8 @@ export default function StepEspecial() {
           </div>
         </div>
         <YesNo
-          value={undefined}
-          onChange={() => {
-            // We don't store this in profile, just for priority
-          }}
+          value={profile.vitimaViolenciaDomestica}
+          onChange={(value) => updateProfile({ vitimaViolenciaDomestica: value ?? false })}
         />
       </div>
 

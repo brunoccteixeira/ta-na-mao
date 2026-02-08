@@ -3485,6 +3485,22 @@
       "category": "Transferência de Renda",
       "metadata": {
         "disclaimer": "O Brasil Carinhoso foi integrado ao Bolsa Família em 2023. O benefício é pago automaticamente junto com o Bolsa Família para famílias com crianças de 0-6 anos em extrema pobreza."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.722/2012",
+            "description": "Ação Brasil Carinhoso (complemento Bolsa Família para primeira infância)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12722.htm"
+          },
+          {
+            "type": "lei",
+            "number": "14.601/2023",
+            "description": "Lei do Bolsa Família (integrou o Brasil Carinhoso)",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm"
+          }
+        ]
       }
     },
     {
@@ -3659,16 +3675,18 @@
       },
       "eligibilityRules": [
         {
-          "field": "empreendedor",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
-          "description": "Empreendedor de atividade produtiva de pequeno porte"
+          "description": "Ser MEI ou empreendedor de pequeno porte",
+          "legalReference": "Art. 1º, Lei 13.636/2018"
         },
         {
-          "field": "rendaBruta",
+          "field": "rendaFamiliarMensal",
           "operator": "lte",
-          "value": 360000,
-          "description": "Receita bruta anual de até R$ 360 mil"
+          "value": 30000,
+          "description": "Receita bruta anual de até R$ 360 mil (≈ R$ 30 mil/mês)",
+          "legalReference": "Art. 1º, §1º, Lei 13.636/2018"
         }
       ],
       "legalBasis": {
@@ -3753,7 +3771,7 @@
       "lastUpdated": "2026-02-07",
       "status": "active",
       "icon": "🏅",
-      "category": "Cultura",
+      "category": "Esporte",
       "metadata": {
         "disclaimer": "Valores variam conforme categoria (Estudantil a Olímpico). Inscrição via edital anual."
       }
@@ -3802,6 +3820,22 @@
       "category": "Assistência Social",
       "metadata": {
         "disclaimer": "Disponível apenas em municípios com decreto de emergência ou calamidade pública vigente."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "medida_provisoria",
+            "number": "1.219/2024",
+            "description": "Auxílio Reconstrução para famílias atingidas por desastres",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/mpv/mpv1219.htm"
+          },
+          {
+            "type": "decreto",
+            "number": "11.219/2022",
+            "description": "Auxílio financeiro emergencial para atingidos por desastres",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d11219.htm"
+          }
+        ]
       }
     },
     {
@@ -3909,6 +3943,16 @@
       "category": "Utilidades",
       "metadata": {
         "disclaimer": "Disponibilidade depende de convênios com governos estaduais/municipais e editais do MDS."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "lei",
+            "number": "12.873/2013",
+            "description": "Programa Nacional de Apoio à Captação de Água de Chuva (Programa Cisternas), Art. 11",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12873.htm"
+          }
+        ]
       }
     },
     {
@@ -3955,6 +3999,16 @@
       "category": "Utilidades",
       "metadata": {
         "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "resolucao",
+            "number": "Resolução ANATEL 586/2012",
+            "description": "Acesso Individual Classe Especial (AICE) — Telefone Popular",
+            "url": "https://informacoes.anatel.gov.br/legislacao/resolucoes/2012/442-resolucao-586"
+          }
+        ]
       }
     },
     {
@@ -3970,10 +4024,18 @@
       },
       "eligibilityRules": [
         {
-          "field": "assentado",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
-          "description": "Ser beneficiário da reforma agrária (assentado INCRA)"
+          "description": "Ser agricultor familiar ou assentado da reforma agrária",
+          "legalReference": "Decreto 11.451/2023"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em zona rural (assentamento INCRA)",
+          "legalReference": "Decreto 11.451/2023"
         }
       ],
       "whereToApply": "INCRA (superintendência regional)",
@@ -3995,6 +4057,16 @@
       "category": "Agricultores",
       "metadata": {
         "disclaimer": "Exclusivo para assentados de reforma agrária com portaria INCRA."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "decreto",
+            "number": "11.451/2023",
+            "description": "Regulamenta o Crédito Instalação para assentados da reforma agrária",
+            "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11451.htm"
+          }
+        ]
       }
     },
     {
@@ -4066,10 +4138,11 @@
       },
       "eligibilityRules": [
         {
-          "field": "vulnerabilidadeSocial",
+          "field": "cadastradoCadunico",
           "operator": "eq",
           "value": true,
-          "description": "Família em situação de vulnerabilidade social"
+          "description": "Inscrito no Cadastro Único (proxy para vulnerabilidade social)",
+          "legalReference": "Resolução CNAS 109/2009"
         }
       ],
       "whereToApply": "CRAS (Centro de Referência de Assistência Social) mais próximo",
@@ -4090,6 +4163,22 @@
       "category": "Assistência Social",
       "metadata": {
         "disclaimer": "Valores e regras referentes a 2026. Consulte gov.br para informações atualizadas."
+      },
+      "legalBasis": {
+        "laws": [
+          {
+            "type": "resolucao",
+            "number": "Resolução CNAS 109/2009",
+            "description": "Tipificação Nacional de Serviços Socioassistenciais",
+            "url": "https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf"
+          },
+          {
+            "type": "lei",
+            "number": "8.742/1993",
+            "description": "Lei Orgânica de Assistência Social (LOAS)",
+            "url": "https://www.planalto.gov.br/ccivil_03/leis/l8742.htm"
+          }
+        ]
       }
     },
     {
@@ -4160,16 +4249,25 @@
       },
       "eligibilityRules": [
         {
-          "field": "assentado",
+          "field": "agricultorFamiliar",
           "operator": "eq",
           "value": true,
-          "description": "Ser assentado ou acampado da reforma agrária, ou trabalhador rural"
+          "description": "Ser assentado, acampado da reforma agrária ou trabalhador rural",
+          "legalReference": "Decreto 7.352/2010"
+        },
+        {
+          "field": "moradiaZonaRural",
+          "operator": "eq",
+          "value": true,
+          "description": "Residir em zona rural ou assentamento",
+          "legalReference": "Decreto 7.352/2010"
         },
         {
           "field": "idade",
           "operator": "gte",
           "value": 15,
-          "description": "Ter 15 anos ou mais (para alfabetização) ou idade escolar"
+          "description": "Ter 15 anos ou mais (para alfabetização) ou idade escolar",
+          "legalReference": "Decreto 7.352/2010"
         }
       ],
       "legalBasis": {

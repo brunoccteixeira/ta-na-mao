@@ -29,8 +29,42 @@ import {
   TrendingUp,
   Shield,
   Sparkles,
+  Phone,
 } from 'lucide-react';
 import type { EvaluationSummary, CitizenProfile, Benefit } from '../../../engine/types';
+
+const SUPPORT_CHANNELS = [
+  {
+    number: '136',
+    name: 'Disque Social',
+    description: 'Bolsa Família, CadÚnico, BPC e programas sociais',
+    hours: 'Seg-Sex 7h-19h',
+  },
+  {
+    number: '121',
+    name: 'Central do INSS',
+    description: 'Aposentadoria, auxílios, salário-maternidade',
+    hours: '24h, todos os dias',
+  },
+  {
+    number: '111',
+    name: 'Central do SUAS',
+    description: 'CRAS, CREAS e assistência social',
+    hours: 'Seg-Sex 8h-18h',
+  },
+  {
+    number: '180',
+    name: 'Central da Mulher',
+    description: 'Violência doméstica, orientação jurídica',
+    hours: '24h, todos os dias',
+  },
+  {
+    number: '100',
+    name: 'Disque Direitos Humanos',
+    description: 'Denúncias, idosos, PcD, crianças',
+    hours: '24h, todos os dias',
+  },
+];
 
 export default function ResultsDashboard() {
   const { profile, reset } = useWizard();
@@ -261,24 +295,24 @@ export default function ResultsDashboard() {
           <h2 className="text-sm font-medium text-[var(--text-tertiary)] uppercase tracking-wide mb-3">
             Seus benefícios
           </h2>
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <div className="flex gap-6 overflow-x-auto border-b border-[var(--border-color)]">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all
+                  flex items-center gap-2 pb-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 -mb-px
                   ${
                     activeTab === tab.id
-                      ? 'bg-emerald-500 text-white'
-                      : 'bg-[var(--bg-card)] text-[var(--text-secondary)] border border-[var(--border-color)] hover:border-emerald-300'
+                      ? 'border-emerald-500 text-emerald-600'
+                      : 'border-transparent text-[var(--text-tertiary)] hover:text-[var(--text-secondary)] hover:border-gray-300'
                   }
                 `}
               >
                 {tab.label}
                 <span className={`
                   px-1.5 py-0.5 rounded-full text-xs
-                  ${activeTab === tab.id ? 'bg-white/20' : 'bg-[var(--badge-bg)]'}
+                  ${activeTab === tab.id ? 'bg-emerald-100 text-emerald-700' : 'bg-[var(--badge-bg)] text-[var(--text-tertiary)]'}
                 `}>
                   {tab.count}
                 </span>
@@ -316,7 +350,7 @@ export default function ResultsDashboard() {
                   key={i}
                   className="flex items-center gap-3 p-4 border-b border-[var(--border-color)] last:border-b-0"
                 >
-                  <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-500/20 rounded-full flex items-center justify-center text-sm font-semibold text-emerald-700 flex-shrink-0">
+                  <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-sm font-semibold text-white flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="flex-1 text-sm text-[var(--text-primary)]">{step}</p>
@@ -365,6 +399,36 @@ export default function ResultsDashboard() {
           />
         </div>
 
+        {/* Support Channels */}
+        <div className="mb-8">
+          <h2 className="text-sm font-medium text-[var(--text-tertiary)] uppercase tracking-wide mb-3">
+            Precisa de ajuda?
+          </h2>
+          <div className="bg-[var(--bg-card)] rounded-xl border border-[var(--border-color)] overflow-hidden">
+            {SUPPORT_CHANNELS.map((channel, i) => (
+              <a
+                key={channel.number}
+                href={`tel:${channel.number}`}
+                className={`flex items-center gap-3 p-4 hover:bg-[var(--hover-bg)] transition-colors ${
+                  i < SUPPORT_CHANNELS.length - 1 ? 'border-b border-[var(--border-color)]' : ''
+                }`}
+              >
+                <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-emerald-600" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-[var(--text-primary)]">{channel.number}</span>
+                    <span className="text-xs text-[var(--text-tertiary)]">{channel.hours}</span>
+                  </div>
+                  <p className="text-sm text-[var(--text-secondary)]">{channel.name}</p>
+                  <p className="text-xs text-[var(--text-tertiary)]">{channel.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Footer */}
         <div className="text-center text-xs text-[var(--text-tertiary)] py-8">
           <p>Esta análise é informativa e não garante a concessão dos benefícios.</p>
@@ -390,10 +454,10 @@ function QuickActionCard({
   disabled?: boolean;
 }) {
   const colors = {
-    blue: 'bg-blue-100 dark:bg-blue-500/20 text-blue-600',
-    pink: 'bg-pink-100 dark:bg-pink-500/20 text-pink-600',
-    purple: 'bg-purple-100 dark:bg-purple-500/20 text-purple-600',
-    emerald: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600',
+    blue: 'bg-blue-100 text-blue-600',
+    pink: 'bg-pink-100 text-pink-600',
+    purple: 'bg-purple-100 text-purple-600',
+    emerald: 'bg-emerald-100 text-emerald-600',
   };
 
   return (
@@ -401,7 +465,7 @@ function QuickActionCard({
       disabled={disabled}
       className={`
         flex items-center gap-3 p-4 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] text-left transition-all
-        ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-emerald-300 hover:shadow-sm'}
+        ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:border-emerald-300 hover:shadow-md hover:-translate-y-0.5'}
       `}
     >
       <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${colors[color]}`}>

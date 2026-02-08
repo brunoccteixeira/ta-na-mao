@@ -274,12 +274,6 @@
           "operator": "eq",
           "value": "3507605",
           "description": "Morar em Bragança Paulista"
-        },
-        {
-          "field": "cartaoSUS",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cartão SUS"
         }
       ],
       "whereToApply": "Farmácia Municipal ou UBS de Bragança Paulista",
@@ -301,7 +295,7 @@
       "category": "Saúde",
       "metadata": {
         "template": true,
-        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+        "disclaimer": "Necessário Cartão SUS — solicite na UBS mais próxima com RG e comprovante de residência."
       }
     },
     {

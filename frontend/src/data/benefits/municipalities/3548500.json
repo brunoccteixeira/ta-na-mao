@@ -240,12 +240,6 @@
           "operator": "eq",
           "value": "3548500",
           "description": "Morar em Presidente Prudente"
-        },
-        {
-          "field": "cartaoSUS",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cartão SUS"
         }
       ],
       "whereToApply": "Farmácia Municipal ou UBS de Presidente Prudente",
@@ -263,7 +257,8 @@
       "icon": "💊",
       "category": "Saúde",
       "metadata": {
-        "template": true
+        "template": true,
+        "disclaimer": "Necessário Cartão SUS — solicite na UBS mais próxima com RG e comprovante de residência."
       }
     },
     {

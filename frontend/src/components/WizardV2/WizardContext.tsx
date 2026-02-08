@@ -86,6 +86,7 @@ interface WizardState {
   visitedSteps: Set<WizardStepId>;
   isSubmitting: boolean;
   error: string | null;
+  direction: 'forward' | 'back';
 }
 
 // Actions
@@ -143,6 +144,7 @@ function wizardReducer(state: WizardState, action: WizardAction): WizardState {
           currentStepIndex: nextIndex,
           visitedSteps: newVisited,
           error: null,
+          direction: 'forward',
         };
       }
       return state;
@@ -160,6 +162,7 @@ function wizardReducer(state: WizardState, action: WizardAction): WizardState {
           ...state,
           currentStepIndex: prevIndex,
           error: null,
+          direction: 'back',
         };
       }
       return state;
@@ -199,6 +202,7 @@ const initialState: WizardState = {
   visitedSteps: new Set(['estado']),
   isSubmitting: false,
   error: null,
+  direction: 'forward',
 };
 
 // Context
@@ -214,6 +218,7 @@ interface WizardContextValue {
   isResultStep: boolean;
   isSubmitting: boolean;
   error: string | null;
+  direction: 'forward' | 'back';
 
   // Actions
   updateProfile: (updates: Partial<WizardProfile>) => void;
@@ -318,6 +323,7 @@ export function WizardProvider({ children }: WizardProviderProps) {
     isResultStep: currentStep.id === 'resultado',
     isSubmitting: state.isSubmitting,
     error: state.error,
+    direction: state.direction,
     updateProfile,
     goToStep,
     nextStep,

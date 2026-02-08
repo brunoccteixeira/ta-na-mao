@@ -84,7 +84,7 @@ export default function MoneyInput({
           className="
             w-full py-4 pl-12 pr-4 text-2xl font-semibold text-[var(--text-primary)]
             bg-[var(--input-bg)] border-2 border-[var(--input-border)] rounded-xl
-            focus:border-emerald-500 focus:outline-none transition-colors
+            focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 focus:outline-none transition-colors
             placeholder:text-[var(--text-tertiary)] placeholder:font-normal
           "
         />

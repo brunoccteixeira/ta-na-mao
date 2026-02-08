@@ -86,7 +86,7 @@ export default function NumberGrid({
                 ${
                   isSelected
                     ? 'border-emerald-500 bg-emerald-500 text-white'
-                    : 'border-[var(--border-color)] hover:border-emerald-300 bg-[var(--bg-card)] text-[var(--text-primary)]'
+                    : 'border-[var(--border-color)] hover:border-emerald-300 active:scale-[0.95] bg-[var(--bg-card)] text-[var(--text-primary)]'
                 }
               `}
             >

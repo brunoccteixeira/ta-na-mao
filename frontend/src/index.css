@@ -156,3 +156,49 @@ body {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+/* Step transition animations */
+@keyframes stepSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes stepSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-forward {
+  animation: stepSlideInRight 0.25s ease-out;
+}
+
+.step-back {
+  animation: stepSlideInLeft 0.25s ease-out;
+}
+
+/* Smooth expand/collapse for BenefitCard details */
+.benefit-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.benefit-expand[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.benefit-expand > div {
+  overflow: hidden;
+}

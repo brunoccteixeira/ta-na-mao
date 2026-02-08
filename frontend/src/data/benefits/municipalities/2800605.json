@@ -268,12 +268,6 @@
           "operator": "eq",
           "value": "2800605",
           "description": "Morar em Aracaju"
-        },
-        {
-          "field": "cartaoSUS",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter Cartão SUS"
         }
       ],
       "whereToApply": "Farmácia Municipal ou UBS de Aracaju",
@@ -294,7 +288,7 @@
       "category": "Saúde",
       "metadata": {
         "template": true,
-        "disclaimer": "Disponibilidade de medicamentos pode variar. Consulte a UBS."
+        "disclaimer": "Necessário Cartão SUS — solicite na UBS mais próxima com RG e comprovante de residência."
       }
     },
     {

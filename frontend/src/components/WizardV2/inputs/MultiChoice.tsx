@@ -56,7 +56,7 @@ export default function MultiChoice({
               ${
                 isSelected
                   ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10'
-                  : 'border-[var(--border-color)] hover:border-emerald-300 bg-[var(--bg-card)]'
+                  : 'border-[var(--border-color)] hover:border-emerald-300 hover:shadow-sm active:scale-[0.98] bg-[var(--bg-card)]'
               }
             `}
           >

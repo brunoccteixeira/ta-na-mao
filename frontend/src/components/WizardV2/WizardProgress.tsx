@@ -1,9 +1,9 @@
 'use client';
 
 /**
- * WizardProgress - Horizontal progress bar with step indicators
+ * WizardProgress - Step dots with counter
  *
- * Wizbii-style: clean progress bar with percentage
+ * Dots: completed = emerald filled, current = emerald + ring, future = gray
  */
 
 import { useWizard } from './WizardContext';
@@ -13,35 +13,42 @@ interface Props {
 }
 
 export default function WizardProgress({ className = '' }: Props) {
-  const { progress, visibleSteps, currentStep } = useWizard();
+  const { visibleSteps, currentStep } = useWizard();
 
-  // Don't show on result step
   if (currentStep.id === 'resultado') {
     return null;
   }
 
-  const currentIndex = visibleSteps.findIndex((s) => s.id === currentStep.id);
-  const totalSteps = visibleSteps.filter((s) => s.id !== 'resultado').length;
+  const stepsWithoutResult = visibleSteps.filter((s) => s.id !== 'resultado');
+  const currentIndex = stepsWithoutResult.findIndex((s) => s.id === currentStep.id);
+  const totalSteps = stepsWithoutResult.length;
 
   return (
-    <div className={`w-full ${className}`}>
-      {/* Step counter */}
-      <div className="flex justify-between items-center mb-2 text-sm">
-        <span className="text-[var(--text-secondary)] font-medium">
-          {currentStep.shortTitle}
-        </span>
-        <span className="text-[var(--text-tertiary)]">
-          {currentIndex + 1} de {totalSteps}
-        </span>
+    <div className={`flex items-center gap-3 ${className}`}>
+      {/* Step dots */}
+      <div className="flex items-center gap-1.5">
+        {stepsWithoutResult.map((step, i) => {
+          const isCompleted = i < currentIndex;
+          const isCurrent = i === currentIndex;
+
+          return (
+            <div
+              key={step.id}
+              className={`
+                rounded-full transition-all duration-300
+                ${isCurrent ? 'w-2.5 h-2.5 bg-emerald-500 ring-2 ring-emerald-500/30' : ''}
+                ${isCompleted ? 'w-2 h-2 bg-emerald-500' : ''}
+                ${!isCurrent && !isCompleted ? 'w-2 h-2 bg-gray-300' : ''}
+              `}
+            />
+          );
+        })}
       </div>
 
-      {/* Progress bar */}
-      <div className="h-2 bg-[var(--border-color)] rounded-full overflow-hidden">
-        <div
-          className="h-full bg-emerald-500 transition-all duration-500 ease-out rounded-full"
-          style={{ width: `${Math.max(progress, 5)}%` }}
-        />
-      </div>
+      {/* Counter */}
+      <span className="text-sm text-[var(--text-tertiary)] whitespace-nowrap">
+        {currentIndex + 1} de {totalSteps}
+      </span>
     </div>
   );
 }

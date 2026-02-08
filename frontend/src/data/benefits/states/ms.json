@@ -365,10 +365,10 @@
           "description": "Morar em MS"
         },
         {
-          "field": "empreendedor",
+          "field": "temMei",
           "operator": "eq",
           "value": true,
-          "description": "Ser empreendedor (formal ou informal)"
+          "description": "Ser microempreendedor individual (MEI) ou autônomo"
         },
         {
           "field": "rendaFamiliarMensal",
@@ -415,12 +415,6 @@
           "operator": "eq",
           "value": "MS",
           "description": "Morar em MS"
-        },
-        {
-          "field": "projetoCultural",
-          "operator": "eq",
-          "value": true,
-          "description": "Ter projeto cultural inscrito em edital estadual"
         }
       ],
       "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
@@ -440,7 +434,7 @@
       "icon": "🎭",
       "category": "Cultura",
       "metadata": {
-        "disclaimer": "Consulte o portal do governo estadual para informações atualizadas sobre este programa."
+        "disclaimer": "Benefício de nicho cultural — elegibilidade depende de inscrição em edital estadual. Consulte a Secretaria de Cultura do seu estado."
       }
     },
     {
@@ -461,12 +455,6 @@
           "operator": "eq",
           "value": "MS",
           "description": "Morar em MS"
-        },
-        {
-          "field": "atleta",
-          "operator": "eq",
-          "value": true,
-          "description": "Ser atleta de rendimento em modalidade reconhecida"
         }
       ],
       "whereToApply": "Secretaria estadual correspondente ou site do governo do estado",
@@ -486,7 +474,7 @@
       "icon": "🏅",
       "category": "Esporte",
       "metadata": {
-        "disclaimer": "Programa de bolsa atleta estadual em MS não confirmado. Verifique junto à secretaria de esportes do estado.",
+        "disclaimer": "Benefício de nicho esportivo — elegibilidade depende de vínculo com federação ou confederação esportiva. Consulte a Secretaria de Esportes do seu estado.",
         "verified": false
       }
     }
